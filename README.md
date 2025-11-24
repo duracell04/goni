@@ -1,0 +1,2 @@
+# goni
+personal local ai
