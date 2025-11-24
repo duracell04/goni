@@ -1,0 +1,1 @@
+---\nname: Hardware Issue\nabout: Track or propose a hardware change\nlabels: hardware\n---\n\n## Summary\n\n## Details\n\n## Acceptance Criteria\n

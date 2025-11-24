@@ -1,0 +1,1 @@
+---\nname: Decision Proposal\nabout: Propose a decision for hardware or software\nlabels: decision\n---\n\n## Context\n\n## Proposal\n\n## Alternatives\n\n## Decision Needed By\n

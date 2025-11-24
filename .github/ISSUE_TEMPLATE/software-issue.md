@@ -1,0 +1,1 @@
+---\nname: Software Issue\nabout: Track or propose a software change\nlabels: software\n---\n\n## Summary\n\n## Details\n\n## Acceptance Criteria\n
