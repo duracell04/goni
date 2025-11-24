@@ -81,3 +81,5 @@ At a high level, the Goni hardware should:
 4. For decisions that are accepted, add an entry to `90-decisions.md`.
 
 The aim is to converge on a **buildable, testable Goni node** that meets the shared requirements, not just an idealised spec.
+
+For detailed discussion of candidate hardware architectures and example products, see [20-architecture-options.md](./20-architecture-options.md).
