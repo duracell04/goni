@@ -1,0 +1,26 @@
+/* Global styles placeholder for Goni frontend. */
+
+:root {
+  --goni-bg: #0b1224;
+  --goni-surface: #0f172a;
+  --goni-text: #e2e8f0;
+  --goni-text-muted: #94a3b8;
+  --goni-border: #1e293b;
+  --goni-accent: #38bdf8;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  background: var(--goni-bg);
+  color: var(--goni-text);
+}
+
+.text-goni-text { color: var(--goni-text); }
+.text-goni-text-muted { color: var(--goni-text-muted); }
+.text-goni-accent { color: var(--goni-accent); }
+.bg-goni-bg { background: var(--goni-bg); }
+.bg-goni-surface { background: var(--goni-surface); }
+.border-goni-border { border-color: var(--goni-border); }
+
+.prose code { font-family: "JetBrains Mono", monospace; }
