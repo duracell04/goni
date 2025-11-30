@@ -142,23 +142,9 @@ impl LlmEngine for HttpVllmEngine {
         });
 
         // Flatten the stream of streams
-        let flat_stream = stream::try_unfold((s, None::<DynStream>), |(mut outer, mut inner)| async move {
-            loop {
-                if let Some(mut inner_stream) = inner {
-                    if let Some(item) = inner_stream.next().await {
-                        return Some((item, (outer, Some(inner_stream))));
-                    }
-                    inner = None;
-                }
-                match outer.next().await {
-                    Some(next_inner) => {
-                        inner = Some(next_inner);
-                        continue;
-                    }
-                    None => return None,
-                }
-            }
-        });
+        let flat_stream = s
+            .then(|maybe_stream| async move { maybe_stream.unwrap_or_else(|| stream::empty()) })
+            .flatten();
 
         Ok(Box::pin(flat_stream) as TokenStream)
     }
