@@ -1,6 +1,7 @@
 ﻿[workspace]
 members = [
     "goni-types",
+    "goni-schema",
     "goni-store",
     "goni-context",
     "goni-sched",
