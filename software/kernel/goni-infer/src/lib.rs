@@ -4,6 +4,9 @@ use async_trait::async_trait;
 use futures_core::Stream;
 use goni_types::LlmRequest;
 
+pub mod http_vllm;
+pub use http_vllm::HttpVllmEngine;
+
 #[derive(Clone, Debug)]
 pub struct LlmToken {
     pub token_id: u32,
