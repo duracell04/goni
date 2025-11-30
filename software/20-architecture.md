@@ -21,6 +21,14 @@ where:
 
 We use this decomposition both as an implementation guide and as the basis for our invariants.
 
+**How to read this doc.**
+
+- This file defines the architecture and its formal objects.
+- `software/30-conformance.md` turns those objects into invariants and proof obligations (what must be shown or tested for an MVP node to be “conformant”).
+- `software/95-theory-appendix.md` gives a brief theoretical backdrop (category theory, submodularity, Lyapunov stability, bandits, capabilities).
+
+Read in the order: **Architecture (§20) → Conformance (§30) → Theory (§95)**.
+
 ---
 
 ## 1. Data Plane – the Arrow Spine \(\mathcal{A}\)
