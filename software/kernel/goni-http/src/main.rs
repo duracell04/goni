@@ -12,7 +12,7 @@ use goni_context::{FacilityLocationSelector, NullKvPager};
 use goni_infer::HttpVllmEngine;
 use goni_router::NullRouter;
 use goni_sched::InMemoryScheduler;
-use goni_store::NullDataPlane;
+use goni_store::{NullDataPlane, QdrantDataPlane};
 use goni_types::TaskClass;
 
 #[derive(Clone)]
@@ -57,8 +57,11 @@ async fn main() -> anyhow::Result<()> {
     let llm_model = std::env::var("LLM_MODEL")
         .unwrap_or_else(|_| "mistralai/Mistral-7B-Instruct-v0.3".into());
 
-    // Construct kernel with working LLM engine; nulls elsewhere for MVP.
-    let data_plane = Arc::new(NullDataPlane);
+    // Data plane: prefer Qdrant if configured, else null stub.
+    let data_plane: Arc<dyn goni_store::DataPlane> = match std::env::var("QDRANT_HTTP_URL") {
+        Ok(url) if !url.is_empty() => Arc::new(QdrantDataPlane::new(url)),
+        _ => Arc::new(NullDataPlane),
+    };
     let context_selector = Arc::new(FacilityLocationSelector::new(0.3));
     let kv_pager = Arc::new(NullKvPager);
     let scheduler = Arc::new(InMemoryScheduler::new());

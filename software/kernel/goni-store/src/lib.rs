@@ -1,8 +1,11 @@
-use std::sync::Arc;
+﻿use std::sync::Arc;
 
 use arrow::record_batch::RecordBatch;
 use async_trait::async_trait;
 use thiserror::Error;
+
+pub mod qdrant;
+pub use qdrant::QdrantDataPlane;
 
 pub type ArrowBatch = RecordBatch;
 pub type ArrowBatchHandle = Arc<ArrowBatch>;
@@ -38,7 +41,7 @@ pub trait DataPlane: Send + Sync {
     ) -> Result<ArrowBatchHandle, DataError>;
 }
 
-/// Stub implementation for now � replace with DuckDB + LanceDB.
+/// Stub implementation for now – replace with DuckDB + LanceDB.
 pub struct NullDataPlane;
 
 #[async_trait]

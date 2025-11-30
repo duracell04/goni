@@ -1,6 +1,6 @@
 use std::sync::Arc;
 
-use goni_context::{ContextSelector, KvPager};
+use goni_context::{record_batch_to_candidate_chunks, CandidateChunk, ContextSelector, KvPager};
 use goni_infer::{LlmEngine, TokenStream};
 use goni_router::{EscalationPolicy, Router};
 use goni_sched::Scheduler;
@@ -48,17 +48,76 @@ impl GoniKernel {
         prompt: &str,
         _class: TaskClass,
     ) -> anyhow::Result<TokenStream> {
-        // TODO: integrate DataPlane + ContextSelector + Router properly.
-        let context = ContextSelection {
-            indices: Vec::new(),
-            total_tokens: 0,
+        // Placeholder embedding; swap in a real embedder.
+        let emb_dim: usize = std::env::var("EMBED_DIM")
+            .ok()
+            .and_then(|v| v.parse().ok())
+            .unwrap_or(1024);
+        let query_embedding = vec![0.0_f32; emb_dim];
+        let collection = std::env::var("QDRANT_COLLECTION").unwrap_or_else(|_| "default".into());
+
+        // Fetch candidates from the data plane (Qdrant-backed when configured).
+        let rag_batch = self
+            .data_plane
+            .rag_candidates(&collection, &query_embedding, 128)
+            .await;
+
+        let (context, augmented_prompt) = match rag_batch {
+            Ok(batch) => {
+                let candidates: Vec<CandidateChunk> = match record_batch_to_candidate_chunks(
+                    &batch,
+                    "id",
+                    "tokens",
+                    "embedding",
+                    &query_embedding,
+                ) {
+                    Ok(c) => c,
+                    Err(e) => {
+                        eprintln!("context build error: {e:?}");
+                        Vec::new()
+                    }
+                };
+
+                let selection = self
+                    .context_selector
+                    .select(&query_embedding, &candidates, 2048)
+                    .await;
+
+                // Simple prompt augmentation: list selected chunk ids.
+                let mut ctx_ids = String::new();
+                for idx in &selection.indices {
+                    if let Some(chunk) = candidates.get(*idx as usize) {
+                        ctx_ids.push_str("- ");
+                        ctx_ids.push_str(chunk.id);
+                        ctx_ids.push('\n');
+                    }
+                }
+
+                let aug_prompt = if ctx_ids.is_empty() {
+                    prompt.to_string()
+                } else {
+                    format!("{}\n\nContext:\n{}", prompt, ctx_ids)
+                };
+
+                (selection, aug_prompt)
+            }
+            Err(e) => {
+                eprintln!("rag_candidates error: {e:?}");
+                (
+                    ContextSelection {
+                        indices: Vec::new(),
+                        total_tokens: 0,
+                    },
+                    prompt.to_string(),
+                )
+            }
         };
 
         let (routing, _policy): (goni_router::RoutingDecision, EscalationPolicy) =
-            self.router.decide(prompt, &context).await;
+            self.router.decide(&augmented_prompt, &context).await;
 
         let req = LlmRequest {
-            prompt: prompt.to_string(),
+            prompt: augmented_prompt,
             context,
             model_tier: routing.chosen_tier,
             max_tokens: 512,
