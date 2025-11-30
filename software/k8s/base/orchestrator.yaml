@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: orchestrator
-          image: ghcr.io/duracell04/goni-kernel:latest
+          image: ghcr.io/duracell04/goni-http:latest
           imagePullPolicy: IfNotPresent
           command: ["/app/goni-http"]
           env:

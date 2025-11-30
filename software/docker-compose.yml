@@ -44,6 +44,7 @@ services:
       context: ./kernel
       dockerfile: Dockerfile
     container_name: goni-orchestrator
+    image: ghcr.io/duracell04/goni-http:latest
     command: ["/app/goni-http"]
     environment:
       - LLM_LOCAL_URL=http://llm-local:8000/v1
