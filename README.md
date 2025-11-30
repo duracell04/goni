@@ -191,9 +191,14 @@ Start in:
 
 Shared documentation:
 
-- `goni-whitepaper.md` - longer-form explanation for non-engineers.  
+- `/docs/goni-whitepaper.md` - core technical + architectural spec (planes, Arrow spine, control layer).  
+- `/docs/goni-story.md` - narrative “Goni story” (magazine-style for tech enthusiasts / early adopters).  
+- `/docs/goni-swot.md` - honest SWOT vs Atlantis / OpenDAN / Home Assistant / mini-PC stacks.  
+- `/docs/inspiration.md` - builders & thinkers we track.  
+- `/docs/related-projects.md` - prior art / similar systems and how we differ.  
+- `/docs/glossary.md` - shared vocabulary.  
 - `/docs/diagrams/` - architecture diagrams (Draw.io, Figma exports).  
-- `glossary.md` - keep our vocabulary aligned.
+- `/docs/README.md` - local docs index linking all of the above.
 
 ---
 
