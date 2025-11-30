@@ -1,14 +1,14 @@
-# Goni MVP
+ï»¿# Goni MVP
 
-> **Goni** is a small, local-first AI node – a matte-black box in your home or office – that runs your personal AI assistant on your own hardware, can mesh with other nodes, and optionally talk to the cloud when it truly helps.
+> **Goni** is a small, local-first AI node - a matte-black box in your home or office - that runs your personal AI assistant on your own hardware, can mesh with other nodes, and optionally talk to the cloud when it truly helps.
 
-This repo is **not** a marketing site. It’s a working space for:
+This repo is **not** a marketing site. It's a working space for:
 
 - hardware engineers  
 - software engineers  
 - stakeholders (product, ops, early adopters)
 
-…to converge on the **best possible Goni MVP**.
+.to converge on the **best possible Goni MVP**.
 
 ---
 
@@ -18,13 +18,13 @@ This repo is **not** a marketing site. It’s a working space for:
 
 Goni is a **local AI super-node** for individuals and small teams:
 
-- Runs **30–40B parameter models** locally (quantised) for chat, coding, and RAG.  
+- Runs **30-40B parameter models** locally (quantised) for chat, coding, and RAG.  
 - Trains **adapters / LoRA** on your data (no huge full-model fine-tunes on-device).  
 - Works as a **standalone box** _and_ can **mesh with other Goni nodes** to form a personal cluster.  
-- Can attach a **Grace Blackwell GN100–class mini-DGX** later for “Goni Max / Enterprise”.
+- Can attach a **Grace Blackwell GN100-class mini-DGX** later for "Goni Max / Enterprise".
 
-From the user’s perspective:  
-> “I buy a box once for ~$10k, then I pay $750/month and my AI is faster, more private, and more predictable than whatever cloud dashboard I was using before.”
+From the user's perspective:  
+> "I buy a box once for ~$10k, then I pay $750/month and my AI is faster, more private, and more predictable than whatever cloud dashboard I was using before."
 
 ### 1.2 Non-goals (for MVP)
 
@@ -33,7 +33,7 @@ To keep us aligned:
 - No attempt to match full **H100/B200 training rigs** locally.  
 - No exotic multi-GPU monster towers for v1.  
 - No gamer aesthetics (RGB, glass, etc.).  
-- No “just a rebadged OEM box” – Goni has its own industrial design and OS image.
+- No "just a rebadged OEM box" - Goni has its own industrial design and OS image.
 
 ---
 
@@ -43,25 +43,25 @@ These are the guardrails for all discussions in this repo.
 
 ### 2.1 Use-case constraints
 
-- **Local-first**: 80–90% of tokens should be served by **local models** on Goni.  
+- **Local-first**: 80-90% of tokens should be served by **local models** on Goni.  
 - **Cloud-as-needed**: GPT-4 / Claude / etc. used only when:
   - explicitly requested by user, or
-  - orchestrator deems task “high difficulty” or requires long context.
+  - orchestrator deems task "high difficulty" or requires long context.
 
 - **Workload focus**:
-  - Inference + RAG for 30–40B quantised models  
-  - Adapters / LoRA / “personalisation” training only  
+  - Inference + RAG for 30-40B quantised models  
+  - Adapters / LoRA / "personalisation" training only  
   - Heavy full-model fine-tune ? kicked to cloud or GN100-class node
 
 ### 2.2 Hardware constraints
 
 - **Form factor**:
-  - Small, unobtrusive box: target **6–8 L volume**  
-    (e.g. roughly 28 × 22 × 13 cm, subject to mechanical design)
+  - Small, unobtrusive box: target **6-8 L volume**  
+    (e.g. roughly 28 x 22 x 13 cm, subject to mechanical design)
   - Matte black, no RGB, one discreet light bar + power button.
 
 - **Noise**:
-  - Under normal interactive use (chat, coding): subjectively **“silent”** at desk distance.  
+  - Under normal interactive use (chat, coding): subjectively **"silent"** at desk distance.  
   - Under sustained heavy load: quieter than a typical gaming PC or PS5.
 
 - **Compute platform (MVP assumption)**:
@@ -82,8 +82,8 @@ These are the guardrails for all discussions in this repo.
   - Wi-Fi 7 + BT for convenience, not core.
 
 - **Power**:
-  - **500–600 W 80+ Gold** PSU (SFX or compact ATX).  
-  - Target sustained power under load: **200–250 W** per node (APU + SSDs + fans).
+  - **500-600 W 80+ Gold** PSU (SFX or compact ATX).  
+  - Target sustained power under load: **200-250 W** per node (APU + SSDs + fans).
 
 ### 2.3 UX & ownership constraints
 
@@ -118,7 +118,7 @@ On a single Goni box we assume:
 Every Goni node is a **cluster node**:
 
 - 1st node ? control plane (e.g. k3s server).  
-- Additional nodes ? join as workers via “join token / URL”.
+- Additional nodes ? join as workers via "join token / URL".
 
 The orchestrator sees accelerators abstractly:
 
@@ -143,7 +143,7 @@ We design Goni MVP with the following in mind:
 
 - **GN100 / Blackwell-class nodes**:
   - GN100 today: 128 GB unified memory, 1 PFLOP FP4, 0.5 L form factor, $3.9k+.
-  - Future GBxx mini-DGX successors can be added as **“Goni Max nodes”** in the mesh, without redesigning the base Goni.
+  - Future GBxx mini-DGX successors can be added as **"Goni Max nodes"** in the mesh, without redesigning the base Goni.
 
 ---
 
@@ -163,9 +163,9 @@ For everything physical:
 
 Start in:
 
-- `hardware/00-overview.md` – current hardware concept  
-- `hardware/10-requirements.md` – constraints and goals  
-- `hardware/20-architecture-options.md` – alternative designs
+- `hardware/00-overview.md` - current hardware concept  
+- `hardware/10-requirements.md` - constraints and goals  
+- `hardware/20-architecture-options.md` - alternative designs
 
 Use `hardware/90-decisions.md` to record accepted decisions.
 
@@ -181,25 +181,25 @@ For everything software:
 
 Start in:
 
-- `software/00-overview.md` – current software concept  
-- `software/10-requirements.md` – functional & non-functional requirements  
-- `software/20-architecture.md` – node + mesh diagrams
-
-Use `software/90-decisions.md` to record accepted decisions.
+- `software/00-overview.md` - current software concept  
+- `software/10-requirements.md` - functional & non-functional requirements  
+- `software/20-architecture.md` - formal architecture and invariants  
+- `software/90-decisions.md` - formal design decisions  
+- `software/kernel/` - Rust workspace for the kernel (traits, HTTP server, vLLM client, Qdrant-backed RAG, scheduler/router stubs)
 
 ### `/docs/`
 
 Shared documentation:
 
-- `goni-whitepaper.md` – longer-form explanation for non-engineers.  
-- `/docs/diagrams/` – architecture diagrams (Draw.io, Figma exports).  
-- `glossary.md` – keep our vocabulary aligned.
+- `goni-whitepaper.md` - longer-form explanation for non-engineers.  
+- `/docs/diagrams/` - architecture diagrams (Draw.io, Figma exports).  
+- `glossary.md` - keep our vocabulary aligned.
 
 ---
 
 ## 6. How to contribute
 
-1. **Read the constraints (Section 2)** – treat them as the current baseline.  
+1. **Read the constraints (Section 2)** - treat them as the current baseline.  
 2. For **hardware topics**, open:
    - an issue with label `hardware`, and  
    - reference the relevant file in `/hardware/`.  
@@ -215,6 +215,6 @@ Shared documentation:
    - cost estimates ($)  
    - actual vendor links if relevant
 
-We are aiming at a **real, buildable MVP**, not a sci-fi spec – but we do want to stay aligned with where hardware and AI tooling will be in **2026–2027**.
+We are aiming at a **real, buildable MVP**, not a sci-fi spec - but we do want to stay aligned with where hardware and AI tooling will be in **2026-2027**.
 
 ---
