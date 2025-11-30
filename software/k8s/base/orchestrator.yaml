@@ -17,6 +17,7 @@ spec:
         - name: orchestrator
           image: ghcr.io/duracell04/goni-kernel:latest
           imagePullPolicy: IfNotPresent
+          command: ["/app/goni-http"]
           env:
             - name: LLM_LOCAL_URL
               value: "http://llm-local.goni.svc.cluster.local:8000/v1"
