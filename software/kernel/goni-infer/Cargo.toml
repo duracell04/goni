@@ -1,0 +1,10 @@
+[package]
+name = "goni-infer"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+async-trait = { workspace = true }
+futures-core = { workspace = true }
+futures-util = { workspace = true }
+goni-types = { path = "../goni-types" }

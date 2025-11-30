@@ -1,0 +1,29 @@
+[workspace]
+members = [
+    "goni-types",
+    "goni-store",
+    "goni-context",
+    "goni-sched",
+    "goni-router",
+    "goni-infer",
+    "goni-cap",
+    "goni-core",
+    "goni-cli",
+]
+
+resolver = "2"
+
+[workspace.package]
+edition = "2021"
+
+[workspace.dependencies]
+arrow = "54"
+arrow-array = "54"
+arrow-schema = "54"
+async-trait = "0.1"
+uuid = { version = "1", features = ["v4"] }
+tokio = { version = "1.40", features = ["rt-multi-thread", "macros"] }
+futures-core = "0.3"
+futures-util = "0.3"
+thiserror = "1.0"
+cap-std = "3"

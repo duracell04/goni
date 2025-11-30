@@ -1,0 +1,16 @@
+[package]
+name = "goni-cli"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+goni-core = { path = "../goni-core" }
+goni-store = { path = "../goni-store" }
+goni-context = { path = "../goni-context" }
+goni-sched = { path = "../goni-sched" }
+goni-router = { path = "../goni-router" }
+goni-infer = { path = "../goni-infer" }
+
+tokio = { workspace = true }
+anyhow = "1"
+futures-util = { workspace = true }

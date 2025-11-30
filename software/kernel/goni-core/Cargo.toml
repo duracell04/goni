@@ -1,0 +1,15 @@
+[package]
+name = "goni-core"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+goni-types = { path = "../goni-types" }
+goni-store = { path = "../goni-store" }
+goni-context = { path = "../goni-context" }
+goni-sched = { path = "../goni-sched" }
+goni-router = { path = "../goni-router" }
+goni-infer = { path = "../goni-infer" }
+
+tokio = { workspace = true }
+anyhow = "1"
