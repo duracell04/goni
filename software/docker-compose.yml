@@ -1,0 +1,68 @@
+version: "3.9"
+
+services:
+  llm-local:
+    image: vllm/vllm-openai:latest
+    container_name: goni-llm-local
+    # Uncomment for NVIDIA GPUs
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - capabilities: ["gpu"]
+    command:
+      [
+        "python",
+        "-m",
+        "vllm.entrypoints.openai.api_server",
+        "--model",
+        "mistralai/Mistral-7B-Instruct-v0.3",
+        "--host",
+        "0.0.0.0",
+        "--port",
+        "8000"
+      ]
+    environment:
+      - VLLM_WORKER_MULTIPROC_METHOD=spawn
+      # - HF_TOKEN=... # optional
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./models:/models
+
+  vecdb:
+    image: qdrant/qdrant:v1.6.1-unprivileged
+    container_name: goni-vecdb
+    ports:
+      - "6333:6333"
+      - "6334:6334"
+    volumes:
+      - ./qdrant_storage:/qdrant/storage
+
+  orchestrator:
+    build:
+      context: ./kernel
+      dockerfile: Dockerfile
+    container_name: goni-orchestrator
+    environment:
+      - LLM_LOCAL_URL=http://llm-local:8000/v1
+      - QDRANT_HTTP_URL=http://vecdb:6333
+      - QDRANT_GRPC_URL=http://vecdb:6334
+      - RUST_LOG=info
+    depends_on:
+      - llm-local
+      - vecdb
+    ports:
+      - "7000:7000"
+
+  gateway:
+    build:
+      context: ./gateway
+      dockerfile: Dockerfile
+    container_name: goni-gateway
+    environment:
+      - ORCHESTRATOR_URL=http://orchestrator:7000
+    depends_on:
+      - orchestrator
+    ports:
+      - "443:3000"

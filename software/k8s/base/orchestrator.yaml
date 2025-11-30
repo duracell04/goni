@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: orchestrator
+  namespace: goni
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: orchestrator
+  template:
+    metadata:
+      labels:
+        app: orchestrator
+    spec:
+      containers:
+        - name: orchestrator
+          image: ghcr.io/duracell04/goni-kernel:latest
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: LLM_LOCAL_URL
+              value: "http://llm-local.goni.svc.cluster.local:8000/v1"
+            - name: QDRANT_HTTP_URL
+              value: "http://vecdb.goni.svc.cluster.local:6333"
+            - name: QDRANT_GRPC_URL
+              value: "http://vecdb.goni.svc.cluster.local:6334"
+            - name: RUST_LOG
+              value: "info"
+          ports:
+            - containerPort: 7000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: orchestrator
+  namespace: goni
+spec:
+  selector:
+    app: orchestrator
+  ports:
+    - name: http
+      port: 7000
+      targetPort: 7000

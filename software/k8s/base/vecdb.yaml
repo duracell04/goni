@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: vecdb
+  namespace: goni
+spec:
+  serviceName: vecdb
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vecdb
+  template:
+    metadata:
+      labels:
+        app: vecdb
+    spec:
+      containers:
+        - name: qdrant
+          image: qdrant/qdrant:v1.6.1-unprivileged
+          ports:
+            - containerPort: 6333
+            - containerPort: 6334
+          volumeMounts:
+            - name: storage
+              mountPath: /qdrant/storage
+  volumeClaimTemplates:
+    - metadata:
+        name: storage
+      spec:
+        accessModes: ["ReadWriteOnce"]
+        resources:
+          requests:
+            storage: 100Gi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: vecdb
+  namespace: goni
+spec:
+  selector:
+    app: vecdb
+  ports:
+    - name: http
+      port: 6333
+      targetPort: 6333
+    - name: grpc
+      port: 6334
+      targetPort: 6334
