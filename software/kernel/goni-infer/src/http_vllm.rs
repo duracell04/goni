@@ -1,9 +1,11 @@
 ﻿use std::pin::Pin;
 
 use async_trait::async_trait;
-use futures_util::stream;
+use futures_util::{stream, StreamExt};
 use goni_types::LlmRequest;
 use serde::{Deserialize, Serialize};
+
+type DynStream = Pin<Box<dyn futures_core::Stream<Item = Result<crate::LlmToken, crate::LlmError>> + Send>>;
 
 use crate::{LlmEngine, LlmError, LlmToken, TokenStream};
 
@@ -12,22 +14,31 @@ struct OpenAIChatRequest {
     model: String,
     messages: Vec<OpenAIMessage>,
     max_tokens: Option<u32>,
+    stream: bool,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Clone)]
 struct OpenAIMessage {
     role: String,
     content: String,
 }
 
 #[derive(Deserialize)]
-struct OpenAIChatResponse {
-    choices: Vec<OpenAIChoice>,
+struct ChatCompletionChunk {
+    choices: Vec<ChatChoiceDelta>,
 }
 
 #[derive(Deserialize)]
-struct OpenAIChoice {
-    message: OpenAIMessage,
+struct ChatChoiceDelta {
+    delta: Delta,
+    #[serde(default)]
+    index: usize,
+}
+
+#[derive(Deserialize)]
+struct Delta {
+    #[serde(default)]
+    content: String,
 }
 
 /// Simple HTTP LLM engine that calls a vLLM OpenAI-compatible endpoint.
@@ -62,6 +73,7 @@ impl LlmEngine for HttpVllmEngine {
                 content: req.prompt,
             }],
             max_tokens: Some(req.max_tokens as u32),
+            stream: true,
         };
 
         let resp = self
@@ -80,23 +92,74 @@ impl LlmEngine for HttpVllmEngine {
             });
         }
 
-        let parsed: OpenAIChatResponse = resp.json().await.map_err(|e| LlmError {
-            message: format!("JSON error: {e}"),
-        })?;
-
-        let text = parsed
-            .choices
-            .get(0)
-            .map(|c| c.message.content.clone())
-            .unwrap_or_default();
-
-        let stream = stream::once(async move {
-            Ok(LlmToken {
-                token_id: 0,
-                text,
-            })
+        let stream_body = resp.bytes_stream();
+        let mut token_id: u32 = 0;
+        let s = stream_body.filter_map(move |chunk_res| {
+            let mut token_id_local = token_id;
+            token_id += 1;
+            async move {
+                match chunk_res {
+                    Ok(bytes) => {
+                        // vLLM SSE chunks are lines prefixed with "data: "
+                        let text = String::from_utf8_lossy(&bytes);
+                        let mut out_tokens = Vec::new();
+                        for line in text.lines() {
+                            let line = line.trim();
+                            if line.is_empty() || line == "data:" {
+                                continue;
+                            }
+                            let line = line.trim_start_matches("data: ");
+                            if line == "[DONE]" {
+                                continue;
+                            }
+                            if let Ok(chunk) = serde_json::from_str::<ChatCompletionChunk>(line) {
+                                for choice in chunk.choices {
+                                    if !choice.delta.content.is_empty() {
+                                        out_tokens.push(Ok(LlmToken {
+                                            token_id: token_id_local,
+                                            text: choice.delta.content.clone(),
+                                        }));
+                                        token_id_local += 1;
+                                    }
+                                }
+                            }
+                        }
+                        if out_tokens.is_empty() {
+                            None
+                        } else {
+                            // emit tokens sequentially
+                            let stream = stream::iter(out_tokens);
+                            Some(stream)
+                        }
+                    }
+                    Err(e) => Some(stream::once(async move {
+                        Err(LlmError {
+                            message: format!("stream error: {e}"),
+                        })
+                    })),
+                }
+            }
         });
 
-        Ok(Box::pin(stream) as Pin<Box<dyn futures_core::Stream<Item = Result<LlmToken, LlmError>> + Send>>)
+        // Flatten the stream of streams
+        let flat_stream = stream::try_unfold((s, None::<DynStream>), |(mut outer, mut inner)| async move {
+            loop {
+                if let Some(mut inner_stream) = inner {
+                    if let Some(item) = inner_stream.next().await {
+                        return Some((item, (outer, Some(inner_stream))));
+                    }
+                    inner = None;
+                }
+                match outer.next().await {
+                    Some(next_inner) => {
+                        inner = Some(next_inner);
+                        continue;
+                    }
+                    None => return None,
+                }
+            }
+        });
+
+        Ok(Box::pin(flat_stream) as TokenStream)
     }
 }

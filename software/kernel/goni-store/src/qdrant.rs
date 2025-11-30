@@ -1,24 +1,45 @@
 ﻿use std::sync::Arc;
 
-use arrow_array::{builder::StringBuilder, types::UInt32Type, ArrayRef, FixedSizeListArray, Float32Array, UInt32Array};
+use arrow_array::{builder::StringBuilder, types::UInt32Type, ArrayRef, FixedSizeListArray, Float32Array, StringArray, UInt32Array};
 use arrow_schema::{DataType, Field, Schema};
 use async_trait::async_trait;
 use serde::{Deserialize, Serialize};
+use sha2::{Digest, Sha256};
 
 use crate::{ArrowBatch, ArrowBatchHandle, DataError, DataPlane};
 
-/// Qdrant-backed DataPlane for RAG queries.
+/// Qdrant-backed DataPlane for RAG queries and ingestion.
 pub struct QdrantDataPlane {
     client: reqwest::Client,
     base_url: String,
+    embed_dim: usize,
 }
 
 impl QdrantDataPlane {
     pub fn new(base_url: impl Into<String>) -> Self {
+        let embed_dim = std::env::var("EMBED_DIM")
+            .ok()
+            .and_then(|v| v.parse().ok())
+            .unwrap_or(1024);
         Self {
             client: reqwest::Client::new(),
             base_url: base_url.into(),
+            embed_dim,
         }
+    }
+
+    fn embed(&self, text: &str) -> Vec<f32> {
+        // Deterministic hash-based embedding placeholder.
+        let mut out = Vec::with_capacity(self.embed_dim);
+        let mut hasher = Sha256::new();
+        hasher.update(text.as_bytes());
+        let digest = hasher.finalize();
+        for i in 0..self.embed_dim {
+            let b = digest[i % digest.len()];
+            let v = (b as f32 / 255.0) - 0.5;
+            out.push(v);
+        }
+        out
     }
 }
 
@@ -47,6 +68,18 @@ struct SearchResult {
     vector: Vec<f32>,
 }
 
+#[derive(Serialize)]
+struct UpsertPoint<'a> {
+    id: &'a str,
+    vector: Vec<f32>,
+    payload: serde_json::Value,
+}
+
+#[derive(Serialize)]
+struct UpsertRequest<'a> {
+    points: Vec<UpsertPoint<'a>>,
+}
+
 #[async_trait]
 impl DataPlane for QdrantDataPlane {
     async fn query(
@@ -60,12 +93,83 @@ impl DataPlane for QdrantDataPlane {
 
     async fn append_batches(
         &self,
-        _table: &str,
-        _batches: Vec<ArrowBatchHandle>,
+        table: &str,
+        batches: Vec<ArrowBatchHandle>,
     ) -> Result<(), DataError> {
-        Err(DataError {
-            message: "append_batches not implemented for QdrantDataPlane".into(),
-        })
+        for batch in batches {
+            let id_idx = batch.schema().index_of("id").map_err(|_| DataError {
+                message: "missing id column".into(),
+            })?;
+            let text_idx = batch.schema().index_of("text").map_err(|_| DataError {
+                message: "missing text column".into(),
+            })?;
+            let tokens_idx = batch
+                .schema()
+                .index_of("tokens")
+                .map_err(|_| DataError {
+                    message: "missing tokens column".into(),
+                })?;
+
+            let ids = batch.column(id_idx).as_any().downcast_ref::<StringArray>().ok_or(
+                DataError {
+                    message: "id column not utf8".into(),
+                },
+            )?;
+            let texts = batch.column(text_idx).as_any().downcast_ref::<StringArray>().ok_or(
+                DataError {
+                    message: "text column not utf8".into(),
+                },
+            )?;
+            let tokens_arr = batch
+                .column(tokens_idx)
+                .as_any()
+                .downcast_ref::<UInt32Array>()
+                .ok_or(DataError {
+                    message: "tokens column not u32".into(),
+                })?;
+
+            let mut points = Vec::with_capacity(batch.num_rows());
+            for row in 0..batch.num_rows() {
+                if ids.is_null(row) || texts.is_null(row) {
+                    continue;
+                }
+                let id = ids.value(row);
+                let text = texts.value(row);
+                let tokens = tokens_arr.value(row);
+                let vector = self.embed(text);
+                let payload = serde_json::json!({
+                    "text": text,
+                    "tokens": tokens,
+                });
+                points.push(UpsertPoint {
+                    id,
+                    vector,
+                    payload,
+                });
+            }
+
+            if points.is_empty() {
+                continue;
+            }
+
+            let url = format!("{}/collections/{}/points?wait=true", self.base_url, table);
+            let body = UpsertRequest { points };
+            let resp = self
+                .client
+                .put(&url)
+                .json(&body)
+                .send()
+                .await
+                .map_err(|e| DataError {
+                    message: format!("qdrant upsert error: {e}"),
+                })?;
+            if !resp.status().is_success() {
+                return Err(DataError {
+                    message: format!("qdrant upsert status: {}", resp.status()),
+                });
+            }
+        }
+        Ok(())
     }
 
     async fn rag_candidates(
@@ -104,12 +208,12 @@ impl DataPlane for QdrantDataPlane {
 
         // Collect fields
         let mut id_builder = StringBuilder::new(parsed.result.len());
+        let mut text_builder = StringBuilder::new(parsed.result.len());
         let mut tokens: Vec<u32> = Vec::with_capacity(parsed.result.len());
         let mut embedding_vals: Vec<f32> = Vec::new();
 
         let mut dim: Option<usize> = None;
         for item in &parsed.result {
-            // id -> string
             let id_str = match &item.id {
                 serde_json::Value::String(s) => s.clone(),
                 serde_json::Value::Number(n) => n.to_string(),
@@ -119,7 +223,15 @@ impl DataPlane for QdrantDataPlane {
                 message: format!("id build error: {e}"),
             })?;
 
-            // tokens from payload if present
+            let text_val = item
+                .payload
+                .get("text")
+                .and_then(|v| v.as_str())
+                .unwrap_or("");
+            text_builder.append_value(text_val).map_err(|e| DataError {
+                message: format!("text build error: {e}"),
+            })?;
+
             let tok_val = item
                 .payload
                 .get("tokens")
@@ -127,7 +239,6 @@ impl DataPlane for QdrantDataPlane {
                 .unwrap_or(0) as u32;
             tokens.push(tok_val);
 
-            // embedding vector
             if let Some(d) = dim {
                 if item.vector.len() != d {
                     return Err(DataError {
@@ -148,6 +259,7 @@ impl DataPlane for QdrantDataPlane {
         }
 
         let id_array = id_builder.finish();
+        let text_array = text_builder.finish();
         let token_array: UInt32Array = UInt32Array::from(tokens);
         let value_array: Float32Array = Float32Array::from(embedding_vals);
 
@@ -161,6 +273,7 @@ impl DataPlane for QdrantDataPlane {
 
         let schema = Arc::new(Schema::new(vec![
             Field::new("id", DataType::Utf8, false),
+            Field::new("text", DataType::Utf8, false),
             Field::new("tokens", DataType::UInt32, false),
             Field::new(
                 "embedding",
@@ -174,6 +287,7 @@ impl DataPlane for QdrantDataPlane {
 
         let columns: Vec<ArrayRef> = vec![
             Arc::new(id_array),
+            Arc::new(text_array),
             Arc::new(token_array),
             Arc::new(embedding_array),
         ];

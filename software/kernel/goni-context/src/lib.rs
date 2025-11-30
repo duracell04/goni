@@ -11,6 +11,7 @@ use thiserror::Error;
 #[derive(Clone)]
 pub struct CandidateChunk<'a> {
     pub id: &'a str,
+    pub text: Option<&'a str>,
     pub tokens: usize,
     pub embedding: &'a [f32],
     pub relevance: f32,
@@ -222,6 +223,7 @@ fn cosine_similarity(a: &[f32], b: &[f32]) -> f32 {
 ///   - id_col: Utf8
 ///   - tokens_col: Int32 or UInt32
 ///   - embedding_col: FixedSizeList<Float32> with length == query_embedding.len()
+///   - text_col: Utf8 (optional; set None if not present)
 ///
 /// IMPORTANT:
 ///   - The returned CandidateChunk<'a> borrows from `batch`, so `batch` must
@@ -247,6 +249,7 @@ pub fn record_batch_to_candidate_chunks<'a>(
     let emb_idx = schema.index_of(embedding_col).map_err(|_| {
         CandidateBuildError::MissingColumn(embedding_col.to_string())
     })?;
+    let text_idx = schema.index_of("text").ok();
 
     // 2) Downcast columns
 
@@ -255,6 +258,12 @@ pub fn record_batch_to_candidate_chunks<'a>(
     let id_array = id_array.as_any().downcast_ref::<StringArray>().ok_or_else(
         || CandidateBuildError::InvalidColumnType(id_col.to_string()),
     )?;
+
+    // optional text
+    let text_array: Option<&StringArray> = match text_idx {
+        Some(idx) => batch.column(idx).as_any().downcast_ref::<StringArray>(),
+        None => None,
+    };
 
     // tokens: Int32 or UInt32 → usize
     let tokens_array = batch.column(tokens_idx);
@@ -294,6 +303,8 @@ pub fn record_batch_to_candidate_chunks<'a>(
         }
         let id_str: &str = id_array.value(row);
 
+        let text_val = text_array.and_then(|arr| if arr.is_null(row) { None } else { Some(arr.value(row)) });
+
         // 4) tokens as usize
         let tokens: usize = match tokens_type {
             DataType::Int32 => {
@@ -330,6 +341,7 @@ pub fn record_batch_to_candidate_chunks<'a>(
 
         chunks.push(CandidateChunk {
             id: id_str,
+            text: text_val,
             tokens,
             embedding: emb_slice,
             relevance,
@@ -381,18 +393,21 @@ mod tests {
         let candidates = vec![
             CandidateChunk {
                 id: "a",
+                text: Some("foo"),
                 tokens: 3,
                 embedding: &[1.0, 0.0],
                 relevance: 0.9,
             },
             CandidateChunk {
                 id: "b",
+                text: Some("bar"),
                 tokens: 2,
                 embedding: &[0.0, 1.0],
                 relevance: 0.8,
             },
             CandidateChunk {
                 id: "c",
+                text: None,
                 tokens: 10,
                 embedding: &[0.7, 0.7],
                 relevance: 0.5,

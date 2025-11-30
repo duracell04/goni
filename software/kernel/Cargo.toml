@@ -1,4 +1,4 @@
-[workspace]
+﻿[workspace]
 members = [
     "goni-types",
     "goni-store",
@@ -34,3 +34,4 @@ serde_json = "1"
 tower = "0.4"
 tower-http = { version = "0.5", features = ["trace"] }
 reqwest = { version = "0.12", features = ["json", "stream"] }
+sha2 = "0.10"

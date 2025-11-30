@@ -1,4 +1,4 @@
-use std::sync::Arc;
+﻿use std::sync::Arc;
 
 use goni_context::{record_batch_to_candidate_chunks, CandidateChunk, ContextSelector, KvPager};
 use goni_infer::{LlmEngine, TokenStream};
@@ -83,20 +83,26 @@ impl GoniKernel {
                     .select(&query_embedding, &candidates, 2048)
                     .await;
 
-                // Simple prompt augmentation: list selected chunk ids.
-                let mut ctx_ids = String::new();
+                // Append selected context text to prompt if available.
+                let mut ctx_block = String::new();
                 for idx in &selection.indices {
                     if let Some(chunk) = candidates.get(*idx as usize) {
-                        ctx_ids.push_str("- ");
-                        ctx_ids.push_str(chunk.id);
-                        ctx_ids.push('\n');
+                        if let Some(text) = chunk.text {
+                            ctx_block.push_str("- ");
+                            ctx_block.push_str(text);
+                            ctx_block.push('\n');
+                        } else {
+                            ctx_block.push_str("- ");
+                            ctx_block.push_str(chunk.id);
+                            ctx_block.push('\n');
+                        }
                     }
                 }
 
-                let aug_prompt = if ctx_ids.is_empty() {
+                let aug_prompt = if ctx_block.is_empty() {
                     prompt.to_string()
                 } else {
-                    format!("{}\n\nContext:\n{}", prompt, ctx_ids)
+                    format!("{}\n\nContext:\n{}", prompt, ctx_block)
                 };
 
                 (selection, aug_prompt)
