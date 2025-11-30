@@ -218,3 +218,45 @@ Shared documentation:
 We are aiming at a **real, buildable MVP**, not a sci-fi spec - but we do want to stay aligned with where hardware and AI tooling will be in **2026-2027**.
 
 ---
+
+## Quickstart (local stack)
+
+Prereqs: Docker, docker-compose. From repo root:
+
+1. Build kernel image (or let compose build):  
+   `docker build -t ghcr.io/duracell04/goni-http:latest software/kernel`
+
+2. Run stack:  
+   `docker-compose -f software/docker-compose.yml up`
+
+Services:  
+- `llm-local` (vLLM) at `http://localhost:8000/v1`  
+- `vecdb` (Qdrant) at `http://localhost:6333`  
+- `orchestrator` (goni-http) at `http://localhost:7000`  
+- `gateway` mapped from port 3000 -> 443 (adjust in compose as needed)
+
+Env vars of interest:  
+- `LLM_LOCAL_URL` (default: `http://llm-local:8000/v1`)  
+- `LLM_MODEL` (default: `mistralai/Mistral-7B-Instruct-v0.3`)  
+- `QDRANT_HTTP_URL` (default: `http://vecdb:6333`)  
+- `QDRANT_COLLECTION` (default: `default`)  
+- `EMBED_DIM` (default: `1024`)
+
+## Quickstart (k8s / k3s)
+
+Prereqs: kubectl + kustomize, k3s/cluster with storage class.
+
+1. Build/push images (adjust registry):  
+   `docker build -t ghcr.io/duracell04/goni-http:latest software/kernel`  
+   `docker push ghcr.io/duracell04/goni-http:latest`
+
+2. Deploy single-node overlay:  
+   `kubectl apply -k software/k8s/overlays/single-node`
+
+Services:  
+- `llm-local.goni.svc:8000`  
+- `vecdb.goni.svc:6333/6334`  
+- `orchestrator.goni.svc:7000`  
+- `gateway.goni.svc:80` (ingress at `goni.local` if using provided ingress)
+
+PVC: `goni-models-pvc` (50Gi) created by base manifests. Adjust storage class if needed.
