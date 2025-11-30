@@ -1,9 +1,11 @@
-use std::collections::VecDeque;
+﻿use std::collections::VecDeque;
 use std::sync::Arc;
 
 use async_trait::async_trait;
-use goni_types::{GoniBatch, TaskClass};
+use goni_types::{GoniBatch, TaskClass, BatchMeta};
 use tokio::sync::Mutex;
+use arrow::record_batch::RecordBatch;
+use arrow::datatypes::Schema;
 
 /// Core scheduling interface.
 #[async_trait]
@@ -18,7 +20,7 @@ pub struct SchedError {
 }
 
 /// Simple in-memory MaxWeight-ish scheduler.
-/// For now we assume same service rate across classes; later you plug in EMA-based �.
+/// For now we assume same service rate across classes; later you plug in EMA-based µ.
 pub struct InMemoryScheduler {
     inner: Mutex<Inner>,
 }
@@ -86,5 +88,35 @@ impl Scheduler for InMemoryScheduler {
         } else {
             None
         }
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use std::sync::Arc;
+
+    fn dummy_batch(class: TaskClass) -> GoniBatch {
+        let schema = Arc::new(Schema::empty());
+        let batch = RecordBatch::new_empty(schema);
+        GoniBatch {
+            data: Arc::new(batch),
+            meta: BatchMeta {
+                id: uuid::Uuid::new_v4(),
+                class,
+                arrival_ts: std::time::Instant::now(),
+                est_tokens: 1,
+            },
+        }
+    }
+
+    #[tokio::test]
+    async fn interactive_preferred_over_background() {
+        let sched = InMemoryScheduler::new();
+        sched.submit(dummy_batch(TaskClass::Background)).await.unwrap();
+        sched.submit(dummy_batch(TaskClass::Interactive)).await.unwrap();
+
+        let first = sched.next().await.expect("should pop a batch");
+        assert_eq!(first.meta.class, TaskClass::Interactive);
     }
 }

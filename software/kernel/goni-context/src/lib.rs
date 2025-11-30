@@ -368,3 +368,42 @@ impl KvPager for NullKvPager {
         Ok(())
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[tokio::test]
+    async fn selector_respects_budget_and_is_deterministic() {
+        let selector = FacilityLocationSelector::new(0.1);
+        let query = vec![1.0_f32, 0.0];
+
+        let candidates = vec![
+            CandidateChunk {
+                id: "a",
+                tokens: 3,
+                embedding: &[1.0, 0.0],
+                relevance: 0.9,
+            },
+            CandidateChunk {
+                id: "b",
+                tokens: 2,
+                embedding: &[0.0, 1.0],
+                relevance: 0.8,
+            },
+            CandidateChunk {
+                id: "c",
+                tokens: 10,
+                embedding: &[0.7, 0.7],
+                relevance: 0.5,
+            },
+        ];
+
+        let sel1 = selector.select(&query, &candidates, 4).await;
+        let sel2 = selector.select(&query, &candidates, 4).await;
+
+        assert!(sel1.total_tokens <= 4);
+        assert_eq!(sel1.indices, sel2.indices, "deterministic selection");
+        assert!(!sel1.indices.is_empty(), "should select at least one chunk");
+    }
+}
