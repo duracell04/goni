@@ -2,6 +2,8 @@
 
 Arrow-first, v1.0 schemas for the eight shipped tables. Each table is `Spine + Payload`; `row_id` == domain PK.
 
+**Executable spec:** These schemas are implemented by `software/kernel/goni-schema` via the `define_tables!` block in `goni-schema/src/lib.rs`. This document and that DSL must stay in sync.
+
 ## Plane 𝒜 – Knowledge (immutable)
 
 ### Docs
