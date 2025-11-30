@@ -1,4 +1,4 @@
-Ôªø# 90 ‚Äì Architecture & Implementation Decisions (Mathematical Form)
+# 90 ñ Architecture & Implementation Decisions (Mathematical Form)
 
 Status: Living document
 Purpose: Record **deliberate design choices** in a way that makes their formal implications explicit.
@@ -7,31 +7,31 @@ Purpose: Record **deliberate design choices** in a way that makes their formal i
 
 ## Index
 
-- D-001 ‚Äì Local-first, offline-capable by definition  
-- D-002 ‚Äì Arrow Spine as the canonical category \(\mathcal{A}\)  
-- D-003 ‚Äì Affine, zero-copy morphisms in hot paths  
-- D-004 ‚Äì Three-plane decomposition (\(\mathcal{A},\mathcal{X},\mathcal{K}\))  
-- D-005 ‚Äì Single-node kernel, process structure is secondary  
-- D-006 ‚Äì Wasm as the extension substrate (effectful category)  
-- D-007 ‚Äì Submodular context selection with explicit bounds  
-- D-008 ‚Äì Lyapunov / MaxWeight scheduler as the unique work arbiter  
-- D-009 ‚Äì Small-then-big model routing with regret budget  
-- D-010 ‚Äì No implicit network morphisms (no hidden cloud)  
-- D-011 ‚Äì Strong default parameters; configuration bounded by invariants  
-- D-012 ‚Äì Monorepo + layered crate graph as DAG of modules  
-- D-013 ‚Äì Metrics as first-class objects in \(\mathcal{A}\)  
-- D-014 ‚Äì Invariants and theorems over ad-hoc tuning  
+- D-001 ñ Local-first, offline-capable by definition  
+- D-002 ñ Arrow Spine as the canonical category \(\mathcal{A}\)  
+- D-003 ñ Affine, zero-copy morphisms in hot paths  
+- D-004 ñ Three-plane decomposition (\(\mathcal{A},\mathcal{X},\mathcal{K}\))  
+- D-005 ñ Single-node kernel, process structure is secondary  
+- D-006 ñ Wasm as the extension substrate (effectful category)  
+- D-007 ñ Submodular context selection with explicit bounds  
+- D-008 ñ Lyapunov / MaxWeight scheduler as the unique work arbiter  
+- D-009 ñ Small-then-big model routing with regret budget  
+- D-010 ñ No implicit network morphisms (no hidden cloud)  
+- D-011 ñ Strong default parameters; configuration bounded by invariants  
+- D-012 ñ Monorepo + layered crate graph as DAG of modules  
+- D-013 ñ Metrics as first-class objects in \(\mathcal{A}\)  
+- D-014 ñ Invariants and theorems over ad-hoc tuning  
 
 ---
 
-## D-001 ‚Äì Local-first, offline-capable by definition
+## D-001 ñ Local-first, offline-capable by definition
 
 **Formal statement**
 
 A node \(N\) is *valid* iff the function
-\[
+$$
 \mathsf{Run} : \mathsf{Req} \to \mathsf{Stream}(\text{Token}) \times \mathsf{Log}
-\]
+$$
 is total and computable **using only local state and local compute**.
 
 Equivalently: in the category of effectful computations \(\mathcal{A}^\mathsf{eff}\), any morphism used by the kernel must have an implementation that does not depend on remote network calls.
@@ -46,18 +46,18 @@ Equivalently: in the category of effectful computations \(\mathcal{A}^\mathsf{ef
 Any network effect \(e \in \mathsf{Effect}(\mathcal{A}^\mathsf{eff})\) is:
 
 - Either outside the kernel (connectors, opt-in sync),  
-- Or explicitly marked as ‚Äúnon-essential‚Äù (failure does not break \(\mathsf{Run}\) for local requests).
+- Or explicitly marked as ìnon-essentialî (failure does not break \(\mathsf{Run}\) for local requests).
 
 ---
 
-## D-002 ‚Äì Arrow Spine as the canonical category \(\mathcal{A}\)
+## D-002 ñ Arrow Spine as the canonical category \(\mathcal{A}\)
 
 **Formal statement**
 
 All structured internal state is represented as objects of a single category:
-\[
+$$
 \mathcal{A} \equiv \mathcal{A}_{rr}^{\text{affine}}
-\]
+$$
 (see 20-architecture) built on Arrow schemas and `RecordBatch`es.
 
 Any new structured data type MUST:
@@ -74,14 +74,14 @@ Any new structured data type MUST:
 
 - Code that manipulates structured data directly in ad-hoc formats is considered **non-conformant**.  
 - For interoperability (e.g. with SQL), we define **functors**:
-  \[
+  $$
   F : \mathcal{A} \to \mathcal{B},
-  \]
+  $$
   e.g. to a relational category, instead of mutating foreign stores directly.
 
 ---
 
-## D-003 ‚Äì Affine, zero-copy morphisms in hot paths
+## D-003 ñ Affine, zero-copy morphisms in hot paths
 
 **Formal statement**
 
@@ -91,15 +91,15 @@ We distinguish:
 - \(\mathcal{A}^{\text{cold}}\): morphisms off hot paths (debug, export).
 
 Constraint:
-\[
+$$
 \mathcal{A}^{\text{hot}} \subseteq \mathcal{A}_{rr}^{\text{affine}}.
-\]
+$$
 
 That is, for all \(f \in \mathcal{A}^{\text{hot}}\),
-\[
+$$
 \Delta_\text{alloc}(f^\#, B_S) = 0
 \quad\forall B_S.
-\]
+$$
 
 **Rationale**
 
@@ -113,20 +113,20 @@ That is, for all \(f \in \mathcal{A}^{\text{hot}}\),
 
 ---
 
-## D-004 ‚Äì Three-plane decomposition (\(\mathcal{A},\mathcal{X},\mathcal{K}\))
+## D-004 ñ Three-plane decomposition (\(\mathcal{A},\mathcal{X},\mathcal{K}\))
 
 **Formal statement**
 
 The semantics of a node are factored as:
-\[
+$$
 \mathsf{Run} = F_{\mathcal{E}} \circ F_{\mathcal{K}} \circ F_{\mathcal{X}} \circ F_{\mathcal{A}}
-\]
+$$
 with:
 
-- \(F_{\mathcal{A}}\) ‚Äì retrieves/manipulates data purely via \(\mathcal{A}\).  
-- \(F_{\mathcal{X}}\) ‚Äì solves a submodular optimisation problem over retrieved chunks.  
-- \(F_{\mathcal{K}}\) ‚Äì schedules and routes work using \(\mathcal{K}\).  
-- \(F_{\mathcal{E}}\) ‚Äì executes engines / tools (\(\mathcal{E}\)).
+- \(F_{\mathcal{A}}\) ñ retrieves/manipulates data purely via \(\mathcal{A}\).  
+- \(F_{\mathcal{X}}\) ñ solves a submodular optimisation problem over retrieved chunks.  
+- \(F_{\mathcal{K}}\) ñ schedules and routes work using \(\mathcal{K}\).  
+- \(F_{\mathcal{E}}\) ñ executes engines / tools (\(\mathcal{E}\)).
 
 **Rationale**
 
@@ -135,19 +135,19 @@ with:
 
 **Consequence**
 
-- Architectural reviews must ask: ‚ÄúWhich plane does this feature belong to?‚Äù  
-- ‚ÄúShortcut‚Äù code that calls models directly out of a connector is rejected by design.
+- Architectural reviews must ask: ìWhich plane does this feature belong to?î  
+- ìShortcutî code that calls models directly out of a connector is rejected by design.
 
 ---
 
-## D-005 ‚Äì Single-node kernel, process structure is secondary
+## D-005 ñ Single-node kernel, process structure is secondary
 
 **Formal statement**
 
 We treat the node as a single abstract machine implementing:
-\[
+$$
 \mathcal{A}, \mathcal{X}, \mathcal{K}, \mathcal{E}
-\]
+$$
 regardless of how many OS processes are involved.
 
 The initial implementation uses **one process** (`goni-node`) that hosts all four components.
@@ -163,7 +163,7 @@ The initial implementation uses **one process** (`goni-node`) that hosts all fou
 
 ---
 
-## D-006 ‚Äì Wasm as the extension substrate (effectful category)
+## D-006 ñ Wasm as the extension substrate (effectful category)
 
 **Formal statement**
 
@@ -173,9 +173,9 @@ Untrusted extensions (tools, agents, connectors) are **not** allowed to define m
 - Side effects (I/O, network) are modelled as morphisms annotated with a capability set.
 
 Let \(W\) be a Wasm module; we associate a capability set \(\mathsf{Cap}(W)\). For any effectful morphism \(f_W \in \mathcal{A}^\mathsf{eff}\) implemented by \(W\):
-\[
+$$
 \mathsf{Effects}(f_W) \subseteq \mathsf{Cap}(W).
-\]
+$$
 
 **Rationale**
 
@@ -189,14 +189,14 @@ Let \(W\) be a Wasm module; we associate a capability set \(\mathsf{Cap}(W)\). F
 
 ---
 
-## D-007 ‚Äì Submodular context selection with explicit bounds
+## D-007 ñ Submodular context selection with explicit bounds
 
 **Formal statement**
 
 Context selection is always expressed as:
-\[
+$$
 \max_{S \subseteq V} F(S) \quad \text{s.t. } \sum_{i \in S} c_i \le B
-\]
+$$
 where \(F\) is **monotone submodular**, and solved using a greedy (or accelerated greedy) algorithm with known approximation guarantees (Theorem 2.2).
 
 **Rationale**
@@ -212,18 +212,18 @@ where \(F\) is **monotone submodular**, and solved using a greedy (or accelerate
 
 ---
 
-## D-008 ‚Äì Lyapunov / MaxWeight scheduler as the unique work arbiter
+## D-008 ñ Lyapunov / MaxWeight scheduler as the unique work arbiter
 
 **Formal statement**
 
-All work units (LLM calls, embeddings, indexing, compaction) are represented as jobs in the queueing network \(\mathcal{K}\). No component is allowed to maintain a ‚Äúhidden‚Äù unbounded queue outside \(\mathcal{K}\).
+All work units (LLM calls, embeddings, indexing, compaction) are represented as jobs in the queueing network \(\mathcal{K}\). No component is allowed to maintain a ìhiddenî unbounded queue outside \(\mathcal{K}\).
 
-Scheduling decisions are made exclusively by Policy K1 (MaxWeight) over classes 1‚Äì3.
+Scheduling decisions are made exclusively by Policy K1 (MaxWeight) over classes 1ñ3.
 
 **Rationale**
 
 - Allows use of queueing theory to prove stability (Theorem 3.1).  
-- Prevents ‚Äúqueueing inside the queue‚Äù anti-patterns that make latencies opaque.
+- Prevents ìqueueing inside the queueî anti-patterns that make latencies opaque.
 
 **Consequence**
 
@@ -232,7 +232,7 @@ Scheduling decisions are made exclusively by Policy K1 (MaxWeight) over classes 
 
 ---
 
-## D-009 ‚Äì Small-then-big model routing with regret budget
+## D-009 ñ Small-then-big model routing with regret budget
 
 **Formal statement**
 
@@ -242,35 +242,35 @@ We treat the routing problem as a decision between:
 - \(a_\ell\): escalate to large model.
 
 We define a **regret budget** \(\bar{R}\), and require that:
-\[
+$$
 \limsup_{T \to \infty} \frac{R_T}{T} \le \bar{R}
-\]
+$$
 with \(\bar{R} = 0.07\) by default.
 
-Here \(R_T\) is regret vs an oracle policy that knows the ‚Äútrue‚Äù best action per request.
+Here \(R_T\) is regret vs an oracle policy that knows the ìtrueî best action per request.
 
 **Rationale**
 
-- Makes the ‚Äúsmall-first‚Äù heuristic quantifiable: we know how much quality we trade for speed/cost.  
+- Makes the ìsmall-firstî heuristic quantifiable: we know how much quality we trade for speed/cost.  
 - Provides a clear metric for validating router training and calibration.
 
 **Consequence**
 
 - Router changes must be evaluated on standard corpora with regret estimates.  
-- ‚ÄúAlways large model‚Äù is allowed as a configuration but is explicitly outside the regret accounting (it corresponds to the oracle upper bound on quality, not the baseline).
+- ìAlways large modelî is allowed as a configuration but is explicitly outside the regret accounting (it corresponds to the oracle upper bound on quality, not the baseline).
 
 ---
 
-## D-010 ‚Äì No implicit network morphisms (no hidden cloud)
+## D-010 ñ No implicit network morphisms (no hidden cloud)
 
 **Formal statement**
 
 Any effectful morphism involving network I/O is explicitly annotated as such in \(\mathcal{A}^\mathsf{eff}\) and requires configuration.
 
 Formally, for any \(f \in \mathcal{A}^\mathsf{eff}\):
-\[
+$$
 \text{if } \texttt{"network"} \in \mathsf{Effects}(f) \text{ then } f \text{ is opt-in and non-essential}.
-\]
+$$
 
 **Rationale**
 
@@ -279,12 +279,12 @@ Formally, for any \(f \in \mathcal{A}^\mathsf{eff}\):
 
 **Consequence**
 
-- Even ‚Äúharmless‚Äù things like version-check pings are explicitly implemented as such and can be disabled.  
+- Even ìharmlessî things like version-check pings are explicitly implemented as such and can be disabled.  
 - This simplifies compliance and audit (security review can focus on a small number of network-effect morphisms).
 
 ---
 
-## D-011 ‚Äì Strong default parameters; configuration bounded by invariants
+## D-011 ñ Strong default parameters; configuration bounded by invariants
 
 **Formal statement**
 
@@ -295,7 +295,7 @@ Example:
 - Context plane: choose \(\gamma\) and \(B\) such that C1 holds and prompt budgets per model are respected.  
 - Control plane: choose admission thresholds so that K1 holds.
 
-Parameters outside these safe regions are allowed only in ‚Äúexperimental‚Äù modes.
+Parameters outside these safe regions are allowed only in ìexperimentalî modes.
 
 **Rationale**
 
@@ -309,14 +309,14 @@ Parameters outside these safe regions are allowed only in ‚Äúexperimental‚Äù mod
 
 ---
 
-## D-012 ‚Äì Monorepo + layered crate graph as DAG of modules
+## D-012 ñ Monorepo + layered crate graph as DAG of modules
 
 **Formal statement**
 
 The core project is a monorepo whose crate dependency graph is a **directed acyclic graph (DAG)**:
 
 - There exists a partial order \(\prec\) on crates such that if crate \(A\) depends on crate \(B\), then \(B \prec A\).  
-- ‚ÄúLower‚Äù crates are closer to the math (Arrow, scheduler); ‚Äúhigher‚Äù crates implement user-facing behaviour.
+- ìLowerî crates are closer to the math (Arrow, scheduler); ìhigherî crates implement user-facing behaviour.
 
 **Rationale**
 
@@ -330,7 +330,7 @@ The core project is a monorepo whose crate dependency graph is a **directed acyc
 
 ---
 
-## D-013 ‚Äì Metrics as first-class objects in \(\mathcal{A}\)
+## D-013 ñ Metrics as first-class objects in \(\mathcal{A}\)
 
 **Formal statement**
 
@@ -338,9 +338,9 @@ All metrics, logs and traces are represented as objects in \(\mathcal{A}\):
 
 - There exists a schema \(S_\text{log}\) for logs, \(S_\text{metric}\) for metrics, etc.  
 - Emission of metrics is a morphism:
-  \[
+  $$
   \mathsf{Emit} : S \to S \oplus S_\text{metric}
-  \]
+  $$
   in \(\mathcal{A}^{\text{cold}}\).
 
 **Rationale**
@@ -350,12 +350,12 @@ All metrics, logs and traces are represented as objects in \(\mathcal{A}\):
 
 **Consequence**
 
-- We must define stable schemas for these ‚Äúmeta‚Äù objects and version them.  
+- We must define stable schemas for these ìmetaî objects and version them.  
 - External observability systems (Prometheus, OTLP, etc.) are treated as sinks fed from \(\mathcal{A}\), not as authoritative stores.
 
 ---
 
-## D-014 ‚Äì Invariants and theorems over ad-hoc tuning
+## D-014 ñ Invariants and theorems over ad-hoc tuning
 
 **Formal statement**
 
@@ -369,7 +369,7 @@ For each major subsystem we choose a set of **invariants** and/or **theorems**, 
 We then require that:
 
 1. CI includes tests or simulations that exercise these invariants.  
-2. ‚ÄúOptimisations‚Äù that would break an invariant are not allowed in stable releases.
+2. ìOptimisationsî that would break an invariant are not allowed in stable releases.
 
 **Rationale**
 
@@ -379,7 +379,7 @@ We then require that:
 **Consequence**
 
 - Some micro-optimisations that improve a single benchmark but violate zero-copy or stability constraints are rejected.  
-- Changes to invariants go through an explicit ‚Äúamendment‚Äù process in this document (with versioning and rationale), so we keep a history of our mathematical commitments.
+- Changes to invariants go through an explicit ìamendmentî process in this document (with versioning and rationale), so we keep a history of our mathematical commitments.
 
 ---
 

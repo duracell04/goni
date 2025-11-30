@@ -1,7 +1,7 @@
-Ôªø# 95 ‚Äì Theoretical Appendix
+# 95 ñ Theoretical Appendix
 
 Status: v0.1 (2025-11-30)
-Purpose: Summarise the mathematical structures behind Goni‚Äôs design.
+Purpose: Summarise the mathematical structures behind Goniís design.
 Audience: Reviewers, academic readers, formal methods / queueing / optimisation people.
 
 ---
@@ -11,13 +11,13 @@ Audience: Reviewers, academic readers, formal methods / queueing / optimisation 
 ### 1.1 Objects: schemas, instances, and `RecordBatch`
 
 We model the Data Plane as a symmetric monoidal category
-\[
+$$
 \mathcal{A} \equiv \mathcal{A}_{rr}^{\text{affine}},
-\]
+$$
 whose objects are Arrow schemas and whose morphisms are affine, zero-copy transforms.
 
 - Each schema \(S\) corresponds to an object.  
-- Instances \(B_S\) correspond to generalised ‚Äústates‚Äù of that object.  
+- Instances \(B_S\) correspond to generalised ìstatesî of that object.  
 - A transform \(f : S \to T\) is a morphism \(f^\#: \mathsf{Inst}(S) \to \mathsf{Inst}(T)\) respecting the affine/zero-copy constraints.
 
 The monoidal product \(\oplus\) is **schema concatenation**, corresponding physically to `RecordBatch::try_new` with multiple columns sharing underlying buffers.
@@ -36,7 +36,7 @@ Goni uses this relational perspective to reason about:
 
 - Joins and filters as relations.  
 - Feedback between data and scheduler decisions.  
-- The possibility of ‚Äúwiring diagrams‚Äù √† la signal-flow calculus.
+- The possibility of ìwiring diagramsî ‡ la signal-flow calculus.
 
 A design requirement is that every relational diagram used at this level must be **realizable** by an implementation in \(\mathcal{A}_{rr}^{\text{affine}}\) plus a finite set of explicit materialisation points.
 
@@ -56,9 +56,9 @@ Given:
 - Costs \(c_j\) and budget \(B\).
 
 Define:
-\[
+$$
 F(S) = \sum_{i \in V} \max_{j \in S} k(i,j) + \gamma \sum_{j \in S} r_j, \quad S \subseteq V.
-\]
+$$
 
 This is a classic **facility-location** term (coverage of \(V\) by facilities \(S\)) plus a modular term (relevance of facilities).
 
@@ -70,10 +70,10 @@ It is known that:
 - A non-negative sum of submodular functions is submodular.  
 - Adding a non-negative modular term preserves submodularity and monotonicity.
 
-Thus, Goni‚Äôs context objective \(F\) is **monotone submodular**. By Nemhauser et al., greedy maximisation under a cardinality or simple knapsack constraint yields:
-\[
+Thus, Goniís context objective \(F\) is **monotone submodular**. By Nemhauser et al., greedy maximisation under a cardinality or simple knapsack constraint yields:
+$$
 F(S_{\text{greedy}}) \ge (1 - 1/e)\,F(S^*),
-\]
+$$
 where \(S^*\) is the optimal set. This gives a clean **approximation guarantee** for each context selection decision.
 
 ---
@@ -87,30 +87,30 @@ We consider a discrete-time queueing model with three classes:
 - Interactive, background, maintenance.  
 - Arrivals \(A_i(t)\) with rates \(\lambda_i\), services with maximum rates \(\mu_i^{\max}\).  
 - Queue lengths \(Q_i(t)\) evolving according to:
-  \[
+  $$
   Q_i(t+1) = \max(Q_i(t) - S_i(t), 0) + A_i(t),
-  \]
+  $$
   where \(S_i(t)\) is the service given to class \(i\) at time \(t\).
 
 The **capacity region** is:
-\[
+$$
 \mathcal{C} = \left\{ \boldsymbol{\lambda}\in\mathbb{R}^3_+ :
 \sum_{i=1}^3 \frac{\lambda_i}{\mu_i^{\max}} < 1 \right\}.
-\]
+$$
 
 ### 3.2 MaxWeight and Lyapunov drift
 
 We define a quadratic Lyapunov function:
-\[
+$$
 L(\mathbf{Q}) = \mathbf{Q}^\top D\,\mathbf{Q},\quad
 D = \operatorname{diag}(1, 100, 10000),
-\]
+$$
 assigning different penalties to different classes.
 
 The **MaxWeight** policy chooses at each time:
-\[
+$$
 i^*(t) = \arg\max_i \, w_i\,Q_i(t)\,\mu_i(t),
-\]
+$$
 with weights \(w_i\) aligned with the diagonal of \(D\).
 
 Standard results in stochastic network theory show that, under mild conditions (e.g. i.i.d. arrivals, bounded increments), MaxWeight stabilises any arrival vector in the interior of \(\mathcal{C}\):
@@ -133,10 +133,10 @@ The model router faces a two-armed decision at each request:
 
 We assume that:
 
-- There is an underlying random variable \(Z\) (task difficulty) that determines which model is ‚Äúgood enough‚Äù.  
+- There is an underlying random variable \(Z\) (task difficulty) that determines which model is ìgood enoughî.  
 - A learned confidence predictor \(p(x)\) estimates the probability that the small model is sufficient given features of the request and preliminary small-model output.
 
-This is a classic **contextual bandit** problem: features are the context, the two actions yield different rewards (quality vs cost), and the router‚Äôs goal is to minimise regret vs an oracle with knowledge of \(Z\).
+This is a classic **contextual bandit** problem: features are the context, the two actions yield different rewards (quality vs cost), and the routerís goal is to minimise regret vs an oracle with knowledge of \(Z\).
 
 ### 4.2 Threshold policies and regret
 
@@ -150,10 +150,10 @@ One can show that simple **threshold policies** on \(p(x)\) (accept vs escalate)
 Goni does not attempt to derive tight theoretical bounds at this stage; rather, it:
 
 - Formalises regret \(R_T\) and its normalisation \(R_T/T\) as key metrics.  
-- Specifies a target average regret (e.g. ‚â§ 0.07) as a **design constraint**.  
+- Specifies a target average regret (e.g. = 0.07) as a **design constraint**.  
 - Validates policies empirically on labelled datasets.
 
-This makes ‚Äúsmall-then-big‚Äù routing a **controlled approximation**, not a hand-wavy optimisation.
+This makes ìsmall-then-bigî routing a **controlled approximation**, not a hand-wavy optimisation.
 
 ---
 
@@ -165,13 +165,13 @@ The Execution Plane is modelled as an **effectful extension** of the Data Plane:
 - Side effects (file I/O, network, time) are wrapped in capabilities and live in \(\mathcal{A}^\mathsf{eff}\).
 
 Each Wasm tool or engine is parameterised by a **capability set** \(\mathsf{Cap}(W)\), and the host enforces:
-\[
+$$
 \mathsf{Effects}(f_W) \subseteq \mathsf{Cap}(W).
-\]
+$$
 
 The **local-first** requirement is then:
 
-> For the core request‚Üíresponse function \(\mathsf{Run}\), there exists an implementation whose effect trace contains no network capabilities.
+> For the core request?response function \(\mathsf{Run}\), there exists an implementation whose effect trace contains no network capabilities.
 
 This allows us to reason about privacy and sovereignty at the level of the effect system: a conformant local node is simply one where \(\mathsf{Run}\) lives in the **sub-category of local-only effects**.
 
@@ -179,7 +179,7 @@ This allows us to reason about privacy and sovereignty at the level of the effec
 
 ## 6. Summary
 
-Goni‚Äôs architectural choices are not just ‚Äúgood engineering taste‚Äù; they are anchored in:
+Goniís architectural choices are not just ìgood engineering tasteî; they are anchored in:
 
 - **Category theory** for composable, zero-copy dataflow.  
 - **Submodular optimisation** for context selection with approximation guarantees.  
@@ -187,4 +187,4 @@ Goni‚Äôs architectural choices are not just ‚Äúgood engineering taste‚Äù; they a
 - **Bandit theory** for model routing with bounded regret.  
 - **Capability systems** for safety and local-first operation.
 
-The conformance criteria in ¬ß30 are simply the *operationalisation* of these mathematical commitments: they specify what must be proved, what must be tested, and what it means for an implementation to ‚Äúrealise‚Äù the theoretical model.
+The conformance criteria in ß30 are simply the *operationalisation* of these mathematical commitments: they specify what must be proved, what must be tested, and what it means for an implementation to ìrealiseî the theoretical model.
