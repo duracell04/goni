@@ -12,6 +12,16 @@ This repo is **not** a marketing site. It's a working space for:
 
 ---
 
+## How to read this repo
+
+- **Product/story track**: start with `docs/goni-story.md`, then `docs/goni-whitepaper.md` for the deep architecture narrative, and `docs/goni-swot.md` for positioning.
+- **Hardware track**: `hardware/00-overview.md` -> `hardware/10-requirements.md` -> `hardware/20-architecture-options.md` -> `hardware/25-hardware-layers-and-supplier-map.md`, with accepted choices in `hardware/90-decisions.md`.
+- **Software track**: `software/00-overview.md` -> `software/10-requirements.md` -> `software/20-architecture.md` -> data spine in `software/50-data/00-index.md` (and `53-schema-dsl-and-macros.md` for the Arrow DSL) -> accepted choices in `software/90-decisions.md`.
+- **Data spine <-> kernel**: the planes and TXT axiom are defined in `software/50-data/10-axioms-and-planes.md` and enforced in code at `software/kernel/goni-schema/src/lib.rs`.
+- **Runs and deployments**: for a quick local stack, see `software/docker-compose.yml`; for cluster overlays, see `software/k8s/`.
+
+---
+
 ## 1. What Goni MVP is (and is not)
 
 ### 1.1 Product idea in one paragraph
@@ -265,3 +275,4 @@ Services:
 - `gateway.goni.svc:80` (ingress at `goni.local` if using provided ingress)
 
 PVC: `goni-models-pvc` (50Gi) created by base manifests. Adjust storage class if needed.
+

@@ -1,4 +1,4 @@
-# Goni Software – Overview (MVP)
+ï»¿# Goni Software - Overview (MVP)
 
 This folder covers the **software side of Goni**:
 
@@ -7,12 +7,7 @@ This folder covers the **software side of Goni**:
 - how it connects to user data sources and (optionally) cloud models,
 - and how multiple nodes cooperate as a small cluster.
 
-The goal is to define a software stack that turns the hardware into:
-
-> a **personal AI appliance** – private by default, locally useful even offline, and able to scale out across several boxes.
-
-We stay **technology-agnostic** here: no specific frameworks or vendors are mandated in this overview.  
-Details about concrete tools and implementations belong in separate design documents.
+The goal is to define a software stack that turns the hardware into a **personal AI appliance**: private by default, useful offline, and able to scale out across several boxes.
 
 ---
 
@@ -40,7 +35,7 @@ At a high level, Goni software should enable the node to:
 - Expose a **clean interface**:
   - web UI for chat and configuration,
   - network API for editors, terminals, and other tools,
-  - optional remote access from the user’s other devices.
+  - optional remote access from the user's other devices.
 
 - Participate in a **mesh / cluster**:
   - multiple Goni nodes on a network should behave as one logical system,
@@ -50,31 +45,27 @@ At a high level, Goni software should enable the node to:
 
 ## 2. What this folder contains
 
-- [`10-requirements.md`](./10-requirements.md)  
-  The main reference for **software requirements** (capabilities, security, UX expectations, mesh behaviour, cloud usage policy).  
-  Any architectural proposal should be checked against these requirements.
+- [`10-requirements.md`](./10-requirements.md)
+  The main reference for **software requirements** (capabilities, security, UX expectations, mesh behaviour, cloud usage policy). Any architectural proposal should be checked against these requirements.
 
-- `20-architecture.md`  
-  (To be filled) High-level architecture for:
-  - single-node service layout,
-  - multi-node / mesh topology,
-  - how local models, data indexing, orchestration, and APIs fit together.
+- `20-architecture.md`
+  (To be filled) High-level architecture for single-node service layout, multi-node / mesh topology, and how local models, data indexing, orchestration, and APIs fit together.
 
-- `30-components/`  
-  Detailed notes for each major component:
-  - base OS and provisioning,
-  - orchestrator logic (routing between local and cloud),
-  - model runtime, vector database, mesh coordination,
-  - any background workers or agents.
+- `30-components/`
+  Detailed notes for each major component: base OS and provisioning, orchestrator logic (routing between local and cloud), model runtime, vector database, mesh coordination, and any background workers or agents.
 
-- `40-apis-and-ui/`  
-  Description of:
-  - public API surface (e.g. chat, completion, tools),
-  - authentication and access control,
-  - dashboard / management UI concepts.
+- `40-apis-and-ui/`
+  Description of the public API surface (e.g. chat, completion, tools), authentication and access control, and dashboard / management UI concepts.
 
-- `90-decisions.md`  
+- `50-data/`
+  Data spine, planes, and TXT axiom. Start with `50-data/00-index.md`, then `10-axioms-and-planes.md`, and `53-schema-dsl-and-macros.md` to see how the Arrow schema DSL maps into the kernel.
+
+- `90-decisions.md`
   Accepted software design decisions (ADR-style). Each entry should briefly describe the choice, alternatives, and rationale.
+
+Runnable references:
+- local stack: `software/docker-compose.yml`
+- k8s overlays: `software/k8s/`
 
 ---
 
@@ -91,3 +82,16 @@ At a high level, Goni software should enable the node to:
    - add an entry to `90-decisions.md` to record the decision and its consequences.
 
 The aim is to arrive at a **coherent, minimal software stack** that implements the agreed requirements and can evolve as hardware and AI tools advance.
+
+---
+
+## Kernel crate map (MVP)
+
+- `goni-core`: wires planes together; orchestrator surface used by HTTP and CLI fronts.
+- `goni-store`: data plane abstraction; Arrow spine and Qdrant stub.
+- `goni-context`: context selector and KV pager traits; TXT axiom-aware helpers.
+- `goni-sched`: scheduler traits and in-memory scheduler.
+- `goni-router`: routing and escalation policy decisions.
+- `goni-infer`: inference engine abstraction and HTTP vLLM client.
+- `goni-schema`: generated Arrow schemas for the planes (from `50-data` DSL).
+- `goni-http` / `goni-cli`: thin entrypoints that exercise the kernel.
