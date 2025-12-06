@@ -1,8 +1,8 @@
 ﻿# Goni MVP
 
-> **Goni** is a small, local-first AI node - a matte-black box in your home or office - that runs your personal AI assistant on your own hardware, can mesh with other nodes, and optionally talk to the cloud when it truly helps.
+> **Goni** is a compact, local-first AI node - a matte-black box in your home or office - that runs your personal AI assistant on your own hardware, can mesh with other nodes, and optionally talk to the cloud when it truly helps.
 
-This repo is **not** a marketing site. It's a working space for:
+It's a working space for:
 
 - hardware engineers  
 - software engineers  
@@ -34,7 +34,7 @@ Goni is a **local AI super-node** for individuals and small teams:
 - Can attach a **Grace Blackwell GN100-class mini-DGX** later for "Goni Max / Enterprise".
 
 From the user's perspective:  
-> "I buy a box once for ~$10k, then I pay $750/month and my AI is faster, more private, and more predictable than whatever cloud dashboard I was using before."
+> "I buy a high tech box once for a fixed amount, then I pay monthly subscription and my (local) AI (+ the AI coucil it meets when it goes on the internet ) is faster, more private, and more predictable than whatever cloud dashboard I was using before. This will give me a huge poost in productivity and make all business or chore like intercation with techology redundand"
 
 ### 1.2 Non-goals (for MVP)
 
@@ -108,7 +108,7 @@ These are the guardrails for all discussions in this repo.
 
 ---
 
-## 3. High-level architecture (10k ft view)
+## 3. High-level architecture
 
 ### 3.1 Single node
 
