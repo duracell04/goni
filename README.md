@@ -64,7 +64,7 @@ These are the guardrails for all discussions in this repo. If you propose change
 ### 2.1 Use-case constraints
 
 - **Local-first**: 80-90% of tokens should be served by **local models** on Goni.  
-- **Cloud-as-needed**: GPT-4 / Claude / etc. used only when:
+- **Cloud-as-needed**: LLM Council used only when:
   - explicitly requested by user, or
   - orchestrator deems task "high difficulty" or requires long context.
 
