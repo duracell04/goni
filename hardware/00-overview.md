@@ -1,4 +1,4 @@
-# Goni Hardware – Overview (MVP)
+ï»¿# Goni Hardware - Overview (MVP)
 
 This folder contains everything related to the **physical Goni node**:
 
@@ -24,7 +24,7 @@ no specific CPU/GPU brands are required in this file. What matters are the behav
 At a high level, the Goni hardware should:
 
 - **Look and feel** like a high-end, minimalistic device:
-  - compact rectangular box (roughly 6–8 L volume),
+  - compact rectangular box (roughly 6-8 L volume),
   - matte, neutral finish (e.g. black / dark grey),
   - one power button and one calm status light bar on the front,
   - no RGB, no gamer aesthetics.
@@ -42,7 +42,7 @@ At a high level, the Goni hardware should:
 
 - **Act as a cluster node**:
   - multiple Goni boxes on a network should combine into one logical AI system,
-  - nothing beyond normal networking hardware should be required for a small cluster (2–4 nodes).
+  - nothing beyond normal networking hardware should be required for a small cluster (2-4 nodes).
 
 ---
 
@@ -51,6 +51,9 @@ At a high level, the Goni hardware should:
 - [`10-requirements.md`](./10-requirements.md)  
   The primary reference for **hardware requirements** (size, power, connectivity, noise, serviceability, future-proofing).  
   If you want to propose a different enclosure, power profile, or base platform, start by checking and updating this file.
+
+- [`25-hardware-layers-and-supplier-map.md`](./25-hardware-layers-and-supplier-map.md)  
+  Concise map of **accelerator/supplier landscape** and how it aligns to Goni tiers (v1 / Pro / Max) and `LlmEngine` backends.
 
 - `20-architecture-options.md`  
   (To be filled) Design options and trade-offs: e.g. APU-only vs APU+GPU, different layout concepts, etc.
