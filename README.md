@@ -2,7 +2,7 @@
 
 > **Goni** is a blueprint and prototype stack for a compact, local-first AI node you could run in your home or office; it meshes with other nodes and can talk to the cloud when it helps. This is not a boxed product yet.
 
-This repo = open-source blueprint + prototype lab. A physical MVP will be built if/when funded.
+This repo = open-source blueprint + prototype lab.
 
 > **Status (prototype lab, not shippable hardware)**
 > - Blueprint + prototype lab; APIs/BOM may change.
@@ -15,7 +15,7 @@ This space is for:
 - software engineers  
 - stakeholders (product, ops, early adopters)
 
-.to converge on the **best possible Goni MVP**.
+.to converge on the **best possible Goni**.
 
 ---
 
@@ -33,7 +33,7 @@ This space is for:
 
 ### 1.1 Product idea in one paragraph
 
-This is the **target MVP experience** we are converging toward (not what you get by cloning the repo today).
+This is the **target experience** we are converging toward (not what you get by cloning the repo today).
 
 Goni is a **local AI super-node** for individuals and small teams:
 
