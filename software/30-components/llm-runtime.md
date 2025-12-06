@@ -106,6 +106,9 @@ Concrete engines (llama.cpp, vLLM, etc.) implement LlmRuntime:
 * **Streaming invariant**
   First token latency for interactive jobs stays within configured SLO (e.g. p99 < 1.0 s on reference hardware).
 
+* **Deterministic preset**
+  Runtime exposes a deterministic profile for audit/self-loop runs: temperature 0, fixed seed when backend supports it, batch size 1, no continuous/dynamic batching, single worker/thread (or CPU-only fallback), TF32 disabled on NVIDIA. Backend flags must be set accordingly (e.g. vLLM `--enable-deterministic-inference`; llama.cpp/Ollama single slot/thread), and the runtime logs device + driver hashes with each deterministic run.
+
 ---
 
 ## 5. MVP vs future runtime

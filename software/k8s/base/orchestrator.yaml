@@ -21,6 +21,11 @@ spec:
           env:
             - name: LLM_LOCAL_URL
               value: "http://llm-local.goni.svc.cluster.local:8000/v1"
+            # Deterministic mode for audit/self-loop runs (slower, single-seq):
+            # - name: LLM_DETERMINISTIC
+            #   value: "true"
+            # - name: LLM_SEED
+            #   value: "1234"
             - name: QDRANT_HTTP_URL
               value: "http://vecdb.goni.svc.cluster.local:6333"
             - name: QDRANT_GRPC_URL

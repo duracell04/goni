@@ -1,4 +1,4 @@
-# 30 ñ Conformance Criteria & Proof Obligations (MVP Node)
+Ôªø# 30 ‚Äì Conformance Criteria & Proof Obligations (MVP Node)
 
 Status: v0.1 (2025-11-30)
 Scope: Single-node Goni kernel (no clustering)
@@ -21,7 +21,7 @@ We recap each plane and give:
 - **proof obligations** (math-level),  
 - **empirical checks** (MVP-level validation).
 
-### 1.1 Data Plane \(\mathcal{A}\) ñ Arrow Spine
+### 1.1 Data Plane \(\mathcal{A}\) ‚Äì Arrow Spine
 
 **Object.**  
 A symmetric monoidal category
@@ -46,7 +46,7 @@ $$
 $$
 
 **Invariant A2 (affine use).**  
-Each payload buffer in \(\mathsf{Buf}(B_S)\) appears at most once in \(\mathsf{Buf}(f^\#(B_S))\); i.e. no ìfan-outî of raw buffers on hot paths.
+Each payload buffer in \(\mathsf{Buf}(B_S)\) appears at most once in \(\mathsf{Buf}(f^\#(B_S))\); i.e. no ‚Äúfan-out‚Äù of raw buffers on hot paths.
 
 **Proof obligation (theoretical).**
 
@@ -66,7 +66,7 @@ A node **conforms** on the Data Plane if such tests pass and hot transforms are 
 
 ---
 
-### 1.2 Context Plane \(\mathcal{X}\) ñ Submodular Context Selection
+### 1.2 Context Plane \(\mathcal{X}\) ‚Äì Submodular Context Selection
 
 **Object.**  
 A constrained monotone submodular maximisation problem over a ground set \(V\):
@@ -98,7 +98,7 @@ A constrained monotone submodular maximisation problem over a ground set \(V\):
 
 - Show that a single facility-location term \(\sum_{i} \max_{j\in S} k(i,j)\) with a non-negative similarity kernel \(k\) is monotone submodular.  
 - Show that adding a non-negative modular term \(\gamma \sum_{j\in S} r_j\) preserves monotone submodularity.  
-- Cite or reproduce the NemhauserñWolsey bound for greedy on monotone submodular maximisation under a knapsack or cardinality constraint.
+- Cite or reproduce the Nemhauser‚ÄìWolsey bound for greedy on monotone submodular maximisation under a knapsack or cardinality constraint.
 
 **Empirical check (MVP).**
 
@@ -118,7 +118,7 @@ A node **conforms** on the Context Plane if:
 
 ---
 
-### 1.3 Control Plane \(\mathcal{K}\) ñ Queueing & Router
+### 1.3 Control Plane \(\mathcal{K}\) ‚Äì Queueing & Router
 
 **Object.**  
 A controlled queueing network with:
@@ -156,7 +156,7 @@ And a **router** that chooses between small and large models for each request.
   \mathbb{E}[L(\mathbf{Q}(t+1)) - L(\mathbf{Q}(t)) \mid \mathbf{Q}(t)] \le -\epsilon
   $$
   outside a finite set, for some \(\epsilon > 0\).  
-- Argue that for \(\boldsymbol{\lambda}\) in the interior of the capacity region, MaxWeight satisfies such a condition (citing TassiulasñEphremides style results).  
+- Argue that for \(\boldsymbol{\lambda}\) in the interior of the capacity region, MaxWeight satisfies such a condition (citing Tassiulas‚ÄìEphremides style results).  
 - Conclude positive recurrence / stability of the queue process.
 
 **Empirical check (MVP).**
@@ -196,7 +196,7 @@ $$
 
 **Empirical check (MVP).**
 
-- Use a labelled dataset of requests with ìground-truthî best model decisions (e.g. preference data or accuracy labels).  
+- Use a labelled dataset of requests with ‚Äúground-truth‚Äù best model decisions (e.g. preference data or accuracy labels).  
 - Evaluate empirical regret of the router vs oracle:  
   $$
   \hat{R}_T/T \le 0.1
@@ -211,7 +211,7 @@ A node **conforms** on the Control Plane if:
 
 ---
 
-### 1.4 Execution \(\mathcal{E}\) ñ Engines & Capabilities
+### 1.4 Execution \(\mathcal{E}\) ‚Äì Engines & Capabilities
 
 **Object.**  
 A family of models \(\mathcal{M}\) and tools running in an **effectful extension** of \(\mathcal{A}\):
@@ -248,6 +248,14 @@ is total using only local state and compute; any network I/O is non-essential an
   - Chat + RAG work against local models and local data.  
 - Run that configuration in CI or as a nightly test.
 
+**Invariant E3 (deterministic self-loop).**
+
+When a request is marked deterministic, the engine uses the deterministic preset (single worker/thread, batch size 1, no continuous batching, TF32 off on NVIDIA, seed if supported). Empirical check:
+
+- Run a fixed prompt in a self-loop for \(N\) steps (e.g. \(N=128\)) under the deterministic profile twice.
+- Assert identical token streams (bitwise) and log the backend hardware/driver version used.
+- Fail conformance if drift appears.
+
 ---
 
 ## 2. MVP Conformance Checklist
@@ -279,5 +287,7 @@ A node qualifies as an **MVP-conformant Goni implementation** if:
 
 - [ ] All Wasm tools and engines declare capability sets; host enforces them.  
 - [ ] There exists at least one configuration where all essential functionality runs without network access (local-first invariant).
+- [ ] Deterministic preset passes the self-loop drift check (bitwise-stable tokens for fixed prompt; hardware/driver versions logged).
 
-When these conditions are met, we can credibly claim that a node realises the mathematical architecture of ß20 and ß95, even if the implementation is still minimal or unoptimised.
+When these conditions are met, we can credibly claim that a node realises the mathematical architecture of ¬ß20 and ¬ß95, even if the implementation is still minimal or unoptimised.
+

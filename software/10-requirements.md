@@ -1,4 +1,4 @@
-# Goni Software Requirements (MVP)
+Ôªø# Goni Software Requirements (MVP)
 
 > This document describes what the **final Goni product** should be able to do from a software and system-behaviour perspective.  
 > It is intentionally technology-agnostic and avoids naming specific frameworks, vendors, or libraries.
@@ -10,7 +10,7 @@
 The Goni software stack turns the hardware node into:
 
 - a **local-first personal AI assistant**,
-- a **data hub** for the userís own documents, email, and other sources,
+- a **data hub** for the user‚Äôs own documents, email, and other sources,
 - a **cluster node** that can cooperate with other Goni nodes,
 - a **gateway** to external AI services, used only when they add real value.
 
@@ -45,7 +45,7 @@ At a minimum, a single Goni node should:
 
 5. Expose a **network API** suitable for:
    - integration with local tools (editors, terminals, browsers),
-   - remote access from the userís other devices (laptop, phone, tablet).
+   - remote access from the user‚Äôs other devices (laptop, phone, tablet).
 
 ---
 
@@ -61,7 +61,7 @@ At a minimum, a single Goni node should:
 
 - Local models should be:
   - Loaded, managed, and swapped as needed within the available hardware capacity.
-  - Configurable (e.g. user can opt into a ìbigger but slowerî local model or a ìsmaller but fasterî one).
+  - Configurable (e.g. user can opt into a ‚Äúbigger but slower‚Äù local model or a ‚Äúsmaller but faster‚Äù one).
 
 ### 3.2 Resource Awareness
 
@@ -69,6 +69,10 @@ At a minimum, a single Goni node should:
   - Monitor its own CPU, memory, storage, and accelerator utilisation.
   - Avoid overloading the device to the point of becoming unresponsive.
   - Degrade gracefully under high load (e.g. queue tasks, slow down background jobs).
+  - Provide a **deterministic inference mode** for audit/self-loop workloads:
+    - temperature = 0, fixed seed, batch size 1, no continuous batching.
+    - single worker / single thread (or CPU-only fallback) available even if slower.
+    - record hardware/driver profile with runs so outputs can be reproduced.
 
 ---
 
@@ -82,9 +86,9 @@ At a minimum, a single Goni node should:
   - provide a second opinion on critical content.
 
 - All such calls must be:
-  - **Optional** ñ users can disable cloud usage entirely.
-  - **Transparent** ñ it should be clear when an external service is used.
-  - **Budgeted** ñ the system must enforce configurable ceilings on external usage.
+  - **Optional** ‚Äì users can disable cloud usage entirely.
+  - **Transparent** ‚Äì it should be clear when an external service is used.
+  - **Budgeted** ‚Äì the system must enforce configurable ceilings on external usage.
 
 ### 4.2 No Hidden Data Exfiltration
 
@@ -125,7 +129,7 @@ At a minimum, a single Goni node should:
 ### 6.1 Data Ownership
 
 - All user data and derived artefacts (embeddings, model adapters, logs) stored locally should:
-  - remain under the userís control,
+  - remain under the user‚Äôs control,
   - be exportable and backup-able in a documented way.
 
 ### 6.2 Access Control
@@ -174,7 +178,7 @@ At a minimum, a single Goni node should:
 
 - Users should be able to:
   - see what the system is currently doing (e.g. indexing, training, idle),
-  - view basic resource usage (e.g. ìnode is under heavy load, expect slower repliesî),
+  - view basic resource usage (e.g. ‚Äúnode is under heavy load, expect slower replies‚Äù),
   - manage connected data sources (add/remove email accounts, storage locations, etc.).
 
 ### 7.3 Updates
@@ -184,7 +188,7 @@ At a minimum, a single Goni node should:
   - distinguish between:
     - security/bugfix updates,
     - major feature or model updates,
-  - allow the user to choose update windows (e.g. ìnightlyî, ìmanualî).
+  - allow the user to choose update windows (e.g. ‚Äúnightly‚Äù, ‚Äúmanual‚Äù).
 
 ---
 
@@ -211,4 +215,5 @@ For the MVP, Goni software is **not** intended to be:
 - A fully-fledged replacement for enterprise MLOps platforms.
 
 These may be future directions, but the MVP focuses on **one owner (or small team) per Goni cluster**, with a strong emphasis on local-first personal AI.
+
 

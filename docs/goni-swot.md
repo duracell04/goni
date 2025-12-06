@@ -278,8 +278,9 @@ If it’s not clear that data is safely backed up and restorable, high-value use
 
 - Arrow spine + deterministic logging create:
   - a replayable history of what the system did and why.
+- Deterministic inference preset (batch=1, seed, single worker/CPU option, vLLM `--enable-deterministic-inference`) reduces drift in self-loop/agent runs, strengthening auditability.
 - Potential to:
-  - serve as a compliant “AI record system”,
+  - serve as a compliant "AI record system",
   - integrate with legal / financial workflows.
 
 ---

@@ -371,6 +371,20 @@ We enforce:
 
 This is enforced by a narrow host API surface (`goni-tool-api`), WASI-like capability handles, and resource limits.
 
+### 4.3 Deterministic inference profile
+
+Self-loop / agentic runs have positive Lyapunov exponents (small numeric noise can change token choice). We therefore define a **deterministic profile** for engines:
+
+> **Invariant E2 (Deterministic preset).**
+> If a request is marked deterministic, the engine must execute with:
+> - temperature 0 and fixed seed (if backend supports `seed`),
+> - batch size 1 and no continuous/dynamic batching,
+> - single worker / single thread (or CPU-only path) and TF32 disabled on NVIDIA,
+> - fixed backend flags (e.g. vLLM `--enable-deterministic-inference`), and
+> - recorded hardware/driver hashes in the log.
+>
+> A compliant engine may fall back to a slower profile to satisfy E2, but must not silently drop the request.
+
 ---
 
 ## 5. End-to-end semantics

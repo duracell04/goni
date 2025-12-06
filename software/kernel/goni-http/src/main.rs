@@ -56,6 +56,19 @@ async fn main() -> anyhow::Result<()> {
         .unwrap_or_else(|_| "http://localhost:8000/v1".into());
     let llm_model = std::env::var("LLM_MODEL")
         .unwrap_or_else(|_| "mistralai/Mistral-7B-Instruct-v0.3".into());
+    let llm_deterministic = std::env::var("LLM_DETERMINISTIC")
+        .map(|v| v == "1" || v.to_lowercase() == "true")
+        .unwrap_or(false);
+    let llm_seed = std::env::var("LLM_SEED")
+        .ok()
+        .and_then(|v| v.parse::<u64>().ok());
+
+    if llm_deterministic {
+        println!(
+            "LLM deterministic preset enabled (seed = {:?})",
+            llm_seed
+        );
+    }
 
     // Data plane: prefer Qdrant if configured, else null stub.
     let data_plane: Arc<dyn goni_store::DataPlane> = match std::env::var("QDRANT_HTTP_URL") {
@@ -66,7 +79,12 @@ async fn main() -> anyhow::Result<()> {
     let kv_pager = Arc::new(NullKvPager);
     let scheduler = Arc::new(InMemoryScheduler::new());
     let router = Arc::new(NullRouter);
-    let llm_engine = Arc::new(HttpVllmEngine::new(llm_url, llm_model));
+    let llm_engine = Arc::new(HttpVllmEngine::new(
+        llm_url,
+        llm_model,
+        llm_deterministic,
+        llm_seed,
+    ));
 
     let kernel = Arc::new(GoniKernel::new(
         data_plane,

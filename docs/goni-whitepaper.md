@@ -28,3 +28,7 @@ Both documents are maintained as **living references** and should be consulted w
 
 - evaluating new architectural ideas (to avoid reinventing solved problems), or  
 - framing Goni for different audiences (engineers, infra people, founders, regulated-sector clients).
+
+## Determinism and self-loop stability
+
+Autoregressive self-loops are chaotic: tiny numeric noise can flip token choices over long runs. For regulated or auditable workflows, Goni exposes a **deterministic preset** (temperature 0, fixed seed where supported, batch size 1, single worker/thread or CPU, TF32 off on NVIDIA, deterministic backend flag such as vLLM `--enable-deterministic-inference`). Hardware/driver hashes are logged with deterministic runs so trajectories can be reproduced, even if throughput is lower.

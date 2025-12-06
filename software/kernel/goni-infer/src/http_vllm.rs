@@ -15,6 +15,8 @@ struct OpenAIChatRequest {
     messages: Vec<OpenAIMessage>,
     max_tokens: Option<u32>,
     stream: bool,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    seed: Option<u64>,
 }
 
 #[derive(Serialize, Deserialize, Clone)]
@@ -46,14 +48,18 @@ pub struct HttpVllmEngine {
     client: reqwest::Client,
     base_url: String,
     model: String,
+    deterministic: bool,
+    seed: Option<u64>,
 }
 
 impl HttpVllmEngine {
-    pub fn new(base_url: String, model: String) -> Self {
+    pub fn new(base_url: String, model: String, deterministic: bool, seed: Option<u64>) -> Self {
         Self {
             client: reqwest::Client::new(),
             base_url,
             model,
+            deterministic,
+            seed,
         }
     }
 }
@@ -74,6 +80,7 @@ impl LlmEngine for HttpVllmEngine {
             }],
             max_tokens: Some(req.max_tokens as u32),
             stream: true,
+            seed: if self.deterministic { self.seed } else { None },
         };
 
         let resp = self

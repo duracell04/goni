@@ -21,6 +21,10 @@ services:
         "0.0.0.0",
         "--port",
         "8000"
+        # Deterministic profile (audit/self-loop):
+        # "--enable-deterministic-inference",
+        # "--max-num-seqs",
+        # "1"
       ]
     environment:
       - VLLM_WORKER_MULTIPROC_METHOD=spawn
@@ -48,6 +52,9 @@ services:
     command: ["/app/goni-http"]
     environment:
       - LLM_LOCAL_URL=http://llm-local:8000/v1
+      # Set deterministic mode for audit/self-loop runs (slower, single-seq):
+      # - LLM_DETERMINISTIC=true
+      # - LLM_SEED=1234
       - QDRANT_HTTP_URL=http://vecdb:6333
       - QDRANT_GRPC_URL=http://vecdb:6334
       - RUST_LOG=info

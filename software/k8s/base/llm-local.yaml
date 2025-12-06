@@ -26,6 +26,10 @@ spec:
             - "0.0.0.0"
             - "--port"
             - "8000"
+            # Deterministic profile (audit/self-loop):
+            # - "--enable-deterministic-inference"
+            # - "--max-num-seqs"
+            # - "1"
           ports:
             - containerPort: 8000
           env:
