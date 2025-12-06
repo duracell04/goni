@@ -48,7 +48,7 @@ At a high level, Goni software should enable the node to:
 - [`10-requirements.md`](./10-requirements.md)
   The main reference for **software requirements** (capabilities, security, UX expectations, mesh behaviour, cloud usage policy). Any architectural proposal should be checked against these requirements.
 
-- `20-architecture.md`
+- [`20-architecture.md`](./20-architecture.md)
   (To be filled) High-level architecture for single-node service layout, multi-node / mesh topology, and how local models, data indexing, orchestration, and APIs fit together.
 
 - `30-components/`
@@ -58,14 +58,14 @@ At a high level, Goni software should enable the node to:
   Description of the public API surface (e.g. chat, completion, tools), authentication and access control, and dashboard / management UI concepts.
 
 - `50-data/`
-  Data spine, planes, and TXT axiom. Start with `50-data/00-index.md`, then `10-axioms-and-planes.md`, and `53-schema-dsl-and-macros.md` to see how the Arrow schema DSL maps into the kernel.
+  Data spine, planes, and TXT axiom. Start with [50-data/00-index.md](./50-data/00-index.md), then [50-data/10-axioms-and-planes.md](./50-data/10-axioms-and-planes.md), and [50-data/53-schema-dsl-and-macros.md](./50-data/53-schema-dsl-and-macros.md) to see how the Arrow schema DSL maps into the kernel.
 
-- `90-decisions.md`
+- [`90-decisions.md`](./90-decisions.md)
   Accepted software design decisions (ADR-style). Each entry should briefly describe the choice, alternatives, and rationale.
 
 Runnable references:
-- local stack: `software/docker-compose.yml`
-- k8s overlays: `software/k8s/`
+- local stack: [docker-compose.yml](./docker-compose.yml)
+- k8s overlays: [k8s/](./k8s/)
 
 ---
 
@@ -73,13 +73,13 @@ Runnable references:
 
 1. Start with [`10-requirements.md`](./10-requirements.md) to understand what the software **must** achieve.
 2. For new architectural ideas:
-   - sketch them in `20-architecture.md` or a new document under `30-components/`,
+   - sketch them in [20-architecture.md](./20-architecture.md) or a new document under `30-components/`,
    - open a software issue summarising the proposal and linking to the doc.
 3. For API or UI changes:
-   - update the relevant files under `40-apis-and-ui/`,
+   - update the relevant files under [40-apis-and-ui/](./40-apis-and-ui/),
    - include example flows or payloads where helpful.
 4. When a proposal is accepted:
-   - add an entry to `90-decisions.md` to record the decision and its consequences.
+   - add an entry to [90-decisions.md](./90-decisions.md) to record the decision and its consequences.
 
 The aim is to arrive at a **coherent, minimal software stack** that implements the agreed requirements and can evolve as hardware and AI tools advance.
 

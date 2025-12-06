@@ -51,21 +51,21 @@ At a high level, the Goni hardware should:
   The primary reference for **hardware requirements** (size, power, connectivity, noise, serviceability, future-proofing). If you propose a different enclosure, power profile, or base platform, start here.
 
 - [`25-hardware-layers-and-supplier-map.md`](./25-hardware-layers-and-supplier-map.md)
-  Concise map of **accelerator/supplier landscape** and how it aligns to Goni tiers (v1 / Pro / Max) and `LlmEngine` backends. Cross-check with software expectations in `software/10-requirements.md` (power/thermal envelopes, networking).
+  Concise map of **accelerator/supplier landscape** and how it aligns to Goni tiers (v1 / Pro / Max) and `LlmEngine` backends. Cross-check with software expectations in [software/10-requirements.md](../software/10-requirements.md) (power/thermal envelopes, networking).
 
-- `20-architecture-options.md`
+- [`20-architecture-options.md`](./20-architecture-options.md)
   (To be filled) Design options and trade-offs: e.g. APU-only vs APU+GPU, different layout concepts, etc. Link options back to the requirements and supplier map.
 
-- `30-mechanical/`
+- [`30-mechanical/`](./30-mechanical/)
   Enclosure concepts, airflow notes, and eventually CAD files.
 
-- `40-electronics/`
+- [`40-electronics/`](./40-electronics/)
   Power distribution, front-panel MCU, status LEDs, any custom boards or harnesses.
 
-- `50-bom-experiments/`
+- [`50-bom-experiments/`](./50-bom-experiments/)
   Bill-of-materials experiments and cost models, comparing different component choices that satisfy the requirements.
 
-- `90-decisions.md`
+- [`90-decisions.md`](./90-decisions.md)
   Accepted hardware decisions (ADR-style). Each decision should reference relevant discussions, requirement changes, and related software constraints.
 
 ---
@@ -75,10 +75,10 @@ At a high level, the Goni hardware should:
 1. Read [`10-requirements.md`](./10-requirements.md) to understand the current constraints.
 2. If you propose a change that affects those constraints:
    - open a hardware issue, and
-   - suggest concrete edits to `10-requirements.md`.
+   - suggest concrete edits to [10-requirements.md](./10-requirements.md).
 3. For new designs or experiments:
-   - add them to `20-architecture-options.md` or a new file under `30-mechanical/` or `40-electronics/`,
+   - add them to [20-architecture-options.md](./20-architecture-options.md) or a new file under `30-mechanical/` or `40-electronics/`,
    - link them from an issue or pull request.
-4. For decisions that are accepted, add an entry to `90-decisions.md`.
+4. For decisions that are accepted, add an entry to [90-decisions.md](./90-decisions.md).
 
-The aim is to converge on a **buildable, testable Goni node** that meets the shared requirements, not just an idealised spec. For software implications (power, thermals, networking), cross-reference `software/10-requirements.md` so the box and stack stay aligned.
+The aim is to converge on a **buildable, testable Goni node** that meets the shared requirements, not just an idealised spec. For software implications (power, thermals, networking), cross-reference [software/10-requirements.md](../software/10-requirements.md) so the box and stack stay aligned.

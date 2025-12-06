@@ -9,5 +9,5 @@
 - [Glossary](./glossary.md) - shared vocabulary.
 - [Diagrams](./diagrams/) - architecture sketches.
 
-For specs and decisions, jump to `hardware/00-overview.md` and `software/00-overview.md`, then the decision logs in `hardware/90-decisions.md` and `software/90-decisions.md`.
+For specs and decisions, jump to [hardware/00-overview.md](../hardware/00-overview.md) and [software/00-overview.md](../software/00-overview.md), then the decision logs in [hardware/90-decisions.md](../hardware/90-decisions.md) and [software/90-decisions.md](../software/90-decisions.md).
 

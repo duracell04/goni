@@ -11,8 +11,8 @@ This repo = open-source blueprint + prototype lab.
 
 ## Agility guardrails
 
-- Keep the front page timeless: `README.md`, `docs/goni-story.md`, and `docs/goni-whitepaper.md` stay gut-punch + vision only. Put concrete numbers and models in `hardware/90-decisions.md`, `software/90-decisions.md`, or `prototype/**`.
-- See `docs/goni-agility-rules.md` for the full map of what can be pinned where, and how to propose tighter numbers with evidence.
+- Keep the front page timeless: [README.md](README.md), [docs/goni-story.md](docs/goni-story.md), and [docs/goni-whitepaper.md](docs/goni-whitepaper.md) stay gut-punch + vision only. Put concrete numbers and models in [hardware/90-decisions.md](hardware/90-decisions.md), [software/90-decisions.md](software/90-decisions.md), or `prototype/**`.
+- See [docs/goni-agility-rules.md](docs/goni-agility-rules.md) for the full map of what can be pinned where, and how to propose tighter numbers with evidence.
 
 This space is for:
 
@@ -26,11 +26,11 @@ This space is for:
 
 ## How to read this repo
 
-- **Product/story track (stakeholders, early adopters)**: start with `docs/goni-story.md`, then `docs/goni-whitepaper.md` for the deep architecture narrative, and `docs/goni-swot.md` for positioning.
-- **Hardware track (hardware builders)**: `hardware/00-overview.md` -> `hardware/10-requirements.md` -> `hardware/20-architecture-options.md` -> `hardware/25-hardware-layers-and-supplier-map.md`, with accepted choices in `hardware/90-decisions.md`.
-- **Software track (software builders)**: `software/00-overview.md` -> `software/10-requirements.md` -> `software/20-architecture.md` -> data spine in `software/50-data/00-index.md` (and `53-schema-dsl-and-macros.md` for the Arrow DSL) -> accepted choices in `software/90-decisions.md`.
-- **Data spine <-> kernel**: the planes and TXT axiom are defined in `software/50-data/10-axioms-and-planes.md` and enforced in code at `software/kernel/goni-schema/src/lib.rs`.
-- **Runs and deployments (I just want to run something)**: for a quick local stack, see `software/docker-compose.yml`; for cluster overlays, see `software/k8s/`.
+- **Product/story track (stakeholders, early adopters)**: start with [docs/goni-story.md](docs/goni-story.md), then [docs/goni-whitepaper.md](docs/goni-whitepaper.md) for the deep architecture narrative, and [docs/goni-swot.md](docs/goni-swot.md) for positioning.
+- **Hardware track (hardware builders)**: [hardware/00-overview.md](hardware/00-overview.md) -> [hardware/10-requirements.md](hardware/10-requirements.md) -> [hardware/20-architecture-options.md](hardware/20-architecture-options.md) -> [hardware/25-hardware-layers-and-supplier-map.md](hardware/25-hardware-layers-and-supplier-map.md), with accepted choices in [hardware/90-decisions.md](hardware/90-decisions.md).
+- **Software track (software builders)**: [software/00-overview.md](software/00-overview.md) -> [software/10-requirements.md](software/10-requirements.md) -> [software/20-architecture.md](software/20-architecture.md) -> data spine in [software/50-data/00-index.md](software/50-data/00-index.md) (and [software/50-data/53-schema-dsl-and-macros.md](software/50-data/53-schema-dsl-and-macros.md) for the Arrow DSL) -> accepted choices in [software/90-decisions.md](software/90-decisions.md).
+- **Data spine <-> kernel**: the planes and TXT axiom are defined in [software/50-data/10-axioms-and-planes.md](software/50-data/10-axioms-and-planes.md) and enforced in code at [software/kernel/goni-schema/src/lib.rs](software/kernel/goni-schema/src/lib.rs).
+- **Runs and deployments (I just want to run something)**: for a quick local stack, see [software/docker-compose.yml](software/docker-compose.yml); for cluster overlays, see [software/k8s/](software/k8s/).
 
 ---
 
@@ -192,11 +192,11 @@ Physical layer: enclosure, BOM, thermals, electronics.
 
 Start in:
 
-- `hardware/00-overview.md` - current hardware concept  
-- `hardware/10-requirements.md` - constraints and goals  
-- `hardware/20-architecture-options.md` - alternative designs
+- [hardware/00-overview.md](hardware/00-overview.md) - current hardware concept  
+- [hardware/10-requirements.md](hardware/10-requirements.md) - constraints and goals  
+- [hardware/20-architecture-options.md](hardware/20-architecture-options.md) - alternative designs
 
-Use `hardware/90-decisions.md` to record accepted decisions.
+Use [hardware/90-decisions.md](hardware/90-decisions.md) to record accepted decisions.
 
 ### `/software/`
 
@@ -210,24 +210,24 @@ Kernel, orchestrator, and infra for the node/mesh:
 
 Start in:
 
-- `software/00-overview.md` - current software concept  
-- `software/10-requirements.md` - functional & non-functional requirements  
-- `software/20-architecture.md` - formal architecture and invariants  
-- `software/90-decisions.md` - formal design decisions  
-- `software/kernel/` - Rust workspace for the kernel (traits, HTTP server, vLLM client, Qdrant-backed RAG, scheduler/router stubs)
+- [software/00-overview.md](software/00-overview.md) - current software concept  
+- [software/10-requirements.md](software/10-requirements.md) - functional & non-functional requirements  
+- [software/20-architecture.md](software/20-architecture.md) - formal architecture and invariants  
+- [software/90-decisions.md](software/90-decisions.md) - formal design decisions  
+- [software/kernel/](software/kernel/) - Rust workspace for the kernel (traits, HTTP server, vLLM client, Qdrant-backed RAG, scheduler/router stubs)
 
 ### `/docs/`
 
 Story and narrative architecture:
 
-- `/docs/goni-whitepaper.md` - core technical + architectural spec (planes, Arrow spine, control layer).  
-- `/docs/goni-story.md` - narrative "Goni story" (magazine-style for tech enthusiasts / early adopters).  
-- `/docs/goni-swot.md` - honest SWOT vs Atlantis / OpenDAN / Home Assistant / mini-PC stacks.  
-- `/docs/inspiration.md` - builders & thinkers we track.  
-- `/docs/related-projects.md` - prior art / similar systems and how we differ.  
-- `/docs/glossary.md` - shared vocabulary.  
-- `/docs/diagrams/` - architecture diagrams (Draw.io, Figma exports).  
-- `/docs/README.md` - local docs index linking all of the above.
+- [docs/goni-whitepaper.md](docs/goni-whitepaper.md) - core technical + architectural spec (planes, Arrow spine, control layer).  
+- [docs/goni-story.md](docs/goni-story.md) - narrative "Goni story" (magazine-style for tech enthusiasts / early adopters).  
+- [docs/goni-swot.md](docs/goni-swot.md) - honest SWOT vs Atlantis / OpenDAN / Home Assistant / mini-PC stacks.  
+- [docs/inspiration.md](docs/inspiration.md) - builders & thinkers we track.  
+- [docs/related-projects.md](docs/related-projects.md) - prior art / similar systems and how we differ.  
+- [docs/glossary.md](docs/glossary.md) - shared vocabulary.  
+- [docs/diagrams/](docs/diagrams/) - architecture diagrams (Draw.io, Figma exports).  
+- [docs/README.md](docs/README.md) - local docs index linking all of the above.
 
 ---
 
@@ -242,7 +242,7 @@ Story and narrative architecture:
 
 4. Major changes should come with:
    - a short proposal (`proposal-*.md`) and  
-   - a suggested update to `hardware/90-decisions.md` or `software/90-decisions.md`.
+   - a suggested update to [hardware/90-decisions.md](hardware/90-decisions.md) or [software/90-decisions.md](software/90-decisions.md).
 
 5. Keep discussion as concrete as possible:  
    - numbers (W, GB, TB, TOPS, latency)  
