@@ -1,8 +1,15 @@
-﻿# Goni MVP
+﻿# Project Goni
 
-> **Goni** is a compact, local-first AI node - a matte-black box in your home or office - that runs your personal AI assistant on your own hardware, can mesh with other nodes, and optionally talk to the cloud when it truly helps.
+> **Goni** is a blueprint and prototype stack for a compact, local-first AI node you could run in your home or office; it meshes with other nodes and can talk to the cloud when it helps. This is not a boxed product yet.
 
-It's a working space for:
+This repo = open-source blueprint + prototype lab. A physical MVP will be built if/when funded.
+
+> **Status (prototype lab, not shippable hardware)**
+> - Blueprint + prototype lab; APIs/BOM may change.
+> - Docker/k8s stacks are for experimentation, not production.
+> - Manufactured MVP waits on financing; this repo is the reference design it will follow.
+
+This space is for:
 
 - hardware engineers  
 - software engineers  
@@ -14,17 +21,19 @@ It's a working space for:
 
 ## How to read this repo
 
-- **Product/story track**: start with `docs/goni-story.md`, then `docs/goni-whitepaper.md` for the deep architecture narrative, and `docs/goni-swot.md` for positioning.
-- **Hardware track**: `hardware/00-overview.md` -> `hardware/10-requirements.md` -> `hardware/20-architecture-options.md` -> `hardware/25-hardware-layers-and-supplier-map.md`, with accepted choices in `hardware/90-decisions.md`.
-- **Software track**: `software/00-overview.md` -> `software/10-requirements.md` -> `software/20-architecture.md` -> data spine in `software/50-data/00-index.md` (and `53-schema-dsl-and-macros.md` for the Arrow DSL) -> accepted choices in `software/90-decisions.md`.
+- **Product/story track (stakeholders, early adopters)**: start with `docs/goni-story.md`, then `docs/goni-whitepaper.md` for the deep architecture narrative, and `docs/goni-swot.md` for positioning.
+- **Hardware track (hardware builders)**: `hardware/00-overview.md` -> `hardware/10-requirements.md` -> `hardware/20-architecture-options.md` -> `hardware/25-hardware-layers-and-supplier-map.md`, with accepted choices in `hardware/90-decisions.md`.
+- **Software track (software builders)**: `software/00-overview.md` -> `software/10-requirements.md` -> `software/20-architecture.md` -> data spine in `software/50-data/00-index.md` (and `53-schema-dsl-and-macros.md` for the Arrow DSL) -> accepted choices in `software/90-decisions.md`.
 - **Data spine <-> kernel**: the planes and TXT axiom are defined in `software/50-data/10-axioms-and-planes.md` and enforced in code at `software/kernel/goni-schema/src/lib.rs`.
-- **Runs and deployments**: for a quick local stack, see `software/docker-compose.yml`; for cluster overlays, see `software/k8s/`.
+- **Runs and deployments (I just want to run something)**: for a quick local stack, see `software/docker-compose.yml`; for cluster overlays, see `software/k8s/`.
 
 ---
 
 ## 1. What Goni MVP is (and is not)
 
 ### 1.1 Product idea in one paragraph
+
+This is the **target MVP experience** we are converging toward (not what you get by cloning the repo today).
 
 Goni is a **local AI super-node** for individuals and small teams:
 
@@ -33,8 +42,8 @@ Goni is a **local AI super-node** for individuals and small teams:
 - Works as a **standalone box** _and_ can **mesh with other Goni nodes** to form a personal cluster.  
 - Can attach a **Grace Blackwell GN100-class mini-DGX** later for "Goni Max / Enterprise".
 
-From the user's perspective:  
-> "I buy a high tech box once for a fixed amount, then I pay monthly subscription and my (local) AI (+ the AI coucil it meets when it goes on the internet ) is faster, more private, and more predictable than whatever cloud dashboard I was using before. This will give me a huge poost in productivity and make all business or chore like intercation with techology redundand"
+Target user experience once the physical MVP exists:  
+> "I buy a high-tech box once for a fixed amount, then I pay a monthly subscription. My local AI (plus the AI council it meets when it goes on the internet) is faster, more private, and more predictable than whatever cloud dashboard I was using before. This gives me a huge boost in productivity and makes chore-like interactions with technology redundant."
 
 ### 1.2 Non-goals (for MVP)
 
@@ -43,13 +52,14 @@ To keep us aligned:
 - No attempt to match full **H100/B200 training rigs** locally.  
 - No exotic multi-GPU monster towers for v1.  
 - No gamer aesthetics (RGB, glass, etc.).  
-- No "just a rebadged OEM box" - Goni has its own industrial design and OS image.
+- No "just a rebadged OEM box" - Goni has its own industrial design and OS image.  
+- This repo is not a consumer product; it is the reference design the product will follow once funded.
 
 ---
 
 ## 2. Hard constraints (everyone should agree on these)
 
-These are the guardrails for all discussions in this repo.
+These are the guardrails for all discussions in this repo. If you propose changes, start here; they are non-negotiable unless a proposal with better numbers moves them.
 
 ### 2.1 Use-case constraints
 
@@ -58,10 +68,10 @@ These are the guardrails for all discussions in this repo.
   - explicitly requested by user, or
   - orchestrator deems task "high difficulty" or requires long context.
 
-- **Workload focus**:
+- **Workload focus** (human-speed chat and assistant latency, not API-scale throughput):
   - Inference + RAG for 30-40B quantised models  
   - Adapters / LoRA / "personalisation" training only  
-  - Heavy full-model fine-tune ? kicked to cloud or GN100-class node
+  - Heavy full-model fine-tune -> kicked to cloud or GN100-class node
 
 ### 2.2 Hardware constraints
 
@@ -112,7 +122,7 @@ These are the guardrails for all discussions in this repo.
 
 ### 3.1 Single node
 
-On a single Goni box we assume:
+User -> gateway -> orchestrator -> {llm-local, vecdb, tools}, all running in containers on Ubuntu Server.
 
 - **OS**: Ubuntu Server LTS (or similar), encrypted disk optional.  
 - **Runtime**: containers (Docker / containerd).  
@@ -127,19 +137,21 @@ On a single Goni box we assume:
 
 Every Goni node is a **cluster node**:
 
-- 1st node ? control plane (e.g. k3s server).  
-- Additional nodes ? join as workers via "join token / URL".
+- 1st node -> control plane (e.g. k3s server).  
+- Additional nodes -> join as workers via "join token / URL".
 
 The orchestrator sees accelerators abstractly:
 
-- `apu:0` ? local Ryzen AI APU (iGPU+CPU).  
-- `npu:0` ? local NPU (XDNA 2).  
-- `gn100:0` ? (future) Grace Blackwell GN100 node in the same mesh.
+- `apu:0` -> local Ryzen AI APU (iGPU+CPU).  
+- `npu:0` -> local NPU (XDNA 2).  
+- `gn100:0` -> (future) Grace Blackwell GN100 node in the same mesh.
 
 Tasks:
 
-- **Interactive** ? run on the node closest to the user.  
-- **Batch** (embeddings, long research, nightly updates) ? can be offloaded to other nodes or GN100.
+- **Interactive** -> run on the node closest to the user.  
+- **Batch** (embeddings, long research, nightly updates) -> can be offloaded to other nodes or GN100.
+
+The prototype code models this routing, even if not fully implemented yet. GN100-class nodes are treated as just another accelerator in the mesh.
 
 ---
 
@@ -147,13 +159,15 @@ Tasks:
 
 We design Goni MVP with the following in mind:
 
-- **APU roadmap**: future AMD/Intel APUs with more NPU TOPS and better FP8/FP4 ? we should be able to swap in a new mainboard without changing the Goni case, PSU, or overall architecture.
+- **APU roadmap**: future AMD/Intel APUs with more NPU TOPS and better FP8/FP4 -> we should be able to swap in a new mainboard without changing the Goni case, PSU, or overall architecture.
 
 - **NPU evolution**: NPUs become real inference backends for smaller models (ASR, vision, routing). The orchestrator must treat NPUs as first-class targets, not afterthoughts.
 
 - **GN100 / Blackwell-class nodes**:
   - GN100 today: 128 GB unified memory, 1 PFLOP FP4, 0.5 L form factor, $3.9k+.
   - Future GBxx mini-DGX successors can be added as **"Goni Max nodes"** in the mesh, without redesigning the base Goni.
+
+The blueprint and prototypes remain open-source; the funded MVP will build from this public spec, not a private fork.
 
 ---
 
@@ -163,7 +177,7 @@ This repo is split into two main workspaces:
 
 ### `/hardware/`
 
-For everything physical:
+Physical layer: enclosure, BOM, thermals, electronics.
 
 - component choices (APU, PSU, SSDs)  
 - thermal design & airflow  
@@ -181,7 +195,7 @@ Use `hardware/90-decisions.md` to record accepted decisions.
 
 ### `/software/`
 
-For everything software:
+Kernel, orchestrator, and infra for the node/mesh:
 
 - base OS and provisioning  
 - orchestrator architecture  
@@ -199,10 +213,10 @@ Start in:
 
 ### `/docs/`
 
-Shared documentation:
+Story and narrative architecture:
 
 - `/docs/goni-whitepaper.md` - core technical + architectural spec (planes, Arrow spine, control layer).  
-- `/docs/goni-story.md` - narrative “Goni story” (magazine-style for tech enthusiasts / early adopters).  
+- `/docs/goni-story.md` - narrative "Goni story" (magazine-style for tech enthusiasts / early adopters).  
 - `/docs/goni-swot.md` - honest SWOT vs Atlantis / OpenDAN / Home Assistant / mini-PC stacks.  
 - `/docs/inspiration.md` - builders & thinkers we track.  
 - `/docs/related-projects.md` - prior art / similar systems and how we differ.  
@@ -230,11 +244,15 @@ Shared documentation:
    - cost estimates ($)  
    - actual vendor links if relevant
 
-We are aiming at a **real, buildable MVP**, not a sci-fi spec - but we do want to stay aligned with where hardware and AI tooling will be in **2026-2027**.
+We are optimising for a clean, well-argued architecture. Changes that affect constraints/architecture should come with numbers and a short proposal.
+
+If you are thinking about manufacturing/funding, open an issue; the hardware build triggers when the blueprint feels solid and a partner is ready.
 
 ---
 
 ## Quickstart (local stack)
+
+Prototype/dev stack only; things may change between commits.
 
 Prereqs: Docker, docker-compose. From repo root:
 
@@ -257,7 +275,12 @@ Env vars of interest:
 - `QDRANT_COLLECTION` (default: `default`)  
 - `EMBED_DIM` (default: `1024`)
 
+Example call (against llm-local):  
+`curl http://localhost:8000/v1/models`
+
 ## Quickstart (k8s / k3s)
+
+Prototype/dev overlays for simulation and experimentation.
 
 Prereqs: kubectl + kustomize, k3s/cluster with storage class.
 
@@ -275,4 +298,3 @@ Services:
 - `gateway.goni.svc:80` (ingress at `goni.local` if using provided ingress)
 
 PVC: `goni-models-pvc` (50Gi) created by base manifests. Adjust storage class if needed.
-
