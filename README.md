@@ -9,6 +9,11 @@ This repo = open-source blueprint + prototype lab.
 > - Docker/k8s stacks are for experimentation, not production.
 > - Manufactured MVP waits on financing; this repo is the reference design it will follow.
 
+## Agility guardrails
+
+- Keep the front page timeless: `README.md`, `docs/goni-story.md`, and `docs/goni-whitepaper.md` stay gut-punch + vision only. Put concrete numbers and models in `hardware/90-decisions.md`, `software/90-decisions.md`, or `prototype/**`.
+- See `docs/goni-agility-rules.md` for the full map of what can be pinned where, and how to propose tighter numbers with evidence.
+
 This space is for:
 
 - hardware engineers  

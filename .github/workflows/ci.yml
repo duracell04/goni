@@ -5,7 +5,41 @@ on:
   pull_request:
 
 jobs:
+  guardrails:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Block pinned specs in README/story
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          BASE_BRANCH="${GITHUB_BASE_REF:-main}"
+          git fetch origin "$BASE_BRANCH" --depth=1 || true
+
+          if git show-ref --verify --quiet "refs/remotes/origin/${BASE_BRANCH}"; then
+            BASE_REF="origin/${BASE_BRANCH}"
+          else
+            BASE_REF="$(git rev-parse HEAD^ || echo HEAD)"
+          fi
+
+          PATTERN='\b(?:Llama|MiniLM|Ryzen|Intel|NVIDIA|Blackwell|Strix|Halo|Xeon|GN100|GPU|CPU|CUDA|cuDNN)\b|\b\d+(?:\.\d+)?\s*(?:W|dB|dBA|GHz|GB|TB|TOPS|cm|mm|L)\b|\b\d+\s*-\s*\d+\s*B\b'
+
+          ADDED=$(git diff --unified=0 "${BASE_REF}"...HEAD -- README.md docs/goni-story.md docs/goni-whitepaper.md \
+            | grep '^+' \
+            | grep -Ev '^\+\+\+|^@@' \
+            | grep -E "$PATTERN" || true)
+
+          if [ -n "$ADDED" ]; then
+            echo "Blocked: new pinned specs detected in README/story/whitepaper. Keep concrete numbers in decisions or prototype tracks."
+            echo "$ADDED"
+            exit 1
+          fi
+
   rust:
+    needs: guardrails
     runs-on: ubuntu-latest
     defaults:
       run:
