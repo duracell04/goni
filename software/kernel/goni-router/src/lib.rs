@@ -14,6 +14,9 @@ pub enum EscalationPolicy {
     SprtThreshold(f32),
 }
 
+/// Router decisions should align with the escalation triggers in `docs/llm-council.md`
+/// and the reference defaults in `config/council.yaml` (explicit user flag, high
+/// difficulty/safety-critical classification, long-context needs).
 #[async_trait]
 pub trait Router: Send + Sync {
     async fn decide(

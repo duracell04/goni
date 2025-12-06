@@ -1,0 +1,77 @@
+# Reference council composition and triggers for Goni
+version: "2025.12-ref"
+metadata:
+  description: "Multi-vendor council with lowered per-seat weights to avoid single-provider dominance."
+  source: "Inspired by Karpathy's llm-council; tuned for Goni's cloud-as-needed policy."
+  doc: "docs/llm-council.md"
+
+triggers:
+  # Escalate when the user explicitly asks or when heuristics deem it necessary.
+  user_flags:
+    provider: "council"
+    mode: "paranoid"
+  heuristics:
+    difficulty_labels: ["high_difficulty", "safety_critical"]
+    long_context_tokens: 120000
+    guardrail_second_opinion: true
+  unavailable_policy: "degrade_to_local"  # never block if cloud is down
+
+budget:
+  max_tokens_total: 220000
+  max_models: 8
+  per_call_timeout_ms: 30000
+  total_timeout_ms: 90000
+
+chairman:
+  model: "openai:gpt-4.1"
+  weight: 0.18
+  role: "chair"
+
+members:
+  - model: "anthropic:claude-sonnet-4"
+    weight: 0.12
+    role: "generalist"
+  - model: "openai:gpt-4o"
+    weight: 0.10
+    role: "multimodal"
+  - model: "google:gemini-2.5-pro"
+    weight: 0.10
+    role: "long-context"
+  - model: "deepseek:v3.2-speciale"
+    weight: 0.10
+    role: "reasoning"
+  - model: "mistral:large-3"
+    weight: 0.10
+    role: "generalist"
+  - model: "meta:llama-4-maverick"
+    weight: 0.08
+    role: "generalist"
+  - model: "anthropic:claude-opus-4"
+    weight: 0.08
+    role: "heavy_reasoning"
+  - model: "google:gemini-2.5-flash"
+    weight: 0.07
+    role: "fast_multimodal"
+
+specialists:
+  web:
+    model: "perplexity:sonar-pro"
+    weight: 0.05
+    role: "web_grounded"
+  news:
+    model: "xai:grok-4"
+    weight: 0.05
+    role: "current_events"
+  code:
+    model: "mistral:codestral-mamba"
+    weight: 0.05
+    role: "code_generation"
+  reasoning:
+    model: "deepseek:r1"
+    weight: 0.05
+    role: "explicit_reasoning"
+
+fallback:
+  on_chair_fail: "best_scored_member"
+  on_all_fail: "local_only"
+  partial_council_ok: true

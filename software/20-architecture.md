@@ -314,6 +314,8 @@ Router policy:
 2. If \(p(x) < \tau_{\mathrm{escalate}}\) and early in the generation: escalate.  
 3. Else compare expected value of escalation vs continuation.
 
+Escalation to the cloud-side multi-model path (the [LLM Council](../docs/llm-council.md)) follows the triggers in Section 3 of that doc: explicit user request, high difficulty/safety-critical classification, or long-context needs that exceed local comfort.
+
 We treat this as a **two-armed bandit** with side information (the features used to estimate \(p(x)\)).
 
 > **Theorem 3.2 (Regret bound, sketch).**  
