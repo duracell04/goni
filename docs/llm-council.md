@@ -72,6 +72,8 @@
 - Orchestrator interface: see `software/30-components/orchestrator.md` and router policy in `software/20-architecture.md` for when escalation is allowed.
 - Config: `config/council.yaml` (or env vars) is the ground truth for seats/weights.
 - Inspiration: council pattern (multi-answer, peer review, synth); no hard dependency on external repos.
+- Remote path details: see `docs/remote-llm-architecture.md` for the mediated Council -> OpenRouter data path, budgets, and runtime modes.
+- AI-2027 corpus: optional local snapshot lives under `docs/assets/ai-2027` for safety/strategy RAG; include that path when ingesting docs.
 
 ## 10. Example config sketch (informative, not binding)
 ```yaml

@@ -72,6 +72,7 @@ These are the guardrails for all discussions in this repo. If you propose change
 - **Cloud-as-needed**: [LLM Council](docs/llm-council.md) used only when:
   - explicitly requested by user, or
   - orchestrator deems task "high difficulty" or requires long context.
+  - Remote path is mediated: Goni OS -> Goni Council -> OpenRouter (multi-model gateway) -> cloud providers. Goni never calls provider APIs directly; see [docs/remote-llm-architecture.md](docs/remote-llm-architecture.md) for data path, budgets, and runtime modes.
 
 - **Workload focus** (human-speed chat and assistant latency, not API-scale throughput):
   - Inference + RAG for 30-40B quantised models  
