@@ -31,6 +31,17 @@ Read in the order: **Architecture (20) -> Conformance (30) -> Theory (95)**.
 
 ---
 
+## 0.1 Memory Plane (operational abstraction)
+
+While the formal tuple remains \(N = (\mathcal{A}, \mathcal{X}, \mathcal{K}, \mathcal{E})\), we treat **long-term memory as an external, pluggable service** that the Control/Execution planes call:
+
+- **API surface:** `store(entry)`, `recall(query, mode)`, `forget(selector)`, `summarize(range)`, `audit(entry_id)`.
+- **Types / lifecycle:** `working` (session-scoped), `episodic` (raw events distilled over time), `semantic` (facts with decay/pin), `procedural` (versioned skills/tools). States move `raw -> distilled -> archived/tombstoned`, with decay on importance/access.
+- **Local-first:** long-term memory lives on-device (Arrow + vector/graph backend). Council/cloud paths see only distilled facts or session context unless explicitly allowed.
+- **Reasoning statelessness:** LLM engines stay stateless; they access memory exclusively through this plane so backends can be swapped (Qdrant/Arrow today; OpenMemory/Mem0/curved indexes later) without changing \(\mathcal{E}\).
+
+---
+
 ## 1. Data Plane – the Arrow Spine \(\mathcal{A}\)
 
 ### 1.1 Objects and morphisms

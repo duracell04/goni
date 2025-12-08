@@ -409,6 +409,26 @@ The Execution plane exposes a deterministic preset. For any request marked deter
 
 ---
 
+## D-016 - Memory Plane as a Pluggable, Local-First Service
+
+**Formal statement**
+
+Long-term memory is modelled as a separate **Memory Plane** with a stable API (`store`, `recall`, `forget`, `summarize`, `audit`). Engines and controllers access memory only through this plane; core LLMs stay stateless. The default backend is Arrow tables + vector index (Qdrant/Lance), and backends are **swappable** (e.g. OpenMemory/Mem0/graph/curved indexes) without changing \((\mathcal{E})\).
+
+**Rationale**
+
+- Keeps reasoning and memory decoupled; enables backend experimentation without kernel surgery.  
+- Aligns with privacy/local-first: long-term memory stays on-device; council/cloud paths see at most distilled facts or session context by explicit choice.  
+- Supports lifecycle (working/episodic/semantic/procedural) with decay/pin/forget and auditability.
+
+**Consequence**
+
+- Kernel code and tooling MUST use the Memory Plane interface rather than ad-hoc embedding stores.  
+- Forget/redaction and audit traces are first-class behaviours of the plane.  
+- Backend swaps must preserve the API contract and lifecycle semantics; otherwise the decision must be amended.
+
+---
+
 *Amendment process:*  
 New decisions should include:
 

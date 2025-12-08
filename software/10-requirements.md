@@ -74,6 +74,20 @@ At a minimum, a single Goni node should:
     - single worker / single thread (or CPU-only fallback) available even if slower.
     - record hardware/driver profile with runs so outputs can be reproduced.
 
+### 3.3 Memory & Cognition
+
+- The node should treat **long-term memory as a separate plane** with explicit lifecycle:
+  - working/session context is transient,
+  - episodic history is distilled over time,
+  - semantic facts persist with decay and can be pinned,
+  - procedural knowledge is versioned.
+- The system must support **local-only long-term memory** by default; cloud/council access is limited to distilled facts or session context unless explicitly allowed.
+- To avoid **cognitive offloading debt**, default UX for learning/creative flows should:
+  - prompt user effort (outline/selection) before full generation,
+  - attribute which parts were AI- vs user-authored,
+  - expose which memories were retrieved and why (traceable recall).
+- On lower-memory hardware (e.g. 64 GB unified), the system should automatically tighten context budgets, model sizes, and cache policies while preserving the above behaviours.
+
 ---
 
 ## 4. Cloud Integration Requirements

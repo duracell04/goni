@@ -52,6 +52,17 @@ Arrow-first, v1.0 schemas for the eight shipped tables. Each table is `Spine + P
 - Fields: `name: dict<uint8, utf8>`, `value_f64?: float64`, `value_i64?: int64`, `labels: map<utf8, utf8>`
 - Notes: Prometheus export compatibility; avoid unbounded label cardinality.
 
+## Plane ?? - Memory (lifecycle-aware)
+
+### MemoryEntries
+- PK: `memory_id = row_id`
+- Fields: `type: dict<uint8, utf8> (working|episodic|semantic|procedural)`, `timestamp: timestamp(us)`, `importance: float32` (subject to decay), `state: dict<uint8, utf8> (raw|distilled|archived|tombstoned)`, `embedding: fixed_size_list<float32>[1536]?`, `payload: large_utf8`, `links: list<fixed_size_binary[16]>`
+- Notes: Lifecycle/retention policy:
+  - `working` expires with the session,
+  - `episodic` raw distils to semantic after a window (e.g. 30d) then archives,
+  - `semantic` persists with decay; can be pinned,
+  - `procedural` is versioned and stable.
+
 ## Invariants
 - All IDs are `fixed_size_binary[16]` (UUIDv7) and equal `Spine.row_id` for their table.
 - No `LargeUtf8` outside `Chunks.text` and `Prompts.text` (TXT axiom).
