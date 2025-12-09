@@ -75,6 +75,12 @@
 - Remote path details: see `docs/remote-llm-architecture.md` for the mediated Council -> OpenRouter data path, budgets, and runtime modes.
 - AI-2027 corpus: optional local snapshot lives under `docs/assets/ai-2027` for safety/strategy RAG; include that path when ingesting docs.
 
+## 10. Inputs from Goni Lab (LM Arena–style evals)
+- The **Goni Lab** mode (`docs/goni-lab.md`) runs LM Arena–style comparisons across local seats (vLLM/TGI/Ollama/LM Studio) and council seats (OpenRouter/provider IDs).
+- Lab logs latency, tokens, refusal/safety, faithfulness (verifier), and quick win/lose/tie ratings per task tag. These become supervised data for `goni-router` regret tests and for proposing seat/routing changes.
+- Council seats should be adjusted only with evidence from Lab runs (champion labels per task tag, cost/latency deltas). Lab “promote” writes a proposed patch to `config/council.yaml`; ops review/merge.
+- Web-grounded seats (Perplexity Sonar, Grok) are opt-in and tagged; they are used only when the task tag demands live/current information.
+
 ## 10. Example config sketch (informative, not binding)
 ```yaml
 chairman: openai:gpt-4.1

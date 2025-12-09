@@ -3,6 +3,7 @@
 - [Goni Story](./goni-story.md) - narrative, human-first overview.
 - [Goni Whitepaper](./goni-whitepaper.md) - system architecture and invariants.
 - [LLM Council](./llm-council.md) - when/how the orchestrator escalates to the cloud council.
+- [Goni Lab](./goni-lab.md) - LM Arena–style evals feeding router + council policy.
 - [Remote LLM Architecture](./remote-llm-architecture.md) - cloud leg via Council -> OpenRouter, budgets, and runtime modes.
 - [Goni SWOT](./goni-swot.md) - positioning vs ecosystem.
 - [Inspiration](./inspiration.md) - people radar.
