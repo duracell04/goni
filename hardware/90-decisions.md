@@ -132,4 +132,42 @@ Initial BOM work in 50-bom-experiments/bom-v1-apu-node.md suggests that an APU-c
 
 ---
 
+## ADR-002 - IPW as Primary Hardware Metric & Hybrid-Routing Design Constraint
+
+**Status:** Proposed
+**Date:** (fill when accepted)
+**Owner:** (assign)
+
+#### Context
+
+- Local-first claim needs a **per-watt intelligence** yardstick across APU, dGPU, GN100-class nodes.
+- Saad-Falcon et al. (2025) define **Intelligence per Watt (IPW)** and provide a public profiling harness over real LLM traffic (1M single-turn queries) covering 20+ local models and 8 accelerators (M-series, AMD, NVIDIA). Their results show:
+  - ~5.3x IPW uplift from 2023→2025 (model + accelerator improvements combined).
+  - Local↔cloud gap of ~1.4–1.5x IPW, implying edge nodes still have headroom.
+  - Oracle hybrid routing could cut energy ~80.4% and cost ~73.8% vs cloud-only baselines, with most savings retained even with imperfect routers.
+- We need a **standard benchmark/harness** to compare candidate Goni boxes and to size hybrid routing policies.
+
+#### Decision
+
+- **Adopt IPW as the primary hardware efficiency metric** for evaluating any “model × hardware” combo we consider for Goni.
+- **Treat hybrid routing efficiency as a design constraint**, not an afterthought: every hardware evaluation must report expected IPW and hybrid-routing savings relative to a cloud-only baseline.
+- **Integrate the authors’ IPW profiling harness** (or equivalent reproduction) into the prototype track to run on:
+  - baseline APU nodes,
+  - optional dGPU add-ons,
+  - GN100-class lab nodes.
+
+#### Consequences
+
+- Hardware choices (boards, accelerators, cooling) must report IPW under representative loads, not just TOPS/TFLOPS.
+- Routing policy experiments need to include “energy/cost vs accuracy” plots so we can justify local-first defaults and when to burst to cloud.
+- BOM and thermal design discussions gain a common yardstick; we can prune options that look good on paper but have weak IPW.
+- Adds work: the prototype harness must be maintained and run across candidate configs before promoting them into decisions.
+
+#### References
+
+- Saad-Falcon, J. et al. (2025). *Intelligence per Watt: Measuring Intelligence Efficiency of Local AI*. arXiv:2511.07885.
+- IPW profiling harness (public): see the paper’s accompanying repository.
+
+---
+
 *(Add further ADRs below as decisions are made, e.g. enclosure dimensions, PSU choice, networking baseline, etc.)*

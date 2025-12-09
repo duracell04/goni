@@ -243,6 +243,8 @@ Jobs look like this, conceptually:
   - Steps: detect new or increased subscriptions.
   - Output: alerts, draft cancellation emails, updated budget view.
 
+Behind these is a **consolidation loop** inspired by Generative Agents: Observation (raw events) → Reflection (summaries + long-term facts) → Planning (jobs/actions). Nightly runs keep the box "thinking" even when you're offline, so plans and drafts stay aligned with what actually happened.
+
 These jobs run **even if you never open the UI**. They're the difference between "AI as a prompt box" and "AI as a background service".
 
 ### 5.3 Action: the sudo layer and hybrid router

@@ -1,4 +1,4 @@
-# Inspiration ñ Builders & Thinkers We Track
+Ôªø# Inspiration ‚Äì Builders & Thinkers We Track
 
 > This file is a **people radar** for Goni.
 >
@@ -6,26 +6,26 @@
 > - OwnYourAI / sovereign infra / local-first LLMs, and  
 > - Agentic / LinkedIn / content-automation stacks.
 >
-> Itís not exhaustive; itís a living list of ìwho to watchî for infra patterns, narratives, and practical architectures.
+> It‚Äôs not exhaustive; it‚Äôs a living list of ‚Äúwho to watch‚Äù for infra patterns, narratives, and practical architectures.
 
 ---
 
-## A. ìOwnYourAIî / Sovereign-Infra / Local-LLM Builders
+## A. ‚ÄúOwnYourAI‚Äù / Sovereign-Infra / Local-LLM Builders
 
 These are closest to the **Goni / Mitko** energy:
 - local-first infra,  
 - benchmarks, economics of local vs cloud,  
-- ìown your stackî ideology.
+- ‚Äúown your stack‚Äù ideology.
 
 ---
 
-### 1. Mitko Vasilev ñ **OwnYourAI**
+### 1. Mitko Vasilev ‚Äì **OwnYourAI**
 
 **Focus**
 
-- Sovereign, on-prem AI: from ìdream workstationsî to **multi-agent local AI clouds** (vLLM, GGUF, MLX, ROCm, etc.).  
+- Sovereign, on-prem AI: from ‚Äúdream workstations‚Äù to **multi-agent local AI clouds** (vLLM, GGUF, MLX, ROCm, etc.).  
 - Strong thesis:  
-  > ìMake sure you own your AI. AI in the cloud is not aligned with you; itís aligned with the company that owns it.î
+  > ‚ÄúMake sure you own your AI. AI in the cloud is not aligned with you; it‚Äôs aligned with the company that owns it.‚Äù
 
 **Key takeaways**
 
@@ -41,11 +41,11 @@ These are closest to the **Goni / Mitko** energy:
 
 ---
 
-### 2. Fabio Matricardi ñ **ìThe Poor GPU Guyî / Local GPT Command Center**
+### 2. Fabio Matricardi ‚Äì **‚ÄúThe Poor GPU Guy‚Äù / Local GPT Command Center**
 
 **Focus**
 
-- ìLocal GPT command centerî architectures for **low-hardware setups** (mini-PCs, old GPUs, Intel iGPUs).  
+- ‚ÄúLocal GPT command center‚Äù architectures for **low-hardware setups** (mini-PCs, old GPUs, Intel iGPUs).  
 - Deep dives into **OpenVINO, llama.cpp, Ollama**, and hybrid stacks.
 
 **Key takeaways**
@@ -53,17 +53,17 @@ These are closest to the **Goni / Mitko** energy:
 - Writes practical series like:
   - *How to ditch the Cloud and own your AI*  
   - *Local GPT: make AI easy and build your own Command Center*  
-- Very good at **step-by-step infra**: from zero ? a usable local GPT ìengine room.î
+- Very good at **step-by-step infra**: from zero ? a usable local GPT ‚Äúengine room.‚Äù
 
 **Links**
 
 - Medium profile: https://medium.com/@fabio.matricardi  
-- ìLocal GPT: make AI easy and build your own Command Centerî:  
+- ‚ÄúLocal GPT: make AI easy and build your own Command Center‚Äù:  
   https://blog.stackademic.com/local-gpt-make-ai-easy-and-build-your-own-command-center-caba6ded2855  
 
 ---
 
-### 3. Ndamulelo Nemakhavhani ñ **CRUD Flow / Private AI Bootcamp**
+### 3. Ndamulelo Nemakhavhani ‚Äì **CRUD Flow / Private AI Bootcamp**
 
 **Focus**
 
@@ -72,7 +72,7 @@ These are closest to the **Goni / Mitko** energy:
 
 **Key takeaways**
 
-- ìPrivate AI Bootcamp 101î vibe:  
+- ‚ÄúPrivate AI Bootcamp 101‚Äù vibe:  
   - starting from scratch,  
   - clear steps to get local models + web UIs running,  
   - keep everything under your control.  
@@ -86,7 +86,7 @@ These are closest to the **Goni / Mitko** energy:
 
 ---
 
-### 4. Martin Treiber ñ **IKANGAI / Local LLM Infra & Agentic Web**
+### 4. Martin Treiber ‚Äì **IKANGAI / Local LLM Infra & Agentic Web**
 
 **Focus**
 
@@ -94,21 +94,21 @@ These are closest to the **Goni / Mitko** energy:
   - hardware (VRAM, memory bandwidth),
   - software (runtimes, quantisation),
   - performance tuning.  
-- Writes on **ìThe Agentic Webî** and infra for agent workloads.
+- Writes on **‚ÄúThe Agentic Web‚Äù** and infra for agent workloads.
 
 **Key takeaways**
 
-- Article: *The Complete Guide to Running LLMs Locally: Hardware, Software, and Performance Essentials* is a 40-minute ìplaybookî on local LLM infra.  
-- Frames performance in terms of **prefill vs decode**, **bandwidth vs raw TFLOPs**, not just ìbigger GPU goodî.
+- Article: *The Complete Guide to Running LLMs Locally: Hardware, Software, and Performance Essentials* is a 40-minute ‚Äúplaybook‚Äù on local LLM infra.  
+- Frames performance in terms of **prefill vs decode**, **bandwidth vs raw TFLOPs**, not just ‚Äúbigger GPU good‚Äù.
 
 **Links**
 
 - Guide: https://www.ikangai.com/the-complete-guide-to-running-llms-locally-hardware-software-and-performance-essentials/  
-- IKANGAI ñ AI projects: https://www.ikangai.com/ai-projects/  
+- IKANGAI ‚Äì AI projects: https://www.ikangai.com/ai-projects/  
 
 ---
 
-### 5. Manish (InstaVM) ñ **ìI Want Everything Localî / Offline Workspace**
+### 5. Manish (InstaVM) ‚Äì **‚ÄúI Want Everything Local‚Äù / Offline Workspace**
 
 **Focus**
 
@@ -120,20 +120,20 @@ These are closest to the **Goni / Mitko** energy:
 
 **Key takeaways**
 
-- Blog post: *I Want Everything Local ó Building My Offline AI Workspace* is a blueprint for:
-  - ìno cloud, no remote code executionî as a hard requirement,  
+- Blog post: *I Want Everything Local ‚Äî Building My Offline AI Workspace* is a blueprint for:
+  - ‚Äúno cloud, no remote code execution‚Äù as a hard requirement,  
   - planning ? LLM ? code ? sandboxed VM, all local.  
-- Very relevant to Goniís ìlocal OS + AI OS on topî story.
+- Very relevant to Goni‚Äôs ‚Äúlocal OS + AI OS on top‚Äù story.
 
 **Links**
 
 - InstaVM / secure code execution: https://instavm.io/  
-- ìI Want Everything Local ó Building My Offline AI Workspaceî:  
+- ‚ÄúI Want Everything Local ‚Äî Building My Offline AI Workspace‚Äù:  
   https://instavm.io/blog/building-my-offline-ai-workspace  
 
 ---
 
-### 6. Saad Mujeeb ñ **Local Workstations vs Data-Center GPUs**
+### 6. Saad Mujeeb ‚Äì **Local Workstations vs Data-Center GPUs**
 
 **Focus**
 
@@ -142,11 +142,11 @@ These are closest to the **Goni / Mitko** energy:
 
 **Key takeaways**
 
-- Article: *Local AI Workstations vs Data Center GPUs: The Development Strategy Thatís Saving Companies Millions* breaks down:
+- Article: *Local AI Workstations vs Data Center GPUs: The Development Strategy That‚Äôs Saving Companies Millions* breaks down:
   - when a **one-time capex AI devbox** beats cloud opex,  
   - what workloads fit local vs remote,  
-  - concrete examples (32B models, 10ñ25 concurrent users, 200+ tokens/sec).  
-- Great ammo for justifying **ìOwn Your AIî with numbers**.
+  - concrete examples (32B models, 10‚Äì25 concurrent users, 200+ tokens/sec).  
+- Great ammo for justifying **‚ÄúOwn Your AI‚Äù with numbers**.
 
 **Links**
 
@@ -155,12 +155,12 @@ These are closest to the **Goni / Mitko** energy:
 
 ---
 
-### 7. Mehul Gupta ñ **vLLM & Local API Serving**
+### 7. Mehul Gupta ‚Äì **vLLM & Local API Serving**
 
 **Focus**
 
 - vLLM-based **self-hosted APIs** that mimic the OpenAI API; how to move workloads from cloud ? local or on-prem.  
-- Part of ìData Science in Your Pocketî ñ practical LLM engineering.
+- Part of ‚ÄúData Science in Your Pocket‚Äù ‚Äì practical LLM engineering.
 
 **Key takeaways**
 
@@ -168,7 +168,7 @@ These are closest to the **Goni / Mitko** energy:
   - how to spin up vLLM as an **OpenAI-compatible server**,  
   - when to pick vLLM vs Ollama,  
   - how to layer routing and observability on top.  
-- Very relevant for Goniís **ìlocal /v1/chat/completionsî** story.
+- Very relevant for Goni‚Äôs **‚Äúlocal /v1/chat/completions‚Äù** story.
 
 **Links**
 
@@ -178,11 +178,11 @@ These are closest to the **Goni / Mitko** energy:
 
 ---
 
-### 8. Effendy Zulkifly ñ **Sovereign LLM Criteria**
+### 8. Effendy Zulkifly ‚Äì **Sovereign LLM Criteria**
 
 **Focus**
 
-- ìSovereign AI / LLMî in a **national / linguistic** context (Malaysia, Malay language).  
+- ‚ÄúSovereign AI / LLM‚Äù in a **national / linguistic** context (Malaysia, Malay language).  
 - Defines what makes a **truly sovereign** LLM vs marketing.
 
 **Key takeaways**
@@ -194,16 +194,16 @@ These are closest to the **Goni / Mitko** energy:
   4. Governance & ownership (local control).  
   5. Ecosystem & talent.  
   6. Exportability / competitiveness.  
-- Good mental model for framing **Goni as sovereign infra**, not just ìruns locallyî.
+- Good mental model for framing **Goni as sovereign infra**, not just ‚Äúruns locally‚Äù.
 
 **Links**
 
-- ìSOVEREIGN AI / LLM: 6 PROOF CRITERIAî (LinkedIn):  
+- ‚ÄúSOVEREIGN AI / LLM: 6 PROOF CRITERIA‚Äù (LinkedIn):  
   https://www.linkedin.com/posts/effendyzulkifly_sovereign-ai-llm-6-proof-criteria-the-activity-7391350813039714304-seR3  
 
 ---
 
-### 9. Biswanath Das ñ **Local LLM Platform (Fintech)**
+### 9. Biswanath Das ‚Äì **Local LLM Platform (Fintech)**
 
 **Focus**
 
@@ -215,9 +215,9 @@ These are closest to the **Goni / Mitko** energy:
 **Key takeaways**
 
 - LinkedIn posts like *Introducing Local LLM Platform: Secure, On-Premise AI for Finance* position:
-  - ìAI Security is Local, Not Cloudî,  
+  - ‚ÄúAI Security is Local, Not Cloud‚Äù,  
   - **air-gapped, regulated-sector** AI (banks, trading floors, risk).  
-- Great for Goniís longer-term **enterprise / regulated sector** narrative.
+- Great for Goni‚Äôs longer-term **enterprise / regulated sector** narrative.
 
 **Links**
 
@@ -226,7 +226,7 @@ These are closest to the **Goni / Mitko** energy:
 
 ---
 
-### 10. Caleb Stephenson ñ **ìCostco Computerî Sovereign AI Narrative**
+### 10. Caleb Stephenson ‚Äì **‚ÄúCostco Computer‚Äù Sovereign AI Narrative**
 
 **Focus**
 
@@ -238,16 +238,16 @@ These are closest to the **Goni / Mitko** energy:
 **Key takeaways**
 
 - Story: *How I built a chatbot with a Costco computer and open-source models* (LinkedIn post) ends with cancelling a SaaS AI subscription because the **local stack was good enough**.  
-- Good anecdotal proof: you donít need an H100 farm to own your AI.
+- Good anecdotal proof: you don‚Äôt need an H100 farm to own your AI.
 
 **Links**
 
-- ìI built a chatbot with a Costco computer and open-source modelsî (LinkedIn):  
+- ‚ÄúI built a chatbot with a Costco computer and open-source models‚Äù (LinkedIn):  
   https://www.linkedin.com/posts/caleb-stephenson-mt-ent-maturity_using-a-local-llm-putting-it-all-together-activity-7394117050807296000-8r_U  
 
 ---
 
-### 11. Piotr Kuczynski ñ **Desktop Benchmarking for Coding Agents**
+### 11. Piotr Kuczynski ‚Äì **Desktop Benchmarking for Coding Agents**
 
 **Focus**
 
@@ -256,8 +256,8 @@ These are closest to the **Goni / Mitko** energy:
 **Key takeaways**
 
 - Repeatedly shares benchmarks like:
-  > ìI get ~25 tokens/sec with GLM-4.6 on my desktop GPU workstation, with a 128k token context window for coding agents. All tokens are on the house. No weekly rate limits.î  
-- Pure signal on whatís possible on a **single, well-built devbox**.
+  > ‚ÄúI get ~25 tokens/sec with GLM-4.6 on my desktop GPU workstation, with a 128k token context window for coding agents. All tokens are on the house. No weekly rate limits.‚Äù  
+- Pure signal on what‚Äôs possible on a **single, well-built devbox**.
 
 **Links**
 
@@ -266,7 +266,7 @@ These are closest to the **Goni / Mitko** energy:
 
 ---
 
-### 12. Clara / Claraverse ñ **Offline Modular AI Workspace**
+### 12. Clara / Claraverse ‚Äì **Offline Modular AI Workspace**
 
 **Focus**
 
@@ -278,7 +278,7 @@ These are closest to the **Goni / Mitko** energy:
 
 **Key takeaways**
 
-- ClaraVerse is described as **ìprivacy-first, fully local AI workspaceî**:
+- ClaraVerse is described as **‚Äúprivacy-first, fully local AI workspace‚Äù**:
   - 100 % local processing,  
   - zero telemetry,  
   - MIT-licensed,  
@@ -299,7 +299,7 @@ These are more **application-layer agent builders** (esp. LinkedIn/content), but
 
 ---
 
-### 13. Manoj Bhopi ñ **LinkedIn Post Agents (Dev-Focused)**
+### 13. Manoj Bhopi ‚Äì **LinkedIn Post Agents (Dev-Focused)**
 
 **Focus**
 
@@ -312,7 +312,7 @@ These are more **application-layer agent builders** (esp. LinkedIn/content), but
 - Posts like *Built an AI agent to write LinkedIn posts for me* document:
   - taking raw notes / code / ideas,  
   - turning them into structured posts with an AI agent in the middle,  
-  - friction reduction between ìI had an ideaî and ìI published itî.  
+  - friction reduction between ‚ÄúI had an idea‚Äù and ‚ÄúI published it‚Äù.  
 
 **Links**
 
@@ -320,7 +320,7 @@ These are more **application-layer agent builders** (esp. LinkedIn/content), but
 
 ---
 
-### 14. Deepak Rajput ñ **Agentic AI for LinkedIn & Marketing**
+### 14. Deepak Rajput ‚Äì **Agentic AI for LinkedIn & Marketing**
 
 > (There are multiple Deepak Rajputs; here we track the **agentic AI / marketing** voice.)
 
@@ -333,7 +333,7 @@ These are more **application-layer agent builders** (esp. LinkedIn/content), but
 **Key takeaways**
 
 - Posts like *Agentic AI: From Chat to Autonomous Work* and *Top 10 Agentic AI tools for marketers to delegate work* are clean mental frameworks for:
-  - moving from ìhelper toolsî ? **delegated agents**.  
+  - moving from ‚Äúhelper tools‚Äù ? **delegated agents**.  
 - Good reference for **how to talk about agents** with marketing and growth teams.
 
 **Links**
@@ -342,7 +342,7 @@ These are more **application-layer agent builders** (esp. LinkedIn/content), but
 
 ---
 
-### 15. Irene Chan ñ **No-Code LinkedIn Agents & Content Systems**
+### 15. Irene Chan ‚Äì **No-Code LinkedIn Agents & Content Systems**
 
 **Focus**
 
@@ -360,12 +360,12 @@ These are more **application-layer agent builders** (esp. LinkedIn/content), but
 **Links**
 
 - Site: https://irenechan.co/  
-- ìHow I Reclaimed 2.5 Hours Weekly with My No-Code AI LinkedIn Agentî (LinkedIn):  
+- ‚ÄúHow I Reclaimed 2.5 Hours Weekly with My No-Code AI LinkedIn Agent‚Äù (LinkedIn):  
   https://www.linkedin.com/pulse/how-i-reclaimed-25-hours-weekly-my-no-code-ai-linkedin-irene-chan-5furc  
 
 ---
 
-### 16. sujeetgund ñ **Open-Source LinkedIn Post Generator Agent**
+### 16. sujeetgund ‚Äì **Open-Source LinkedIn Post Generator Agent**
 
 **Focus**
 
@@ -384,7 +384,7 @@ These are more **application-layer agent builders** (esp. LinkedIn/content), but
 
 ---
 
-### 17. Cli3nts ñ **AI Agent for LinkedIn**
+### 17. Cli3nts ‚Äì **AI Agent for LinkedIn**
 
 **Focus**
 
@@ -394,7 +394,7 @@ These are more **application-layer agent builders** (esp. LinkedIn/content), but
 
 **Key takeaways**
 
-- Website copy: ìYour AI Agent to scale your LinkedIn presenceî ñ automates:
+- Website copy: ‚ÄúYour AI Agent to scale your LinkedIn presence‚Äù ‚Äì automates:
   - inbound replies and comments,  
   - outbound prospecting DMs,  
   - post scheduling / copy.  
@@ -406,7 +406,7 @@ These are more **application-layer agent builders** (esp. LinkedIn/content), but
 
 ---
 
-### 18. Jacob Bank ñ **Relay.app (Workflow Agents for Email & Calendar)**
+### 18. Jacob Bank ‚Äì **Relay.app (Workflow Agents for Email & Calendar)**
 
 **Focus**
 
@@ -416,7 +416,7 @@ These are more **application-layer agent builders** (esp. LinkedIn/content), but
 **Key takeaways**
 
 - Background: ex-Director of Product Management at Google (Gmail, Google Calendar); founder of Timeful (smart calendar acquired by Google).  
-- Relay.appís positioning: creating **workflow agents** that can:
+- Relay.app‚Äôs positioning: creating **workflow agents** that can:
   - watch email and calendar,  
   - trigger complex workflows,  
   - coordinate multi-step processes.
@@ -428,7 +428,7 @@ These are more **application-layer agent builders** (esp. LinkedIn/content), but
 
 ---
 
-### 19. Damian Player ñ **Agent Integrator / AI Automation for Agencies**
+### 19. Damian Player ‚Äì **Agent Integrator / AI Automation for Agencies**
 
 **Focus**
 
@@ -439,7 +439,7 @@ These are more **application-layer agent builders** (esp. LinkedIn/content), but
 **Key takeaways**
 
 - Agent Integrator positions itself as an **AI automation agency & partner**, building systems and teaching people to build AI agencies that scale.  
-- Damianís X feed is a steady stream of **agent use-cases** and agency-focused framing.
+- Damian‚Äôs X feed is a steady stream of **agent use-cases** and agency-focused framing.
 
 **Links**
 
@@ -449,7 +449,7 @@ These are more **application-layer agent builders** (esp. LinkedIn/content), but
 
 ---
 
-### 20. Subhan Qureshi ñ **Agentic AI Strategy & Ops**
+### 20. Subhan Qureshi ‚Äì **Agentic AI Strategy & Ops**
 
 **Focus**
 
@@ -461,7 +461,7 @@ These are more **application-layer agent builders** (esp. LinkedIn/content), but
 **Key takeaways**
 
 - Posts like *Agentic AI: The Future of Enterprise Operations* and *Agentic AI: Transforming Business with Autonomous AI Systems* frame:
-  - when agents go from ìnice-to-haveî ? core operating layer,  
+  - when agents go from ‚Äúnice-to-have‚Äù ? core operating layer,  
   - what metrics and governance matter.  
 - Good for **strategy slides** and explaining agents to business audiences.
 
@@ -471,7 +471,7 @@ These are more **application-layer agent builders** (esp. LinkedIn/content), but
 
 ---
 
-### 21. Elewachi Emmanuel ñ **n8n / Zapier / Voice Agents**
+### 21. Elewachi Emmanuel ‚Äì **n8n / Zapier / Voice Agents**
 
 **Focus**
 
@@ -482,7 +482,7 @@ These are more **application-layer agent builders** (esp. LinkedIn/content), but
 
 **Key takeaways**
 
-- Posts + shoutouts (e.g. ìElewachi built a Voice AI Agent that answers inbound calls and books appointments, with n8n + Airtableî) illustrate:
+- Posts + shoutouts (e.g. ‚ÄúElewachi built a Voice AI Agent that answers inbound calls and books appointments, with n8n + Airtable‚Äù) illustrate:
   - solid examples of **vertical automations**,  
   - using mainstream tools to build agents in the wild.  
 
@@ -492,7 +492,7 @@ These are more **application-layer agent builders** (esp. LinkedIn/content), but
 
 ---
 
-### 22. John Santaferraro ñ **Agentic AI Thought Leadership**
+### 22. John Santaferraro ‚Äì **Agentic AI Thought Leadership**
 
 **Focus**
 
@@ -501,9 +501,9 @@ These are more **application-layer agent builders** (esp. LinkedIn/content), but
 **Key takeaways**
 
 - Talks about:
-  - ìThe Agents are Comingî and ìThe Agentic AI Future is Hereî,  
+  - ‚ÄúThe Agents are Coming‚Äù and ‚ÄúThe Agentic AI Future is Here‚Äù,  
   - multi-agent orchestration (Task, Persona, Workgroup agents).  
-- Useful for **high-level narratives** and analyst framing (ìTop 10 thought leader for agentic AIî).
+- Useful for **high-level narratives** and analyst framing (‚ÄúTop 10 thought leader for agentic AI‚Äù).
 
 **Links**
 
@@ -512,13 +512,13 @@ These are more **application-layer agent builders** (esp. LinkedIn/content), but
 
 ---
 
-### 23. Omar Sar (ìelvisî) ñ **Agentic Workflows & Code Iteration Loops**
+### 23. Omar Sar (‚Äúelvis‚Äù) ‚Äì **Agentic Workflows & Code Iteration Loops**
 
 **Focus**
 
 - Developer-focused **agentic workflows**:
   - iterative code improvement via LLM loops,  
-  - ìwrite better codeî prompt loops and their effects.
+  - ‚Äúwrite better code‚Äù prompt loops and their effects.
 
 **Key takeaways**
 
@@ -528,13 +528,13 @@ These are more **application-layer agent builders** (esp. LinkedIn/content), but
 
 **Links**
 
-- X handle often referenced as ìelvis (Omar Sar)î ñ find via X search for `"Omar Sar" agents` for the latest profile.  
+- X handle often referenced as ‚Äúelvis (Omar Sar)‚Äù ‚Äì find via X search for `"Omar Sar" agents` for the latest profile.  
 
 *(Add direct profile link once you pin it down.)*
 
 ---
 
-### 24. Mustafa Shoukat ñ **AI Agents Stack Cartographer**
+### 24. Mustafa Shoukat ‚Äì **AI Agents Stack Cartographer**
 
 **Focus**
 
@@ -545,16 +545,16 @@ These are more **application-layer agent builders** (esp. LinkedIn/content), but
 
 **Key takeaways**
 
-- Curates ìwhat existsî so builders donít miss entire categories.  
+- Curates ‚Äúwhat exists‚Äù so builders don‚Äôt miss entire categories.  
 - Good for staying updated on **new infra / agent platforms**.
 
 **Links**
 
-- (Add LinkedIn / X link once confirmed ñ placeholder.)  
+- (Add LinkedIn / X link once confirmed ‚Äì placeholder.)  
 
 ---
 
-### 25. Ravi Ranjan ñ **No-Code Automation for Business**
+### 25. Ravi Ranjan ‚Äì **No-Code Automation for Business**
 
 **Focus**
 
@@ -568,48 +568,48 @@ These are more **application-layer agent builders** (esp. LinkedIn/content), but
   - recruiting,  
   - analytics,  
   - consulting workflows.  
-- Very relevant when you want **client-friendly ìbefore/afterî stories**.
+- Very relevant when you want **client-friendly ‚Äúbefore/after‚Äù stories**.
 
 **Links**
 
-- (Add LinkedIn link when pinned ñ placeholder.)  
+- (Add LinkedIn link when pinned ‚Äì placeholder.)  
 
 ---
 
-### 26. Elvis S. ñ **Multi-Agent OSS Frameworks**
+### 26. Elvis S. ‚Äì **Multi-Agent OSS Frameworks**
 
 **Focus**
 
 - Surfaces **open-source multi-agent frameworks**:  
   - symbolic control,  
   - multi-agent communication,  
-  - more advanced than ìone LLM + a few toolsî.
+  - more advanced than ‚Äúone LLM + a few tools‚Äù.
 
 **Key takeaways**
 
-- Good radar for when Goniís agent layer needs to go beyond:
+- Good radar for when Goni‚Äôs agent layer needs to go beyond:
   - one orchestrator,
   - into genuine **multi-agent ecosystems**.
 
 **Links**
 
-- (Add GitHub / X handle once you stabilise which ìElvis S.î you mean ñ placeholder.)  
+- (Add GitHub / X handle once you stabilise which ‚ÄúElvis S.‚Äù you mean ‚Äì placeholder.)  
 
 ---
 
-### 27. Lindy & Relevance AI Teams ñ **Platform-Level Multi-Agent Workflows**
+### 27. Lindy & Relevance AI Teams ‚Äì **Platform-Level Multi-Agent Workflows**
 
 **Focus**
 
-- **Lindy** ñ AI employee platform (sales, support, ops).  
-- **Relevance AI** ñ tools for building multi-agent workflows & dashboards for enterprises.
+- **Lindy** ‚Äì AI employee platform (sales, support, ops).  
+- **Relevance AI** ‚Äì tools for building multi-agent workflows & dashboards for enterprises.
 
 **Key takeaways**
 
 - Both show:
   - what **production UX** for multi-agent systems looks like,  
   - how to do **analytics, guardrails, and iteration** on agents in the field.  
-- Useful inspiration for Goniís future **dashboard and orchestration UX**.
+- Useful inspiration for Goni‚Äôs future **dashboard and orchestration UX**.
 
 **Links**
 
@@ -618,14 +618,28 @@ These are more **application-layer agent builders** (esp. LinkedIn/content), but
 
 ---
 
+## C. Research anchors (papers we treat as design inputs)
+
+- **Intelligence per Watt (Saad-Falcon et al., 2025)** - IPW metric + harness; core to Goni's local-vs-cloud efficiency framing and hybrid routing.
+- **MemGPT (Packer et al., 2023)** - virtual context management; informs kernel-level paging/syscalls in Memory/Context planes.
+- **Explosive Neural Networks (Aguilera et al., 2025)** - curved/high-order memory dynamics; motivates decoupled memory geometry on the Arrow spine.
+- **Generative Agents (Park et al., 2023)** - Observation -> Reflection -> Planning loop; informs consolidation jobs and planners.
+- **Cognitive Offloading (Risko & Gilbert, 2016)** - offloading risks; informs Socratic UX defaults and provenance/approval flows.
+
+---
+
 ## How to use this list in Goni
 
 - When you design **hardware + infra** ? look at Section A.  
 - When you design **agent workflows + UX** ? look at Section B.  
-- When you write **narratives (decks, README, whitepaper)** ? steal language and framing from the people who already resonate with the ìOwn Your AIî and ìagents that actually do workî stories.
+- When you write **narratives (decks, README, whitepaper)** ? steal language and framing from the people who already resonate with the ‚ÄúOwn Your AI‚Äù and ‚Äúagents that actually do work‚Äù stories.
 
 Treat this as a **living file**:
 
 - add new people as you discover them,  
-- promote some to ìcore influencesî for specific parts of Goni (hardware, orchestrator, UX),  
+- promote some to ‚Äúcore influences‚Äù for specific parts of Goni (hardware, orchestrator, UX),  
 - and link concrete patterns from their work into your architecture docs.
+
+
+
+

@@ -29,6 +29,26 @@ Both documents are maintained as **living references** and should be consulted w
 - evaluating new architectural ideas (to avoid reinventing solved problems), or  
 - framing Goni for different audiences (engineers, infra people, founders, regulated-sector clients).
 
+## Local vs cloud efficiency (IPW)
+
+Saad-Falcon et al. (2025) define **Intelligence per Watt (IPW)** and publish a harness that measures accuracy, energy, and latency per query across model × hardware pairs. We adopt IPW as the way to argue "local-first": for any workload we compare local IPW to cloud baselines and treat hybrid routing savings as a design constraint, not an optimisation afterthought.
+
+## Context and memory management (MemGPT)
+
+MemGPT (Packer et al., 2023) frames LLM context as **virtual memory**: prompt window ≈ RAM, external stores ≈ Disk, with explicit paging calls. Goni internalises this in the planes: Memory/Context planes page Arrow/ANN/graph stores into context, LLM engines remain stateless, and paging/syscalls (e.g. `MEM_READ`, `MEM_WRITE`) are first-class kernel APIs rather than prompt tricks.
+
+## Memory geometry and planes
+
+Explosive Neural Networks (Aguilera et al., 2025) shows high-order interactions on curved manifolds improve memory capacity/recall. We treat this as theoretical backing for **decoupling memory geometry from reasoning**: the Memory Plane can use non-Euclidean/graph indexes layered on the Arrow spine without forcing the same geometry on the reasoning engines.
+
+## Observation → Reflection → Planning
+
+Generative Agents (Park et al., 2023) demonstrates that long-horizon coherence requires an explicit Observation–Reflection–Planning loop. Goni encodes this as a Control/Memory-plane obligation: raw events land in the Arrow spine (Observation), periodic jobs distill reflections/long-term facts (Reflection), and planners use both current state and reflections to schedule actions and suggestions (Planning).
+
+## Cognitive offloading stance
+
+Risko & Gilbert (2016) warn that uncritical **cognitive offloading** erodes skills and understanding. Goni’s UX defaults bias toward **Socratic mode**: surfacing retrieved memories, asking for confirmation on creative/learning tasks, and making provenance/attribution visible so the user stays in the loop instead of outsourcing everything.
+
 ## Determinism and self-loop stability
 
 Autoregressive self-loops are chaotic: tiny numeric noise can flip token choices over long runs. For regulated or auditable workflows, Goni exposes a **deterministic preset** (temperature 0, fixed seed where supported, batch size 1, single worker/thread or CPU, TF32 off on NVIDIA, deterministic backend flag such as vLLM `--enable-deterministic-inference`). Hardware/driver hashes are logged with deterministic runs so trajectories can be reproduced, even if throughput is lower.

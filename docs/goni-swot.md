@@ -345,7 +345,7 @@ Without ruthless scope control and staged milestones, the project could get stuc
 
 ### 5.5 Overfitting to infra elegance vs user outcomes
 
-- There’s a real danger Goni becomes:
+- There's a real danger Goni becomes:
   - beloved by infra nerds,
   - but underwhelming for actual users who just want:
     - fewer emails,
@@ -354,10 +354,26 @@ Without ruthless scope control and staged milestones, the project could get stuc
 
 **Mitigation path:**
 
-- Anchor roadmap on **2–3 flagship workflows** that:
+- Anchor roadmap on **2-3 flagship workflows** that:
   - are demoable,
   - are felt by real users within the first week,
-  - clearly beat “just use ChatGPT + shortcuts/Raycast”.
+  - clearly beat "just use ChatGPT + shortcuts/Raycast".
+
+---
+
+### 5.6 Cognitive offloading backlash
+
+- Users may start **over-delegating** to Goni for tasks they could do themselves.
+- Cognitive offloading research shows this can **erode skills and judgement** over time ("Google effect").
+
+**Risk:**  
+Perception that Goni dulls users' abilities or hides provenance could trigger trust loss or scrutiny.
+
+**Mitigation path:**
+
+- Default to **Socratic mode** on creative/learning flows (ask before fully automating).
+- Always surface provenance: what was retrieved, what was generated, which model/route.
+- Keep user-in-the-loop gates for irreversible actions; promote automation only after repeated approvals and anomaly checks.
 
 ---
 

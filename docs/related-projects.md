@@ -311,7 +311,19 @@ In that sense, you can think of Goni as:
 
 ---
 
-## 8. References
+## 8. Research anchors informing Goni
+
+- **Intelligence per Watt (IPW)** — Saad-Falcon et al. (2025): IPW metric + public harness for model × hardware energy/accuracy benchmarking; basis for Goni’s local vs cloud efficiency claims and hybrid routing design.
+- **MemGPT** — Packer et al. (2023): virtual context management (prompt as RAM, external memory as Disk) with paging/syscalls; underpins the Memory/Context planes.
+- **Explosive Neural Networks** — Aguilera et al. (2025): higher-order interactions on curved manifolds improving memory capacity; motivates distinct memory geometry (graph/curved indexes) on the Arrow spine.
+- **Generative Agents** — Park et al. (2023): Observation → Reflection → Planning loop for coherent agents; informs nightly consolidation jobs.
+- **Cognitive Offloading** — Risko & Gilbert (2016): offloading benefits/risks; informs UX defaults (Socratic mode, provenance, user-in-the-loop gates).
+
+These sources are used as **design constraints** (see ADRs/whitepaper), not decoration.
+
+---
+
+## 9. References
 
 - EXO – “Run your own AI cluster at home with everyday devices”  
   https://github.com/exo-explore/exo :contentReference[oaicite:34]{index=34}  

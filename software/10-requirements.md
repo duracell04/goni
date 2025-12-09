@@ -81,6 +81,14 @@ At a minimum, a single Goni node should:
   - episodic history is distilled over time,
   - semantic facts persist with decay and can be pinned,
   - procedural knowledge is versioned.
+- The Memory/Context planes must implement **virtual context management** (MemGPT-style):
+  - prompt/context window as RAM, Arrow/vector/graph stores as Disk,
+  - explicit paging/syscalls (`MEM_READ`, `MEM_WRITE`, `MEM_SUMMARIZE`, `MEM_FORGET`) for moving data across tiers,
+  - LLM engines stay stateless; all long-lived state flows through the Memory Plane.
+- The Control Plane must run a **consolidation loop** (Observation → Reflection → Planning):
+  - ingest raw events into episodic memory,
+  - distill reflections/long-term facts periodically (e.g. nightly/weekly),
+  - plan/schedule actions using both current state and reflections.
 - The system must support **local-only long-term memory** by default; cloud/council access is limited to distilled facts or session context unless explicitly allowed.
 - To avoid **cognitive offloading debt**, default UX for learning/creative flows should:
   - prompt user effort (outline/selection) before full generation,
@@ -192,8 +200,9 @@ At a minimum, a single Goni node should:
 
 - Users should be able to:
   - see what the system is currently doing (e.g. indexing, training, idle),
-  - view basic resource usage (e.g. “node is under heavy load, expect slower replies”),
+  - view basic resource usage (e.g. "node is under heavy load, expect slower replies"),
   - manage connected data sources (add/remove email accounts, storage locations, etc.).
+  - control **user-in-the-loop gates** for irreversible actions (send/move/transfer) and choose Socratic vs auto modes per surface.
 
 ### 7.3 Updates
 
