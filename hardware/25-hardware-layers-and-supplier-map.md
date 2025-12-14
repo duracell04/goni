@@ -1,98 +1,110 @@
-# 25 - Hardware Layers and Supplier Map (2025-2026)
+# 25 - Hardware Layers and Supplier Map (2025–2026)
 
-This note captures the **mental model for Goni hardware** and the **suppliers to track** for each layer. Use it as a **one-pager** when making kernel/backend decisions, planning hardware tiers, or talking to partners.
+Last refreshed: **2025-12-14**
+
+This note captures the **mental model for Goni hardware**, plus an opinionated supplier map with **availability reality** and **backend readiness** notes so hardware choices stay aligned with what the software can actually run today.
 
 ---
 
-## 1. Layered Mental Model
+## 1. Layered mental model
 
 Everything maps to four layers:
 
-- **Silicon / Accelerators** — GPUs, NPUs, ASICs, photonic processors; what `LlmEngine` backends target.
+- **Silicon / Accelerators** — GPUs, NPUs, ASICs, photonic processors; what inference backends ultimately target.
 - **Systems / Boxes** — workstations, servers, mini PCs; what sits on a desk or in a rack.
-- **Edge / Always-On** — ultra-low-power inference for router/intent models that keep the big GPU asleep.
-- **Workloads / Models** — what drives specs (FLUX, 70B LLMs, adapters, multimodal).
-
-`LlmEngine` should stay **backend-pluggable**, with implementations such as: `Cpu`, `Cuda`, `Rocm`, `Gaudi`, `Tenstorrent`, `Photonic`, and an **edge-class** path (e.g. Hailo) for “wake-on-GPU” routing.
+- **Edge / Always-On** — ultra-low-power inference for router/intent models that keep big compute asleep.
+- **Workloads / Models** — what drives specs (LLMs, vision, embeddings, diffusion, adapters).
 
 ---
 
-## 2. Goni Tiers (v1 / Pro / Max)
+## 2. Goni tiers (v1 / Pro / Max)
 
-- **v1 – APU Node / Dev Box**  
-  Goal: silent, cheap, hackable; orchestrates Pro/Max.  
-  Compute: AMD Ryzen AI / high-end APU (unified memory), optional Hailo module or built-in NPU.  
-  Boxes: Framework board/laptop, mini PCs (Minisforum/Beelink), DIY ITX with 128 GB LPDDR/DDR5.  
-  Suppliers to lean on: **AMD (APUs), Framework/SFF vendors, Hailo**.
+### v1 – APU node / quiet appliance (MVP baseline)
 
-- **Pro – Single Big GPU Exocortex**  
-  Goal: real exocortex; runs FLUX + 70B LLMs comfortably.  
-  Compute: 1× NVIDIA RTX 4090/5090 or RTX 6000-class (24–32 GB) **or** 1× Intel Gaudi (96+ GB HBM) if hedging against CUDA lock-in.  
-  Boxes: AIME / BIZON / aiserver.eu workstation, TUXEDO/System76 tower, or big OEM workstation (Dell/Lenovo/HPE).  
-  Suppliers to lean on: **NVIDIA (default), Intel Gaudi (second vendor), AMD MI300X (if embracing ROCm)**.
+Goal: quiet, compact, always-on personal exocortex.
 
-- **Max – Cluster / Experimental / Photonic**  
-  Goal: small “AI lab in a rack”; multi-GPU or mixed accelerators, plus future photonics.  
-  Compute: NVIDIA HGX / multi-GPU with NVLink; Intel Gaudi cluster (Ethernet/RoCE); Tenstorrent Wormhole; “Tier-0” photonic cards/servers (Arago, Q.ANT; later Lightmatter/Scintil fabric).  
-  Boxes/fabric: Supermicro GPU servers; Lambda/AIME/aiserver.eu integrators; photonic IO/fabric from Scintil/Lightmatter.  
-  Suppliers to track: **NVIDIA + Supermicro (baseline), Intel Gaudi + Supermicro (Alt-Max), Arago / Q.ANT / Lightmatter / Scintil (Max-plus)**.
+- Compute: APU with **128 GB unified memory** (Ryzen AI Max+ 395 class).
+- Box: custom ~7 L enclosure (internal SFX PSU, 2× NVMe, 5 GbE).
+- Priority suppliers: **Framework (mainboard), HP (fallback dev box), AMD (APU platform)**.
 
----
+Availability snapshot:
+- Framework Desktop mainboard (Ryzen AI Max+ 395 / 128 GB) is orderable in batches on Framework Marketplace.
+- HP Z2 Mini G1a 128 GB configs are listed in Switzerland via HP store and aggregators.
 
-## 3. Silicon / Accelerator Suppliers
+### Pro – Single big GPU exocortex
 
-### 3.1 Mainstream GPUs & NPUs
+Goal: maximum compatibility + throughput for CUDA-first stacks (vLLM, diffusion, etc.).
 
-- **NVIDIA** — GeForce 40/50, RTX/Quadro, H100/B200/GB200, NVLink. Pros: de-facto standard, CUDA/tooling, great for FLUX + 70B. Cons: expensive, lock-in, NVLink mostly DC. Best: **Pro, Max**.
-- **AMD** — Ryzen AI APUs, Ryzen/Threadripper/EPYC, MI300X. Pros: v1 APUs, 192 GB HBM on MI300X, more open ROCm. Cons: smaller ecosystem. Best: **v1, Pro, some Max**.
-- **Intel (Gaudi)** — Gaudi2/3 with 96+ GB HBM, Ethernet/RoCE fabric. Pros: strong perf/€; HF integration; Ethernet scaling. Cons: ecosystem maturity below CUDA. Best: **Pro, Max**.
+- Compute: 1× NVIDIA RTX-class GPU (24–32 GB VRAM), desktop CPU, 64–128 GB DDR5.
+- Box: tower or larger SFF (acoustics become harder).
+- Priority suppliers: **NVIDIA (default), EU integrators**.
 
-### 3.2 “Alternative” AI Accelerators
+### Max – Cluster / experimental / future accelerators
 
-- **Tenstorrent (Wormhole)** — RISC-V/Tensix PCIe cards up to 24 GB GDDR6. Role: open-ish backend (`LlmEngine::tenstorrent`) for workstations (“TT-QuietBox / LoudBox”). Early but developer-friendly.
-- **Groq (LPU)** — Ultra-low-latency inference; ideal router/agent layer. Inference-only; mostly cloud today but conceptually a latency backend.
-- **Cerebras (WSE-3)** — Wafer-scale engine; huge models without sharding. Fits **Max lab**; 20 kW+ so DC/colo context only.
-- **SambaNova (RDU / DataScale)** — Integrated HW + LLMs (Samba-1). Good if you buy full stack; less modular.
+Goal: “AI lab” setups: multi-GPU, alternative accelerators, future photonics.
 
-### 3.3 Photonic / Optical Compute (Tier-0 / Future)
-
-- **Arago** — Photonic AI processors + CARLOTA software (PyTorch device). Energy-efficient optical matmuls; future `LlmEngine::photonic`. Early but funded (2025).
-- **Lightmatter** — Envise compute + Passage interconnect + photonic fabric/IO. Targets DC bandwidth/power bottlenecks; fits Goni Max fabric roadmap.
-- **Q.ANT** — Photonic NPU servers; NPU 2.0 claims up to 30× energy efficiency, 50× perf vs CMOS. Practical PCIe/server photonic accelerator.
-- **Scintil Photonics** — LEAF Light DWDM light engine for co-packaged optics; single-chip light engine for GPU clusters. Photonic IO for future racks; NVIDIA investor.
-
-### 3.4 Edge Inference
-
-- **Hailo (8/10 M.2/mini-PCIe)** — Run lightweight router/intent/VAD models 24/7; wake big GPU only when needed. Perfect for “Goni Router” board or inside a mini PC.
+- Compute: multi-GPU (NVIDIA HGX-class) and/or alt accelerators (Gaudi, Tenstorrent).
+- Systems: Supermicro-class chassis and integrators.
+- Track (not MVP): photonic and optical IO/fabric suppliers.
 
 ---
 
-## 4. Systems / Box Suppliers
+## 3. Backend readiness (software ↔ hardware alignment)
 
-- **Big OEMs / Server Builders** — Supermicro (primary Goni Max chassis, 1–8 GPU, air/liquid, HGX B200); Dell / Lenovo / HPE (workstations + 1–4 GPU servers; enterprise-friendly thermals/warranties).
-- **AI-Focused Integrators (EU-friendly)** — Lambda (GPU workstations/servers), AIME (custom HPC GPU workstations/servers, EU), BIZON (quiet liquid-cooled RTX workstations), aiserver.eu (H200/DGX-focused), AI-Cube/regional SFF vendors. Good “Goni Pro/Max” OEM partners: you flash Goni OS.
-- **Linux-First / “Spiritual Siblings”** — TinyCorp TinyBox (multi-RTX open boxes), TUXEDO Computers (EU Linux-first desktops), System76 (Thelio line), ASN+ (bespoke HW/firmware), Olares (AI appliance UX benchmark).
-- **APU / Mini-Node Vendors (v1 focus)** — Framework (modular boards/laptops, Ryzen AI configs), Minisforum/Beelink etc. (SFF APUs, 64–96 GB RAM), DIY ITX/DTX builds (APU + 128 GB RAM).
+This section prevents “paper hardware” that the current stack can’t use.
+
+### 3.1 What the repo can run today (kernel reality)
+
+In `software/kernel/goni-infer`, the implemented engine is **HttpVllmEngine** (a client to a vLLM server).
+That means:
+
+- **MVP end-to-end today is easiest on NVIDIA/CUDA**, because vLLM is most mature there.
+- **APU-centric MVP requires either:**
+  - validating vLLM on the target AMD APU/ROCm stack, or
+  - adding a second runtime backend (recommended) such as **llama.cpp** (Vulkan/HIP/CPU fallback).
+
+Actionable implication:
+- Hardware MVP can still be APU-centric, but we must track the “runtime gap” explicitly and close it on the software side.
+
+### 3.2 Practical runtime options by tier
+
+| Tier | Hardware target | “Works now” runtime path | Notes |
+|------|------------------|--------------------------|-------|
+| v1 (APU) | Ryzen AI Max+ 395 class | llama.cpp (Vulkan/HIP) or validated ROCm path | vLLM ROCm officially targets specific AMD GPUs; APU validation is a concrete task, not an assumption. |
+| Pro (NVIDIA) | RTX 4090/5090 class | vLLM (CUDA) | Best current throughput and ecosystem maturity. |
+| Max | multi-GPU / mixed | vLLM + custom | Requires more orchestration (sharding, networking, scheduling). |
 
 ---
 
-## 5. Workloads / Model Suppliers (Spec Drivers)
+## 4. Silicon / accelerator suppliers (prioritised)
 
-- **Black Forest Labs (FLUX.1 / FLUX.2)** — Sets baseline: 24–32 GB VRAM to run high-res FLUX + LLM concurrency.
-- **Hugging Face** — Model hub + Gaudi integration; main testbed to validate new backends (Gaudi, Tenstorrent, Q.ANT, etc.).
-- **Stability AI / Mistral / others** — SD3, Mixtral/Mistral; additional stress tests on VRAM, bandwidth, token throughput.
-- **SambaNova** — Samba-1 LLMs + hardware; good perf baseline even if not adopted.
+### 4.1 Tier-1 (near-term, real)
+
+- **AMD (APU platform)** — critical for v1 APU-centric box. Track ROCm/NPU tooling maturity.
+- **NVIDIA (dGPU)** — default for Pro and many Max deployments due to CUDA ecosystem.
+- **Intel (Gaudi / client NPUs)** — interesting for Max/alt vendor strategy; not an MVP dependency.
+
+### 4.2 Tier-2 (alternative accelerators)
+
+- **Tenstorrent** — developer-friendly alternative backend; good long-term hedge if it becomes practical.
+- **Groq / Cerebras / SambaNova** — mostly “as-a-system” or DC-class; not MVP.
+
+### 4.3 Tier-0 (future / photonics)
+
+- **Arago, Lightmatter, Q.ANT, Scintil** — track for Max-only future; keep out of MVP critical path.
 
 ---
 
-## 6. How to Use This Map
+## 5. Systems / box suppliers (availability + where to lean)
 
-- **Architecture** — Keep `LlmEngine` explicitly backend-pluggable (`Cpu`, `Cuda`, `Rocm`, `Gaudi`, `Tenstorrent`, `Photonic`, edge-class). Treat suppliers as implementations, not special cases.
-- **Hardware sequencing (2025–2026 experiments)** — Start with **v1 APU mini-node** (cheap, quiet). Move to **Pro: single RTX 4090/5090 box** from EU integrator (AIME/BIZON). Then explore **Gaudi or Tenstorrent** as second-vendor backends.
-- **Partner conversations** — Use shorthand buckets:
-  - **Tier-1 GPU partners**: NVIDIA, AMD, Intel.
-  - **Tier-1 EU integrators**: AIME, BIZON, aiserver.eu, Supermicro resellers.
-  - **Tier-0 future accelerators**: Arago, Q.ANT, Lightmatter, Scintil.
-- **Edge story** — Put router/QoS scheduler on **Hailo or built-in NPU**, so the big GPU sleeps until needed.
+- **APU mini-node sources (v1):** Framework (board), HP (Z2 Mini G1a), plus mini-PC vendors as yardsticks.
+- **EU-friendly integrators (Pro/Max):** AIME / BIZON / Supermicro resellers, etc.
+- **OEM workstations:** Dell / Lenovo / HPE (enterprise-friendly, but less “modular appliance”).
 
-This file should stay short and opinionated; update it when a supplier becomes real, a backend lands in the kernel, or a tier definition shifts.
+---
+
+## 6. How to use this map
+
+- Use this file to keep tiers **opinionated** and tied to **backend reality**.
+- When a new backend lands (e.g. llama.cpp runtime), update the readiness table and then revisit what hardware becomes “unblocked”.
+- Keep the MVP path boring and buildable; move experimental suppliers into Pro/Max until they are proven.

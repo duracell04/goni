@@ -1,173 +1,184 @@
 # 90 - Hardware Decisions (ADR Log)
 
-> This file is a **decision log** for Goni hardware.
-> Each entry records one important, relatively stable decision about the hardware architecture or implementation.
+Last refreshed: **2025-12-14**
 
-The goal is **not** to document every small tweak, but to capture the **big choices** that shape the product so that:
+This file is the **decision log** for Goni hardware. It captures the big, relatively stable choices so we do not re-litigate the same debates and so mechanical/electrical/software can converge on one buildable MVP.
 
-- engineers can see why something is the way it is,
-- new contributors can understand the constraints,
-- we avoid repeating the same debates.
-
-Decisions here should always reference the more detailed documents in this folder, for example:
-
-- [10-requirements.md](./10-requirements.md) - hardware requirements,
-- [20-architecture-options.md](./20-architecture-options.md) - candidate architectures,
-- 50-bom-experiments/ - BOM experiments and cost models.
+Links:
+- requirements: [`10-requirements.md`](./10-requirements.md)
+- architectures: [`20-architecture-options.md`](./20-architecture-options.md)
+- BOMs: [`50-bom-experiments/`](./50-bom-experiments/)
 
 ---
 
-## ADR Template
+## ADR-001 - Baseline MVP architecture: APU-centric unified-memory node
 
-When adding a new decision, copy this template and fill it out:
+**Status:** Accepted  
+**Date:** 2025-12-14  
+**Owner:** @goni-hardware
 
-`markdown
-### ADR-XXX - Short title of the decision
+### Context
 
-**Status:** Proposed / Accepted / Deprecated
-**Date:** YYYY-MM-DD
-**Owner:** @github-handle
+We need an MVP node that is:
 
-#### Context
+- small (6–8 L), quiet, and always-on,
+- capable of running two local OSS models in parallel plus RAG,
+- power-feasible on a standard outlet,
+- and upgradeable by swapping the compute module.
 
-- Briefly describe the background.
-- What requirements from 10-requirements.md are relevant?
-- Which options from 20-architecture-options.md / BOM experiments were considered?
+`20-architecture-options.md` compares:
 
-#### Decision
+1. APU-centric node (CPU+iGPU+NPU + unified LPDDR5X),
+2. discrete GPU workstation (x86 + high-end dGPU),
+3. external heavy node (Grace/Blackwell class) as add-on.
 
-- State the decision clearly in 2-3 bullet points.
-- Specify what we **will do** and, if relevant, what we explicitly **will not do**.
+### Decision
 
-#### Consequences
+- The **baseline Goni MVP node is APU-centric**:
+  - Ryzen AI Max+ 395 class APU (or equivalent generation),
+  - **128 GB unified LPDDR5X** (soldered),
+  - Mini-ITX-style mounting + standard PSU compatibility.
+- Discrete GPU workstations and external heavy nodes are **Pro/Max tiers**, not MVP baseline.
 
-- What becomes easier because of this decision?
-- What becomes harder or impossible?
-- Are there follow-up tasks (e.g. update BOM, CAD, firmware assumptions)?
+### Consequences
 
-#### References
+- Mechanical design can target a realistic appliance envelope (~7 L) with quiet cooling.
+- We must be explicit about runtime/tooling support on the chosen APU platform (tracked in ADR-006 / software runtime work).
 
-- Link to discussion issues / PRs.
-- Link to relevant documents in this repo (architecture, BOM experiments, etc.).
-`
+### References
 
-Numbering (ADR-001, ADR-002, ...) can be assigned in increasing order. We do not need perfect global sequencing; uniqueness and clarity matter more than strict order.
-
----
-
-## ADR-001 - Baseline Architecture: APU-Centric Goni Node
-
-**Status:** Proposed
-**Date:** (fill when accepted)
-**Owner:** (assign)
-
-#### Context
-
-We need to choose a **baseline hardware architecture** for the Goni MVP node that satisfies:
-
-- small appliance form factor (~6-8 L),
-- low acoustic footprint (quiet under typical AI workloads),
-- ability to run **medium-to-large LLMs** locally (~30-40B parameters quantised),
-- reasonable power consumption (few hundred watts, single household outlet),
-- ability to **mesh** multiple nodes into a personal cluster,
-- and a path to **future upgrades** (compute board swaps, external heavy nodes).
-
-10-requirements.md defines these constraints.
-20-architecture-options.md surveys three main options:
-
-1. APU-centric node (integrated CPU/GPU/NPU + unified LPDDR5X),
-2. discrete GPU workstation (desktop CPU + high-end dGPU),
-3. external Grace Blackwell node (Acer Veriton GN100) as a heavy add-on.
-
-Initial BOM work in 50-bom-experiments/bom-v1-apu-node.md suggests that an APU-centric node is technically feasible with a **BOM around USD 2.8-3.5k** while satisfying size and power constraints.
-
-#### Decision
-
-- The **baseline Goni MVP node** will be **APU-centric**:
-
-  - one high-end APU with integrated CPU, GPU and NPU,
-  - **unified LPDDR5X memory** (no separate VRAM),
-  - target capacity **128 GB**.
-
-- The Goni enclosure and power system will be designed for:
-
-  - a **single APU board** in a Mini-ITX-compatible form factor,
-  - ~**200-250 W** sustained load with comfortable cooling,
-  - one **small PSU** (~500-600 W) and **two NVMe SSDs** (OS + data).
-
-- Discrete GPU workstations and external Grace Blackwell nodes will be treated as:
-
-  - **future extensions** (e.g. "Goni Lab" or "Goni Max"),
-  - not part of the MVP node's default hardware.
-
-#### Consequences
-
-**Positive:**
-
-- Simplifies thermal and acoustic design:
-
-  - total power remains in a range manageable in <10 L without server-like noise.
-- Enables a compact, homogenous **cluster node** design - all nodes share the same APU profile.
-- Unified memory (single pool) simplifies local LLM deployment for 30-40B models and reduces complexity around VRAM vs system RAM.
-- BOM experiments show we can hit a **USD ~2.8-3.5k** hardware cost while justifying a **USD 10k** retail price including personalisation and setup.
-
-**Negative / trade-offs:**
-
-- Memory (LPDDR5X) is **soldered** and not user-upgradeable; capacity must be set at manufacturing time.
-- No ECC in current consumer LPDDR5X implementations.
-- Peak training throughput and extremely large model support (70B+ full precision) will remain better on discrete GPU or GN100-class systems; Goni MVP will **not** be optimised for such workloads.
-
-**Follow-ups:**
-
-- Lock the **target memory capacity** (64 vs 128 GB) and document it explicitly in 10-requirements.md and BOM files.
-- Update mechanical design in 30-mechanical/ to assume a single APU mainboard with SFX/ATX PSU and 2x NVMe slots.
-- Align software assumptions (e.g. LLM sizes, quantisation strategies) with the available unified memory.
-
-#### References
-
-- [hardware/10-requirements.md](./10-requirements.md) - Hardware requirements.
-- [hardware/20-architecture-options.md](./20-architecture-options.md) - APU vs dGPU vs GN100 comparison.
-- [hardware/50-bom-experiments/bom-v1-apu-node.md](./50-bom-experiments/bom-v1-apu-node.md) - BOM experiment for APU-centric Goni node.
-- External primary references for example APU boards and devices (GMKtec, HP Z2, Framework, Acer GN100) are listed in 20-architecture-options.md and om-v1-apu-node.md.
+- [`20-architecture-options.md`](./20-architecture-options.md)
+- [`50-bom-experiments/bom-v2-framework-395-128gb.md`](./50-bom-experiments/bom-v2-framework-395-128gb.md)
 
 ---
 
-## ADR-002 - IPW as Primary Hardware Metric & Hybrid-Routing Design Constraint
+## ADR-002 - MVP memory floor: 128 GB unified memory is required
 
-**Status:** Proposed
-**Date:** (fill when accepted)
-**Owner:** (assign)
+**Status:** Accepted  
+**Date:** 2025-12-14  
+**Owner:** @goni-hardware
 
-#### Context
+### Context
 
-- Local-first claim needs a **per-watt intelligence** yardstick across APU, dGPU, GN100-class nodes.
-- Saad-Falcon et al. (2025) define **Intelligence per Watt (IPW)** and provide a public profiling harness over real LLM traffic (1M single-turn queries) covering 20+ local models and 8 accelerators (M-series, AMD, NVIDIA). Their results show:
-  - ~5.3x IPW uplift from 2023→2025 (model + accelerator improvements combined).
-  - Local↔cloud gap of ~1.4–1.5x IPW, implying edge nodes still have headroom.
-  - Oracle hybrid routing could cut energy ~80.4% and cost ~73.8% vs cloud-only baselines, with most savings retained even with imperfect routers.
-- We need a **standard benchmark/harness** to compare candidate Goni boxes and to size hybrid routing policies.
+The MVP experience target includes:
 
-#### Decision
+- two local models in parallel (8–14B quant),
+- interactive context lengths (8–16k),
+- RAG indexes and embeddings in memory.
 
-- **Adopt IPW as the primary hardware efficiency metric** for evaluating any “model × hardware” combo we consider for Goni.
-- **Treat hybrid routing efficiency as a design constraint**, not an afterthought: every hardware evaluation must report expected IPW and hybrid-routing savings relative to a cloud-only baseline.
-- **Integrate the authors’ IPW profiling harness** (or equivalent reproduction) into the prototype track to run on:
-  - baseline APU nodes,
-  - optional dGPU add-ons,
-  - GN100-class lab nodes.
+64 GB unified memory can run smaller models, but it is not representative of the “real exocortex” story and tends to collapse under concurrency.
 
-#### Consequences
+### Decision
 
-- Hardware choices (boards, accelerators, cooling) must report IPW under representative loads, not just TOPS/TFLOPS.
-- Routing policy experiments need to include “energy/cost vs accuracy” plots so we can justify local-first defaults and when to burst to cloud.
-- BOM and thermal design discussions gain a common yardstick; we can prune options that look good on paper but have weak IPW.
-- Adds work: the prototype harness must be maintained and run across candidate configs before promoting them into decisions.
+- MVP reference builds use **128 GB unified memory**.
+- 64 GB devices may be used for early dev/testing, but are not the performance reference.
 
-#### References
+### Consequences
 
-- Saad-Falcon, J. et al. (2025). *Intelligence per Watt: Measuring Intelligence Efficiency of Local AI*. arXiv:2511.07885.
-- IPW profiling harness (public): see the paper’s accompanying repository.
+- Compute module choice is constrained to 128 GB configurations (often soldered LPDDR).
+- BOM and supply chain focus on 128 GB availability; no “upgrade later” assumption.
+
+### References
+
+- [`10-requirements.md`](./10-requirements.md)
+- [`20-architecture-options.md`](./20-architecture-options.md)
 
 ---
 
-*(Add further ADRs below as decisions are made, e.g. enclosure dimensions, PSU choice, networking baseline, etc.)*
+## ADR-003 - MVP networking baseline: 5 GbE preferred, 2.5 GbE acceptable fallback
+
+**Status:** Accepted  
+**Date:** 2025-12-14  
+**Owner:** @goni-hardware
+
+### Context
+
+Cluster/mesh use (2–4 nodes) and fast local RAG/data sync benefits from multi-gigabit Ethernet. Many consumer routers/switches now support at least 2.5 GbE; 5 GbE is increasingly common on higher-end boards.
+
+### Decision
+
+- MVP compute modules should provide **≥5 GbE** if available.
+- **2.5 GbE is acceptable** for early dev boxes, but not the long-term reference.
+
+### Consequences
+
+- Choose boards and/or NIC options with a clear 5 GbE story.
+- Mechanical design should allow a clean RJ45 opening and (optionally) a future 10 GbE variant.
+
+---
+
+## ADR-004 - MVP enclosure envelope: ~7 L, quiet-first airflow
+
+**Status:** Accepted  
+**Date:** 2025-12-14  
+**Owner:** @goni-hardware
+
+### Context
+
+We want a desk/shelf appliance, not a tower. The enclosure must still fit:
+
+- APU board (Mini-ITX-style),
+- internal PSU,
+- 2× NVMe,
+- quiet fans and dust filtering.
+
+### Decision
+
+- Target enclosure volume: **~7 L** (allowed range 6–8 L).
+- Design for **low-RPM, large-fan airflow** (no small high-RPM blowers).
+
+### Consequences
+
+- Cooling and PSU placement decisions must be validated early with physical mockups.
+- Mechanical drafts must include airflow path, filters, and serviceability.
+
+---
+
+## ADR-005 - PSU approach: internal SFX, 500–600 W, efficiency-first
+
+**Status:** Accepted  
+**Date:** 2025-12-14  
+**Owner:** @goni-hardware
+
+### Context
+
+APU-centric nodes have modest sustained power, but need headroom for spikes and future boards. Internal PSUs simplify the appliance UX.
+
+### Decision
+
+- Use an internal **SFX** PSU in the **500–600 W** class, **80+ Gold** or better.
+- Prefer ATX 3.x compliant units when practical (cabling/standards alignment).
+
+### Consequences
+
+- PSU thermal and acoustic profile becomes part of the product experience.
+- Mechanical layout must reserve space for PSU intake/exhaust and cable routing.
+
+---
+
+## ADR-006 - Runtime alignment requirement: close the “APU inference backend” gap
+
+**Status:** Accepted  
+**Date:** 2025-12-14  
+**Owner:** @goni-hardware + @goni-software
+
+### Context
+
+The current kernel inference engine in-repo is HTTP vLLM client. vLLM is mature on CUDA/NVIDIA and has ROCm support for some AMD GPUs, but APU-class support must be validated (or a second backend must be added).
+
+### Decision
+
+- Hardware MVP remains APU-centric, **but** software must provide a validated inference backend for the APU reference hardware:
+  - either validate the ROCm path for the APU target, **or**
+  - implement a second backend (recommended) such as **llama.cpp** (Vulkan/HIP/CPU fallback).
+
+### Consequences
+
+- Hardware and software roadmaps are coupled until this is resolved.
+- “Pro” nodes (NVIDIA) can serve as a temporary throughput baseline for vLLM, but must not redefine the MVP hardware envelope.
+
+### References
+
+- `software/kernel/goni-infer` (HttpVllmEngine)
+- [`25-hardware-layers-and-supplier-map.md`](./25-hardware-layers-and-supplier-map.md)
+

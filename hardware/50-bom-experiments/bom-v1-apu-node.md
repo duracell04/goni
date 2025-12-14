@@ -49,7 +49,7 @@ Where prices are taken from official vendor stores, they are noted explicitly. F
 - **Midpoint:** ~3,100-3,200 USD
 - **High end:** ~3,500 USD
 
-This aligns with the earlier architecture estimate of **~ 2.8-3.5 k USD BOM** for an APU-centric Goni node.
+This aligns with the earlier architecture estimate of **~$2.8–$3.5k BOM** for an APU-centric Goni node.
 
 ---
 
@@ -66,7 +66,7 @@ Framework's official marketplace lists the **Ryzen AI Max+ 395 - 128 GB** Deskto
 - Memory: 128 GB LPDDR5X-8000 (unified).
 - Networking: Wi-Fi 7, 5 Gbit Ethernet.
 - Form factor: designed to be used in a Desktop chassis with a standard ATX PSU and Mini-ITX-style mounting.
-- Price (official store, excl. tax): **US,699** for the 128 GB configuration.
+- Price (official store, excl. tax): **$1,699** for the 128 GB configuration.
 
 **Why this is a good reference:**
 
@@ -87,12 +87,12 @@ Samsung's **990 EVO** is the current mainstream PCIe 4.0 NVMe SSD line:
 - Capacities: 1 TB, 2 TB.
 - 2 TB official spec: up to 5,000 MB/s read, 4,200 MB/s write.
 - Samsung US store pricing (Oct 2025):
-  - 1 TB: US.99
-  - 2 TB: US.99
+  - 1 TB: see vendor page (price varies)
+  - 2 TB: see vendor page (price varies)
 
 For Goni's OS and container storage, the 1 TB variant is sufficient; the 2 TB variant is a minor cost increase if more headroom for logs and images is desired.
 
-**Chosen reference for BOM:** 1 TB 990 EVO, ~US.
+**Chosen reference for BOM:** 1 TB 990 EVO (see Samsung store for current price).
 
 #### 3.2.2 Data/models drive - Samsung 990 EVO Plus 4 TB (Gen4)
 
@@ -101,7 +101,7 @@ Samsung's **990 EVO Plus** is a PCIe 4.0 NVMe SSD offering up to 4 TB capacity. 
 - Capacity: up to **4 TB**.
 - Sequential read/write up to **7,250 / 6,300 MB/s**.
 - US Samsung store price for 4 TB 990 EVO Plus Gen4 NVMe (MZ-V9S4T0B/AM):
-  - **US.99**.
+  - **see vendor page (price varies)**.
 
 4 TB is sufficient to store:
 
@@ -110,7 +110,7 @@ Samsung's **990 EVO Plus** is a PCIe 4.0 NVMe SSD offering up to 4 TB capacity. 
 - user data (documents, email cache, local knowledge base),
 with room for growth.
 
-**Chosen reference for BOM:** 4 TB 990 EVO Plus, US.99.
+**Chosen reference for BOM:** 4 TB 990 EVO Plus, see vendor page (price varies).
 
 ---
 
@@ -130,9 +130,9 @@ Corsair's official SF600 product page describes:
 - Zero RPM fan mode for silent operation at low/moderate loads.
 - 100 % 105 C Japanese capacitors.
 
-The SF600 is widely used in compact high-performance builds and is a suitable reference for Goni's form factor and efficiency requirements. Corsair does not list MSRP on the product page; typical retail prices in late 2025 sit in the **US-150** range depending on region.
+The SF600 is widely used in compact high-performance builds and is a suitable reference for Goni's form factor and efficiency requirements. Corsair does not list MSRP on the product page; typical retail prices in late 2025 sit in the **~$150** range depending on region.
 
-**BOM assumption:** generic 500-600 W SFX/ATX Gold PSU, ~US-150.
+**BOM assumption:** generic 500-600 W SFX/ATX Gold PSU, ~~$150.
 
 ---
 
@@ -154,7 +154,7 @@ Corsair's official product page describes the H100x RGB ELITE as a 240 mm radiat
 - two 120 mm PWM fans,
 - 5-year warranty.
 
-Typical European retail pricing is on the order of **EUR 120-160** (~ US-170) depending on region and reseller.
+Typical European retail pricing is on the order of **EUR 120-160** (~ ~$150) depending on region and reseller.
 
 **Example reference (fans):** Noctua NF-A12x25 (120 mm PWM fans)
 
@@ -167,8 +167,8 @@ For Goni we assume:
 
 **BOM assumption:**
 
-- One 240 mm AIO or equivalent tower cooler: **US-170**.
-- Three 120 mm PWM fans: ~US-30 each -> **US-90** total.
+- One 240 mm AIO or equivalent tower cooler: **~$150**.
+- Three 120 mm PWM fans: ~~$150 each -> **~$150** total.
 
 ---
 
@@ -193,9 +193,9 @@ These are **Goni-specific parts**, not sourced from existing products:
 
 Initial **per-unit cost allocations** for small production runs might reasonably be:
 
-- Enclosure: **US-350** (low volumes, CNC/proto tooling).
-- MCU + LED + harness: **US-80**.
-- Assembly & QA: **US-350**.
+- Enclosure: **~$150** (low volumes, CNC/proto tooling).
+- MCU + LED + harness: **~$150**.
+- Assembly & QA: **~$150**.
 
 These figures should be refined as mechanical design and manufacturing quotes are obtained.
 
@@ -205,17 +205,17 @@ These figures should be refined as mechanical design and manufacturing quotes ar
 
 From this experiment:
 
-- A **realistic APU-based Goni node** can be built with a **BOM in the ~ US.8-3.5k range**, while meeting the:
+- A **realistic APU-based Goni node** can be built with a **BOM in the ~ see vendor page (price varies)-3.5k range**, while meeting the:
 
   - size constraint (compact 6-8 L enclosure),
   - performance target (30-40B quantised LLMs locally),
   - noise and power constraints (few hundred watts, quiet cooling).
 
-- The single most expensive part is the **compute mainboard with 128 GB LPDDR5X** (approx US,699 in the Framework Desktop configuration).
+- The single most expensive part is the **compute mainboard with 128 GB LPDDR5X** (approx $1,699 in the Framework Desktop configuration).
 
-- All other components (storage, PSU, cooling, enclosure, assembly) combined add roughly another **US.1-1.8k**.
+- All other components (storage, PSU, cooling, enclosure, assembly) combined add roughly another **see vendor page (price varies)-1.8k**.
 
-Given a target hardware selling price of **US,000 per node**, this leaves substantial margin to:
+Given a target hardware selling price of **$10,000 per node**, this leaves substantial margin to:
 
 - cover non-recurring engineering (NRE) and tooling,
 - handle small batch manufacturing costs and warranty risk,
@@ -226,7 +226,7 @@ Given a target hardware selling price of **US,000 per node**, this leaves substa
 1. Validate that the proposed power envelope and cooling strategy are sufficient for sustained AI workloads on an APU node (thermal tests on dev hardware).
 2. Refine the enclosure + PSU integration for the 6-8 L form factor.
 3. Obtain preliminary manufacturing quotes for the enclosure and assembly to convert the **rough cost ranges** into more precise ranges.
-4. When the mainboard vendor and exact cooler/PSU vendors are locked in, clone this file as om-vX-<vendor>-apu-node.md with specific part numbers and updated prices.
+4. When the mainboard vendor and exact cooler/PSU vendors are locked in, clone this file as om-vX-<vendor>-apu-node.md with specific part numbers and updated prices.
 
 ---
 
