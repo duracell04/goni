@@ -265,7 +265,43 @@ Given the above:
 
 ---
 
-## 7. References
+## 7. Market scan: host candidates and DePIN networks
+
+Quick map of "where Goni OS could land" across near-term hardware and decentralized compute. Use this to align industrial design, performance expectations, and potential hybrid/offload paths.
+
+### 7.1 Local "AI boxes" / workstations (tinybox-style)
+- tinybox (tinygrad / tinycorp) — open hardware/software positioning for small AI training/inference boxes. Docs: https://docs.tinygrad.org/tinybox/ | Overview: https://tinygrad.org/#tinybox
+- NVIDIA DGX Spark — compact NVIDIA workstation targeting AI workloads (CUDA/DGX stack). https://www.nvidia.com/en-us/products/workstations/dgx-spark/
+- AORUS RTX 5090 AI BOX — external GPU enclosure marketed as an AI box with RTX 5090-class cards. https://www.gigabyte.com/Graphics-Card/GV-N5090IXEB-32GD | Blog: https://global.aorus.com/blog-detail.php?i=1349
+- AORUS RTX 5060 Ti AI BOX — similar external GPU concept at a lower tier. https://www.gigabyte.com/Graphics-Card/GV-N506TIXEB-16GD | Blog: https://global.aorus.com/blog-detail.php?i=1345
+- Yeren Local AI Box (RNT, Germany) — on-prem local AI workstation. https://rnt.de/en/solutions/yeren-local-ai-special-offer/
+- Seeed reComputer AI Industrial R2145-12 — rugged/edge AI box for industrial deployments. https://www.seeedstudio.com/reComputer-AI-Industrial-R2145-12-p-6486.html
+
+**Relevance to Goni:** competitive yardsticks for "turn-key local AI box" expectations (enclosure quality, thermals/acoustics, bundled software).
+
+### 7.2 Mini PCs / nodes (Mac mini-class)
+- Apple Mac mini (M4 / M4 Pro) — compact Apple Silicon node often used for local AI. https://www.apple.com/mac-mini/
+- GEEKOM A9 Max AI Mini PC (Ryzen AI 9 HX 370) — Ryzen AI mini PC. https://www.geekompc.com/geekom-a9-max-mini-pc/
+- GEEKOM AMD Mini PC lineup — broader Ryzen-based mini PC range. https://www.geekompc.com/amd-mini-pc/
+- MSI Cubi Z AI 8M — compact Ryzen mini PC marketed for AI-enhanced workloads. Review: https://www.itpro.com/hardware/the-msi-cubi-z-ai-8m-is-an-affordable-mini-pc-with-powerful-amd-radeon-graphics-but-they-really-shouldnt-have-bothered-with-the-speakers
+- "Best mini PCs 2025" roundups (TechRadar etc.) — price/perf baselines across Mac mini / Geekom / Minisforum / GMKtec peers. https://www.techradar.com/best/mini-pcs
+
+**Relevance to Goni:** baseline references for silent/compact nodes if running Goni OS on third-party hardware before shipping a custom box.
+
+### 7.3 Decentralized GPU / AI compute networks (Cocoon-style)
+- Cocoon — TON-based confidential compute network for AI/GPU mining. https://cocoon.org/ | Intro: https://medium.com/@tort_mario/cocoon-a-new-era-of-ai-compute-mining-by-pavel-durov-4d3595ba5c1d
+- Akash Network — decentralized cloud marketplace with on-demand GPUs. https://akash.network/ | GPUs: https://akash.network/gpus-on-demand/
+- Render Network — decentralized GPU rendering expanding into AI/general compute. https://rendernetwork.com/ | GPU onboarding: https://renderfoundation.com/gpu | AI expansion: https://rendernetwork.medium.com/why-rnp-019-matters-a-pivotal-expansion-for-render-network-into-general-and-ai-compute-cbabe7333e45
+- io.net — decentralized GPU network for AI/ML workloads. https://io.net/ | Overview: https://www.coingecko.com/learn/what-is-io-net-io-token
+- Spheron Network — decentralized GPU/CPU compute for AI/HPC. https://spheron.network/ | Whitepaper: https://www.spheron.network/whitepaper/
+- Bittensor — decentralized AI network (TAO) for model training/inference incentives. https://bittensor.com/ | Paradigm: https://bittensor.com/about
+- OORT — decentralized cloud for AI data & compute. https://www.oortech.com/ | Links: https://linktr.ee/oortech
+
+**Relevance to Goni:** potential hybrid/offload paths (burst or heavy jobs to DePIN nodes) and a resale path for idle local GPU cycles; see also `docs/remote-llm-architecture.md` for how remote routing is handled in software.
+
+---
+
+## 8. References
 
 1. GMKtec EVO-X2 product page, GMKtec.
    https://de.gmktec.com/en/products/gmktec-evo-x2-amd-ryzen%E2%84%A2-ai-max-395-mini-pc-1

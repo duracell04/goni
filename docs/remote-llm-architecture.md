@@ -47,6 +47,10 @@ def call_openrouter(model: str, messages: list[dict], max_tokens: int = 800):
 - **Offline / AI blackout:** Cloud path disabled; router surfaces limitation; stay local for summarisation, Arrow search, scheduling, embeddings.
 - Mode can be a config/env switch (e.g., `REMOTE_MODE=normal|constrained|offline`).
 
+## Where remote compute can live
+- Primary cloud leg is Council -> OpenRouter (this doc).
+- Optional DePIN/offload targets (Cocoon, Akash, Render, io.net, Spheron, Bittensor, OORT) are catalogued in `hardware/20-architecture-options.md` §7.3; they are potential overflow/backhaul endpoints, not part of the default path.
+
 ## AI-2027 as knowledge source
 - Keep a snapshot of AI-2027 (PDF/HTML) under `docs/assets/ai-2027/` with a `manifest.json` (see `manifest.json.example`) capturing source URL, retrieved_at, format, file name, and sha256 for deterministic ingestion.
 - Index it into the Arrow spine for RAG so safety/strategy answers cite this corpus instead of generic web takes.
@@ -56,4 +60,3 @@ def call_openrouter(model: str, messages: list[dict], max_tokens: int = 800):
 - Seats/weights and triggers: `config/council.yaml` (ground truth).
 - Env defaults for the council service: see `config/council.env.example` (`OPENROUTER_API_KEY`, `OPENROUTER_MODEL`, `OPENROUTER_URL`, `MAX_REMOTE_TOKENS_PER_DAY`, `ALLOW_REMOTE_TOOLS`, `REMOTE_MODE`, optional `OPENROUTER_HTTP_REFERER`/`OPENROUTER_X_TITLE`).
 - Web/search tools live on the council side; Goni OS never ships a cloud browser tool in the base box.
-
