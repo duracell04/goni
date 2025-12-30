@@ -1,6 +1,6 @@
 use std::sync::Arc;
 
-use arrow_array::{builder::StringBuilder, types::UInt32Type, ArrayRef, FixedSizeListArray, Float32Array, StringArray, UInt32Array};
+use arrow_array::{builder::StringBuilder, types::UInt32Type, Array, ArrayRef, FixedSizeListArray, Float32Array, StringArray, UInt32Array};
 use arrow_schema::{DataType, Field, Schema};
 use async_trait::async_trait;
 use serde::{Deserialize, Serialize};
@@ -207,8 +207,8 @@ impl DataPlane for QdrantDataPlane {
         })?;
 
         // Collect fields
-        let mut id_builder = StringBuilder::new(parsed.result.len());
-        let mut text_builder = StringBuilder::new(parsed.result.len());
+        let mut id_builder = StringBuilder::new();
+        let mut text_builder = StringBuilder::new();
         let mut tokens: Vec<u32> = Vec::with_capacity(parsed.result.len());
         let mut embedding_vals: Vec<f32> = Vec::new();
 
@@ -219,18 +219,14 @@ impl DataPlane for QdrantDataPlane {
                 serde_json::Value::Number(n) => n.to_string(),
                 _ => "".to_string(),
             };
-            id_builder.append_value(id_str).map_err(|e| DataError {
-                message: format!("id build error: {e}"),
-            })?;
+            id_builder.append_value(&id_str);
 
             let text_val = item
                 .payload
                 .get("text")
                 .and_then(|v| v.as_str())
                 .unwrap_or("");
-            text_builder.append_value(text_val).map_err(|e| DataError {
-                message: format!("text build error: {e}"),
-            })?;
+            text_builder.append_value(text_val);
 
             let tok_val = item
                 .payload
@@ -263,9 +259,12 @@ impl DataPlane for QdrantDataPlane {
         let token_array: UInt32Array = UInt32Array::from(tokens);
         let value_array: Float32Array = Float32Array::from(embedding_vals);
 
+        let item_field = Arc::new(Field::new("item", DataType::Float32, false));
         let embedding_array = FixedSizeListArray::try_new(
-            value_array.into(),
+            item_field.clone(),
             dim as i32,
+            Arc::new(value_array) as ArrayRef,
+            None,
         )
         .map_err(|e| DataError {
             message: format!("embedding array error: {e}"),
@@ -277,10 +276,7 @@ impl DataPlane for QdrantDataPlane {
             Field::new("tokens", DataType::UInt32, false),
             Field::new(
                 "embedding",
-                DataType::FixedSizeList(
-                    Box::new(Field::new("item", DataType::Float32, false)),
-                    dim as i32,
-                ),
+                DataType::FixedSizeList(item_field.clone(), dim as i32),
                 false,
             ),
         ]));

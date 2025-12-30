@@ -8,3 +8,4 @@ async-trait = { workspace = true }
 goni-types = { path = "../goni-types" }
 arrow = { workspace = true }
 thiserror = { workspace = true }
+tokio = { workspace = true }

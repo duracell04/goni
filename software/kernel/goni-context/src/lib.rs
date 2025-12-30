@@ -290,8 +290,8 @@ pub fn record_batch_to_candidate_chunks<'a>(
 
     // This is the contiguous f32 buffer for ALL embeddings.
     let raw_buf = emb_values.values();
-    // SAFETY: Float32Array guarantees correct alignment & element type.
-    let raw_slice: &[f32] = raw_buf.typed_data::<f32>();
+    // Arrow 54: ScalarBuffer exposes a slice view for typed data.
+    let raw_slice: &[f32] = raw_buf.as_ref();
 
     let num_rows = batch.num_rows();
     let mut chunks = Vec::with_capacity(num_rows);

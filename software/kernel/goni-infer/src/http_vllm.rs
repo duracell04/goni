@@ -139,18 +139,16 @@ impl LlmEngine for HttpVllmEngine {
                             Some(stream)
                         }
                     }
-                    Err(e) => Some(stream::once(async move {
-                        Err(LlmError {
-                            message: format!("stream error: {e}"),
-                        })
-                    })),
+                    Err(e) => Some(stream::iter(vec![Err(LlmError {
+                        message: format!("stream error: {e}"),
+                    })])),
                 }
             }
         });
 
         // Flatten the stream of streams
         let flat_stream = s
-            .then(|maybe_stream| async move { maybe_stream.unwrap_or_else(|| stream::empty()) })
+            .map(|maybe_stream| maybe_stream.unwrap_or_else(|| stream::empty()))
             .flatten();
 
         Ok(Box::pin(flat_stream) as TokenStream)
