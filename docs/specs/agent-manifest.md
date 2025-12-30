@@ -5,6 +5,8 @@ The agent manifest is the single source of truth for agent identity, triggers,
 capabilities, and budgets. The kernel refuses to instantiate agents whose
 requested capabilities exceed policy.
 
+Canonical data contract: `software/50-data/51-schemas-mvp.md` (MANIFEST-02).
+
 ## 1. Required fields (logical)
 
 - `id`: stable agent identifier (reverse-DNS).
@@ -64,7 +66,8 @@ tools:
 ## 4. Schema and audit linkage
 
 The canonical record is `AgentManifests` (see
-`software/50-data/51-schemas-mvp.md`). The following audit fields are required:
+`software/50-data/51-schemas-mvp.md` for the storage schema). The following
+audit fields are required:
 
 - `agent_id`
 - `policy_hash`

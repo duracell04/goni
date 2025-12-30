@@ -91,8 +91,10 @@ Arrow-first, v1.0 schemas for the canonical tables. Each table is `Spine + Paylo
 - Fields: `agent_id: fixed_size_binary[16]`, `policy_hash: fixed_size_binary[32]`, `tools: list<utf8>`, `fs_read_roots: list<utf8>`, `fs_write_roots: list<utf8>`, `net_allowlist: list<utf8>`, `budgets: map<utf8, utf8>`, `issued_at: timestamp(us)`, `expires_at: timestamp(us)`, `provenance: map<utf8, utf8>`
 
 ### AgentManifests
+- Schema version: **MANIFEST-02** (supersedes MANIFEST-01).
 - PK: `manifest_id = row_id`
-- Fields: `agent_id: fixed_size_binary[16]`, `version: utf8`, `manifest_hash: fixed_size_binary[32]`, `manifest_uri: utf8`, `triggers: map<utf8, utf8>`, `capabilities: map<utf8, utf8>`, `budgets: map<utf8, utf8>`, `tools: list<utf8>`, `policy_hash: fixed_size_binary[32]`, `state_snapshot_id: fixed_size_binary[16]`, `provenance: map<utf8, utf8>`
+- Fields: `agent_id: fixed_size_binary[16]`, `version: utf8`, `manifest_hash: fixed_size_binary[32]`, `manifest_uri: utf8`, `triggers: map<utf8, utf8>`, `capabilities: map<utf8, utf8>`, `budgets: map<utf8, utf8>`, `ui_surfaces: list<utf8>?`, `identity_requirements: list<utf8>?`, `remote_access: bool?`, `tools: list<utf8>`, `policy_hash: fixed_size_binary[32]`, `state_snapshot_id: fixed_size_binary[16]`, `provenance: map<utf8, utf8>`
+- Notes: Semantics live in `docs/specs/agent-manifest.md`. Optional fields default to empty lists and `false` when null.
 
 ## Invariants
 - All IDs are `fixed_size_binary[16]` (UUIDv7) and equal `Spine.row_id` for their table.
