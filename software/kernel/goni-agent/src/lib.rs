@@ -22,6 +22,12 @@ pub struct AgentManifest {
     pub budgets: Budgets,
     #[serde(default)]
     pub tools: Vec<String>,
+    #[serde(default)]
+    pub ui_surfaces: Vec<String>,
+    #[serde(default)]
+    pub identity_requirements: Vec<String>,
+    #[serde(default)]
+    pub remote_access: bool,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
