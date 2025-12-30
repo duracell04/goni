@@ -36,6 +36,10 @@ It is the only component allowed to “speak” to GPUs/NPUs and LLM backends di
 - **Cancellation / preemption hooks**
   - Support cooperative cancellation so 𝒦 can abort or delay jobs.
 
+- **Wake and warm-state control**
+  - Report cold-start latency and warm state per model/device.
+  - Support pre-warm and keep-alive budgets so decoder wake is bounded.
+
 ### 2.2 Non-responsibilities
 
 - ❌ Choosing which model tier to use (router).  
@@ -48,7 +52,8 @@ It is the only component allowed to “speak” to GPUs/NPUs and LLM backends di
 
 ### 3.1 API towards Control Plane
 
-`ust
+`
+ust
 pub struct LlmRequest {
     pub model_id: ModelId,
     pub prompt: PromptPlan,
@@ -70,7 +75,8 @@ pub struct UtilizationMetrics {
 }
 `
 
-`ust
+`
+ust
 #[async_trait::async_trait]
 pub trait LlmRuntime {
     async fn generate(
@@ -99,6 +105,9 @@ Concrete engines (llama.cpp, vLLM, etc.) implement LlmRuntime:
 
 * **Budget safety invariant**
   generate must not exceed max_tokens without explicit override.
+
+* **Wake latency invariant**
+  Time-to-first-token after a decoder wake must stay within the configured SLO; steady-state operation must not trigger implicit compilation or graph warmup.
 
 * **Preemption invariant (soft)**
   Generation checks for cancellation at least once per decoding step (target preemption latency ≪ human-visible 100 ms).

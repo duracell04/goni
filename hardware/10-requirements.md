@@ -95,6 +95,17 @@ Storage requirements should assume:
 - Target sustained draw under heavy AI workloads: **on the order of a few hundred watts**, not kilowatts.
 - Peak draw should be handled by the power subsystem without instability or audible stress.
 
+### 3.4 Continuous Cognition Envelope (latent-first OS loop)
+
+The hardware must support a low-power, always-on encoder loop plus bursty "solver" wakes:
+
+- **Pinned shared memory** support across CPU/iGPU/NPU (or equivalent) so latent state can stay resident without page-fault spikes.
+- **Coherence and synchronization** guarantees sufficient for a single-writer, multi-reader state update pattern.
+- **Wake latency** for the big decoder path should be bounded and measurable (time to first action / first token).
+- **Sensor ingest gating** should be feasible (default-off sensors, event-driven observation over constant polling where possible).
+- **Write budget tolerance** for persistent state (SSD endurance and steady-state write patterns, not just peak throughput).
+
+
 ---
 
 ## 4. Connectivity & Mesh Capability

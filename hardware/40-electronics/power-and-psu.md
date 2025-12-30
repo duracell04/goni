@@ -14,6 +14,7 @@ Assumptions (order-of-magnitude):
 - Peaks (short): higher bursts are possible
 - NVMe SSDs: 5–10 W each under heavy IO (short peaks higher)
 - Fans / MCU / misc: 5–15 W
+- Always-on encoder loop + sensor ingest: budgeted steady-state draw (measure, not assume)
 
 **Design for:** ~250 W sustained worst-case, with headroom for spikes.
 
@@ -54,6 +55,9 @@ Measurements we must run on the reference build:
 - Idle power (OS booted, models loaded, no generation)
 - Interactive inference power (typical chat)
 - Sustained load power (long generation / indexing)
+- Continuous cognition power (encoder loop at target cadence)
+- Decoder wake behavior (time-to-first-action and power spike)
+- Sensor ingest overhead (screen capture, mic, camera if enabled)
 - Peak transient behaviour (spike capture if possible)
 - PSU thermals and fan behaviour under each regime
 - Wall-to-DC efficiency at typical loads (20–60%)

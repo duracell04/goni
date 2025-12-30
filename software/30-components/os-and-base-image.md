@@ -31,6 +31,12 @@ For the MVP, the substrate is responsible for:
   - Make CPU cores available to Rust/Arrow/Wasm.
   - Optionally expose GPU/NPU devices to the LLM runtime (via CUDA/ROCm/Metal/NPUs).
 
+
+- **Memory and device hygiene**
+  - Provide a way to pin/lock latency-critical pages (latent state, encoder buffers).
+  - Allow swap to be disabled or encrypted for state pages.
+  - Enable IOMMU or equivalent DMA protection when available.
+
 - **Storage**
   - Provide *persistent* directories for:
     - model weights (e.g. /opt/goni/models),
@@ -74,6 +80,10 @@ We **do not** fix whether Goni runs on bare metal, in a VM, or in a container; t
   - model files,
   - indices/embeddings,
   - configuration.
+
+
+- **State hygiene invariant**
+  Latent state pages must not be swapped in plaintext, and crash dumps must redact or exclude state buffers.
 
 - **Isolation invariant**  
   Default permissions ensure Goni data directories are not world-readable; GPU/NPU access is restricted to the Goni service user where applicable.

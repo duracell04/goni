@@ -98,6 +98,16 @@ At a minimum, a single Goni node should:
 
 ---
 
+
+### 3.4 Continuous Cognition and Degradation Policy
+
+- The system must maintain a lightweight heartbeat loop with configurable cadence (for example 1-10 Hz).
+- The decoder wake path must use hysteresis and a wake budget (max wakes per minute, minimum cooldown).
+- Encoder graphs should be pre-warmed and shape-bounded; the steady-state loop must not trigger compilation.
+- Observation sources must support gating; prefer event-driven hooks over constant polling.
+- Persistent writes must be governed by a write budget controller (rate limits, significance thresholds, deferred compaction).
+- Degradation modes must be explicit and configurable: Eco, Normal, Boost, Thermal throttle, Offline-safe.
+
 ## 4. Cloud Integration Requirements
 
 ### 4.1 Controlled External Calls
