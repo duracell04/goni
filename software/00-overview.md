@@ -11,6 +11,14 @@ The goal is to define a software stack that turns the hardware into a **personal
 
 Goni separates **cognition** from **verbalization**. Most work happens in a latent state: embeddings, structured summaries, and compact "world state" variables that are continuously updated from observations (files, screen, messages, sensors, tool outputs). Natural language output is treated as an **optional projection** used only when useful (explain, draft, converse). This reduces unnecessary token generation, improves privacy boundaries (less raw text duplication), and makes the system easier to run locally by keeping always-on components lightweight.
 
+**Agents are local processes; the LLM is a budgeted interrupt.** The canonical
+specs live in `docs/specs/`:
+
+- Latent state: `docs/specs/latent-state-contract.md`
+- Agents and manifests: `docs/specs/agent-definition.md`, `docs/specs/agent-manifest.md`
+- Tools and audit: `docs/specs/tool-capability-api.md`
+- Scheduler/interrupts: `docs/specs/scheduler-and-interrupts.md`
+
 ---
 
 ## 1. What the Goni software should do

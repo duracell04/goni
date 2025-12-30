@@ -80,6 +80,63 @@ pub mod generated {
             }
         },
 
+        // Plane K - AuditRecords
+        table AuditRecords {
+            plane: Plane::Control,
+            kind: "AuditRecords",
+            fields: {
+                audit_id: FixedSizeBinary(16),
+                agent_id: FixedSizeBinary(16),
+                policy_hash: FixedSizeBinary(32),
+                state_snapshot_id: FixedSizeBinary(16),
+                capability_token_id: FixedSizeBinary(16),
+                tool_id: DictU8Utf8,
+                args_hash: FixedSizeBinary(32),
+                result_hash: FixedSizeBinary(32),
+                timestamp: TimestampMsUtc,
+                provenance: MapUtf8Utf8
+            }
+        },
+
+        // Plane K - CapabilityTokens
+        table CapabilityTokens {
+            plane: Plane::Control,
+            kind: "CapabilityTokens",
+            fields: {
+                capability_token_id: FixedSizeBinary(16),
+                agent_id: FixedSizeBinary(16),
+                policy_hash: FixedSizeBinary(32),
+                tools: ListUtf8,
+                fs_read_roots: ListUtf8,
+                fs_write_roots: ListUtf8,
+                net_allowlist: ListUtf8,
+                budgets: MapUtf8Utf8,
+                issued_at: TimestampMsUtc,
+                expires_at: TimestampMsUtc,
+                provenance: MapUtf8Utf8
+            }
+        },
+
+        // Plane K - AgentManifests
+        table AgentManifests {
+            plane: Plane::Control,
+            kind: "AgentManifests",
+            fields: {
+                manifest_id: FixedSizeBinary(16),
+                agent_id: FixedSizeBinary(16),
+                version: Utf8,
+                manifest_hash: FixedSizeBinary(32),
+                manifest_uri: Utf8,
+                triggers: MapUtf8Utf8,
+                capabilities: MapUtf8Utf8,
+                budgets: MapUtf8Utf8,
+                tools: ListUtf8,
+                policy_hash: FixedSizeBinary(32),
+                state_snapshot_id: FixedSizeBinary(16),
+                provenance: MapUtf8Utf8
+            }
+        },
+
         // Plane X - ContextItems
         table ContextItems {
             plane: Plane::Context,
@@ -92,6 +149,62 @@ pub mod generated {
                 selected: Boolean,
                 rank: UInt16,
                 marginal_gain: Float32
+            }
+        },
+
+        // Plane A - StateSnapshots
+        table StateSnapshots {
+            plane: Plane::Knowledge,
+            kind: "StateSnapshots",
+            fields: {
+                snapshot_id: FixedSizeBinary(16),
+                state_version: UInt32,
+                s_core: FixedSizeListF32(1536),
+                s_core_dim: UInt16,
+                f_sparse: MapUtf8Utf8,
+                created_at: TimestampMsUtc,
+                agent_id: FixedSizeBinary(16),
+                policy_hash: FixedSizeBinary(32),
+                state_snapshot_id: FixedSizeBinary(16),
+                provenance: MapUtf8Utf8
+            }
+        },
+
+        // Plane A - StateDeltas
+        table StateDeltas {
+            plane: Plane::Knowledge,
+            kind: "StateDeltas",
+            fields: {
+                delta_id: FixedSizeBinary(16),
+                snapshot_id: FixedSizeBinary(16),
+                delta_kind: DictU8Utf8,
+                delta_vector: FixedSizeListF32(1536),
+                delta_dim: UInt16,
+                f_sparse_patch: MapUtf8Utf8,
+                timestamp: TimestampMsUtc,
+                agent_id: FixedSizeBinary(16),
+                policy_hash: FixedSizeBinary(32),
+                state_snapshot_id: FixedSizeBinary(16),
+                provenance: MapUtf8Utf8
+            }
+        },
+
+        // Plane A - LatentSummaries
+        table LatentSummaries {
+            plane: Plane::Knowledge,
+            kind: "LatentSummaries",
+            fields: {
+                summary_id: FixedSizeBinary(16),
+                snapshot_id: FixedSizeBinary(16),
+                summary_kind: DictU8Utf8,
+                summary_vector: FixedSizeListF32(1536),
+                summary_dim: UInt16,
+                summary_hash: FixedSizeBinary(32),
+                timestamp: TimestampMsUtc,
+                agent_id: FixedSizeBinary(16),
+                policy_hash: FixedSizeBinary(32),
+                state_snapshot_id: FixedSizeBinary(16),
+                provenance: MapUtf8Utf8
             }
         },
 

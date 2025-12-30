@@ -42,7 +42,32 @@ While the formal tuple remains \(N = (\mathcal{A}, \mathcal{X}, \mathcal{K}, \ma
 
 ---
 
-## 1. Data Plane – the Arrow Spine \(\mathcal{A}\)
+## 0.2 Practical architecture (rings + interrupts)
+
+Goni OS treats agents as **local userland processes** and the LLM as a **rare,
+budgeted interrupt**, not a control loop. The practical architecture is a
+three-ring model:
+
+- **Ring 0 (Cognitive kernel):** observation bus, latent state store, policy
+  engine, scheduler/interrupt controller.
+- **Ring 1 (Always-on cognition):** encoders + predictor update latent state,
+  compute surprisal/goal drift, and decide whether to raise interrupts.
+- **Ring 2 (Userland):** agent runtime and solver/decoder services invoked on
+  demand through kernel APIs.
+
+Canonical specs:
+
+- Latent state contract: `docs/specs/latent-state-contract.md`
+- Agents and manifests: `docs/specs/agent-definition.md`, `docs/specs/agent-manifest.md`
+- Tools and audit: `docs/specs/tool-capability-api.md`
+- Scheduler/interrupts: `docs/specs/scheduler-and-interrupts.md`
+
+This section is a practical view; the formal planes \((\mathcal{A}, \mathcal{X},
+\mathcal{K}, \mathcal{E})\) below define the invariants.
+
+---
+
+## 1. Data Plane - the Arrow Spine \(\mathcal{A}\)
 
 ### 1.1 Objects and morphisms
 

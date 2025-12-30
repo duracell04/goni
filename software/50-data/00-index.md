@@ -8,7 +8,7 @@ This folder defines the canonical data ontology of Goni. All other docs (20-arch
 - `20-spine-and-ids.md` – Universal `Spine` struct, UUIDv7 semantics, tenant tagging, and domain ID newtypes.
 - `30-plane-contracts.md` – Plane responsibilities, allowed foreign keys, and forbidden field types per plane.
 - `40-privacy-and-text-confinement.md` – The Text Confinement Theorem and privacy corollaries.
-- `51-schemas-mvp.md` – Canonical Arrow schemas for the 8 MVP tables (Docs, Chunks, Embeddings, Requests, Tasks, ContextItems, LlmCalls, Metrics).
+- `51-schemas-mvp.md` - Canonical Arrow schemas for the MVP tables, including latent state, audit, capabilities, and agent manifests.
 - `52-zero-copy-mechanics.md` – How submodular selection, Lyapunov scheduling, and router regret operate over Arrow buffers.
 - `53-schema-dsl-and-macros.md` – `define_tables!` DSL + codegen/Clippy guards that make the schemas executable.
 - `80-validation-and-ci.md` – Compile-time and CI enforcement of SMA/ZCO/TXT and schema drift gates.

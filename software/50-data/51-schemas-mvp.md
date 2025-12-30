@@ -1,6 +1,6 @@
 ﻿# 51 – Schemas (MVP Canonical Tables)
 
-Arrow-first, v1.0 schemas for the eight shipped tables. Each table is `Spine + Payload`; `row_id` == domain PK.
+Arrow-first, v1.0 schemas for the canonical tables. Each table is `Spine + Payload`; `row_id` == domain PK.
 
 **Executable spec:** These schemas are implemented by `software/kernel/goni-schema` via the `define_tables!` block in `goni-schema/src/lib.rs`. This document and that DSL must stay in sync.
 
@@ -63,7 +63,40 @@ Arrow-first, v1.0 schemas for the eight shipped tables. Each table is `Spine + P
   - `semantic` persists with decay; can be pinned,
   - `procedural` is versioned and stable.
 
+## Plane ?? - Knowledge (latent state)
+
+### StateSnapshots
+- PK: `snapshot_id = row_id`
+- Fields: `state_version: uint32`, `s_core: fixed_size_list<float32>[1536]`, `s_core_dim: uint16`, `f_sparse: map<utf8, utf8>`, `created_at: timestamp(us)`, `agent_id: fixed_size_binary[16]`, `policy_hash: fixed_size_binary[32]`, `state_snapshot_id: fixed_size_binary[16]`, `provenance: map<utf8, utf8>`
+- Notes: `state_snapshot_id` equals `snapshot_id` for snapshots.
+
+### StateDeltas
+- PK: `delta_id = row_id`
+- Fields: `snapshot_id: fixed_size_binary[16]`, `delta_kind: dict<uint8, utf8>`, `delta_vector: fixed_size_list<float32>[1536]`, `delta_dim: uint16`, `f_sparse_patch: map<utf8, utf8>`, `timestamp: timestamp(us)`, `agent_id: fixed_size_binary[16]`, `policy_hash: fixed_size_binary[32]`, `state_snapshot_id: fixed_size_binary[16]`, `provenance: map<utf8, utf8>`
+- Notes: Deltas are append-only and ordered by timestamp.
+
+### LatentSummaries
+- PK: `summary_id = row_id`
+- Fields: `snapshot_id: fixed_size_binary[16]`, `summary_kind: dict<uint8, utf8>`, `summary_vector: fixed_size_list<float32>[1536]`, `summary_dim: uint16`, `summary_hash: fixed_size_binary[32]`, `timestamp: timestamp(us)`, `agent_id: fixed_size_binary[16]`, `policy_hash: fixed_size_binary[32]`, `state_snapshot_id: fixed_size_binary[16]`, `provenance: map<utf8, utf8>`
+- Notes: `summary_hash` points to a derived artifact stored elsewhere.
+
+## Plane ?? - Control (policy and audit)
+
+### AuditRecords
+- PK: `audit_id = row_id`
+- Fields: `agent_id: fixed_size_binary[16]`, `policy_hash: fixed_size_binary[32]`, `state_snapshot_id: fixed_size_binary[16]`, `capability_token_id: fixed_size_binary[16]`, `tool_id: dict<uint8, utf8>`, `args_hash: fixed_size_binary[32]`, `result_hash: fixed_size_binary[32]`, `timestamp: timestamp(us)`, `provenance: map<utf8, utf8>`
+
+### CapabilityTokens
+- PK: `capability_token_id = row_id`
+- Fields: `agent_id: fixed_size_binary[16]`, `policy_hash: fixed_size_binary[32]`, `tools: list<utf8>`, `fs_read_roots: list<utf8>`, `fs_write_roots: list<utf8>`, `net_allowlist: list<utf8>`, `budgets: map<utf8, utf8>`, `issued_at: timestamp(us)`, `expires_at: timestamp(us)`, `provenance: map<utf8, utf8>`
+
+### AgentManifests
+- PK: `manifest_id = row_id`
+- Fields: `agent_id: fixed_size_binary[16]`, `version: utf8`, `manifest_hash: fixed_size_binary[32]`, `manifest_uri: utf8`, `triggers: map<utf8, utf8>`, `capabilities: map<utf8, utf8>`, `budgets: map<utf8, utf8>`, `tools: list<utf8>`, `policy_hash: fixed_size_binary[32]`, `state_snapshot_id: fixed_size_binary[16]`, `provenance: map<utf8, utf8>`
+
 ## Invariants
 - All IDs are `fixed_size_binary[16]` (UUIDv7) and equal `Spine.row_id` for their table.
 - No `LargeUtf8` outside `Chunks.text` and `Prompts.text` (TXT axiom).
 - Dictionaries enumerate finite vocabularies; adding a new label/value requires schema version bump.
+- Latent state, audit, and manifest records include `agent_id`, `policy_hash`,
+  `state_snapshot_id`, and `provenance` (directly or by reference).

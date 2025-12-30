@@ -15,7 +15,10 @@ The **Vector Database** (VecDB) is the retrieval backend for the Context Plane (
 
 It is a concrete implementation of the retrieval part feeding the submodular context selector.
 
-Note: retrieval is treated as a Memory Plane capability invoked by the Predictor. It augments latent state; it is not the cognitive core.
+Note: retrieval is treated as a Memory Plane capability invoked by the
+predictor as evidence. It augments latent state; it is not the cognitive core.
+See `docs/specs/latent-state-contract.md` and
+`docs/specs/tool-capability-api.md`.
 
 ---
 

@@ -21,23 +21,26 @@ Violation of any axiom is a compile-time error in CI.
 | Control | 𝒦 | Permanent | Low (metadata only) | WAL + Parquet | `request_id`, `task_id` |
 | Execution | ℰ | Permanent | Low (aggregates) | Parquet (append-only) | `span_id`, `call_id` |
 
-### 1.1 Memory Plane extension: latent state + latent summaries (optional)
+### 1.1 Memory Plane extension: latent state contract (LSC-01)
 
-The Memory Plane is an operational abstraction over Knowledge/Context storage. It may store **latent state artifacts** as non-canonical records, subject to the axioms (SMA, ZCO, TXT):
+The Memory Plane is an operational abstraction over Knowledge/Context storage.
+It stores kernel-owned latent artifacts as first-class payload types:
 
-- **State embedding**: a compact vector representing "what is going on" for a session/thread.
-- **Latent summary record**: a time-stamped summary derived from state, with provenance.
+- `S_core`: dense working state (hot).
+- `Delta`: append-only deltas for reconstruction.
+- `F_sparse`: keyed facts/flags (typed, symbolic).
+- `StateSnapshot`, `StateDelta`, `LatentSummary` records.
 
-These artifacts are optional and must respect the same guarantees as other memory:
+These artifacts MUST satisfy LSC-01:
 - provenance (source, time, permissions),
-- auditability (what inputs contributed),
-- bounded retention (expiry / rotation policy).
+- auditability (agent, policy, state snapshot),
+- bounded retention and write budgets.
 
-If promoted to canonical tables, they must be added to the schema DSL and the v1.0 table set.
+See `docs/specs/latent-state-contract.md` for the canonical contract.
 
 ## 2. v1.0 Table Set (ships in binary)
 
-We ship exactly eight canonical tables in v1.0:
+We ship the following canonical tables in v1.0:
 
 1. Docs
 2. Chunks
@@ -47,5 +50,12 @@ We ship exactly eight canonical tables in v1.0:
 6. ContextItems
 7. LlmCalls
 8. Metrics
+9. StateSnapshots
+10. StateDeltas
+11. LatentSummaries
+12. AuditRecords
+13. CapabilityTokens
+14. AgentManifests
 
-Any new canonical table must be added to the schema DSL (see `53-schema-dsl-and-macros.md`) and documented in `51-schemas-mvp.md`.
+Any new canonical table must be added to the schema DSL (see
+`53-schema-dsl-and-macros.md`) and documented in `51-schemas-mvp.md`.

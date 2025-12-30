@@ -108,6 +108,23 @@ At a minimum, a single Goni node should:
 - Persistent writes must be governed by a write budget controller (rate limits, significance thresholds, deferred compaction).
 - Degradation modes must be explicit and configurable: Eco, Normal, Boost, Thermal throttle, Offline-safe.
 
+### 3.5 Continuous cognition envelope (hardware-linked)
+
+- Continuous cognition (encoders + predictor) must fit a steady-state power and
+  thermal budget; heavy solvers are interrupt-only.
+- The scheduler must enforce wake hysteresis and a maximum solver wake rate
+  per policy.
+- SSD endurance is a first-class constraint; write amplification must be
+  mitigated via RAM-first deltas, significance thresholds, and deferred
+  compaction.
+- Prefer UMA/shared-memory paths; avoid PCIe shuttling of latent state. If a
+  discrete GPU is used, fallback rules must keep continuous cognition off dGPU
+  by default.
+- Sensors must be gated and default-off; each source requires explicit policy
+  enablement.
+- Crash consistency is mandatory: state must be replayable from checkpoints +
+  append-only logs; journaling is required for durable records.
+
 ## 4. Cloud Integration Requirements
 
 ### 4.1 Controlled External Calls

@@ -25,6 +25,7 @@ Purpose: Record **deliberate design choices** in a way that makes their formal i
 - D-016 - Memory Plane as a Pluggable, Local-First Service  
 - D-017 - Virtual context management + consolidation loop (MemGPT / Generative Agents)
 - D-018 - Latent-first cognition as an architectural stance
+- D-019 - Agents as local processes; solver as interrupt
 
 ---
 
@@ -487,6 +488,36 @@ We adopt **latent-first cognition** as a guiding stance at the architecture/inte
 - This ADR defines an architectural stance, not a mandatory training objective.
 
 ---
+
+## D-019 - Agents as local processes; solver as interrupt
+
+**Status:** Proposed  
+**Date:** YYYY-MM-DD
+
+**Formal statement**
+
+Agents are modeled as userland processes that operate on kernel-owned latent
+state and invoke capability-scoped syscalls. LLM/solver execution is a
+budgeted interrupt, not a control loop:
+$$
+\text{agent step} \Rightarrow \mathsf{read\_state} \to \mathsf{tool}^\* \to \mathsf{commit},
+$$
+and
+$$
+\mathsf{solver} \text{ is invoked iff } \text{interrupt\_condition} = \text{true}.
+$$
+
+**Rationale**
+
+- Aligns with local-first power/thermal constraints.  
+- Makes policy mediation and auditability explicit.  
+- Prevents hidden LLM loops that burn budgets and drift state.
+
+**Consequence**
+
+- All agent effects must be routed through capability tokens and audit records.  
+- Scheduler must enforce wake hysteresis and solver budgets.  
+- Kernel APIs define the single interface for state access and commits.
 
 *Amendment process:*  
 New decisions should include:

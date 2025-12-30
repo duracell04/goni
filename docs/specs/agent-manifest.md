@@ -1,0 +1,66 @@
+# AGENT-02 - Agent Manifest
+Status: Draft (normative target)
+
+The agent manifest is the single source of truth for agent identity, triggers,
+capabilities, and budgets. The kernel refuses to instantiate agents whose
+requested capabilities exceed policy.
+
+## 1. Required fields (logical)
+
+- `id`: stable agent identifier (reverse-DNS).
+- `version`: semantic version.
+- `description`: short purpose statement.
+- `triggers`: event and schedule conditions.
+- `capabilities`: scoped tool permissions.
+- `budgets`: solver calls, runtime, disk/network ceilings.
+- `policy_profile`: data scopes and privacy tags.
+- `tools`: optional tool preferences (non-binding).
+
+## 2. Example (YAML)
+
+```yaml
+id: goni.agent.local_researcher
+version: 0.1.0
+description: Index reports and draft weekly summaries.
+triggers:
+  - type: folder_changed
+    path: ~/Documents/Reports
+capabilities:
+  fs_read: [~/Documents/Reports]
+  fs_write: [~/Documents/Summaries]
+  network: false
+budgets:
+  solver_wake_per_hour: 6
+  max_exec_time_s: 120
+  max_ssd_writes_per_day_mb: 200
+policy_profile:
+  data_scopes: [documents, notes]
+  tags: [local_only]
+tools:
+  - pdf_text_extract
+  - vecdb_upsert
+  - report_writer
+```
+
+## 3. Invariants
+
+- **No ambient authority:** capabilities must be explicitly listed.
+- **Budget required:** an agent without budgets is invalid.
+- **Default-off network:** network access is false unless explicitly granted.
+- **Policy intersection:** effective capabilities are the intersection of
+  manifest requests and active policy.
+
+## 4. Schema and audit linkage
+
+The canonical record is `AgentManifests` (see
+`software/50-data/51-schemas-mvp.md`). The following audit fields are required:
+
+- `agent_id`
+- `policy_hash`
+- `state_snapshot_id`
+- `provenance`
+
+## 5. Related specs
+
+- `docs/specs/agent-definition.md`
+- `docs/specs/tool-capability-api.md`

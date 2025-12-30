@@ -49,6 +49,23 @@ Goni does not require a single training objective to be "the truth". Instead, th
 - A **Predictor** performs latent updates and tool routing.
 - An **Optional Decoder** produces language as a downstream view.
 
+## Local OS agents vs cloud agents
+
+Cloud agents are typically remote workflows that loop over LLM tokens and
+external tools. Goni OS agents are **local processes** running under a kernel
+that owns state, policy, and budgets. The LLM is a **rare, budgeted interrupt**
+used for ambiguity resolution or human-facing output, not the control loop.
+
+This is infrastructure-first and model-agnostic: JEPA-style latent prediction is
+compatible inspiration, not a mandatory training objective.
+
+## Latent-first as power and thermal strategy
+
+Latent-first cognition is a **power/thermal constraint**, not only a modeling
+preference. Always-on encoders + predictor can remain in a low-power envelope,
+while decoder/LLM paths are invoked only when a real decision branch exists.
+This keeps continuous cognition feasible on local hardware.
+
 ## Local vs cloud efficiency (IPW)
 
 Saad-Falcon et al. (2025) define **Intelligence per Watt (IPW)** and publish a harness that measures accuracy, energy, and latency per query across model × hardware pairs. We adopt IPW as the way to argue "local-first": for any workload we compare local IPW to cloud baselines and treat hybrid routing savings as a design constraint, not an optimisation afterthought.
