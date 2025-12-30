@@ -94,7 +94,7 @@ At a minimum, a single Goni node should:
   - prompt user effort (outline/selection) before full generation,
   - attribute which parts were AI- vs user-authored,
   - expose which memories were retrieved and why (traceable recall).
-- On lower-memory hardware (e.g. 64 GB unified), the system should automatically tighten context budgets, model sizes, and cache policies while preserving the above behaviours.
+- **Supported minimum vs reference build:** the software should run on lower-memory hardware (e.g. **64 GB unified**) by tightening context budgets, model sizes, and cache policies while preserving behaviour. However, the **product reference build** for the MVP story is **128 GB unified memory** (see `hardware/90-decisions.md` ADR-002).
 
 ---
 

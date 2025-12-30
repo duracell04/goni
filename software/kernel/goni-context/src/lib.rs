@@ -1,4 +1,4 @@
-﻿use async_trait::async_trait;
+use async_trait::async_trait;
 use arrow::array::{
     Array, Float32Array, FixedSizeListArray, Int32Array, StringArray, UInt32Array,
 };

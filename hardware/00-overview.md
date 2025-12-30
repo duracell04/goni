@@ -77,6 +77,7 @@ At a high level, the Goni hardware should:
 See [`90-decisions.md`](./90-decisions.md) for the canonical decisions, but in one line:
 
 - **MVP reference compute module:** APU-centric node based on a **Ryzen AI Max+ 395 class** board with **128 GB unified LPDDR5X** (Framework Desktop mainboard is the primary reference; HP Z2 Mini G1a is the off-the-shelf fallback).  
+- **Supported minimum:** 64 GB unified-memory devices may be used for early development and testing, but they are not performance-representative for the product story and must be treated as a degraded mode (see `software/10-requirements.md`).
 - **MVP enclosure envelope:** ~7 L, quiet, front status bar, internal SFX PSU, 2× NVMe.  
 - **MVP networking:** 5 GbE preferred (2.5 GbE acceptable only as fallback for early dev boxes).
 

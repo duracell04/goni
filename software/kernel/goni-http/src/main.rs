@@ -1,4 +1,4 @@
-﻿use std::net::SocketAddr;
+use std::net::SocketAddr;
 use std::sync::Arc;
 
 use axum::{extract::State, routing::post, Json, Router};
@@ -12,7 +12,7 @@ use goni_context::{FacilityLocationSelector, NullKvPager};
 use goni_infer::HttpVllmEngine;
 use goni_router::NullRouter;
 use goni_sched::InMemoryScheduler;
-use goni_store::{NullDataPlane, QdrantDataPlane};
+use goni_store::{InMemorySpineDataPlane, MultiDataPlane, NullDataPlane, QdrantDataPlane};
 use goni_types::TaskClass;
 
 #[derive(Clone)]
@@ -70,11 +70,15 @@ async fn main() -> anyhow::Result<()> {
         );
     }
 
-    // Data plane: prefer Qdrant if configured, else null stub.
-    let data_plane: Arc<dyn goni_store::DataPlane> = match std::env::var("QDRANT_HTTP_URL") {
+    // Data plane:
+    // - an in-memory "spine" for control/state/audit tables (append-only during MVP)
+    // - an optional Qdrant backend for RAG search/ingest
+    let spine_plane: Arc<dyn goni_store::DataPlane> = Arc::new(InMemorySpineDataPlane::new());
+    let rag_plane: Arc<dyn goni_store::DataPlane> = match std::env::var("QDRANT_HTTP_URL") {
         Ok(url) if !url.is_empty() => Arc::new(QdrantDataPlane::new(url)),
         _ => Arc::new(NullDataPlane),
     };
+    let data_plane: Arc<dyn goni_store::DataPlane> = Arc::new(MultiDataPlane::new(spine_plane, rag_plane));
     let context_selector = Arc::new(FacilityLocationSelector::new(0.3));
     let kv_pager = Arc::new(NullKvPager);
     let scheduler = Arc::new(InMemoryScheduler::new());
@@ -94,6 +98,13 @@ async fn main() -> anyhow::Result<()> {
         router,
         llm_engine,
     ));
+
+    // Start the scheduler executor loop (LLM-as-interrupt handler).
+    // This preserves the architectural boundary: request submission ≠ solver execution.
+    let kernel_exec = Arc::clone(&kernel);
+    tokio::spawn(async move {
+        kernel_exec.run_scheduler_loop().await;
+    });
 
     let app_state = AppState { kernel };
 

@@ -9,6 +9,8 @@ members = [
     "goni-infer",
     "goni-cap",
     "goni-core",
+    "goni-agent",
+    "goni-tools",
     "goni-cli",
     "goni-http",
 ]
@@ -32,6 +34,7 @@ cap-std = "3"
 axum = "0.7"
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
+serde_yaml = "0.9"
 tower = "0.4"
 tower-http = { version = "0.5", features = ["trace"] }
 reqwest = { version = "0.12", features = ["json", "stream"] }

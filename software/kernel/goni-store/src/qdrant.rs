@@ -1,4 +1,4 @@
-﻿use std::sync::Arc;
+use std::sync::Arc;
 
 use arrow_array::{builder::StringBuilder, types::UInt32Type, ArrayRef, FixedSizeListArray, Float32Array, StringArray, UInt32Array};
 use arrow_schema::{DataType, Field, Schema};

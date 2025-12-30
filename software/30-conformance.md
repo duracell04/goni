@@ -4,6 +4,13 @@ Status: v0.1 (2025-11-30)
 Scope: Single-node Goni kernel (no clustering)
 Audience: Researchers, systems engineers, auditors
 
+Normative contracts referenced by this document:
+
+- Latent State Contract (LSC-01): `docs/specs/latent-state-contract.md`
+- Tool syscall envelope (TOOL-01): `docs/specs/tool-capability-api.md`
+- Agent/process model: `docs/specs/agent-definition.md`, `docs/specs/agent-manifest.md`
+- Scheduler/interrupt semantics: `docs/specs/scheduler-and-interrupts.md`
+
 > A **conformant Goni node** is one whose implementation can be mapped onto the four-plane model  
 > $$
 > N = (\mathcal{A}, \mathcal{X}, \mathcal{K}, \mathcal{E})
