@@ -369,7 +369,41 @@ $$
 \mathsf{cap} : \mathcal{M} \to \mathsf{Capability}.
 $$
 
-### 4.2 Wasm sandboxes as effectful morphisms
+### 4.2 Encoders -> Predictor -> (Optional) Decoder (latent-first pipeline)
+
+This repo is model-agnostic, but the execution substrate supports a common pattern:
+
+1) **Encoders**: map one or more inputs into latent representations.  
+   - Examples: text encoder, vision encoder (screenshots/images), audio encoder, structured-data encoder.  
+   - Output: latent vectors + lightweight structured features.
+
+2) **Predictor (cognitive core)**: updates latent state and selects actions.  
+   - Input: (a) current latent state, (b) new latent observations, (c) an optional query/goal.  
+   - Output: updated latent state, tool calls, and optionally a latent "answer" representation.
+
+3) **Optional Decoder (verbaliser / renderer)**: turns latent state into words or other outputs.  
+   - Used for: explanations, drafts, chat UX, external communications.  
+   - Not required for internal planning/tool use.
+
+See `software/30-components/latent-predictor.md` for the integration sketch and VL-JEPA-inspired block diagram.
+
+#### Latent-space objective (conceptual)
+
+Where a component is trained or fine-tuned, the preferred high-level objective is:
+
+- learn an encoder representation `S(·)`,
+- learn a predictor `P(·)` such that `P(S(context), S(observation), q) ≈ S(target)`,
+- compare predicted vs target latent representations with a similarity loss (e.g., cosine / contrastive).
+
+This makes "meaning" the primary internal currency, while tokens remain an interface.
+
+#### Why this fits Goni's infra stance
+
+- Compatible with queues/planes: encoders emit events; predictor consumes events; decoder is a late-stage consumer.  
+- Compatible with local-first: always-on encoders + predictor can be small; decoder can be on-demand.  
+- Compatible with multi-model arbitration: different encoders/decoders can share the same latent state contract.
+
+### 4.3 Wasm sandboxes as effectful morphisms
 
 We treat each **tool** or **agent** as a partial function over Arrow objects:
 $$
@@ -384,7 +418,7 @@ We enforce:
 
 This is enforced by a narrow host API surface (`goni-tool-api`), WASI-like capability handles, and resource limits.
 
-### 4.3 Deterministic inference profile
+### 4.4 Deterministic inference profile
 
 Self-loop / agentic runs have positive Lyapunov exponents (small numeric noise can change token choice). We therefore define a **deterministic profile** for engines:
 

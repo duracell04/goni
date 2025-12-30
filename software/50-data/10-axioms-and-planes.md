@@ -21,6 +21,20 @@ Violation of any axiom is a compile-time error in CI.
 | Control | 𝒦 | Permanent | Low (metadata only) | WAL + Parquet | `request_id`, `task_id` |
 | Execution | ℰ | Permanent | Low (aggregates) | Parquet (append-only) | `span_id`, `call_id` |
 
+### 1.1 Memory Plane extension: latent state + latent summaries (optional)
+
+The Memory Plane is an operational abstraction over Knowledge/Context storage. It may store **latent state artifacts** as non-canonical records, subject to the axioms (SMA, ZCO, TXT):
+
+- **State embedding**: a compact vector representing "what is going on" for a session/thread.
+- **Latent summary record**: a time-stamped summary derived from state, with provenance.
+
+These artifacts are optional and must respect the same guarantees as other memory:
+- provenance (source, time, permissions),
+- auditability (what inputs contributed),
+- bounded retention (expiry / rotation policy).
+
+If promoted to canonical tables, they must be added to the schema DSL and the v1.0 table set.
+
 ## 2. v1.0 Table Set (ships in binary)
 
 We ship exactly eight canonical tables in v1.0:

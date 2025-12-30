@@ -9,6 +9,8 @@ This folder covers the **software side of Goni**:
 
 The goal is to define a software stack that turns the hardware into a **personal AI appliance**: private by default, useful offline, and able to scale out across several boxes.
 
+Goni separates **cognition** from **verbalization**. Most work happens in a latent state: embeddings, structured summaries, and compact "world state" variables that are continuously updated from observations (files, screen, messages, sensors, tool outputs). Natural language output is treated as an **optional projection** used only when useful (explain, draft, converse). This reduces unnecessary token generation, improves privacy boundaries (less raw text duplication), and makes the system easier to run locally by keeping always-on components lightweight.
+
 ---
 
 ## 1. What the Goni software should do
@@ -53,6 +55,7 @@ At a high level, Goni software should enable the node to:
 
 - `30-components/`
   Detailed notes for each major component: base OS and provisioning, orchestrator logic (routing between local and cloud), model runtime, vector database, mesh coordination, and any background workers or agents.
+  - See [30-components/latent-predictor.md](./30-components/latent-predictor.md) for the latent-first cognition pattern and its integration points.
 
 - `40-apis-and-ui/`
   Description of the public API surface (e.g. chat, completion, tools), authentication and access control, and dashboard / management UI concepts.

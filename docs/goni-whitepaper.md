@@ -29,6 +29,26 @@ Both documents are maintained as **living references** and should be consulted w
 - evaluating new architectural ideas (to avoid reinventing solved problems), or  
 - framing Goni for different audiences (engineers, infra people, founders, regulated-sector clients).
 
+## Latent prediction (JEPA / VL-JEPA influence)
+
+Goni is infrastructure-first and model-agnostic, but it is informed by a simple cognitive stance:
+
+**Understanding lives in latent state; language is an optional interface.**
+
+Practically, this means Goni prefers to:
+
+- form **compact latent representations** of the current situation (context, goals, constraints),
+- update those representations by **predicting in latent space** (what matters next, what is missing, what is likely), and
+- only invoke a **decoder / verbaliser** when words are needed (explanations, drafts, chat output).
+
+This framing is inspired by Joint Embedding Predictive Architectures (JEPA) and multimodal variants (VL-JEPA): rather than optimizing for pixel-level reconstruction or token-level next-word prediction, the system learns or maintains a latent "world state" and predicts representations of targets or future states.
+
+Goni does not require a single training objective to be "the truth". Instead, this influence is captured as an interface and execution pattern:
+
+- **Encoders** map observations to latent state.
+- A **Predictor** performs latent updates and tool routing.
+- An **Optional Decoder** produces language as a downstream view.
+
 ## Local vs cloud efficiency (IPW)
 
 Saad-Falcon et al. (2025) define **Intelligence per Watt (IPW)** and publish a harness that measures accuracy, energy, and latency per query across model × hardware pairs. We adopt IPW as the way to argue "local-first": for any workload we compare local IPW to cloud baselines and treat hybrid routing savings as a design constraint, not an optimisation afterthought.

@@ -24,6 +24,7 @@ Purpose: Record **deliberate design choices** in a way that makes their formal i
 - D-015 - Deterministic inference preset for audit/self-loop workloads  
 - D-016 - Memory Plane as a Pluggable, Local-First Service  
 - D-017 - Virtual context management + consolidation loop (MemGPT / Generative Agents)
+- D-018 - Latent-first cognition as an architectural stance
 
 ---
 
@@ -455,6 +456,35 @@ Long-term memory is modelled as a separate **Memory Plane** with a stable API (`
 - Kernel APIs must surface paging syscalls to tools/agents; backlog item: expose `MEM_*` calls in the extension substrate.
 - Context selection and memory paging are tested as first-class behaviours; prompt-only hacks are non-conformant.
 - Nightly/periodic consolidation jobs become required workloads; they must respect policies and budgets (local-first unless configured otherwise).
+
+---
+
+## D-018 - Latent-first cognition as an architectural stance
+
+**Status:** Proposed  
+**Date:** YYYY-MM-DD
+
+**Formal statement**
+
+We adopt **latent-first cognition** as a guiding stance at the architecture/interface level:
+
+- Maintain a latent "world state" as the primary internal representation.  
+- Treat language generation as an optional downstream rendering step.  
+- Represent retrieval (RAG) as a tool invoked by the predictor, not as the cognitive core.  
+- Allow multiple encoders/decoders to interoperate through a stable latent-state contract.
+
+**Rationale**
+
+- Local-first efficiency: always-on components can be smaller than full decoders.  
+- Privacy boundaries: avoid unnecessary raw text duplication.  
+- Tool-first execution: decisions precede narration.  
+- Modular interfaces: swap encoders/decoders without changing the Control Plane.
+
+**Consequence**
+
+- Pros: lower always-on compute, cleaner tool routing, and better separation of state vs narration.  
+- Cons/risks: latent state is harder to inspect; embedding collapse needs evaluation and guardrails.  
+- This ADR defines an architectural stance, not a mandatory training objective.
 
 ---
 
