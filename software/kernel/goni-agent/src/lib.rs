@@ -86,3 +86,63 @@ impl AgentManifest {
         Uuid::from_bytes(b)
     }
 }
+
+
+#[cfg(test)]
+mod tests {
+    use super::AgentManifest;
+
+    const LEGACY_MANIFEST: &str = r#"id: goni.agent.legacy
+version: 0.1.0
+triggers:
+  - type: schedule
+    cron: "0 7 * * *"
+permissions:
+  fs_read: ["~/Documents"]
+  fs_write: ["~/Documents/Out"]
+  network: false
+budgets:
+  solver_wake_per_hour: 2
+  max_ssd_writes_per_day_mb: 100
+tools:
+  - pdf_text_extract
+"#;
+
+    const NEW_MANIFEST: &str = r#"id: goni.agent.new
+version: 0.2.0
+triggers:
+  - type: event
+    name: inbox_digest
+permissions:
+  fs_read: ["~/Mail"]
+  fs_write: ["~/Mail/Out"]
+  network: true
+budgets:
+  solver_wake_per_hour: 4
+  max_execution_time_ms: 60000
+ui_surfaces:
+  - dashboard_tile
+  - inbox_sidebar
+identity_requirements:
+  - user_session
+remote_access: true
+tools:
+  - report_writer
+"#;
+
+    #[test]
+    fn parses_legacy_manifest_without_new_fields() {
+        let manifest = AgentManifest::parse_yaml(LEGACY_MANIFEST).expect("legacy manifest should parse");
+        assert!(manifest.ui_surfaces.is_empty());
+        assert!(manifest.identity_requirements.is_empty());
+        assert!(!manifest.remote_access);
+    }
+
+    #[test]
+    fn parses_manifest_with_new_fields() {
+        let manifest = AgentManifest::parse_yaml(NEW_MANIFEST).expect("new manifest should parse");
+        assert_eq!(manifest.ui_surfaces, vec!["dashboard_tile", "inbox_sidebar"]);
+        assert_eq!(manifest.identity_requirements, vec!["user_session"]);
+        assert!(manifest.remote_access);
+    }
+}
