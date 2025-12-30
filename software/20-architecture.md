@@ -364,6 +364,24 @@ We treat this as a **two-armed bandit** with side information (the features used
 > **Invariant K2 (Router regret).**  
 > On benchmark datasets, empirical regret of `goni-router` compared to an oracle policy that knows ground-truth “difficulty” labels must stay below 0.07.
 
+
+### 3.5 App ecosystem, identity, and remote presence
+
+We treat product completeness as part of the architecture, not a UI afterthought.
+The Control and Execution planes expose explicit slots for identity, packaging,
+and remote access:
+
+- **Identity plane (logical):** user identity, agent identity, capability issuance,
+  and audit attribution. This binds UI sessions to agent actions and logs.
+- **Marketplace/install flow:** signed agent packages, manifest validation, policy
+  prompts, and budget enforcement before activation.
+- **Remote presence:** secure tunnels are modeled as capability-gated tools; there
+  is no implicit "open port" path. Remote access is revocable and logged.
+
+This section is a structural requirement derived from reference product patterns
+(see `docs/reference-products/olares.md`).
+
+
 ---
 
 ## 4. Execution Substrate \(\mathcal{E}\)

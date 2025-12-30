@@ -26,6 +26,7 @@ Purpose: Record **deliberate design choices** in a way that makes their formal i
 - D-017 - Virtual context management + consolidation loop (MemGPT / Generative Agents)
 - D-018 - Latent-first cognition as an architectural stance
 - D-019 - Agents as local processes; solver as interrupt
+- D-020 - Cognition-first OS; avoid hosting-first drift
 
 ---
 
@@ -527,4 +528,37 @@ New decisions should include:
 - Consequences for implementation and testing.
 
 Changes to existing decisions are logged with a date and an explanation of why the previous constraint was no longer adequate.
+
+
+
+## D-020 - Cognition-first OS; avoid hosting-first drift
+
+**Status:** Accepted
+**Date:** 2025-12-30
+
+**Formal statement**
+
+Goni is a cognition-first OS. Formally, the core product is defined by:
+
+- identity and policy mediation of agents and tools,
+- capability-gated syscalls with audit attribution,
+- local-first execution with optional remote presence.
+
+Hosting or general-purpose app platform features are outside the kernel contract
+and must not be required for correctness of \(\mathsf{Run}\).
+
+**Rationale**
+
+- Reference product patterns show users want a complete system, but the Goni wedge
+  is cognition-first, not hosting-first.
+- Prevents scope drift into "self-hosted cloud distro" while still allowing a
+  focused ecosystem of agents and tools.
+
+**Consequence**
+
+- We ship identity, policy, agent runtime, and remote presence before any general
+  hosting platform features.
+- Marketplace/install flows are scoped to agents and tools, not arbitrary services.
+- Any proposal to add hosting-first features must show it does not undermine the
+  cognition-first contract or local-first correctness.
 

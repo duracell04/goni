@@ -49,6 +49,23 @@ At a minimum, a single Goni node should:
 
 ---
 
+## 2.1 Product Requirements Inferred from Reference Systems (Olares)
+
+These requirements are derived from reference product patterns (see
+`docs/reference-products/olares.md`) and are treated as enforceable behavior.
+
+- **R-UX-OWNERSHIP:** Default local-first; network access is an explicit, user-granted
+  capability with visible policy and logs.
+- **R-APP-ECOSYSTEM:** Agents are installable packages with manifests, permissions,
+  and budgets; install/uninstall is first-class.
+- **R-IDENTITY-SSO:** A single identity plane governs UI, agents, and tools; no
+  per-app auth silos.
+- **R-REMOTE-PRESENCE:** Secure remote access is a first-class feature with safe
+  defaults and clear status.
+- **R-ADMIN-OBSERVABILITY:** Provide a dashboard for node state, agents,
+  permissions, and resource budgets.
+
+
 ## 3. Local AI Behaviour
 
 ### 3.1 Local-First Policy

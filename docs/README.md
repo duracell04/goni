@@ -8,6 +8,8 @@
 - [Goni SWOT](./goni-swot.md) - positioning vs ecosystem.
 - [Inspiration](./inspiration.md) - people radar.
 - [Related Projects](./related-projects.md) - prior art.
+- [Reference Products](./reference-products/olares.md) - reference pattern and implications.
+- [OS Completeness Checklist](./product/os-completeness-checklist.md) - minimum product surfaces.
 - [Glossary](./glossary.md) - shared vocabulary.
 - [Diagrams](./diagrams/) - architecture sketches.
 

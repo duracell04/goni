@@ -73,6 +73,24 @@ To keep us aligned:
 
 ---
 
+
+### 1.3 What Goni is / isn't (positioning wedge)
+
+**Not**
+
+- NAS + local chatbot glued on top
+- LangChain loops run locally
+- Self-hosted cloud distro
+
+**Is**
+
+- Cognitive OS kernel with audited syscalls
+- Agents as local processes with budgets and policy
+- Remote presence as a capability, not an implicit port
+
+Reference pattern: "personal local cloud OS" (Olares) in
+`docs/reference-products/olares.md`, but Goni stays cognition-first.
+
 ## 2. Hard constraints (everyone should agree on these)
 
 These are the guardrails for all discussions in this repo. If you propose changes, start here; they are non-negotiable unless a proposal with better numbers moves them.
