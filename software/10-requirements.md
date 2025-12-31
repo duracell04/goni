@@ -49,6 +49,23 @@ At a minimum, a single Goni node should:
 
 ---
 
+## 2.1 Product Requirements Inferred from Reference Systems (Olares)
+
+These requirements are derived from reference product patterns (see
+`docs/reference-products/olares.md`) and are treated as enforceable behavior.
+
+- **R-UX-OWNERSHIP:** Default local-first; network access is an explicit, user-granted
+  capability with visible policy and logs.
+- **R-APP-ECOSYSTEM:** Agents are installable packages with manifests, permissions,
+  and budgets; install/uninstall is first-class.
+- **R-IDENTITY-SSO:** A single identity plane governs UI, agents, and tools; no
+  per-app auth silos.
+- **R-REMOTE-PRESENCE:** Secure remote access is a first-class feature with safe
+  defaults and clear status.
+- **R-ADMIN-OBSERVABILITY:** Provide a dashboard for node state, agents,
+  permissions, and resource budgets.
+
+
 ## 3. Local AI Behaviour
 
 ### 3.1 Local-First Policy
@@ -94,7 +111,7 @@ At a minimum, a single Goni node should:
   - prompt user effort (outline/selection) before full generation,
   - attribute which parts were AI- vs user-authored,
   - expose which memories were retrieved and why (traceable recall).
-- On lower-memory hardware (e.g. 64 GB unified), the system should automatically tighten context budgets, model sizes, and cache policies while preserving the above behaviours.
+- **Supported minimum vs reference build:** the software should run on lower-memory hardware (e.g. **64 GB unified**) by tightening context budgets, model sizes, and cache policies while preserving behaviour. However, the **product reference build** for the MVP story is **128 GB unified memory** (see `hardware/90-decisions.md` ADR-002).
 
 ---
 

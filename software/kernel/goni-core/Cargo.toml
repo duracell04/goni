@@ -12,4 +12,6 @@ goni-router = { path = "../goni-router" }
 goni-infer = { path = "../goni-infer" }
 
 tokio = { workspace = true }
+uuid = { workspace = true }
+arrow = { workspace = true }
 anyhow = "1"

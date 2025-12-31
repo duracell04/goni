@@ -5,6 +5,8 @@ The agent manifest is the single source of truth for agent identity, triggers,
 capabilities, and budgets. The kernel refuses to instantiate agents whose
 requested capabilities exceed policy.
 
+Canonical data contract: `software/50-data/51-schemas-mvp.md` (MANIFEST-02).
+
 ## 1. Required fields (logical)
 
 - `id`: stable agent identifier (reverse-DNS).
@@ -14,6 +16,9 @@ requested capabilities exceed policy.
 - `capabilities`: scoped tool permissions.
 - `budgets`: solver calls, runtime, disk/network ceilings.
 - `policy_profile`: data scopes and privacy tags.
+- `ui_surfaces`: declared UI integration points.
+- `identity_requirements`: required identity context.
+- `remote_access`: whether remote presence can be requested.
 - `tools`: optional tool preferences (non-binding).
 
 ## 2. Example (YAML)
@@ -36,6 +41,12 @@ budgets:
 policy_profile:
   data_scopes: [documents, notes]
   tags: [local_only]
+ui_surfaces:
+  - dashboard_tile
+  - inbox_sidebar
+identity_requirements:
+  - user_session
+remote_access: false
 tools:
   - pdf_text_extract
   - vecdb_upsert
@@ -47,13 +58,16 @@ tools:
 - **No ambient authority:** capabilities must be explicitly listed.
 - **Budget required:** an agent without budgets is invalid.
 - **Default-off network:** network access is false unless explicitly granted.
+- **UI integration is explicit:** any UI surface must be declared in the manifest.
+- **Remote access is explicit:** remote presence requires an explicit grant.
 - **Policy intersection:** effective capabilities are the intersection of
   manifest requests and active policy.
 
 ## 4. Schema and audit linkage
 
 The canonical record is `AgentManifests` (see
-`software/50-data/51-schemas-mvp.md`). The following audit fields are required:
+`software/50-data/51-schemas-mvp.md` for the storage schema). The following
+audit fields are required:
 
 - `agent_id`
 - `policy_hash`

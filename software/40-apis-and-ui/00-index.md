@@ -23,6 +23,12 @@ N = (\mathcal{A}, \mathcal{X}, \mathcal{K}, \mathcal{E}),
 
 so that we can reason about behaviour end-to-end.
 
+The API layer is also constrained by the canonical kernel contracts:
+
+- Tools are capability-scoped syscalls with mandatory audit envelopes: `docs/specs/tool-capability-api.md`
+- Agents are local processes with manifests (permissions/triggers/budgets): `docs/specs/agent-definition.md`, `docs/specs/agent-manifest.md`
+- Latent state is maintained independently of language decoding: `docs/specs/latent-state-contract.md`
+
 ---
 
 ## 2. Documents

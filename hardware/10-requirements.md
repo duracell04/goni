@@ -3,6 +3,8 @@
 > This document describes what the **final Goni product** should look like and be able to do, from a hardware and physical-system perspective.  
 > It is deliberately technology-agnostic (no specific brands, chips, or vendors).
 
+> **Scope note:** This file covers *physical constraints* and targets. Software behaviour and contracts live in `software/10-requirements.md` and `docs/specs/`.
+
 ---
 
 ## 1. Purpose
@@ -10,7 +12,7 @@
 Goni is a **small, local-first AI node** designed to live in a home or office and:
 
 - run a powerful personal AI assistant **on-device**,
-- host the userís own data and indices,
+- host the user's own data and indices,
 - mesh with additional nodes to scale out,
 - optionally attach to more powerful external accelerators in the future.
 
@@ -23,15 +25,15 @@ All hardware decisions should support this purpose.
 ### 2.1 Size & Shape
 
 - The device should be a **compact, standalone box**, not a rack server or tower PC.
-- Target external volume: **approximately 6ñ8 litres**.
+- Target external volume: **approximately 6‚Äì8 litres**.
 - Rough size envelope (for discussion, not final):  
-  - height: 20ñ30 cm  
-  - depth: 20ñ25 cm  
-  - width: 10ñ15 cm  
+  - height: 20‚Äì30 cm  
+  - depth: 20‚Äì25 cm  
+  - width: 10‚Äì15 cm  
 
 ### 2.2 Aesthetics
 
-- Appearance should be **minimal, neutral, and ìliving room safeî**:
+- Appearance should be **minimal, neutral, and ‚Äúliving room safe‚Äù**:
   - Matte or satin surface, preferably dark (e.g. black / dark grey).
   - No RGB lighting, no gamer styling, no visible branding beyond a small mark.
 - Front panel elements:
@@ -123,7 +125,7 @@ The hardware must support a low-power, always-on encoder loop plus bursty "solve
 
 - Goni must be designed as a **first-class cluster node**:
   - It should be straightforward to run multiple devices on the same network and treat them as a **single logical AI cluster**.
-- No special external hardware beyond standard networking equipment should be required for a small mesh (2ñ4 nodes).
+- No special external hardware beyond standard networking equipment should be required for a small mesh (2‚Äì4 nodes).
 - Latency-sensitive workloads should work well when the user interacts with **any one** of the nodes in the mesh.
 
 ---
@@ -140,10 +142,10 @@ The hardware must support a low-power, always-on encoder loop plus bursty "solve
 ### 5.2 Acoustic Behaviour
 
 - Under light and typical workloads (chat, coding, indexing), the device should be:
-  - Subjectively **ìnear silentî** in a quiet room.
+  - Subjectively **‚Äúnear silent‚Äù** in a quiet room.
 - Under heavy workloads (adapter training, long-running jobs), fan noise is acceptable but:
   - Should remain within **reasonable desktop/workstation levels**,
-  - Should not sound like a ìserver roomî or high-RPM blower.
+  - Should not sound like a ‚Äúserver room‚Äù or high-RPM blower.
 
 ### 5.3 Serviceability
 
@@ -173,8 +175,8 @@ The hardware must support a low-power, always-on encoder loop plus bursty "solve
 
 The hardware design should anticipate:
 
-- That compute boards / accelerators may be **swapped or upgraded** over the productís lifetime without redesigning the entire enclosure and power domain.
-- That external **ìheavy nodesî** (e.g. more powerful accelerators in separate devices) can be attached over the network in future, and Goni should be ready from a power and networking standpoint.
+- That compute boards / accelerators may be **swapped or upgraded** over the product's lifetime without redesigning the entire enclosure and power domain.
+- That external **‚Äúheavy nodes‚Äù** (e.g. more powerful accelerators in separate devices) can be attached over the network in future, and Goni should be ready from a power and networking standpoint.
 
 The constraints in this document should remain valid even as specific chip generations change.
 
