@@ -5,6 +5,8 @@ This document defines the kernel-owned latent state contract for Goni OS. It is
 model-agnostic and describes the minimal records, interfaces, and invariants
 required for latent-first cognition.
 
+SS-01 defines the symbolic substrate and arbitration contract used when validating state updates and tool calls.
+
 ## 1. Purpose
 
 The Latent State Store (LSS) is the kernel primitive that maintains "what is
@@ -75,3 +77,4 @@ See `docs/specs/tool-capability-api.md` for the audit record envelope.
 - `docs/specs/agent-manifest.md`
 - `docs/specs/tool-capability-api.md`
 - `docs/specs/scheduler-and-interrupts.md`
+- `docs/specs/symbolic-substrate.md`

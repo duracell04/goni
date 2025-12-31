@@ -14,6 +14,7 @@ Interrupts are raised on:
 - policy deadlines or compliance conditions
 
 Interrupts are routed through the scheduler and never call the solver directly.
+Admission is part of the SS-01 arbitration contract.
 
 ## 2. Hysteresis and wake control
 
@@ -65,3 +66,4 @@ Interrupt decisions and solver wakes are recorded with:
 
 - `docs/specs/latent-state-contract.md`
 - `docs/specs/tool-capability-api.md`
+- `docs/specs/symbolic-substrate.md`

@@ -1,10 +1,10 @@
-﻿# 51 – Schemas (MVP Canonical Tables)
+# 51 � Schemas (MVP Canonical Tables)
 
 Arrow-first, v1.0 schemas for the canonical tables. Each table is `Spine + Payload`; `row_id` == domain PK.
 
 **Executable spec:** These schemas are implemented by `software/kernel/goni-schema` via the `define_tables!` block in `goni-schema/src/lib.rs`. This document and that DSL must stay in sync.
 
-## Plane 𝒜 – Knowledge (immutable)
+## Plane ?? � Knowledge (immutable)
 
 ### Docs
 - PK: `doc_id = row_id`
@@ -14,21 +14,21 @@ Arrow-first, v1.0 schemas for the canonical tables. Each table is `Spine + Paylo
 ### Chunks
 - PK: `chunk_id = row_id`
 - Fields: `doc_id: fixed_size_binary[16]`, `ordinal: uint32`, `text: large_utf8`, `token_count: uint32`, `section_path: list<utf8>`
-- Notes: **Only** raw text column #1 (with Prompts.text in 𝒳).
+- Notes: **Only** raw text column #1 (with Prompts.text in ??).
 
 ### Embeddings
 - PK: `embedding_id = row_id`
 - Fields: `chunk_id: fixed_size_binary[16]`, `model_id: dict<uint8, utf8>`, `vector: fixed_size_list<float32>[1536]`, `dim: uint16`
 - Notes: Lance index on `vector`.
 
-## Plane 𝒳 – Context (ephemeral)
+## Plane ?? � Context (ephemeral)
 
 ### ContextItems
 - PK: `context_item_id = row_id`
 - Fields: `context_id: fixed_size_binary[16]`, `chunk_id: fixed_size_binary[16]`, `cost_tokens: uint32`, `selected: bool`, `rank: uint16?`, `marginal_gain: float32?`
-- Notes: Submodular selection outputs `selected`/`rank`; joins to 𝒜 via `chunk_id`.
+- Notes: Submodular selection outputs `selected`/`rank`; joins to ?? via `chunk_id`.
 
-## Plane 𝒦 – Control (metadata only)
+## Plane ?? � Control (metadata only)
 
 ### Requests
 - PK: `request_id = row_id`
@@ -40,7 +40,7 @@ Arrow-first, v1.0 schemas for the canonical tables. Each table is `Spine + Paylo
 - Fields: `request_id: fixed_size_binary[16]`, `task_type: dict<uint8, utf8>`, `state: dict<uint8, utf8>`, `queue_id: dict<uint8, utf8>`, `expected_cost_tokens: uint32`
 - Notes: Lyapunov inputs; append-only state transitions.
 
-## Plane ℰ – Execution (telemetry)
+## Plane E � Execution (telemetry)
 
 ### LlmCalls
 - PK: `call_id = row_id`
@@ -74,6 +74,21 @@ Arrow-first, v1.0 schemas for the canonical tables. Each table is `Spine + Paylo
 - PK: `delta_id = row_id`
 - Fields: `snapshot_id: fixed_size_binary[16]`, `delta_kind: dict<uint8, utf8>`, `delta_vector: fixed_size_list<float32>[1536]`, `delta_dim: uint16`, `f_sparse_patch: map<utf8, utf8>`, `timestamp: timestamp(us)`, `agent_id: fixed_size_binary[16]`, `policy_hash: fixed_size_binary[32]`, `state_snapshot_id: fixed_size_binary[16]`, `provenance: map<utf8, utf8>`
 - Notes: Deltas are append-only and ordered by timestamp.
+
+#### F_sparse conventions (SS-01)
+- f_sparse and f_sparse_patch remain map<utf8, utf8>; storage treats values as opaque.
+- Keys use namespaces: policy.*, goal.*, constraint.*, fact.*.
+- Values are JSON objects with a required version field v.
+- Example (single row):
+```json
+{
+  "policy.no_send_email": "{\"v\":1,\"effect\":\"deny\",\"subject\":{\"tool_id\":\"email.send\"},\"on_fail\":\"block\"}",
+  "goal.next_action": "{\"v\":1,\"kind\":\"draft\",\"target\":\"email\"}",
+  "constraint.requires_source": "{\"v\":1,\"effect\":\"deny\",\"subject\":{\"tool_id\":\"fs.write\"},\"when\":{\"op\":\"missing\",\"args\":[\"fact.source_ref\"]},\"on_fail\":\"ask\"}",
+  "fact.user_tier": "{\"v\":1,\"value\":\"local\"}"
+}
+```
+- Validation semantics live in docs/specs/symbolic-substrate.md; storage does not enforce schemas.
 
 ### LatentSummaries
 - PK: `summary_id = row_id`
