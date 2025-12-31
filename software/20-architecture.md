@@ -47,6 +47,8 @@ While the formal tuple remains \(N = (\mathcal{A}, \mathcal{X}, \mathcal{K}, \ma
 Goni OS treats agents as **local userland processes** and the LLM as a **rare,
 budgeted interrupt**, not a control loop. The practical architecture is a
 three-ring model:
+This structure is what makes Goni a "digital double": a local process that
+observes, distills, and acts under explicit policy and receipts.
 
 - **Ring 0 (Cognitive kernel):** observation bus, latent state store, policy
   engine, scheduler/interrupt controller.
