@@ -1,13 +1,37 @@
-﻿# Project Goni
+# Project Goni
 
-> **Goni** is a blueprint and prototype stack for a compact, local-first AI node you could run in your home or office; it meshes with other nodes and can talk to the cloud when it helps. This is not a boxed product yet.
-
-This repo = open-source blueprint + prototype lab.
+> **Goni** is a private operator appliance: a local-first digital double that refines your online life into briefs, decisions, and actions - quietly, with receipts, under your rules. This repo is the open-source blueprint and prototype lab.
 
 > **Status (prototype lab, not shippable hardware)**
 > - Blueprint + prototype lab; APIs/BOM may change.
 > - Docker/k8s stacks are for experimentation, not production.
 > - Manufactured MVP waits on financing; this repo is the reference design it will follow.
+
+## What Goni is (fast)
+
+**User truth**
+
+- Your private operator: always-on, local-first, loyal to your attention.
+- A refinery: raw inputs -> distilled facts -> action cards -> durable memory.
+
+**Technical truth**
+
+- An appliance-grade OS + data spine + governance layer + job framework.
+- Local models by default; explicit, logged escalation to external models.
+
+**The three surfaces**
+
+- **Daily Brief**: compressed priorities and risks.
+- **Action Cards**: binary decisions with context + rationale + receipts.
+- **Vault**: your distilled, searchable memory.
+
+**Core loop**
+
+Observe -> Distill -> Propose/Act -> Attach receipts -> Store memory.
+
+**Why it matters**
+
+- Signal protection, time recovery, governed autonomy, sovereignty.
 
 ## Agility guardrails
 
