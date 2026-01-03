@@ -1,4 +1,5 @@
 # 90 - Hardware Decisions (ADR Log)
+DOC-ID: ADR-INDEX-HW
 
 Last refreshed: **2026-01-03**
 

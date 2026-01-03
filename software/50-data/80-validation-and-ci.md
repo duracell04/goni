@@ -1,4 +1,5 @@
 ﻿# 80 – Validation & CI
+DOC-ID: CI-VALIDATION-01
 
 How SMA/ZCO/TXT and schema drift are enforced in practice.
 

@@ -1,4 +1,5 @@
 # AGENT-01 - Agent Definition (Goni OS)
+DOC-ID: AGENT-DEF-01
 Status: Draft (normative target)
 
 This document defines what an agent is in Goni OS and how it interacts with the

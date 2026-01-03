@@ -1,4 +1,5 @@
 # Goni Hardware Requirements (MVP)
+DOC-ID: HREQ-01
 
 > This document describes what the **final Goni product** should look like and be able to do, from a hardware and physical-system perspective.  
 > It is deliberately technology-agnostic (no specific brands, chips, or vendors).

@@ -1,4 +1,5 @@
 # TOOL-01 - Tool Capability API (Auditable Syscalls)
+DOC-ID: TOOL-01
 Status: Draft (normative target)
 
 Tools are kernel-mediated, capability-scoped syscalls. All tool invocations are

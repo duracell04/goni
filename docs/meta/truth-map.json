@@ -1,0 +1,201 @@
+{
+  "version": 1,
+  "groups": [
+    {"id": "specs", "title": "Specs (normative contracts)"},
+    {"id": "data_contracts", "title": "Axioms and data plane contracts"},
+    {"id": "decisions", "title": "Decisions (ADRs)"},
+    {"id": "requirements", "title": "Requirements"}
+  ],
+  "entries": [
+    {
+      "id": "LSC-01",
+      "title": "Latent State Contract",
+      "role": "spec",
+      "group": "specs",
+      "path": "docs/specs/latent-state-contract.md",
+      "anchors": ["DOC-ID: LSC-01"],
+      "status": "specified_only",
+      "owner_area": "docs"
+    },
+    {
+      "id": "TOOL-01",
+      "title": "Tool Capability API",
+      "role": "spec",
+      "group": "specs",
+      "path": "docs/specs/tool-capability-api.md",
+      "anchors": ["DOC-ID: TOOL-01"],
+      "status": "specified_only",
+      "owner_area": "docs"
+    },
+    {
+      "id": "SCHED-01",
+      "title": "Scheduler and Interrupts",
+      "role": "spec",
+      "group": "specs",
+      "path": "docs/specs/scheduler-and-interrupts.md",
+      "anchors": ["DOC-ID: SCHED-01"],
+      "status": "specified_only",
+      "owner_area": "docs"
+    },
+    {
+      "id": "SS-01",
+      "title": "Symbolic Substrate",
+      "role": "spec",
+      "group": "specs",
+      "path": "docs/specs/symbolic-substrate.md",
+      "anchors": ["DOC-ID: SS-01"],
+      "status": "specified_only",
+      "owner_area": "docs"
+    },
+    {
+      "id": "AGENT-DEF-01",
+      "title": "Agent Definition (product concept)",
+      "role": "spec",
+      "group": "specs",
+      "path": "docs/specs/agent-definition.md",
+      "anchors": ["DOC-ID: AGENT-DEF-01"],
+      "status": "specified_only",
+      "owner_area": "docs"
+    },
+    {
+      "id": "AGENT-MANIFEST-01",
+      "title": "Agent Manifest",
+      "role": "spec",
+      "group": "specs",
+      "path": "docs/specs/agent-manifest.md",
+      "anchors": ["DOC-ID: AGENT-MANIFEST-01"],
+      "status": "specified_only",
+      "owner_area": "docs"
+    },
+    {
+      "id": "ITCR-01",
+      "title": "ITCR",
+      "role": "spec",
+      "group": "specs",
+      "path": "docs/specs/itcr.md",
+      "anchors": ["DOC-ID: ITCR-01"],
+      "status": "specified_only",
+      "owner_area": "docs"
+    },
+    {
+      "id": "AXIOMS-01",
+      "title": "Axioms and planes",
+      "role": "data_contract",
+      "group": "data_contracts",
+      "path": "software/50-data/10-axioms-and-planes.md",
+      "anchors": ["DOC-ID: AXIOMS-01"],
+      "status": "specified_only",
+      "owner_area": "software"
+    },
+    {
+      "id": "SPINE-01",
+      "title": "Spine and IDs",
+      "role": "data_contract",
+      "group": "data_contracts",
+      "path": "software/50-data/20-spine-and-ids.md",
+      "anchors": ["DOC-ID: SPINE-01"],
+      "status": "specified_only",
+      "owner_area": "software"
+    },
+    {
+      "id": "PLANE-01",
+      "title": "Plane contracts",
+      "role": "data_contract",
+      "group": "data_contracts",
+      "path": "software/50-data/30-plane-contracts.md",
+      "anchors": ["DOC-ID: PLANE-01"],
+      "status": "specified_only",
+      "owner_area": "software"
+    },
+    {
+      "id": "PRIV-01",
+      "title": "Privacy and Text Confinement",
+      "role": "data_contract",
+      "group": "data_contracts",
+      "path": "software/50-data/40-privacy-and-text-confinement.md",
+      "anchors": ["DOC-ID: PRIV-01"],
+      "status": "specified_only",
+      "owner_area": "software"
+    },
+    {
+      "id": "SCHEMA-MVP-01",
+      "title": "Schema MVP",
+      "role": "schema",
+      "group": "data_contracts",
+      "path": "software/50-data/51-schemas-mvp.md",
+      "anchors": ["DOC-ID: SCHEMA-MVP-01"],
+      "status": "specified_only",
+      "owner_area": "software"
+    },
+    {
+      "id": "ZCO-01",
+      "title": "Zero-copy mechanics",
+      "role": "data_contract",
+      "group": "data_contracts",
+      "path": "software/50-data/52-zero-copy-mechanics.md",
+      "anchors": ["DOC-ID: ZCO-01"],
+      "status": "specified_only",
+      "owner_area": "software"
+    },
+    {
+      "id": "SCHEMA-DSL-01",
+      "title": "Schema DSL and macros",
+      "role": "data_contract",
+      "group": "data_contracts",
+      "path": "software/50-data/53-schema-dsl-and-macros.md",
+      "anchors": ["DOC-ID: SCHEMA-DSL-01"],
+      "status": "specified_only",
+      "owner_area": "software"
+    },
+    {
+      "id": "CI-VALIDATION-01",
+      "title": "Validation and CI (design intent)",
+      "role": "data_contract",
+      "group": "data_contracts",
+      "path": "software/50-data/80-validation-and-ci.md",
+      "anchors": ["DOC-ID: CI-VALIDATION-01"],
+      "status": "specified_only",
+      "owner_area": "software"
+    },
+    {
+      "id": "ADR-INDEX-SW",
+      "title": "Software decisions log",
+      "role": "adr_index",
+      "group": "decisions",
+      "path": "software/90-decisions.md",
+      "anchors": ["DOC-ID: ADR-INDEX-SW"],
+      "status": "specified_only",
+      "owner_area": "software"
+    },
+    {
+      "id": "ADR-INDEX-HW",
+      "title": "Hardware decisions log",
+      "role": "adr_index",
+      "group": "decisions",
+      "path": "hardware/90-decisions.md",
+      "anchors": ["DOC-ID: ADR-INDEX-HW"],
+      "status": "specified_only",
+      "owner_area": "hardware"
+    },
+    {
+      "id": "SREQ-01",
+      "title": "Software requirements",
+      "role": "requirements",
+      "group": "requirements",
+      "path": "software/10-requirements.md",
+      "anchors": ["DOC-ID: SREQ-01"],
+      "status": "specified_only",
+      "owner_area": "software"
+    },
+    {
+      "id": "HREQ-01",
+      "title": "Hardware requirements",
+      "role": "requirements",
+      "group": "requirements",
+      "path": "hardware/10-requirements.md",
+      "anchors": ["DOC-ID: HREQ-01"],
+      "status": "specified_only",
+      "owner_area": "hardware"
+    }
+  ]
+}

@@ -1,4 +1,5 @@
 # SS-01 - Symbolic Substrate (Arbitration Contract)
+DOC-ID: SS-01
 Status: Draft (normative target)
 
 This spec defines the minimal symbolic substrate and arbitration contract that

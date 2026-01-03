@@ -1,4 +1,5 @@
 ﻿# Goni Software Requirements (MVP)
+DOC-ID: SREQ-01
 
 > This document describes what the **final Goni product** should be able to do from a software and system-behaviour perspective.  
 > It is intentionally technology-agnostic and avoids naming specific frameworks, vendors, or libraries.

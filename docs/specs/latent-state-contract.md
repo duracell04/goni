@@ -1,4 +1,5 @@
 # LSC-01 - Latent State Contract
+DOC-ID: LSC-01
 Status: Draft (normative target)
 
 This document defines the kernel-owned latent state contract for Goni OS. It is

@@ -1,4 +1,5 @@
 ﻿# 52 – Zero-Copy Mechanics
+DOC-ID: ZCO-01
 
 Zero-copy operations over Arrow buffers (see `95-theory` for proofs). Outputs mutate booleans/indices; text moves exactly once into an LLM buffer.
 

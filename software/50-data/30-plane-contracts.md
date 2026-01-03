@@ -1,4 +1,5 @@
 ﻿# 30 – Plane Contracts (𝒜, 𝒳, 𝒦, ℰ)
+DOC-ID: PLANE-01
 
 Defines responsibilities, allowed foreign keys, and forbidden field types per plane. Arrow types live in `51-schemas-mvp.md`; this document is conceptual.
 
