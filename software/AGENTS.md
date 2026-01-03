@@ -1,0 +1,14 @@
+# AGENTS.md (software) - Overrides
+
+## Overrides
+- Prefer updating canonical contracts under `software/50-data/*` before changing implementation.
+- Any change that affects data schemas, plane tags, or text confinement MUST update:
+  - `software/50-data/51-schemas-mvp.md` (contract)
+  - `software/50-data/53-schema-dsl-and-macros.md` (mechanism)
+  - and the relevant kernel tests under `software/kernel/goni-schema/tests/`
+
+## Dependency hygiene
+- Minimise new dependencies. If adding a dependency, document:
+  - why it is needed
+  - which crate owns it
+  - what contract/invariant it supports

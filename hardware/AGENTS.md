@@ -1,0 +1,9 @@
+# AGENTS.md (hardware) - Overrides
+
+## Overrides
+- Hardware decisions MUST be recorded in `hardware/90-decisions.md`.
+- Any numeric hardware claim MUST include: date, "last validated", and an evidence link (benchmark/log/photo).
+- Avoid changing reference build assumptions without an ADR update.
+
+## Evidence discipline
+- Avoid hard performance numbers unless paired with a dated measurement artefact (test conditions + what was measured).
