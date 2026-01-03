@@ -1,6 +1,6 @@
 # 25 - Hardware Layers and Supplier Map (2025–2026)
 
-Last refreshed: **2025-12-14**
+Last refreshed: **2026-01-03**
 
 This note captures the **mental model for Goni hardware**, plus an opinionated supplier map with **availability reality** and **backend readiness** notes so hardware choices stay aligned with what the software can actually run today.
 
@@ -73,6 +73,34 @@ Actionable implication:
 | v1 (APU) | Ryzen AI Max+ 395 class | llama.cpp (Vulkan/HIP) or validated ROCm path | vLLM ROCm officially targets specific AMD GPUs; APU validation is a concrete task, not an assumption. |
 | Pro (NVIDIA) | RTX 4090/5090 class | vLLM (CUDA) | Best current throughput and ecosystem maturity. |
 | Max | multi-GPU / mixed | vLLM + custom | Requires more orchestration (sharding, networking, scheduling). |
+
+### 3.3 Telemetry and capability discovery (base image contract)
+
+The base image MUST expose, or provide a documented fallback for:
+
+- thermal sensors and throttling events,
+- memory pressure and swap statistics,
+- storage writes and health signals,
+- GPU/NPU capability query (supported shapes, quantization, graph cache status),
+- optional bandwidth estimates or perf counters where available.
+
+OS policies MUST support:
+
+- background compaction/indexing only on AC power and with thermal headroom,
+- pausing background work during solver bursts,
+- pinning shared memory regions for hot state.
+
+Cross-layer links:
+- scheduling behavior: `software/10-requirements.md`
+- routing and shape constraints: `software/30-components/llm-runtime.md`
+
+### 3.4 Failure modes and fallbacks
+
+If telemetry is incomplete, the system MUST default to conservative routing:
+
+- prefer CPU/iGPU paths,
+- reduce solver duty cycle,
+- defer compaction and index maintenance.
 
 ---
 
