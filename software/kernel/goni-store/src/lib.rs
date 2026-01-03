@@ -1,4 +1,4 @@
-﻿use std::sync::Arc;
+use std::sync::Arc;
 
 use arrow::record_batch::RecordBatch;
 use async_trait::async_trait;
@@ -6,6 +6,12 @@ use thiserror::Error;
 
 pub mod qdrant;
 pub use qdrant::QdrantDataPlane;
+
+pub mod spine_mem;
+pub use spine_mem::InMemorySpineDataPlane;
+
+pub mod multi;
+pub use multi::MultiDataPlane;
 
 pub type ArrowBatch = RecordBatch;
 pub type ArrowBatchHandle = Arc<ArrowBatch>;

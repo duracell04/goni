@@ -53,3 +53,4 @@ These fields are required on tool calls, state deltas, and commits.
 - `docs/specs/agent-manifest.md`
 - `docs/specs/tool-capability-api.md`
 - `docs/specs/scheduler-and-interrupts.md`
+- `docs/specs/itcr.md`

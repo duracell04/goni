@@ -30,6 +30,11 @@
 - **Tool use**: success/exception rate per tool chain; was the plan followed?
 - **Long-context stability**: degradation beyond N tokens (track N where quality drops).
 - **Champion labels**: best-in-class per task tag with timestamp + sample size.
+- **ITCR duty cycle**: fraction of time the ITCR reasoner is active vs baseline cognition.
+- **Wake overhead**: time-to-first-action after escalation; escalations per hour.
+- **Oscillation rate**: repeated escalate/de-escalate cycles (hysteresis effectiveness).
+- **Energy-normalized success**: task success per joule or per Wh when power data is available.
+- **Action regret**: rollback/undo rate for executed tool actions.
 
 ## 5. Integration points in this repo
 - **Council config**: keep `config/council.yaml` as the ground truth; Lab “promote” steps propose edits, not auto-merge.
@@ -47,4 +52,3 @@
 - Tightens the **local-first promise**: we only escalate when Lab data shows a clear win.
 - Makes the **Council explainable**: every seat and threshold is backed by on-box measurements, not guesses.
 - Reduces **drift**: periodic Lab runs catch regressions when models update upstream.
-

@@ -49,6 +49,23 @@ At a minimum, a single Goni node should:
 
 ---
 
+## 2.1 Product Requirements Inferred from Reference Systems (Olares)
+
+These requirements are derived from reference product patterns (see
+`docs/reference-products/olares.md`) and are treated as enforceable behavior.
+
+- **R-UX-OWNERSHIP:** Default local-first; network access is an explicit, user-granted
+  capability with visible policy and logs.
+- **R-APP-ECOSYSTEM:** Agents are installable packages with manifests, permissions,
+  and budgets; install/uninstall is first-class.
+- **R-IDENTITY-SSO:** A single identity plane governs UI, agents, and tools; no
+  per-app auth silos.
+- **R-REMOTE-PRESENCE:** Secure remote access is a first-class feature with safe
+  defaults and clear status.
+- **R-ADMIN-OBSERVABILITY:** Provide a dashboard for node state, agents,
+  permissions, and resource budgets.
+
+
 ## 3. Local AI Behaviour
 
 ### 3.1 Local-First Policy
@@ -73,6 +90,15 @@ At a minimum, a single Goni node should:
     - temperature = 0, fixed seed, batch size 1, no continuous batching.
     - single worker / single thread (or CPU-only fallback) available even if slower.
     - record hardware/driver profile with runs so outputs can be reproduced.
+  - Treat transformer decoding and tool loops as **memory-bandwidth bound** by
+    default; scheduling should prioritize bandwidth per effective token, not
+    peak TOPS/FLOPS.
+  - Optimize **KV-cache residency and access patterns** (paged/segmented layouts)
+    as a first-class performance constraint.
+  - Route memory-bound stages to the highest-bandwidth path available (GPU/iGPU/UMA CPU)
+    and avoid avoidable PCIe shuttling of KV and latent state.
+  - Respect accelerator **shape constraints**: NPUs are used only when workloads
+    fit fixed-shape or bucketed regimes; otherwise route to CPU/iGPU.
 
 ### 3.3 Memory & Cognition
 
@@ -94,7 +120,7 @@ At a minimum, a single Goni node should:
   - prompt user effort (outline/selection) before full generation,
   - attribute which parts were AI- vs user-authored,
   - expose which memories were retrieved and why (traceable recall).
-- On lower-memory hardware (e.g. 64 GB unified), the system should automatically tighten context budgets, model sizes, and cache policies while preserving the above behaviours.
+- **Supported minimum vs reference build:** the software should run on lower-memory hardware (e.g. **64 GB unified**) by tightening context budgets, model sizes, and cache policies while preserving behaviour. However, the **product reference build** for the MVP story is **128 GB unified memory** (see `hardware/90-decisions.md` ADR-002).
 
 ---
 
@@ -106,12 +132,16 @@ At a minimum, a single Goni node should:
 - Encoder graphs should be pre-warmed and shape-bounded; the steady-state loop must not trigger compilation.
 - Observation sources must support gating; prefer event-driven hooks over constant polling.
 - Persistent writes must be governed by a write budget controller (rate limits, significance thresholds, deferred compaction).
+- State persistence should follow an LSM-style pattern (in-memory buffers, sequential flushes,
+  compaction only under favorable conditions like plugged-in + cool) to reduce write amplification.
 - Degradation modes must be explicit and configurable: Eco, Normal, Boost, Thermal throttle, Offline-safe.
 
 ### 3.5 Continuous cognition envelope (hardware-linked)
 
 - Continuous cognition (encoders + predictor) must fit a steady-state power and
   thermal budget; heavy solvers are interrupt-only.
+- Thermal scheduling should clamp compute bursts near the efficiency frontier
+  of DVFS curves, prioritizing sustained performance over short peaks.
 - The scheduler must enforce wake hysteresis and a maximum solver wake rate
   per policy.
 - SSD endurance is a first-class constraint; write amplification must be
@@ -120,6 +150,8 @@ At a minimum, a single Goni node should:
 - Prefer UMA/shared-memory paths; avoid PCIe shuttling of latent state. If a
   discrete GPU is used, fallback rules must keep continuous cognition off dGPU
   by default.
+- Control-plane arbitration should use zero-copy, schema-driven interchange
+  (Arrow/FlatBuffers/Cap'n Proto); avoid JSON in hot paths between CPU and accelerators.
 - Sensors must be gated and default-off; each source requires explicit policy
   enablement.
 - Crash consistency is mandatory: state must be replayable from checkpoints +

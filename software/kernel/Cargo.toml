@@ -9,6 +9,8 @@ members = [
     "goni-infer",
     "goni-cap",
     "goni-core",
+    "goni-agent",
+    "goni-tools",
     "goni-cli",
     "goni-http",
 ]
@@ -24,7 +26,7 @@ arrow-array = "54"
 arrow-schema = "54"
 async-trait = "0.1"
 uuid = { version = "1", features = ["v4"] }
-tokio = { version = "1.40", features = ["rt-multi-thread", "macros"] }
+tokio = { version = "1.40", features = ["rt-multi-thread", "macros", "sync", "time"] }
 futures-core = "0.3"
 futures-util = "0.3"
 thiserror = "1.0"
@@ -32,6 +34,7 @@ cap-std = "3"
 axum = "0.7"
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
+serde_yaml = "0.9"
 tower = "0.4"
 tower-http = { version = "0.5", features = ["trace"] }
 reqwest = { version = "0.12", features = ["json", "stream"] }

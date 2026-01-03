@@ -1,6 +1,6 @@
 # 20 - Candidate Hardware Architectures for Goni (MVP)
 
-Last refreshed: **2025-12-14**
+Last refreshed: **2026-01-03**
 
 This document surveys candidate **hardware architectures** for the Goni MVP node, and converges on a concrete **MVP reference SKU** so that mechanical/electrical/software can be validated end-to-end.
 
@@ -21,6 +21,86 @@ The MVP node must:
 - Sustain a **domestic power + acoustics** profile (few hundred watts max; quiet under interactive use).
 - Support **cluster/mesh** operation over Ethernet (2–4 nodes without special switching).
 - Be upgradeable by **swapping the compute module** without redesigning the whole enclosure.
+
+---
+
+## 1.1 Compute topology options and their invariants
+
+This section enumerates topology options as platform contracts. It defines
+invariants, routing implications, telemetry needs, and failure modes without
+hard performance numbers.
+
+Cross-layer links:
+- scheduling behavior: `software/10-requirements.md`
+- runtime routing: `software/30-components/llm-runtime.md`
+- duty cycle policy: `docs/specs/scheduler-and-interrupts.md`
+
+### 1.1.1 UMA-first topology (CPU + iGPU + NPU share memory)
+
+Benefits:
+- Fewer copies and more stable latency for frequent state access.
+
+Risks:
+- Bandwidth contention and thermal coupling between CPU/iGPU/NPU.
+
+Invariants:
+- Hot state stays resident in shared memory.
+- Solver bursts MUST NOT trigger large host-device copies.
+
+Routing implications:
+- Prefer UMA for memory-bound decoding and frequent state exchange.
+
+Telemetry needs:
+- Memory bandwidth/pressure signals and DVFS state per domain.
+
+Failure modes and fallbacks:
+- Bandwidth contention -> throttle bursts and reduce background work.
+- Thermal coupling -> clamp duty cycle and defer compaction.
+
+### 1.1.2 Hybrid iGPU + NPU + CPU (no dGPU)
+
+Benefits:
+- Low idle power and predictable always-on behavior.
+
+Risks:
+- Limited peak reasoning throughput for large bursts.
+
+Invariants:
+- NPU is used only for fixed-graph, shape-bucketed workloads.
+- iGPU is reserved for burst reasoning when memory-bound.
+
+Routing implications:
+- Encoders map to NPU buckets; fallback to CPU/iGPU on shape mismatch.
+
+Telemetry needs:
+- NPU supported shapes and graph cache status.
+- GPU wake/active state.
+
+Failure modes and fallbacks:
+- NPU graph mismatch -> route to CPU/iGPU.
+- Burst overruns -> extend cooldown and reduce duty cycle.
+
+### 1.1.3 dGPU topology (PCIe discrete GPU)
+
+Benefits:
+- Dedicated VRAM bandwidth and larger model capacity.
+
+Risks:
+- Copy overhead, wake latency, and idle power.
+
+Invariants:
+- Prohibit frequent host<->device state transfer.
+- Only coarse-grained decision packets may cross PCIe.
+
+Routing implications:
+- Keep continuous cognition on CPU/NPU/iGPU; use dGPU only for bursts.
+
+Telemetry needs:
+- PCIe link state, GPU residency, and VRAM pressure signals.
+
+Failure modes and fallbacks:
+- PCIe transfer spikes -> reduce packet size and burst frequency.
+- Thermal runaway -> clamp duty cycle and fall back to iGPU/CPU.
 
 ---
 

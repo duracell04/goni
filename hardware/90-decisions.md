@@ -1,6 +1,6 @@
 # 90 - Hardware Decisions (ADR Log)
 
-Last refreshed: **2025-12-14**
+Last refreshed: **2026-01-03**
 
 This file is the **decision log** for Goni hardware. It captures the big, relatively stable choices so we do not re-litigate the same debates and so mechanical/electrical/software can converge on one buildable MVP.
 
@@ -182,3 +182,43 @@ The current kernel inference engine in-repo is HTTP vLLM client. vLLM is mature 
 - `software/kernel/goni-infer` (HttpVllmEngine)
 - [`25-hardware-layers-and-supplier-map.md`](./25-hardware-layers-and-supplier-map.md)
 
+---
+
+## ADR-007 - Hardware-aware ITCR as a platform contract (roofline + DVFS + WAF)
+
+**Status:** Accepted  
+**Date:** 2026-01-03  
+**Owner:** @goni-hardware + @goni-software
+
+### Context
+
+Local inference-time compute reasoning (ITCR) is constrained by memory
+bandwidth, accelerator graph constraints, storage endurance, and thermal
+dynamics. These constraints must be encoded as hardware platform contracts so
+software scheduling and routing can enforce them.
+
+### Decision
+
+- Goni assumes decoding is memory-bound and routes by arithmetic intensity.
+- NPUs are treated as fixed-graph accelerators with explicit shape buckets.
+- Persistence MUST control write amplification via LSM-style buffering and gated
+  compaction.
+- Solver bursts are DVFS-clamped and duty-cycle limited.
+
+### Consequences
+
+- Hardware selection must provide the telemetry and knobs defined in
+  `hardware/10-requirements.md`.
+- Scheduling policies in `software/10-requirements.md` and
+  `docs/specs/scheduler-and-interrupts.md` are mandatory for safe operation.
+
+### Non-goals
+
+- No hard performance numbers or thresholds in this ADR.
+- Measurement plans and concrete targets are deferred to future updates.
+
+### Failure modes and fallbacks
+
+If telemetry is missing or unstable, Goni MUST fall back to conservative
+policies: reduce duty cycle, prefer CPU/iGPU routing, and defer compaction until
+safe conditions return.

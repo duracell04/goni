@@ -1,4 +1,4 @@
-﻿use std::sync::Arc;
+use std::{collections::HashMap, sync::Arc};
 
 use goni_context::{record_batch_to_candidate_chunks, CandidateChunk, ContextSelector, KvPager};
 use goni_infer::{LlmEngine, TokenStream};
@@ -6,6 +6,15 @@ use goni_router::{EscalationPolicy, Router};
 use goni_sched::Scheduler;
 use goni_store::DataPlane;
 use goni_types::{ContextSelection, LlmRequest, TaskClass};
+
+use tokio::sync::{oneshot, Mutex};
+use uuid::Uuid;
+
+struct PendingRequest {
+    prompt: String,
+    class: TaskClass,
+    tx: oneshot::Sender<anyhow::Result<TokenStream>>,
+}
 
 /// The orchestrator/kernel: wires the planes together.
 pub struct GoniKernel {
@@ -15,6 +24,11 @@ pub struct GoniKernel {
     pub scheduler: Arc<dyn Scheduler>,
     pub router: Arc<dyn Router>,
     pub llm_engine: Arc<dyn LlmEngine>,
+
+    /// Requests waiting to be executed by the scheduler loop.
+    ///
+    /// Key: batch_id (scheduler meta id)
+    pending: Mutex<HashMap<Uuid, PendingRequest>>,
 }
 
 impl GoniKernel {
@@ -33,21 +47,88 @@ impl GoniKernel {
             scheduler,
             router,
             llm_engine,
+            pending: Mutex::new(HashMap::new()),
         }
     }
 
-    /// High-level API: enqueue a query, produce a token stream.
+    /// High-level API: enqueue a query and await the solver result.
     ///
-    /// NOTE: For now this directly calls into llm_engine.
-    /// In a full actor-based system, you'd:
-    ///  - package this into a GoniBatch,
-    ///  - submit to scheduler,
-    ///  - have a separate loop driving scheduler.next() ? llm_engine.generate().
-    pub async fn handle_user_query(
+    /// Important: this method does **not** call the LLM directly.
+    /// The LLM is invoked by the scheduler executor loop (see `run_scheduler_loop`).
+    pub async fn handle_user_query(&self, prompt: &str, class: TaskClass) -> anyhow::Result<TokenStream> {
+        let (batch_id, rx) = self.submit_user_query(prompt, class).await?;
+        // In MVP, if the executor loop is not running, run one step inline.
+        // This keeps CLI/dev usage working while preserving the architectural boundary.
+        if self.pending.lock().await.contains_key(&batch_id) {
+            self.run_scheduler_once().await;
+        }
+        rx.await?
+    }
+
+    /// Submit a user query into the scheduler and return a oneshot that yields the token stream.
+    pub async fn submit_user_query(
         &self,
         prompt: &str,
-        _class: TaskClass,
-    ) -> anyhow::Result<TokenStream> {
+        class: TaskClass,
+    ) -> anyhow::Result<(Uuid, oneshot::Receiver<anyhow::Result<TokenStream>>)> {
+        let batch_id = Uuid::new_v4();
+        let (tx, rx) = oneshot::channel();
+
+        {
+            let mut pending = self.pending.lock().await;
+            pending.insert(
+                batch_id,
+                PendingRequest {
+                    prompt: prompt.to_string(),
+                    class,
+                    tx,
+                },
+            );
+        }
+
+        // Submit a minimal batch (payload-free for MVP). Scheduler sees meta only.
+        let schema = Arc::new(arrow::datatypes::Schema::empty());
+        let empty = arrow::record_batch::RecordBatch::new_empty(schema);
+        let batch = goni_types::GoniBatch {
+            data: Arc::new(empty),
+            meta: goni_types::BatchMeta {
+                id: batch_id,
+                class,
+                arrival_ts: std::time::Instant::now(),
+                est_tokens: prompt.split_whitespace().count().max(1),
+            },
+        };
+        self.scheduler
+            .submit(batch)
+            .await
+            .map_err(|e| anyhow::anyhow!(e.message))?;
+
+        Ok((batch_id, rx))
+    }
+
+    /// Run one scheduled batch (if any) and deliver its result to the waiting receiver.
+    pub async fn run_scheduler_once(&self) {
+        let Some(batch) = self.scheduler.next().await else { return; };
+        let pending = {
+            let mut p = self.pending.lock().await;
+            p.remove(&batch.meta.id)
+        };
+        let Some(req) = pending else { return; };
+
+        let result = self.solve_prompt(&req.prompt, req.class).await;
+        let _ = req.tx.send(result);
+    }
+
+    /// Background executor loop. Call this once from the embedding host (HTTP server / daemon).
+    pub async fn run_scheduler_loop(self: Arc<Self>) {
+        loop {
+            self.run_scheduler_once().await;
+            // MVP: cooperative yield to avoid a busy loop.
+            tokio::time::sleep(std::time::Duration::from_millis(5)).await;
+        }
+    }
+
+    async fn solve_prompt(&self, prompt: &str, _class: TaskClass) -> anyhow::Result<TokenStream> {
         // Placeholder embedding; swap in a real embedder.
         let emb_dim: usize = std::env::var("EMBED_DIM")
             .ok()

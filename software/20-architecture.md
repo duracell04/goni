@@ -47,6 +47,8 @@ While the formal tuple remains \(N = (\mathcal{A}, \mathcal{X}, \mathcal{K}, \ma
 Goni OS treats agents as **local userland processes** and the LLM as a **rare,
 budgeted interrupt**, not a control loop. The practical architecture is a
 three-ring model:
+This structure is what makes Goni a "digital double": a local process that
+observes, distills, and acts under explicit policy and receipts.
 
 - **Ring 0 (Cognitive kernel):** observation bus, latent state store, policy
   engine, scheduler/interrupt controller.
@@ -61,9 +63,26 @@ Canonical specs:
 - Agents and manifests: `docs/specs/agent-definition.md`, `docs/specs/agent-manifest.md`
 - Tools and audit: `docs/specs/tool-capability-api.md`
 - Scheduler/interrupts: `docs/specs/scheduler-and-interrupts.md`
+- ITCR cascade: `docs/specs/itcr.md`
 
 This section is a practical view; the formal planes \((\mathcal{A}, \mathcal{X},
 \mathcal{K}, \mathcal{E})\) below define the invariants.
+
+### 0.2.1 ITCR cascade (asymmetric, gated)
+
+Goni treats inference-time compute reasoning (ITCR) as a bounded, interrupt-
+driven service. The default loop is low-power, and ITCR is activated only when
+escalation predicates indicate that extra compute is worth the cost.
+
+Stages:
+
+1) Continuous state maintenance (encoders + predictor).
+2) Cheap proposer (small model or heuristic plan).
+3) Escalation policy (explicit predicates, hysteresis).
+4) ITCR reasoner/verifier (bounded search + repair loop).
+5) Commit under governance (policy validation + audit).
+
+See `docs/specs/itcr.md` for budgets, triggers, and invariants.
 
 ---
 
@@ -363,6 +382,24 @@ We treat this as a **two-armed bandit** with side information (the features used
 
 > **Invariant K2 (Router regret).**  
 > On benchmark datasets, empirical regret of `goni-router` compared to an oracle policy that knows ground-truth “difficulty” labels must stay below 0.07.
+
+
+### 3.5 App ecosystem, identity, and remote presence
+
+We treat product completeness as part of the architecture, not a UI afterthought.
+The Control and Execution planes expose explicit slots for identity, packaging,
+and remote access:
+
+- **Identity plane (logical):** user identity, agent identity, capability issuance,
+  and audit attribution. This binds UI sessions to agent actions and logs.
+- **Marketplace/install flow:** signed agent packages, manifest validation, policy
+  prompts, and budget enforcement before activation.
+- **Remote presence:** secure tunnels are modeled as capability-gated tools; there
+  is no implicit "open port" path. Remote access is revocable and logged.
+
+This section is a structural requirement derived from reference product patterns
+(see `docs/reference-products/olares.md`).
+
 
 ---
 

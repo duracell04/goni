@@ -1,4 +1,15 @@
-# Goni Memory Architecture (Draft)
+# Goni Memory Architecture (Legacy Draft)
+
+> **Status:** Legacy UX concept (kept for historical context).
+>
+> **Source of truth for current architecture:**
+> - Kernel-level latent state: `docs/specs/latent-state-contract.md` (LSC-01)
+> - Plane model and payload types: `software/50-data/10-axioms-and-planes.md`
+> - MVP schema tables: `software/50-data/51-schemas-mvp.md`
+>
+> This document predates the Latent State Contract and uses an older, UX-first framing
+> (working/episodic/semantic/procedural). It is useful for product thinking, but it is not
+> the normative contract for implementation.
 
 This note captures the **hard** and **soft** commitments for Goni's long-term memory so it strengthens users rather than replacing their thinking.
 

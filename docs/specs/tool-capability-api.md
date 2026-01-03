@@ -18,6 +18,7 @@ Logical fields for every tool call:
 
 The kernel validates the call against policy and capability tokens before
 execution.
+Validation follows the SS-01 arbitration contract (symbolic constraints in F_sparse).
 
 ## 2. Tool result envelope
 
@@ -76,3 +77,4 @@ Tokens are immutable and referenced by ID in tool calls.
 - `docs/specs/agent-definition.md`
 - `docs/specs/latent-state-contract.md`
 - `docs/specs/scheduler-and-interrupts.md`
+- `docs/specs/symbolic-substrate.md`

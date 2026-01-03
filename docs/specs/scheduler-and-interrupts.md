@@ -14,6 +14,7 @@ Interrupts are raised on:
 - policy deadlines or compliance conditions
 
 Interrupts are routed through the scheduler and never call the solver directly.
+Admission is part of the SS-01 arbitration contract.
 
 ## 2. Hysteresis and wake control
 
@@ -22,6 +23,19 @@ To prevent thrash:
 - minimum cooldown between solver wakes,
 - max solver wakes per time window,
 - rising and falling thresholds for surprisal.
+
+## 2.1 ITCR budgets
+
+When an interrupt escalates into an ITCR episode (ITCR-01), the scheduler
+attaches hard budgets:
+
+- max_wall_time_ms
+- max_candidate_expansions
+- max_planning_depth
+- max_tool_planning_depth
+- max_tokens_total
+
+Budget exhaustion terminates the episode and is recorded in audit logs.
 
 ## 3. QoS classes and preemption
 
@@ -65,3 +79,5 @@ Interrupt decisions and solver wakes are recorded with:
 
 - `docs/specs/latent-state-contract.md`
 - `docs/specs/tool-capability-api.md`
+- `docs/specs/symbolic-substrate.md`
+- `docs/specs/itcr.md`

@@ -28,6 +28,22 @@ That box is **Goni**. The software running inside it is **Goni OS**.
 
 ---
 
+## 1.5 What Goni is (and is not)
+
+**Not**
+
+- NAS + local chatbot glued on top
+- LangChain loops run locally
+- Self-hosted cloud distro
+
+**Is**
+
+- A cognitive OS kernel with audited syscalls
+- Agents as local processes with budgets and policy
+- Remote presence as an explicit capability
+
+---
+
 ## 2. What "Local" Really Means (Beyond Marketing)
 
 Plenty of tools call themselves **local AI** these days. Often, what they mean is:

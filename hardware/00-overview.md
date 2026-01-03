@@ -1,6 +1,6 @@
 # Goni Hardware - Overview (MVP)
 
-Last refreshed: **2025-12-14**
+Last refreshed: **2026-01-03**
 
 This folder contains everything related to the **physical Goni node**:
 
@@ -47,6 +47,76 @@ At a high level, the Goni hardware should:
 
 ---
 
+## 1.1 Physical constraints that define local ITCR
+
+This section encodes the hardware consequences of inference-time compute
+reasoning (ITCR) as platform constraints and interfaces, not performance claims.
+
+### 1.1.1 Memory wall (roofline framing)
+
+Define arithmetic intensity as:
+
+I = FLOPs / Byte.
+
+Decoding/generation tends to be low-I and thus memory-bound; prefill/encoding
+can be more compute-bound. As a result, platform selection MUST prioritize
+sustained bandwidth, latency stability, and memory residency over peak TOPS.
+See `hardware/appendix/roofline.md` for the roofline primer.
+
+### 1.1.2 Two-regime power model
+
+Goni operates in two regimes:
+
+- Continuous cognition (always-on encoders + predictor).
+- Reasoning bursts (solver/ITCR interrupts).
+
+The product requirement is to minimize solver duty cycle while preserving burst
+responsiveness without destabilizing thermals. Hardware MUST support stable
+operation under both regimes, with telemetry to distinguish them.
+
+### 1.1.3 Memory topology
+
+UMA reduces copies but shares bandwidth; a discrete GPU provides dedicated VRAM
+bandwidth but incurs PCIe transfer and wake penalties.
+
+Normative requirement:
+- UMA is preferred for high-frequency state exchange.
+- dGPU is acceptable only if state shuttling over PCIe is avoided.
+
+### 1.1.4 Supported minimum vs reference platform
+
+Hardware SHOULD define a supported minimum and a reference platform for
+validation. This file must remain qualitative; quantitative targets live in
+`hardware/90-decisions.md` and are updated only with evidence.
+
+### 1.1.5 Traceability map (signals to actions)
+
+Telemetry signal -> scheduler decision -> runtime routing -> persistence action:
+
+- memory pressure -> shrink context / route to higher bandwidth path
+- thermal/DVFS state -> clamp burst duty cycle
+- accelerator shape support -> route to compatible device
+- storage endurance -> gate compaction and index maintenance
+
+Cross-layer links:
+- hardware constraints -> `software/10-requirements.md`
+- runtime routing -> `software/30-components/llm-runtime.md`
+- duty cycle/hysteresis -> `docs/specs/scheduler-and-interrupts.md`
+
+### 1.1.6 Failure modes and fallbacks
+
+The platform MUST expose enough signals to detect and mitigate:
+
+- memory-bound stall and tail-latency spikes,
+- thermal runaway and prolonged throttling,
+- swap thrash from oversubscription,
+- write amplification during compaction.
+
+Fallbacks include routing to CPU/iGPU, lowering duty cycle, and deferring
+background compaction until safe conditions return.
+
+---
+
 ## 2. What this folder contains
 
 - [`10-requirements.md`](./10-requirements.md)  
@@ -69,6 +139,8 @@ At a high level, the Goni hardware should:
 
 - [`90-decisions.md`](./90-decisions.md)  
   Accepted hardware decisions (ADR-style): baseline architecture, networking, enclosure envelope, PSU approach, etc.
+- [`appendix/roofline.md`](./appendix/roofline.md)  
+  Roofline primer used by ITCR platform contracts.
 
 ---
 
@@ -77,6 +149,7 @@ At a high level, the Goni hardware should:
 See [`90-decisions.md`](./90-decisions.md) for the canonical decisions, but in one line:
 
 - **MVP reference compute module:** APU-centric node based on a **Ryzen AI Max+ 395 class** board with **128 GB unified LPDDR5X** (Framework Desktop mainboard is the primary reference; HP Z2 Mini G1a is the off-the-shelf fallback).  
+- **Supported minimum:** 64 GB unified-memory devices may be used for early development and testing, but they are not performance-representative for the product story and must be treated as a degraded mode (see `software/10-requirements.md`).
 - **MVP enclosure envelope:** ~7 L, quiet, front status bar, internal SFX PSU, 2× NVMe.  
 - **MVP networking:** 5 GbE preferred (2.5 GbE acceptable only as fallback for early dev boxes).
 
