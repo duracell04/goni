@@ -28,10 +28,13 @@ It is the only component allowed to “speak” to GPUs/NPUs and LLM backends di
   - Report per-model:
     - max_context,
     - nominal tokens/s,
-    - memory footprint / device requirements.
+    - memory footprint / device requirements,
+    - supported shape buckets and graph-compile constraints (for NPUs),
+    - KV-cache limits and paging mode (contiguous vs segmented).
 
 - **Utilisation reporting**
   - Track and expose current load (per model and per device) to scheduler / resman in 𝒦.
+  - Expose effective bandwidth and memory pressure signals for routing decisions.
 
 - **Cancellation / preemption hooks**
   - Support cooperative cancellation so 𝒦 can abort or delay jobs.
@@ -39,6 +42,7 @@ It is the only component allowed to “speak” to GPUs/NPUs and LLM backends di
 - **Wake and warm-state control**
   - Report cold-start latency and warm state per model/device.
   - Support pre-warm and keep-alive budgets so decoder wake is bounded.
+  - Support shape-bucket pre-warm for NPU graph stability.
 
 ### 2.2 Non-responsibilities
 
@@ -101,7 +105,12 @@ Concrete engines (llama.cpp, vLLM, etc.) implement LlmRuntime:
 ## 4. Invariants & performance targets
 
 * **Capability invariant**
-  ModelCapabilities must approximate real behaviour well enough that 𝒦’s scheduling assumptions (capacity region) are not violated.
+  ModelCapabilities must approximate real behaviour well enough that 𝒦's scheduling assumptions (capacity region) are not violated.
+
+* **Shape-compatibility invariant**
+  If a request's shape falls outside the backend's supported buckets, the runtime
+  must route to a compatible device (CPU/iGPU/GPU) rather than padding or
+  recompiling on the hot path.
 
 * **Budget safety invariant**
   generate must not exceed max_tokens without explicit override.
@@ -133,4 +142,3 @@ Concrete engines (llama.cpp, vLLM, etc.) implement LlmRuntime:
 * Multi-device and multi-backend routing inside 𝓔.
 * Advanced KV cache paging tightly integrated with 𝒳.
 * Mixed local/cloud execution under the same interface.
-
