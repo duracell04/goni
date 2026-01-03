@@ -127,6 +127,8 @@ background compaction until safe conditions return.
 
 - [`25-hardware-layers-and-supplier-map.md`](./25-hardware-layers-and-supplier-map.md)  
   Opinionated map of **accelerator/supplier landscape**, **availability**, and how it aligns to Goni tiers and current software backend readiness.
+- [`os-and-base-image.md`](./os-and-base-image.md)  
+  OS-level telemetry and capability discovery contract for the base image.
 
 - [`30-mechanical/`](./30-mechanical/)  
   Enclosure concepts, airflow notes, and draft thermal + acoustic plans.

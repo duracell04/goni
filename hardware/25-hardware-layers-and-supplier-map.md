@@ -74,33 +74,11 @@ Actionable implication:
 | Pro (NVIDIA) | RTX 4090/5090 class | vLLM (CUDA) | Best current throughput and ecosystem maturity. |
 | Max | multi-GPU / mixed | vLLM + custom | Requires more orchestration (sharding, networking, scheduling). |
 
-### 3.3 Telemetry and capability discovery (base image contract)
+### 3.3 Base image contract (moved)
 
-The base image MUST expose, or provide a documented fallback for:
+Base-image telemetry and capability discovery now live in:
 
-- thermal sensors and throttling events,
-- memory pressure and swap statistics,
-- storage writes and health signals,
-- GPU/NPU capability query (supported shapes, quantization, graph cache status),
-- optional bandwidth estimates or perf counters where available.
-
-OS policies MUST support:
-
-- background compaction/indexing only on AC power and with thermal headroom,
-- pausing background work during solver bursts,
-- pinning shared memory regions for hot state.
-
-Cross-layer links:
-- scheduling behavior: `software/10-requirements.md`
-- routing and shape constraints: `software/30-components/llm-runtime.md`
-
-### 3.4 Failure modes and fallbacks
-
-If telemetry is incomplete, the system MUST default to conservative routing:
-
-- prefer CPU/iGPU paths,
-- reduce solver duty cycle,
-- defer compaction and index maintenance.
+- `hardware/os-and-base-image.md`
 
 ---
 
