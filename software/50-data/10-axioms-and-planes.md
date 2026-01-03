@@ -1,4 +1,5 @@
 ﻿# 10 – Axioms & Planes (Arrow Spine Constitution)
+DOC-ID: AXIOMS-01
 **Version:** v1.0 (2027-04-01)
 **Status:** Normative, CI-enforced
 

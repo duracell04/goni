@@ -1,4 +1,5 @@
 # AGENT-02 - Agent Manifest
+DOC-ID: AGENT-MANIFEST-01
 Status: Draft (normative target)
 
 The agent manifest is the single source of truth for agent identity, triggers,

@@ -1,4 +1,5 @@
 ﻿# 53 – Schema DSL & Codegen Macros (goni-schema)
+DOC-ID: SCHEMA-DSL-01
 
 **Goal:** The code is the spec. The `goni-schema` crate owns a `define_tables!` DSL that emits Arrow `Schema` definitions, typed batch wrappers, and compile-time guards for SMA/ZCO/TXT.
 

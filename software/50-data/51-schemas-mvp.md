@@ -1,4 +1,5 @@
 # 51 – Schemas (MVP Canonical Tables)
+DOC-ID: SCHEMA-MVP-01
 
 Arrow-first, v1.0 schemas for the canonical tables. Each table is `Spine + Payload`; `row_id` == domain PK.
 

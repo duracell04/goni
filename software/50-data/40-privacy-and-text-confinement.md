@@ -1,4 +1,5 @@
 ﻿# 40 – Privacy & Text Confinement
+DOC-ID: PRIV-01
 
 ## 1. Text Confinement Theorem
 The only columns in the system with `LargeUtf8` and average length > 512 bytes are:

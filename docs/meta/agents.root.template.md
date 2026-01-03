@@ -70,33 +70,7 @@ If discovery fails:
 ## Truth Map (canonical sources as of now)
 This table is the single place that must be kept current when files move.
 
-### Specs (normative contracts)
-- AGENT-DEF-01 - Agent Definition (product concept): `docs/specs/agent-definition.md`
-- AGENT-MANIFEST-01 - Agent Manifest: `docs/specs/agent-manifest.md`
-- ITCR-01 - ITCR: `docs/specs/itcr.md`
-- LSC-01 - Latent State Contract: `docs/specs/latent-state-contract.md`
-- SCHED-01 - Scheduler and Interrupts: `docs/specs/scheduler-and-interrupts.md`
-- SS-01 - Symbolic Substrate: `docs/specs/symbolic-substrate.md`
-- TOOL-01 - Tool Capability API: `docs/specs/tool-capability-api.md`
-
-### Axioms and data plane contracts
-- AXIOMS-01 - Axioms and planes: `software/50-data/10-axioms-and-planes.md`
-- CI-VALIDATION-01 - Validation and CI (design intent): `software/50-data/80-validation-and-ci.md`
-- PLANE-01 - Plane contracts: `software/50-data/30-plane-contracts.md`
-- PRIV-01 - Privacy and Text Confinement: `software/50-data/40-privacy-and-text-confinement.md`
-- SCHEMA-DSL-01 - Schema DSL and macros: `software/50-data/53-schema-dsl-and-macros.md`
-- SCHEMA-MVP-01 - Schema MVP: `software/50-data/51-schemas-mvp.md`
-- SPINE-01 - Spine and IDs: `software/50-data/20-spine-and-ids.md`
-- ZCO-01 - Zero-copy mechanics: `software/50-data/52-zero-copy-mechanics.md`
-
-### Decisions (ADRs)
-- ADR-INDEX-HW - Hardware decisions log: `hardware/90-decisions.md`
-- ADR-INDEX-SW - Software decisions log: `software/90-decisions.md`
-
-### Requirements
-- HREQ-01 - Hardware requirements: `hardware/10-requirements.md`
-- SREQ-01 - Software requirements: `software/10-requirements.md`
-
+{{TRUTH_MAP}}
 
 ---
 

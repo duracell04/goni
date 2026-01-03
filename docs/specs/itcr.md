@@ -1,4 +1,5 @@
 # ITCR-01 - Inference-Time Compute Reasoning
+DOC-ID: ITCR-01
 Status: Draft (normative target)
 
 This spec defines inference-time compute reasoning (ITCR) as a bounded,

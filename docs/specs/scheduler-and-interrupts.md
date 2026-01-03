@@ -1,4 +1,5 @@
 # SCHED-01 - Scheduler and Interrupts
+DOC-ID: SCHED-01
 Status: Draft (normative target)
 
 This spec defines when and how the kernel escalates work from continuous,

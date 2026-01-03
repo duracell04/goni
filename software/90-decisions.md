@@ -1,4 +1,5 @@
 ﻿# 90 – Architecture & Implementation Decisions (Mathematical Form)
+DOC-ID: ADR-INDEX-SW
 
 Status: Living document
 Purpose: Record **deliberate design choices** in a way that makes their formal implications explicit.
