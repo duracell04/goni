@@ -24,6 +24,19 @@ To prevent thrash:
 - max solver wakes per time window,
 - rising and falling thresholds for surprisal.
 
+## 2.1 ITCR budgets
+
+When an interrupt escalates into an ITCR episode (ITCR-01), the scheduler
+attaches hard budgets:
+
+- max_wall_time_ms
+- max_candidate_expansions
+- max_planning_depth
+- max_tool_planning_depth
+- max_tokens_total
+
+Budget exhaustion terminates the episode and is recorded in audit logs.
+
 ## 3. QoS classes and preemption
 
 Work is scheduled into classes:
@@ -67,3 +80,4 @@ Interrupt decisions and solver wakes are recorded with:
 - `docs/specs/latent-state-contract.md`
 - `docs/specs/tool-capability-api.md`
 - `docs/specs/symbolic-substrate.md`
+- `docs/specs/itcr.md`

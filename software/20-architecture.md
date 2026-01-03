@@ -63,9 +63,26 @@ Canonical specs:
 - Agents and manifests: `docs/specs/agent-definition.md`, `docs/specs/agent-manifest.md`
 - Tools and audit: `docs/specs/tool-capability-api.md`
 - Scheduler/interrupts: `docs/specs/scheduler-and-interrupts.md`
+- ITCR cascade: `docs/specs/itcr.md`
 
 This section is a practical view; the formal planes \((\mathcal{A}, \mathcal{X},
 \mathcal{K}, \mathcal{E})\) below define the invariants.
+
+### 0.2.1 ITCR cascade (asymmetric, gated)
+
+Goni treats inference-time compute reasoning (ITCR) as a bounded, interrupt-
+driven service. The default loop is low-power, and ITCR is activated only when
+escalation predicates indicate that extra compute is worth the cost.
+
+Stages:
+
+1) Continuous state maintenance (encoders + predictor).
+2) Cheap proposer (small model or heuristic plan).
+3) Escalation policy (explicit predicates, hysteresis).
+4) ITCR reasoner/verifier (bounded search + repair loop).
+5) Commit under governance (policy validation + audit).
+
+See `docs/specs/itcr.md` for budgets, triggers, and invariants.
 
 ---
 
