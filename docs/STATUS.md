@@ -7,7 +7,7 @@
 
 ## Blessed Demo Path
 - Entry point: `software/docker-compose.yml`
-- Known break: `gateway` service references `./gateway` but `software/gateway/` is missing.
+- Demo path excludes gateway; no gateway service is defined in compose or k8s overlays.
 - Kernel-only demo scope (orchestrator + llm-local + optional vecdb):
   - Implemented (untested): `/v1/chat/completions` route in `software/kernel/goni-http/src/main.rs`
   - Implemented and tested: context selector budget and determinism test `selector_respects_budget_and_is_deterministic` in `software/kernel/goni-context/src/lib.rs`
@@ -27,10 +27,10 @@ Use one status phrase per row: Implemented and tested / Implemented (untested) /
 
 ## Demo Dependencies (Declare Truth)
 ### Gateway
-- Status: Specified only / roadmap
+- Status: Specified only / roadmap (not part of the demo path)
 - Evidence:
-  - Compose reference: `software/docker-compose.yml` (build context `./gateway` missing)
-  - K8s reference: `software/k8s/base/gateway.yaml` (image `ghcr.io/duracell04/goni-gateway:latest`)
+  - Compose omits gateway: `software/docker-compose.yml`
+  - K8s overlays omit gateway: `software/k8s/overlays/single-node/kustomization.yaml`; `software/k8s/overlays/cluster/kustomization.yaml`
 
 ### Frontend
 - Status: Specified only / roadmap (code stub, not scaffolded)
@@ -44,6 +44,6 @@ Use one status phrase per row: Implemented and tested / Implemented (untested) /
   - rust job runs `cargo check`, `cargo test --workspace --all-features`, `cargo clippy -- -D warnings` under `software/kernel`
 
 ## Known Risks / Open Decisions
-- Gateway reproducibility gap: `software/docker-compose.yml` and `software/k8s/base/gateway.yaml`
 - Zero-copy hot-path CI gates called for in D-003 are not implemented in CI: `software/90-decisions.md` vs `.github/workflows/ci.yml`
 - Qdrant embeddings are placeholder hash vectors, not model embeddings: `software/kernel/goni-store/src/qdrant.rs`
+- Gateway/UI not in demo path; reintroduction must be pinned and sourced or explicitly externalized.

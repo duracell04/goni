@@ -63,15 +63,3 @@ services:
       - vecdb
     ports:
       - "7000:7000"
-
-  gateway:
-    build:
-      context: ./gateway
-      dockerfile: Dockerfile
-    container_name: goni-gateway
-    environment:
-      - ORCHESTRATOR_URL=http://orchestrator:7000
-    depends_on:
-      - orchestrator
-    ports:
-      - "443:3000"

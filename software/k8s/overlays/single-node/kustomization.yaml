@@ -7,4 +7,3 @@ resources:
   - ../../base/llm-local.yaml
   - ../../base/vecdb.yaml
   - ../../base/orchestrator.yaml
-  - ../../base/gateway.yaml
