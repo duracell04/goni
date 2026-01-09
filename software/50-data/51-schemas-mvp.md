@@ -48,6 +48,23 @@ Arrow-first, v1.0 schemas for the canonical tables. Each table is `Spine + Paylo
 - Fields: `request_id: fixed_size_binary[16]`, `model_id: dict<uint8, utf8>`, `prompt_tokens: uint32`, `completion_tokens: uint32`, `total_tokens: uint32`, `latency_ms: uint32`, `cache_hit: bool`
 - Notes: Exact billing; may be linked to spans.
 
+### PlatformSignals
+- PK: `signal_id = row_id`
+- Fields: `timestamp: timestamp(us)`, `device_id: fixed_size_binary[16]`, `session_id?: fixed_size_binary[16]`,
+  `thermal_throttled?: bool`, `thermal_domain?: dict<uint8, utf8>`, `dvfs_state?: dict<uint8, utf8>`,
+  `free_ram_mb?: uint32`, `swap_in_mb?: uint32`, `major_faults?: uint32`,
+  `bytes_written_today?: int64`, `waf_estimate?: float32`, `ssd_health?: float32`,
+  `npu_shape_buckets?: list<utf8>`, `supported_quant?: list<utf8>`,
+  `gpu_active?: bool`, `gpu_wake_ms_p95?: uint32`,
+  `solver_wake_count?: uint32`, `solver_active_ms?: uint32`, `encoder_active_ms?: uint32`
+- Notes: Optional fields support partial telemetry. Use dict enums for domain/state tags.
+
+### PlatformCapabilities
+- PK: `capability_id = row_id`
+- Fields: `timestamp: timestamp(us)`, `device_id: fixed_size_binary[16]`,
+  `npu_shape_buckets?: list<utf8>`, `supported_quant?: list<utf8>`
+- Notes: Static or infrequently changing capability snapshot.
+
 ### Metrics
 - PK: `(name, ts, labels)` or `metric_id = row_id` depending on storage
 - Fields: `name: dict<uint8, utf8>`, `value_f64?: float64`, `value_i64?: int64`, `labels: map<utf8, utf8>`
