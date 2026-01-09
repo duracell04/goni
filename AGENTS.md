@@ -75,6 +75,7 @@ This table is the single place that must be kept current when files move.
 - AGENT-MANIFEST-01 - Agent Manifest: `docs/specs/agent-manifest.md`
 - ITCR-01 - ITCR: `docs/specs/itcr.md`
 - LSC-01 - Latent State Contract: `docs/specs/latent-state-contract.md`
+- NET-01 - Network Gate and Anonymity: `docs/specs/network-gate-and-anonymity.md`
 - SCHED-01 - Scheduler and Interrupts: `docs/specs/scheduler-and-interrupts.md`
 - SS-01 - Symbolic Substrate: `docs/specs/symbolic-substrate.md`
 - TOOL-01 - Tool Capability API: `docs/specs/tool-capability-api.md`

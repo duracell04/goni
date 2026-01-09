@@ -19,6 +19,7 @@
 - Agent manifests: `docs/specs/agent-manifest.md`
 - Latent state contract: `docs/specs/latent-state-contract.md`
 - Tool capability API + audit: `docs/specs/tool-capability-api.md`
+- Network gate + anonymity: `docs/specs/network-gate-and-anonymity.md`
 - Scheduler + interrupts: `docs/specs/scheduler-and-interrupts.md`
 - Data plane schemas: `software/50-data/51-schemas-mvp.md`
 - Executable schema DSL: `software/50-data/53-schema-dsl-and-macros.md`

@@ -5,6 +5,7 @@
 ## Role in the stack
 - Path: Goni OS Task Router -> local backend (vLLM/sglang on-box) or remote backend (Goni Council service).
 - Remote backend: Council -> OpenRouter API -> providers/models (OpenAI, Anthropic, DeepSeek, Gemini, etc.) -> optional web/search tools running beside the council.
+- External egress is mediated by the Network Gate (NET-01); the Gate selects DIRECT vs OVERLAY routes for Council calls.
 - Goni OS never calls provider APIs directly; OpenRouter is the only cloud gateway.
 - Council enforces routing policies, budgets, and approval before sending anything out.
 

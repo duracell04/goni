@@ -78,6 +78,16 @@
       "owner_area": "docs"
     },
     {
+      "id": "NET-01",
+      "title": "Network Gate and Anonymity",
+      "role": "spec",
+      "group": "specs",
+      "path": "docs/specs/network-gate-and-anonymity.md",
+      "anchors": ["DOC-ID: NET-01"],
+      "status": "specified_only",
+      "owner_area": "docs"
+    },
+    {
       "id": "AXIOMS-01",
       "title": "Axioms and planes",
       "role": "data_contract",

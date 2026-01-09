@@ -63,6 +63,7 @@ Tokens are immutable and referenced by ID in tool calls.
 
 - `fs.read(path, cap)`
 - `fs.write(path, bytes, cap)`
+- `net.egress(route, purpose, payload_ref, cap)`
 - `vecdb.query(embedding, filters, cap)`
 - `calendar.find(range, cap)`
 - `email.draft(to, subject, body, cap)`
