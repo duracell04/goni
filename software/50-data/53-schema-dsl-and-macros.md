@@ -250,6 +250,45 @@ define_tables! {
         }
     },
 
+    table PlatformSignals {
+        plane: Plane::Execution,
+        kind: "PlatformSignals",
+        fields: {
+            signal_id: FixedSizeBinary(16),
+            timestamp: TimestampMsUtc,
+            device_id: FixedSizeBinary(16),
+            session_id: FixedSizeBinary(16),
+            thermal_throttled: Boolean,
+            thermal_domain: DictU8Utf8,
+            dvfs_state: DictU8Utf8,
+            free_ram_mb: UInt32,
+            swap_in_mb: UInt32,
+            major_faults: UInt32,
+            bytes_written_today: Int64,
+            waf_estimate: Float32,
+            ssd_health: Float32,
+            npu_shape_buckets: ListUtf8,
+            supported_quant: ListUtf8,
+            gpu_active: Boolean,
+            gpu_wake_ms_p95: UInt32,
+            solver_wake_count: UInt32,
+            solver_active_ms: UInt32,
+            encoder_active_ms: UInt32,
+        }
+    },
+
+    table PlatformCapabilities {
+        plane: Plane::Execution,
+        kind: "PlatformCapabilities",
+        fields: {
+            capability_id: FixedSizeBinary(16),
+            timestamp: TimestampMsUtc,
+            device_id: FixedSizeBinary(16),
+            npu_shape_buckets: ListUtf8,
+            supported_quant: ListUtf8,
+        }
+    },
+
     table Metrics {
         plane: Plane::Execution,
         kind: "Metrics",

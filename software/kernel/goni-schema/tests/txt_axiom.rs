@@ -10,5 +10,7 @@ fn txt_axiom_holds_for_planes() {
     let _ = Tasks::schema();
     let _ = ContextItems::schema();
     let _ = LlmCalls::schema();
+    let _ = PlatformSignals::schema();
+    let _ = PlatformCapabilities::schema();
     let _ = Metrics::schema();
 }
