@@ -124,6 +124,13 @@ Forbidden:
 
 ---
 
+## Maintenance (Generated Files)
+- Do not edit `AGENTS.md` files directly (they are generated).
+- Edit templates under `docs/meta/` (for example `docs/meta/agents.root.template.md`).
+- Update canonical paths in `docs/meta/truth-map.json` if files move.
+- Regenerate AGENTS with `scripts/generate_agents.py`.
+- Validate the truth map with `scripts/validate_truth_map.py`.
+
 ## Output expectations from coding agents (patch summary)
 Every change set MUST include:
 1) Intent (1-3 sentences)
@@ -137,3 +144,4 @@ Every change set MUST include:
 ## Security constraints
 - No secrets or credentials in repo.
 - No outbound telemetry by default; any outbound access must be explicit and documented.
+
