@@ -7,6 +7,7 @@ DOC-ID: SCHEMA-DSL-01
 
 - Planes: `Plane::Knowledge | Plane::Context | Plane::Control | Plane::Execution`
 - Types: `FixedSizeBinary(16)`, `Utf8`, `LargeUtf8`, `DictU8Utf8`, `ListUtf8`, `MapUtf8Utf8`, `Int32`, `UInt32`, `Int64`, `UInt16`, `UInt8`, `Float32`, `Float64`, `Boolean`, `FixedSizeListF32(N)`, `TimestampMsUtc`.
+- Note: `TimestampMsUtc` maps to `timestamp(ms, UTC)` in schema docs.
 
 ## 2. DSL Shape (illustrative)
 
@@ -146,6 +147,32 @@ define_tables! {
         }
     },
 
+    table RedactionProfiles {
+        plane: Plane::Control,
+        kind: "RedactionProfiles",
+        fields: {
+            redaction_profile_id: FixedSizeBinary(16),
+            name: Utf8,
+            mode: DictU8Utf8,
+            ruleset_hash: FixedSizeBinary(32),
+            created_at: TimestampMsUtc,
+        }
+    },
+
+    table RedactionEvents {
+        plane: Plane::Control,
+        kind: "RedactionEvents",
+        fields: {
+            redaction_event_id: FixedSizeBinary(16),
+            request_id: FixedSizeBinary(16),
+            redaction_profile_id: FixedSizeBinary(16),
+            timestamp: TimestampMsUtc,
+            before_hash: FixedSizeBinary(32),
+            after_hash: FixedSizeBinary(32),
+            redaction_summary: MapUtf8Utf8,
+        }
+    },
+
     table AgentManifests {
         plane: Plane::Control,
         kind: "AgentManifests",
@@ -165,6 +192,24 @@ define_tables! {
             policy_hash: FixedSizeBinary(32),
             state_snapshot_id: FixedSizeBinary(16),
             provenance: MapUtf8Utf8,
+        }
+    },
+
+    table Prompts {
+        plane: Plane::Context,
+        kind: "Prompts",
+        fields: {
+            prompt_id: FixedSizeBinary(16),
+            request_id: FixedSizeBinary(16),
+            source_context_id: FixedSizeBinary(16),
+            timestamp: TimestampMsUtc,
+            materialization_kind: DictU8Utf8,
+            prompt_hash: FixedSizeBinary(32),
+            token_estimate_in: UInt32,
+            token_estimate_out: UInt32,
+            is_redacted: Boolean,
+            redaction_profile_id: FixedSizeBinary(16),
+            text: LargeUtf8,
         }
     },
 
@@ -232,6 +277,25 @@ define_tables! {
             policy_hash: FixedSizeBinary(32),
             state_snapshot_id: FixedSizeBinary(16),
             provenance: MapUtf8Utf8,
+        }
+    },
+
+    table MemoryEntries {
+        plane: Plane::Knowledge,
+        kind: "MemoryEntries",
+        fields: {
+            memory_id: FixedSizeBinary(16),
+            kind: DictU8Utf8,
+            timestamp: TimestampMsUtc,
+            value: MapUtf8Utf8,
+            confidence: Float32,
+            source_chunk_ids: ListUtf8,
+            confirmed_by_event_id: FixedSizeBinary(16),
+            review_at: TimestampMsUtc,
+            ttl_ms: UInt32,
+            conflict_state: DictU8Utf8,
+            embedding: FixedSizeListF32(1536),
+            embedding_dim: UInt16,
         }
     },
 

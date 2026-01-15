@@ -1,6 +1,7 @@
 # LSC-01 - Latent State Contract
 DOC-ID: LSC-01
 Status: Draft (normative target)
+Conformance: TBD (goni-lab harness)
 
 This document defines the kernel-owned latent state contract for Goni OS. It is
 model-agnostic and describes the minimal records, interfaces, and invariants
@@ -50,6 +51,17 @@ All interfaces are capability-mediated and produce audit records.
 - **Policy mediation:** every write is validated by the policy engine.
 - **Latent-first loop:** steady-state updates do not require LLM decoding.
 - **Provenance attached:** each record includes `provenance` metadata.
+
+## 4.1 Memory write policy (normative)
+
+MemoryEntries are governed by explicit write gates:
+- `kind` MUST be one of: `fact`, `preference`, `decision`, `hypothesis`, `derived`.
+- `fact` MUST include at least one `source_chunk_id` or a `confirmed_by_event_id`.
+- `hypothesis` MUST set `ttl_ms` or `review_at` and MUST NOT be promoted to `fact`
+  without a confirmation event or new source evidence.
+- `derived` MUST include source references and provenance for the transform.
+
+Writes that do not meet these requirements MUST be rejected by policy checks.
 
 ## 5. Audit requirements
 

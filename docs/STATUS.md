@@ -47,3 +47,5 @@ Use one status phrase per row: Implemented and tested / Implemented (untested) /
 - Zero-copy hot-path CI gates called for in D-003 are not implemented in CI: `software/90-decisions.md` vs `.github/workflows/ci.yml`
 - Qdrant embeddings are placeholder hash vectors, not model embeddings: `software/kernel/goni-store/src/qdrant.rs`
 - Gateway/UI not in demo path; reintroduction must be pinned and sourced or explicitly externalized.
+- Prompt materialization and redaction enforcement are specified-only; no runtime pipeline or gate exists yet.
+- MemoryEntries write gating is specified-only; no kernel enforcement or audits exist yet.

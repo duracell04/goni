@@ -5,19 +5,19 @@ Defines responsibilities, allowed foreign keys, and forbidden field types per pl
 
 ## Plane 𝒜 – Knowledge (immutable corpus)
 - Concepts: `Doc`, `Chunk`, `Embedding`.
-- Tables: Docs, Chunks, Embeddings, StateSnapshots, StateDeltas, LatentSummaries.
+- Tables: Docs, Chunks, Embeddings, StateSnapshots, StateDeltas, LatentSummaries, MemoryEntries.
 - Allowed FK targets from other planes: `Chunks.chunk_id` (referenced by 𝒳.ContextItems), `Embeddings.chunk_id`.
 - Forbidden: no inbound FK from ℰ to `text`; no mutable state.
 
 ## Plane 𝒳 – Context (ephemeral)
 - Concepts: live prompt text and selected retrieval units.
-- Tables: ContextItems (MVP). Prompts/Contexts may be materialised later.
+- Tables: Prompts, ContextItems.
 - Allowed FK targets: `context_id` may be referenced by ℰ.LlmCalls; `chunk_id` references 𝒜.Chunks.
 - Forbidden: persistence beyond retention window; no sharing of raw text outside 𝒳.
 
 ## Plane 𝒦 – Control (metadata only)
 - Concepts: requests, scheduling state.
-- Tables: Requests, Tasks, AuditRecords, CapabilityTokens, AgentManifests. (QueueSnapshot, RouterDecisions optional later.)
+- Tables: Requests, Tasks, AuditRecords, CapabilityTokens, RedactionProfiles, RedactionEvents, AgentManifests.
 - Allowed FK targets: `request_id` referenced by 𝒳 (Prompts/Contexts) and ℰ (LlmCalls); `task_id` referenced by ℰ spans.
 - Forbidden: `LargeUtf8` fields; raw text never stored here.
 

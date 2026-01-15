@@ -1,6 +1,7 @@
 # NET-01 - Network Gate and Anonymity
 DOC-ID: NET-01
 Status: Draft (normative target)
+Conformance: TBD (goni-lab harness)
 
 This spec defines network egress control for Goni OS. Networking is treated as
 a capability-scoped syscall mediated by a reference monitor (Network Gate).
@@ -83,6 +84,19 @@ policy_hash. At minimum:
 
 Default policy is deny-by-default for external egress; explicit capability is
 required for any route outside the local node.
+
+## 5.1 Egress modes and guarantees
+
+Egress modes are configured via `config/council.yaml` (or env) and enforced by
+the Gate for all Council traffic:
+
+- Mode 0: no egress (deny all remote calls).
+- Mode 1: structured-only (no raw chunk text; summaries and structured fields only).
+- Mode 2: redacted text allowed (apply the active redaction profile).
+- Mode 3: user-approved full context (explicit user acknowledgement required).
+
+The Gate MUST block any payload that does not match the configured mode and MUST
+emit a receipt that records the mode, profile, and enforcement decision.
 
 ## 6. Security invariants
 

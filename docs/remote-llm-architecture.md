@@ -14,6 +14,16 @@
 - Enforce per-call and per-day budgets (tokens or $) and drop to local-only when exceeded or unavailable.
 - Log every remote call (Arrow table) with model/provider, usage/cost, latency, and decision outcome; keep request/response snippets minimal for privacy.
 
+## Data minimization protocol (normative)
+
+When routing to the Council, the orchestrator MUST:
+- Minimize payloads: remove non-essential chunks, collapse long artifacts to summaries, and apply the active redaction profile.
+- Attach a provenance manifest: `request_id`, `prompt_hash`, `source_context_id`, and chunk IDs used.
+- Emit a `RedactionEvents` row with before/after hashes and a structured summary (no raw text).
+- Obey the configured egress mode from `config/council.yaml` (local-only, structured-only, redacted, or user-approved full context).
+
+These rules are enforced at the Network Gate and logged through the Control plane.
+
 ## OpenRouter integration (council side)
 ```python
 import os

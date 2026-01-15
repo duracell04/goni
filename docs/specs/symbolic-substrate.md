@@ -1,6 +1,7 @@
 # SS-01 - Symbolic Substrate (Arbitration Contract)
 DOC-ID: SS-01
 Status: Draft (normative target)
+Conformance: TBD (goni-lab harness)
 
 This spec defines the minimal symbolic substrate and arbitration contract that
 keeps Goni OS auditable, enforceable, and deterministic. It is ABI-like: it
@@ -71,6 +72,16 @@ F_sparse is a map of namespaced keys. Authority is enforced by policy:
 - fact.*       encoder/tool-derived; must pass validation before commit.
 
 All writes occur through StateDeltas. Direct mutation is forbidden.
+
+## 4.1 Confirmed vs speculation thresholds
+
+For MemoryEntries:
+- A claim is **confirmed** if `confirmed_by_event_id` is present, or if
+  `source_chunk_ids` is non-empty, `confidence` meets the policy threshold, and
+  `conflict_state` is not contradictory.
+- Otherwise, the claim MUST be stored as `hypothesis` or `derived` with a
+  `ttl_ms` or `review_at` value, and MUST NOT be promoted to `fact` without
+  new evidence.
 
 ## 5. Failure semantics
 

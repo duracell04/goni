@@ -24,6 +24,14 @@ Arrow-first, v1.0 schemas for the canonical tables. Each table is `Spine + Paylo
 
 ## Plane ?? – Context (ephemeral)
 
+### Prompts
+- PK: `prompt_id = row_id`
+- Fields: `request_id: fixed_size_binary[16]`, `source_context_id: fixed_size_binary[16]`, `timestamp: timestamp(ms)`,
+  `materialization_kind: dict<uint8, utf8>`, `prompt_hash: fixed_size_binary[32]`,
+  `token_estimate_in: uint32`, `token_estimate_out: uint32`, `is_redacted: bool`,
+  `redaction_profile_id?: fixed_size_binary[16]`, `text?: large_utf8`
+- Notes: `text` may be null; if present, it is the only raw prompt text in the system.
+
 ### ContextItems
 - PK: `context_item_id = row_id`
 - Fields: `context_id: fixed_size_binary[16]`, `chunk_id: fixed_size_binary[16]`, `cost_tokens: uint32`, `selected: bool`, `rank: uint16?`, `marginal_gain: float32?`
@@ -50,7 +58,7 @@ Arrow-first, v1.0 schemas for the canonical tables. Each table is `Spine + Paylo
 
 ### PlatformSignals
 - PK: `signal_id = row_id`
-- Fields: `timestamp: timestamp(us)`, `device_id: fixed_size_binary[16]`, `session_id?: fixed_size_binary[16]`,
+- Fields: `timestamp: timestamp(ms)`, `device_id: fixed_size_binary[16]`, `session_id?: fixed_size_binary[16]`,
   `thermal_throttled?: bool`, `thermal_domain?: dict<uint8, utf8>`, `dvfs_state?: dict<uint8, utf8>`,
   `free_ram_mb?: uint32`, `swap_in_mb?: uint32`, `major_faults?: uint32`,
   `bytes_written_today?: int64`, `waf_estimate?: float32`, `ssd_health?: float32`,
@@ -61,7 +69,7 @@ Arrow-first, v1.0 schemas for the canonical tables. Each table is `Spine + Paylo
 
 ### PlatformCapabilities
 - PK: `capability_id = row_id`
-- Fields: `timestamp: timestamp(us)`, `device_id: fixed_size_binary[16]`,
+- Fields: `timestamp: timestamp(ms)`, `device_id: fixed_size_binary[16]`,
   `npu_shape_buckets?: list<utf8>`, `supported_quant?: list<utf8>`
 - Notes: Static or infrequently changing capability snapshot.
 
@@ -74,23 +82,22 @@ Arrow-first, v1.0 schemas for the canonical tables. Each table is `Spine + Paylo
 
 ### MemoryEntries
 - PK: `memory_id = row_id`
-- Fields: `type: dict<uint8, utf8> (working|episodic|semantic|procedural)`, `timestamp: timestamp(us)`, `importance: float32` (subject to decay), `state: dict<uint8, utf8> (raw|distilled|archived|tombstoned)`, `embedding: fixed_size_list<float32>[1536]?`, `payload: large_utf8`, `links: list<fixed_size_binary[16]>`
-- Notes: Lifecycle/retention policy:
-  - `working` expires with the session,
-  - `episodic` raw distils to semantic after a window (e.g. 30d) then archives,
-  - `semantic` persists with decay; can be pinned,
-  - `procedural` is versioned and stable.
+- Fields: `kind: dict<uint8, utf8> (fact|preference|decision|hypothesis|derived)`, `timestamp: timestamp(ms)`,
+  `value: map<utf8, utf8>`, `confidence: float32`, `source_chunk_ids: list<utf8>`,
+  `confirmed_by_event_id?: fixed_size_binary[16]`, `review_at?: timestamp(ms)`, `ttl_ms?: uint32`,
+  `conflict_state?: dict<uint8, utf8>`, `embedding?: fixed_size_list<float32>[1536]`, `embedding_dim?: uint16`
+- Notes: `source_chunk_ids` values are UUIDv7 strings referencing `Chunks.chunk_id`; raw text is not stored here.
 
 ## Plane ?? - Knowledge (latent state)
 
 ### StateSnapshots
 - PK: `snapshot_id = row_id`
-- Fields: `state_version: uint32`, `s_core: fixed_size_list<float32>[1536]`, `s_core_dim: uint16`, `f_sparse: map<utf8, utf8>`, `created_at: timestamp(us)`, `agent_id: fixed_size_binary[16]`, `policy_hash: fixed_size_binary[32]`, `state_snapshot_id: fixed_size_binary[16]`, `provenance: map<utf8, utf8>`
+- Fields: `state_version: uint32`, `s_core: fixed_size_list<float32>[1536]`, `s_core_dim: uint16`, `f_sparse: map<utf8, utf8>`, `created_at: timestamp(ms)`, `agent_id: fixed_size_binary[16]`, `policy_hash: fixed_size_binary[32]`, `state_snapshot_id: fixed_size_binary[16]`, `provenance: map<utf8, utf8>`
 - Notes: `state_snapshot_id` equals `snapshot_id` for snapshots.
 
 ### StateDeltas
 - PK: `delta_id = row_id`
-- Fields: `snapshot_id: fixed_size_binary[16]`, `delta_kind: dict<uint8, utf8>`, `delta_vector: fixed_size_list<float32>[1536]`, `delta_dim: uint16`, `f_sparse_patch: map<utf8, utf8>`, `timestamp: timestamp(us)`, `agent_id: fixed_size_binary[16]`, `policy_hash: fixed_size_binary[32]`, `state_snapshot_id: fixed_size_binary[16]`, `provenance: map<utf8, utf8>`
+- Fields: `snapshot_id: fixed_size_binary[16]`, `delta_kind: dict<uint8, utf8>`, `delta_vector: fixed_size_list<float32>[1536]`, `delta_dim: uint16`, `f_sparse_patch: map<utf8, utf8>`, `timestamp: timestamp(ms)`, `agent_id: fixed_size_binary[16]`, `policy_hash: fixed_size_binary[32]`, `state_snapshot_id: fixed_size_binary[16]`, `provenance: map<utf8, utf8>`
 - Notes: Deltas are append-only and ordered by timestamp.
 
 #### F_sparse conventions (SS-01)
@@ -110,18 +117,28 @@ Arrow-first, v1.0 schemas for the canonical tables. Each table is `Spine + Paylo
 
 ### LatentSummaries
 - PK: `summary_id = row_id`
-- Fields: `snapshot_id: fixed_size_binary[16]`, `summary_kind: dict<uint8, utf8>`, `summary_vector: fixed_size_list<float32>[1536]`, `summary_dim: uint16`, `summary_hash: fixed_size_binary[32]`, `timestamp: timestamp(us)`, `agent_id: fixed_size_binary[16]`, `policy_hash: fixed_size_binary[32]`, `state_snapshot_id: fixed_size_binary[16]`, `provenance: map<utf8, utf8>`
+- Fields: `snapshot_id: fixed_size_binary[16]`, `summary_kind: dict<uint8, utf8>`, `summary_vector: fixed_size_list<float32>[1536]`, `summary_dim: uint16`, `summary_hash: fixed_size_binary[32]`, `timestamp: timestamp(ms)`, `agent_id: fixed_size_binary[16]`, `policy_hash: fixed_size_binary[32]`, `state_snapshot_id: fixed_size_binary[16]`, `provenance: map<utf8, utf8>`
 - Notes: `summary_hash` points to a derived artifact stored elsewhere.
 
 ## Plane ?? - Control (policy and audit)
 
 ### AuditRecords
 - PK: `audit_id = row_id`
-- Fields: `agent_id: fixed_size_binary[16]`, `policy_hash: fixed_size_binary[32]`, `state_snapshot_id: fixed_size_binary[16]`, `capability_token_id: fixed_size_binary[16]`, `tool_id: dict<uint8, utf8>`, `args_hash: fixed_size_binary[32]`, `result_hash: fixed_size_binary[32]`, `timestamp: timestamp(us)`, `provenance: map<utf8, utf8>`
+- Fields: `agent_id: fixed_size_binary[16]`, `policy_hash: fixed_size_binary[32]`, `state_snapshot_id: fixed_size_binary[16]`, `capability_token_id: fixed_size_binary[16]`, `tool_id: dict<uint8, utf8>`, `args_hash: fixed_size_binary[32]`, `result_hash: fixed_size_binary[32]`, `timestamp: timestamp(ms)`, `provenance: map<utf8, utf8>`
 
 ### CapabilityTokens
 - PK: `capability_token_id = row_id`
-- Fields: `agent_id: fixed_size_binary[16]`, `policy_hash: fixed_size_binary[32]`, `tools: list<utf8>`, `fs_read_roots: list<utf8>`, `fs_write_roots: list<utf8>`, `net_allowlist: list<utf8>`, `budgets: map<utf8, utf8>`, `issued_at: timestamp(us)`, `expires_at: timestamp(us)`, `provenance: map<utf8, utf8>`
+- Fields: `agent_id: fixed_size_binary[16]`, `policy_hash: fixed_size_binary[32]`, `tools: list<utf8>`, `fs_read_roots: list<utf8>`, `fs_write_roots: list<utf8>`, `net_allowlist: list<utf8>`, `budgets: map<utf8, utf8>`, `issued_at: timestamp(ms)`, `expires_at: timestamp(ms)`, `provenance: map<utf8, utf8>`
+
+### RedactionProfiles
+- PK: `redaction_profile_id = row_id`
+- Fields: `name: utf8`, `mode: dict<uint8, utf8>`, `ruleset_hash: fixed_size_binary[32]`, `created_at: timestamp(ms)`
+
+### RedactionEvents
+- PK: `redaction_event_id = row_id`
+- Fields: `request_id: fixed_size_binary[16]`, `redaction_profile_id: fixed_size_binary[16]`, `timestamp: timestamp(ms)`,
+  `before_hash: fixed_size_binary[32]`, `after_hash: fixed_size_binary[32]`, `redaction_summary: map<utf8, utf8>`
+- Notes: `redaction_summary` must not contain raw prompt text.
 
 ### AgentManifests
 - Schema version: **MANIFEST-02** (supersedes MANIFEST-01).

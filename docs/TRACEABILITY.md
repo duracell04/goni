@@ -18,3 +18,10 @@
 | Tool capability API | `docs/specs/tool-capability-api.md` | `software/kernel/goni-tools/src/lib.rs` | None | Implemented (untested) | Executor is an MVP stub |
 | ITCR signals and knobs | `docs/specs/itcr.md` | None found in kernel | N/A | Specified only / roadmap | No code-level contract yet |
 | SMA (Symbolic Memory Axiom) | `software/50-data/10-axioms-and-planes.md`; `docs/specs/symbolic-substrate.md` | None found in kernel | N/A | Specified only / roadmap | Keep distinct from TXT enforcement |
+
+## Evidence keys used by contracts
+
+Annotated citations live in `docs/references/bibliography.md`. Keys currently
+referenced by normative sections include:
+- `[[liu2023-lost-middle]]`
+- `[[greshake2023-indirect-prompt-injection]]`

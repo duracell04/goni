@@ -13,6 +13,19 @@ DOC-ID: AXIOMS-01
 
 Violation of any axiom is a compile-time error in CI.
 
+## 0.1 Empirical motivation: context is not memory
+
+Long-context evaluations show positional sensitivity: evidence placed in the
+middle of a long prompt is used less reliably than evidence near boundaries,
+and accuracy drops as prompts grow and become more diffuse. This implies the
+context window behaves more like scarce working memory than durable storage.
+Systems that accumulate transcripts in-context risk signal dilution and
+re-introducing stale or speculative text. [[liu2023-lost-middle]]
+
+This motivates the following invariants: the TXT axiom (raw text confinement)
+and plane separation, so durable state lives in the Arrow spine while the
+Context plane is a bounded, curated projection.
+
 ## 1. Planes (partitioning)
 
 | Plane | Symbol | Lifetime | Sensitivity | Storage | Primary Keys |
@@ -46,17 +59,23 @@ We ship the following canonical tables in v1.0:
 1. Docs
 2. Chunks
 3. Embeddings
-4. Requests
-5. Tasks
-6. ContextItems
-7. LlmCalls
-8. Metrics
-9. StateSnapshots
-10. StateDeltas
-11. LatentSummaries
-12. AuditRecords
-13. CapabilityTokens
-14. AgentManifests
+4. Prompts
+5. ContextItems
+6. Requests
+7. Tasks
+8. AuditRecords
+9. CapabilityTokens
+10. RedactionProfiles
+11. RedactionEvents
+12. AgentManifests
+13. StateSnapshots
+14. StateDeltas
+15. LatentSummaries
+16. MemoryEntries
+17. LlmCalls
+18. PlatformSignals
+19. PlatformCapabilities
+20. Metrics
 
 Any new canonical table must be added to the schema DSL (see
 `53-schema-dsl-and-macros.md`) and documented in `51-schemas-mvp.md`.

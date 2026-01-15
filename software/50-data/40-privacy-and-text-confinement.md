@@ -1,6 +1,20 @@
 ﻿# 40 – Privacy & Text Confinement
 DOC-ID: PRIV-01
 
+## 0. Empirical motivation: long context amplifies disclosure risk
+
+When untrusted text is retrieved (docs, web, email), it can carry instructions
+that alter behavior or tool use. Longer prompts widen this attack surface and
+blur the data vs instruction boundary. This is a practical injection vector in
+LLM-integrated systems. [[greshake2023-indirect-prompt-injection]]
+
+Separately, long-context behavior is fragile and position-sensitive, which
+makes prompt growth a weak reliability strategy and increases the odds that
+unreviewed text slips into effectful paths. [[liu2023-lost-middle]]
+
+This motivates the following invariants: the Text Confinement Theorem and the
+restriction that Control/Execution planes never store raw text.
+
 ## 1. Text Confinement Theorem
 The only columns in the system with `LargeUtf8` and average length > 512 bytes are:
 - `Chunks.text`

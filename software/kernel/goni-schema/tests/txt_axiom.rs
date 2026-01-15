@@ -8,7 +8,11 @@ fn txt_axiom_holds_for_planes() {
     let _ = Embeddings::schema();
     let _ = Requests::schema();
     let _ = Tasks::schema();
+    let _ = RedactionProfiles::schema();
+    let _ = RedactionEvents::schema();
+    let _ = Prompts::schema();
     let _ = ContextItems::schema();
+    let _ = MemoryEntries::schema();
     let _ = LlmCalls::schema();
     let _ = PlatformSignals::schema();
     let _ = PlatformCapabilities::schema();

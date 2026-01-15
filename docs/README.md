@@ -12,6 +12,7 @@
 - [OS Completeness Checklist](./product/os-completeness-checklist.md) - minimum product surfaces.
 - [Glossary](./glossary.md) - shared vocabulary.
 - [Diagrams](./diagrams/) - architecture sketches.
+- [References](./references/README.md) - evidence anchors and citation keys.
 
 ## Doc Map - Where the truth lives
 

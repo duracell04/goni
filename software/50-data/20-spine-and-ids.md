@@ -22,9 +22,11 @@ Every table is `Spine + Payload`. `row_id` is the canonical primary key; table-s
 Each canonical table exposes a newtype around `[u8; 16]`/`Uuid`:
 
 - `DocId`, `ChunkId`, `EmbeddingId`
+- `PromptId`, `ContextItemId`
 - `RequestId`, `TaskId`
-- `ContextItemId`
-- `CallId`, `MetricId`
+- `AuditId`, `CapabilityTokenId`, `RedactionProfileId`, `RedactionEventId`, `AgentManifestId`
+- `SnapshotId`, `DeltaId`, `SummaryId`, `MemoryId`
+- `CallId`, `SignalId`, `CapabilityId`, `MetricId`
 
 Each equals `Spine.row_id` for its table. No other ID representations are allowed across crate boundaries.
 
@@ -35,10 +37,22 @@ Each equals `Spine.row_id` for its table. No other ID representations are allowe
 | Docs         | `doc_id`        | yes |
 | Chunks       | `chunk_id`      | yes |
 | Embeddings   | `embedding_id`  | yes |
+| Prompts      | `prompt_id`     | yes |
 | Requests     | `request_id`    | yes |
 | Tasks        | `task_id`       | yes |
 | ContextItems | `context_item_id` | yes |
+| AuditRecords | `audit_id`      | yes |
+| CapabilityTokens | `capability_token_id` | yes |
+| RedactionProfiles | `redaction_profile_id` | yes |
+| RedactionEvents | `redaction_event_id` | yes |
+| AgentManifests | `manifest_id` | yes |
+| StateSnapshots | `snapshot_id` | yes |
+| StateDeltas | `delta_id` | yes |
+| LatentSummaries | `summary_id` | yes |
+| MemoryEntries | `memory_id` | yes |
 | LlmCalls     | `call_id`       | yes |
+| PlatformSignals | `signal_id` | yes |
+| PlatformCapabilities | `capability_id` | yes |
 | Metrics      | `metric_id`     | yes |
 
 ## 4. Tenant & Plane Tagging
