@@ -21,6 +21,9 @@ Goni's "governed kernel + receipts + confinement" approach is distinct.
   typically lacks Goni's data-plane constitution, receipts, and confinement.
 - The local-first shift is driven more by latency, privacy, and memory bandwidth
   than by chasing peak benchmark scores; cloud remains an explicit escalation.
+- "Environment, not a chatbot" positioning (Harborne) shows a strong narrative
+  around continuity, executive roles, and ROI framing that Goni can ground with
+  receipts and confinement.
 
 ---
 
@@ -98,6 +101,22 @@ capability-gated syscalls and audit trails.
 
 Overlaps on scheduling and memory ideas, but does not define a data plane or
 confinement story as a core contract.
+
+### E) Agentic automation + executive-team positioning (Harborne)
+
+- Harborne (Power5 / CoreBrain / JT1): https://harborne.ai/
+- Agentic AI solution page (ROI framing): https://harborne.ai/agentic-ai/
+
+What to learn:
+
+- Lead with "environment, not chatbot" and "decisions connect over time".
+- "Executive team" role bundles (CEO/CFO/Legal/etc.) compress UX and intent.
+- ROI narratives (time/cost saved) are adoption accelerators when paired with
+  an explicit calculator.
+
+What to avoid:
+
+- Big security and capability claims without verifiable enforcement or receipts.
 
 ---
 
