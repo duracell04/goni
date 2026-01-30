@@ -11,6 +11,9 @@ Goni's "governed kernel + receipts + confinement" approach is distinct.
 
 ## 1. Key insights (systems-level)
 
+- "AI OS" splits into four real categories: runtime/server, local AI desktop app,
+  agent gateway, and agent OS research. Goni is aiming for runtime + governance
+  + operator appliance UX, which is rarer.
 - Agent gateways (OpenClaw, Open Interpreter) are strongest at integrations and
   "doing things," but they are not OS-style governance layers.
 - Local runtime servers (LM Studio, Ollama, LocalAI) are good backends for an
@@ -19,8 +22,19 @@ Goni's "governed kernel + receipts + confinement" approach is distinct.
   and convenience over kernel-style constraints.
 - "Agent OS" research (AIOS) overlaps on scheduling and memory ideas, but it
   typically lacks Goni's data-plane constitution, receipts, and confinement.
+- OpenClaw and LM Studio are complementary, not substitutes: gateway/tool seats
+  vs local inference runtime.
+- Goni's differentiator is governance: capability-scoped side effects, audited
+  receipts tied to state snapshots, and text confinement.
 - The local-first shift is driven more by latency, privacy, and memory bandwidth
   than by chasing peak benchmark scores; cloud remains an explicit escalation.
+- Memory bandwidth and capacity are often harder constraints than peak TOPS.
+- The "PC moment" for local AI is a sub-2000 box that handles 80-90% of daily
+  operator tasks offline, with cloud as a logged exception path.
+- Agent platforms increase attack surface; OS-style confinement and explicit
+  egress syscalls become mandatory for safety.
+- The best near-term appliance stack is hybrid: local runtime + governed tool
+  layer + optional gateway adapters treated as untrusted seats.
 - "Environment, not a chatbot" positioning (Harborne) shows a strong narrative
   around continuity, executive roles, and ROI framing that Goni can ground with
   receipts and confinement.
@@ -120,7 +134,25 @@ What to avoid:
 
 ---
 
-## 4. Local-first shift: hardware and economics signals
+## 4. Personal/local AI OS candidates (OS framing)
+
+Closest to "real OS" (installable system or explicit OS substrate):
+
+- Olares: https://github.com/beclab/Olares
+- pAI-OS: https://paios.org/
+- AIOS (agent OS research): https://github.com/agiresearch/AIOS
+
+OS-like in marketing, but closer to agent appliance/platform:
+
+- OpenClaw / Moltbot (Clawdbot): https://openclaw.ai/
+
+OS-like framing, but not local-first:
+
+- Warmwind OS: https://about.warmwind.space/we-built-an-operating-system-for-ai-but-is-it-really-one/
+
+---
+
+## 5. Local-first shift: hardware and economics signals
 
 Key drivers (system-level, not vendor-specific):
 
