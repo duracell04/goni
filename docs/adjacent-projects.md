@@ -7,6 +7,13 @@ outside the "home cluster / distributed inference" focus of
 It is meant to be a fast map of what exists, what it is good at, and where
 Goni's "governed kernel + receipts + confinement" approach is distinct.
 
+How this relates to `docs/related-projects.md`:
+
+- `docs/related-projects.md` covers **home clusters + distributed inference**
+  prior art (EXO, Cake, prima.cpp, Beowulf, llama.cpp).
+- This document covers **ecosystem neighbors** (runtimes, apps, gateways, and
+  "AI OS" framing) and the system/product insights they imply.
+
 ---
 
 ## 1. Key insights (systems-level)

@@ -10,6 +10,12 @@ The aim is:
 - to be clear about **what problems are already well explored**,  
 - and to clarify **how Goni’s scope differs** (personal AI appliance + mesh, not just raw distributed inference).
 
+How this relates to `docs/adjacent-projects.md`:
+
+- This document is about **distributed inference and home clusters** as prior art.
+- `docs/adjacent-projects.md` covers **ecosystem neighbors** (runtimes, apps,
+  gateways, and "AI OS" framing) and system/product insights from those.
+
 We focus on primary sources: official GitHub repositories and authors’ papers.
 
 ---
