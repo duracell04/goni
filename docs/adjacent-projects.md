@@ -176,242 +176,163 @@ Vendor spec anchors (illustrative, not requirements):
 
 ---
 
-## 6. Productivity anchors (primary research + standards)
+## 6. Productivity + proactivity backbone (primary sources only)
 
-These references are restricted to peer-reviewed primary sources, standards,
-or RFCs, with DOI or canonical PDF links. They backstop Goni primitives
+Status-honest note: this section defines design contracts and justification.
+It does not claim implementation unless separately evidenced by tests or
+enforcement proofs.
+
+These anchors are restricted to peer-reviewed primary sources, formal
+standards, or RFCs, with DOI or canonical links. They backstop Goni primitives
 (SLOs, interrupts, capabilities, receipts, confinement, Council, lab eval)
 without claiming implementation.
 
-### 6.1 Local-first and collaboration invariants
+### 6.1 Definition and system contract
 
-What to add:
-- Frame local-first behavior as "offline-first plus convergent state" using
-  strong eventual consistency; collaboration is safe when replicas can diverge
-  and still converge deterministically.
+**Definition.** Proactive = policy-governed background cognition plus
+attention-aware interventions. Proactivity is a resource-constrained systems
+problem (scheduling, admission control, interruption policy) and an OS
+governance problem (non-bypassable boundaries for side effects and egress).
 
-Why it matters:
-- Gives a primary academic foundation for local-first collaboration and
-  conflict resolution (CRDTs) that aligns with Arrow spine + confinement.
+**Enforceable rules (normative).**
+1) Scheduled: proactive work runs under a QoS class and budget (time, tokens,
+   bandwidth, energy) before it can manifest as an interrupt. Queue growth and
+   interactive tail latency must remain bounded. [R6, R7]
+2) Justified: an intervention must satisfy an explicit expected-utility test
+   relative to deferral and the expected cost of interruption. [R2-R5]
+3) Accountable: any external side effect or egress is mediated through a
+   reference-monitor boundary (capability syscall layer / net.egress) and
+   leaves receipts with provenance semantics. [R9-R14]
 
-Source anchors:
-- Shapiro et al., "Conflict-Free Replicated Data Types" (SSS 2011).
-  DOI: https://doi.org/10.1007/978-3-642-24550-3_29
+### 6.2 Mixed-initiative control (initiative under uncertainty)
 
-### 6.2 SLOs and tail latency as percentiles
+Mixed-initiative systems allocate initiative between user and system under
+uncertainty. The system's initiative must be scoped to confidence and preserve
+user sovereignty via deferral and override mechanisms. [R1]
 
-What to add:
-- Define latency SLOs as percentiles (p95/p99) for TTFT and cancellation, and
-  treat worst-case latency as a first-class design target.
+Goni mapping (normative):
+- Action Cards: propose -> approve/deny/defer -> execute.
+- Daily Brief: default deferral/batching surface.
+- Agent manifests: declared scope, triggers, and budgets constrain initiative.
+- Capability-checked syscalls: initiative cannot bypass governance.
 
-Why it matters:
-- Interactive systems feel "broken" because of tail latency; interrupts and
-  budgets are the mitigation.
+### 6.3 Attention and interruption management
 
-Source anchors:
-- Dean & Barroso, "The Tail at Scale" (CACM 2013).
-  DOI: https://doi.org/10.1145/2408776.2408794
-- Li et al., "Tales of the Tail" (SoCC 2014).
-  DOI: https://doi.org/10.1145/2670979.2670988
+Interruption decisions should be decision-theoretic: alerts depend on context
+and predicted interruption cost. Models of attention support notify vs defer
+decisions. Empirical evidence shows interruption can increase stress and
+perceived time pressure, supporting deferral-first policies. [R2-R5, R8]
 
-### 6.3 LLM serving as OS-style memory management
+Goni mapping (normative):
+- Interrupt budgets enforce per-channel/per-day caps.
+- Deferral first: non-urgent suggestions go to Daily Brief.
+- Escalation rule: interrupt only if expected utility of immediate action
+  exceeds expected cost of interruption, subject to budget.
 
-What to add:
-- Cite PagedAttention / vLLM as precedent for treating KV cache like virtual
-  memory and for schedulers that can preempt requests.
+### 6.4 Queueing theory and tail latency (prevent overload collapse)
 
-Why it matters:
-- Supports the "LLM calls as interrupts" framing and utilization reports as a
-  principled systems approach.
+Little's Law: L = lambda W. If arrival rate grows without bounding work-in-
+system, waiting time increases and interactive responsiveness suffers. [R6]
 
-Source anchors:
-- PagedAttention / vLLM paper (arXiv 2023).
-  DOI: https://doi.org/10.48550/arXiv.2309.06180
+Tail latency dominates perceived responsiveness; systems must isolate
+interactive QoS and use percentile SLOs (p95/p99) for TTFT and cancellation. [R7]
 
-### 6.4 Capability security + reference monitor lineage
+Goni mapping (normative):
+- Background work must be admission-controlled and preemptible.
+- Interactive QoS must be protected under contention.
 
-What to add:
-- Describe Tool Capability API + Network Gate as a reference monitor:
-  complete mediation, tamper resistance, and a small trusted core.
+### 6.5 LLM serving as OS-style memory management
 
-Why it matters:
-- Makes "no ambient permissions" academically legible and historically grounded.
+Modern LLM serving explicitly uses OS-like paging for KV cache and couples it
+to scheduling, providing a precedent for preemption/cancellation as first-class
+control. [R15]
 
-Source anchors:
-- Anderson, "Computer Security Technology Planning Study" (ESD-TR-73-51).
-  PDF: https://csrc.nist.rip/publications/history/ande72.pdf
-- Watson et al., "Capsicum: Practical Capabilities for UNIX" (USENIX Sec 2010).
-  PDF: https://www.usenix.org/legacy/event/sec10/tech/full_papers/Watson.pdf
+Goni mapping (normative):
+- LLM runtime exposes utilization/capability signals so the scheduler can
+  protect interactive QoS and preempt background inference.
 
-### 6.5 Provenance standardization for receipts
+### 6.6 End-to-end arguments (where enforcement belongs)
 
-What to add:
-- Map receipts to W3C PROV concepts (Entity/Activity/Agent; derivation;
-  attribution).
+End-to-end arguments show some integrity properties cannot be guaranteed by
+best-effort intermediates; enforcement must live at boundaries where checks
+are complete. [R9]
 
-Why it matters:
-- Makes receipts interoperable and gives standard terminology for audit and
-  traceability.
+Goni boundary placement (normative):
+- Tool capability syscalls enforce no ambient side effects.
+- net.egress enforces no unlogged outbound traffic.
+- Council escalation is explicit and logged.
 
-Source anchors:
-- W3C PROV-DM (W3C Recommendation).
-  https://www.w3.org/TR/prov-dm/
+The "Rise of the Middle" RFC supports keeping enforcement at explicit
+boundaries rather than implicit middleboxes. [R10]
 
-### 6.6 Tamper-evident audit logs
+### 6.7 Security principles and reference monitor lineage
 
-What to add:
-- A "receipt integrity" option: append-only log commitments (Merkle tree) so
-  operators can verify logs were not rewritten.
+Saltzer & Schroeder provide the canonical secure design checklist: least
+privilege, complete mediation, economy of mechanism, fail-safe defaults,
+separation of privilege, psychological acceptability. [R11]
 
-Why it matters:
-- For an operator appliance, integrity of receipts is as important as their
-  existence.
+Reference monitor lineage traces to the Anderson planning study. [R12]
 
-Source anchors:
-- RFC 6962 (Certificate Transparency).
-  https://www.rfc-editor.org/rfc/rfc6962
+Goni mapping (normative):
+- Least privilege: minimal capabilities per tool/agent.
+- Complete mediation: every access and side effect is checked.
+- Economy of mechanism: keep the trusted kernel small.
+- Psychological acceptability: permissions must be understandable.
 
-### 6.7 Human-AI interaction guidelines
+### 6.8 Receipts as provenance + tamper-evident audit
 
-What to add:
-- An interaction contract: show progress, allow correction/undo, communicate
-  uncertainty, request approval at the right moments, keep user in control.
+Map receipts to W3C PROV concepts (Entity/Activity/Agent; attribution;
+derivation) for interoperability. [R13]
 
-Why it matters:
-- Provides a peer-reviewed UX rubric for Action Cards, approvals, and receipts.
+Optional receipt integrity mode: append-only log commitments (Merkle tree),
+with inclusion/consistency proofs. [R14]
 
-Source anchors:
-- Amershi et al., "Guidelines for Human-AI Interaction" (CHI 2019).
-  DOI: https://doi.org/10.1145/3290605.3300233
+### 6.9 Operator cockpit foundations (situation awareness)
 
-### 6.8 Evaluation discipline for RAG and hallucination
+Situation awareness theory is a primary foundation for operator interfaces
+that support awareness, control, and error recovery. [R16]
 
-What to add:
-- Adopt a standard evaluation loop for retrieval + grounding quality
-  (faithfulness, context relevance, answer relevance) and treat hallucination
-  risk as an evaluated property.
+Goni mapping (normative):
+- Visibility: show queued/running actions and budgets.
+- Operator control/undo: action cards must be reversible or explicitly confirmed.
+- Comprehension/projection: Daily Brief explains what changed and what is likely.
 
-Why it matters:
-- Strengthens "measured routing improvements" with explicit methodology.
+### References (primary sources / standards only)
 
-Source anchors:
-- Lewis et al., "Retrieval-Augmented Generation" (arXiv 2020).
-  DOI: https://doi.org/10.48550/arXiv.2005.11401
-- Es et al., "RAGAS" (arXiv 2023).
-  DOI: https://doi.org/10.48550/arXiv.2309.15217
-- Ji et al., "Survey of Hallucination in Natural Language Generation" (arXiv 2023).
-  DOI: https://doi.org/10.48550/arXiv.2311.05232
-
-### 6.9 Trustworthiness governance
-
-What to add:
-- Map Goni controls to a lifecycle AI governance framework (risk mgmt,
-  monitoring, transparency, incident handling).
-
-Why it matters:
-- Provides a compliance-ready narrative without overstating regulatory status.
-
-Source anchors:
-- NIST AI RMF 1.0 (NIST standard).
-  https://nvlpubs.nist.gov/nistpubs/ai/nist.ai.100-1.pdf
-
-### 6.10 Privacy by design (PbD)
-
-What to add:
-- Frame confinement + minimized retention as PbD principles (privacy by
-  default, data minimization, end-to-end lifecycle protection).
-
-Why it matters:
-- Makes the confinement story legible to privacy and policy audiences.
-
-Source anchors:
-- Cavoukian, "Privacy by Design" (foundational principles).
-  https://www.ipc.on.ca/wp-content/uploads/Resources/7foundationalprinciples.pdf
-
-### 6.11 Proactivity as mixed-initiative control
-
-What to add:
-- Define "proactive" explicitly: policy-governed background cognition plus
-  attention-aware interventions. Everything proactive is scheduled; every
-  intervention has an expected-value justification; every action has receipts.
-
-Why it matters:
-- Proactivity is not "more automation"; it is initiative under uncertainty
-  with user control.
-
-Source anchors:
-- Horvitz, "Principles of Mixed-Initiative User Interfaces" (CHI 1999).
-  DOI: https://doi.org/10.1145/302979.303030
-
-### 6.12 Interruption management (when to interrupt, defer, bundle)
-
-What to add:
-- Proactivity is budgeted and attention-aware: suggestions are queued,
-  bundled into a Daily Brief, and only escalate to interrupts when expected
-  value exceeds expected attention cost.
-
-Why it matters:
-- A proactive operator that interrupts at the wrong time is less productive.
-
-Source anchors:
-- Horvitz & Apacible, "Learning and Reasoning about Interruption" (ICMI 2003).
-  DOI: https://doi.org/10.1145/958432.958440
-- Horvitz, Koch, Apacible, "BusyBody" (CSCW 2004).
-  PDF: https://interruptions.net/literature/Horvitz-CSCW04-p507-horvitz.pdf
-
-### 6.13 Overload and queueing discipline
-
-What to add:
-- Background work is opportunistic and preemptible; interactive QoS is
-  protected with strict head-of-line blocking controls.
-
-Why it matters:
-- Proactive background work creates queues; without backpressure, interactive
-  latency collapses.
-
-Source anchors:
-- Little, "A Proof for the Queueing Formula: L = lambda W" (Operations Research, 1961).
-  DOI: https://doi.org/10.1287/opre.9.3.383
-
-### 6.14 End-to-end arguments (where to enforce guarantees)
-
-What to add:
-- Explicitly position kernel boundaries so guarantees (no ambient side
-  effects, no unlogged egress, confinement) are enforceable rather than
-  best-effort.
-
-Why it matters:
-- End-to-end arguments justify enforcement at the right boundary: tool
-  syscalls, network gate, and Council mediation.
-
-Source anchors:
-- Saltzer, Reed, Clark, "End-to-End Arguments in System Design" (ACM TOCS, 1984).
-  DOI: https://doi.org/10.1145/357401.357402
-
-### 6.15 Secure design principles checklist
-
-What to add:
-- A short checklist aligned to least privilege, complete mediation,
-  separation of privilege, and psychological acceptability.
-
-Why it matters:
-- Provides a canonical security-design lens that maps to capability tokens,
-  audit receipts, and user-visible approvals.
-
-Source anchors:
-- Saltzer & Schroeder, "The Protection of Information in Computer Systems"
-  (Proceedings of the IEEE, 1975).
-  DOI: https://doi.org/10.1109/PROC.1975.9939
-
-### 6.16 Usability heuristics for an operator cockpit
-
-What to add:
-- Explicit UX heuristics: visibility of system status, user control/undo,
-  error prevention, and recognition over recall.
-
-Why it matters:
-- Grounds Action Cards and approvals in a peer-reviewed usability method.
-
-Source anchors:
-- Nielsen & Molich, "Heuristic Evaluation of User Interfaces" (CHI 1990).
-  DOI: https://doi.org/10.1145/97243.97281
+[R1] Horvitz, E. (1999). Principles of Mixed-Initiative User Interfaces.
+     CHI 1999. DOI: https://doi.org/10.1145/302979.303030
+[R2] Horvitz, E., and Apacible, J. (2003). Learning and Reasoning about
+     Interruption. ICMI 2003. DOI: https://doi.org/10.1145/958432.958440
+[R3] Horvitz, E., Koch, P., and Apacible, J. (2004). BusyBody: Creating and
+     Fielding Personalized Models of the Cost of Interruption. CSCW 2004.
+     DOI: https://doi.org/10.1145/1031607.1031690
+[R4] Horvitz, E., Kadie, C., Paek, T., and Hovel, D. (2003). Models of Attention
+     in Computing and Communication: From Principles to Applications.
+     Communications of the ACM, 46(3). DOI: https://doi.org/10.1145/636772.636798
+[R5] McFarlane, D. C. (2002). Comparison of Four Primary Methods for
+     Coordinating the Interruption of People in Human-Computer Interaction.
+     Human-Computer Interaction, 17(1). DOI: https://doi.org/10.1207/S15327051HCI1701_2
+[R6] Little, J. D. C. (1961). A Proof for the Queueing Formula: L = lambda W.
+     Operations Research, 9(3), 383-387. DOI: https://doi.org/10.1287/opre.9.3.383
+[R7] Dean, J., and Barroso, L. A. (2013). The Tail at Scale.
+     Communications of the ACM, 56(2), 74-80. DOI: https://doi.org/10.1145/2408776.2408794
+[R8] Mark, G., Gudith, D., and Klocke, U. (2008). The Cost of Interrupted Work:
+     More Speed and Stress. CHI 2008. DOI: https://doi.org/10.1145/1357054.1357072
+[R9] Saltzer, J. H., Reed, D. P., and Clark, D. D. (1984). End-to-End Arguments
+     in System Design. ACM TOCS, 2(4), 277-288. DOI: https://doi.org/10.1145/357401.357402
+[R10] Kempf, J., and Austein, R. (2004). The Rise of the Middle and the Future
+      of End-to-End. RFC 3724. https://datatracker.ietf.org/doc/html/rfc3724
+[R11] Saltzer, J. H., and Schroeder, M. D. (1975). The Protection of Information
+      in Computer Systems. Proceedings of the IEEE, 63(9), 1278-1308.
+      DOI: https://doi.org/10.1109/PROC.1975.9939
+[R12] Anderson, J. P. (1972). Computer Security Technology Planning Study
+      (ESD-TR-73-51). Archival PDF: https://csrc.nist.rip/publications/history/ande72.pdf
+[R13] W3C (2013). PROV-DM: The PROV Data Model (W3C Recommendation).
+      https://www.w3.org/TR/prov-dm/
+[R14] Laurie, B., Langley, A., and Kasper, E. (2013). Certificate Transparency.
+      RFC 6962. https://www.rfc-editor.org/rfc/rfc6962
+[R15] Kwon, W., et al. (2023). Efficient Memory Management for Large Language
+      Model Serving with PagedAttention. arXiv:2309.06180.
+      DOI: https://doi.org/10.48550/arXiv.2309.06180
+[R16] Endsley, M. R. (1995). Toward a Theory of Situation Awareness in Dynamic
+      Systems. Human Factors, 37(1), 32-64. DOI: https://doi.org/10.1518/001872095779049543
