@@ -336,3 +336,42 @@ Goni mapping (normative):
       DOI: https://doi.org/10.48550/arXiv.2309.06180
 [R16] Endsley, M. R. (1995). Toward a Theory of Situation Awareness in Dynamic
       Systems. Human Factors, 37(1), 32-64. DOI: https://doi.org/10.1518/001872095779049543
+
+---
+
+## 7. Economics, adoption, and market design (why "personal AI" beats "renting GPU hours")
+
+### 7.1 What researchers would research
+
+- Cost models: amortized device vs cloud usage.
+- Break-even curves: device cost (EUR) vs GPU-hour costs, token volume, and duty cycle.
+- Hidden costs: privacy risk, latency, and uptime dependence.
+
+### 7.2 Utility computing vs personal ownership economics
+
+- Study when "compute as a utility" wins vs when ownership wins (privacy,
+  offline, predictable cost).
+- Model adoption thresholds: what performance/price makes local personal AI
+  "obvious."
+
+### 7.3 Externalities and incentive alignment
+
+- Quantify privacy externalities (data leakage risk) and how local-first changes
+  them.
+- Model "trust premium": users pay more for auditability and sovereignty.
+
+### 7.4 Deliverables
+
+- Pricing strategy for a Goni-like appliance (tiers) + expected savings vs cloud.
+- Adoption story grounded in measurable user outcomes (time saved, risk reduced).
+
+### 7.5 Enables Goni
+
+This field explains why a local personal AI OS becomes the default and what
+minimum "it just works" reliability/UX thresholds must be hit.
+
+### 7.6 Primary anchors
+
+- Armbrust et al. (cloud economics and trade-offs).
+- Licklider (human-computer symbiosis vision: tight coupling of human + machine,
+  historically motivating "personal computing" evolution).
