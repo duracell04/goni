@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "DailyBrief",
+  "type": "object",
+  "required": ["brief_id", "date"],
+  "properties": {
+    "brief_id": {"type": "string"},
+    "date": {"type": "string"},
+    "items": {"type": "array", "items": {"type": "object"}}
+  }
+}

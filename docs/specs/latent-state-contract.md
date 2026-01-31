@@ -91,3 +91,7 @@ See `docs/specs/tool-capability-api.md` for the audit record envelope.
 - `docs/specs/tool-capability-api.md`
 - `docs/specs/scheduler-and-interrupts.md`
 - `docs/specs/symbolic-substrate.md`
+
+## Conformance tests
+- TBD: add tests for this spec.
+

@@ -55,3 +55,7 @@ These fields are required on tool calls, state deltas, and commits.
 - `docs/specs/tool-capability-api.md`
 - `docs/specs/scheduler-and-interrupts.md`
 - `docs/specs/itcr.md`
+
+## Conformance tests
+- TBD: add tests for this spec.
+

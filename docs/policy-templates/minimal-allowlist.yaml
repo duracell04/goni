@@ -1,0 +1,3 @@
+mode: allowlist
+allowlist:
+  - example.com

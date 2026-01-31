@@ -6,3 +6,6 @@ edition = "2021"
 [dependencies]
 async-trait = { workspace = true }
 goni-types = { path = "../goni-types" }
+serde = { workspace = true }
+serde_yaml = { workspace = true }
+anyhow = "1"

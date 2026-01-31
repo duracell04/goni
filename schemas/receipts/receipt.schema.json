@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Receipt",
+  "type": "object",
+  "required": ["receipt_id", "timestamp", "action_type", "policy_decision"],
+  "properties": {
+    "receipt_id": {"type": "string"},
+    "timestamp": {"type": "string"},
+    "action_type": {"type": "string"},
+    "policy_decision": {"type": "string"},
+    "capability_id": {"type": "string"},
+    "input_hash": {"type": "string"},
+    "output_hash": {"type": "string"}
+  }
+}

@@ -74,10 +74,14 @@ This table is the single place that must be kept current when files move.
 - AGENT-DEF-01 - Agent Definition (product concept): `docs/specs/agent-definition.md`
 - AGENT-MANIFEST-01 - Agent Manifest: `docs/specs/agent-manifest.md`
 - ITCR-01 - ITCR: `docs/specs/itcr.md`
+- JOB-01 - Job Contract: `docs/specs/job.md`
 - LSC-01 - Latent State Contract: `docs/specs/latent-state-contract.md`
 - NET-01 - Network Gate and Anonymity: `docs/specs/network-gate-and-anonymity.md`
+- REC-01 - Receipts: `docs/specs/receipts.md`
+- SANDBOX-01 - Isolation and Tool Sandboxes: `docs/specs/isolation-and-tool-sandboxes.md`
 - SCHED-01 - Scheduler and Interrupts: `docs/specs/scheduler-and-interrupts.md`
 - SS-01 - Symbolic Substrate: `docs/specs/symbolic-substrate.md`
+- SYNC-01 - Sync Policies: `docs/specs/sync-policies.md`
 - TOOL-01 - Tool Capability API: `docs/specs/tool-capability-api.md`
 
 ### Axioms and data plane contracts

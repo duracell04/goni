@@ -1,0 +1,15 @@
+models:
+  interactive:
+    id: local_small
+    max_ms: 1200
+    max_tokens: 256
+  quality:
+    id: local_medium
+    max_ms: 6000
+    max_tokens: 1200
+routing:
+  local_first:
+    target_local_token_ratio: 0.85
+    escalate_if:
+      - task: longform
+        confidence_below: 0.55

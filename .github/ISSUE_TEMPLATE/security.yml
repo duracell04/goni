@@ -1,0 +1,9 @@
+name: Security issue
+labels: [security]
+body:
+  - type: textarea
+    attributes:
+      label: Summary
+  - type: textarea
+    attributes:
+      label: Impact

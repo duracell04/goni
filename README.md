@@ -33,6 +33,21 @@ Observe -> Distill -> Propose/Act -> Attach receipts -> Store memory.
 
 - Signal protection, time recovery, governed autonomy, sovereignty.
 
+## Kernel guarantees (spec)
+
+Target guarantees; see docs/STATUS.md for implementation status.
+
+- Tool side effects are intended to be mediated by the kernel boundary.
+- Network egress is intended to go through the egress gate.
+- Every mediated action is intended to produce a receipt.
+- Budgets are intended to be enforced at mediation boundaries.
+- Receipts are intended to be minimal by default.
+
+**Trusted computing base (TCB)**
+
+- Kernel mediation and receipt components.
+- Egress gate.
+
 ## Agility guardrails
 
 - Keep the front page timeless: [README.md](README.md), [docs/goni-story.md](docs/goni-story.md), and [docs/goni-whitepaper.md](docs/goni-whitepaper.md) stay gut-punch + vision only. Put concrete numbers and models in [hardware/90-decisions.md](hardware/90-decisions.md), [software/90-decisions.md](software/90-decisions.md), or `prototype/**`.
@@ -66,6 +81,7 @@ This space is for:
 - Tool capability API + audit: [docs/specs/tool-capability-api.md](docs/specs/tool-capability-api.md)
 - Network gate + anonymity: [docs/specs/network-gate-and-anonymity.md](docs/specs/network-gate-and-anonymity.md)
 - Scheduler + interrupts: [docs/specs/scheduler-and-interrupts.md](docs/specs/scheduler-and-interrupts.md)
+- Receipts: [docs/specs/receipts.md](docs/specs/receipts.md)
 - Data plane schemas: [software/50-data/51-schemas-mvp.md](software/50-data/51-schemas-mvp.md)
 
 ---
@@ -314,19 +330,15 @@ If you are thinking about manufacturing/funding, open an issue; the hardware bui
 
 Prototype/dev stack only; things may change between commits.
 
-Prereqs: Docker, docker-compose. From repo root:
+Prereqs: Docker and docker compose. From repo root:
 
-1. Build kernel image (or let compose build):  
-   `docker build -t ghcr.io/duracell04/goni-http:latest software/kernel`
-
-2. Run stack:  
-   `docker-compose -f software/docker-compose.yml up`
+- `make demo`
+- `make smoke`
 
 Services:  
 - `llm-local` (vLLM) at `http://localhost:8000/v1`  
 - `vecdb` (Qdrant) at `http://localhost:6333`  
 - `orchestrator` (goni-http) at `http://localhost:7000`  
-- `gateway` mapped from port 3000 -> 443 (adjust in compose as needed)
 
 Env vars of interest:  
 - `LLM_LOCAL_URL` (default: `http://llm-local:8000/v1`)  

@@ -129,12 +129,12 @@ impl GoniKernel {
     }
 
     async fn solve_prompt(&self, prompt: &str, _class: TaskClass) -> anyhow::Result<TokenStream> {
-        // Placeholder embedding; swap in a real embedder.
+        // Deterministic lexical embedding baseline.
         let emb_dim: usize = std::env::var("EMBED_DIM")
             .ok()
             .and_then(|v| v.parse().ok())
             .unwrap_or(1024);
-        let query_embedding = vec![0.0_f32; emb_dim];
+        let query_embedding = goni_embed::embed(prompt, emb_dim);
         let collection = std::env::var("QDRANT_COLLECTION").unwrap_or_else(|_| "default".into());
 
         // Fetch candidates from the data plane (Qdrant-backed when configured).
@@ -190,13 +190,34 @@ impl GoniKernel {
             }
             Err(e) => {
                 eprintln!("rag_candidates error: {e:?}");
-                (
-                    ContextSelection {
-                        indices: Vec::new(),
-                        total_tokens: 0,
-                    },
-                    prompt.to_string(),
-                )
+                let demo = std::env::var("GONI_DEMO_CONTEXT")
+                    .map(|v| v == "1" || v.to_lowercase() == "true")
+                    .unwrap_or(false);
+                if demo {
+                    let demo_text = "demo context";
+                    let demo_emb = goni_embed::embed(demo_text, emb_dim);
+                    let candidates = vec![CandidateChunk {
+                        id: "demo",
+                        text: Some(demo_text),
+                        tokens: 1,
+                        embedding: &demo_emb,
+                        relevance: 1.0,
+                    }];
+                    let selection = self
+                        .context_selector
+                        .select(&query_embedding, &candidates, 64)
+                        .await;
+                    let aug_prompt = format!("{}\n\nContext:\n- {}", prompt, demo_text);
+                    (selection, aug_prompt)
+                } else {
+                    (
+                        ContextSelection {
+                            indices: Vec::new(),
+                            total_tokens: 0,
+                        },
+                        prompt.to_string(),
+                    )
+                }
             }
         };
 

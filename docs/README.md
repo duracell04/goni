@@ -12,6 +12,17 @@
 - [Reference Products](./reference-products/olares.md) - reference pattern and implications.
 - [OS Completeness Checklist](./product/os-completeness-checklist.md) - minimum product surfaces.
 - [Glossary](./glossary.md) - shared vocabulary.
+- [Architecture](./ARCHITECTURE.md) - short architecture index and trust boundaries.
+- [Quickstart](./quickstart.md) - runnable demo steps.
+- [Observability](./observability.md) - metrics and dashboards.
+- [Receipts](./receipts.md) - audit trail overview.
+- [Privacy](./privacy.md) - data classes and retention.
+- [Threat Model](./threat-model.md) - adversaries and assumptions.
+- [TCB](./tcb.md) - trusted computing base.
+- [Evaluation](./EVALUATION.md) - HCI evaluation harness.
+- [Compatibility](./compat.md) - runtime profiles.
+- [Roadmap](./roadmap.md) - milestones and scope.
+- [Tools](./tools.md) - tool authoring and capability rules.
 - [Diagrams](./diagrams/) - architecture sketches.
 - [References](./references/README.md) - evidence anchors and citation keys.
 

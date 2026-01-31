@@ -82,3 +82,7 @@ Interrupt decisions and solver wakes are recorded with:
 - `docs/specs/tool-capability-api.md`
 - `docs/specs/symbolic-substrate.md`
 - `docs/specs/itcr.md`
+
+## Conformance tests
+- TBD: add tests for this spec.
+

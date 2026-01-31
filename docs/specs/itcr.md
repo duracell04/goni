@@ -111,3 +111,7 @@ Outputs include:
 - docs/specs/agent-definition.md
 - docs/specs/tool-capability-api.md
 - docs/specs/latent-state-contract.md
+
+## Conformance tests
+- TBD: add tests for this spec.
+

@@ -56,3 +56,28 @@ pub struct LlmRequest {
     pub model_tier: ModelTier,
     pub max_tokens: usize,
 }
+
+/// Job contract for scheduler-visible work.
+#[derive(Clone, Debug)]
+pub struct JobSpec {
+    pub job_id: Uuid,
+    pub class: TaskClass,
+    pub priority: u32,
+    pub deadline: Option<String>,
+    pub cancel_policy: CancelPolicy,
+    pub budgets: Budgets,
+    pub required_capabilities: Vec<String>,
+}
+
+#[derive(Clone, Debug)]
+pub enum CancelPolicy {
+    BestEffort,
+    MustStopBeforeSideEffect,
+}
+
+#[derive(Clone, Debug)]
+pub struct Budgets {
+    pub max_tokens: u64,
+    pub max_wall_ms: u64,
+    pub max_tool_calls: u32,
+}

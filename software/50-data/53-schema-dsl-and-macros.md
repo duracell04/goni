@@ -382,3 +382,7 @@ define_tables! {
 - Generated Rust newtypes for IDs (e.g., `DocId`, `TaskId`).
 - Generated typed batches (e.g., `RequestsBatch`) with field accessors.
 - Optional: schema registry JSON for non-Rust consumers.
+
+### Receipts table (specified only)
+The receipts table is specified in software/50-data/51-schemas-mvp.md and will be added to the schema DSL in a later revision.
+

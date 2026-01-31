@@ -13,6 +13,8 @@ tokio = { workspace = true }
 anyhow = "1"
 futures-util = { workspace = true }
 uuid = { workspace = true }
+sha2 = { workspace = true }
+chrono = { version = "0.4", default-features = false, features = ["std", "clock"] }
 
 goni-core = { path = "../goni-core" }
 goni-store = { path = "../goni-store" }
@@ -21,3 +23,4 @@ goni-sched = { path = "../goni-sched" }
 goni-router = { path = "../goni-router" }
 goni-infer = { path = "../goni-infer" }
 goni-types = { path = "../goni-types" }
+goni-receipts = { path = "../goni-receipts" }

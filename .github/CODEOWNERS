@@ -1,0 +1,6 @@
+# Default owner
+* @duracell04
+
+# Kernel and policy
+/software/kernel/ @duracell04
+/docs/specs/ @duracell04

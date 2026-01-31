@@ -1,0 +1,9 @@
+name: Spec change
+labels: [spec]
+body:
+  - type: textarea
+    attributes:
+      label: Spec change summary
+  - type: textarea
+    attributes:
+      label: Tests or evidence

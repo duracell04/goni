@@ -4,7 +4,7 @@ use arrow_array::{builder::StringBuilder, types::UInt32Type, Array, ArrayRef, Fi
 use arrow_schema::{DataType, Field, Schema};
 use async_trait::async_trait;
 use serde::{Deserialize, Serialize};
-use sha2::{Digest, Sha256};
+use goni_embed::embed;
 
 use crate::{ArrowBatch, ArrowBatchHandle, DataError, DataPlane};
 
@@ -29,17 +29,7 @@ impl QdrantDataPlane {
     }
 
     fn embed(&self, text: &str) -> Vec<f32> {
-        // Deterministic hash-based embedding placeholder.
-        let mut out = Vec::with_capacity(self.embed_dim);
-        let mut hasher = Sha256::new();
-        hasher.update(text.as_bytes());
-        let digest = hasher.finalize();
-        for i in 0..self.embed_dim {
-            let b = digest[i % digest.len()];
-            let v = (b as f32 / 255.0) - 0.5;
-            out.push(v);
-        }
-        out
+        embed(text, self.embed_dim)
     }
 }
 

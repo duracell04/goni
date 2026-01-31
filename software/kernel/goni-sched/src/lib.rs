@@ -43,13 +43,13 @@ impl InMemoryScheduler {
             }),
         }
     }
+}
 
-    fn idx_for(class: TaskClass) -> usize {
-        match class {
-            TaskClass::Interactive => 0,
-            TaskClass::Background => 1,
-            TaskClass::Maintenance => 2,
-        }
+fn idx_for(class: TaskClass) -> usize {
+    match class {
+        TaskClass::Interactive => 0,
+        TaskClass::Background => 1,
+        TaskClass::Maintenance => 2,
     }
 }
 
@@ -57,7 +57,7 @@ impl InMemoryScheduler {
 impl Scheduler for InMemoryScheduler {
     async fn submit(&self, batch: GoniBatch) -> Result<(), SchedError> {
         let mut inner = self.inner.lock().await;
-        let idx = Inner::idx_for(batch.meta.class);
+        let idx = idx_for(batch.meta.class);
         inner.queues[idx].push_back(Arc::new(batch));
         Ok(())
     }
@@ -91,6 +91,54 @@ impl Scheduler for InMemoryScheduler {
     }
 }
 
+/// QoS scheduler with simple admission control.
+pub struct QoSScheduler {
+    inner: Mutex<QosInner>,
+}
+
+struct QosInner {
+    queues: [VecDeque<Arc<GoniBatch>>; 3],
+    max_wip: [usize; 3],
+}
+
+impl QoSScheduler {
+    pub fn new(max_background: usize, max_maintenance: usize) -> Self {
+        Self {
+            inner: Mutex::new(QosInner {
+                queues: [VecDeque::new(), VecDeque::new(), VecDeque::new()],
+                max_wip: [usize::MAX, max_background, max_maintenance],
+            }),
+        }
+    }
+}
+
+#[async_trait]
+impl Scheduler for QoSScheduler {
+    async fn submit(&self, batch: GoniBatch) -> Result<(), SchedError> {
+        let mut inner = self.inner.lock().await;
+        let idx = idx_for(batch.meta.class);
+        if inner.queues[idx].len() >= inner.max_wip[idx] {
+            return Err(SchedError {
+                message: "wip_limit_reached".into(),
+            });
+        }
+        inner.queues[idx].push_back(Arc::new(batch));
+        Ok(())
+    }
+
+    async fn next(&self) -> Option<GoniBatch> {
+        let mut inner = self.inner.lock().await;
+        let order = [TaskClass::Interactive, TaskClass::Background, TaskClass::Maintenance];
+        for class in order {
+            let idx = idx_for(class);
+            if let Some(batch) = inner.queues[idx].pop_front() {
+                return Some(Arc::try_unwrap(batch).unwrap_or_else(|a| (*a).clone()));
+            }
+        }
+        None
+    }
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -119,4 +167,12 @@ mod tests {
         let first = sched.next().await.expect("should pop a batch");
         assert_eq!(first.meta.class, TaskClass::Interactive);
     }
+
+    #[tokio::test]
+    async fn background_limit_enforced() {
+        let sched = QoSScheduler::new(0, 0);
+        let res = sched.submit(dummy_batch(TaskClass::Background)).await;
+        assert!(res.is_err());
+    }
 }
+

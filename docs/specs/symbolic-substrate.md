@@ -125,3 +125,7 @@ Example constraints (JSON values stored under constraint.* keys):
 - docs/specs/tool-capability-api.md
 - docs/specs/scheduler-and-interrupts.md
 - docs/specs/agent-manifest.md
+
+## Conformance tests
+- TBD: add tests for this spec.
+

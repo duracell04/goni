@@ -1,16 +1,18 @@
 use std::net::SocketAddr;
 use std::sync::Arc;
 
-use axum::{extract::State, routing::post, Json, Router};
+use axum::{extract::State, routing::{get, post}, Json, Router};
 use futures_util::StreamExt;
 use serde::{Deserialize, Serialize};
 use tower_http::trace::TraceLayer;
 use uuid::Uuid;
+use sha2::{Digest, Sha256};
 
 use goni_core::GoniKernel;
 use goni_context::{FacilityLocationSelector, NullKvPager};
-use goni_infer::HttpVllmEngine;
-use goni_router::NullRouter;
+use goni_infer::{HttpVllmEngine, NullLlmEngine};
+use goni_receipts::{Receipt, ReceiptLog};
+use goni_router::{ConfigRouter, NullRouter, Router};
 use goni_sched::InMemoryScheduler;
 use goni_store::{InMemorySpineDataPlane, MultiDataPlane, NullDataPlane, QdrantDataPlane};
 use goni_types::TaskClass;
@@ -18,6 +20,7 @@ use goni_types::TaskClass;
 #[derive(Clone)]
 struct AppState {
     kernel: Arc<GoniKernel>,
+    receipts: Arc<ReceiptLog>,
 }
 
 #[derive(Debug, Deserialize)]
@@ -82,13 +85,29 @@ async fn main() -> anyhow::Result<()> {
     let context_selector = Arc::new(FacilityLocationSelector::new(0.3));
     let kv_pager = Arc::new(NullKvPager);
     let scheduler = Arc::new(InMemoryScheduler::new());
-    let router = Arc::new(NullRouter);
-    let llm_engine = Arc::new(HttpVllmEngine::new(
-        llm_url,
-        llm_model,
-        llm_deterministic,
-        llm_seed,
-    ));
+    let router: Arc<dyn Router> = match std::env::var("GONI_ROUTER_CONFIG") {
+        Ok(path) => ConfigRouter::from_path(path)
+            .map(|r| Arc::new(r) as Arc<dyn Router>)
+            .unwrap_or_else(|_| Arc::new(NullRouter)),
+        Err(_) => Arc::new(NullRouter),
+    };
+    let use_stub = std::env::var("LLM_STUB")
+        .map(|v| v == "1" || v.to_lowercase() == "true")
+        .unwrap_or(false);
+    let llm_engine: Arc<dyn goni_infer::LlmEngine> = if use_stub {
+        Arc::new(NullLlmEngine)
+    } else {
+        Arc::new(HttpVllmEngine::new(
+            llm_url,
+            llm_model,
+            llm_deterministic,
+            llm_seed,
+        ))
+    };
+
+    let receipt_path = std::env::var("GONI_RECEIPTS_FILE")
+        .unwrap_or_else(|_| "./receipts.jsonl".into());
+    let receipts = Arc::new(ReceiptLog::open(receipt_path)?);
 
     let kernel = Arc::new(GoniKernel::new(
         data_plane,
@@ -106,9 +125,10 @@ async fn main() -> anyhow::Result<()> {
         kernel_exec.run_scheduler_loop().await;
     });
 
-    let app_state = AppState { kernel };
+    let app_state = AppState { kernel, receipts };
 
     let app = Router::new()
+        .route("/healthz", get(healthz))
         .route("/v1/chat/completions", post(chat_completions))
         .with_state(app_state)
         .layer(TraceLayer::new_for_http());
@@ -169,5 +189,24 @@ async fn chat_completions(
         }],
     };
 
+    let input_hash = format!("{:x}", Sha256::digest(prompt.as_bytes()));
+    let output_hash = format!("{:x}", Sha256::digest(resp.choices[0].message.content.as_bytes()));
+    let receipt = Receipt {
+        receipt_id: Uuid::new_v4(),
+        timestamp: chrono::Utc::now().to_rfc3339(),
+        action_type: "chat.completion".into(),
+        policy_decision: "allow".into(),
+        capability_id: None,
+        input_hash,
+        output_hash,
+        prev_hash: None,
+        chain_hash: String::new(),
+    };
+    let _ = state.receipts.append(receipt);
+
     Ok(Json(resp))
+}
+
+async fn healthz() -> &'static str {
+    "ok"
 }

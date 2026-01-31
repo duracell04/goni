@@ -13,9 +13,15 @@
 | Zero-copy hot-path objective (ZCO) | `software/50-data/52-zero-copy-mechanics.md`; `software/90-decisions.md` (D-003) | `software/kernel/goni-context/src/lib.rs` (`record_batch_to_candidate_chunks`) | None | Implemented (untested) | D-003 expects CI property tests; not present |
 | Spine IDs (row_id, tenant_id, plane, kind, schema_version, timestamps) | `software/50-data/20-spine-and-ids.md` | `software/kernel/goni-schema/src/macros.rs` | None | Implemented (untested) | Consider schema snapshot tests |
 | Scheduler class preference (basic) | `docs/specs/scheduler-and-interrupts.md` | `software/kernel/goni-sched/src/lib.rs` | `interactive_preferred_over_background` (tokio test) | Implemented and tested | Basic ordering only |
+| Scheduler admission control (WIP) | `docs/specs/scheduler-and-interrupts.md` | `software/kernel/goni-sched/src/lib.rs` (`QoSScheduler`) | `background_limit_enforced` (same file) | Implemented and tested | Simple limits only |
 | Scheduler MaxWeight and Lyapunov stability (K1) | `software/30-conformance.md`; `software/90-decisions.md` (D-008) | `software/kernel/goni-sched/src/lib.rs` | None | Implemented (untested) | Needs load simulation tests |
 | Router regret bound (K2) | `software/30-conformance.md`; `software/90-decisions.md` (D-009) | `software/kernel/goni-router/src/lib.rs` (NullRouter) | None | Specified only / roadmap | NullRouter does not implement regret policy |
 | Tool capability API | `docs/specs/tool-capability-api.md` | `software/kernel/goni-tools/src/lib.rs` | None | Implemented (untested) | Executor is an MVP stub |
+| Receipts v1 (hash chain) | `docs/specs/receipts.md` | `software/kernel/goni-receipts/src/lib.rs` | `receipt_chain_verifies` (same file) | Implemented and tested | JSONL log with hash chaining |
+| Policy engine (capabilities + gates) | `docs/specs/tool-capability-api.md`; `docs/specs/receipts.md` | `software/kernel/goni-policy/src/lib.rs` | `initiative_is_deterministic`, `memory_write_requires_evidence`, `redaction_requires_profile` (same file) | Implemented and tested | Minimal allow/deny rules |
+| Memory write gate (policy checks) | `docs/specs/latent-state-contract.md` | `software/kernel/goni-policy/src/lib.rs` (`evaluate_memory_write`) | `memory_write_requires_evidence` (same file) | Implemented and tested | Not wired into runtime yet |
+| Redaction gate (policy checks) | `docs/specs/network-gate-and-anonymity.md` | `software/kernel/goni-policy/src/lib.rs` (`evaluate_redaction`) | `redaction_requires_profile` (same file) | Implemented and tested | Not wired into runtime yet |
+| Egress gate service | `docs/specs/network-gate-and-anonymity.md` | `software/kernel/goni-egress-gate/src/main.rs` | None | Implemented (untested) | HTTP proxy with allowlist |
 | ITCR signals and knobs | `docs/specs/itcr.md` | None found in kernel | N/A | Specified only / roadmap | No code-level contract yet |
 | SMA (Symbolic Memory Axiom) | `software/50-data/10-axioms-and-planes.md`; `docs/specs/symbolic-substrate.md` | None found in kernel | N/A | Specified only / roadmap | Keep distinct from TXT enforcement |
 

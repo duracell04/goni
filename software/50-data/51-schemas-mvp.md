@@ -152,3 +152,7 @@ Arrow-first, v1.0 schemas for the canonical tables. Each table is `Spine + Paylo
 - Dictionaries enumerate finite vocabularies; adding a new label/value requires schema version bump.
 - Latent state, audit, and manifest records include `agent_id`, `policy_hash`,
   `state_snapshot_id`, and `provenance` (directly or by reference).
+
+### Receipts (specified only)
+- PK: eceipt_id = row_id`n- Fields: 	imestamp: timestamp(ms), ction_type: utf8, policy_decision: utf8,`n  capability_id?: fixed_size_binary[16], input_hash?: fixed_size_binary[32],`n  output_hash?: fixed_size_binary[32], prev_hash?: fixed_size_binary[32],`n  chain_hash: fixed_size_binary[32]`n- Notes: minimal by default; no raw content.
+

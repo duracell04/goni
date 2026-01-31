@@ -183,3 +183,7 @@ the user explicitly opts into verbose logging.
 - Scheduler and interrupts: docs/specs/scheduler-and-interrupts.md
 - Latent State Contract: docs/specs/latent-state-contract.md
 - Remote LLM Architecture: docs/remote-llm-architecture.md
+
+## Conformance tests
+- TBD: add tests for this spec.
+

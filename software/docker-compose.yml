@@ -33,6 +33,11 @@ services:
       - "8000:8000"
     volumes:
       - ./models:/models
+    healthcheck:
+      test: ["CMD", "bash", "-c", "curl -sf http://localhost:8000/v1/models >/dev/null"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
 
   vecdb:
     image: qdrant/qdrant:v1.6.1-unprivileged
@@ -42,6 +47,11 @@ services:
       - "6334:6334"
     volumes:
       - ./qdrant_storage:/qdrant/storage
+    healthcheck:
+      test: ["CMD", "bash", "-c", "curl -sf http://localhost:6333/healthz >/dev/null"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
 
   orchestrator:
     build:
@@ -57,9 +67,37 @@ services:
       # - LLM_SEED=1234
       - QDRANT_HTTP_URL=http://vecdb:6333
       - QDRANT_GRPC_URL=http://vecdb:6334
+      - GONI_RECEIPTS_FILE=/data/receipts.jsonl
+      - GONI_DEMO_CONTEXT=1
       - RUST_LOG=info
     depends_on:
       - llm-local
       - vecdb
+      - egress-gate
     ports:
       - "7000:7000"
+    volumes:
+      - ./receipts.jsonl:/data/receipts.jsonl
+    healthcheck:
+      test: ["CMD", "bash", "-c", "curl -sf http://localhost:7000/healthz >/dev/null"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+
+  egress-gate:
+    build:
+      context: ./kernel
+      dockerfile: Dockerfile.egress
+    container_name: goni-egress-gate
+    environment:
+      - GONI_RECEIPTS_FILE=/data/receipts.jsonl
+      - GONI_EGRESS_ALLOWLIST=
+    ports:
+      - "8081:8081"
+    volumes:
+      - ./receipts.jsonl:/data/receipts.jsonl
+    healthcheck:
+      test: ["CMD", "bash", "-c", "curl -sf http://localhost:8081/healthz >/dev/null"]
+      interval: 10s
+      timeout: 5s
+      retries: 12

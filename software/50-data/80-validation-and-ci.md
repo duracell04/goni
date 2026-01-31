@@ -3,6 +3,17 @@ DOC-ID: CI-VALIDATION-01
 
 How SMA/ZCO/TXT and schema drift are enforced in practice.
 
+Status: mix of implemented and planned; see .github/workflows/ci.yml for current CI.
+
+## Implemented today
+- guardrails job blocks pinned specs in README/story/whitepaper.
+- rust job runs cargo check/test/clippy for software/kernel.
+- meta job validates the truth map and generated AGENTS.
+
+## Planned
+- schema registry diff gate
+- zero-copy hot-path performance gates
+
 ## 1. Compile-Time Guards
 - `define_tables!` macro rejects `LargeUtf8` in planes 𝒦/ℰ and enforces plane/table pairing.
 - Clippy lint `forbid(non_arrow_entity)` to block non-Arrow domain structs crossing crate boundaries.

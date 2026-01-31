@@ -7,6 +7,9 @@ use serde::{Deserialize, Serialize};
 use sha2::{Digest, Sha256};
 use uuid::Uuid;
 
+use goni_policy::{BudgetLedger, CapabilityToken, PolicyDecision, PolicyEngine};
+use goni_receipts::{Receipt, ReceiptLog};
+
 /// Minimal syscall envelope.
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct ToolCall {
@@ -37,16 +40,50 @@ impl ToolCall {
 /// Enforcement is intentionally minimal in MVP: the kernel policy engine is the source of truth.
 pub struct ToolExecutor {
     pub data_plane: std::sync::Arc<dyn goni_store::DataPlane>,
+    pub policy: PolicyEngine,
+    pub receipts: ReceiptLog,
 }
 
 impl ToolExecutor {
-    pub fn new(data_plane: std::sync::Arc<dyn goni_store::DataPlane>) -> Self {
-        Self { data_plane }
+    pub fn new(
+        data_plane: std::sync::Arc<dyn goni_store::DataPlane>,
+        policy: PolicyEngine,
+        receipts: ReceiptLog,
+    ) -> Self {
+        Self { data_plane, policy, receipts }
     }
 
-    pub async fn execute(&self, call: ToolCall) -> anyhow::Result<ToolResult> {
-        // TODO: enforce capability token against tool_id and scopes.
-        let _ = call; // placeholder
+    pub async fn execute(
+        &self,
+        call: ToolCall,
+        token: CapabilityToken,
+        ledger: &mut BudgetLedger,
+    ) -> anyhow::Result<ToolResult> {
+        let decision = self.policy.evaluate_tool(&token, &call.tool_id, ledger);
+
+        let receipt = Receipt {
+            receipt_id: Uuid::new_v4(),
+            timestamp: format!("{:?}", std::time::SystemTime::now()),
+            action_type: "toolcall".into(),
+            policy_decision: match &decision {
+                PolicyDecision::Allow => "allow".into(),
+                PolicyDecision::Deny(r) => format!("deny:{r}"),
+            },
+            capability_id: Some(call.capability_token_id),
+            input_hash: hex::encode(call.args_hash()),
+            output_hash: hex::encode([0u8; 32]),
+            prev_hash: None,
+            chain_hash: String::new(),
+        };
+        let _ = self.receipts.append(receipt);
+
+        if !matches!(decision, PolicyDecision::Allow) {
+            return Ok(ToolResult {
+                ok: false,
+                output: serde_json::json!({"error": "capability denied"}),
+            });
+        }
+
         Ok(ToolResult {
             ok: false,
             output: serde_json::json!({"error": "tool executor not implemented"}),

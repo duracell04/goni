@@ -88,6 +88,46 @@
       "owner_area": "docs"
     },
     {
+      "id": "REC-01",
+      "title": "Receipts",
+      "role": "spec",
+      "group": "specs",
+      "path": "docs/specs/receipts.md",
+      "anchors": ["DOC-ID: REC-01"],
+      "status": "specified_only",
+      "owner_area": "docs"
+    },
+    {
+      "id": "JOB-01",
+      "title": "Job Contract",
+      "role": "spec",
+      "group": "specs",
+      "path": "docs/specs/job.md",
+      "anchors": ["DOC-ID: JOB-01"],
+      "status": "specified_only",
+      "owner_area": "docs"
+    },
+    {
+      "id": "SANDBOX-01",
+      "title": "Isolation and Tool Sandboxes",
+      "role": "spec",
+      "group": "specs",
+      "path": "docs/specs/isolation-and-tool-sandboxes.md",
+      "anchors": ["DOC-ID: SANDBOX-01"],
+      "status": "specified_only",
+      "owner_area": "docs"
+    },
+    {
+      "id": "SYNC-01",
+      "title": "Sync Policies",
+      "role": "spec",
+      "group": "specs",
+      "path": "docs/specs/sync-policies.md",
+      "anchors": ["DOC-ID: SYNC-01"],
+      "status": "specified_only",
+      "owner_area": "docs"
+    },
+    {
       "id": "AXIOMS-01",
       "title": "Axioms and planes",
       "role": "data_contract",

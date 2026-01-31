@@ -1,0 +1,7 @@
+{
+  "tool_id": "demo.echo",
+  "version": "0.1",
+  "authorities": ["fs.read", "net.none"],
+  "inputs": {"type": "object"},
+  "outputs": {"type": "object"}
+}

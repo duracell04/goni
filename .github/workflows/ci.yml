@@ -58,3 +58,42 @@ jobs:
         run: cargo test --workspace --all-features
       - name: Cargo clippy
         run: cargo clippy --workspace --all-features -- -D warnings
+
+  meta:
+    needs: guardrails
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate truth map
+        run: python scripts/validate_truth_map.py
+      - name: Generate agents
+        run: python scripts/generate_agents.py
+      - name: Ensure no diff
+        run: git diff --exit-code
+      - name: TXT lint
+        run: bash scripts/txt_lint.sh
+
+  bench_smoke:
+    needs: guardrails
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Bench smoke
+        run: python goni-lab/goni_lab.py bench --scenario goni-lab/scenarios/mixed.json
+
+  demo_smoke:
+    needs: rust
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: software/kernel
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          profile: minimal
+          components: clippy
+          override: true
+      - name: Smoke test (local)
+        run: bash ../../scripts/run_smoke_local.sh

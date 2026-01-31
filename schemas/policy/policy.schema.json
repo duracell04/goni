@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Policy",
+  "type": "object",
+  "properties": {
+    "mode": {"type": "string"},
+    "egress": {"type": "object"},
+    "tool_defaults": {"type": "object"}
+  }
+}

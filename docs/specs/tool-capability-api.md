@@ -80,3 +80,7 @@ Tokens are immutable and referenced by ID in tool calls.
 - `docs/specs/latent-state-contract.md`
 - `docs/specs/scheduler-and-interrupts.md`
 - `docs/specs/symbolic-substrate.md`
+
+## Conformance tests
+- TBD: add tests for this spec.
+

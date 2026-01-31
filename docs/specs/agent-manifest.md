@@ -79,3 +79,7 @@ audit fields are required:
 
 - `docs/specs/agent-definition.md`
 - `docs/specs/tool-capability-api.md`
+
+## Conformance tests
+- TBD: add tests for this spec.
+

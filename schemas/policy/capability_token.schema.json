@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "CapabilityToken",
+  "type": "object",
+  "required": ["token_id", "scopes", "expires_at"],
+  "properties": {
+    "token_id": {"type": "string"},
+    "scopes": {"type": "array", "items": {"type": "string"}},
+    "expires_at": {"type": "string"}
+  }
+}
