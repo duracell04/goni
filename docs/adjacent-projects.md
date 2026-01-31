@@ -176,41 +176,43 @@ Vendor spec anchors (illustrative, not requirements):
 
 ---
 
-## 6. Productivity anchors (academic + standards mapping to Goni primitives)
+## 6. Productivity anchors (primary research + standards)
 
-These are canonical references that backstop Goni's existing primitives
+These references are restricted to peer-reviewed primary sources, standards,
+or RFCs, with DOI or canonical PDF links. They backstop Goni primitives
 (SLOs, interrupts, capabilities, receipts, confinement, Council, lab eval)
-without claiming implementation. This section is meant to strengthen the
-"productivity -> OS solutions" narrative with recognisable anchors.
+without claiming implementation.
 
-### 6.1 Local-first as a first-class principle
-
-What to add:
-- A short "Local-first principles" box: offline utility, user data ownership,
-  fast feedback loops, and collaboration patterns even if Goni starts
-  single-user.
-
-Why it matters:
-- Anchors "on-device by default" in a research-backed framing that lines up
-  with Arrow spine + confinement.
-
-Source anchors:
-- Ink & Switch, "Local-first software": https://www.inkandswitch.com/essay/local-first/
-- PDF: https://www.inkandswitch.com/essay/local-first/local-first.pdf
-
-### 6.2 SLOs and tail latency
+### 6.1 Local-first and collaboration invariants
 
 What to add:
-- Define latency SLOs explicitly as percentiles (p95/p99) for TTFT and
-  cancellation, and treat worst-case latency as a design target.
+- Frame local-first behavior as "offline-first plus convergent state" using
+  strong eventual consistency; collaboration is safe when replicas can diverge
+  and still converge deterministically.
 
 Why it matters:
-- Interactive tools feel broken because of tail latency; budgets + interrupts
-  are the mitigation.
+- Gives a primary academic foundation for local-first collaboration and
+  conflict resolution (CRDTs) that aligns with Arrow spine + confinement.
 
 Source anchors:
-- Google SRE book, SLO chapter: https://sre.google/sre-book/service-level-objectives/
-- "The Tail at Scale" (for tail-latency framing): https://research.google/pubs/pub40801/
+- Shapiro et al., "Conflict-Free Replicated Data Types" (SSS 2011).
+  DOI: https://doi.org/10.1007/978-3-642-24550-3_29
+
+### 6.2 SLOs and tail latency as percentiles
+
+What to add:
+- Define latency SLOs as percentiles (p95/p99) for TTFT and cancellation, and
+  treat worst-case latency as a first-class design target.
+
+Why it matters:
+- Interactive systems feel "broken" because of tail latency; interrupts and
+  budgets are the mitigation.
+
+Source anchors:
+- Dean & Barroso, "The Tail at Scale" (CACM 2013).
+  DOI: https://doi.org/10.1145/2408776.2408794
+- Li et al., "Tales of the Tail" (SoCC 2014).
+  DOI: https://doi.org/10.1145/2670979.2670988
 
 ### 6.3 LLM serving as OS-style memory management
 
@@ -219,27 +221,27 @@ What to add:
   memory and for schedulers that can preempt requests.
 
 Why it matters:
-- Supports the "LLM calls as interrupts" framing and the utilization reports
-  as a principled systems approach.
+- Supports the "LLM calls as interrupts" framing and utilization reports as a
+  principled systems approach.
 
 Source anchors:
-- vLLM / PagedAttention paper: https://arxiv.org/abs/2309.06180
+- PagedAttention / vLLM paper (arXiv 2023).
+  DOI: https://doi.org/10.48550/arXiv.2309.06180
 
 ### 6.4 Capability security + reference monitor lineage
 
 What to add:
-- Explicitly describe Tool Capability API + Network Gate as a reference monitor
-  (complete mediation, tamper resistance, small TCB) with capability systems
-  as the OS lineage.
+- Describe Tool Capability API + Network Gate as a reference monitor:
+  complete mediation, tamper resistance, and a small trusted core.
 
 Why it matters:
-- Makes "no ambient permissions" academically legible.
+- Makes "no ambient permissions" academically legible and historically grounded.
 
 Source anchors:
-- Anderson, "Computer Security Technology Planning Study" (reference monitor):
-  https://csrc.nist.rip/publications/history/ande72.pdf
-- Capsicum capability mode (practical UNIX capabilities):
-  https://www.usenix.org/legacy/event/sec10/tech/full_papers/Watson.pdf
+- Anderson, "Computer Security Technology Planning Study" (ESD-TR-73-51).
+  PDF: https://csrc.nist.rip/publications/history/ande72.pdf
+- Watson et al., "Capsicum: Practical Capabilities for UNIX" (USENIX Sec 2010).
+  PDF: https://www.usenix.org/legacy/event/sec10/tech/full_papers/Watson.pdf
 
 ### 6.5 Provenance standardization for receipts
 
@@ -248,11 +250,12 @@ What to add:
   attribution).
 
 Why it matters:
-- Makes receipts interoperable and gives established terminology for audit
-  and traceability.
+- Makes receipts interoperable and gives standard terminology for audit and
+  traceability.
 
 Source anchors:
-- W3C PROV-DM: https://www.w3.org/TR/prov-dm/
+- W3C PROV-DM (W3C Recommendation).
+  https://www.w3.org/TR/prov-dm/
 
 ### 6.6 Tamper-evident audit logs
 
@@ -265,23 +268,21 @@ Why it matters:
   existence.
 
 Source anchors:
-- RFC 6962 (Certificate Transparency): https://www.rfc-editor.org/rfc/rfc6962
+- RFC 6962 (Certificate Transparency).
+  https://www.rfc-editor.org/rfc/rfc6962
 
-### 6.7 Human-AI interaction and mixed-initiative control
+### 6.7 Human-AI interaction guidelines
 
 What to add:
 - An interaction contract: show progress, allow correction/undo, communicate
   uncertainty, request approval at the right moments, keep user in control.
 
 Why it matters:
-- Matches Action Cards + approvals + receipts and provides a research-backed UX
-  rubric.
+- Provides a peer-reviewed UX rubric for Action Cards, approvals, and receipts.
 
 Source anchors:
-- Amershi et al., "Guidelines for Human-AI Interaction":
-  https://dl.acm.org/doi/10.1145/3290605.3300233
-- Horvitz, "Mixed-initiative user interfaces":
-  https://www.microsoft.com/en-us/research/publication/mixed-initiative-user-interfaces/
+- Amershi et al., "Guidelines for Human-AI Interaction" (CHI 2019).
+  DOI: https://doi.org/10.1145/3290605.3300233
 
 ### 6.8 Evaluation discipline for RAG and hallucination
 
@@ -291,13 +292,15 @@ What to add:
   risk as an evaluated property.
 
 Why it matters:
-- Strengthens the "measured routing improvements" claim and makes status-honest
-  progress quantifiable.
+- Strengthens "measured routing improvements" with explicit methodology.
 
 Source anchors:
-- RAG paper: https://arxiv.org/abs/2005.11401
-- RAGAS eval framework: https://arxiv.org/abs/2309.15217
-- Hallucination survey: https://arxiv.org/abs/2311.05232
+- Lewis et al., "Retrieval-Augmented Generation" (arXiv 2020).
+  DOI: https://doi.org/10.48550/arXiv.2005.11401
+- Es et al., "RAGAS" (arXiv 2023).
+  DOI: https://doi.org/10.48550/arXiv.2309.15217
+- Ji et al., "Survey of Hallucination in Natural Language Generation" (arXiv 2023).
+  DOI: https://doi.org/10.48550/arXiv.2311.05232
 
 ### 6.9 Trustworthiness governance
 
@@ -309,7 +312,8 @@ Why it matters:
 - Provides a compliance-ready narrative without overstating regulatory status.
 
 Source anchors:
-- NIST AI RMF 1.0: https://nvlpubs.nist.gov/nistpubs/ai/nist.ai.100-1.pdf
+- NIST AI RMF 1.0 (NIST standard).
+  https://nvlpubs.nist.gov/nistpubs/ai/nist.ai.100-1.pdf
 
 ### 6.10 Privacy by design (PbD)
 
@@ -318,10 +322,11 @@ What to add:
   default, data minimization, end-to-end lifecycle protection).
 
 Why it matters:
-- Makes the confinement story legible to policy and privacy audiences.
+- Makes the confinement story legible to privacy and policy audiences.
 
 Source anchors:
-- Cavoukian, "Privacy by Design": https://www.ipc.on.ca/wp-content/uploads/Resources/7foundationalprinciples.pdf
+- Cavoukian, "Privacy by Design" (foundational principles).
+  https://www.ipc.on.ca/wp-content/uploads/Resources/7foundationalprinciples.pdf
 
 ### 6.11 Proactivity as mixed-initiative control
 
@@ -335,8 +340,8 @@ Why it matters:
   with user control.
 
 Source anchors:
-- Horvitz, "Principles of Mixed-Initiative User Interfaces":
-  https://www.microsoft.com/en-us/research/publication/principles-mixed-initiative-user-interfaces/
+- Horvitz, "Principles of Mixed-Initiative User Interfaces" (CHI 1999).
+  DOI: https://doi.org/10.1145/302979.303030
 
 ### 6.12 Interruption management (when to interrupt, defer, bundle)
 
@@ -349,10 +354,10 @@ Why it matters:
 - A proactive operator that interrupts at the wrong time is less productive.
 
 Source anchors:
-- Horvitz, "Learning and Reasoning about Interruption":
-  https://erichorvitz.com/iw.pdf
-- Horvitz, "BusyBody" (cost of interruption models):
-  https://www.interruptions.net/literature/Horvitz-CSCW04-p507-horvitz.pdf
+- Horvitz & Apacible, "Learning and Reasoning about Interruption" (ICMI 2003).
+  DOI: https://doi.org/10.1145/958432.958440
+- Horvitz, Koch, Apacible, "BusyBody" (CSCW 2004).
+  PDF: https://interruptions.net/literature/Horvitz-CSCW04-p507-horvitz.pdf
 
 ### 6.13 Overload and queueing discipline
 
@@ -365,10 +370,8 @@ Why it matters:
   latency collapses.
 
 Source anchors:
-- Little's Law (queueing fundamentals):
-  https://web.eng.ucsd.edu/~massimo/ECE158A/Handouts_files/Little.pdf
-- "The Tail at Scale" (tail latency in large systems):
-  https://research.google/pubs/the-tail-at-scale/
+- Little, "A Proof for the Queueing Formula: L = lambda W" (Operations Research, 1961).
+  DOI: https://doi.org/10.1287/opre.9.3.383
 
 ### 6.14 End-to-end arguments (where to enforce guarantees)
 
@@ -378,12 +381,12 @@ What to add:
   best-effort.
 
 Why it matters:
-- End-to-end arguments justify putting enforcement at the right boundary:
-  tool syscalls, network gate, and Council mediation.
+- End-to-end arguments justify enforcement at the right boundary: tool
+  syscalls, network gate, and Council mediation.
 
 Source anchors:
-- Saltzer, Reed, Clark, "End-to-End Arguments in System Design":
-  https://web.mit.edu/saltzer/www/publications/endtoend/endtoend.pdf
+- Saltzer, Reed, Clark, "End-to-End Arguments in System Design" (ACM TOCS, 1984).
+  DOI: https://doi.org/10.1145/357401.357402
 
 ### 6.15 Secure design principles checklist
 
@@ -392,12 +395,13 @@ What to add:
   separation of privilege, and psychological acceptability.
 
 Why it matters:
-- Provides a canonical security-design lens that maps directly to capability
-  tokens, audit receipts, and user-visible approvals.
+- Provides a canonical security-design lens that maps to capability tokens,
+  audit receipts, and user-visible approvals.
 
 Source anchors:
-- Saltzer & Schroeder, "The Protection of Information in Computer Systems":
-  https://www.cs.virginia.edu/~evans/cs551/saltzer/
+- Saltzer & Schroeder, "The Protection of Information in Computer Systems"
+  (Proceedings of the IEEE, 1975).
+  DOI: https://doi.org/10.1109/PROC.1975.9939
 
 ### 6.16 Usability heuristics for an operator cockpit
 
@@ -406,8 +410,8 @@ What to add:
   error prevention, and recognition over recall.
 
 Why it matters:
-- Grounds Action Cards and approvals in widely recognized usability practice.
+- Grounds Action Cards and approvals in a peer-reviewed usability method.
 
 Source anchors:
-- Nielsen Norman Group, "10 Usability Heuristics":
-  https://www.nngroup.com/articles/ten-usability-heuristics/
+- Nielsen & Molich, "Heuristic Evaluation of User Interfaces" (CHI 1990).
+  DOI: https://doi.org/10.1145/97243.97281
