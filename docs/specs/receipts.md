@@ -23,16 +23,15 @@ default and verifiable via hash chaining.
 - output_hash
 
 ## Upstream
-- [System map](../00-system-map.md)
 - [Tool capability API](./tool-capability-api.md)
 
 ## Downstream
-- [Receipts hub](../receipts/00-index.md)
-- [Product surfaces hub](../hubs/product-surfaces.md)
+- [Receipt schema](../receipts/receipt-schema.md)
+- [Traceability](../TRACEABILITY.md)
 
 ## Adjacent
 - [Network gate and anonymity](./network-gate-and-anonymity.md)
-- [Governance hub](../hubs/governance.md)
+- [System map](../00-system-map.md)
 
 ## Conformance tests
 - any mediated action must emit exactly one receipt

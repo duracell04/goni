@@ -6,17 +6,16 @@ Status: Specified only / roadmap
 Defines which planes and objects may replicate across devices.
 
 ## Upstream
-- [System map](../00-system-map.md)
-- [Privacy](../privacy.md)
 - [Spine and IDs](../../software/50-data/20-spine-and-ids.md)
+- [Privacy and text confinement](../../software/50-data/40-privacy-and-text-confinement.md)
 
 ## Downstream
-- [Product surfaces hub](../hubs/product-surfaces.md)
-- [Software components index](../../software/30-components/00-index.md)
+- [Mesh and WireGuard](../../software/30-components/mesh-and-wireguard.md)
 
 ## Adjacent
 - [Network gate and anonymity](./network-gate-and-anonymity.md)
-- [Governance hub](../hubs/governance.md)
+- [CRDT: audit](./crdt/audit.md)
+- [System map](../00-system-map.md)
 
 ## Conformance tests
 - forbidden planes must not sync

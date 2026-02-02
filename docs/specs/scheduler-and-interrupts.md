@@ -84,18 +84,19 @@ Interrupt decisions and solver wakes are recorded with:
 - [itcr.md](./itcr.md)
 
 ## 8. Upstream
-- [System map](../00-system-map.md)
-- [Planes hub](../hubs/planes.md)
 - [Job contract](./job.md)
+- [Latent state contract](./latent-state-contract.md)
+- [Tool capability API](./tool-capability-api.md)
 
 ## 9. Downstream
-- [Software components index](../../software/30-components/00-index.md)
-- [Product surfaces hub](../hubs/product-surfaces.md)
+- [Orchestrator](../../software/30-components/orchestrator.md)
+- [LLM runtime](../../software/30-components/llm-runtime.md)
+- [ITCR](./itcr.md)
 
 ## 10. Adjacent
-- [ITCR](./itcr.md)
 - [Agent definition](./agent-definition.md)
-- [Tool capability API](./tool-capability-api.md)
+- [Symbolic substrate](./symbolic-substrate.md)
+- [System map](../00-system-map.md)
 
 ## Conformance tests
 - TBD: add tests for this spec.

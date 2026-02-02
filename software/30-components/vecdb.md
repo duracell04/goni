@@ -120,7 +120,6 @@ ebuild).
 - [Privacy and text confinement](../50-data/40-privacy-and-text-confinement.md)
 
 ## 7. Downstream
-- [Product surfaces hub](../../docs/hubs/product-surfaces.md)
 - [Latent predictor](./latent-predictor.md)
 
 ## 8. Adjacent

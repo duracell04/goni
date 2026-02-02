@@ -150,11 +150,12 @@ The Orchestrator spec here is the single-node kernel perspective; multi-node con
 - [Job contract](../../docs/specs/job.md)
 - [Scheduler and interrupts](../../docs/specs/scheduler-and-interrupts.md)
 - [Tool capability API](../../docs/specs/tool-capability-api.md)
+- [LLM runtime](./llm-runtime.md)
 
 ## 7. Downstream
-- [Product surfaces hub](../../docs/hubs/product-surfaces.md)
-- [Prototype catalog](../../prototype/00-index.md)
+- [API README](../../api/README.md)
+- [OpenAPI spec](../../api/openapi.yaml)
 
 ## 8. Adjacent
-- [LLM runtime](./llm-runtime.md)
 - [Network gate and anonymity](../../docs/specs/network-gate-and-anonymity.md)
+- [Receipts](../../docs/specs/receipts.md)

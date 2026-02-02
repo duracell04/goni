@@ -57,13 +57,12 @@ This file exists to document the intended multi-node story and to constrain futu
 
 ## 5. Upstream
 - [OS and base image](./os-and-base-image.md)
-- [Network gate and anonymity](../../docs/specs/network-gate-and-anonymity.md)
 - [Sync policies](../../docs/specs/sync-policies.md)
 
 ## 6. Downstream
-- [Security overview](../../security/00-overview.md)
-- [Runtime overview](../../runtime/00-overview.md)
+- [Network gate and anonymity](../../docs/specs/network-gate-and-anonymity.md)
+- [Remote LLM Architecture](../../docs/remote-llm-architecture.md)
 
 ## 7. Adjacent
-- [Orchestrator](./orchestrator.md)
-- [LLM runtime](./llm-runtime.md)
+- [Security overview](../../security/00-overview.md)
+- [Runtime overview](../../runtime/00-overview.md)

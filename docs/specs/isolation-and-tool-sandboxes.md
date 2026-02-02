@@ -11,18 +11,17 @@ Tools run with minimal authority and no ambient network.
 - outbound network denied unless via egress gate
 
 ## Upstream
-- [System map](../00-system-map.md)
 - [Tool capability API](./tool-capability-api.md)
 - [Network gate and anonymity](./network-gate-and-anonymity.md)
+- [Privacy and text confinement](../../software/50-data/40-privacy-and-text-confinement.md)
 
 ## Downstream
-- [Runtime overview](../../runtime/00-overview.md)
-- [Security overview](../../security/00-overview.md)
+- [OS and base image](../../software/30-components/os-and-base-image.md)
+- [Sandbox README](../../runtime/sandbox/README.md)
 
 ## Adjacent
 - [Receipts](./receipts.md)
 - [Threat model](../threat-model.md)
-- [Governance hub](../hubs/governance.md)
 
 ## Conformance tests
 - direct socket use from tool sandbox must fail

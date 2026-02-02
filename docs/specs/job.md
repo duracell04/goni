@@ -18,15 +18,15 @@ Defines JobSpec and JobState for scheduler-visible work.
 - queued | running | preempted | cancelled | completed
 
 ## Upstream
-- [System map](../00-system-map.md)
-- [Planes hub](../hubs/planes.md)
+- [Tool capability API](./tool-capability-api.md)
 
 ## Downstream
 - [Scheduler and interrupts](./scheduler-and-interrupts.md)
 - [Orchestrator](../../software/30-components/orchestrator.md)
 
 ## Adjacent
-- [Tool capability API](./tool-capability-api.md)
+- [Agent manifest](./agent-manifest.md)
+- [System map](../00-system-map.md)
 
 ## Conformance tests
 - invalid JobSpec must be rejected

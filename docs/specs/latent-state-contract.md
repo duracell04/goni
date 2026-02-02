@@ -93,20 +93,18 @@ See `docs/specs/tool-capability-api.md` for the audit record envelope.
 - [symbolic-substrate.md](./symbolic-substrate.md)
 
 ## 8. Upstream
-- [System map](../00-system-map.md)
-- [Planes hub](../hubs/planes.md)
 - [Schema MVP](../../software/50-data/51-schemas-mvp.md)
 - [Schema DSL and macros](../../software/50-data/53-schema-dsl-and-macros.md)
+- [Symbolic substrate](./symbolic-substrate.md)
 
 ## 9. Downstream
-- [Software components index](../../software/30-components/00-index.md)
-- [Product surfaces hub](../hubs/product-surfaces.md)
-
-## 10. Adjacent
 - [Agent definition](./agent-definition.md)
 - [Tool capability API](./tool-capability-api.md)
-- [Symbolic substrate](./symbolic-substrate.md)
+- [Latent predictor](../../software/30-components/latent-predictor.md)
+
+## 10. Adjacent
 - [Scheduler and interrupts](./scheduler-and-interrupts.md)
+- [System map](../00-system-map.md)
 
 ## Conformance tests
 - TBD: add tests for this spec.

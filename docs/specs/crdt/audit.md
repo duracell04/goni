@@ -6,13 +6,13 @@ This file defines merge semantics for audit artifacts.
 
 
 ## Upstream
-- [System map](../../00-system-map.md)
 - [Schema MVP](../../../software/50-data/51-schemas-mvp.md)
 
 ## Downstream
-- [Software components index](../../../software/30-components/00-index.md)
+- [Sync policies](../sync-policies.md)
+- [Mesh and WireGuard](../../../software/30-components/mesh-and-wireguard.md)
 
 ## Adjacent
-- [Receipts](../receipts.md)
 - [CRDT: decisions](./decisions.md)
 - [CRDT: notes](./notes.md)
+- [System map](../../00-system-map.md)

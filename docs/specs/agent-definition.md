@@ -57,18 +57,18 @@ These fields are required on tool calls, state deltas, and commits.
 - [itcr.md](./itcr.md)
 
 ## 6. Upstream
-- [System map](../00-system-map.md)
 - [Latent state contract](./latent-state-contract.md)
-- [Tool capability API](./tool-capability-api.md)
+- [Scheduler and interrupts](./scheduler-and-interrupts.md)
 
 ## 7. Downstream
 - [Agent manifest](./agent-manifest.md)
-- [Software components index](../../software/30-components/00-index.md)
+- [Tool capability API](./tool-capability-api.md)
+- [Receipts](./receipts.md)
 
 ## 8. Adjacent
-- [Scheduler and interrupts](./scheduler-and-interrupts.md)
-- [ITCR](./itcr.md)
 - [Symbolic substrate](./symbolic-substrate.md)
+- [ITCR](./itcr.md)
+- [System map](../00-system-map.md)
 
 ## Conformance tests
 - TBD: add tests for this spec.
