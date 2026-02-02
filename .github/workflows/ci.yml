@@ -27,7 +27,7 @@ jobs:
 
           PATTERN='\b(?:Llama|MiniLM|Ryzen|Intel|NVIDIA|Blackwell|Strix|Halo|Xeon|GN100|GPU|CPU|CUDA|cuDNN)\b|\b\d+(?:\.\d+)?\s*(?:W|dB|dBA|GHz|GB|TB|TOPS|cm|mm|L)\b|\b\d+\s*-\s*\d+\s*B\b'
 
-          ADDED=$(git diff --unified=0 "${BASE_REF}"...HEAD -- README.md docs/goni-story.md docs/goni-whitepaper.md \
+          ADDED=$(git diff --unified=0 "${BASE_REF}"...HEAD -- README.md blueprint/docs/goni-story.md blueprint/docs/goni-whitepaper.md \
             | grep '^+' \
             | grep -Ev '^\+\+\+|^@@' \
             | grep -E "$PATTERN" || true)
@@ -43,7 +43,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: software/kernel
+        working-directory: blueprint/software/kernel
     steps:
       - uses: actions/checkout@v4
       - uses: actions-rs/toolchain@v1
@@ -65,13 +65,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Validate truth map
-        run: python scripts/validate_truth_map.py
+        run: python blueprint/scripts/validate_truth_map.py
       - name: Generate agents
-        run: python scripts/generate_agents.py
+        run: python blueprint/scripts/generate_agents.py
       - name: Ensure no diff
         run: git diff --exit-code
       - name: TXT lint
-        run: bash scripts/txt_lint.sh
+        run: bash blueprint/scripts/txt_lint.sh
 
   bench_smoke:
     needs: guardrails
@@ -79,14 +79,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Bench smoke
-        run: python goni-lab/goni_lab.py bench --scenario goni-lab/scenarios/mixed.json
+        run: python blueprint/goni-lab/goni_lab.py bench --scenario blueprint/goni-lab/scenarios/mixed.json
 
   demo_smoke:
     needs: rust
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: software/kernel
+        working-directory: blueprint/software/kernel
     steps:
       - uses: actions/checkout@v4
       - uses: actions-rs/toolchain@v1

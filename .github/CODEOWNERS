@@ -2,5 +2,5 @@
 * @duracell04
 
 # Kernel and policy
-/software/kernel/ @duracell04
-/docs/specs/ @duracell04
+/blueprint/software/kernel/ @duracell04
+/blueprint/docs/specs/ @duracell04

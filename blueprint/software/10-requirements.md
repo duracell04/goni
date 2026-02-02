@@ -1,0 +1,302 @@
+﻿# Goni Software Requirements (MVP)
+DOC-ID: SREQ-01
+
+> This document describes what the **final Goni product** should be able to do from a software and system-behaviour perspective.  
+> It is intentionally technology-agnostic and avoids naming specific frameworks, vendors, or libraries.
+
+---
+
+## 1. Purpose
+
+The Goni software stack turns the hardware node into:
+
+- a **local-first personal AI assistant**,
+- a **data hub** for the user’s own documents, email, and other sources,
+- a **cluster node** that can cooperate with other Goni nodes,
+- a **gateway** to external AI services, used only when they add real value.
+
+The software must balance **performance**, **privacy**, and **simplicity**.
+
+---
+
+## 2. Core Capabilities
+
+At a minimum, a single Goni node should:
+
+1. Provide an **interactive conversational assistant** with:
+   - natural language chat,
+   - optional voice input and output (when peripherals are available),
+   - memory of context within a session.
+
+2. Support **retrieval-augmented generation (RAG)** over:
+   - local documents and notes,
+   - emails and calendar entries (if connected),
+   - other user-approved data sources.
+
+3. Offer a **coding assistant** behaviour:
+   - explanation of code,
+   - basic code generation,
+   - summarisation of diffs / pull requests,
+   - without requiring external cloud access for most tasks.
+
+4. Perform **lightweight model personalisation**:
+   - training small adapters or similar techniques on user data,
+   - within the compute limits of the device,
+   - without full retraining of large base models.
+
+5. Expose a **network API** suitable for:
+   - integration with local tools (editors, terminals, browsers),
+   - remote access from the user’s other devices (laptop, phone, tablet).
+
+---
+
+## 2.1 Product Requirements Inferred from Reference Systems (Olares)
+
+These requirements are derived from reference product patterns (see
+`blueprint/docs/reference-products/olares.md`) and are treated as enforceable behavior.
+
+- **R-UX-OWNERSHIP:** Default local-first; network access is an explicit, user-granted
+  capability with visible policy and logs.
+- **R-APP-ECOSYSTEM:** Agents are installable packages with manifests, permissions,
+  and budgets; install/uninstall is first-class.
+- **R-IDENTITY-SSO:** A single identity plane governs UI, agents, and tools; no
+  per-app auth silos.
+- **R-REMOTE-PRESENCE:** Secure remote access is a first-class feature with safe
+  defaults and clear status.
+- **R-ADMIN-OBSERVABILITY:** Provide a dashboard for node state, agents,
+  permissions, and resource budgets.
+
+
+## 3. Local AI Behaviour
+
+### 3.1 Local-First Policy
+
+- The system should prefer **local model inference** whenever reasonably possible, for:
+  - chat and reasoning,
+  - summarisation,
+  - coding help,
+  - RAG responses.
+
+- Local models should be:
+  - Loaded, managed, and swapped as needed within the available hardware capacity.
+  - Configurable (e.g. user can opt into a “bigger but slower” local model or a “smaller but faster” one).
+
+### 3.2 Resource Awareness
+
+- The system must:
+  - Monitor its own CPU, memory, storage, and accelerator utilisation.
+  - Avoid overloading the device to the point of becoming unresponsive.
+  - Degrade gracefully under high load (e.g. queue tasks, slow down background jobs).
+  - Provide a **deterministic inference mode** for audit/self-loop workloads:
+    - temperature = 0, fixed seed, batch size 1, no continuous batching.
+    - single worker / single thread (or CPU-only fallback) available even if slower.
+    - record blueprint/hardware/driver profile with runs so outputs can be reproduced.
+  - Treat transformer decoding and tool loops as **memory-bandwidth bound** by
+    default; scheduling should prioritize bandwidth per effective token, not
+    peak TOPS/FLOPS.
+  - Optimize **KV-cache residency and access patterns** (paged/segmented layouts)
+    as a first-class performance constraint.
+  - Route memory-bound stages to the highest-bandwidth path available (GPU/iGPU/UMA CPU)
+    and avoid avoidable PCIe shuttling of KV and latent state.
+  - Respect accelerator **shape constraints**: NPUs are used only when workloads
+    fit fixed-shape or bucketed regimes; otherwise route to CPU/iGPU.
+
+### 3.3 Memory & Cognition
+
+- The node should treat **long-term memory as a separate plane** with explicit lifecycle:
+  - working/session context is transient,
+  - episodic history is distilled over time,
+  - semantic facts persist with decay and can be pinned,
+  - procedural knowledge is versioned.
+- The Memory/Context planes must implement **virtual context management** (MemGPT-style):
+  - prompt/context window as RAM, Arrow/vector/graph stores as Disk,
+  - explicit paging/syscalls (`MEM_READ`, `MEM_WRITE`, `MEM_SUMMARIZE`, `MEM_FORGET`) for moving data across tiers,
+  - LLM engines stay stateless; all long-lived state flows through the Memory Plane.
+- The Control Plane must run a **consolidation loop** (Observation → Reflection → Planning):
+  - ingest raw events into episodic memory,
+  - distill reflections/long-term facts periodically (e.g. nightly/weekly),
+  - plan/schedule actions using both current state and reflections.
+- The system must support **local-only long-term memory** by default; cloud/council access is limited to distilled facts or session context unless explicitly allowed.
+- To avoid **cognitive offloading debt**, default UX for learning/creative flows should:
+  - prompt user effort (outline/selection) before full generation,
+  - attribute which parts were AI- vs user-authored,
+  - expose which memories were retrieved and why (traceable recall).
+- **Supported minimum vs reference build:** the software should run on lower-memory hardware (e.g. **64 GB unified**) by tightening context budgets, model sizes, and cache policies while preserving behaviour. However, the **product reference build** for the MVP story is **128 GB unified memory** (see `blueprint/hardware/90-decisions.md` ADR-002).
+
+---
+
+
+### 3.4 Continuous Cognition and Degradation Policy
+
+- The system must maintain a lightweight heartbeat loop with configurable cadence (for example 1-10 Hz).
+- The decoder wake path must use hysteresis and a wake budget (max wakes per minute, minimum cooldown).
+- Encoder graphs should be pre-warmed and shape-bounded; the steady-state loop must not trigger compilation.
+- Observation sources must support gating; prefer event-driven hooks over constant polling.
+- Persistent writes must be governed by a write budget controller (rate limits, significance thresholds, deferred compaction).
+- State persistence should follow an LSM-style pattern (in-memory buffers, sequential flushes,
+  compaction only under favorable conditions like plugged-in + cool) to reduce write amplification.
+- Degradation modes must be explicit and configurable: Eco, Normal, Boost, Thermal throttle, Offline-safe.
+
+### 3.5 Continuous cognition envelope (hardware-linked)
+
+- Continuous cognition (encoders + predictor) must fit a steady-state power and
+  thermal budget; heavy solvers are interrupt-only.
+- Thermal scheduling should clamp compute bursts near the efficiency frontier
+  of DVFS curves, prioritizing sustained performance over short peaks.
+- The scheduler must enforce wake hysteresis and a maximum solver wake rate
+  per policy.
+- SSD endurance is a first-class constraint; write amplification must be
+  mitigated via RAM-first deltas, significance thresholds, and deferred
+  compaction.
+- Prefer UMA/shared-memory paths; avoid PCIe shuttling of latent state. If a
+  discrete GPU is used, fallback rules must keep continuous cognition off dGPU
+  by default.
+- Control-plane arbitration should use zero-copy, schema-driven interchange
+  (Arrow/FlatBuffers/Cap'n Proto); avoid JSON in hot paths between CPU and accelerators.
+- Sensors must be gated and default-off; each source requires explicit policy
+  enablement.
+- Crash consistency is mandatory: state must be replayable from checkpoints +
+  append-only logs; journaling is required for durable records.
+
+## 4. Cloud Integration Requirements
+
+### 4.1 Controlled External Calls
+
+- The system may use external AI services to:
+  - handle tasks that are too difficult or large for local models,
+  - obtain web search results or live data,
+  - provide a second opinion on critical content.
+
+- All such calls must be:
+  - **Optional** – users can disable cloud usage entirely.
+  - **Transparent** – it should be clear when an external service is used.
+  - **Budgeted** – the system must enforce configurable ceilings on external usage.
+
+### 4.2 No Hidden Data Exfiltration
+
+- No user data or model outputs should be sent externally without:
+  - clear policy,
+  - explicit user consent, and
+  - a record that can be inspected.
+
+---
+
+## 5. Mesh / Multi-Node Behaviour
+
+### 5.1 Single Logical Cluster
+
+- Multiple Goni nodes on a network should behave as one **logical system**:
+  - A user can connect to any node and still access:
+    - their models,
+    - their data,
+    - their conversation history.
+
+- The cluster should be able to:
+  - distribute workloads across nodes,
+  - assign latency-sensitive tasks appropriately,
+  - schedule longer-running or heavy jobs on less busy nodes.
+
+### 5.2 Simple Node Lifecycle
+
+- Joining a cluster:
+  - A new node must be joinable via a simple setup flow (e.g. pasting a join token or scanning a code).
+- Leaving or failing:
+  - If a node is shut down or fails, critical user data should not be lost.
+  - The system should handle loss of a node gracefully, reducing capacity but not breaking basic functionality.
+
+---
+
+## 6. Security & Privacy Requirements
+
+### 6.1 Data Ownership
+
+- All user data and derived artefacts (embeddings, model adapters, logs) stored locally should:
+  - remain under the user’s control,
+  - be exportable and backup-able in a documented way.
+
+### 6.2 Access Control
+
+- Goni must support:
+  - at least one **administrator** role per node/cluster,
+  - separate **user accounts** where appropriate (for shared households or teams),
+  - secure authentication mechanisms (passwords, optional hardware keys, etc.).
+
+### 6.3 Encryption and Secure Channels
+
+- The system should:
+  - offer **encrypted storage** for sensitive data (e.g. via disk encryption).
+  - use **encrypted communication channels** for:
+    - API calls,
+    - mesh traffic between nodes,
+    - remote access.
+
+### 6.4 Observability Without Surveillance
+
+- Logs should:
+  - be sufficient to diagnose issues and track resource usage,
+  - avoid storing unnecessary sensitive content in plain text.
+
+---
+
+## 7. User Experience & Management
+
+### 7.1 Setup Experience
+
+- On first power-up, the system should:
+  - be discoverable from a nearby device without requiring a monitor and keyboard,
+  - provide a short, guided setup in a browser or companion app,
+  - configure:
+    - administrator account,
+    - network settings,
+    - optional disk encryption,
+    - optional remote access.
+
+### 7.2 Everyday Interaction
+
+- The primary interaction channels should include:
+  - Web UI (chat, configuration, dashboards),
+  - API for integrations,
+  - Optional mobile and desktop clients.
+
+- Users should be able to:
+  - see what the system is currently doing (e.g. indexing, training, idle),
+  - view basic resource usage (e.g. "node is under heavy load, expect slower replies"),
+  - manage connected data sources (add/remove email accounts, storage locations, etc.).
+  - control **user-in-the-loop gates** for irreversible actions (send/move/transfer) and choose Socratic vs auto modes per surface.
+
+### 7.3 Updates
+
+- The system should:
+  - support regular, safe updates of the software stack,
+  - distinguish between:
+    - blueprint/security/bugfix updates,
+    - major feature or model updates,
+  - allow the user to choose update windows (e.g. “nightly”, “manual”).
+
+---
+
+## 8. Extensibility & Integrations
+
+- Goni should expose a **stable API** so that:
+  - third-party tools and scripts can call its AI capabilities,
+  - power users can automate workflows (e.g. CI, document pipelines).
+
+- The system should allow **adding new capabilities** over time:
+  - new local models,
+  - new connectors to data sources,
+  - new external AI services,
+  without requiring a full reinstall.
+
+---
+
+## 9. Explicit Non-Goals (Software MVP)
+
+For the MVP, Goni software is **not** intended to be:
+
+- A multi-tenant platform hosting unrelated users or organisations.
+- A general-purpose container hosting platform for arbitrary workloads.
+- A fully-fledged replacement for enterprise MLOps platforms.
+
+These may be future directions, but the MVP focuses on **one owner (or small team) per Goni cluster**, with a strong emphasis on local-first personal AI.
+
+

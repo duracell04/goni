@@ -34,10 +34,10 @@ Observe -> Distill -> Propose/Act -> Attach receipts -> Store memory.
 ## Repo layout (reader friendly)
 
 - README.md: this page.
-- src/: the blueprint and prototype index (start at src/README.md).
+- blueprint/: the blueprint and prototype index (start at blueprint/README.md).
 
 ## Learn more
 
-- Story: docs/goni-story.md
-- Glossary: docs/glossary.md
-- Full technical blueprint: src/README.md
+- Story: blueprint/docs/goni-story.md
+- Glossary: blueprint/docs/glossary.md
+- Full technical blueprint: blueprint/README.md
