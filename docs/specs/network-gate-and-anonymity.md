@@ -184,8 +184,23 @@ the user explicitly opts into verbose logging.
 - Latent State Contract: docs/specs/latent-state-contract.md
 - Remote LLM Architecture: docs/remote-llm-architecture.md
 
+## 12. Upstream
+- [System map](../00-system-map.md)
+- [Governance hub](../hubs/governance.md)
+- [Tool capability API](./tool-capability-api.md)
+
+## 13. Downstream
+- [Runtime overview](../../runtime/00-overview.md)
+- [Security overview](../../security/00-overview.md)
+
+## 14. Adjacent
+- [Receipts](./receipts.md)
+- [Isolation and tool sandboxes](./isolation-and-tool-sandboxes.md)
+- [Sync policies](./sync-policies.md)
+
 ## Conformance tests
 - TBD: add tests for this spec.
+
 
 
 

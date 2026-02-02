@@ -83,8 +83,23 @@ Interrupt decisions and solver wakes are recorded with:
 - [symbolic-substrate.md](./symbolic-substrate.md)
 - [itcr.md](./itcr.md)
 
+## 8. Upstream
+- [System map](../00-system-map.md)
+- [Planes hub](../hubs/planes.md)
+- [Job contract](./job.md)
+
+## 9. Downstream
+- [Software components index](../../software/30-components/00-index.md)
+- [Product surfaces hub](../hubs/product-surfaces.md)
+
+## 10. Adjacent
+- [ITCR](./itcr.md)
+- [Agent definition](./agent-definition.md)
+- [Tool capability API](./tool-capability-api.md)
+
 ## Conformance tests
 - TBD: add tests for this spec.
+
 
 
 

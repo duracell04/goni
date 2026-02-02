@@ -91,3 +91,16 @@ Decoder should accept:
 - Always-on components can be compact (encoders + predictor).
 - Decoder can be invoked only when output is needed.
 - Latent summaries reduce raw-text duplication and improve privacy boundaries.
+
+
+## Upstream
+- [Latent state contract](../../docs/specs/latent-state-contract.md)
+- [Symbolic substrate](../../docs/specs/symbolic-substrate.md)
+
+## Downstream
+- [Scheduler and interrupts](../../docs/specs/scheduler-and-interrupts.md)
+- [ITCR](../../docs/specs/itcr.md)
+
+## Adjacent
+- [Vector DB](./vecdb.md)
+- [LLM runtime](./llm-runtime.md)

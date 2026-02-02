@@ -1,6 +1,6 @@
-﻿# 99 – Mesh and WireGuard
+# 99 � Mesh and WireGuard
 
-Status: Future – out of scope for MVP  
+Status: Future � out of scope for MVP  
 Scope: Multi-node coordination & secure overlay (design placeholder)
 
 ---
@@ -37,9 +37,9 @@ When implemented:
 
 ## 3. Non-responsibilities
 
-- ❌ Intra-node scheduling (𝒦 still runs per node).  
-- ❌ Strong distributed consensus or transactions.  
-- ❌ Making 𝒜 (Arrow data) magically globally consistent; we accept eventual consistency at higher layers.
+- ? Intra-node scheduling (?? still runs per node).  
+- ? Strong distributed consensus or transactions.  
+- ? Making ?? (Arrow data) magically globally consistent; we accept eventual consistency at higher layers.
 
 ---
 
@@ -49,7 +49,21 @@ For the MVP / prototype:
 
 - There is **no mesh implementation**.
 - All traffic and scheduling remain strictly **local**.
-- 𝒦, 𝒳, 𝒜, 𝓔 must *not* assume mesh exists; they only see a single-node environment.
+- ??, ??, ??, ?? must *not* assume mesh exists; they only see a single-node environment.
 
 This file exists to document the intended multi-node story and to constrain future design, not to mandate any implementation in v1.
 
+
+
+## 5. Upstream
+- [OS and base image](./os-and-base-image.md)
+- [Network gate and anonymity](../../docs/specs/network-gate-and-anonymity.md)
+- [Sync policies](../../docs/specs/sync-policies.md)
+
+## 6. Downstream
+- [Security overview](../../security/00-overview.md)
+- [Runtime overview](../../runtime/00-overview.md)
+
+## 7. Adjacent
+- [Orchestrator](./orchestrator.md)
+- [LLM runtime](./llm-runtime.md)

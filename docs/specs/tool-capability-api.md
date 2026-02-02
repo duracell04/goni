@@ -81,8 +81,25 @@ Tokens are immutable and referenced by ID in tool calls.
 - [scheduler-and-interrupts.md](./scheduler-and-interrupts.md)
 - [symbolic-substrate.md](./symbolic-substrate.md)
 
+## 8. Upstream
+- [System map](../00-system-map.md)
+- [Symbolic substrate](./symbolic-substrate.md)
+- [Schema MVP](../../software/50-data/51-schemas-mvp.md)
+
+## 9. Downstream
+- [Runtime overview](../../runtime/00-overview.md)
+- [Software components index](../../software/30-components/00-index.md)
+
+## 10. Adjacent
+- [Agent definition](./agent-definition.md)
+- [Receipts](./receipts.md)
+- [Network gate and anonymity](./network-gate-and-anonymity.md)
+- [Isolation and tool sandboxes](./isolation-and-tool-sandboxes.md)
+- [Latent state contract](./latent-state-contract.md)
+
 ## Conformance tests
 - TBD: add tests for this spec.
+
 
 
 

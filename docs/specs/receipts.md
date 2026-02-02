@@ -22,8 +22,21 @@ default and verifiable via hash chaining.
 - input_hash
 - output_hash
 
+## Upstream
+- [System map](../00-system-map.md)
+- [Tool capability API](./tool-capability-api.md)
+
+## Downstream
+- [Receipts hub](../receipts/00-index.md)
+- [Product surfaces hub](../hubs/product-surfaces.md)
+
+## Adjacent
+- [Network gate and anonymity](./network-gate-and-anonymity.md)
+- [Governance hub](../hubs/governance.md)
+
 ## Conformance tests
 - any mediated action must emit exactly one receipt
 - receipts must form a valid hash chain
 - receipts must omit raw content by default
+
 

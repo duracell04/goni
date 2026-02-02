@@ -112,8 +112,23 @@ Outputs include:
 - docs/specs/tool-capability-api.md
 - docs/specs/latent-state-contract.md
 
+## 9. Upstream
+- [System map](../00-system-map.md)
+- [Scheduler and interrupts](./scheduler-and-interrupts.md)
+- [Symbolic substrate](./symbolic-substrate.md)
+- [Latent state contract](./latent-state-contract.md)
+
+## 10. Downstream
+- [Software components index](../../software/30-components/00-index.md)
+- [Runtime overview](../../runtime/00-overview.md)
+
+## 11. Adjacent
+- [Agent definition](./agent-definition.md)
+- [Tool capability API](./tool-capability-api.md)
+
 ## Conformance tests
 - TBD: add tests for this spec.
+
 
 
 

@@ -1,19 +1,19 @@
-﻿# 80 – LLM Runtime
+# 80 � LLM Runtime
 
-Status: MVP – unified local inference abstraction  
+Status: MVP � unified local inference abstraction  
 Scope: Single node; multiple models & backends via common API
 
 ---
 
 ## 1. Role in the system
 
-The **LLM Runtime** is the Execution Plane (𝓔) component that:
+The **LLM Runtime** is the Execution Plane (??) component that:
 
 - Executes model inference for a given PromptPlan,
 - Abstracts over concrete model backends (llama.cpp, vLLM, etc.),
-- Exposes capabilities and utilisation back to the Control Plane (𝒦).
+- Exposes capabilities and utilisation back to the Control Plane (??).
 
-It is the only component allowed to “speak” to GPUs/NPUs and LLM backends directly.
+It is the only component allowed to �speak� to GPUs/NPUs and LLM backends directly.
 
 ---
 
@@ -33,11 +33,11 @@ It is the only component allowed to “speak” to GPUs/NPUs and LLM backends di
     - KV-cache limits and paging mode (contiguous vs segmented).
 
 - **Utilisation reporting**
-  - Track and expose current load (per model and per device) to scheduler / resman in 𝒦.
+  - Track and expose current load (per model and per device) to scheduler / resman in ??.
   - Expose effective bandwidth and memory pressure signals for routing decisions.
 
 - **Cancellation / preemption hooks**
-  - Support cooperative cancellation so 𝒦 can abort or delay jobs.
+  - Support cooperative cancellation so ?? can abort or delay jobs.
 
 - **Wake and warm-state control**
   - Report cold-start latency and warm state per model/device.
@@ -46,9 +46,9 @@ It is the only component allowed to “speak” to GPUs/NPUs and LLM backends di
 
 ### 2.2 Non-responsibilities
 
-- ❌ Choosing which model tier to use (router).  
-- ❌ Selecting RAG context (context selector).  
-- ❌ Managing global queueing or admission control.
+- ? Choosing which model tier to use (router).  
+- ? Selecting RAG context (context selector).  
+- ? Managing global queueing or admission control.
 
 ---
 
@@ -98,14 +98,14 @@ pub trait LlmRuntime {
 
 Concrete engines (llama.cpp, vLLM, etc.) implement LlmRuntime:
 
-* MVP: 1–2 backends is enough (e.g. local small/large model).
+* MVP: 1�2 backends is enough (e.g. local small/large model).
 
 ---
 
 ## 4. Invariants & performance targets
 
 * **Capability invariant**
-  ModelCapabilities must approximate real behaviour well enough that 𝒦's scheduling assumptions (capacity region) are not violated.
+  ModelCapabilities must approximate real behaviour well enough that ??'s scheduling assumptions (capacity region) are not violated.
 
 * **Shape-compatibility invariant**
   If a request's shape falls outside the backend's supported buckets, the runtime
@@ -119,7 +119,7 @@ Concrete engines (llama.cpp, vLLM, etc.) implement LlmRuntime:
   Time-to-first-token after a decoder wake must stay within the configured SLO; steady-state operation must not trigger implicit compilation or graph warmup.
 
 * **Preemption invariant (soft)**
-  Generation checks for cancellation at least once per decoding step (target preemption latency ≪ human-visible 100 ms).
+  Generation checks for cancellation at least once per decoding step (target preemption latency � human-visible 100 ms).
 
 * **Streaming invariant**
   First token latency for interactive jobs stays within configured SLO (e.g. p99 < 1.0 s on reference hardware).
@@ -133,12 +133,25 @@ Concrete engines (llama.cpp, vLLM, etc.) implement LlmRuntime:
 
 **MVP**
 
-* 1–2 local models (goni-small, goni-large).
+* 1�2 local models (goni-small, goni-large).
 * Single device type per session.
 * No cross-session KV reuse beyond what backend provides.
 
 **Future**
 
-* Multi-device and multi-backend routing inside 𝓔.
-* Advanced KV cache paging tightly integrated with 𝒳.
+* Multi-device and multi-backend routing inside ??.
+* Advanced KV cache paging tightly integrated with ??.
 * Mixed local/cloud execution under the same interface.
+
+
+## 6. Upstream
+- [OS and base image](./os-and-base-image.md)
+- [Hardware requirements](../../hardware/10-requirements.md)
+
+## 7. Downstream
+- [Scheduler and interrupts](../../docs/specs/scheduler-and-interrupts.md)
+- [ITCR](../../docs/specs/itcr.md)
+
+## 8. Adjacent
+- [Orchestrator](./orchestrator.md)
+- [Tool capability API](../../docs/specs/tool-capability-api.md)

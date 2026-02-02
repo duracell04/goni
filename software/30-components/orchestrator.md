@@ -1,6 +1,6 @@
-﻿# 20 – Orchestrator
+# 20 � Orchestrator
 
-Status: MVP – single-node orchestrator  
+Status: MVP � single-node orchestrator  
 Scope: Logical routing inside one node (no mesh yet)
 
 ---
@@ -12,10 +12,10 @@ The **Orchestrator** is the front door and job submission layer:
 - Accepts external requests (HTTP, CLI, IDE),
 - Validates and normalises them,
 - Builds **job descriptors**,
-- Hands them to the Control Plane (𝒦) for scheduling,
+- Hands them to the Control Plane (??) for scheduling,
 - Streams results back to the client.
 
-It glues external APIs to the internal planes 𝒦 (scheduler/router), 𝒳 (context), and 𝓔 (LLM runtime), without implementing their logic.
+It glues external APIs to the internal planes ?? (scheduler/router), ?? (context), and ?? (LLM runtime), without implementing their logic.
 
 ---
 
@@ -29,7 +29,7 @@ It glues external APIs to the internal planes 𝒦 (scheduler/router), 𝒳 (con
 
 2. **Normalisation & validation**
    - Check request size against global limits (tokens, tools, attachments).
-   - Map model="goni-small" → internal ModelTier::Small.
+   - Map model="goni-small" ? internal ModelTier::Small.
    - Map request type to TaskClass (interactive/background).
 
 3. **Job construction**
@@ -37,23 +37,23 @@ It glues external APIs to the internal planes 𝒦 (scheduler/router), 𝒳 (con
      
      J = (\text{class}, \text{budget}, \text{tools}, \text{profile}, \dots)
      
-     where udget encodes token/time/energy caps and class ∈ {interactive, background, maintenance}.
+     where udget encodes token/time/energy caps and class ? {interactive, background, maintenance}.
 
 4. **Hand-off to Control Plane**
    - Submit J into scheduler queue.
-   - Receive job completion / token stream from 𝒦+𝓔.
+   - Receive job completion / token stream from ??+??.
 
 5. **Response handling**
    - Stream tokens back to clients.
    - Attach tool call traces / metadata.
-   - Log metrics into the Data Plane (𝒜) for observability.
+   - Log metrics into the Data Plane (??) for observability.
 
 ### 2.2 Non-responsibilities
 
-- ❌ Does *not* pick which model tier to use (router in 𝒦).  
-- ❌ Does *not* select RAG chunks (context selector in 𝒳).  
-- ❌ Does *not* run inference (LLM runtime in 𝓔).  
-- ❌ Does *not* enforce low-level resource limits (resman in 𝒦/𝓔).
+- ? Does *not* pick which model tier to use (router in ??).  
+- ? Does *not* select RAG chunks (context selector in ??).  
+- ? Does *not* run inference (LLM runtime in ??).  
+- ? Does *not* enforce low-level resource limits (resman in ??/??).
 
 ---
 
@@ -63,14 +63,15 @@ It glues external APIs to the internal planes 𝒦 (scheduler/router), 𝒳 (con
 
 HTTP /v1/chat/completions:
 
-- Request: compatible with OpenAI’s chat/completions:
+- Request: compatible with OpenAI�s chat/completions:
   - messages[], model, stream, optional 	ools.
 - Response:
   - Non-streaming or server-sent events with tokens.
 
 ### 3.2 Internal API
 
-`ust
+`
+ust
 pub enum TaskClass {
     Interactive,
     Background,
@@ -89,13 +90,14 @@ pub struct JobDescriptor {
     pub model_hint: Option<ModelTier>,
     pub tools: Vec<ToolId>,
     pub user_profile: UserProfile,
-    // opaque payload (prompt, metadata) lives in Arrow / 𝒜
+    // opaque payload (prompt, metadata) lives in Arrow / ??
 }
 `
 
 Control-plane interface:
 
-`ust
+`
+ust
 #[async_trait::async_trait]
 pub trait ControlPlane {
     async fn submit(&self, job: JobDescriptor) -> JobHandle;
@@ -111,16 +113,16 @@ The Orchestrator only calls submit / watch / cancel and forwards streams back to
 ## 4. Invariants (tied to 30-conformance)
 
 * **Admission invariant (K1)**
-  The Orchestrator must apply request-level validation so that the global utilisation target in 𝒦 is attainable, e.g. rejecting any single request whose budget would obviously violate
+  The Orchestrator must apply request-level validation so that the global utilisation target in ?? is attainable, e.g. rejecting any single request whose budget would obviously violate
   
   \sum_i \lambda_i/\mu_i^{\max} < \alpha.
   
 
 * **Plane separation invariant**
-  All long-running work must enter through the Control Plane; the Orchestrator must *not* spin its own worker pools that bypass 𝒦.
+  All long-running work must enter through the Control Plane; the Orchestrator must *not* spin its own worker pools that bypass ??.
 
 * **Local-first invariant**
-  In offline mode, the Orchestrator may not introduce network dependencies; it just routes between local 𝒜, 𝒳, 𝒦, 𝓔.
+  In offline mode, the Orchestrator may not introduce network dependencies; it just routes between local ??, ??, ??, ??.
 
 ---
 
@@ -130,11 +132,11 @@ The Orchestrator only calls submit / watch / cancel and forwards streams back to
 
 * Single node only.
 * No cross-node routing.
-* Simple mapping from HTTP request → JobDescriptor.
+* Simple mapping from HTTP request ? JobDescriptor.
 
 **Future**
 
-* Add a “target node” field on JobDescriptor and a Mesh layer that chooses nodes.
+* Add a �target node� field on JobDescriptor and a Mesh layer that chooses nodes.
 * Gateway orchestrator that can:
 
   * route interactive jobs to local node,
@@ -142,3 +144,17 @@ The Orchestrator only calls submit / watch / cancel and forwards streams back to
 
 The Orchestrator spec here is the single-node kernel perspective; multi-node concerns live in mesh-and-wireguard.md.
 
+
+
+## 6. Upstream
+- [Job contract](../../docs/specs/job.md)
+- [Scheduler and interrupts](../../docs/specs/scheduler-and-interrupts.md)
+- [Tool capability API](../../docs/specs/tool-capability-api.md)
+
+## 7. Downstream
+- [Product surfaces hub](../../docs/hubs/product-surfaces.md)
+- [Prototype catalog](../../prototype/00-index.md)
+
+## 8. Adjacent
+- [LLM runtime](./llm-runtime.md)
+- [Network gate and anonymity](../../docs/specs/network-gate-and-anonymity.md)

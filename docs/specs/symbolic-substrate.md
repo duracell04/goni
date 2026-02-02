@@ -126,8 +126,21 @@ Example constraints (JSON values stored under constraint.* keys):
 - docs/specs/scheduler-and-interrupts.md
 - docs/specs/agent-manifest.md
 
+## 8. Upstream
+- [System map](../00-system-map.md)
+- [Planes hub](../hubs/planes.md)
+
+## 9. Downstream
+- [Latent state contract](./latent-state-contract.md)
+- [Tool capability API](./tool-capability-api.md)
+
+## 10. Adjacent
+- [Scheduler and interrupts](./scheduler-and-interrupts.md)
+- [ITCR](./itcr.md)
+
 ## Conformance tests
 - TBD: add tests for this spec.
+
 
 
 

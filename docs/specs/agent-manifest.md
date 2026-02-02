@@ -80,8 +80,22 @@ audit fields are required:
 - [agent-definition.md](./agent-definition.md)
 - [tool-capability-api.md](./tool-capability-api.md)
 
+## 6. Upstream
+- [System map](../00-system-map.md)
+- [Agent definition](./agent-definition.md)
+- [Schema MVP](../../software/50-data/51-schemas-mvp.md)
+
+## 7. Downstream
+- [Software components index](../../software/30-components/00-index.md)
+- [Runtime overview](../../runtime/00-overview.md)
+
+## 8. Adjacent
+- [Tool capability API](./tool-capability-api.md)
+- [Scheduler and interrupts](./scheduler-and-interrupts.md)
+
 ## Conformance tests
 - TBD: add tests for this spec.
+
 
 
 

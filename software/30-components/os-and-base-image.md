@@ -1,17 +1,17 @@
-ï»¿# 10 â€“ OS and Base Image
+# 10 – OS and Base Image
 
-Status: MVP â€“ conceptual substrate  
+Status: MVP – conceptual substrate  
 Scope: Single-node execution environment assumptions
 
 ---
 
 ## 1. Role in the system
 
-The OS + base image layer provides the **execution substrate** for a Goni node. It is not part of the kernel (ğ’œ, ğ’³, ğ’¦, ğ“”), but defines:
+The OS + base image layer provides the **execution substrate** for a Goni node. It is not part of the kernel (??, ??, ??, ??), but defines:
 
 - how goni-node / goni-http runs as a long-lived service,
-- how CPU/GPU/NPU resources are exposed to the LLM runtime (ğ“”),
-- where persistent state for the Arrow Spine (ğ’œ) and models lives.
+- how CPU/GPU/NPU resources are exposed to the LLM runtime (??),
+- where persistent state for the Arrow Spine (??) and models lives.
 
 We treat this layer as a **black box with minimal assumptions**, so the kernel stays portable across distros/containers.
 
@@ -24,7 +24,7 @@ We treat this layer as a **black box with minimal assumptions**, so the kernel s
 For the MVP, the substrate is responsible for:
 
 - **Process model**
-  - Start goni-http (or goni-node) on boot (systemd, Docker, k8s, â€¦).
+  - Start goni-http (or goni-node) on boot (systemd, Docker, k8s, …).
   - Capture logs via stdout/stderr (journald or container logs).
 
 - **Resource exposure**
@@ -47,7 +47,7 @@ For the MVP, the substrate is responsible for:
 
 Out of scope for the MVP:
 
-- Custom â€œGoni OSâ€ distribution or immutable image.
+- Custom “Goni OS” distribution or immutable image.
 - Automated disk encryption / secure boot story.
 - Cluster bootstrap and node join (lives in hardware/infra docs).
 
@@ -90,13 +90,13 @@ We **do not** fix whether Goni runs on bare metal, in a VM, or in a container; t
 
 ---
 
-## 5. MVP vs future â€œapplianceâ€
+## 5. MVP vs future “appliance”
 
 **MVP / prototype**
 
 - Run on any modern 64-bit Linux.
 - Dependencies (Rust toolchain, model runtimes) installed manually or via container.
-- No opinionated disk layout beyond â€œpersistent dirs existâ€.
+- No opinionated disk layout beyond “persistent dirs exist”.
 
 **Future appliance**
 
@@ -106,3 +106,16 @@ We **do not** fix whether Goni runs on bare metal, in a VM, or in a container; t
 
 Those details live in hardware/ and infra repos; this file records the *software-visible OS assumptions* only.
 
+
+
+## 6. Upstream
+- [Hardware requirements](../../hardware/10-requirements.md)
+- [Isolation and tool sandboxes](../../docs/specs/isolation-and-tool-sandboxes.md)
+
+## 7. Downstream
+- [LLM runtime](./llm-runtime.md)
+- [Mesh and WireGuard](./mesh-and-wireguard.md)
+
+## 8. Adjacent
+- [Tool capability API](../../docs/specs/tool-capability-api.md)
+- [Security overview](../../security/00-overview.md)
