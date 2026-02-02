@@ -1,6 +1,6 @@
 # SCHED-01 - Scheduler and Interrupts
 DOC-ID: SCHED-01
-Status: Draft (normative target)
+Status: Specified only / roadmap
 
 This spec defines when and how the kernel escalates work from continuous,
 low-power cognition to expensive solver/LLM interrupts.
@@ -78,11 +78,13 @@ Interrupt decisions and solver wakes are recorded with:
 
 ## 7. Related specs
 
-- `docs/specs/latent-state-contract.md`
-- `docs/specs/tool-capability-api.md`
-- `docs/specs/symbolic-substrate.md`
-- `docs/specs/itcr.md`
+- [latent-state-contract.md](./latent-state-contract.md)
+- [tool-capability-api.md](./tool-capability-api.md)
+- [symbolic-substrate.md](./symbolic-substrate.md)
+- [itcr.md](./itcr.md)
 
 ## Conformance tests
 - TBD: add tests for this spec.
+
+
 

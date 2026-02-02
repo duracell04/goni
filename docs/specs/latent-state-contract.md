@@ -1,6 +1,6 @@
 # LSC-01 - Latent State Contract
 DOC-ID: LSC-01
-Status: Draft (normative target)
+Status: Specified only / roadmap
 Conformance: TBD (goni-lab harness)
 
 This document defines the kernel-owned latent state contract for Goni OS. It is
@@ -86,12 +86,14 @@ See `docs/specs/tool-capability-api.md` for the audit record envelope.
 
 ## 7. Related specs
 
-- `docs/specs/agent-definition.md`
-- `docs/specs/agent-manifest.md`
-- `docs/specs/tool-capability-api.md`
-- `docs/specs/scheduler-and-interrupts.md`
-- `docs/specs/symbolic-substrate.md`
+- [agent-definition.md](./agent-definition.md)
+- [agent-manifest.md](./agent-manifest.md)
+- [tool-capability-api.md](./tool-capability-api.md)
+- [scheduler-and-interrupts.md](./scheduler-and-interrupts.md)
+- [symbolic-substrate.md](./symbolic-substrate.md)
 
 ## Conformance tests
 - TBD: add tests for this spec.
+
+
 

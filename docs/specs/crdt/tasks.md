@@ -1,5 +1,6 @@
 # CRDT: tasks
 
-Status: specified only / roadmap
+Status: Specified only / roadmap
 
 This file defines merge semantics for tasks artifacts.
+

@@ -1,6 +1,6 @@
 # ITCR-01 - Inference-Time Compute Reasoning
 DOC-ID: ITCR-01
-Status: Draft (normative target)
+Status: Specified only / roadmap
 
 This spec defines inference-time compute reasoning (ITCR) as a bounded,
 interrupt-driven reasoning service. ITCR is a compute allocation policy over a
@@ -114,4 +114,6 @@ Outputs include:
 
 ## Conformance tests
 - TBD: add tests for this spec.
+
+
 

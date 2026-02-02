@@ -1,6 +1,6 @@
 # AGENT-02 - Agent Manifest
 DOC-ID: AGENT-MANIFEST-01
-Status: Draft (normative target)
+Status: Specified only / roadmap
 
 The agent manifest is the single source of truth for agent identity, triggers,
 capabilities, and budgets. The kernel refuses to instantiate agents whose
@@ -77,9 +77,11 @@ audit fields are required:
 
 ## 5. Related specs
 
-- `docs/specs/agent-definition.md`
-- `docs/specs/tool-capability-api.md`
+- [agent-definition.md](./agent-definition.md)
+- [tool-capability-api.md](./tool-capability-api.md)
 
 ## Conformance tests
 - TBD: add tests for this spec.
+
+
 

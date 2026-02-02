@@ -1,6 +1,6 @@
 # SS-01 - Symbolic Substrate (Arbitration Contract)
 DOC-ID: SS-01
-Status: Draft (normative target)
+Status: Specified only / roadmap
 Conformance: TBD (goni-lab harness)
 
 This spec defines the minimal symbolic substrate and arbitration contract that
@@ -128,4 +128,6 @@ Example constraints (JSON values stored under constraint.* keys):
 
 ## Conformance tests
 - TBD: add tests for this spec.
+
+
 

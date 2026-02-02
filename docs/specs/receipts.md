@@ -1,7 +1,7 @@
 # Receipts (REC-01)
 DOC-ID: REC-01
 
-Status: specified only / roadmap
+Status: Specified only / roadmap
 
 Receipts are immutable records of mediated actions. They must be minimal by
 default and verifiable via hash chaining.
@@ -26,3 +26,4 @@ default and verifiable via hash chaining.
 - any mediated action must emit exactly one receipt
 - receipts must form a valid hash chain
 - receipts must omit raw content by default
+

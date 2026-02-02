@@ -1,6 +1,6 @@
 # TOOL-01 - Tool Capability API (Auditable Syscalls)
 DOC-ID: TOOL-01
-Status: Draft (normative target)
+Status: Specified only / roadmap
 
 Tools are kernel-mediated, capability-scoped syscalls. All tool invocations are
 audited and attributable to an agent and a state snapshot.
@@ -76,11 +76,13 @@ Tokens are immutable and referenced by ID in tool calls.
 
 ## 7. Related specs
 
-- `docs/specs/agent-definition.md`
-- `docs/specs/latent-state-contract.md`
-- `docs/specs/scheduler-and-interrupts.md`
-- `docs/specs/symbolic-substrate.md`
+- [agent-definition.md](./agent-definition.md)
+- [latent-state-contract.md](./latent-state-contract.md)
+- [scheduler-and-interrupts.md](./scheduler-and-interrupts.md)
+- [symbolic-substrate.md](./symbolic-substrate.md)
 
 ## Conformance tests
 - TBD: add tests for this spec.
+
+
 

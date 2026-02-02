@@ -1,7 +1,7 @@
 # Job Contract (JOB-01)
 DOC-ID: JOB-01
 
-Status: specified only / roadmap
+Status: Specified only / roadmap
 
 Defines JobSpec and JobState for scheduler-visible work.
 
@@ -20,3 +20,4 @@ Defines JobSpec and JobState for scheduler-visible work.
 ## Conformance tests
 - invalid JobSpec must be rejected
 - cancel policy honored at preemption points
+

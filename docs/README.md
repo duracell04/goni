@@ -1,9 +1,12 @@
-﻿# Goni Docs Index
+# Goni Docs Index
 
+- [System Map](./00-system-map.md) - doc graph and navigation hub.
+- [Docs Rules](./01-docs-rules.md) - documentation canon and status rules.
+- [Taxonomy and IDs](./02-taxonomy-and-ids.md) - naming, IDs, and link rules.
 - [Goni Story](./goni-story.md) - narrative, human-first overview.
 - [Goni Whitepaper](./goni-whitepaper.md) - system architecture and invariants.
 - [LLM Council](./llm-council.md) - when/how the orchestrator escalates to the cloud council.
-- [Goni Lab](./goni-lab.md) - LM Arena–style evals feeding router + council policy.
+- [Goni Lab](./goni-lab.md) - LM Arena�style evals feeding router + council policy.
 - [Remote LLM Architecture](./remote-llm-architecture.md) - cloud leg via Council -> OpenRouter, budgets, and runtime modes.
 - [Goni SWOT](./goni-swot.md) - positioning vs ecosystem.
 - [Inspiration](./inspiration.md) - people radar.
@@ -36,6 +39,7 @@
 - Scheduler + interrupts: `docs/specs/scheduler-and-interrupts.md`
 - Data plane schemas: `software/50-data/51-schemas-mvp.md`
 - Executable schema DSL: `software/50-data/53-schema-dsl-and-macros.md`
+- Specs index: `docs/specs/00-index.md`
 
 For specs and decisions, jump to [hardware/00-overview.md](../hardware/00-overview.md) and [software/00-overview.md](../software/00-overview.md), then the decision logs in [hardware/90-decisions.md](../hardware/90-decisions.md) and [software/90-decisions.md](../software/90-decisions.md).
 

@@ -1,7 +1,7 @@
 # Isolation and Tool Sandboxes (SANDBOX-01)
 DOC-ID: SANDBOX-01
 
-Status: specified only / roadmap
+Status: Specified only / roadmap
 
 Tools run with minimal authority and no ambient network.
 
@@ -13,3 +13,4 @@ Tools run with minimal authority and no ambient network.
 ## Conformance tests
 - direct socket use from tool sandbox must fail
 - egress via gate succeeds with valid capability
+

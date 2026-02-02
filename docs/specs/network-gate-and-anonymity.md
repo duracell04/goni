@@ -1,6 +1,6 @@
 # NET-01 - Network Gate and Anonymity
 DOC-ID: NET-01
-Status: Draft (normative target)
+Status: Specified only / roadmap
 Conformance: TBD (goni-lab harness)
 
 This spec defines network egress control for Goni OS. Networking is treated as
@@ -186,4 +186,6 @@ the user explicitly opts into verbose logging.
 
 ## Conformance tests
 - TBD: add tests for this spec.
+
+
 

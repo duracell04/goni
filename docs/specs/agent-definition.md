@@ -1,6 +1,6 @@
 # AGENT-01 - Agent Definition (Goni OS)
 DOC-ID: AGENT-DEF-01
-Status: Draft (normative target)
+Status: Specified only / roadmap
 
 This document defines what an agent is in Goni OS and how it interacts with the
 kernel. Agents are userland processes; cognition is a kernel substrate; solver
@@ -50,12 +50,14 @@ These fields are required on tool calls, state deltas, and commits.
 
 ## 5. Related specs
 
-- `docs/specs/latent-state-contract.md`
-- `docs/specs/agent-manifest.md`
-- `docs/specs/tool-capability-api.md`
-- `docs/specs/scheduler-and-interrupts.md`
-- `docs/specs/itcr.md`
+- [latent-state-contract.md](./latent-state-contract.md)
+- [agent-manifest.md](./agent-manifest.md)
+- [tool-capability-api.md](./tool-capability-api.md)
+- [scheduler-and-interrupts.md](./scheduler-and-interrupts.md)
+- [itcr.md](./itcr.md)
 
 ## Conformance tests
 - TBD: add tests for this spec.
+
+
 
