@@ -51,8 +51,6 @@ struct SearchResult {
     #[serde(default)]
     id: serde_json::Value,
     #[serde(default)]
-    score: f32,
-    #[serde(default)]
     payload: serde_json::Value,
     #[serde(default)]
     vector: Vec<f32>,
