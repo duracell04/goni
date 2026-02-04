@@ -1,9 +1,0 @@
-apiVersion: kustomize.config.k8s.io/v1beta1
-kind: Kustomization
-namespace: goni
-resources:
-  - ../../base/namespace.yaml
-  - ../../base/pvc-models.yaml
-  - ../../base/llm-local.yaml
-  - ../../base/vecdb.yaml
-  - ../../base/orchestrator.yaml

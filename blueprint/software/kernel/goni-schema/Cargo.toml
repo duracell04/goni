@@ -1,8 +1,0 @@
-[package]
-name = "goni-schema"
-version = "0.1.0"
-edition = "2021"
-
-[dependencies]
-arrow = { workspace = true }
-anyhow = "1"
