@@ -6,7 +6,7 @@ last_updated: 2026-02-06
 ---
 # Goni Competitive Landscape
 
-This document is an investor/JT-ready landscape view. It is business-facing and
+This document is an investor-ready landscape view. It is business-facing and
 should not be treated as normative technical specification.
 
 ## What this landscape gets right (keep)
@@ -57,7 +57,7 @@ Keep only what is visible and cite it:
 
 Avoid Goni traction numbers until there is a runnable release. [1]
 
-## Positioning map (JT-ready)
+## Positioning map (pitch-ready)
 
 ### Ring 1: Direct "personal assistant that acts" comparables
 
@@ -96,7 +96,7 @@ model is becoming an agentic supply-chain risk (ClawHub malware campaigns). [3]
 Differentiator: Goni aims to win on governance and auditability (propose-before-act,
 receipts-first, gated network access by design), not a bigger skills bazaar. [1]
 
-## One-line pitch (JT-ready)
+## One-line pitch
 
 "The first wave of personal agents is powerful but insecure. OpenClaw proved
 demand. The ClawHub malware wave proved the risk. Goni is the safety cell:
