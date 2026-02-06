@@ -1,6 +1,6 @@
-# 80 ñ LLM Runtime
+Ôªø# 80 ‚Äì LLM Runtime
 
-Status: MVP ñ unified local inference abstraction  
+Status: MVP ‚Äì unified local inference abstraction  
 Scope: Single node; multiple models & backends via common API
 
 ---
@@ -13,7 +13,7 @@ The **LLM Runtime** is the Execution Plane (??) component that:
 - Abstracts over concrete model backends (llama.cpp, vLLM, etc.),
 - Exposes capabilities and utilisation back to the Control Plane (??).
 
-It is the only component allowed to ìspeakî to GPUs/NPUs and LLM backends directly.
+It is the only component allowed to ‚Äúspeak‚Äù to GPUs/NPUs and LLM backends directly.
 
 ---
 
@@ -98,7 +98,7 @@ pub trait LlmRuntime {
 
 Concrete engines (llama.cpp, vLLM, etc.) implement LlmRuntime:
 
-* MVP: 1ñ2 backends is enough (e.g. local small/large model).
+* MVP: 1‚Äì2 backends is enough (e.g. local small/large model).
 
 ---
 
@@ -119,7 +119,7 @@ Concrete engines (llama.cpp, vLLM, etc.) implement LlmRuntime:
   Time-to-first-token after a decoder wake must stay within the configured SLO; steady-state operation must not trigger implicit compilation or graph warmup.
 
 * **Preemption invariant (soft)**
-  Generation checks for cancellation at least once per decoding step (target preemption latency ´ human-visible 100 ms).
+  Generation checks for cancellation at least once per decoding step (target preemption latency ¬´ human-visible 100 ms).
 
 * **Streaming invariant**
   First token latency for interactive jobs stays within configured SLO (e.g. p99 < 1.0 s on reference hardware).
@@ -133,7 +133,7 @@ Concrete engines (llama.cpp, vLLM, etc.) implement LlmRuntime:
 
 **MVP**
 
-* 1ñ2 local models (goni-small, goni-large).
+* 1‚Äì2 local models (goni-small, goni-large).
 * Single device type per session.
 * No cross-session KV reuse beyond what backend provides.
 
@@ -149,9 +149,10 @@ Concrete engines (llama.cpp, vLLM, etc.) implement LlmRuntime:
 - [Hardware requirements](/blueprint/software/hardware/10-requirements.md)
 
 ## 7. Downstream
-- [Scheduler and interrupts](/blueprint/software/docs/specs/scheduler-and-interrupts.md)
-- [ITCR](/blueprint/software/docs/specs/itcr.md)
+- [Scheduler and interrupts](/blueprint/30-specs/scheduler-and-interrupts.md)
+- [ITCR](/blueprint/30-specs/itcr.md)
 
 ## 8. Adjacent
 - [Orchestrator](/blueprint/software/30-components/orchestrator.md)
-- [Tool capability API](/blueprint/software/docs/specs/tool-capability-api.md)
+- [Tool capability API](/blueprint/30-specs/tool-capability-api.md)
+

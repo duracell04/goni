@@ -1,4 +1,4 @@
-# Goni Docs Index
+﻿# Goni Docs Index
 
 - [System Map](/blueprint/docs/00-system-map.md) - doc graph and navigation hub.
 - [Docs Rules](/blueprint/docs/01-docs-rules.md) - documentation canon and status rules.
@@ -6,7 +6,7 @@
 - [Goni Story](/blueprint/docs/goni-story.md) - narrative, human-first overview.
 - [Goni Whitepaper](/blueprint/docs/goni-whitepaper.md) - system architecture and invariants.
 - [LLM Council](/blueprint/docs/llm-council.md) - when/how the orchestrator escalates to the cloud council.
-- [Goni Lab](/blueprint/docs/goni-lab.md) - LM Arena�style evals feeding router + council policy.
+- [Goni Lab](/blueprint/docs/goni-lab.md) - LM Arena–style evals feeding router + council policy.
 - [Remote LLM Architecture](/blueprint/docs/remote-llm-architecture.md) - cloud leg via Council -> OpenRouter, budgets, and runtime modes.
 - [Goni SWOT](/blueprint/docs/goni-swot.md) - positioning vs ecosystem.
 - [Inspiration](/blueprint/docs/inspiration.md) - people radar.
@@ -31,15 +31,16 @@
 
 ## Doc Map - Where the truth lives
 
-- Agents: `blueprint/docs/specs/agent-definition.md`
-- Agent manifests: `blueprint/docs/specs/agent-manifest.md`
-- Latent state contract: `blueprint/docs/specs/latent-state-contract.md`
-- Tool capability API + audit: `blueprint/docs/specs/tool-capability-api.md`
-- Network gate + anonymity: `blueprint/docs/specs/network-gate-and-anonymity.md`
-- Scheduler + interrupts: `blueprint/docs/specs/scheduler-and-interrupts.md`
+- Agents: `blueprint/30-specs/agent-definition.md`
+- Agent manifests: `blueprint/30-specs/agent-manifest.md`
+- Latent state contract: `blueprint/30-specs/latent-state-contract.md`
+- Tool capability API + audit: `blueprint/30-specs/tool-capability-api.md`
+- Network gate + anonymity: `blueprint/30-specs/network-gate-and-anonymity.md`
+- Scheduler + interrupts: `blueprint/30-specs/scheduler-and-interrupts.md`
 - Data plane schemas: `blueprint/software/50-data/51-schemas-mvp.md`
 - Executable schema DSL: `blueprint/software/50-data/53-schema-dsl-and-macros.md`
-- Specs index: `blueprint/docs/specs/00-index.md`
+- Specs index: `blueprint/30-specs/00-index.md`
 
 For specs and decisions, jump to [blueprint/hardware/00-overview.md](/blueprint/hardware/00-overview.md) and [blueprint/software/00-overview.md](/blueprint/software/00-overview.md), then the decision logs in [blueprint/hardware/90-decisions.md](/blueprint/hardware/90-decisions.md) and [blueprint/software/90-decisions.md](/blueprint/software/90-decisions.md).
+
 

@@ -1,3 +1,4 @@
-# Receipt Schema (summary)
+﻿# Receipt Schema (summary)
 
-See blueprint/docs/specs/receipts.md for canonical schema.
+See blueprint/30-specs/receipts.md for canonical schema.
+

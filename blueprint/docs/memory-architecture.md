@@ -1,9 +1,9 @@
-# Goni Memory Architecture (Legacy Draft)
+﻿# Goni Memory Architecture (Legacy Draft)
 
 > **Status:** Legacy UX concept (kept for historical context).
 >
 > **Source of truth for current architecture:**
-> - Kernel-level latent state: `blueprint/docs/specs/latent-state-contract.md` (LSC-01)
+> - Kernel-level latent state: `blueprint/30-specs/latent-state-contract.md` (LSC-01)
 > - Plane model and payload types: `blueprint/software/50-data/10-axioms-and-planes.md`
 > - MVP schema tables: `blueprint/software/50-data/51-schemas-mvp.md`
 >
@@ -28,3 +28,4 @@ This note captures the **hard** and **soft** commitments for Goni's long-term me
 - **Attribution:** Responses tag AI-authored vs user-authored content; memory-based answers cite the source (`mem:2024-10-02 project-mtg`).
 - **Spaced surfacing:** Periodic recap/review flows surface decaying memories for reinforcement.
 - **Low-memory profile:** On 64 GB unified nodes, default to smaller models/tighter budgets while keeping the same UX/traceability behaviours.
+

@@ -1,4 +1,4 @@
-{
+﻿{
   "version": 1,
   "groups": [
     {"id": "specs", "title": "Specs (normative contracts)"},
@@ -12,7 +12,7 @@
       "title": "Latent State Contract",
       "role": "spec",
       "group": "specs",
-      "path": "docs/specs/latent-state-contract.md",
+      "path": "30-specs/latent-state-contract.md",
       "anchors": ["DOC-ID: LSC-01"],
       "status": "specified_only",
       "owner_area": "docs"
@@ -22,7 +22,7 @@
       "title": "Tool Capability API",
       "role": "spec",
       "group": "specs",
-      "path": "docs/specs/tool-capability-api.md",
+      "path": "30-specs/tool-capability-api.md",
       "anchors": ["DOC-ID: TOOL-01"],
       "status": "specified_only",
       "owner_area": "docs"
@@ -32,7 +32,7 @@
       "title": "Scheduler and Interrupts",
       "role": "spec",
       "group": "specs",
-      "path": "docs/specs/scheduler-and-interrupts.md",
+      "path": "30-specs/scheduler-and-interrupts.md",
       "anchors": ["DOC-ID: SCHED-01"],
       "status": "specified_only",
       "owner_area": "docs"
@@ -42,7 +42,7 @@
       "title": "Symbolic Substrate",
       "role": "spec",
       "group": "specs",
-      "path": "docs/specs/symbolic-substrate.md",
+      "path": "30-specs/symbolic-substrate.md",
       "anchors": ["DOC-ID: SS-01"],
       "status": "specified_only",
       "owner_area": "docs"
@@ -52,7 +52,7 @@
       "title": "Agent Definition (product concept)",
       "role": "spec",
       "group": "specs",
-      "path": "docs/specs/agent-definition.md",
+      "path": "30-specs/agent-definition.md",
       "anchors": ["DOC-ID: AGENT-DEF-01"],
       "status": "specified_only",
       "owner_area": "docs"
@@ -62,7 +62,7 @@
       "title": "Agent Manifest",
       "role": "spec",
       "group": "specs",
-      "path": "docs/specs/agent-manifest.md",
+      "path": "30-specs/agent-manifest.md",
       "anchors": ["DOC-ID: AGENT-MANIFEST-01"],
       "status": "specified_only",
       "owner_area": "docs"
@@ -72,7 +72,7 @@
       "title": "ITCR",
       "role": "spec",
       "group": "specs",
-      "path": "docs/specs/itcr.md",
+      "path": "30-specs/itcr.md",
       "anchors": ["DOC-ID: ITCR-01"],
       "status": "specified_only",
       "owner_area": "docs"
@@ -82,7 +82,7 @@
       "title": "Network Gate and Anonymity",
       "role": "spec",
       "group": "specs",
-      "path": "docs/specs/network-gate-and-anonymity.md",
+      "path": "30-specs/network-gate-and-anonymity.md",
       "anchors": ["DOC-ID: NET-01"],
       "status": "specified_only",
       "owner_area": "docs"
@@ -92,7 +92,7 @@
       "title": "Receipts",
       "role": "spec",
       "group": "specs",
-      "path": "docs/specs/receipts.md",
+      "path": "30-specs/receipts.md",
       "anchors": ["DOC-ID: REC-01"],
       "status": "specified_only",
       "owner_area": "docs"
@@ -102,7 +102,7 @@
       "title": "Job Contract",
       "role": "spec",
       "group": "specs",
-      "path": "docs/specs/job.md",
+      "path": "30-specs/job.md",
       "anchors": ["DOC-ID: JOB-01"],
       "status": "specified_only",
       "owner_area": "docs"
@@ -112,7 +112,7 @@
       "title": "Isolation and Tool Sandboxes",
       "role": "spec",
       "group": "specs",
-      "path": "docs/specs/isolation-and-tool-sandboxes.md",
+      "path": "30-specs/isolation-and-tool-sandboxes.md",
       "anchors": ["DOC-ID: SANDBOX-01"],
       "status": "specified_only",
       "owner_area": "docs"
@@ -122,7 +122,7 @@
       "title": "Sync Policies",
       "role": "spec",
       "group": "specs",
-      "path": "docs/specs/sync-policies.md",
+      "path": "30-specs/sync-policies.md",
       "anchors": ["DOC-ID: SYNC-01"],
       "status": "specified_only",
       "owner_area": "docs"
@@ -249,3 +249,4 @@
     }
   ]
 }
+

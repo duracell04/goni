@@ -1,9 +1,9 @@
-# ARCHITECTURE
+﻿# ARCHITECTURE
 
 Status: specified only / roadmap
 
 This document summarizes the current architecture and trust boundaries.
-It is a short index; the formal contracts live in blueprint/docs/specs/ and blueprint/software/.
+It is a short index; the formal contracts live in blueprint/30-specs/ and blueprint/software/.
 
 ## Components
 - Orchestrator (kernel HTTP): request intake and scheduling.
@@ -18,3 +18,4 @@ Event -> scheduler -> model/tool -> receipt -> vault
 - The kernel is trusted for mediation and receipts.
 - Tools and external text are untrusted.
 - Egress is mediated by a gate.
+

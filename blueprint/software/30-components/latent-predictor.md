@@ -1,4 +1,4 @@
-# Latent predictor (JEPA-style) integration
+﻿# Latent predictor (JEPA-style) integration
 
 This document describes a **latent-first** cognition pattern compatible with Goni's planes, queues, and memory guarantees. It is not a requirement to adopt a specific training regime; it is an interface and execution shape that allows multiple model backends.
 
@@ -94,13 +94,14 @@ Decoder should accept:
 
 
 ## Upstream
-- [Latent state contract](/blueprint/software/docs/specs/latent-state-contract.md)
-- [Symbolic substrate](/blueprint/software/docs/specs/symbolic-substrate.md)
+- [Latent state contract](/blueprint/30-specs/latent-state-contract.md)
+- [Symbolic substrate](/blueprint/30-specs/symbolic-substrate.md)
 
 ## Downstream
-- [Scheduler and interrupts](/blueprint/software/docs/specs/scheduler-and-interrupts.md)
-- [ITCR](/blueprint/software/docs/specs/itcr.md)
+- [Scheduler and interrupts](/blueprint/30-specs/scheduler-and-interrupts.md)
+- [ITCR](/blueprint/30-specs/itcr.md)
 
 ## Adjacent
 - [Vector DB](/blueprint/software/30-components/vecdb.md)
 - [LLM runtime](/blueprint/software/30-components/llm-runtime.md)
+

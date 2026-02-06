@@ -1,4 +1,4 @@
-# Components Index
+﻿# Components Index
 DOC-ID: SUB-INDEX-00
 Status: Specified only / roadmap
 
@@ -13,6 +13,7 @@ This folder catalogs subsystem packets in the software track.
 - [OS and base image](/blueprint/software/30-components/os-and-base-image.md)
 
 ## Related contracts
-- [Specs index](/blueprint/software/docs/specs/00-index.md)
+- [Specs index](/blueprint/30-specs/00-index.md)
 - [Planes hub](/blueprint/software/docs/hubs/planes.md)
 - [Contracts hub](/blueprint/software/docs/hubs/contracts.md)
+

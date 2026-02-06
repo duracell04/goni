@@ -1,11 +1,11 @@
-# 51 – Schemas (MVP Canonical Tables)
+ï»¿# 51 â€“ Schemas (MVP Canonical Tables)
 DOC-ID: SCHEMA-MVP-01
 
 Arrow-first, v1.0 schemas for the canonical tables. Each table is `Spine + Payload`; `row_id` == domain PK.
 
 **Executable spec:** These schemas are implemented by `blueprint/software/kernel/goni-schema` via the `define_tables!` block in `goni-schema/src/lib.rs`. This document and that DSL must stay in sync.
 
-## Plane ?? – Knowledge (immutable)
+## Plane ?? â€“ Knowledge (immutable)
 
 ### Docs
 - PK: `doc_id = row_id`
@@ -22,7 +22,7 @@ Arrow-first, v1.0 schemas for the canonical tables. Each table is `Spine + Paylo
 - Fields: `chunk_id: fixed_size_binary[16]`, `model_id: dict<uint8, utf8>`, `vector: fixed_size_list<float32>[1536]`, `dim: uint16`
 - Notes: Lance index on `vector`.
 
-## Plane ?? – Context (ephemeral)
+## Plane ?? â€“ Context (ephemeral)
 
 ### Prompts
 - PK: `prompt_id = row_id`
@@ -37,7 +37,7 @@ Arrow-first, v1.0 schemas for the canonical tables. Each table is `Spine + Paylo
 - Fields: `context_id: fixed_size_binary[16]`, `chunk_id: fixed_size_binary[16]`, `cost_tokens: uint32`, `selected: bool`, `rank: uint16?`, `marginal_gain: float32?`
 - Notes: Submodular selection outputs `selected`/`rank`; joins to ?? via `chunk_id`.
 
-## Plane ?? – Control (metadata only)
+## Plane ?? â€“ Control (metadata only)
 
 ### Requests
 - PK: `request_id = row_id`
@@ -49,7 +49,7 @@ Arrow-first, v1.0 schemas for the canonical tables. Each table is `Spine + Paylo
 - Fields: `request_id: fixed_size_binary[16]`, `task_type: dict<uint8, utf8>`, `state: dict<uint8, utf8>`, `queue_id: dict<uint8, utf8>`, `expected_cost_tokens: uint32`
 - Notes: Lyapunov inputs; append-only state transitions.
 
-## Plane E – Execution (telemetry)
+## Plane E â€“ Execution (telemetry)
 
 ### LlmCalls
 - PK: `call_id = row_id`
@@ -113,7 +113,7 @@ Arrow-first, v1.0 schemas for the canonical tables. Each table is `Spine + Paylo
   "fact.user_tier": "{\"v\":1,\"value\":\"local\"}"
 }
 ```
-- Validation semantics live in blueprint/docs/specs/symbolic-substrate.md; storage does not enforce schemas.
+- Validation semantics live in blueprint/30-specs/symbolic-substrate.md; storage does not enforce schemas.
 
 ### LatentSummaries
 - PK: `summary_id = row_id`
@@ -144,7 +144,7 @@ Arrow-first, v1.0 schemas for the canonical tables. Each table is `Spine + Paylo
 - Schema version: **MANIFEST-02** (supersedes MANIFEST-01).
 - PK: `manifest_id = row_id`
 - Fields: `agent_id: fixed_size_binary[16]`, `version: utf8`, `manifest_hash: fixed_size_binary[32]`, `manifest_uri: utf8`, `triggers: map<utf8, utf8>`, `capabilities: map<utf8, utf8>`, `budgets: map<utf8, utf8>`, `ui_surfaces: list<utf8>?`, `identity_requirements: list<utf8>?`, `remote_access: bool?`, `tools: list<utf8>`, `policy_hash: fixed_size_binary[32]`, `state_snapshot_id: fixed_size_binary[16]`, `provenance: map<utf8, utf8>`
-- Notes: Semantics live in `blueprint/docs/specs/agent-manifest.md`. Optional fields default to empty lists and `false` when null.
+- Notes: Semantics live in `blueprint/30-specs/agent-manifest.md`. Optional fields default to empty lists and `false` when null.
 
 ## Invariants
 - All IDs are `fixed_size_binary[16]` (UUIDv7) and equal `Spine.row_id` for their table.
@@ -156,4 +156,5 @@ Arrow-first, v1.0 schemas for the canonical tables. Each table is `Spine + Paylo
 ### Receipts (specified only)
 - PK: 
 eceipt_id = row_id`n- Fields: 	imestamp: timestamp(ms), ction_type: utf8, policy_decision: utf8,`n  capability_id?: fixed_size_binary[16], input_hash?: fixed_size_binary[32],`n  output_hash?: fixed_size_binary[32], prev_hash?: fixed_size_binary[32],`n  chain_hash: fixed_size_binary[32]`n- Notes: minimal by default; no raw content.
+
 

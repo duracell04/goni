@@ -1,4 +1,4 @@
-# 90 - Hardware Decisions (ADR Log)
+﻿# 90 - Hardware Decisions (ADR Log)
 DOC-ID: ADR-INDEX-HW
 
 Last refreshed: **2026-01-03**
@@ -22,7 +22,7 @@ Links:
 
 We need an MVP node that is:
 
-- small (6–8 L), quiet, and always-on,
+- small (6â€“8 L), quiet, and always-on,
 - capable of running two local OSS models in parallel plus RAG,
 - power-feasible on a standard outlet,
 - and upgradeable by swapping the compute module.
@@ -63,11 +63,11 @@ We need an MVP node that is:
 
 The MVP experience target includes:
 
-- two local models in parallel (8–14B quant),
-- interactive context lengths (8–16k),
+- two local models in parallel (8â€“14B quant),
+- interactive context lengths (8â€“16k),
 - RAG indexes and embeddings in memory.
 
-64 GB unified memory can run smaller models, but it is not representative of the “real exocortex” story and tends to collapse under concurrency.
+64 GB unified memory can run smaller models, but it is not representative of the â€œreal exocortexâ€ story and tends to collapse under concurrency.
 
 ### Decision
 
@@ -77,7 +77,7 @@ The MVP experience target includes:
 ### Consequences
 
 - Compute module choice is constrained to 128 GB configurations (often soldered LPDDR).
-- BOM and supply chain focus on 128 GB availability; no “upgrade later” assumption.
+- BOM and supply chain focus on 128 GB availability; no â€œupgrade laterâ€ assumption.
 
 ### References
 
@@ -94,11 +94,11 @@ The MVP experience target includes:
 
 ### Context
 
-Cluster/mesh use (2–4 nodes) and fast local RAG/data sync benefits from multi-gigabit Ethernet. Many consumer routers/switches now support at least 2.5 GbE; 5 GbE is increasingly common on higher-end boards.
+Cluster/mesh use (2â€“4 nodes) and fast local RAG/data sync benefits from multi-gigabit Ethernet. Many consumer routers/switches now support at least 2.5 GbE; 5 GbE is increasingly common on higher-end boards.
 
 ### Decision
 
-- MVP compute modules should provide **≥5 GbE** if available.
+- MVP compute modules should provide **â‰¥5 GbE** if available.
 - **2.5 GbE is acceptable** for early dev boxes, but not the long-term reference.
 
 ### Consequences
@@ -120,12 +120,12 @@ We want a desk/shelf appliance, not a tower. The enclosure must still fit:
 
 - APU board (Mini-ITX-style),
 - internal PSU,
-- 2× NVMe,
+- 2Ã— NVMe,
 - quiet fans and dust filtering.
 
 ### Decision
 
-- Target enclosure volume: **~7 L** (allowed range 6–8 L).
+- Target enclosure volume: **~7 L** (allowed range 6â€“8 L).
 - Design for **low-RPM, large-fan airflow** (no small high-RPM blowers).
 
 ### Consequences
@@ -135,7 +135,7 @@ We want a desk/shelf appliance, not a tower. The enclosure must still fit:
 
 ---
 
-## ADR-005 - PSU approach: internal SFX, 500–600 W, efficiency-first
+## ADR-005 - PSU approach: internal SFX, 500â€“600 W, efficiency-first
 
 **Status:** Accepted  
 **Date:** 2025-12-14  
@@ -147,7 +147,7 @@ APU-centric nodes have modest sustained power, but need headroom for spikes and 
 
 ### Decision
 
-- Use an internal **SFX** PSU in the **500–600 W** class, **80+ Gold** or better.
+- Use an internal **SFX** PSU in the **500â€“600 W** class, **80+ Gold** or better.
 - Prefer ATX 3.x compliant units when practical (cabling/standards alignment).
 
 ### Consequences
@@ -157,7 +157,7 @@ APU-centric nodes have modest sustained power, but need headroom for spikes and 
 
 ---
 
-## ADR-006 - Runtime alignment requirement: close the “APU inference backend” gap
+## ADR-006 - Runtime alignment requirement: close the â€œAPU inference backendâ€ gap
 
 **Status:** Accepted  
 **Date:** 2025-12-14  
@@ -176,7 +176,7 @@ The current kernel inference engine in-repo is HTTP vLLM client. vLLM is mature 
 ### Consequences
 
 - Hardware and software roadmaps are coupled until this is resolved.
-- “Pro” nodes (NVIDIA) can serve as a temporary throughput baseline for vLLM, but must not redefine the MVP hardware envelope.
+- â€œProâ€ nodes (NVIDIA) can serve as a temporary throughput baseline for vLLM, but must not redefine the MVP hardware envelope.
 
 ### References
 
@@ -211,7 +211,7 @@ software scheduling and routing can enforce them.
 - Hardware selection must provide the telemetry and knobs defined in
   `blueprint/hardware/10-requirements.md`.
 - Scheduling policies in `blueprint/software/10-requirements.md` and
-  `blueprint/docs/specs/scheduler-and-interrupts.md` are mandatory for safe operation.
+  `blueprint/30-specs/scheduler-and-interrupts.md` are mandatory for safe operation.
 
 ### Non-goals
 
@@ -223,3 +223,4 @@ software scheduling and routing can enforce them.
 If telemetry is missing or unstable, Goni MUST fall back to conservative
 policies: reduce duty cycle, prefer CPU/iGPU routing, and defer compaction until
 safe conditions return.
+

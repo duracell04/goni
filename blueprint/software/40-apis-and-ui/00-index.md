@@ -25,9 +25,9 @@ so that we can reason about behaviour end-to-end.
 
 The API layer is also constrained by the canonical kernel contracts:
 
-- Tools are capability-scoped syscalls with mandatory audit envelopes: `blueprint/docs/specs/tool-capability-api.md`
-- Agents are local processes with manifests (permissions/triggers/budgets): `blueprint/docs/specs/agent-definition.md`, `blueprint/docs/specs/agent-manifest.md`
-- Latent state is maintained independently of language decoding: `blueprint/docs/specs/latent-state-contract.md`
+- Tools are capability-scoped syscalls with mandatory audit envelopes: `blueprint/30-specs/tool-capability-api.md`
+- Agents are local processes with manifests (permissions/triggers/budgets): `blueprint/30-specs/agent-definition.md`, `blueprint/30-specs/agent-manifest.md`
+- Latent state is maintained independently of language decoding: `blueprint/30-specs/latent-state-contract.md`
 
 ---
 
@@ -51,3 +51,4 @@ For the MVP / prototype:
 - The **dashboard** is **optional** – the kernel must be fully usable without any UI running.
 
 Future work (admin APIs, rich dashboards, multi-user UIs) will extend this directory but must not violate the invariants defined here.
+

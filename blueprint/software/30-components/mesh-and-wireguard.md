@@ -1,6 +1,6 @@
-# 99 – Mesh and WireGuard
+ï»¿# 99 â€“ Mesh and WireGuard
 
-Status: Future – out of scope for MVP  
+Status: Future â€“ out of scope for MVP  
 Scope: Multi-node coordination & secure overlay (design placeholder)
 
 ---
@@ -57,12 +57,13 @@ This file exists to document the intended multi-node story and to constrain futu
 
 ## 5. Upstream
 - [OS and base image](/blueprint/software/30-components/os-and-base-image.md)
-- [Sync policies](/blueprint/software/docs/specs/sync-policies.md)
+- [Sync policies](/blueprint/30-specs/sync-policies.md)
 
 ## 6. Downstream
-- [Network gate and anonymity](/blueprint/software/docs/specs/network-gate-and-anonymity.md)
+- [Network gate and anonymity](/blueprint/30-specs/network-gate-and-anonymity.md)
 - [Remote LLM Architecture](/blueprint/software/docs/remote-llm-architecture.md)
 
 ## 7. Adjacent
 - [Security overview](/blueprint/software/security/00-overview.md)
 - [Runtime overview](/blueprint/software/runtime/00-overview.md)
+

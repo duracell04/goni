@@ -1,10 +1,10 @@
-# Goni Hardware Requirements (MVP)
+﻿# Goni Hardware Requirements (MVP)
 DOC-ID: HREQ-01
 
 > This document describes what the **final Goni product** should look like and be able to do, from a hardware and physical-system perspective.  
 > It is deliberately technology-agnostic (no specific brands, chips, or vendors).
 
-> **Scope note:** This file covers *physical constraints* and targets. Software behaviour and contracts live in `blueprint/software/10-requirements.md` and `blueprint/docs/specs/`.
+> **Scope note:** This file covers *physical constraints* and targets. Software behaviour and contracts live in `blueprint/software/10-requirements.md` and `blueprint/30-specs/`.
 
 ---
 
@@ -26,15 +26,15 @@ All hardware decisions should support this purpose.
 ### 2.1 Size & Shape
 
 - The device should be a **compact, standalone box**, not a rack server or tower PC.
-- Target external volume: **approximately 6–8 litres**.
+- Target external volume: **approximately 6â€“8 litres**.
 - Rough size envelope (for discussion, not final):  
-  - height: 20–30 cm  
-  - depth: 20–25 cm  
-  - width: 10–15 cm  
+  - height: 20â€“30 cm  
+  - depth: 20â€“25 cm  
+  - width: 10â€“15 cm  
 
 ### 2.2 Aesthetics
 
-- Appearance should be **minimal, neutral, and “living room safe”**:
+- Appearance should be **minimal, neutral, and â€œliving room safeâ€**:
   - Matte or satin surface, preferably dark (e.g. black / dark grey).
   - No RGB lighting, no gamer styling, no visible branding beyond a small mark.
 - Front panel elements:
@@ -113,7 +113,7 @@ The hardware must support a low-power, always-on encoder loop plus bursty "solve
 This section defines platform contracts for inference-time compute reasoning
 (ITCR). These are hardware-level requirements that enable the software policies
 defined in `blueprint/software/10-requirements.md`, `blueprint/software/30-components/llm-runtime.md`,
-and `blueprint/docs/specs/scheduler-and-interrupts.md`.
+and `blueprint/30-specs/scheduler-and-interrupts.md`.
 
 #### 3.5.1 Platform signals (telemetry requirements)
 
@@ -183,7 +183,7 @@ The platform MUST support fallbacks for:
 
 - Goni must be designed as a **first-class cluster node**:
   - It should be straightforward to run multiple devices on the same network and treat them as a **single logical AI cluster**.
-- No special external hardware beyond standard networking equipment should be required for a small mesh (2–4 nodes).
+- No special external hardware beyond standard networking equipment should be required for a small mesh (2â€“4 nodes).
 - Latency-sensitive workloads should work well when the user interacts with **any one** of the nodes in the mesh.
 
 ---
@@ -200,10 +200,10 @@ The platform MUST support fallbacks for:
 ### 5.2 Acoustic Behaviour
 
 - Under light and typical workloads (chat, coding, indexing), the device should be:
-  - Subjectively **“near silent”** in a quiet room.
+  - Subjectively **â€œnear silentâ€** in a quiet room.
 - Under heavy workloads (adapter training, long-running jobs), fan noise is acceptable but:
   - Should remain within **reasonable desktop/workstation levels**,
-  - Should not sound like a “server room” or high-RPM blower.
+  - Should not sound like a â€œserver roomâ€ or high-RPM blower.
 
 ### 5.3 Serviceability
 
@@ -234,7 +234,7 @@ The platform MUST support fallbacks for:
 The hardware design should anticipate:
 
 - That compute boards / accelerators may be **swapped or upgraded** over the product's lifetime without redesigning the entire enclosure and power domain.
-- That external **“heavy nodes”** (e.g. more powerful accelerators in separate devices) can be attached over the network in future, and Goni should be ready from a power and networking standpoint.
+- That external **â€œheavy nodesâ€** (e.g. more powerful accelerators in separate devices) can be attached over the network in future, and Goni should be ready from a power and networking standpoint.
 
 The constraints in this document should remain valid even as specific chip generations change.
 
@@ -250,4 +250,5 @@ For the MVP, Goni is **not** intended to be:
 - A trivially passively cooled / fanless device (under realistic performance requirements).
 
 These may be explored as separate product lines, but are out of scope for the hardware MVP.
+
 

@@ -1,4 +1,4 @@
-# Goni Hardware - Overview (MVP)
+﻿# Goni Hardware - Overview (MVP)
 
 Last refreshed: **2026-01-03**
 
@@ -25,7 +25,7 @@ We stay **technology-agnostic at the product level**, but we still converge on c
 At a high level, the Goni hardware should:
 
 - **Look and feel** like a high-end, minimalistic device:
-  - compact rectangular box (target: ~7 L, allowed: 6–8 L),
+  - compact rectangular box (target: ~7 L, allowed: 6â€“8 L),
   - matte, neutral finish (e.g. black / dark grey),
   - one power button and one calm status light bar on the front,
   - no RGB, no gamer aesthetics.
@@ -43,7 +43,7 @@ At a high level, the Goni hardware should:
 
 - **Act as a cluster node**:
   - multiple Goni boxes on a network should combine into one logical AI system,
-  - nothing beyond normal networking hardware should be required for a small cluster (2–4 nodes).
+  - nothing beyond normal networking hardware should be required for a small cluster (2â€“4 nodes).
 
 ---
 
@@ -101,7 +101,7 @@ Telemetry signal -> scheduler decision -> runtime routing -> persistence action:
 Cross-layer links:
 - hardware constraints -> `blueprint/software/10-requirements.md`
 - runtime routing -> `blueprint/software/30-components/llm-runtime.md`
-- duty cycle/hysteresis -> `blueprint/docs/specs/scheduler-and-interrupts.md`
+- duty cycle/hysteresis -> `blueprint/30-specs/scheduler-and-interrupts.md`
 
 ### 1.1.6 Failure modes and fallbacks
 
@@ -152,7 +152,7 @@ See [`90-decisions.md`](/blueprint/hardware/90-decisions.md) for the canonical d
 
 - **MVP reference compute module:** APU-centric node based on a **Ryzen AI Max+ 395 class** board with **128 GB unified LPDDR5X** (Framework Desktop mainboard is the primary reference; HP Z2 Mini G1a is the off-the-shelf fallback).  
 - **Supported minimum:** 64 GB unified-memory devices may be used for early development and testing, but they are not performance-representative for the product story and must be treated as a degraded mode (see `blueprint/software/10-requirements.md`).
-- **MVP enclosure envelope:** ~7 L, quiet, front status bar, internal SFX PSU, 2× NVMe.  
+- **MVP enclosure envelope:** ~7 L, quiet, front status bar, internal SFX PSU, 2Ã— NVMe.  
 - **MVP networking:** 5 GbE preferred (2.5 GbE acceptable only as fallback for early dev boxes).
 
 ---
@@ -170,3 +170,4 @@ See [`90-decisions.md`](/blueprint/hardware/90-decisions.md) for the canonical d
    - add or update an ADR entry in [`90-decisions.md`](/blueprint/hardware/90-decisions.md).
 
 The aim is to converge on a **buildable, testable Goni node** that meets shared requirements, not just an idealised spec. Cross-check software constraints in `blueprint/software/` (LLM runtime backends, networking, storage layout) so the box and stack stay aligned.
+

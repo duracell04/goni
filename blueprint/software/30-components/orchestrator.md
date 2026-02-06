@@ -1,6 +1,6 @@
-# 20 ñ Orchestrator
+Ôªø# 20 ‚Äì Orchestrator
 
-Status: MVP ñ single-node orchestrator  
+Status: MVP ‚Äì single-node orchestrator  
 Scope: Logical routing inside one node (no mesh yet)
 
 ---
@@ -63,7 +63,7 @@ It glues external APIs to the internal planes ?? (scheduler/router), ?? (context
 
 HTTP /v1/chat/completions:
 
-- Request: compatible with OpenAIís chat/completions:
+- Request: compatible with OpenAI‚Äôs chat/completions:
   - messages[], model, stream, optional 	ools.
 - Response:
   - Non-streaming or server-sent events with tokens.
@@ -136,7 +136,7 @@ The Orchestrator only calls submit / watch / cancel and forwards streams back to
 
 **Future**
 
-* Add a ìtarget nodeî field on JobDescriptor and a Mesh layer that chooses nodes.
+* Add a ‚Äútarget node‚Äù field on JobDescriptor and a Mesh layer that chooses nodes.
 * Gateway orchestrator that can:
 
   * route interactive jobs to local node,
@@ -147,9 +147,9 @@ The Orchestrator spec here is the single-node kernel perspective; multi-node con
 
 
 ## 6. Upstream
-- [Job contract](/blueprint/software/docs/specs/job.md)
-- [Scheduler and interrupts](/blueprint/software/docs/specs/scheduler-and-interrupts.md)
-- [Tool capability API](/blueprint/software/docs/specs/tool-capability-api.md)
+- [Job contract](/blueprint/30-specs/job.md)
+- [Scheduler and interrupts](/blueprint/30-specs/scheduler-and-interrupts.md)
+- [Tool capability API](/blueprint/30-specs/tool-capability-api.md)
 - [LLM runtime](/blueprint/software/30-components/llm-runtime.md)
 
 ## 7. Downstream
@@ -157,5 +157,6 @@ The Orchestrator spec here is the single-node kernel perspective; multi-node con
 - [OpenAPI spec](/blueprint/software/api/openapi.yaml)
 
 ## 8. Adjacent
-- [Network gate and anonymity](/blueprint/software/docs/specs/network-gate-and-anonymity.md)
-- [Receipts](/blueprint/software/docs/specs/receipts.md)
+- [Network gate and anonymity](/blueprint/30-specs/network-gate-and-anonymity.md)
+- [Receipts](/blueprint/30-specs/receipts.md)
+

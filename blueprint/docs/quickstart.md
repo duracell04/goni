@@ -1,14 +1,12 @@
 # QUICKSTART
 
-Status: implemented (untested)
+Status: Specified only / roadmap
 
-Prereqs: Docker and docker compose.
+Prereqs (intended): Docker and docker compose.
 
-From `blueprint/`:
+Planned flow from `blueprint/`:
 
 1) make demo
 2) make smoke
 
-Use .env.example for required environment variables.
-
-See blueprint/scripts/demo.sh and blueprint/scripts/smoke_test.sh for details.
+Use .env.example for required environment variables (planned).

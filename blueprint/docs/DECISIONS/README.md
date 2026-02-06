@@ -1,4 +1,4 @@
-# Decisions
+﻿# Decisions (Moved)
 
-This folder collects cross-cutting decision notes. Formal decisions live in
-blueprint/hardware/90-decisions.md and blueprint/software/90-decisions.md.
+Canonical ADRs now live at `/blueprint/decisions/`.
+Start here: `/blueprint/decisions/00-index.md`.

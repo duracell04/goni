@@ -1,4 +1,4 @@
-# 20 – Software Architecture (Formal View)
+﻿# 20 â€“ Software Architecture (Formal View)
 
 Status: v0.1 (2025-11-30)
 Audience: Systems & ML engineers, PL / formal methods people
@@ -14,17 +14,17 @@ N = (\mathcal{A}, \mathcal{X}, \mathcal{K}, \mathcal{E})
 $$
 where:
 
-- \(\mathcal{A}\): **Arrow Spine** – a symmetric monoidal category of zero-copy data transforms.
-- \(\mathcal{X}\): **Context Plane** – a submodular optimisation problem over retrieved chunks.
-- \(\mathcal{K}\): **Control Plane** – a controlled queueing network with a Lyapunov scheduler.
-- \(\mathcal{E}\): **Execution Substrate** – LLM / embed engines + Wasm sandboxes.
+- \(\mathcal{A}\): **Arrow Spine** â€“ a symmetric monoidal category of zero-copy data transforms.
+- \(\mathcal{X}\): **Context Plane** â€“ a submodular optimisation problem over retrieved chunks.
+- \(\mathcal{K}\): **Control Plane** â€“ a controlled queueing network with a Lyapunov scheduler.
+- \(\mathcal{E}\): **Execution Substrate** â€“ LLM / embed engines + Wasm sandboxes.
 
 We use this decomposition both as an implementation guide and as the basis for our invariants.
 
 **How to read this doc.**
 
 - This file defines the architecture and its formal objects.
-- `blueprint/software/30-conformance.md` turns those objects into invariants and proof obligations (what must be shown or tested for an MVP node to be “conformant”).
+- `blueprint/software/30-conformance.md` turns those objects into invariants and proof obligations (what must be shown or tested for an MVP node to be â€œconformantâ€).
 - `blueprint/software/95-theory-appendix.md` gives a brief theoretical backdrop (category theory, submodularity, Lyapunov stability, bandits, capabilities).
 
 Read in the order: **Architecture (20) -> Conformance (30) -> Theory (95)**.
@@ -59,11 +59,11 @@ observes, distills, and acts under explicit policy and receipts.
 
 Canonical specs:
 
-- Latent state contract: `blueprint/docs/specs/latent-state-contract.md`
-- Agents and manifests: `blueprint/docs/specs/agent-definition.md`, `blueprint/docs/specs/agent-manifest.md`
-- Tools and audit: `blueprint/docs/specs/tool-capability-api.md`
-- Scheduler/interrupts: `blueprint/docs/specs/scheduler-and-interrupts.md`
-- ITCR cascade: `blueprint/docs/specs/itcr.md`
+- Latent state contract: `blueprint/30-specs/latent-state-contract.md`
+- Agents and manifests: `blueprint/30-specs/agent-definition.md`, `blueprint/30-specs/agent-manifest.md`
+- Tools and audit: `blueprint/30-specs/tool-capability-api.md`
+- Scheduler/interrupts: `blueprint/30-specs/scheduler-and-interrupts.md`
+- ITCR cascade: `blueprint/30-specs/itcr.md`
 
 This section is a practical view; the formal planes \((\mathcal{A}, \mathcal{X},
 \mathcal{K}, \mathcal{E})\) below define the invariants.
@@ -82,7 +82,7 @@ Stages:
 4) ITCR reasoner/verifier (bounded search + repair loop).
 5) Commit under governance (policy validation + audit).
 
-See `blueprint/docs/specs/itcr.md` for budgets, triggers, and invariants.
+See `blueprint/30-specs/itcr.md` for budgets, triggers, and invariants.
 
 ---
 
@@ -118,7 +118,7 @@ whose objects are Arrow schemas and whose morphisms are **affine, zero-copy tran
   $$
   such that:
 
-  1. (**Affine use**) each input buffer is used in constructing at most one output buffer; we never “fan-out” raw buffers.  
+  1. (**Affine use**) each input buffer is used in constructing at most one output buffer; we never â€œfan-outâ€ raw buffers.  
   2. (**Zero-copy**) any new `ArrayData` is built exclusively from:
      - existing buffers via slice (`offset`, `len`), or  
      - new **metadata only** (offsets/lengths, validity bitmaps) but **no new payload buffers**.
@@ -195,7 +195,7 @@ This lets us draw diagrams in a richer relational calculus, while pinning hot pa
 
 ---
 
-## 2. Context Plane \(\mathcal{X}\) – RAG as submodular optimisation
+## 2. Context Plane \(\mathcal{X}\) â€“ RAG as submodular optimisation
 
 The Context Plane chooses which pieces of data (chunks) to show to a model, subject to a token budget.
 
@@ -279,15 +279,15 @@ Implementation constraints:
 
 ---
 
-## 3. Control Plane \(\mathcal{K}\) – queueing network and scheduler
+## 3. Control Plane \(\mathcal{K}\) â€“ queueing network and scheduler
 
 ### 3.1 Work classes and queues
 
 We model the node as a discrete-time (or fluid-limit) queueing network with \(n=3\) **classes**:
 
-1. Class 1 – interactive (chat, IDE, UI).  
-2. Class 2 – background (indexing, batch tools, fine-tuning).  
-3. Class 3 – maintenance (compaction, vacuum, WAL rotation).
+1. Class 1 â€“ interactive (chat, IDE, UI).  
+2. Class 2 â€“ background (indexing, batch tools, fine-tuning).  
+3. Class 3 â€“ maintenance (compaction, vacuum, WAL rotation).
 
 Let:
 
@@ -381,7 +381,7 @@ We treat this as a **two-armed bandit** with side information (the features used
 > with \(\beta(\epsilon)\) small. In practice we target \(\beta(\epsilon) \le 0.07\).
 
 > **Invariant K2 (Router regret).**  
-> On benchmark datasets, empirical regret of `goni-router` compared to an oracle policy that knows ground-truth “difficulty” labels must stay below 0.07.
+> On benchmark datasets, empirical regret of `goni-router` compared to an oracle policy that knows ground-truth â€œdifficultyâ€ labels must stay below 0.07.
 
 
 ### 3.5 App ecosystem, identity, and remote presence
@@ -453,8 +453,8 @@ See `blueprint/software/30-components/latent-predictor.md` for the integration s
 
 Where a component is trained or fine-tuned, the preferred high-level objective is:
 
-- learn an encoder representation `S(·)`,
-- learn a predictor `P(·)` such that `P(S(context), S(observation), q) ≈ S(target)`,
+- learn an encoder representation `S(Â·)`,
+- learn a predictor `P(Â·)` such that `P(S(context), S(observation), q) â‰ˆ S(target)`,
 - compare predicted vs target latent representations with a similarity loss (e.g., cosine / contrastive).
 
 This makes "meaning" the primary internal currency, while tokens remain an interface.
@@ -522,7 +522,7 @@ Our **architectural contract** is that each piece satisfies its invariants; the 
 
 ---
 
-## 6. Implementation overview (code ↔ math)
+## 6. Implementation overview (code â†” math)
 
 | Plane / Object | Formal notion                                      | Main Rust crates                               |
 | -------------- | -------------------------------------------------- | ---------------------------------------------- |
@@ -539,3 +539,4 @@ All future contributions should be expressible as:
 * new engines / sandboxes in \((\mathcal{E}),
 
 without breaking the stated invariants.
+

@@ -1,4 +1,4 @@
-# Governance Hub
+﻿# Governance Hub
 DOC-ID: GOV-00
 Status: Specified only / roadmap
 
@@ -11,10 +11,10 @@ This hub connects privacy, threat, trust boundaries, and audit requirements.
 - [Receipts overview](/blueprint/docs/receipts.md)
 
 ## Related contracts
-- [Receipts spec](/blueprint/docs/specs/receipts.md)
-- [Network gate and anonymity](/blueprint/docs/specs/network-gate-and-anonymity.md)
-- [Tool capability API](/blueprint/docs/specs/tool-capability-api.md)
-- [Isolation and tool sandboxes](/blueprint/docs/specs/isolation-and-tool-sandboxes.md)
+- [Receipts spec](/blueprint/30-specs/receipts.md)
+- [Network gate and anonymity](/blueprint/30-specs/network-gate-and-anonymity.md)
+- [Tool capability API](/blueprint/30-specs/tool-capability-api.md)
+- [Isolation and tool sandboxes](/blueprint/30-specs/isolation-and-tool-sandboxes.md)
 
 ## Upstream
 - [System map](/blueprint/docs/00-system-map.md)
@@ -27,3 +27,4 @@ This hub connects privacy, threat, trust boundaries, and audit requirements.
 ## Adjacent
 - [Receipts hub](/blueprint/docs/receipts/00-index.md)
 - [Traceability](/blueprint/docs/TRACEABILITY.md)
+

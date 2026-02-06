@@ -1,4 +1,4 @@
-# Security Overview
+﻿# Security Overview
 DOC-ID: SEC-00
 Status: Specified only / roadmap
 
@@ -11,11 +11,12 @@ boundaries.
 - [TCB](/blueprint/security/docs/tcb.md)
 
 ## Contracts
-- [Network gate and anonymity](/blueprint/security/docs/specs/network-gate-and-anonymity.md)
-- [Isolation and tool sandboxes](/blueprint/security/docs/specs/isolation-and-tool-sandboxes.md)
-- [Tool capability API](/blueprint/security/docs/specs/tool-capability-api.md)
-- [Receipts spec](/blueprint/security/docs/specs/receipts.md)
+- [Network gate and anonymity](/blueprint/30-specs/network-gate-and-anonymity.md)
+- [Isolation and tool sandboxes](/blueprint/30-specs/isolation-and-tool-sandboxes.md)
+- [Tool capability API](/blueprint/30-specs/tool-capability-api.md)
+- [Receipts spec](/blueprint/30-specs/receipts.md)
 
 ## Local catalogs
 - [Threat catalog](/blueprint/security/10-threats.md)
 - [Control catalog](/blueprint/security/20-controls.md)
+

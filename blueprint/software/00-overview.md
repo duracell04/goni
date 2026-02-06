@@ -12,12 +12,12 @@ The goal is to define a software stack that turns the hardware into a **personal
 Goni separates **cognition** from **verbalization**. Most work happens in a latent state: embeddings, structured summaries, and compact "world state" variables that are continuously updated from observations (files, screen, messages, sensors, tool outputs). Natural language output is treated as an **optional projection** used only when useful (explain, draft, converse). This reduces unnecessary token generation, improves privacy boundaries (less raw text duplication), and makes the system easier to run locally by keeping always-on components lightweight.
 
 **Agents are local processes; the LLM is a budgeted interrupt.** The canonical
-specs live in `blueprint/docs/specs/`:
+specs live in `blueprint/30-specs/`:
 
-- Latent state: `blueprint/docs/specs/latent-state-contract.md`
-- Agents and manifests: `blueprint/docs/specs/agent-definition.md`, `blueprint/docs/specs/agent-manifest.md`
-- Tools and audit: `blueprint/docs/specs/tool-capability-api.md`
-- Scheduler/interrupts: `blueprint/docs/specs/scheduler-and-interrupts.md`
+- Latent state: `blueprint/30-specs/latent-state-contract.md`
+- Agents and manifests: `blueprint/30-specs/agent-definition.md`, `blueprint/30-specs/agent-manifest.md`
+- Tools and audit: `blueprint/30-specs/tool-capability-api.md`
+- Scheduler/interrupts: `blueprint/30-specs/scheduler-and-interrupts.md`
 
 ---
 
@@ -106,3 +106,4 @@ The aim is to arrive at a **coherent, minimal software stack** that implements t
 - `goni-infer`: inference engine abstraction and HTTP vLLM client.
 - `goni-schema`: generated Arrow schemas for the planes (from `50-data` DSL).
 - `goni-http` / `goni-cli`: thin entrypoints that exercise the kernel.
+

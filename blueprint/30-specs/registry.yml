@@ -1,0 +1,87 @@
+﻿version: 1
+entries:
+  - id: AGENT-DEF-01
+    title: "Agent Definition (Goni OS)"
+    type: SPEC
+    status: specified_only
+    path: 30-specs/agent-definition.md
+  - id: AGENT-MANIFEST-01
+    title: "Agent Manifest"
+    type: SPEC
+    status: specified_only
+    path: 30-specs/agent-manifest.md
+  - id: SANDBOX-01
+    title: "Isolation and Tool Sandboxes"
+    type: SPEC
+    status: specified_only
+    path: 30-specs/isolation-and-tool-sandboxes.md
+  - id: ITCR-01
+    title: "Inference-Time Compute Reasoning"
+    type: SPEC
+    status: specified_only
+    path: 30-specs/itcr.md
+  - id: JOB-01
+    title: "Job Contract"
+    type: SPEC
+    status: specified_only
+    path: 30-specs/job.md
+  - id: LSC-01
+    title: "Latent State Contract"
+    type: SPEC
+    status: specified_only
+    path: 30-specs/latent-state-contract.md
+  - id: NET-01
+    title: "Network Gate and Anonymity"
+    type: SPEC
+    status: specified_only
+    path: 30-specs/network-gate-and-anonymity.md
+  - id: REC-01
+    title: "Receipts"
+    type: SPEC
+    status: specified_only
+    path: 30-specs/receipts.md
+  - id: SCHED-01
+    title: "Scheduler and Interrupts"
+    type: SPEC
+    status: specified_only
+    path: 30-specs/scheduler-and-interrupts.md
+  - id: SS-01
+    title: "Symbolic Substrate"
+    type: SPEC
+    status: specified_only
+    path: 30-specs/symbolic-substrate.md
+  - id: SYNC-01
+    title: "Sync Policies"
+    type: SPEC
+    status: specified_only
+    path: 30-specs/sync-policies.md
+  - id: TOOL-01
+    title: "Tool Capability API"
+    type: SPEC
+    status: specified_only
+    path: 30-specs/tool-capability-api.md
+  - id: CRDT-AUDIT-01
+    title: "CRDT: audit"
+    type: SPEC
+    status: specified_only
+    path: 30-specs/crdt/audit.md
+  - id: CRDT-DECISIONS-01
+    title: "CRDT: decisions"
+    type: SPEC
+    status: specified_only
+    path: 30-specs/crdt/decisions.md
+  - id: CRDT-NOTES-01
+    title: "CRDT: notes"
+    type: SPEC
+    status: specified_only
+    path: 30-specs/crdt/notes.md
+  - id: CRDT-PREFS-01
+    title: "CRDT: prefs"
+    type: SPEC
+    status: specified_only
+    path: 30-specs/crdt/prefs.md
+  - id: CRDT-TASKS-01
+    title: "CRDT: tasks"
+    type: SPEC
+    status: specified_only
+    path: 30-specs/crdt/tasks.md

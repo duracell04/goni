@@ -1,4 +1,4 @@
-# Docs Rules
+﻿# Docs Rules
 DOC-ID: SYS-01
 Status: Specified only / roadmap
 
@@ -6,10 +6,11 @@ These rules keep the blueprint documentation consistent, status-honest, and
 traceable.
 
 ## Canonical sources
-- Specs live in [blueprint/docs/specs/](/blueprint/docs/specs/00-index.md) and are the normative
+- Specs live in [blueprint/30-specs/](/blueprint/30-specs/00-index.md) and are the normative
   contracts.
 - Data plane contracts live under [blueprint/software/50-data/](/blueprint/software/50-data/00-index.md).
-- Decisions live in [blueprint/software/90-decisions.md](/blueprint/software/90-decisions.md) and
+- Decisions live in [blueprint/decisions/](/blueprint/decisions/00-index.md) and the
+  hardware/software decision logs: [blueprint/software/90-decisions.md](/blueprint/software/90-decisions.md),
   [blueprint/hardware/90-decisions.md](/blueprint/hardware/90-decisions.md).
 - The canonical file list is maintained in the truth map
   [blueprint/docs/meta/truth-map.json](/blueprint/docs/meta/truth-map.json).
@@ -38,3 +39,4 @@ tests, ADRs, benchmarks, or dated measurements.
 
 ## Generated files
 Do not edit AGENTS.md directly. Update templates under blueprint/docs/meta/ and regenerate.
+

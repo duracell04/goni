@@ -1,6 +1,6 @@
-# 10 ñ OS and Base Image
+Ôªø# 10 ‚Äì OS and Base Image
 
-Status: MVP ñ conceptual substrate  
+Status: MVP ‚Äì conceptual substrate  
 Scope: Single-node execution environment assumptions
 
 ---
@@ -24,7 +24,7 @@ We treat this layer as a **black box with minimal assumptions**, so the kernel s
 For the MVP, the substrate is responsible for:
 
 - **Process model**
-  - Start goni-http (or goni-node) on boot (systemd, Docker, k8s, Ö).
+  - Start goni-http (or goni-node) on boot (systemd, Docker, k8s, ‚Ä¶).
   - Capture logs via stdout/stderr (journald or container logs).
 
 - **Resource exposure**
@@ -47,7 +47,7 @@ For the MVP, the substrate is responsible for:
 
 Out of scope for the MVP:
 
-- Custom ìGoni OSî distribution or immutable image.
+- Custom ‚ÄúGoni OS‚Äù distribution or immutable image.
 - Automated disk encryption / secure boot story.
 - Cluster bootstrap and node join (lives in blueprint/hardware/infra docs).
 
@@ -90,13 +90,13 @@ We **do not** fix whether Goni runs on bare metal, in a VM, or in a container; t
 
 ---
 
-## 5. MVP vs future ìapplianceî
+## 5. MVP vs future ‚Äúappliance‚Äù
 
 **MVP / prototype**
 
 - Run on any modern 64-bit Linux.
 - Dependencies (Rust toolchain, model runtimes) installed manually or via container.
-- No opinionated disk layout beyond ìpersistent dirs existî.
+- No opinionated disk layout beyond ‚Äúpersistent dirs exist‚Äù.
 
 **Future appliance**
 
@@ -110,12 +110,13 @@ Those details live in blueprint/hardware/ and infra repos; this file records the
 
 ## 6. Upstream
 - [Hardware requirements](/blueprint/software/hardware/10-requirements.md)
-- [Isolation and tool sandboxes](/blueprint/software/docs/specs/isolation-and-tool-sandboxes.md)
+- [Isolation and tool sandboxes](/blueprint/30-specs/isolation-and-tool-sandboxes.md)
 
 ## 7. Downstream
 - [LLM runtime](/blueprint/software/30-components/llm-runtime.md)
 - [Mesh and WireGuard](/blueprint/software/30-components/mesh-and-wireguard.md)
 
 ## 8. Adjacent
-- [Tool capability API](/blueprint/software/docs/specs/tool-capability-api.md)
+- [Tool capability API](/blueprint/30-specs/tool-capability-api.md)
 - [Security overview](/blueprint/software/security/00-overview.md)
+

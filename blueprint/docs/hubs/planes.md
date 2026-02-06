@@ -1,4 +1,4 @@
-# Planes Hub
+﻿# Planes Hub
 DOC-ID: PLANE-00
 Status: Specified only / roadmap
 
@@ -10,8 +10,8 @@ This hub connects the plane model to the rest of the blueprint.
 - [Spine and IDs](/blueprint/software/50-data/20-spine-and-ids.md)
 
 ## Related contracts
-- [Symbolic substrate](/blueprint/docs/specs/symbolic-substrate.md)
-- [Latent state contract](/blueprint/docs/specs/latent-state-contract.md)
+- [Symbolic substrate](/blueprint/30-specs/symbolic-substrate.md)
+- [Latent state contract](/blueprint/30-specs/latent-state-contract.md)
 
 ## Upstream
 - [System map](/blueprint/docs/00-system-map.md)
@@ -23,3 +23,4 @@ This hub connects the plane model to the rest of the blueprint.
 ## Adjacent
 - [Governance hub](/blueprint/docs/hubs/governance.md)
 - [Product surfaces hub](/blueprint/docs/hubs/product-surfaces.md)
+

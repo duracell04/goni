@@ -1,6 +1,6 @@
-# 70 – Vector Database
+ï»¿# 70 â€“ Vector Database
 
-Status: MVP – single-node ANN index + Arrow adapter  
+Status: MVP â€“ single-node ANN index + Arrow adapter  
 Scope: Local RAG retrieval for Context Plane
 
 ---
@@ -17,8 +17,8 @@ It is a concrete implementation of the retrieval part feeding the submodular con
 
 Note: retrieval is treated as a Memory Plane capability invoked by the
 predictor as evidence. It augments latent state; it is not the cognitive core.
-See `blueprint/docs/specs/latent-state-contract.md` and
-`blueprint/docs/specs/tool-capability-api.md`.
+See `blueprint/30-specs/latent-state-contract.md` and
+`blueprint/30-specs/tool-capability-api.md`.
 
 ---
 
@@ -92,10 +92,10 @@ This schema is what goni-context expects for the submodular objective and budget
   For small synthetic benchmarks, ANN recall@K vs brute-force = 0.9.
 
 * **Latency target**
-  For typical K (e.g. 64–128) and dataset sizes expected for a single user, p99 search latency « LLM latency (target < 50 ms).
+  For typical K (e.g. 64â€“128) and dataset sizes expected for a single user, p99 search latency Â« LLM latency (target < 50 ms).
 
 * **Freshness**
-  New chunks should be searchable “soon enough” (MVP: after a bounded delay, or on explicit 
+  New chunks should be searchable â€œsoon enoughâ€ (MVP: after a bounded delay, or on explicit 
 ebuild).
 
 ---
@@ -123,5 +123,6 @@ ebuild).
 - [Latent predictor](/blueprint/software/30-components/latent-predictor.md)
 
 ## 8. Adjacent
-- [Tool capability API](/blueprint/software/docs/specs/tool-capability-api.md)
+- [Tool capability API](/blueprint/30-specs/tool-capability-api.md)
 - [Orchestrator](/blueprint/software/30-components/orchestrator.md)
+

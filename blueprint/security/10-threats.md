@@ -1,4 +1,4 @@
-# Threat Catalog
+﻿# Threat Catalog
 DOC-ID: SEC-10
 Status: Specified only / roadmap
 
@@ -14,4 +14,5 @@ canonical [Threat model](/blueprint/security/docs/threat-model.md).
 
 ## References
 - [Threat model](/blueprint/security/docs/threat-model.md)
-- [Network gate and anonymity](/blueprint/security/docs/specs/network-gate-and-anonymity.md)
+- [Network gate and anonymity](/blueprint/30-specs/network-gate-and-anonymity.md)
+

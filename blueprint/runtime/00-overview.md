@@ -1,13 +1,13 @@
-# Runtime Overview
+﻿# Runtime Overview
 DOC-ID: RUNTIME-00
 Status: Specified only / roadmap
 
 This track describes runtime behavior, enforcement points, and sandboxing.
 
 ## Key contracts
-- [Isolation and tool sandboxes](/blueprint/runtime/docs/specs/isolation-and-tool-sandboxes.md)
-- [Tool capability API](/blueprint/runtime/docs/specs/tool-capability-api.md)
-- [Network gate and anonymity](/blueprint/runtime/docs/specs/network-gate-and-anonymity.md)
+- [Isolation and tool sandboxes](/blueprint/30-specs/isolation-and-tool-sandboxes.md)
+- [Tool capability API](/blueprint/30-specs/tool-capability-api.md)
+- [Network gate and anonymity](/blueprint/30-specs/network-gate-and-anonymity.md)
 
 ## Governance links
 - [Threat model](/blueprint/runtime/docs/threat-model.md)
@@ -16,3 +16,4 @@ This track describes runtime behavior, enforcement points, and sandboxing.
 
 ## Local hubs
 - [Sandbox index](/blueprint/runtime/sandbox/00-index.md)
+

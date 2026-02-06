@@ -1,4 +1,4 @@
-# Repo Reality Map (Spec vs Prototype vs Experiments)
+﻿# Repo Reality Map (Spec vs Prototype vs Experiments)
 
 ## Definitions
 - Spec: normative design intent; not necessarily implemented
@@ -23,7 +23,7 @@ Use one status phrase per row: Implemented and tested / Implemented (untested) /
 |------|--------|----------|
 | Data (spine, schemas, axioms) | Implemented (untested) | `blueprint/software/kernel/goni-schema/src/lib.rs`; `blueprint/software/kernel/goni-schema/src/macros.rs`; `blueprint/software/kernel/goni-schema/tests/txt_axiom.rs`; `blueprint/software/kernel/goni-store/src/lib.rs`; `blueprint/software/kernel/goni-store/src/spine_mem.rs`; `blueprint/software/kernel/goni-store/src/qdrant.rs` |
 | Context selection | Implemented and tested | `blueprint/software/kernel/goni-context/src/lib.rs` (`selector_respects_budget_and_is_deterministic`) |
-| Control (scheduler/router) | Implemented (untested) | `blueprint/software/kernel/goni-sched/src/lib.rs` (basic ordering test); `blueprint/software/kernel/goni-router/src/lib.rs`; `blueprint/docs/specs/scheduler-and-interrupts.md` |
+| Control (scheduler/router) | Implemented (untested) | `blueprint/software/kernel/goni-sched/src/lib.rs` (basic ordering test); `blueprint/software/kernel/goni-router/src/lib.rs`; `blueprint/30-specs/scheduler-and-interrupts.md` |
 | Execution (LLM blueprint/runtime/tools) | Implemented (untested) | `blueprint/software/kernel/goni-infer/src/http_vllm.rs`; `blueprint/software/kernel/goni-blueprint/tools/src/lib.rs`; `blueprint/software/kernel/goni-http/src/main.rs` |
 
 ## Governance and receipts
@@ -70,3 +70,4 @@ Use one status phrase per row: Implemented and tested / Implemented (untested) /
 - Prompt materialization and redaction enforcement are specified-only; policy checks exist but no runtime pipeline or gate is wired.
 - MemoryEntries write gating is specified-only at runtime; policy checks exist but are not wired.
 - Container-level non-bypass egress is not enforced in compose; policy gate only.
+

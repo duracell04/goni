@@ -6,10 +6,10 @@ Audience: Researchers, systems engineers, auditors
 
 Normative contracts referenced by this document:
 
-- Latent State Contract (LSC-01): `blueprint/docs/specs/latent-state-contract.md`
-- Tool syscall envelope (TOOL-01): `blueprint/docs/specs/tool-capability-api.md`
-- Agent/process model: `blueprint/docs/specs/agent-definition.md`, `blueprint/docs/specs/agent-manifest.md`
-- Scheduler/interrupt semantics: `blueprint/docs/specs/scheduler-and-interrupts.md`
+- Latent State Contract (LSC-01): `blueprint/30-specs/latent-state-contract.md`
+- Tool syscall envelope (TOOL-01): `blueprint/30-specs/tool-capability-api.md`
+- Agent/process model: `blueprint/30-specs/agent-definition.md`, `blueprint/30-specs/agent-manifest.md`
+- Scheduler/interrupt semantics: `blueprint/30-specs/scheduler-and-interrupts.md`
 
 > A **conformant Goni node** is one whose implementation can be mapped onto the four-plane model  
 > $$
@@ -297,4 +297,5 @@ A node qualifies as an **MVP-conformant Goni implementation** if:
 - [ ] Deterministic preset passes the self-loop drift check (bitwise-stable tokens for fixed prompt; blueprint/hardware/driver versions logged).
 
 When these conditions are met, we can credibly claim that a node realises the mathematical architecture of §20 and §95, even if the implementation is still minimal or unoptimised.
+
 

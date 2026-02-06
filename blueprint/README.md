@@ -1,4 +1,4 @@
-# Project Goni
+﻿# Project Goni
 
  > This is the technical blueprint and prototype index. It lives in `blueprint/` so the repo root can stay non-technical; links here point to the canonical artifacts in this blueprint folder.
 
@@ -52,7 +52,7 @@ Target guarantees; see blueprint/docs/STATUS.md for implementation status.
 
 ## Agility guardrails
 
-- Keep the front page timeless: [README.md](../README.md), [blueprint/docs/goni-story.md](/blueprint/docs/goni-story.md), and [blueprint/docs/goni-whitepaper.md](/blueprint/docs/goni-whitepaper.md) stay gut-punch + vision only. Put concrete numbers and models in [blueprint/hardware/90-decisions.md](/blueprint/hardware/90-decisions.md), [blueprint/software/90-decisions.md](/blueprint/software/90-decisions.md), or `blueprint/prototype/**`.
+- Keep the front page timeless: [README.md](../README.md), [blueprint/docs/goni-story.md](/blueprint/docs/goni-story.md), and [blueprint/docs/goni-whitepaper.md](/blueprint/docs/goni-whitepaper.md) stay gut-punch + vision only. Put concrete numbers and models in [blueprint/hardware/90-decisions.md](/blueprint/hardware/90-decisions.md), [blueprint/software/90-decisions.md](/blueprint/software/90-decisions.md), or `blueprint/40-implementation/**`.
 - See [blueprint/docs/goni-agility-rules.md](/blueprint/docs/goni-agility-rules.md) for the full map of what can be pinned where, and how to propose tighter numbers with evidence.
 
 This space is for:
@@ -70,20 +70,20 @@ This space is for:
 - **Product/story track (stakeholders, early adopters)**: start with [blueprint/docs/goni-story.md](/blueprint/docs/goni-story.md), then [blueprint/docs/goni-whitepaper.md](/blueprint/docs/goni-whitepaper.md) for the deep architecture narrative, and [blueprint/docs/goni-swot.md](/blueprint/docs/goni-swot.md) for positioning.
 - **Hardware track (hardware builders)**: [blueprint/hardware/00-overview.md](/blueprint/hardware/00-overview.md) -> [blueprint/hardware/10-requirements.md](/blueprint/hardware/10-requirements.md) -> [blueprint/hardware/20-architecture-options.md](/blueprint/hardware/20-architecture-options.md) -> [blueprint/hardware/25-hardware-layers-and-supplier-map.md](/blueprint/hardware/25-hardware-layers-and-supplier-map.md), with accepted choices in [blueprint/hardware/90-decisions.md](/blueprint/hardware/90-decisions.md).
 - **Software track (software builders)**: [blueprint/software/00-overview.md](/blueprint/software/00-overview.md) -> [blueprint/software/10-requirements.md](/blueprint/software/10-requirements.md) -> [blueprint/software/20-architecture.md](/blueprint/software/20-architecture.md) -> data spine in [blueprint/software/50-data/00-index.md](/blueprint/software/50-data/00-index.md) (and [blueprint/software/50-data/53-schema-dsl-and-macros.md](/blueprint/software/50-data/53-schema-dsl-and-macros.md) for the Arrow DSL) -> accepted choices in [blueprint/software/90-decisions.md](/blueprint/software/90-decisions.md).
-- **Data spine <-> kernel**: the planes and TXT axiom are defined in [blueprint/software/50-data/10-axioms-and-planes.md](/blueprint/software/50-data/10-axioms-and-planes.md) and enforced in code at [blueprint/software/kernel/goni-schema/src/lib.rs](/blueprint/software/kernel/goni-schema/src/lib.rs).
-- **Runs and deployments (I just want to run something)**: for a quick local stack, see [blueprint/software/docker-compose.yml](/blueprint/software/docker-compose.yml); for cluster overlays, see [blueprint/software/k8s/](/blueprint/software/k8s/).
+- **Data spine <-> kernel**: the planes and TXT axiom are defined in [blueprint/software/50-data/10-axioms-and-planes.md](/blueprint/software/50-data/10-axioms-and-planes.md); enforcement is specified only (see [blueprint/docs/STATUS.md](/blueprint/docs/STATUS.md)).
+- **Runs and deployments (I just want to run something)**: see [blueprint/deploy/compose/README.md](/blueprint/deploy/compose/README.md) and [blueprint/deploy/k8s/README.md](/blueprint/deploy/k8s/README.md) for current status.
 
 ---
 
 ## Doc Map (where the truth lives)
 
-- Agents: [blueprint/docs/specs/agent-definition.md](/blueprint/docs/specs/agent-definition.md)
-- Agent manifests: [blueprint/docs/specs/agent-manifest.md](/blueprint/docs/specs/agent-manifest.md)
-- Latent state contract: [blueprint/docs/specs/latent-state-contract.md](/blueprint/docs/specs/latent-state-contract.md)
-- Tool capability API + audit: [blueprint/docs/specs/tool-capability-api.md](/blueprint/docs/specs/tool-capability-api.md)
-- Network gate + anonymity: [blueprint/docs/specs/network-gate-and-anonymity.md](/blueprint/docs/specs/network-gate-and-anonymity.md)
-- Scheduler + interrupts: [blueprint/docs/specs/scheduler-and-interrupts.md](/blueprint/docs/specs/scheduler-and-interrupts.md)
-- Receipts: [blueprint/docs/specs/receipts.md](/blueprint/docs/specs/receipts.md)
+- Agents: [blueprint/30-specs/agent-definition.md](/blueprint/30-specs/agent-definition.md)
+- Agent manifests: [blueprint/30-specs/agent-manifest.md](/blueprint/30-specs/agent-manifest.md)
+- Latent state contract: [blueprint/30-specs/latent-state-contract.md](/blueprint/30-specs/latent-state-contract.md)
+- Tool capability API + audit: [blueprint/30-specs/tool-capability-api.md](/blueprint/30-specs/tool-capability-api.md)
+- Network gate + anonymity: [blueprint/30-specs/network-gate-and-anonymity.md](/blueprint/30-specs/network-gate-and-anonymity.md)
+- Scheduler + interrupts: [blueprint/30-specs/scheduler-and-interrupts.md](/blueprint/30-specs/scheduler-and-interrupts.md)
+- Receipts: [blueprint/30-specs/receipts.md](/blueprint/30-specs/receipts.md)
 - Data plane schemas: [blueprint/software/50-data/51-schemas-mvp.md](/blueprint/software/50-data/51-schemas-mvp.md)
 
 ---
@@ -251,7 +251,35 @@ The blueprint and prototypes remain open-source; the funded MVP will build from 
 
 ## 5. Repo layout
 
-This repo is split into two main workspaces:
+This repo is split into lanes:
+
+### `/00-map/`
+
+Navigation and meta (migration ledger, docs rules, reviewer guides).
+
+### `/10-product/`
+
+Vision, roadmap, next steps, and product-facing research agendas.
+
+### `/20-system/`
+
+System-level summaries (trust posture, performance framing).
+
+### `/30-specs/`
+
+Canonical normative contracts.
+
+### `/decisions/`
+
+ADRs and cross-cutting decision notes.
+
+### `/50-evidence/`
+
+Benchmarks, evals, and reproducibility artifacts.
+
+### `/60-market/`
+
+Competitors, suppliers, and partner research.
 
 ### `/hardware/`
 
@@ -287,7 +315,7 @@ Start in:
 - [blueprint/software/10-requirements.md](/blueprint/software/10-requirements.md) - functional & non-functional requirements  
 - [blueprint/software/20-architecture.md](/blueprint/software/20-architecture.md) - formal architecture and invariants  
 - [blueprint/software/90-decisions.md](/blueprint/software/90-decisions.md) - formal design decisions  
-- [blueprint/software/kernel/](/blueprint/software/kernel/) - Rust workspace for the kernel (traits, HTTP server, vLLM client, Qdrant-backed RAG, scheduler/router stubs)
+- Kernel implementation: specified only at the moment; see [blueprint/docs/STATUS.md](/blueprint/docs/STATUS.md)
 
 ### `/docs/`
 
@@ -330,12 +358,9 @@ If you are thinking about manufacturing/funding, open an issue; the hardware bui
 
 ## Quickstart (local stack)
 
-Prototype/dev stack only; things may change between commits.
+Prototype/dev stack is specified only; things may change between commits.
 
-Prereqs: Docker and docker compose. From `blueprint/`:
-
-- `make demo`
-- `make smoke`
+Prereqs: Docker and docker compose. See [blueprint/docs/quickstart.md](/blueprint/docs/quickstart.md) for the intended workflow.
 
 Services:  
 - `llm-local` (vLLM) at `http://localhost:8000/v1`  
@@ -354,21 +379,5 @@ Example call (against llm-local):
 
 ## Quickstart (k8s / k3s)
 
-Prototype/dev overlays for simulation and experimentation.
+Prototype/dev overlays are specified only; see [blueprint/deploy/k8s/README.md](/blueprint/deploy/k8s/README.md).
 
-Prereqs: kubectl + kustomize, k3s/cluster with storage class.
-
-1. Build/push images (adjust registry):  
-   `docker build -t ghcr.io/duracell04/goni-http:latest blueprint/software/kernel`  
-   `docker push ghcr.io/duracell04/goni-http:latest`
-
-2. Deploy single-node overlay:  
-   `kubectl apply -k blueprint/software/k8s/overlays/single-node`
-
-Services:  
-- `llm-local.goni.svc:8000`  
-- `vecdb.goni.svc:6333/6334`  
-- `orchestrator.goni.svc:7000`  
-- `gateway.goni.svc:80` (ingress at `goni.local` if using provided ingress)
-
-PVC: `goni-models-pvc` (50Gi) created by base manifests. Adjust storage class if needed.

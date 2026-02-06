@@ -50,7 +50,7 @@ These artifacts MUST satisfy LSC-01:
 - auditability (agent, policy, state snapshot),
 - bounded retention and write budgets.
 
-See `blueprint/docs/specs/latent-state-contract.md` for the canonical contract.
+See `blueprint/30-specs/latent-state-contract.md` for the canonical contract.
 
 ## 2. v1.0 Table Set (ships in binary)
 
@@ -79,3 +79,4 @@ We ship the following canonical tables in v1.0:
 
 Any new canonical table must be added to the schema DSL (see
 `53-schema-dsl-and-macros.md`) and documented in `51-schemas-mvp.md`.
+

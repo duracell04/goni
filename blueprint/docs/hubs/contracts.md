@@ -1,11 +1,11 @@
-# Contracts Hub
+﻿# Contracts Hub
 DOC-ID: SPEC-00
 Status: Specified only / roadmap
 
 This hub links normative contracts and the data plane documents they depend on.
 
 ## Specs catalog
-- [Specs index](/blueprint/docs/specs/00-index.md)
+- [Specs index](/blueprint/30-specs/00-index.md)
 
 ## Data plane contracts
 - [Axioms and planes](/blueprint/software/50-data/10-axioms-and-planes.md)
@@ -25,3 +25,4 @@ This hub links normative contracts and the data plane documents they depend on.
 ## Adjacent
 - [Governance hub](/blueprint/docs/hubs/governance.md)
 - [Receipts hub](/blueprint/docs/receipts/00-index.md)
+

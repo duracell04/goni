@@ -1,4 +1,4 @@
-# Receipts Hub
+﻿# Receipts Hub
 DOC-ID: REC-00
 Status: Specified only / roadmap
 
@@ -7,7 +7,7 @@ contract, and schema.
 
 ## Core docs
 - [Receipts overview](/blueprint/docs/receipts.md)
-- [Receipts spec](/blueprint/docs/specs/receipts.md)
+- [Receipts spec](/blueprint/30-specs/receipts.md)
 - [Receipt schema](/blueprint/docs/receipts/receipt-schema.md)
 
 ## Governance links
@@ -19,5 +19,6 @@ contract, and schema.
 - [Product surfaces hub](/blueprint/docs/hubs/product-surfaces.md)
 
 ## Adjacent contracts
-- [Tool capability API](/blueprint/docs/specs/tool-capability-api.md)
-- [Network gate and anonymity](/blueprint/docs/specs/network-gate-and-anonymity.md)
+- [Tool capability API](/blueprint/30-specs/tool-capability-api.md)
+- [Network gate and anonymity](/blueprint/30-specs/network-gate-and-anonymity.md)
+
