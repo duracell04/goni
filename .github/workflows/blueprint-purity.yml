@@ -1,0 +1,92 @@
+name: Blueprint Purity
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  blueprint-purity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Enforce blueprint-only repo
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          files=$(git ls-files)
+          fail=0
+
+          check_prefix() {
+            local prefix="$1"
+            local hits
+            hits=$(echo "$files" | grep -E "^${prefix}" || true)
+            if [ -n "$hits" ]; then
+              echo "Disallowed path prefix: ${prefix}"
+              echo "$hits"
+              fail=1
+            fi
+          }
+
+          check_regex() {
+            local rx="$1"
+            local hits
+            hits=$(echo "$files" | grep -E "$rx" | grep -v '^blueprint/scripts/blueprint_guard\.py$' || true)
+            if [ -n "$hits" ]; then
+              echo "Disallowed pattern: ${rx}"
+              echo "$hits"
+              fail=1
+            fi
+          }
+
+          # Disallowed directories in blueprint-only repo
+          check_prefix "blueprint/benchmarks/"
+          check_prefix "blueprint/demo/"
+          check_prefix "blueprint/deploy/"
+          check_prefix "blueprint/eval/"
+          check_prefix "blueprint/examples/"
+          check_prefix "blueprint/tests/"
+          check_prefix "blueprint/tools/"
+          check_prefix "blueprint/config/"
+
+          # Disallow scripts except the guardrail
+          script_hits=$(echo "$files" | grep -E '^blueprint/scripts/' | grep -v '^blueprint/scripts/blueprint_guard\.py$' || true)
+          if [ -n "$script_hits" ]; then
+            echo "Disallowed scripts in blueprint/scripts/"
+            echo "$script_hits"
+            fail=1
+          fi
+
+          # Disallowed file patterns
+          check_regex '\\.py$'
+          check_regex '\\.sh$'
+          check_regex '\\.ps1$'
+          check_regex '(^|/)Dockerfile'
+          check_regex 'docker-compose.*\\.ya?ml$'
+          check_regex 'kustomization\\.yaml$'
+          check_regex '\\.env(\\.|$)'
+          check_regex '(^|/)Cargo\\.toml$'
+          check_regex '(^|/)package\\.json$'
+          check_regex '(^|/)package-lock\\.json$'
+          check_regex '(^|/)pnpm-lock\\.yaml$'
+          check_regex '(^|/)yarn\\.lock$'
+          check_regex '\\.rs$'
+          check_regex '\\.ts$'
+          check_regex '\\.tsx$'
+          check_regex '\\.js$'
+          check_regex '\\.jsx$'
+          check_regex '\\.go$'
+          check_regex '\\.java$'
+          check_regex '\\.kt$'
+          check_regex '\\.rb$'
+          check_regex '\\.php$'
+          check_regex '\\.sql$'
+
+          if [ "$fail" -ne 0 ]; then
+            echo "Blueprint purity check failed. See violations above."
+            exit 1
+          fi
+
+          echo "Blueprint purity check passed."
