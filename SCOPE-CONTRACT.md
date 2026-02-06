@@ -64,8 +64,21 @@ Purpose: keep `goni/` as a pure blueprint repository (plans, specs, research, di
 | `.env.example` | `.env.example` |
 | `.github/workflows/ci.yml` (build/test) | `.github/workflows/ci.yml` |
 
-## Cross-Repo Reference Format
-When a blueprint doc needs to point to runnable artifacts, use a clear text reference:
-- `goni-prototype-lab:<relative-path>`
+## Cross-repo references (policy)
 
-Example: `goni-prototype-lab:deploy/docker-compose.yml`
+This repository is blueprint-only. Any runnable artifact lives in `goni-prototype-lab`.
+
+**Canonical reference format (guard-safe):**
+- Use plain text: `goni-prototype-lab:<relative-path>`
+  - Example: `goni-prototype-lab:goni-lab/STATUS.md`
+  - Example: `goni-prototype-lab:deploy/k8s/`
+
+**Do NOT:**
+- Do not create markdown links that look like local paths for prototype-lab content
+  (e.g., `[STATUS](/goni-prototype-lab:...)` or `(/blueprint/deploy/...)`).
+  The blueprint guard treats these as in-repo paths and will flag them as broken.
+
+**If you need clickability:**
+- Use a full GitHub URL (allowed by the guard), e.g.
+  `https://github.com/duracell04/goni-prototype-lab/blob/main/goni-lab/STATUS.md`
+  `https://github.com/duracell04/goni-prototype-lab/tree/main/deploy/k8s`

@@ -2,6 +2,8 @@
 
 This repository is blueprint-only. Runnable artifacts live in `goni-prototype-lab`.
 
+Cross-repo references: use plain text `goni-prototype-lab:<relative-path>` (no markdown links). Full GitHub URLs are OK when you want clickability.
+
 Quick start (implementation):
 - See `goni-prototype-lab:goni-lab/quickstart.md` for setup and demo steps.
 - Run tests and smoke checks from `goni-prototype-lab`, not from this repo.
