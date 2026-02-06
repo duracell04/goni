@@ -1,4 +1,4 @@
-﻿---
+---
 id: NET-01
 type: SPEC
 status: specified_only
@@ -92,7 +92,7 @@ required for any route outside the local node.
 
 ## 5.1 Egress modes and guarantees
 
-Egress modes are configured via `blueprint/config/council.yaml` (or env) and enforced by
+Egress modes are configured via `goni-prototype-lab:config/council.yaml` (or env) and enforced by
 the Gate for all Council traffic:
 
 - Mode 0: no egress (deny all remote calls).

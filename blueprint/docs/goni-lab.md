@@ -4,7 +4,7 @@
 
 ## 1. Purpose
 - Give builders a fast way to **compare models side-by-side** on real Goni tasks (chat, coding, RAG, tools).
-- Produce **structured evidence** (latency, cost, refusals, faithfulness) that feeds `goni-router` thresholds and `blueprint/config/council.yaml` seating.
+- Produce **structured evidence** (latency, cost, refusals, faithfulness) that feeds `goni-router` thresholds and `goni-prototype-lab:config/council.yaml` seating.
 - Stay **local-first**: include LM Studio / Ollama seats and offline-only runs; use cloud seats only when allowed.
 
 ## 2. Ecosystem references (why this doc exists)
@@ -20,7 +20,7 @@
 3) **Collect** per-seat stats: latency, input/output tokens, cost (if cloud), refusal/safety flag, tool success rate, retrieval coverage.  
 4) **Rate**: quick win/lose/tie or 1–5; optional verifier model judges hallucination/citation.  
 5) **Write** an Arrow/Parquet log row: prompt hash, task tag, model id, metrics, rating, verifier signal.  
-6) **Surface** a filtered leaderboard by task tag; “promote” action writes a proposed routing rule (e.g., `coding -> codestral, deepseek; fallback llama4`). Ops can review/merge into `blueprint/config/council.yaml`.
+6) **Surface** a filtered leaderboard by task tag; “promote” action writes a proposed routing rule (e.g., `coding -> codestral, deepseek; fallback llama4`). Ops can review/merge into `goni-prototype-lab:config/council.yaml`.
 
 ## 4. Metrics to log (router and council inputs)
 - **Latency** (p50/p95) and **tokens** (in/out) -> capacity planning and MaxWeight service rates.
@@ -37,14 +37,14 @@
 - **Action regret**: rollback/undo rate for executed tool actions.
 
 ## 5. Integration points in this repo
-- **Council config**: keep `blueprint/config/council.yaml` as the ground truth; Lab “promote” steps propose edits, not auto-merge.
+- **Council config**: keep `goni-prototype-lab:config/council.yaml` as the ground truth; Lab “promote” steps propose edits, not auto-merge.
 - **Router training data**: logs become supervised data for `goni-router` regret tests in `blueprint/software/30-conformance.md` (label = chosen/best seat).
 - **Data plane**: store logs as Arrow batches (schema lives beside other metrics in `blueprint/software/50-data`); keep prompts hashed with minimal snippets for privacy.
 - **Runtime hooks**: Lab is just another mode of the orchestrator UI/CLI; reuse the existing OpenAI-compatible gateways for seat calls.
 
 ## 6. Backends to support (priority order)
 - **Local**: vLLM/TGI seats; optional Ollama/LM Studio for hobby setups.
-- **Cloud (via Council)**: seats already in `blueprint/config/council.yaml` (OpenRouter IDs or direct providers).
+- **Cloud (via Council)**: seats already in `goni-prototype-lab:config/council.yaml` (OpenRouter IDs or direct providers).
 - **Web-grounded**: Perplexity Sonar / Grok only when task tag demands live info; log separately.
 - **Future**: Airtrain-style dataset evals for repeatable benchmarks; slot in when we have labelled task sets.
 

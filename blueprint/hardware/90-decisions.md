@@ -1,4 +1,4 @@
-﻿# 90 - Hardware Decisions (ADR Log)
+# 90 - Hardware Decisions (ADR Log)
 DOC-ID: ADR-INDEX-HW
 
 Last refreshed: **2026-01-03**
@@ -180,7 +180,7 @@ The current kernel inference engine in-repo is HTTP vLLM client. vLLM is mature 
 
 ### References
 
-- `blueprint/software/kernel/goni-infer` (HttpVllmEngine)
+- `goni-prototype-lab:software/kernel/goni-infer` (HttpVllmEngine)
 - [`25-hardware-layers-and-supplier-map.md`](/blueprint/hardware/25-hardware-layers-and-supplier-map.md)
 
 ---

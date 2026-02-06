@@ -439,7 +439,7 @@ Must-have run path:
 - make demo + make test wrappers.
 - compose stack + .env.example.
 - smoke test that asserts kernel endpoint, receipts, and retrieval.
-- demo_expected.md with "what you should see."
+- goni-prototype-lab:demo/demo_expected.md with "what you should see."
 
 Core docs:
 - ARCHITECTURE (components, dataflow, boundaries).

@@ -4,7 +4,7 @@
 
 ## 0. Position in the repo
 - Linked from: 2.1 Use-case constraints, `blueprint/software/20-architecture.md` (router notes), and `blueprint/docs/README.md`.
-- Config ground truth: `blueprint/config/council.yaml` (or env vars), not this doc.
+- Config ground truth: `goni-prototype-lab:config/council.yaml` (or env vars), not this doc.
 
 ## 1. What is the LLM Council in Goni?
 - A multi-model panel of cloud LLMs (GPT, Claude, Gemini, Grok, etc.) behind the orchestrator, not directly user-facing.
@@ -44,7 +44,7 @@
   - Cohere: Command A (03-2025) for RAG/agents.
   - Perplexity: Sonar Pro / Sonar Reasoning Pro (web-grounded/fact-check).
   - xAI: Grok-4 (live/current events).
-- Declaration: single config (`blueprint/config/council.yaml`) or env vars (`COUNCIL_MODELS`, `CHAIRMAN_MODEL`). Repo ships a reference council; deployments may override.
+- Declaration: single config (`goni-prototype-lab:config/council.yaml`) or env vars (`COUNCIL_MODELS`, `CHAIRMAN_MODEL`). Repo ships a reference council; deployments may override.
 
 ## 5. Council protocol (how it works)
 - Stage 1 - Collection: orchestrator fans out the structured/trimmed prompt to all members; each returns an independent answer.
@@ -70,7 +70,7 @@
 
 ## 9. Implementation hooks in the repo
 - Orchestrator interface: see `blueprint/software/30-components/orchestrator.md` and router policy in `blueprint/software/20-architecture.md` for when escalation is allowed.
-- Config: `blueprint/config/council.yaml` (or env vars) is the ground truth for seats/weights.
+- Config: `goni-prototype-lab:config/council.yaml` (or env vars) is the ground truth for seats/weights.
 - Inspiration: council pattern (multi-answer, peer review, synth); no hard dependency on external repos.
 - Remote path details: see `blueprint/docs/remote-llm-architecture.md` for the mediated Council -> OpenRouter data path, budgets, and runtime modes.
 - AI-2027 corpus: optional local snapshot lives under `blueprint/docs/assets/ai-2027` for safety/strategy RAG; include that path when ingesting docs.
@@ -78,7 +78,7 @@
 ## 10. Inputs from Goni Lab (LM Arena–style evals)
 - The **Goni Lab** mode (`blueprint/docs/goni-lab.md`) runs LM Arena–style comparisons across local seats (vLLM/TGI/Ollama/LM Studio) and council seats (OpenRouter/provider IDs).
 - Lab logs latency, tokens, refusal/safety, faithfulness (verifier), and quick win/lose/tie ratings per task tag. These become supervised data for `goni-router` regret tests and for proposing seat/routing changes.
-- Council seats should be adjusted only with evidence from Lab runs (champion labels per task tag, cost/latency deltas). Lab “promote” writes a proposed patch to `blueprint/config/council.yaml`; ops review/merge.
+- Council seats should be adjusted only with evidence from Lab runs (champion labels per task tag, cost/latency deltas). Lab “promote” writes a proposed patch to `goni-prototype-lab:config/council.yaml`; ops review/merge.
 - Web-grounded seats (Perplexity Sonar, Grok) are opt-in and tagged; they are used only when the task tag demands live/current information.
 
 ## 10. Example config sketch (informative, not binding)

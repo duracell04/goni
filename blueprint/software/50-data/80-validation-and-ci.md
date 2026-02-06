@@ -1,13 +1,13 @@
-﻿# 80 – Validation & CI
+# 80 – Validation & CI
 DOC-ID: CI-VALIDATION-01
 
 How SMA/ZCO/TXT and schema drift are enforced in practice.
 
-Status: mix of implemented and planned; see /.github/workflows/ci.yml for current CI.
+Status: mix of implemented and planned; see goni-prototype-lab:.github/workflows/ci.yml for current CI.
 
 ## Implemented today
 - guardrails job blocks pinned specs in README/story/whitepaper.
-- rust job runs cargo check/test/clippy for blueprint/software/kernel.
+- rust job runs cargo check/test/clippy for goni-prototype-lab:software/kernel.
 - meta job validates the truth map and generated AGENTS.
 
 ## Planned

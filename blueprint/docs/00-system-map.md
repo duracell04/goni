@@ -27,10 +27,10 @@ product surfaces, planes, contracts/specs, governance, and evidence.
 - [Software overview](/blueprint/software/00-overview.md)
 - [Runtime overview](/blueprint/runtime/00-overview.md)
 - [Security overview](/blueprint/security/00-overview.md)
-- [Prototype catalog](/blueprint/prototype/00-index.md)
+- Prototype catalog: goni-prototype-lab:prototype/00-index.md
 
 ## Evidence and traceability
-- [TRACEABILITY](/blueprint/docs/TRACEABILITY.md)
+- goni-prototype-lab:goni-lab/TRACEABILITY.md
 - [EVALUATION](/blueprint/docs/EVALUATION.md)
 - [Receipts hub](/blueprint/docs/receipts/00-index.md)
 

@@ -1,4 +1,4 @@
-﻿# Governance Hub
+# Governance Hub
 DOC-ID: GOV-00
 Status: Specified only / roadmap
 
@@ -26,5 +26,5 @@ This hub connects privacy, threat, trust boundaries, and audit requirements.
 
 ## Adjacent
 - [Receipts hub](/blueprint/docs/receipts/00-index.md)
-- [Traceability](/blueprint/docs/TRACEABILITY.md)
+- goni-prototype-lab:goni-lab/TRACEABILITY.md
 

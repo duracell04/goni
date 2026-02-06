@@ -3,8 +3,8 @@
 Purpose: a high-trust builder community for a local-first operator appliance.
 
 Start here:
-- Read blueprint/docs/STATUS.md (what is real today)
-- Read blueprint/docs/TRACEABILITY.md (spec -> code -> tests)
+- Read goni-prototype-lab:goni-lab/STATUS.md (what is real today)
+- Read goni-prototype-lab:goni-lab/TRACEABILITY.md (spec -> code -> tests)
 - Pick an issue or propose an RFC (/blueprint/docs/rfcs/RFC-0000-template.md)
 
 Norms:

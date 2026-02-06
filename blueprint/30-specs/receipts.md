@@ -1,4 +1,4 @@
-﻿---
+---
 id: REC-01
 type: SPEC
 status: specified_only
@@ -32,7 +32,7 @@ default and verifiable via hash chaining.
 
 ## Downstream
 - [Receipt schema](/blueprint/docs/receipts/receipt-schema.md)
-- [Traceability](/blueprint/docs/TRACEABILITY.md)
+- goni-prototype-lab:goni-lab/TRACEABILITY.md
 
 ## Adjacent
 - [Network gate and anonymity](/blueprint/30-specs/network-gate-and-anonymity.md)

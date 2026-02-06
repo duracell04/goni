@@ -1,4 +1,4 @@
-﻿# Project Goni
+# Project Goni
 
  > This is the technical blueprint and prototype index. It lives in `blueprint/` so the repo root can stay non-technical; links here point to the canonical artifacts in this blueprint folder.
 
@@ -37,7 +37,7 @@ Observe -> Distill -> Propose/Act -> Attach receipts -> Store memory.
 
 ## Kernel guarantees (spec)
 
-Target guarantees; see blueprint/docs/STATUS.md for implementation status.
+Target guarantees; see goni-prototype-lab:goni-lab/STATUS.md for implementation status.
 
 - Tool side effects are intended to be mediated by the kernel boundary.
 - Network egress is intended to go through the egress gate.
@@ -70,7 +70,7 @@ This space is for:
 - **Product/story track (stakeholders, early adopters)**: start with [blueprint/docs/goni-story.md](/blueprint/docs/goni-story.md), then [blueprint/docs/goni-whitepaper.md](/blueprint/docs/goni-whitepaper.md) for the deep architecture narrative, and [blueprint/docs/goni-swot.md](/blueprint/docs/goni-swot.md) for positioning.
 - **Hardware track (hardware builders)**: [blueprint/hardware/00-overview.md](/blueprint/hardware/00-overview.md) -> [blueprint/hardware/10-requirements.md](/blueprint/hardware/10-requirements.md) -> [blueprint/hardware/20-architecture-options.md](/blueprint/hardware/20-architecture-options.md) -> [blueprint/hardware/25-hardware-layers-and-supplier-map.md](/blueprint/hardware/25-hardware-layers-and-supplier-map.md), with accepted choices in [blueprint/hardware/90-decisions.md](/blueprint/hardware/90-decisions.md).
 - **Software track (software builders)**: [blueprint/software/00-overview.md](/blueprint/software/00-overview.md) -> [blueprint/software/10-requirements.md](/blueprint/software/10-requirements.md) -> [blueprint/software/20-architecture.md](/blueprint/software/20-architecture.md) -> data spine in [blueprint/software/50-data/00-index.md](/blueprint/software/50-data/00-index.md) (and [blueprint/software/50-data/53-schema-dsl-and-macros.md](/blueprint/software/50-data/53-schema-dsl-and-macros.md) for the Arrow DSL) -> accepted choices in [blueprint/software/90-decisions.md](/blueprint/software/90-decisions.md).
-- **Data spine <-> kernel**: the planes and TXT axiom are defined in [blueprint/software/50-data/10-axioms-and-planes.md](/blueprint/software/50-data/10-axioms-and-planes.md); enforcement is specified only (see [blueprint/docs/STATUS.md](/blueprint/docs/STATUS.md)).
+- **Data spine <-> kernel**: the planes and TXT axiom are defined in [blueprint/software/50-data/10-axioms-and-planes.md](/blueprint/software/50-data/10-axioms-and-planes.md); enforcement is specified only (see [goni-prototype-lab:goni-lab/STATUS.md](/goni-prototype-lab:goni-lab/STATUS.md)).
 - **Runs and deployments (I just want to run something)**: see [blueprint/deploy/compose/README.md](/blueprint/deploy/compose/README.md) and [blueprint/deploy/k8s/README.md](/blueprint/deploy/k8s/README.md) for current status.
 
 ---
@@ -315,7 +315,7 @@ Start in:
 - [blueprint/software/10-requirements.md](/blueprint/software/10-requirements.md) - functional & non-functional requirements  
 - [blueprint/software/20-architecture.md](/blueprint/software/20-architecture.md) - formal architecture and invariants  
 - [blueprint/software/90-decisions.md](/blueprint/software/90-decisions.md) - formal design decisions  
-- Kernel implementation: specified only at the moment; see [blueprint/docs/STATUS.md](/blueprint/docs/STATUS.md)
+- Kernel implementation: specified only at the moment; see [goni-prototype-lab:goni-lab/STATUS.md](/goni-prototype-lab:goni-lab/STATUS.md)
 
 ### `/docs/`
 
@@ -360,7 +360,7 @@ If you are thinking about manufacturing/funding, open an issue; the hardware bui
 
 Prototype/dev stack is specified only; things may change between commits.
 
-Prereqs: Docker and docker compose. See [blueprint/docs/quickstart.md](/blueprint/docs/quickstart.md) for the intended workflow.
+Prereqs: Docker and docker compose. See goni-prototype-lab:goni-lab/quickstart.md for the intended workflow.
 
 Services:  
 - `llm-local` (vLLM) at `http://localhost:8000/v1`  

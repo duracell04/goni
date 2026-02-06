@@ -20,7 +20,7 @@ When routing to the Council, the orchestrator MUST:
 - Minimize payloads: remove non-essential chunks, collapse long artifacts to summaries, and apply the active redaction profile.
 - Attach a provenance manifest: `request_id`, `prompt_hash`, `source_context_id`, and chunk IDs used.
 - Emit a `RedactionEvents` row with before/after hashes and a structured summary (no raw text).
-- Obey the configured egress mode from `blueprint/config/council.yaml` (local-only, structured-only, redacted, or user-approved full context).
+- Obey the configured egress mode from `goni-prototype-lab:config/council.yaml` (local-only, structured-only, redacted, or user-approved full context).
 
 These rules are enforced at the Network Gate and logged through the Control plane.
 
@@ -56,7 +56,7 @@ def call_openrouter(model: str, messages: list[dict], max_tokens: int = 800):
 - **Normal:** Remote allowed for high-value tasks; use configured seats/auto-router; soft budgets and logging on.
 - **Constrained / AGI-risk:** Strong daily cap; whitelist remote tools; prefer deterministic/local for automation; restrict models to cheap/strict list.
 - **Offline / AI blackout:** Cloud path disabled; router surfaces limitation; stay local for summarisation, Arrow search, scheduling, embeddings.
-- Mode can be a blueprint/config/env switch (e.g., `REMOTE_MODE=normal|constrained|offline`).
+- Mode can be a goni-prototype-lab:config switch (e.g., `REMOTE_MODE=normal|constrained|offline`).
 
 ## Where remote compute can live
 - Primary cloud leg is Council -> OpenRouter (this doc).
@@ -68,6 +68,6 @@ def call_openrouter(model: str, messages: list[dict], max_tokens: int = 800):
 - It also motivates constrained/offline modes and multi-provider indirection.
 
 ## Config and ops hooks
-- Seats/weights and triggers: `blueprint/config/council.yaml` (ground truth).
-- Env defaults for the council service: see `blueprint/config/council.env.example` (`OPENROUTER_API_KEY`, `OPENROUTER_MODEL`, `OPENROUTER_URL`, `MAX_REMOTE_TOKENS_PER_DAY`, `ALLOW_REMOTE_TOOLS`, `REMOTE_MODE`, optional `OPENROUTER_HTTP_REFERER`/`OPENROUTER_X_TITLE`).
+- Seats/weights and triggers: `goni-prototype-lab:config/council.yaml` (ground truth).
+- Env defaults for the council service: see `goni-prototype-lab:config/council.env.example` (`OPENROUTER_API_KEY`, `OPENROUTER_MODEL`, `OPENROUTER_URL`, `MAX_REMOTE_TOKENS_PER_DAY`, `ALLOW_REMOTE_TOOLS`, `REMOTE_MODE`, optional `OPENROUTER_HTTP_REFERER`/`OPENROUTER_X_TITLE`).
 - Web/search tools live on the council side; Goni OS never ships a cloud browser tool in the base box.

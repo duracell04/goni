@@ -1,4 +1,4 @@
-﻿# Product Surfaces Hub
+# Product Surfaces Hub
 DOC-ID: SURF-00
 Status: Specified only / roadmap
 
@@ -38,5 +38,5 @@ This hub connects user-visible surfaces to the blueprint contracts they rely on.
 
 ## Adjacent
 - [Governance hub](/blueprint/docs/hubs/governance.md)
-- [Traceability](/blueprint/docs/TRACEABILITY.md)
+- goni-prototype-lab:goni-lab/TRACEABILITY.md
 

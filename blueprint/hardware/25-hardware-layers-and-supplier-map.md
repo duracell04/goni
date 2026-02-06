@@ -55,7 +55,7 @@ This section prevents “paper hardware” that the current stack can’t use.
 
 ### 3.1 What the repo can run today (kernel reality)
 
-In `blueprint/software/kernel/goni-infer`, the implemented engine is **HttpVllmEngine** (a client to a vLLM server).
+In `goni-prototype-lab:software/kernel/goni-infer`, the implemented engine is **HttpVllmEngine** (a client to a vLLM server).
 That means:
 
 - **MVP end-to-end today is easiest on NVIDIA/CUDA**, because vLLM is most mature there.

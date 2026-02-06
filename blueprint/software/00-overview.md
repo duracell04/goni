@@ -1,4 +1,4 @@
-﻿# Goni Software - Overview (MVP)
+# Goni Software - Overview (MVP)
 
 This folder covers the **software side of Goni**:
 
@@ -75,8 +75,8 @@ At a high level, Goni software should enable the node to:
   Accepted software design decisions (ADR-style). Each entry should briefly describe the choice, alternatives, and rationale.
 
 Runnable references:
-- local stack: [docker-compose.yml](/blueprint/software/docker-compose.yml)
-- k8s overlays: [k8s/](/blueprint/software/k8s)
+- local stack: goni-prototype-lab:deploy/docker-compose.yml
+- k8s overlays: goni-prototype-lab:deploy/k8s/
 
 ---
 

@@ -1,4 +1,4 @@
-﻿# 80 – LLM Runtime
+# 80 – LLM Runtime
 
 Status: MVP – unified local inference abstraction  
 Scope: Single node; multiple models & backends via common API
@@ -146,7 +146,7 @@ Concrete engines (llama.cpp, vLLM, etc.) implement LlmRuntime:
 
 ## 6. Upstream
 - [OS and base image](/blueprint/software/30-components/os-and-base-image.md)
-- [Hardware requirements](/blueprint/software/hardware/10-requirements.md)
+- [Hardware requirements](/blueprint/hardware/10-requirements.md)
 
 ## 7. Downstream
 - [Scheduler and interrupts](/blueprint/30-specs/scheduler-and-interrupts.md)

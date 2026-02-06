@@ -1,9 +1,9 @@
-﻿# 51 – Schemas (MVP Canonical Tables)
+# 51 – Schemas (MVP Canonical Tables)
 DOC-ID: SCHEMA-MVP-01
 
 Arrow-first, v1.0 schemas for the canonical tables. Each table is `Spine + Payload`; `row_id` == domain PK.
 
-**Executable spec:** These schemas are implemented by `blueprint/software/kernel/goni-schema` via the `define_tables!` block in `goni-schema/src/lib.rs`. This document and that DSL must stay in sync.
+**Executable spec:** These schemas are implemented by `goni-prototype-lab:software/kernel/goni-schema` via the `define_tables!` block in `goni-schema/src/lib.rs`. This document and that DSL must stay in sync.
 
 ## Plane ?? – Knowledge (immutable)
 

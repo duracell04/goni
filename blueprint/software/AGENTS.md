@@ -6,7 +6,7 @@
 - Any change that affects data schemas, plane tags, or text confinement MUST update:
   - `blueprint/software/50-data/51-schemas-mvp.md` (contract)
   - `blueprint/software/50-data/53-schema-dsl-and-macros.md` (mechanism)
-  - and the relevant kernel tests under `blueprint/software/kernel/goni-schema/tests/`
+  - and the relevant kernel tests under `goni-prototype-lab:software/kernel/goni-schema/tests/`
 
 ## Dependency hygiene
 - Minimise new dependencies. If adding a dependency, document:

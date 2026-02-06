@@ -1,4 +1,4 @@
-﻿# Security Overview
+# Security Overview
 DOC-ID: SEC-00
 Status: Specified only / roadmap
 
@@ -6,9 +6,9 @@ This track captures the security blueprint: threats, controls, and trust
 boundaries.
 
 ## Core docs
-- [Threat model](/blueprint/security/docs/threat-model.md)
-- [Privacy](/blueprint/security/docs/privacy.md)
-- [TCB](/blueprint/security/docs/tcb.md)
+- [Threat model](/blueprint/docs/threat-model.md)
+- [Privacy](/blueprint/docs/privacy.md)
+- [TCB](/blueprint/docs/tcb.md)
 
 ## Contracts
 - [Network gate and anonymity](/blueprint/30-specs/network-gate-and-anonymity.md)

@@ -1,4 +1,4 @@
-﻿# 10 – OS and Base Image
+# 10 – OS and Base Image
 
 Status: MVP – conceptual substrate  
 Scope: Single-node execution environment assumptions
@@ -109,7 +109,7 @@ Those details live in blueprint/hardware/ and infra repos; this file records the
 
 
 ## 6. Upstream
-- [Hardware requirements](/blueprint/software/hardware/10-requirements.md)
+- [Hardware requirements](/blueprint/hardware/10-requirements.md)
 - [Isolation and tool sandboxes](/blueprint/30-specs/isolation-and-tool-sandboxes.md)
 
 ## 7. Downstream

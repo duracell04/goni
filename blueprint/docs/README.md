@@ -1,4 +1,4 @@
-﻿# Goni Docs Index
+# Goni Docs Index
 
 - [System Map](/blueprint/docs/00-system-map.md) - doc graph and navigation hub.
 - [Docs Rules](/blueprint/docs/01-docs-rules.md) - documentation canon and status rules.
@@ -16,7 +16,7 @@
 - [OS Completeness Checklist](/blueprint/docs/product/os-completeness-checklist.md) - minimum product surfaces.
 - [Glossary](/blueprint/docs/glossary.md) - shared vocabulary.
 - [Architecture](/blueprint/docs/ARCHITECTURE.md) - short architecture index and trust boundaries.
-- [Quickstart](/blueprint/docs/quickstart.md) - runnable demo steps.
+- Quickstart: goni-prototype-lab:goni-lab/quickstart.md - runnable demo steps.
 - [Observability](/blueprint/docs/observability.md) - metrics and dashboards.
 - [Receipts](/blueprint/docs/receipts.md) - audit trail overview.
 - [Privacy](/blueprint/docs/privacy.md) - data classes and retention.

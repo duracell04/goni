@@ -1,4 +1,4 @@
-﻿# 20 – Orchestrator
+# 20 – Orchestrator
 
 Status: MVP – single-node orchestrator  
 Scope: Logical routing inside one node (no mesh yet)
@@ -153,8 +153,8 @@ The Orchestrator spec here is the single-node kernel perspective; multi-node con
 - [LLM runtime](/blueprint/software/30-components/llm-runtime.md)
 
 ## 7. Downstream
-- [API README](/blueprint/software/api/README.md)
-- [OpenAPI spec](/blueprint/software/api/openapi.yaml)
+- [API README](/blueprint/api/README.md)
+- [OpenAPI spec](/blueprint/api/openapi.yaml)
 
 ## 8. Adjacent
 - [Network gate and anonymity](/blueprint/30-specs/network-gate-and-anonymity.md)

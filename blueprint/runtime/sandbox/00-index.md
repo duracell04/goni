@@ -1,4 +1,4 @@
-﻿# Sandbox Index
+# Sandbox Index
 DOC-ID: SANDBOX-00
 Status: Specified only / roadmap
 
@@ -12,7 +12,7 @@ This folder describes runtime sandboxing and isolation.
 - [Tool capability API](/blueprint/30-specs/tool-capability-api.md)
 
 ## Related governance
-- [Threat model](/blueprint/runtime/docs/threat-model.md)
-- [Privacy](/blueprint/runtime/docs/privacy.md)
-- [TCB](/blueprint/runtime/docs/tcb.md)
+- [Threat model](/blueprint/docs/threat-model.md)
+- [Privacy](/blueprint/docs/privacy.md)
+- [TCB](/blueprint/docs/tcb.md)
 
