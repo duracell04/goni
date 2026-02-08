@@ -15,6 +15,7 @@ product surfaces, planes, contracts/specs, governance, and evidence.
 - [Docs rules](/blueprint/docs/01-docs-rules.md)
 - [Taxonomy and IDs](/blueprint/docs/02-taxonomy-and-ids.md)
 - [Hubs index](/blueprint/docs/hubs/00-index.md)
+- [System lane](/blueprint/20-system/00-index.md)
 
 ## Planes and contracts
 - [Planes hub](/blueprint/docs/hubs/planes.md)
