@@ -10,6 +10,11 @@ entries:
     type: SPEC
     status: specified_only
     path: 30-specs/agent-manifest.md
+  - id: AGENT-STORE-01
+    title: "Agent Store Governance"
+    type: SPEC
+    status: specified_only
+    path: 30-specs/agents/agent-store.md
   - id: SANDBOX-01
     title: "Isolation and Tool Sandboxes"
     type: SPEC

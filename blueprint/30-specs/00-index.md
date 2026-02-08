@@ -12,6 +12,7 @@ This is the catalog of normative contracts in blueprint/30-specs.
 ## Specs
 - [Agent definition](/blueprint/30-specs/agent-definition.md) (AGENT-DEF-01)
 - [Agent manifest](/blueprint/30-specs/agent-manifest.md) (AGENT-MANIFEST-01)
+- [Agent store governance](/blueprint/30-specs/agents/agent-store.md) (AGENT-STORE-01)
 - [Isolation and tool sandboxes](/blueprint/30-specs/isolation-and-tool-sandboxes.md) (SANDBOX-01)
 - [ITCR](/blueprint/30-specs/itcr.md) (ITCR-01)
 - [Job contract](/blueprint/30-specs/job.md) (JOB-01)
