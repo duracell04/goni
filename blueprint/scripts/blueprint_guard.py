@@ -117,6 +117,8 @@ def resolve_link(path: Path, link: str, repo_root: Path) -> Path | None:
         return None
     if link.startswith("mailto:") or link.startswith("tel:"):
         return None
+    if link.startswith("goni-prototype-lab:") or link.startswith("/goni-prototype-lab:"):
+        return None
 
     link = link.split("#", 1)[0].split("?", 1)[0]
     link = link.replace("%20", " ").strip()

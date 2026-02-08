@@ -18,6 +18,7 @@
 - [Architecture](/blueprint/docs/ARCHITECTURE.md) - short architecture index and trust boundaries.
 - Quickstart: goni-prototype-lab:goni-lab/quickstart.md - runnable demo steps.
 - [Observability](/blueprint/docs/observability.md) - metrics and dashboards.
+- [Metrics Scorecard](/blueprint/docs/metrics.md) - performance, safety, and operator-grade KPIs.
 - [Receipts](/blueprint/docs/receipts.md) - audit trail overview.
 - [Privacy](/blueprint/docs/privacy.md) - data classes and retention.
 - [Threat Model](/blueprint/docs/threat-model.md) - adversaries and assumptions.
