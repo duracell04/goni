@@ -1,15 +1,140 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "Receipt",
-  "type": "object",
-  "required": ["receipt_id", "timestamp", "action_type", "policy_decision"],
-  "properties": {
-    "receipt_id": {"type": "string"},
-    "timestamp": {"type": "string"},
-    "action_type": {"type": "string"},
-    "policy_decision": {"type": "string"},
-    "capability_id": {"type": "string"},
-    "input_hash": {"type": "string"},
-    "output_hash": {"type": "string"}
-  }
+    "$schema":  "https://json-schema.org/draft/2020-12/schema",
+    "title":  "Receipt",
+    "type":  "object",
+    "required":  [
+                     "receipt_id",
+                     "timestamp",
+                     "actor_id",
+                     "action_type",
+                     "capability_id",
+                     "policy_decision",
+                     "budget_delta",
+                     "input_hash",
+                     "output_hash"
+                 ],
+    "properties":  {
+                       "receipt_id":  {
+                                          "type":  "string"
+                                      },
+                       "timestamp":  {
+                                         "type":  "string",
+                                         "format":  "date-time"
+                                     },
+                       "actor_id":  {
+                                        "type":  "string"
+                                    },
+                       "action_type":  {
+                                           "type":  "string"
+                                       },
+                       "capability_id":  {
+                                             "type":  "string"
+                                         },
+                       "policy_decision":  {
+                                               "type":  "string"
+                                           },
+                       "budget_delta":  {
+                                            "type":  "object",
+                                            "additionalProperties":  {
+                                                                         "type":  "number"
+                                                                     }
+                                        },
+                       "input_hash":  {
+                                          "type":  "string"
+                                      },
+                       "output_hash":  {
+                                           "type":  "string"
+                                       },
+                       "execution_id":  {
+                                            "type":  "string"
+                                        },
+                       "parent_execution_id":  {
+                                                   "type":  "string"
+                                               },
+                       "execution_type":  {
+                                              "type":  "string",
+                                              "enum":  [
+                                                           "action",
+                                                           "tool",
+                                                           "model"
+                                                       ]
+                                          },
+                       "provider":  {
+                                        "type":  "string"
+                                    },
+                       "model_id":  {
+                                        "type":  "string"
+                                    },
+                       "metering":  {
+                                        "type":  "object",
+                                        "properties":  {
+                                                           "tokens_in":  {
+                                                                             "type":  "integer",
+                                                                             "minimum":  0
+                                                                         },
+                                                           "tokens_out":  {
+                                                                              "type":  "integer",
+                                                                              "minimum":  0
+                                                                          },
+                                                           "latency_ms":  {
+                                                                              "type":  "integer",
+                                                                              "minimum":  0
+                                                                          },
+                                                           "tool_calls":  {
+                                                                              "type":  "integer",
+                                                                              "minimum":  0
+                                                                          },
+                                                           "bytes_egress":  {
+                                                                                "type":  "integer",
+                                                                                "minimum":  0
+                                                                            },
+                                                           "ram_peak_bytes":  {
+                                                                                  "type":  "integer",
+                                                                                  "minimum":  0
+                                                                              }
+                                                       },
+                                        "additionalProperties":  false
+                                    },
+                       "budget_spent":  {
+                                            "type":  "object",
+                                            "additionalProperties":  {
+                                                                         "type":  "number"
+                                                                     }
+                                        },
+                       "egress":  {
+                                      "type":  "array",
+                                      "items":  {
+                                                    "type":  "object",
+                                                    "properties":  {
+                                                                       "destination":  {
+                                                                                           "type":  "string"
+                                                                                       },
+                                                                       "bytes_out":  {
+                                                                                         "type":  "integer",
+                                                                                         "minimum":  0
+                                                                                     },
+                                                                       "reason":  {
+                                                                                      "type":  "string"
+                                                                                  }
+                                                                   },
+                                                    "required":  [
+                                                                     "destination"
+                                                                 ],
+                                                    "additionalProperties":  false
+                                                }
+                                  },
+                       "source_refs":  {
+                                           "type":  "array",
+                                           "items":  {
+                                                         "type":  "string"
+                                                     }
+                                       },
+                       "approval_id":  {
+                                           "type":  "string"
+                                       },
+                       "redaction_profile":  {
+                                                 "type":  "string"
+                                             }
+                   },
+    "additionalProperties":  true
 }

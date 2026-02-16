@@ -1,4 +1,4 @@
-﻿version: 1
+version: 1
 entries:
   - id: AGENT-DEF-01
     title: "Agent Definition (Goni OS)"
@@ -15,6 +15,16 @@ entries:
     type: SPEC
     status: specified_only
     path: 30-specs/agents/agent-store.md
+  - id: METER-01
+    title: "Execution Metering and Budget Units"
+    type: SPEC
+    status: specified_only
+    path: 30-specs/metering/SPEC-METER-01-execution-metering.md
+  - id: METER-02
+    title: "Receipt Metering Fields"
+    type: SPEC
+    status: specified_only
+    path: 30-specs/metering/SPEC-METER-02-receipt-metering-fields.md
   - id: SANDBOX-01
     title: "Isolation and Tool Sandboxes"
     type: SPEC

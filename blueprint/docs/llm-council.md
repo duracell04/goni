@@ -18,7 +18,7 @@
   - Enable experiments with voting/ranking/specialists without changing front-end APIs.
 - Non-goals:
   - Not the default path for all traffic.
-  - Not a pricing abstraction or SaaS broker.
+  - Not a vendor brokerage layer.
   - Not guaranteed to beat the best single cloud call every time.
 
 ## 3. When Goni uses the Council

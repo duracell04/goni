@@ -9,6 +9,11 @@
 > - Docker/k8s stacks are for experimentation, not production.
 > - Manufactured MVP waits on financing; this repo is the reference design it will follow.
 
+> **Price-Agnostic Principle**
+> - This blueprint is price-agnostic by design.
+> - We intentionally ignore volatile market prices during blueprinting.
+> - Focus: building the highest-performing, secure personal local AI through technology, architecture, governance, and evidence.
+
 ## What Goni is (fast)
 
 **User truth**
@@ -102,7 +107,7 @@ Goni is a **local AI super-node** for individuals and small teams:
 - Can attach a **Grace Blackwell GN100-class mini-DGX** later for "Goni Max / Enterprise".
 
 Target user experience once the physical MVP exists:  
-> "I buy a high-tech box once for a fixed amount, then I pay a monthly subscription. My local AI (plus the AI council it meets when it goes on the internet) is faster, more private, and more predictable than whatever cloud dashboard I was using before. This gives me a huge boost in productivity and makes chore-like interactions with technology redundant."
+> "My local AI (plus the AI council it meets when it goes on the internet) is faster, more private, and more predictable than cloud dashboards I used before. It gives me a major productivity boost and makes chore-like interactions with technology redundant."
 
 ### 1.2 Non-goals (for MVP)
 
@@ -242,7 +247,7 @@ We design Goni MVP with the following in mind:
 - **NPU evolution**: NPUs become real inference backends for smaller models (ASR, vision, routing). The orchestrator must treat NPUs as first-class targets, not afterthoughts.
 
 - **GN100 / Blackwell-class nodes**:
-  - GN100 today: 128 GB unified memory, 1 PFLOP FP4, 0.5 L form factor, $3.9k+.
+  - GN100 today: 128 GB unified memory, 1 PFLOP FP4, 0.5 L form factor.
   - Future GBxx mini-DGX successors can be added as **"Goni Max nodes"** in the mesh, without redesigning the base Goni.
 
 The blueprint and prototypes remain open-source; the funded MVP will build from this public spec, not a private fork.
@@ -289,7 +294,7 @@ Physical layer: enclosure, BOM, thermals, electronics.
 - thermal design & airflow  
 - enclosure + mechanical drawings  
 - front-panel MCU, LEDs, buttons  
-- BOM experiments and cost models  
+- BOM experiments and component integration notes  
 
 Start in:
 
@@ -347,7 +352,7 @@ Story and narrative architecture:
 
 5. Keep discussion as concrete as possible:  
    - numbers (W, GB, TB, TOPS, latency)  
-   - cost estimates ($)  
+   - resource and performance estimates  
    - actual vendor links if relevant
 
 We are optimising for a clean, well-argued architecture. Changes that affect constraints/architecture should come with numbers and a short proposal.
@@ -380,4 +385,5 @@ Example call (against llm-local):
 ## Quickstart (k8s / k3s)
 
 Prototype/dev overlays are specified only; see goni-prototype-lab:deploy/k8s/.
+
 

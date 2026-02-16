@@ -9,7 +9,7 @@
 
 ## 2. Ecosystem references (why this doc exists)
 - **LM Arena / LMSYS Chatbot Arena** – side-by-side prompts with Elo/leaderboard crowd signals.
-- **LLMArena / Wordware / Airtrain** – “try all the models” UX, price/speed breakdowns, dataset-based evals.
+- **LLMArena / Wordware / Airtrain** – "try all the models" UX, latency/throughput breakdowns, dataset-based evals.
 - **Perplexity / MultipleChat / Poe** – multi-model chat clients; inspiration for cross-check and citations.
 - **Local runners (LM Studio, Jan, Ollama)** – keep a local seat in the grid for privacy/offline.
 - We borrow the **comparison + quick rating** loop, not their hosted infra.

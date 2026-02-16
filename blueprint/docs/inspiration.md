@@ -398,7 +398,7 @@ These are more **application-layer agent builders** (esp. LinkedIn/content), but
   - inbound replies and comments,  
   - outbound prospecting DMs,  
   - post scheduling / copy.  
-- Useful reference for **pricing, packaging, and UX** of a LinkedIn agent SaaS.
+- Useful reference for **packaging and UX** of a LinkedIn agent SaaS.
 
 **Links**
 
@@ -639,7 +639,6 @@ Treat this as a **living file**:
 - add new people as you discover them,  
 - promote some to “core influences” for specific parts of Goni (hardware, orchestrator, UX),  
 - and link concrete patterns from their work into your architecture docs.
-
 
 
 

@@ -244,7 +244,7 @@ Evidence artifacts to produce:
 
 Purpose:
 - Define how a high-trust builder community forms, governs itself, and sustains
-  the project without relying on hype or pricing narratives.
+  the project without relying on hype or commercial narratives.
 
 Research questions (academically framed):
 - What governance structures reduce coordination cost while preserving rigor?

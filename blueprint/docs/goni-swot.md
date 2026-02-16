@@ -379,7 +379,7 @@ Perception that Goni dulls users' abilities or hides provenance could trigger tr
 
 ## 6. How to Use This SWOT
 
-When proposing significant changes (architecture, product direction, pricing, hardware), decision RFCs should:
+When proposing significant changes (architecture, product direction, go-to-market, hardware), decision RFCs should:
 
 - Reference relevant items in this SWOT.
 - Explicitly state:

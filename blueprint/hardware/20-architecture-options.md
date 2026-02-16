@@ -1,4 +1,4 @@
-﻿# 20 - Candidate Hardware Architectures for Goni (MVP)
+# 20 - Candidate Hardware Architectures for Goni (MVP)
 
 Last refreshed: **2026-01-03**
 
@@ -16,10 +16,10 @@ Inputs:
 
 The MVP node must:
 
-- Fit a **small, quiet appliance** envelope (target ~7 L, allowed 6â€“8 L).
-- Run **two local OSS models in parallel** (typical: 8â€“14B 4â€“5-bit quant) plus RAG indexing.
+- Fit a **small, quiet appliance** envelope (target ~7 L, allowed 6???8 L).
+- Run **two local OSS models in parallel** (typical: 8???14B 4???5-bit quant) plus RAG indexing.
 - Sustain a **domestic power + acoustics** profile (few hundred watts max; quiet under interactive use).
-- Support **cluster/mesh** operation over Ethernet (2â€“4 nodes without special switching).
+- Support **cluster/mesh** operation over Ethernet (2???4 nodes without special switching).
 - Be upgradeable by **swapping the compute module** without redesigning the whole enclosure.
 
 ---
@@ -111,11 +111,11 @@ Failure modes and fallbacks:
 An APU-centric node (CPU + iGPU + NPU + unified LPDDR5X) is currently the best match for:
 
 - compact enclosure and quiet cooling,
-- â€œenoughâ€ GPU acceleration for quantised inference,
+- ???enough??? GPU acceleration for quantised inference,
 - large unified memory for model + KV cache + embeddings,
 - low integration complexity (single compute board + standard PSU + NVMe).
 
-The key requirement for this architecture to feel â€œrealâ€ is **128 GB unified memory**.
+The key requirement for this architecture to feel ???real??? is **128 GB unified memory**.
 
 ### 2.2 Concrete 2025/2026 SKUs that exist today
 
@@ -124,15 +124,15 @@ These are the reference devices/boards that make the APU-centric concept concret
 #### A1) Framework Desktop Mainboard (primary MVP compute module)
 
 - Product: Framework Desktop Mainboard (AMD Ryzen AI Max 300 series)
-- Config: **Ryzen AI Max+ 395 â€“ 128 GB**
-- Store price snapshot: **$1,699 (excl. tax)** on Framework Marketplace (pre-order batches).  
+- Config: **Ryzen AI Max+ 395 ??? 128 GB**
+- Availability snapshot: listed on Framework Marketplace (pre-order batches).
   Source: Framework product page.
 
 Why it matters for Goni:
 
 - sold as a **standalone mainboard**, so we can build our own enclosure/PSU/front panel,
 - Mini-ITX-style mounting + standard ATX PSU compatibility makes mechanical integration realistic,
-- provides a clean â€œboard swapâ€ path for future APU generations.
+- provides a clean ???board swap??? path for future APU generations.
 
 Links:
 - https://frame.work/products/framework-desktop-mainboard-amd-ryzen-ai-max-300-series?v=FRAFMK0002
@@ -141,13 +141,13 @@ Links:
 
 - Product: **HP Z2 Mini G1a Workstation**
 - Example CH config: Ryzen AI Max+ PRO 395, **128 GB**, 1 TB SSD, Radeon 8060S
-- Price snapshot (HP CH store): **CHF 3'299 incl. VAT**  
-  Price snapshot (Toppreise): ~**CHF 2'883** (varies by reseller and config)
+- Availability snapshot (HP CH store): listed configuration available.
+  Aggregator listings show similar configurations (reseller and config dependent).
 
 Why it matters for Goni:
 
 - immediately usable as a dev/reference machine,
-- proves the â€œAPU + 128 GB unified memory in a tiny boxâ€ thesis,
+- proves the ???APU + 128 GB unified memory in a tiny box??? thesis,
 - but is less modular than a board-based design.
 
 Links:
@@ -157,12 +157,12 @@ Links:
 #### A3) GMKtec EVO-X2 (mini-PC yardstick)
 
 - Product: **GMKtec EVO-X2** (Ryzen AI Max+ 395)
-- Example CH listing (Digitec): **CHF 2'299** (128 GB / 2 TB, delivery depends on batch)
+- Example CH listing (Digitec): 128 GB / 2 TB class configuration (delivery depends on batch).
 
 Why it matters for Goni:
 
-- useful as an availability/price yardstick for â€œAPU boxâ€ market reality,
-- less useful as a Goni hardware base because itâ€™s a closed OEM mini-PC.
+- useful as an availability yardstick for ???APU box??? market reality,
+- less useful as a Goni hardware base because it???s a closed OEM mini-PC.
 
 Links:
 - https://de.gmktec.com/en/products/gmktec-evo-x2-amd-ryzen%E2%84%A2-ai-max-395-mini-pc-1
@@ -172,17 +172,17 @@ Links:
 
 ## 3. Architecture B (Pro / Lab): discrete GPU workstation (x86 + NVIDIA dGPU)
 
-This architecture is ideal for â€œProâ€ tiers and lab workloads, but it conflicts with the MVP envelope:
+This architecture is ideal for ???Pro??? tiers and lab workloads, but it conflicts with the MVP envelope:
 
 - louder and larger in practice,
 - much higher power budget,
 - bigger thermal design burden.
 
-Still, it is the cleanest path to â€œCUDA-firstâ€ toolchains and vLLM throughput.
+Still, it is the cleanest path to ???CUDA-first??? toolchains and vLLM throughput.
 
 ### 3.1 Current reference GPU options
 
-- **RTX 4090 (24 GB)**: still widely used and available; good perf/CHF in late 2025.
+- **RTX 4090 (24 GB)**: still widely used and available; strong performance-per-watt baseline for comparison.
 - **RTX 5090 (32 GB GDDR7)**: higher VRAM and Blackwell features; availability depends on region and supply.  
   Specs reference: NVIDIA GeForce RTX 5090 page.
 
@@ -193,11 +193,11 @@ Links:
 
 ## 4. Architecture C (Max add-on): external Grace/Blackwell mini-node
 
-Treat this as a future â€œadd-on accelerator nodeâ€ for very heavy workloads. It is not required for MVP.
+Treat this as a future ???add-on accelerator node??? for very heavy workloads. It is not required for MVP.
 (If we standardise an offload API, Goni can route some jobs to it over Ethernet.)
 
 Reference:
-- Acer Veriton GN100 (GB10 / â€œProject Digitsâ€-class mini workstation)
+- Acer Veriton GN100 (GB10 / ???Project Digits???-class mini workstation)
 
 ---
 
@@ -207,7 +207,7 @@ To unblock mechanical/electrical/software validation, we converge on:
 
 1. **MVP compute module (reference):** Framework Desktop Mainboard, Ryzen AI Max+ 395, **128 GB** unified LPDDR5X.  
 2. **MVP fallback dev box:** HP Z2 Mini G1a (same memory class, off-the-shelf).  
-3. **MVP enclosure assumptions:** ~7 L box, internal SFX PSU, 2Ã— NVMe, front status bar.
+3. **MVP enclosure assumptions:** ~7 L box, internal SFX PSU, 2?? NVMe, front status bar.
 
 This is formalised in [`90-decisions.md`](/blueprint/hardware/90-decisions.md).
 
@@ -215,10 +215,10 @@ This is formalised in [`90-decisions.md`](/blueprint/hardware/90-decisions.md).
 
 ## 6. Resolved questions
 
-These were â€œopen questionsâ€ in earlier drafts; they are now resolved for MVP:
+These were ???open questions??? in earlier drafts; they are now resolved for MVP:
 
-1. **Memory capacity:** MVP requires **128 GB** unified memory. 64 GB is â€œdev-onlyâ€ and not performance-representative for the product story.
-2. **Mechanical envelope:** target **~7 L**, allowing 6â€“8 L to accommodate real cooling/PSU/fans.
+1. **Memory capacity:** MVP requires **128 GB** unified memory. 64 GB is ???dev-only??? and not performance-representative for the product story.
+2. **Mechanical envelope:** target **~7 L**, allowing 6???8 L to accommodate real cooling/PSU/fans.
 3. **Networking:** prefer **5 GbE** on the compute module; 2.5 GbE is acceptable only as a fallback.
 4. **Board choice:** design around a **Mini-ITX-style mounting + ATX PSU** assumption so we are not hard-locked to one vendor, but use Framework as the first concrete reference.
 5. **External heavy node story:** GN100-class nodes are explicitly **out-of-scope for MVP**; revisit once the offload API and mesh are stable.
@@ -231,9 +231,9 @@ This section exists so we can refresh quickly when 2026 silicon lands.
 
 ### 7.1 Intel Panther Lake (Core Ultra 300, 18A)
 
-Intel has announced Panther Lake as the next-generation client platform and has signalled a major push for â€œAI PCâ€ capabilities. This is a watch item, not a current MVP candidate, because:
+Intel has announced Panther Lake as the next-generation client platform and has signalled a major push for ???AI PC??? capabilities. This is a watch item, not a current MVP candidate, because:
 
-- memory capacity and board availability in â€œunified 128 GB classâ€ small desktops is unknown,
+- memory capacity and board availability in ???unified 128 GB class??? small desktops is unknown,
 - we need stable local inference tooling and drivers for the chosen stack.
 
 Reference (official Intel newsroom):
@@ -241,7 +241,7 @@ Reference (official Intel newsroom):
 
 ### 7.2 AMD next steps after current Ryzen AI Max class
 
-Track successor generations (often discussed as â€œStrix Halo successor / Medusaâ€ in the community). Treat anything beyond the currently shipping boards as non-binding until we have:
+Track successor generations (often discussed as ???Strix Halo successor / Medusa??? in the community). Treat anything beyond the currently shipping boards as non-binding until we have:
 
 - a real board we can buy,
 - published memory configuration options,
@@ -253,8 +253,9 @@ Track successor generations (often discussed as â€œStrix Halo successor / Me
 
 When you refresh this document:
 
-- update the â€œlast refreshedâ€ date,
-- re-check availability + pricing for the concrete SKUs,
+- update the ???last refreshed??? date,
+- re-check availability and vendor documentation for the concrete SKUs,
 - ensure the MVP convergence still matches `90-decisions.md`,
 - and note any blueprint/software/backend constraints that would block a given hardware choice.
+
 

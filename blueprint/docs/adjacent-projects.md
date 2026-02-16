@@ -339,30 +339,28 @@ Goni mapping (normative):
 
 ---
 
-## 7. Economics, adoption, and market design (why "personal AI" beats "renting GPU hours")
+## 7. Operational Readiness and Adoption
 
 ### 7.1 What researchers would research
 
-- Cost models: amortized device vs cloud usage.
-- Break-even curves: device cost (EUR) vs GPU-hour costs, token volume, and duty cycle.
-- Hidden costs: privacy risk, latency, and uptime dependence.
+- Runtime utilization models: local execution share vs remote escalation share.
+- Throughput and latency envelopes under realistic duty cycles.
+- Operational tradeoffs: privacy exposure, latency, and uptime dependence.
 
-### 7.2 Utility computing vs personal ownership economics
+### 7.2 Local-first readiness
 
-- Study when "compute as a utility" wins vs when ownership wins (privacy,
-  offline, predictable cost).
-- Model adoption thresholds: what performance/price makes local personal AI
-  "obvious."
+- Study when local-first execution is sufficient for daily operator tasks.
+- Model thresholds where remote escalation materially improves outcomes.
 
 ### 7.3 Externalities and incentive alignment
 
 - Quantify privacy externalities (data leakage risk) and how local-first changes
   them.
-- Model "trust premium": users pay more for auditability and sovereignty.
+- Measure trust gains from auditability and sovereignty primitives.
 
 ### 7.4 Deliverables
 
-- Pricing strategy for a Goni-like appliance (tiers) + expected savings vs cloud.
+- Technology readiness matrix for a Goni-like appliance.
 - Adoption story grounded in measurable user outcomes (time saved, risk reduced).
 
 ### 7.5 Enables Goni
