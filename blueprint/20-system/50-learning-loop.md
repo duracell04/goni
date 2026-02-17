@@ -23,6 +23,33 @@ Improvement is separated into three risk tiers:
 - Layer C (rare, high risk): offline model fine-tunes or weight updates. These
   require evaluation, rollback plans, and governance approval.
 
+## 2.1 Formal state tuple and OS transition loop (normative)
+Operationally, the runtime is modeled as a partially observable control loop.
+Let the kernel-visible state at step `t` be:
+
+`X_t = (S_core_t, F_sparse_t, M_t, C_t, B_t, P_t, H_t)`
+
+Where:
+- `S_core_t`: dense working latent state.
+- `F_sparse_t`: symbolic facts/flags.
+- `M_t`: memory index references.
+- `C_t`: active capability token set.
+- `B_t`: budget ledger state.
+- `P_t`: active policy hash/version.
+- `H_t`: current receipt-chain head hash.
+
+The system treats hidden world factors as unobserved variables and assumes
+state transitions are Markov with respect to the kernel state:
+
+`Pr(X_{t+1} | X_{0:t}, a_t) = Pr(X_{t+1} | X_t, a_t)`
+
+Kernel loop per step:
+1. Ingest observation/event and snapshot `X_t`.
+2. Select action under policy + capability constraints.
+3. Execute action/tool in a mediated transaction.
+4. Commit delta + receipt on success, or rollback + failure receipt on reject.
+5. Emit experience packet for Layer A/B/C promotion gates.
+
 ## 3. Failure becomes a first-class artifact
 Every failure produces an experience packet derived from receipts and runtime
 state. This enables repeatable repairs without claiming the model "learns."

@@ -75,6 +75,10 @@ This is the minimal scorecard for an operator appliance.
 - Egress decision latency and bytes egressed per request.
 - Blocked egress attempts and redaction events.
 - Receipt coverage and receipt verification time.
+- Capability overreach rate (attempted calls outside granted capability scope).
+- Approval accuracy (false-approve and false-deny rates after review).
+- Poisoning acceptance rate (untrusted inputs promoted to durable fact memory).
+- Reproducibility pass rate (same trace inputs/policy yield equivalent decisions and receipts).
 
 ### 6) Resources and thermals
 - Prefill latency and decode latency per token.

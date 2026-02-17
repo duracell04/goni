@@ -93,6 +93,7 @@ matters as much as TTFT.
 - tool result parse/validation time
 - success rate and partial failure rate
 - idempotency violations
+- capability overreach rate (attempted calls outside token scope)
 - undo success rate (if reversible actions exist)
 - approval rate, time-to-approval, user edit distance (if HITL)
 
@@ -114,6 +115,9 @@ matters as much as TTFT.
 - receipt verification time + log growth rate
 - sandbox escape attempts detected
 - policy bypass attempts
+- approval accuracy (false-approve and false-deny rates)
+- poisoning acceptance rate (untrusted content promoted to durable memory)
+- trace replayability pass rate (equivalent inputs/policy reproduce decisions)
 - TCB size (even approximate early on)
 
 ### 6) Resource / hardware

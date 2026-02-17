@@ -19,13 +19,25 @@ default and verifiable via hash chaining.
 ## Required fields
 - receipt_id
 - timestamp
+- trace_id
+- span_id
 - actor_id
 - action_type
 - capability_id
 - policy_decision
+- decision_basis
 - budget_delta
 - input_hash
 - output_hash
+- memory_diff_refs
+
+## Receipt completeness profile (normative)
+- `trace_id` identifies the request/run trace for correlation across spans.
+- `span_id` identifies the exact operation span that emitted the receipt.
+- `decision_basis` captures the basis for policy mediation (for example:
+  `policy_hash`, matching rule IDs, and approval references).
+- `memory_diff_refs` is a list of state/memory delta IDs caused by the action.
+  Use an empty list when no memory mutation occurred.
 
 ## Upstream
 - [Tool capability API](/blueprint/30-specs/tool-capability-api.md)
@@ -42,6 +54,8 @@ default and verifiable via hash chaining.
 - any mediated action must emit exactly one receipt
 - receipts must form a valid hash chain
 - receipts must omit raw content by default
+- receipts must include `trace_id`, `span_id`, `decision_basis`, and
+  `memory_diff_refs`
 
 
 

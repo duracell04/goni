@@ -21,6 +21,9 @@ Logical fields for every tool call:
 - `state_snapshot_id`
 - `policy_hash`
 - `provenance`
+- `operation_id`
+- `idempotency_key` (required for mutating calls)
+- `precondition_refs` (state/version references that must hold at commit time)
 
 The kernel validates the call against policy and capability tokens before
 execution.
@@ -36,6 +39,28 @@ Tool results MUST include:
 - `status` (ok | error)
 - `result_hash`
 - `provenance`
+- `operation_id`
+- `tx_outcome` (`committed` | `rolled_back` | `no_op`)
+- `commit_delta_id` (present when `tx_outcome = committed`)
+
+## 2.1 Transactional tool semantics (normative)
+
+All mutating tool calls MUST execute as mediated transactions:
+
+- **Prepare/precondition check:** validate capability token and policy hash,
+  validate `precondition_refs` against current state/version, and reserve
+  budget according to policy.
+- **Commit:** apply side effects atomically, append state delta(s), and emit
+  audit record + receipt with resulting hashes.
+- **Rollback:** on policy rejection, failed preconditions, or commit failure,
+  no partial side effects may remain; emit an auditable failure result
+  (`tx_outcome = rolled_back`).
+
+Replay and idempotency rules:
+- mutating calls MUST include `idempotency_key`,
+- repeated `(tool_id, idempotency_key, args_hash, capability_token_id)` MUST
+  return the original outcome without duplicate side effects,
+- stale/invalid replay attempts MUST fail closed and remain auditable.
 
 ## 3. Canonical audit record
 
@@ -78,6 +103,8 @@ Tokens are immutable and referenced by ID in tool calls.
 - **No bypass:** tools cannot be called without a capability token.
 - **Auditability:** every tool call produces an audit record.
 - **Policy mediation:** policy engine is the sole authority for tool approval.
+- **Transactional safety:** mutating calls are atomic (commit or rollback).
+- **Replay safety:** idempotency keys prevent duplicate side effects.
 
 ## 7. Related specs
 

@@ -5,13 +5,17 @@
     "required":  [
                      "receipt_id",
                      "timestamp",
+                     "trace_id",
+                     "span_id",
                      "actor_id",
                      "action_type",
                      "capability_id",
                      "policy_decision",
+                     "decision_basis",
                      "budget_delta",
                      "input_hash",
-                     "output_hash"
+                     "output_hash",
+                     "memory_diff_refs"
                  ],
     "properties":  {
                        "receipt_id":  {
@@ -21,6 +25,12 @@
                                          "type":  "string",
                                          "format":  "date-time"
                                      },
+                       "trace_id":  {
+                                        "type":  "string"
+                                    },
+                       "span_id":  {
+                                       "type":  "string"
+                                   },
                        "actor_id":  {
                                         "type":  "string"
                                     },
@@ -33,6 +43,27 @@
                        "policy_decision":  {
                                                "type":  "string"
                                            },
+                       "decision_basis":  {
+                                              "type":  "object",
+                                              "properties":  {
+                                                                 "policy_hash":  {
+                                                                                     "type":  "string"
+                                                                                 },
+                                                                 "rule_ids":  {
+                                                                                  "type":  "array",
+                                                                                  "items":  {
+                                                                                                "type":  "string"
+                                                                                            }
+                                                                              },
+                                                                 "approval_refs":  {
+                                                                                       "type":  "array",
+                                                                                       "items":  {
+                                                                                                     "type":  "string"
+                                                                                                 }
+                                                                                   }
+                                                             },
+                                              "additionalProperties":  true
+                                          },
                        "budget_delta":  {
                                             "type":  "object",
                                             "additionalProperties":  {
@@ -45,6 +76,12 @@
                        "output_hash":  {
                                            "type":  "string"
                                        },
+                       "memory_diff_refs":  {
+                                                "type":  "array",
+                                                "items":  {
+                                                              "type":  "string"
+                                                          }
+                                            },
                        "execution_id":  {
                                             "type":  "string"
                                         },
