@@ -3,4 +3,5 @@
 - 10-primitives.md
 - 20-trust-model.md
 - 30-performance.md
+- 40-agentic-kernel-foundations.md
 - 50-learning-loop.md

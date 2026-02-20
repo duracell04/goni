@@ -9,6 +9,7 @@
 - [Goni Lab](/blueprint/docs/goni-lab.md) - LM Arena–style evals feeding router + council policy.
 - [Remote LLM Architecture](/blueprint/docs/remote-llm-architecture.md) - cloud leg via Council -> OpenRouter, budgets, and runtime modes.
 - [Learning Loop](/blueprint/20-system/50-learning-loop.md) - system-managed adaptation and failure-to-fix pipeline.
+- [Agentic Kernel Foundations](/blueprint/20-system/40-agentic-kernel-foundations.md) - reference-monitor, capabilities, IFC, provenance, and scheduling framing.
 - [Goni SWOT](/blueprint/docs/goni-swot.md) - positioning vs ecosystem.
 - [Inspiration](/blueprint/docs/inspiration.md) - people radar.
 - [Related Projects](/blueprint/docs/related-projects.md) - prior art.

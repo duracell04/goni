@@ -9,6 +9,8 @@ This hub connects privacy, threat, trust boundaries, and audit requirements.
 - [Threat model](/blueprint/docs/threat-model.md)
 - [TCB](/blueprint/docs/tcb.md)
 - [Receipts overview](/blueprint/docs/receipts.md)
+- [System trust model](/blueprint/20-system/20-trust-model.md)
+- [Agentic kernel foundations](/blueprint/20-system/40-agentic-kernel-foundations.md)
 
 ## Related contracts
 - [Receipts spec](/blueprint/30-specs/receipts.md)
