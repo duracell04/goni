@@ -127,6 +127,9 @@ This document informs (but does not replace):
 - `blueprint/30-specs/receipts.md`
 - `blueprint/30-specs/scheduler-and-interrupts.md`
 
+Related system note:
+- `blueprint/20-system/45-kernel-blockchain-mapping.md`
+
 ## 6. Citation keys
 
 See `blueprint/docs/references/bibliography.md` for annotated references:

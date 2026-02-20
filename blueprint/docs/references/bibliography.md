@@ -159,3 +159,88 @@ Used in:
 - `blueprint/20-system/40-agentic-kernel-foundations.md` (Provenance)
 Source:
 - https://www.w3.org/TR/trace-context/
+
+Key: [[agache2020-firecracker]]
+Claim: Describes microVM design with reduced attack surface and low overhead
+for multi-tenant serverless workloads.
+Relevance:
+- Anchor for isolation-boundary tradeoffs (container vs microVM).
+Used in:
+- `blueprint/20-system/45-kernel-blockchain-mapping.md` (Role A)
+Source:
+- https://www.usenix.org/system/files/nsdi20-paper-agache.pdf
+
+Key: [[nist-reference-monitor-glossary]]
+Claim: NIST glossary definition of reference monitor properties and concept.
+Relevance:
+- Standards-style wording for complete mediation and tamper resistance.
+Used in:
+- `blueprint/20-system/45-kernel-blockchain-mapping.md` (Role B)
+Source:
+- https://csrc.nist.gov/glossary/term/reference_monitor
+
+Key: [[roughgarden2020-eip1559]]
+Claim: Mechanism-design analysis of Ethereum transaction fees with EIP-1559.
+Relevance:
+- Grounds fee-policy preflight and max-fee constraint reasoning.
+Used in:
+- `blueprint/20-system/45-kernel-blockchain-mapping.md` (Intent pipeline)
+Source:
+- https://arxiv.org/abs/2012.00854
+
+Key: [[eip2335-keystore]]
+Claim: Defines interoperable keystore format for BLS12-381 private keys used
+in Ethereum validator contexts.
+Relevance:
+- Reference point for signer-keystore handling conventions.
+Used in:
+- `blueprint/20-system/45-kernel-blockchain-mapping.md` (Intent pipeline)
+Source:
+- https://eips.ethereum.org/EIPS/eip-2335
+
+Key: [[haber1991-timestamp]]
+Claim: Introduces cryptographic digital timestamping with chained commitments.
+Relevance:
+- Basis for tamper-evident receipt anchoring semantics.
+Used in:
+- `blueprint/20-system/45-kernel-blockchain-mapping.md` (Role C)
+Source:
+- https://www.staroceans.org/e-book/Haber_Stornetta.pdf
+
+Key: [[bayer1993-timestamp]]
+Claim: Improves timestamping efficiency and reliability using Merkle-tree
+batching.
+Relevance:
+- Supports scalable commitment anchoring for receipt logs.
+Used in:
+- `blueprint/20-system/45-kernel-blockchain-mapping.md` (Role C)
+Source:
+- https://www.math.columbia.edu/~bayer/papers/Timestamp_BHS93.pdf
+
+Key: [[rfc3161-tsp]]
+Claim: Internet standard for trusted timestamping via Time-Stamp Protocol.
+Relevance:
+- Alternate anchoring path when PKI timestamp authority is preferred.
+Used in:
+- `blueprint/20-system/45-kernel-blockchain-mapping.md` (Role C)
+Source:
+- https://www.ietf.org/rfc/rfc3161.txt
+
+Key: [[gipp2015-btc-timestamp]]
+Claim: Demonstrates decentralized trusted timestamping by anchoring to Bitcoin.
+Relevance:
+- Concrete example of blockchain-based commitment anchoring.
+Used in:
+- `blueprint/20-system/45-kernel-blockchain-mapping.md` (Role C)
+Source:
+- https://arxiv.org/pdf/1502.04015
+
+Key: [[ethereum-consensus-validator]]
+Claim: Ethereum consensus spec guidance for honest validator behavior and
+slashing-protection constraints.
+Relevance:
+- Grounds validator signing refusal invariants in Role D framing.
+Used in:
+- `blueprint/20-system/45-kernel-blockchain-mapping.md` (Role D)
+Source:
+- https://ethereum.github.io/consensus-specs/specs/phase0/validator/
