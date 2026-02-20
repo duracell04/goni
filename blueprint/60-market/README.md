@@ -10,3 +10,8 @@ Technology-first rules for this lane:
 - Keep this lane descriptive and comparative, not normative.
 
 Not here: normative specs or evidence.
+
+Includes:
+- competitors and supplier snapshots,
+- ecosystem partner mapping,
+- pricing model patterns without concrete price assumptions.

@@ -2,7 +2,7 @@
 id: MARKET-LANDSCAPE-01
 kind: MARKET
 status: living
-last_updated: 2026-02-06
+last_updated: 2026-02-20
 ---
 # Goni Competitive Landscape
 
@@ -56,6 +56,15 @@ Keep only what is visible and cite it:
 - nanobot exists and positions itself as "ultra-lightweight." [8]
 
 Avoid Goni traction numbers until there is a runnable release. [1]
+
+### 5) Platform terminology precision
+
+- macOS is Unix-based (Darwin/XNU), not Linux.
+- Linux should be described as a substrate choice, not Goni's product moat.
+
+Use this framing:
+"Goni runs on Linux-class substrate and differentiates on governance,
+mediation, and receipts."
 
 ## Positioning map (pitch-ready)
 

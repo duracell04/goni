@@ -2,8 +2,13 @@
 
 - TECH-INTEL-RULES.md
 - competitors/
+- competitors/openclaw.md
 - competitors/umbrel.md
 - competitors/picoclaw.md
+- pricing/
+- pricing/README.md
+- pricing/pricing-models.md
+- pricing/pay-per-execution.md
 - suppliers/
 - suppliers/README.md
 - suppliers/ollama-cloud.md

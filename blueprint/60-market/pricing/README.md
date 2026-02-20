@@ -1,6 +1,16 @@
-# DEPRECATED - Not in Scope
+# Pricing Models (Market Research)
 
-This file is retained only as a locked placeholder.
+This folder records pricing and commercialization model patterns for the agent
+platform category.
 
-Commercial and pricing decisions are out of scope for the blueprint stage.
-Use technology intel and metering specs instead.
+Scope constraints:
+- no concrete prices,
+- no speculative revenue forecasts,
+- no plan naming assumptions.
+
+Use this lane for comparative strategy framing only.
+
+## Documents
+
+- `pricing-models.md` - trust-layer business model patterns that fit Goni.
+- `pay-per-execution.md` - notes on execution-metered packaging tradeoffs.
