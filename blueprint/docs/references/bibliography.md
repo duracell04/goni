@@ -244,3 +244,73 @@ Used in:
 - `blueprint/20-system/45-kernel-blockchain-mapping.md` (Role D)
 Source:
 - https://ethereum.github.io/consensus-specs/specs/phase0/validator/
+
+Key: [[gu2021-s4]]
+Claim: Structured state-space sequence models can handle long-range dependencies
+efficiently and compete on long-sequence benchmarks.
+Relevance:
+- Baseline for evaluating non-attention long-sequence architectures.
+Used in:
+- `blueprint/20-system/30-performance.md` (scale and novelty criteria)
+Source:
+- https://arxiv.org/abs/2111.00396
+
+Key: [[peng2023-rwkv]]
+Claim: RWKV combines transformer-style training parallelism with recurrent
+inference and reports scaling to large model sizes.
+Relevance:
+- Evidence that architecture claims should be evaluated at practical scale.
+Used in:
+- `blueprint/20-system/30-performance.md` (tokenization and scale realism)
+Source:
+- https://arxiv.org/abs/2305.13048
+
+Key: [[poli2023-hyena]]
+Claim: Hyena hierarchy proposes sub-quadratic implicit operators and reports
+competitive language modeling and long-context behavior.
+Relevance:
+- Anchor for crossover analysis vs optimized attention.
+Used in:
+- `blueprint/20-system/30-performance.md` (runtime realism and novelty bar)
+Source:
+- https://arxiv.org/abs/2302.10866
+
+Key: [[dao2022-flashattention]]
+Claim: IO-aware exact attention implementation provides substantial practical
+speed/memory gains without changing attention semantics.
+Relevance:
+- Shows wall-clock can dominate asymptotic arguments in practical regimes.
+Used in:
+- `blueprint/20-system/30-performance.md` (big-O vs wall-clock section)
+Source:
+- https://arxiv.org/abs/2205.14135
+
+Key: [[sun2023-retnet]]
+Claim: RetNet proposes a retentive architecture intended as an alternative
+foundation sequence model with favorable inference properties.
+Relevance:
+- Expands prior-art set beyond attention and pure SSM families.
+Used in:
+- `blueprint/20-system/30-performance.md` (novelty bar section)
+Source:
+- https://arxiv.org/abs/2307.08621
+
+Key: [[nguyen2023-hyenadna]]
+Claim: HyenaDNA reports efficient long-range genomic sequence modeling and
+large context handling.
+Relevance:
+- Example of long-context evaluation beyond toy text benchmarks.
+Used in:
+- `blueprint/20-system/30-performance.md` (acceptance checklist)
+Source:
+- https://proceedings.neurips.cc/paper_files/paper/2023/file/86ab6927ee4ae9bde4247793c46797c7-Paper-Conference.pdf
+
+Key: [[wang2024-mmneedle]]
+Claim: MMNeedle benchmarks long-context retrieval/use in multimodal settings
+and highlights non-trivial failure modes.
+Relevance:
+- Supports need for task-level long-context evaluation beyond window length.
+Used in:
+- `blueprint/20-system/30-performance.md` (checklist and product implications)
+Source:
+- https://arxiv.org/abs/2406.11230

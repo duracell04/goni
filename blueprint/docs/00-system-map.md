@@ -16,6 +16,7 @@ product surfaces, planes, contracts/specs, governance, and evidence.
 - [Taxonomy and IDs](/blueprint/docs/02-taxonomy-and-ids.md)
 - [Hubs index](/blueprint/docs/hubs/00-index.md)
 - [System lane](/blueprint/20-system/00-index.md)
+- [Performance realism](/blueprint/20-system/30-performance.md)
 - [Agentic kernel foundations](/blueprint/20-system/40-agentic-kernel-foundations.md)
 - [Kernel-blockchain mapping](/blueprint/20-system/45-kernel-blockchain-mapping.md)
 
