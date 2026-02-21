@@ -25,6 +25,26 @@ entries:
     type: SPEC
     status: specified_only
     path: 30-specs/metering/SPEC-METER-02-receipt-metering-fields.md
+  - id: SPEC-KERN-01
+    title: "Agent Kernel ABI"
+    type: SPEC
+    status: specified_only
+    path: 30-specs/kernel/SPEC-KERN-01-agent-kernel-abi.md
+  - id: SPEC-TXN-01
+    title: "Transactional Tool Execution"
+    type: SPEC
+    status: specified_only
+    path: 30-specs/kernel/SPEC-TXN-01-transactional-tools.md
+  - id: SPEC-POL-01
+    title: "Policy Language (Capabilities + IFC)"
+    type: SPEC
+    status: specified_only
+    path: 30-specs/kernel/SPEC-POL-01-policy-language.md
+  - id: SPEC-ENF-01
+    title: "Non-bypassable Mediation on Linux"
+    type: SPEC
+    status: specified_only
+    path: 30-specs/kernel/SPEC-ENF-01-non-bypassable-mediation.md
   - id: SANDBOX-01
     title: "Isolation and Tool Sandboxes"
     type: SPEC

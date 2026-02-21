@@ -128,6 +128,46 @@
       "owner_area": "docs"
     },
     {
+      "id": "SPEC-KERN-01",
+      "title": "Agent Kernel ABI",
+      "role": "spec",
+      "group": "specs",
+      "path": "30-specs/kernel/SPEC-KERN-01-agent-kernel-abi.md",
+      "anchors": ["DOC-ID: SPEC-KERN-01"],
+      "status": "specified_only",
+      "owner_area": "docs"
+    },
+    {
+      "id": "SPEC-TXN-01",
+      "title": "Transactional Tool Execution",
+      "role": "spec",
+      "group": "specs",
+      "path": "30-specs/kernel/SPEC-TXN-01-transactional-tools.md",
+      "anchors": ["DOC-ID: SPEC-TXN-01"],
+      "status": "specified_only",
+      "owner_area": "docs"
+    },
+    {
+      "id": "SPEC-POL-01",
+      "title": "Policy Language (Capabilities + IFC)",
+      "role": "spec",
+      "group": "specs",
+      "path": "30-specs/kernel/SPEC-POL-01-policy-language.md",
+      "anchors": ["DOC-ID: SPEC-POL-01"],
+      "status": "specified_only",
+      "owner_area": "docs"
+    },
+    {
+      "id": "SPEC-ENF-01",
+      "title": "Non-bypassable Mediation on Linux",
+      "role": "spec",
+      "group": "specs",
+      "path": "30-specs/kernel/SPEC-ENF-01-non-bypassable-mediation.md",
+      "anchors": ["DOC-ID: SPEC-ENF-01"],
+      "status": "specified_only",
+      "owner_area": "docs"
+    },
+    {
       "id": "AXIOMS-01",
       "title": "Axioms and planes",
       "role": "data_contract",

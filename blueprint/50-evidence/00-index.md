@@ -12,6 +12,8 @@ status: specified_only
 - eval/EVID-SEC-02-memory-poisoning.md
 - eval/EVID-SEC-03-trace-replayability.md
 - receipts/
+- validation/
+- validation/EVID-ENF-01-egress-nonbypass.md
 - execution-budget/
 - execution-budget/EVID-BUDGET-01-daily-brief.md
 - execution-budget/EVID-BUDGET-02-inbox-clear.md

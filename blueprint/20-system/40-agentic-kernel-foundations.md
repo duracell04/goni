@@ -122,6 +122,10 @@ The following test classes operationalize the thesis:
 
 This document informs (but does not replace):
 - `blueprint/30-specs/tool-capability-api.md`
+- `blueprint/30-specs/kernel/SPEC-KERN-01-agent-kernel-abi.md`
+- `blueprint/30-specs/kernel/SPEC-TXN-01-transactional-tools.md`
+- `blueprint/30-specs/kernel/SPEC-POL-01-policy-language.md`
+- `blueprint/30-specs/kernel/SPEC-ENF-01-non-bypassable-mediation.md`
 - `blueprint/30-specs/isolation-and-tool-sandboxes.md`
 - `blueprint/30-specs/network-gate-and-anonymity.md`
 - `blueprint/30-specs/receipts.md`
