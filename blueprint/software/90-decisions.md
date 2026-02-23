@@ -28,6 +28,8 @@ Purpose: Record **deliberate design choices** in a way that makes their formal i
 - D-018 - Latent-first cognition as an architectural stance
 - D-019 - Agents as local processes; solver as interrupt
 - D-020 - Cognition-first OS; avoid hosting-first drift
+- D-021 - Maximum safe autopilot via autonomy corridors
+- D-022 - Policy-and-anomaly-first operator UX
 
 ---
 
@@ -562,4 +564,64 @@ and must not be required for correctness of \(\mathsf{Run}\).
 - Marketplace/install flows are scoped to agents and tools, not arbitrary services.
 - Any proposal to add hosting-first features must show it does not undermine the
   cognition-first contract or local-first correctness.
+
+---
+
+## D-021 - Maximum safe autopilot via autonomy corridors
+
+**Status:** Accepted
+**Date:** 2026-02-23
+
+**Formal statement**
+
+Delegable actions are governed by an autonomy policy
+\((\text{task\_class}, \text{corridor}, \theta)\) where corridor is in
+\(\{\text{no\_go}, \text{soft\_gate}, \text{autopilot}\}\) and \(\theta\) is a
+risk threshold. Autonomous execution is permitted iff:
+$$
+\text{corridor} \neq \text{no\_go} \land \text{risk\_score} \le \theta.
+$$
+
+**Rationale**
+
+- Aligns product direction with "do as much as possible in the background."
+- Keeps autonomy explicit and auditable instead of ad-hoc per-feature toggles.
+- Preserves safety by requiring risk-bounded execution and fail-closed fallback.
+
+**Consequence**
+
+- Task classes must declare corridor defaults and thresholds.
+- Receipts and audit logs must record autonomy mode and risk basis.
+- Conformance includes autonomy throughput and escalation quality metrics.
+
+---
+
+## D-022 - Policy-and-anomaly-first operator UX
+
+**Status:** Accepted
+**Date:** 2026-02-23
+
+**Formal statement**
+
+The default operator workflow is:
+$$
+\text{set policy} \to \text{autonomous execution} \to \text{anomaly review},
+$$
+not per-action approval.
+
+**Rationale**
+
+- Reduces digital overhead for the owner while preserving meaningful control.
+- Improves scaling of autonomy: users govern rules and exceptions, not every
+  event.
+- Matches HCAI goals (high automation with high user authority).
+
+**Consequence**
+
+- UI surfaces prioritize:
+  - policy controls (corridors, thresholds, allow/deny lists),
+  - anomaly and drift feeds,
+  - batch review and kill-switch actions.
+- Feature proposals that rely on repeated per-action confirmations are rejected
+  unless no policy-level alternative exists.
 

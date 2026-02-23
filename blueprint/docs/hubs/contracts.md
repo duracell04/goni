@@ -6,6 +6,7 @@ This hub links normative contracts and the data plane documents they depend on.
 
 ## Specs catalog
 - [Specs index](/blueprint/30-specs/00-index.md)
+- [Delegation and autonomy](/blueprint/30-specs/delegation-and-autonomy.md)
 
 ## Data plane contracts
 - [Axioms and planes](/blueprint/software/50-data/10-axioms-and-planes.md)

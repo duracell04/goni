@@ -314,3 +314,111 @@ Used in:
 - `blueprint/20-system/30-performance.md` (checklist and product implications)
 Source:
 - https://arxiv.org/abs/2406.11230
+
+Key: [[horvitz1999-mixed-initiative]]
+Claim: Mixed-initiative interfaces should decide when to automate vs interrupt
+the user using uncertainty and utility/cost tradeoffs.
+Relevance:
+- Basis for "auto unless risky" delegation thresholds.
+Used in:
+- `blueprint/docs/references/personal-twin-autonomy-map.md` (C-AUTON-01)
+Source:
+- https://www.microsoft.com/en-us/research/publication/principles-mixed-initiative-user-interfaces/
+
+Key: [[bradshaw2004-adjustable-autonomy]]
+Claim: Human-agent teamwork needs adjustable autonomy with policy constraints
+and explicit authority boundaries.
+Relevance:
+- Grounds corridor-based delegation (`no_go`, `soft_gate`, `autopilot`).
+Used in:
+- `blueprint/docs/references/personal-twin-autonomy-map.md` (C-AUTON-02)
+Source:
+- https://www.researchgate.net/publication/2914496_Human-Agent_Teamwork_and_Adjustable_Autonomy_in_Practice
+
+Key: [[shneiderman2020-hcai-thci]]
+Claim: Human-centered AI should target high automation and high human control.
+Relevance:
+- Supports policy-level governance over per-action click workflows.
+Used in:
+- `blueprint/docs/references/personal-twin-autonomy-map.md` (C-AUTON-03)
+Source:
+- https://aisel.aisnet.org/thci/vol12/iss3/1/
+
+Key: [[shneiderman2020-hcai-ijhci]]
+Claim: Reliable, safe, and trustworthy AI requires strong user authority and
+inspectable controls.
+Relevance:
+- Supports policy-and-anomaly-first operator UX contract.
+Used in:
+- `blueprint/docs/references/personal-twin-autonomy-map.md` (C-AUTON-03)
+Source:
+- https://arxiv.org/abs/2002.04087
+
+Key: [[clark1998-extended-mind]]
+Claim: Cognitive processes can extend into external artifacts when coupling is
+stable and reliable.
+Relevance:
+- Conceptual basis for personal AI as extended cognition.
+Used in:
+- `blueprint/docs/references/personal-twin-autonomy-map.md` (C-AUTON-04)
+Source:
+- https://academic.oup.com/analysis/article-abstract/58/1/7/153111
+
+Key: [[risko2016-cognitive-offloading]]
+Claim: Cognitive offloading improves performance but can shift cognitive load
+and behavior over time.
+Relevance:
+- Grounds offloading safeguards and longitudinal risk monitoring.
+Used in:
+- `blueprint/docs/references/personal-twin-autonomy-map.md` (C-AUTON-04)
+Source:
+- https://www.cell.com/trends/cognitive-sciences/fulltext/S1364-6613(16)30098-5
+
+Key: [[haegner2020-rpa-slr]]
+Claim: Routine, structured digital work is broadly automatable with RPA.
+Relevance:
+- Evidence for SOP-first automation in admin-heavy task classes.
+Used in:
+- `blueprint/docs/references/personal-twin-autonomy-map.md` (C-AUTON-05)
+Source:
+- https://www.fh-wedel.de/fileadmin/Mitarbeiter/Records/Haegner_2020_-_Robotic_Process_Automation_-_A_Systematic_Literature_Review.pdf
+
+Key: [[smagul2023-rpa-review]]
+Claim: RPA adoption patterns consistently move humans from execution to
+exception handling.
+Relevance:
+- Supports anomaly-first oversight design in Goni.
+Used in:
+- `blueprint/docs/references/personal-twin-autonomy-map.md` (C-AUTON-05)
+Source:
+- https://ceur-ws.org/Vol-3966/W2Paper2.pdf
+
+Key: [[guner2020-rpa-capability]]
+Claim: Organizations gain more from automation when routine capability is
+institutionalized instead of ad-hoc scripting.
+Relevance:
+- Supports reusable SOP packs over one-off manual automations.
+Used in:
+- `blueprint/docs/references/personal-twin-autonomy-map.md` (C-AUTON-05)
+Source:
+- https://aisel.aisnet.org/ecis2020_rp/153/
+
+Key: [[gaffinet2025-human-digital-twin]]
+Claim: Human digital twin literature converges on modeling + decision support
+loops, but concepts need disambiguation.
+Relevance:
+- Grounds Goni positioning as a local, user-owned personal twin.
+Used in:
+- `blueprint/docs/references/personal-twin-autonomy-map.md` (C-AUTON-06)
+Source:
+- https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4911522
+
+Key: [[zafar2024-hdt-business-review]]
+Claim: Human digital twin applications span sectors and highlight governance and
+ownership concerns.
+Relevance:
+- Supports explicit policy, portability, and audit commitments.
+Used in:
+- `blueprint/docs/references/personal-twin-autonomy-map.md` (C-AUTON-06)
+Source:
+- https://lutpub.lut.fi/bitstream/handle/10024/166844/MastersThesis_Zafar_MuhammadHarisShahid.pdf

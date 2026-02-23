@@ -10,6 +10,11 @@ entries:
     type: SPEC
     status: specified_only
     path: 30-specs/agent-manifest.md
+  - id: DELEG-01
+    title: "Delegation and Autonomy"
+    type: SPEC
+    status: specified_only
+    path: 30-specs/delegation-and-autonomy.md
   - id: AGENT-STORE-01
     title: "Agent Store Governance"
     type: SPEC

@@ -11,6 +11,10 @@ status: specified_only
 - eval/EVID-SEC-01-prompt-injection.md
 - eval/EVID-SEC-02-memory-poisoning.md
 - eval/EVID-SEC-03-trace-replayability.md
+- eval/EVID-AUTON-01-autonomy-corridors.md
+- eval/EVID-AUTON-02-risk-threshold-calibration.md
+- eval/EVID-AUTON-03-policy-anomaly-ux.md
+- eval/EVID-AUTON-04-offloading-safety-longitudinal.md
 - receipts/
 - validation/
 - validation/EVID-ENF-01-egress-nonbypass.md

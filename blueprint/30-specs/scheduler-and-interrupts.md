@@ -53,6 +53,17 @@ Work is scheduled into classes:
 
 Class priorities are enforced by the scheduler (MaxWeight policy).
 
+## 3.1 Delegation escalation lanes
+
+Delegated execution must route through explicit lanes:
+
+- `autonomous`: executes within active corridor and risk threshold,
+- `review`: deferred/batched review for soft-gate actions,
+- `blocked`: denied by no-go policy or risk overflow,
+- `escalated`: requires immediate user decision.
+
+The scheduler is responsible for fairness and latency bounds across these lanes.
+
 ## 4. Degradation modes
 
 The kernel exposes explicit modes:
@@ -80,6 +91,9 @@ Interrupt decisions and solver wakes are recorded with:
 - `policy_hash`
 - `state_snapshot_id`
 - `provenance`
+- `task_class`
+- `autonomy_mode`
+- `risk_score`
 
 ## 7. Related specs
 
@@ -87,6 +101,7 @@ Interrupt decisions and solver wakes are recorded with:
 - [tool-capability-api.md](/blueprint/30-specs/tool-capability-api.md)
 - [symbolic-substrate.md](/blueprint/30-specs/symbolic-substrate.md)
 - [itcr.md](/blueprint/30-specs/itcr.md)
+- [delegation-and-autonomy.md](/blueprint/30-specs/delegation-and-autonomy.md)
 
 ## 8. Upstream
 - [Job contract](/blueprint/30-specs/job.md)

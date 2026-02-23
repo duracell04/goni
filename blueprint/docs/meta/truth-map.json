@@ -68,6 +68,16 @@
       "owner_area": "docs"
     },
     {
+      "id": "DELEG-01",
+      "title": "Delegation and Autonomy",
+      "role": "spec",
+      "group": "specs",
+      "path": "30-specs/delegation-and-autonomy.md",
+      "anchors": ["DOC-ID: DELEG-01"],
+      "status": "specified_only",
+      "owner_area": "docs"
+    },
+    {
       "id": "ITCR-01",
       "title": "ITCR",
       "role": "spec",

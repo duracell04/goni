@@ -14,4 +14,7 @@ Additions:
 1) Add a new key to `bibliography.md`.
 2) Reference it from the relevant spec section.
 
+Delegation research traceability:
+- [Personal twin autonomy map](/blueprint/docs/references/personal-twin-autonomy-map.md)
+
 See `bibliography.md` for the current list.

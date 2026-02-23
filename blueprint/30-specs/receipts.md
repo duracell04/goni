@@ -24,8 +24,12 @@ default and verifiable via hash chaining.
 - actor_id
 - action_type
 - capability_id
+- task_class
+- autonomy_mode
 - policy_decision
 - decision_basis
+- risk_score
+- risk_basis
 - budget_delta
 - input_hash
 - output_hash
@@ -41,6 +45,7 @@ default and verifiable via hash chaining.
 
 ## Upstream
 - [Tool capability API](/blueprint/30-specs/tool-capability-api.md)
+- [Delegation and autonomy](/blueprint/30-specs/delegation-and-autonomy.md)
 
 ## Downstream
 - [Receipt schema](/blueprint/docs/receipts/receipt-schema.md)
@@ -56,6 +61,8 @@ default and verifiable via hash chaining.
 - receipts must omit raw content by default
 - receipts must include `trace_id`, `span_id`, `decision_basis`, and
   `memory_diff_refs`
+- receipts must include `task_class`, `autonomy_mode`, `risk_score`, and
+  `risk_basis` for any delegated action
 
 
 

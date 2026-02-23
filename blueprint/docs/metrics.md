@@ -90,6 +90,16 @@ This is the minimal scorecard for an operator appliance.
 - Tool error rate and timeout rate.
 - Stuck-stream rate (stream starts, never completes).
 
+### 8) Delegation and autonomy outcomes
+- Autonomous execution rate (AER): percent of delegable tasks completed
+  end-to-end without pre-approval.
+- Human oversight minutes per day: time spent on anomalies, policy edits, and
+  required approvals.
+- Escalation precision/recall: quality of "ask user now" decisions on
+  high-risk/ambiguous actions.
+- Unsafe autonomy incident rate: autonomous actions later judged policy-unsafe.
+- Rollback/compensation success rate for autonomous side effects.
+
 ## Example report (with deltas)
 Given:
 - TTFC: 0.663s

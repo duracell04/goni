@@ -10,6 +10,7 @@ Normative contracts referenced by this document:
 - Tool syscall envelope (TOOL-01): `blueprint/30-specs/tool-capability-api.md`
 - Agent/process model: `blueprint/30-specs/agent-definition.md`, `blueprint/30-specs/agent-manifest.md`
 - Scheduler/interrupt semantics: `blueprint/30-specs/scheduler-and-interrupts.md`
+- Delegation/autonomy semantics: `blueprint/30-specs/delegation-and-autonomy.md`
 
 > A **conformant Goni node** is one whose implementation can be mapped onto the four-plane model  
 > $$
@@ -216,6 +217,40 @@ A node **conforms** on the Control Plane if:
 - Scheduler respects K1 (by construction + simulation).  
 - Router exhibits bounded empirical regret on at least one non-trivial dataset.
 
+#### 1.3.3 Delegation: autonomy and escalation quality
+
+**Invariant K3 (risk-bounded autonomy).**
+
+No mutating action may execute autonomously unless:
+
+- a corridor policy is present for its `task_class`, and
+- computed `risk_score` is below the active threshold for that corridor.
+
+Define:
+
+- Autonomous execution rate
+  $$
+  \mathrm{AER} = \frac{N_{\text{autonomous}}}{N_{\text{delegable}}}
+  $$
+- Unsafe autonomy incident rate
+  $$
+  \mathrm{UAI} = \frac{N_{\text{policy\_violations\_post\_commit}}}{N_{\text{autonomous}}}
+  $$
+
+Target direction:
+
+- maximize AER for routine classes,
+- keep UAI near zero with bounded escalation latency.
+
+**Empirical check (MVP).**
+
+- Replay labelled delegation traces and assert:
+  - all autonomous commits have corridor + threshold evidence in receipts,
+  - all over-threshold actions are blocked or escalated.
+- Evaluate escalation quality on labelled events:
+  - escalation precision/recall for high-risk actions,
+  - rollback/compensation success for mistaken autonomous actions.
+
 ---
 
 ### 1.4 Execution \(\mathcal{E}\) – Engines & Capabilities
@@ -289,6 +324,9 @@ A node qualifies as an **MVP-conformant Goni implementation** if:
 - [ ] The scheduler uses a MaxWeight-like rule with a Lyapunov function \(L\) as documented.  
 - [ ] Simulated workloads with load below \(\alpha\) show bounded queues (no drift to infinity).  
 - [ ] The router is evaluated on labelled data and achieves average regret below a configured threshold (MVP: = 0.1).
+- [ ] Delegated actions satisfy K3 (corridor + risk threshold required for autonomous commit).
+- [ ] Escalation precision/recall are measured on labelled traces.
+- [ ] Autonomous execution rate and unsafe autonomy incident rate are reported.
 
 ### Execution & Capabilities
 

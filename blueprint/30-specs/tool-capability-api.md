@@ -22,6 +22,10 @@ Logical fields for every tool call:
 - `policy_hash`
 - `provenance`
 - `operation_id`
+- `task_class`
+- `autonomy_mode` (`no_go` | `soft_gate` | `autopilot` | `escalated`)
+- `risk_score`
+- `risk_basis`
 - `idempotency_key` (required for mutating calls)
 - `precondition_refs` (state/version references that must hold at commit time)
 
@@ -40,6 +44,9 @@ Tool results MUST include:
 - `result_hash`
 - `provenance`
 - `operation_id`
+- `task_class`
+- `autonomy_mode`
+- `risk_score`
 - `tx_outcome` (`committed` | `rolled_back` | `no_op`)
 - `commit_delta_id` (present when `tx_outcome = committed`)
 
@@ -75,6 +82,10 @@ fields:
 - `args_hash`
 - `result_hash`
 - `provenance`
+- `task_class`
+- `autonomy_mode`
+- `risk_score`
+- `risk_basis`
 
 See `blueprint/software/50-data/51-schemas-mvp.md` for `AuditRecords` and `CapabilityTokens`.
 
@@ -103,6 +114,8 @@ Tokens are immutable and referenced by ID in tool calls.
 - **No bypass:** tools cannot be called without a capability token.
 - **Auditability:** every tool call produces an audit record.
 - **Policy mediation:** policy engine is the sole authority for tool approval.
+- **Delegation mediation:** autonomy corridor and risk thresholds are evaluated
+  before execution.
 - **Transactional safety:** mutating calls are atomic (commit or rollback).
 - **Replay safety:** idempotency keys prevent duplicate side effects.
 
@@ -112,6 +125,7 @@ Tokens are immutable and referenced by ID in tool calls.
 - [latent-state-contract.md](/blueprint/30-specs/latent-state-contract.md)
 - [scheduler-and-interrupts.md](/blueprint/30-specs/scheduler-and-interrupts.md)
 - [symbolic-substrate.md](/blueprint/30-specs/symbolic-substrate.md)
+- [delegation-and-autonomy.md](/blueprint/30-specs/delegation-and-autonomy.md)
 
 ## 8. Upstream
 - [Symbolic substrate](/blueprint/30-specs/symbolic-substrate.md)
@@ -122,6 +136,7 @@ Tokens are immutable and referenced by ID in tool calls.
 - [Receipts](/blueprint/30-specs/receipts.md)
 - [Isolation and tool sandboxes](/blueprint/30-specs/isolation-and-tool-sandboxes.md)
 - [Network gate and anonymity](/blueprint/30-specs/network-gate-and-anonymity.md)
+- [Delegation and autonomy](/blueprint/30-specs/delegation-and-autonomy.md)
 - [Orchestrator](/blueprint/software/30-components/orchestrator.md)
 
 ## 10. Adjacent

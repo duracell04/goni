@@ -158,6 +158,40 @@ These requirements are derived from reference product patterns (see
 - Crash consistency is mandatory: state must be replayable from checkpoints +
   append-only logs; journaling is required for durable records.
 
+### 3.6 Delegation and autonomy requirements (AUTON)
+
+- **AUTON-01 (autonomy corridors):** each task class (for example:
+  `email_reply`, `invoice_payment`, `calendar_change`, `doc_edit`) must have an
+  explicit corridor policy:
+  - `no_go` (never auto-execute),
+  - `soft_gate` (bounded execution + review),
+  - `autopilot` (auto-execute by default).
+- **AUTON-02 (risk-bounded default):** execution defaults to "auto unless risky."
+  The system must compute a risk score per action and:
+  - auto-execute when below corridor thresholds,
+  - queue for review or escalate when thresholds are exceeded.
+- **AUTON-03 (policy-level control):** meaningful human control is exercised at
+  policy level (corridors, thresholds, allow/deny lists), not by requiring
+  per-action confirmation for routine work.
+- **AUTON-04 (offloading safeguards):** system must include:
+  - anomaly-first review feed,
+  - periodic post-hoc sampling of autonomous actions,
+  - rapid downgrade/kill-switch controls for autonomy policies.
+
+### 3.7 SOP lifecycle and autonomy packs
+
+- The system must treat repeatable workflows as SOPs with lifecycle states:
+  `shadow` -> `approved` -> `autopilot` -> `revoked`.
+- Promotion to autopilot must require a configurable success window and no
+  unresolved safety findings.
+- The product should provide profile-based starter packs (for example
+  student/freelancer/admin-heavy roles) with:
+  - default task classes,
+  - autonomy corridors,
+  - baseline SOP templates.
+- Users should be able to import, export, and version SOP packs without editing
+  low-level policy files directly.
+
 ## 4. Cloud Integration Requirements
 
 ### 4.1 Controlled External Calls
@@ -286,6 +320,18 @@ These requirements are derived from reference product patterns (see
   - new connectors to data sources,
   - new external AI services,
   without requiring a full reinstall.
+
+### 8.1 Builder workflow automation (ecosystem requirement)
+
+To reduce process overhead for Goni OS maintainers and contributors:
+
+- Delegation-related changes should include machine-checkable traceability:
+  claim -> requirement -> spec -> conformance/evidence artifact.
+- The project should provide contribution scaffolds for new task classes
+  (spec stub, test stub, and evidence stub) to avoid manual process plumbing.
+- Project operations should support policy/anomaly-first automation similar to
+  product goals (for example issue triage, PR summarization, and traceability
+  checks), with human override.
 
 ---
 
