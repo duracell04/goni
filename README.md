@@ -6,6 +6,12 @@ Status: Specified only / roadmap.
 
 Goni is an open-source blueprint and prototype lab. It is not shippable hardware or a ready-made product.
 
+## What this repo is
+
+This is a **community-facing engineering blueprint**: a structured, mostly-Markdown knowledge base that captures the **constraints, architecture, decisions, trade-offs, and validation plans** for building the Goni hardware + kernel.
+
+The goal is for others to **understand, reproduce, critique, and extend** the design without needing a full product codebase. Runnable artifacts (prototype code, tests, deployments) live in `goni-prototype-lab` (`https://github.com/duracell04/goni-prototype-lab`).
+
 ## What it is (plain English)
 
 - Delegation, not chat: a calm operating layer for making and executing decisions.

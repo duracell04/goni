@@ -2,6 +2,8 @@
 
 Purpose: a high-trust builder community for a local-first operator appliance.
 
+This repository is a **community-facing engineering blueprint** (Markdown-first): it exists to make the Goni hardware + kernel design legible and reproducible via **constraints, architecture, decisions, trade-offs, and validation plans**. It is not a product codebase.
+
 Start here:
 - Read goni-prototype-lab:goni-lab/STATUS.md (what is real today)
 - Read goni-prototype-lab:goni-lab/TRACEABILITY.md (spec -> code -> tests)
