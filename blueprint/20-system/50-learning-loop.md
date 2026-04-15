@@ -13,15 +13,33 @@ Runtime improvement is achieved by system-managed artifacts (memory, playbooks,
 checkers, and policies), not by changing model weights in production.
 [[tworek2026-decoder]]
 
-## 2. Learning layers (A/B/C)
-Improvement is separated into three risk tiers:
+## 2. Learning stack and three speeds
+Goni does not treat the base model as one mutable blob. It separates learning
+into a governed stack:
 
-- Layer A (fast, safe): preferences, retrieval memory, playbooks, allow/deny
-  rules. These are reversible and low-risk.
-- Layer B (gated): skill patches, tool wrappers, deterministic checkers, schema
-  validators. These require review and explicit promotion.
-- Layer C (rare, high risk): offline model fine-tunes or weight updates. These
-  require evaluation, rollback plans, and governance approval.
+- Layer A: dense constitutional trunk. Stable identity, style, refusal policy,
+  and durable reasoning priors. Slow-moving.
+- Layer B: sparse expert mesh. Domain skill, specialist adapters, and routing-
+  addressable modules. Medium-moving.
+- Layer C: external knowledge plane. Facts, retrieval state, tool receipts, and
+  memories. Fast-moving.
+- Layer D: patch graph. Scoped, reversible deltas that target declared seams.
+- Layer E: compiler or sleep phase. Replay, eval, promote, reject, merge, or
+  roll back candidate changes.
+- Layer F: governance ledger. Provenance, signatures, approvals, and deployable
+  bill of materials.
+
+Operationally, a serious LLM learns in three speeds:
+
+- P0 fast path: fresh facts and retrieval tuning belong in Layer C. They update
+  at inference time and do not imply weight changes.
+- P1 medium path: domain skill belongs in Layer B or Layer D via scoped router
+  changes, expert adapters, tool wrappers, and validators.
+- P2 slow path: trunk changes belong in Layer A only after repeated durable
+  gains survive replay, safety, and latency gates.
+
+The governing rule is simple: facts default outward, skill patches stay scoped,
+and core weights absorb only rare durable structure.
 
 ## 2.1 Formal state tuple and OS transition loop (normative)
 Operationally, the runtime is modeled as a partially observable control loop.
@@ -48,7 +66,19 @@ Kernel loop per step:
 2. Select action under policy + capability constraints.
 3. Execute action/tool in a mediated transaction.
 4. Commit delta + receipt on success, or rollback + failure receipt on reject.
-5. Emit experience packet for Layer A/B/C promotion gates.
+5. Emit experience packet for P0/P1/P2 promotion gates.
+
+## 2.2 Patch seams and allowed attachment points
+Candidate changes may attach only to declared seams:
+
+- S1 router seam: routing rules, thresholds, and expert selection.
+- S2 expert seam: per-expert adapters, sparse deltas, or small modules.
+- S3 trunk-interface seam: stable output contracts, refusal policy, and schema.
+- S4 retrieval seam: indexes, reranker config, citation rules, memory shaping.
+- S5 tool-policy seam: capabilities, corridors, and two-phase write policy.
+
+Undeclared attachment points are rejected. A patch that cannot name its seam is
+not a valid patch.
 
 ## 3. Failure becomes a first-class artifact
 Every failure produces an experience packet derived from receipts and runtime
@@ -59,7 +89,7 @@ Minimum fields:
 - receipt_ids (immutable chain)
 - failure_class (see Section 4)
 - observed_symptoms (short tags)
-- proposed_fix (Layer A/B/C)
+- proposed_fix (promotion class + target seam)
 - evidence_links (metrics, logs, or traces)
 
 ## 4. Failure taxonomy (starter set)
@@ -78,10 +108,18 @@ not a debate. Build guardrails that assume phase transitions in reliability.
 Fixes follow an explicit pipeline:
 
 1. Inbox: raw failure packet, untrusted.
-2. RFC: structured proposal with minimal risk analysis.
+2. RFC: structured proposal with target seam, promotion class, and rollback
+   pointer.
 3. SPEC: formal contract or schema change, if needed.
 4. ADR: decision record with rationale and alternatives.
-5. EVID: evaluation results and rollback plan.
+5. EVID: evaluation results, non-regression report, and replay artefacts.
+
+Minimum promotion evidence by class:
+
+- P0: scoped task improvement plus reproducible replay on the affected suite.
+- P1: P0 evidence plus safety and latency non-regression.
+- P2: P1 evidence plus explicit approval, durable gains across repeated runs,
+  and signed bundle metadata for rollback.
 
 ## 6. Unstuck primitives (runtime recovery)
 The runtime must implement explicit recovery behaviors:

@@ -9,9 +9,10 @@ Scope: Single node; multiple models & backends via common API
 
 The **LLM Runtime** is the Execution Plane (??) component that:
 
-- Executes model inference for a given PromptPlan,
+- Executes model inference for a given PromptPlan and immutable model bundle,
 - Abstracts over concrete model backends (llama.cpp, vLLM, etc.),
-- Exposes capabilities and utilisation back to the Control Plane (??).
+- Exposes capabilities, utilisation, and active bundle metadata back to the
+  Control Plane (??).
 
 It is the only component allowed to “speak” to GPUs/NPUs and LLM backends directly.
 
@@ -23,6 +24,11 @@ It is the only component allowed to “speak” to GPUs/NPUs and LLM backends di
 
 - **Inference execution**
   - Convert a PromptPlan + ModelId into a token stream.
+
+- **Bundle loading and attestation**
+  - Load only declared bundle IDs produced by the promotion pipeline.
+  - Surface the active trunk version, expert mesh version, and patch set hashes
+    for audit and receipts.
 
 - **Model capability description**
   - Report per-model:
@@ -49,6 +55,7 @@ It is the only component allowed to “speak” to GPUs/NPUs and LLM backends di
 - ? Choosing which model tier to use (router).  
 - ? Selecting RAG context (context selector).  
 - ? Managing global queueing or admission control.
+- ? Mutating base weights, promoting patches, or learning online in production.
 
 ---
 
@@ -56,9 +63,9 @@ It is the only component allowed to “speak” to GPUs/NPUs and LLM backends di
 
 ### 3.1 API towards Control Plane
 
-`
-ust
+```rust
 pub struct LlmRequest {
+    pub bundle_id: BundleId,
     pub model_id: ModelId,
     pub prompt: PromptPlan,
     pub max_tokens: usize,
@@ -77,10 +84,16 @@ pub struct UtilizationMetrics {
     pub gpu_utilization: f32,   // [0,1]
     pub vram_bytes_used: u64,
 }
-`
 
-`
-ust
+pub struct ActiveBundle {
+    pub bundle_id: BundleId,
+    pub trunk_version: String,
+    pub expert_mesh_version: String,
+    pub patch_set_hashes: Vec<PatchHash>,
+}
+```
+
+```rust
 #[async_trait::async_trait]
 pub trait LlmRuntime {
     async fn generate(
@@ -91,8 +104,10 @@ pub trait LlmRuntime {
     fn capabilities(&self, model_id: &ModelId) -> ModelCapabilities;
 
     fn utilization(&self) -> UtilizationMetrics;
+
+    fn active_bundle(&self) -> ActiveBundle;
 }
-`
+```
 
 ### 3.2 Backend abstraction
 
@@ -106,6 +121,15 @@ Concrete engines (llama.cpp, vLLM, etc.) implement LlmRuntime:
 
 * **Capability invariant**
   ModelCapabilities must approximate real behaviour well enough that ??'s scheduling assumptions (capacity region) are not violated.
+
+* **Bundle immutability invariant**
+  The runtime executes a declared bundle ID and must not mutate trunk weights,
+  expert deltas, router rules, or retrieval config on the hot path.
+
+* **Three-speed invariant**
+  Fresh facts belong in retrieval or memory inputs, domain skill belongs in
+  scoped modules, and core weights change only by loading a new promoted
+  bundle.
 
 * **Shape-compatibility invariant**
   If a request's shape falls outside the backend's supported buckets, the runtime
@@ -142,6 +166,7 @@ Concrete engines (llama.cpp, vLLM, etc.) implement LlmRuntime:
 * Multi-device and multi-backend routing inside ??.
 * Advanced KV cache paging tightly integrated with ??.
 * Mixed local/cloud execution under the same interface.
+* Signed bundle catalogs and per-bundle attestation receipts.
 
 
 ## 6. Upstream
