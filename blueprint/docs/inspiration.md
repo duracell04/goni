@@ -10,6 +10,117 @@
 
 ---
 
+## A0. Delegation Engineering Radar
+
+This section tracks the people and groups most relevant to Goni's
+`delegation engineering` thesis:
+
+- agent-side proactivity,
+- context acquisition on behalf of the user,
+- minimal decisive clarification questions,
+- visible assumptions and uncertainty,
+- governable tool use rather than prompt-only autonomy.
+
+This is a non-normative radar, not a canonical evidence list. Normative claims
+still belong in specs plus `blueprint/docs/references/`.
+
+### 1. Governable LLM systems
+
+- **Percy Liang / Stanford CRFM**
+  - Why track: systems view of LLM interfaces, evaluation, governance, and
+    workflow design.
+  - Goni angle: helps frame delegation as a system contract, not just prompting.
+
+### 2. Agent loop patterns
+
+- **Shunyu Yao**
+  - Why track: ReAct-style reasoning/acting loops and related agentic planning
+    patterns.
+  - Goni angle: useful for the `intent -> plan -> tool` loop, even when Goni
+    constrains that loop through policy and mediation.
+
+- **Graham Neubig / CMU ecosystem**
+  - Why track: practical work on agent orchestration and evaluation.
+  - Goni angle: useful for benchmarking whether agents can actually complete
+    delegated work.
+
+- **Jason Wei**
+  - Why track: prompting, reasoning, and evaluation discipline around model
+    behavior.
+  - Goni angle: useful as a cautionary baseline for where raw reasoning patterns
+    help and where Goni needs harder control-plane structure.
+
+### 3. Context engineering and memory assembly
+
+- **Jerry Liu / LlamaIndex**
+  - Why track: retrieval, memory, and context-assembly patterns that work in
+    real systems.
+  - Goni angle: close to the "context is a staged control surface" and memory
+    spine view.
+
+- **Harrison Chase / LangChain**
+  - Why track: orchestration patterns, tool graphs, and ecosystem standardization.
+  - Goni angle: useful as a reference for agent wiring, even though Goni's
+    governance story is stricter than framework-level orchestration.
+
+- **Simon Willison**
+  - Why track: skeptical, hands-on analysis of prompts, tools, evals, and what
+    actually works.
+  - Goni angle: good counterweight against hype and hidden assumptions.
+
+### 4. Tool discipline and safety framing
+
+- **Anthropic engineering/research**
+  - Why track: strong public articulation of tool use, context discipline, and
+    models as components in systems.
+  - Goni angle: close to the "authority is not in text" control-plane mindset.
+
+- **Jacob Steinhardt and adjacent evaluability/alignment work**
+  - Why track: rigor around corrigibility, evaluation, and governability.
+  - Goni angle: useful for delegation metrics and visible override paths.
+
+### 5. Mixed-initiative and proactivity calibration
+
+- **Mixed-initiative HCI researchers**
+  - Why track: initiative allocation between user and system under uncertainty.
+  - Goni angle: core prior art for "ask only decisive questions" and
+    "proactive without becoming paternalistic."
+
+- **Cognitive offloading / cognitive load researchers**
+  - Why track: how tools shift effort, skill, and oversight burden over time.
+  - Goni angle: strongest conceptual home for the "delegation prosthesis"
+    thesis.
+
+### 6. Systems and schedulability
+
+- **Andrej Karpathy**
+  - Why track: product-plus-systems intuition about how AI work should be
+    structured.
+  - Goni angle: useful as a design signal, not a normative source.
+
+- **LLM systems community (for example vLLM and serving/eval tooling)**
+  - Why track: defines the practical cost envelope for proactivity, routing, and
+    schedulability.
+  - Goni angle: relevant wherever delegation becomes a resource-management
+    problem rather than just an interface problem.
+
+### 7. What Goni should overweight
+
+For Goni specifically, these buckets matter more than generic "agent builder"
+fame:
+
+1. mixed-initiative HCI
+2. cognitive offloading
+3. governable LLM systems
+4. tool-use discipline and evaluability
+5. context engineering
+6. systems/runtime schedulability
+
+If a future repo reading list or watch list is added, it should start from this
+weighting rather than from general-purpose agent popularity.
+
+---
+
 ## A. “OwnYourAI” / Sovereign-Infra / Local-LLM Builders
 
 These are closest to the **Goni / Mitko** energy:
@@ -639,6 +750,5 @@ Treat this as a **living file**:
 - add new people as you discover them,  
 - promote some to “core influences” for specific parts of Goni (hardware, orchestrator, UX),  
 - and link concrete patterns from their work into your architecture docs.
-
 
 
