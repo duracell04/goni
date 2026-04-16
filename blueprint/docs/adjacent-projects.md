@@ -67,6 +67,16 @@ Where it maps in Goni terms:
 - Useful for interaction and routing ideas, but not a sovereign base: Goni must
   still own authority, receipt semantics, corridor policy, and durable memory.
 
+Refined Goni takeaway:
+
+- "Goni Claw" is the pattern where Goni keeps the sovereign kernel and an
+  OpenClaw-like layer supplies the front-door UX.
+- That means:
+  - chat/channel routing and action surfaces may look gateway-like,
+  - but capability checks, corridor outcomes, receipts, and memory provenance
+    still terminate in the Goni kernel.
+- In short: OpenClaw as surface inspiration, Goni as control plane.
+
 Links:
 
 - https://openclaw.ai/

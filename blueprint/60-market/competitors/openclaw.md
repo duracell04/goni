@@ -48,6 +48,28 @@ does not satisfy Goni's sovereignty definition by itself. A self-hosted
 dependency is still a dependency if it owns session logic, authority
 boundaries, or audit semantics.
 
+## Refined synthesis: "Goni Claw"
+
+The useful synthesis is not "base Goni on OpenClaw." It is:
+
+- Goni owns the kernel, policy, receipts, corridors, and memory spine.
+- An OpenClaw-like layer provides the operator front door:
+  channel routing, action surfaces, integrations, and extension UX.
+
+In that refined model, "Goni Claw" means:
+
+- OpenClaw-style interaction model,
+- Goni-owned trust model.
+
+Practical rule:
+
+- steal the surface ideas,
+- do not outsource the control plane.
+
+If implemented, the OpenClaw-like layer must sit above kernel mediation as a
+gateway or adapter seat. It cannot become the source of truth for session
+authority, tool approval, or audit semantics.
+
 ## Business model implication
 
 Kernel and distro choices are not the moat.
