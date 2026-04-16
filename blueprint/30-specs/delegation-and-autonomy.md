@@ -73,7 +73,17 @@ Each `task_class` MUST declare one of:
 - `soft_gate`: execute only with bounded conditions and review gates.
 - `autopilot`: execute by default without pre-approval.
 
-Corridor assignment is policy data and versioned.
+These are the three kernel authority corridors. Corridor assignment is
+policy data, versioned, and owned by the Goni kernel rather than by external
+assistant frameworks or gateways.
+
+For operator-facing discussion, Goni may describe these as:
+
+- `autopilot`: execute inside the active risk threshold,
+- `soft_gate`: require lightweight approval or bounded review,
+- `hard_gate`: require explicit human decision.
+
+`no_go` remains the deny-only policy floor in the normative corridor schema.
 
 ### 2.5 Risk dimensions
 
@@ -186,6 +196,8 @@ assumption visibility, and irreversible-action rules.
   receipt with autonomy and risk fields.
 - **I4 - Fail closed:** if risk computation, policy load, or capability
   validation fails, execution is denied and logged.
+- **I4a - Kernel-owned corridors:** authority corridors are defined and applied
+  by kernel policy, not by third-party session or gateway logic.
 - **I5 - Visible intent repair:** mutating execution requires an auditable chain
   from repaired intent to plan to tool intent.
 - **I6 - Decisive questioning only:** clarification interrupts are allowed only

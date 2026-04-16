@@ -11,6 +11,10 @@ Status: Specified only / roadmap
 Receipts are immutable records of mediated actions. They must be minimal by
 default and verifiable via hash chaining.
 
+Receipts are a Goni-kernel primitive. Third-party gateways, tool hosts, or
+assistant frameworks may emit their own logs, but those logs do not substitute
+for a canonical Goni receipt.
+
 ## PROV-DM mapping
 - Entity: input/output artifacts
 - Activity: toolcall, redact, retrieve, write
@@ -94,6 +98,8 @@ The `delegation` object MUST expose stable delegation-engineering fields:
   `delegation.tool_intent`, and `delegation.delegation_outcome`
 - receipt `decision_basis` must preserve `intent_summary` and `plan_summary`
   when a mutating action is proposed or executed
+- third-party framework logs or audit events must not be accepted as the sole
+  terminal record of a mediated effect
 
 
 

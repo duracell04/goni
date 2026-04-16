@@ -65,6 +65,8 @@ Target guarantees; see goni-prototype-lab:goni-lab/STATUS.md for implementation 
 
 - Kernel mediation and receipt components.
 - Egress gate.
+- Sovereignty means owning this control plane, not merely self-hosting a
+  third-party assistant framework.
 
 ## Agility guardrails
 

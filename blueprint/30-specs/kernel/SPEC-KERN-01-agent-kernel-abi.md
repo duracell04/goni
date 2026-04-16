@@ -11,6 +11,10 @@ This spec defines the mandatory kernel boundary for all effectful agent
 operations. It is the reference-monitor choke point for tool actions, network
 egress, and state mutation proposals.
 
+External runtimes, gateways, or assistant frameworks may consume this ABI, but
+they do not replace it. A third-party session model or tool registry is not a
+valid substitute for the Goni kernel boundary.
+
 ## 1. Design goal
 
 The ABI makes complete mediation testable:
@@ -120,6 +124,9 @@ Cancellation policy is declared on job submission and logged in receipts.
 - No silent effect: every effectful action yields a receipt reference.
 - No invisible policy: allow/deny basis is machine-readable.
 - No duplicate mutation: idempotency keys prevent repeated side effects.
+- No outsourced kernel: external runtimes/gateways must call into the ABI for
+  effectful work; they may not redefine authority, receipt semantics, or commit
+  rules outside it.
 
 ## 8. Upstream
 - [Policy language](/blueprint/30-specs/kernel/SPEC-POL-01-policy-language.md)

@@ -23,6 +23,8 @@ How this relates to `blueprint/docs/related-projects.md`:
   + operator appliance UX, which is rarer.
 - Agent gateways (OpenClaw, Open Interpreter) are strongest at integrations and
   "doing things," but they are not OS-style governance layers.
+- For a sovereign path, gateways should be treated as inspiration or optional
+  untrusted/mediated seats, not as substitutes for the kernel.
 - Local runtime servers (LM Studio, Ollama, LocalAI) are good backends for an
   `llm-runtime` abstraction, but they do not provide tool governance.
 - Desktop "local AI apps" (Jan, GPT4All, AnythingLLM, Open WebUI) prioritize UX
@@ -62,6 +64,8 @@ Where it maps in Goni terms:
 - Closest to "gateway + tool seats + channel adapters."
 - Not a kernel-governed plane model (no receipts, confinement, or capability
   syscalls as first-class primitives in the public framing).
+- Useful for interaction and routing ideas, but not a sovereign base: Goni must
+  still own authority, receipt semantics, corridor policy, and durable memory.
 
 Links:
 
@@ -115,6 +119,9 @@ Goni's scheduling, budgets, and receipts on top.
 
 These are integration-heavy and "do things" well, but carry higher risk without
 capability-gated syscalls and audit trails.
+
+For Goni, these should be modeled as optional seats or adapters behind kernel
+mediation, not as the control plane itself.
 
 ### D) "Agent OS" research framing
 

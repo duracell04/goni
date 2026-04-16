@@ -166,6 +166,10 @@ These requirements are derived from reference product patterns (see
   - `no_go` (never auto-execute),
   - `soft_gate` (bounded execution + review),
   - `autopilot` (auto-execute by default).
+  For operator-facing UX and policy summaries, Goni may refer to these as three
+  authority classes: `autopilot`, `soft_gate`, and `hard_gate`, where
+  `hard_gate` means explicit human decision and includes the deny-only
+  `no_go` floor.
 - **AUTON-02 (risk-bounded default):** execution defaults to "auto unless risky."
   The system must compute a risk score per action and:
   - auto-execute when below corridor thresholds,
@@ -177,6 +181,14 @@ These requirements are derived from reference product patterns (see
   - anomaly-first review feed,
   - periodic post-hoc sampling of autonomous actions,
   - rapid downgrade/kill-switch controls for autonomy policies.
+- **AUTON-05 (kernel-owned authority):** receipts, capability tokens, corridor
+  policy, and durable memory semantics are kernel primitives. These may not be
+  delegated to a third-party assistant framework, gateway, or extension host as
+  the source of truth for authority, audit, or memory.
+- **AUTON-06 (mediated external frameworks):** external assistant frameworks may
+  provide UX surfaces, channel adapters, or optional mediated tool seats, but
+  they must not own session authority, policy decisions, or durable memory
+  provenance.
 
 ### 3.7 SOP lifecycle and autonomy packs
 
@@ -212,6 +224,9 @@ These requirements are derived from reference product patterns (see
   - clear policy,
   - explicit user consent, and
   - a record that can be inspected.
+- External gateways or assistant frameworks must not substitute their own audit
+  or permission model for Goni's kernel mediation. Any external effect still
+  terminates in Goni capability checks and Goni receipts.
 
 ---
 
@@ -269,6 +284,8 @@ These requirements are derived from reference product patterns (see
 - Logs should:
   - be sufficient to diagnose issues and track resource usage,
   - avoid storing unnecessary sensitive content in plain text.
+- Receipts and durable memory provenance must remain under Goni-kernel control
+  even when external adapters or agent gateways are present.
 
 ---
 

@@ -45,6 +45,11 @@ Mutating calls MUST carry a visible chain from repaired intent to concrete tool
 proposal. This makes delegation behavior inspectable rather than burying it in
 free-form prompts.
 
+Third-party adapters, agent gateways, or external assistant frameworks do not
+satisfy this mediation requirement on their own. If they expose tools or
+actions to Goni, those effects MUST still pass through Goni-issued capability
+tokens and Goni policy evaluation before execution.
+
 ## 2. Tool result envelope
 
 Tool results MUST include:
@@ -139,6 +144,8 @@ Tokens are immutable and referenced by ID in tool calls.
 - **Policy mediation:** policy engine is the sole authority for tool approval.
 - **Delegation mediation:** autonomy corridor and risk thresholds are evaluated
   before execution.
+- **Kernel-owned authority:** external frameworks may surface actions, but they
+  do not define authority, corridor outcome, or receipt semantics.
 - **Intent traceability:** mutating calls preserve an auditable
   `intent -> plan -> tool intent -> authorized execution` chain.
 - **Transactional safety:** mutating calls are atomic (commit or rollback).

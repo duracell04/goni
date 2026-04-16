@@ -30,6 +30,9 @@ Risks:
 - extension supply-chain attack surface,
 - permission overreach from poorly scoped skills,
 - weak operator visibility if receipts and policy traces are incomplete.
+- even when self-hosted, OpenClaw remains someone else's control-plane model
+  unless all authority, audit, and memory semantics are re-grounded in a
+  separate sovereign kernel.
 
 ## Goni differentiation posture
 
@@ -39,6 +42,11 @@ Compete on trust primitives:
 - enforced network gate,
 - receipts and provenance by default,
 - signed extension lifecycle (verify, revoke, quarantine).
+
+OpenClaw may inspire channel routing, extension UX, and surface design, but it
+does not satisfy Goni's sovereignty definition by itself. A self-hosted
+dependency is still a dependency if it owns session logic, authority
+boundaries, or audit semantics.
 
 ## Business model implication
 
