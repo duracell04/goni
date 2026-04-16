@@ -126,6 +126,15 @@ define_tables! {
             result_hash: FixedSizeBinary(32),
             timestamp: TimestampMsUtc,
             provenance: MapUtf8Utf8,
+            task_class: DictU8Utf8,
+            autonomy_mode: DictU8Utf8,
+            risk_score: Float32,
+            risk_basis: MapUtf8Utf8,
+            intent_summary: Utf8,
+            plan_summary: Utf8,
+            tool_intent: Utf8,
+            clarification_status: DictU8Utf8,
+            delegation_outcome: DictU8Utf8,
         }
     },
 
@@ -384,5 +393,9 @@ define_tables! {
 - Optional: schema registry JSON for non-Rust consumers.
 
 ### Receipts table (specified only)
-The receipts table is specified in blueprint/software/50-data/51-schemas-mvp.md and will be added to the schema DSL in a later revision.
+The receipts table is specified in blueprint/software/50-data/51-schemas-mvp.md
+and will be added to the schema DSL in a later revision. When implemented, it
+must preserve the same delegation fields as the receipt JSON schema and the
+receipts spec: surfaced assumptions, uncertainty level, question strategy, tool
+intent, and delegation outcome.
 

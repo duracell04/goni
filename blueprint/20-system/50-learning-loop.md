@@ -77,6 +77,11 @@ Candidate changes may attach only to declared seams:
 - S4 retrieval seam: indexes, reranker config, citation rules, memory shaping.
 - S5 tool-policy seam: capabilities, corridors, and two-phase write policy.
 
+Delegation-policy bundles attach at S5. This includes clarification thresholds,
+assumption-visibility rules, corridor defaults, and irreversible-action policy.
+They are treated as reversible control-plane patches rather than hidden prompt
+edits [[tomasev2026-intelligent-delegation]] [[zhang2025-ace]].
+
 Undeclared attachment points are rejected. A patch that cannot name its seam is
 not a valid patch.
 
@@ -120,6 +125,11 @@ Minimum promotion evidence by class:
 - P1: P0 evidence plus safety and latency non-regression.
 - P2: P1 evidence plus explicit approval, durable gains across repeated runs,
   and signed bundle metadata for rollback.
+
+Delegation-policy promotion specifically requires trace replay over vague-intent
+episodes, comparison against prior policy bundles, and review of question rate,
+override rate, unsafe autonomy, and surfaced-assumption coverage. Failed
+bundles must be rollbackable through the governance ledger.
 
 ## 6. Unstuck primitives (runtime recovery)
 The runtime must implement explicit recovery behaviors:

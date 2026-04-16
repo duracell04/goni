@@ -26,12 +26,24 @@ Logical fields for every tool call:
 - `autonomy_mode` (`no_go` | `soft_gate` | `autopilot` | `escalated`)
 - `risk_score`
 - `risk_basis`
+- `intent_summary` (normalized statement of repaired user intent)
+- `plan_summary` (bounded step plan for the current action)
+- `tool_intent` (why this tool call is needed)
+- `clarification_status` (`not_needed` | `asked_decisive` |
+  `skipped_with_assumptions` | `user_overrode`)
+- `assumption_refs` (structured references to surfaced assumptions)
+- `delegation_outcome` (`autonomous` | `review` | `blocked` |
+  `escalated` | `approved`)
 - `idempotency_key` (required for mutating calls)
 - `precondition_refs` (state/version references that must hold at commit time)
 
 The kernel validates the call against policy and capability tokens before
 execution.
 Validation follows the SS-01 arbitration contract (symbolic constraints in F_sparse).
+
+Mutating calls MUST carry a visible chain from repaired intent to concrete tool
+proposal. This makes delegation behavior inspectable rather than burying it in
+free-form prompts.
 
 ## 2. Tool result envelope
 
@@ -47,6 +59,9 @@ Tool results MUST include:
 - `task_class`
 - `autonomy_mode`
 - `risk_score`
+- `tool_intent`
+- `clarification_status`
+- `delegation_outcome`
 - `tx_outcome` (`committed` | `rolled_back` | `no_op`)
 - `commit_delta_id` (present when `tx_outcome = committed`)
 
@@ -57,6 +72,9 @@ All mutating tool calls MUST execute as mediated transactions:
 - **Prepare/precondition check:** validate capability token and policy hash,
   validate `precondition_refs` against current state/version, and reserve
   budget according to policy.
+- **Authorization decision:** record whether execution is autonomous, queued for
+  review, escalated, or denied, and require approval or two-phase commit for
+  irreversible actions.
 - **Commit:** apply side effects atomically, append state delta(s), and emit
   audit record + receipt with resulting hashes.
 - **Rollback:** on policy rejection, failed preconditions, or commit failure,
@@ -86,6 +104,11 @@ fields:
 - `autonomy_mode`
 - `risk_score`
 - `risk_basis`
+- `intent_summary`
+- `plan_summary`
+- `tool_intent`
+- `clarification_status`
+- `delegation_outcome`
 
 See `blueprint/software/50-data/51-schemas-mvp.md` for `AuditRecords` and `CapabilityTokens`.
 
@@ -116,6 +139,8 @@ Tokens are immutable and referenced by ID in tool calls.
 - **Policy mediation:** policy engine is the sole authority for tool approval.
 - **Delegation mediation:** autonomy corridor and risk thresholds are evaluated
   before execution.
+- **Intent traceability:** mutating calls preserve an auditable
+  `intent -> plan -> tool intent -> authorized execution` chain.
 - **Transactional safety:** mutating calls are atomic (commit or rollback).
 - **Replay safety:** idempotency keys prevent duplicate side effects.
 
@@ -145,7 +170,14 @@ Tokens are immutable and referenced by ID in tool calls.
 - [System map](/blueprint/docs/00-system-map.md)
 
 ## Conformance tests
-- TBD: add tests for this spec.
+- mutating tool calls must include `intent_summary`, `plan_summary`, and
+  `tool_intent`
+- mediated outcomes must distinguish autonomous, review, escalated, and denied
+  execution
+- irreversible actions must not commit without approval evidence or a declared
+  two-phase path
+- audit records and receipts must agree on `autonomy_mode`,
+  `delegation_outcome`, and `clarification_status`
 
 
 

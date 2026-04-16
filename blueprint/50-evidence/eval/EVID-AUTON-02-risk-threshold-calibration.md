@@ -13,6 +13,16 @@ improves throughput without unsafe autonomous side effects.
 - escalation precision/recall for high-risk actions
 - unsafe autonomy incident rate under production-like policies
 - rollback/compensation success for autonomous mistakes
+- assumption visibility rate for actions taken under ambiguity
+- uncertainty calibration: high-uncertainty episodes should correlate with
+  escalation, review, or explicit assumption surfacing
+- override-triggered regret: measure quality minus turns, latency, and user
+  corrections after user override
+
+## Benchmark shape
+- replay the same trace set with different clarification and threshold bundles
+- compare `risk_score`, `uncertainty_level`, and final `delegation_outcome`
+- inspect whether hidden assumptions predict later overrides or unsafe commits
 
 ## Artifact links
 - TBD

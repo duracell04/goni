@@ -10,8 +10,12 @@
                      "actor_id",
                      "action_type",
                      "capability_id",
+                     "task_class",
+                     "autonomy_mode",
                      "policy_decision",
                      "decision_basis",
+                     "risk_score",
+                     "risk_basis",
                      "budget_delta",
                      "input_hash",
                      "output_hash",
@@ -40,6 +44,19 @@
                        "capability_id":  {
                                              "type":  "string"
                                          },
+                       "task_class":  {
+                                          "type":  "string"
+                                      },
+                       "autonomy_mode":  {
+                                             "type":  "string",
+                                             "enum":  [
+                                                          "no_go",
+                                                          "soft_gate",
+                                                          "autopilot",
+                                                          "escalated",
+                                                          "review"
+                                                      ]
+                                         },
                        "policy_decision":  {
                                                "type":  "string"
                                            },
@@ -60,10 +77,25 @@
                                                                                        "items":  {
                                                                                                      "type":  "string"
                                                                                                  }
-                                                                                   }
+                                                                                   },
+                                                                 "intent_summary":  {
+                                                                                        "type":  "string"
+                                                                                    },
+                                                                 "plan_summary":  {
+                                                                                      "type":  "string"
+                                                                                  }
                                                              },
                                               "additionalProperties":  true
                                           },
+                       "risk_score":  {
+                                          "type":  "number",
+                                          "minimum":  0,
+                                          "maximum":  1
+                                      },
+                       "risk_basis":  {
+                                          "type":  "object",
+                                          "additionalProperties":  true
+                                      },
                        "budget_delta":  {
                                             "type":  "object",
                                             "additionalProperties":  {
@@ -171,6 +203,66 @@
                                        },
                        "redaction_profile":  {
                                                  "type":  "string"
+                                             },
+                       "delegation":  {
+                                          "type":  "object",
+                                          "properties":  {
+                                                             "assumptions":  {
+                                                                                 "type":  "array",
+                                                                                 "items":  {
+                                                                                               "type":  "object",
+                                                                                               "properties":  {
+                                                                                                                  "statement":  {
+                                                                                                                                    "type":  "string"
+                                                                                                                                },
+                                                                                                                  "source":  {
+                                                                                                                                 "type":  "string"
+                                                                                                                             },
+                                                                                                                  "confidence":  {
+                                                                                                                                     "type":  "number",
+                                                                                                                                     "minimum":  0,
+                                                                                                                                     "maximum":  1
+                                                                                                                                 }
+                                                                                                              },
+                                                                                               "required":  [
+                                                                                                                "statement"
+                                                                                                            ],
+                                                                                               "additionalProperties":  false
+                                                                                           }
+                                                                             },
+                                                             "uncertainty_level":  {
+                                                                                       "type":  "string",
+                                                                                       "enum":  [
+                                                                                                    "low",
+                                                                                                    "medium",
+                                                                                                    "high",
+                                                                                                    "unknown"
+                                                                                                ]
+                                                                                   },
+                                                             "question_strategy":  {
+                                                                                      "type":  "string",
+                                                                                      "enum":  [
+                                                                                                   "not_needed",
+                                                                                                   "asked_decisive",
+                                                                                                   "skipped_with_assumptions",
+                                                                                                   "user_overrode"
+                                                                                               ]
+                                                                                  },
+                                                             "tool_intent":  {
+                                                                                 "type":  "string"
+                                                                             },
+                                                             "delegation_outcome":  {
+                                                                                         "type":  "string",
+                                                                                         "enum":  [
+                                                                                                      "autonomous",
+                                                                                                      "review",
+                                                                                                      "blocked",
+                                                                                                      "escalated",
+                                                                                                      "approved"
+                                                                                                  ]
+                                                                                     }
+                                                         },
+                                          "additionalProperties":  false
                                              }
                    },
     "additionalProperties":  true

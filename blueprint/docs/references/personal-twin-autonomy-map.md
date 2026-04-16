@@ -64,3 +64,30 @@ is traceable from literature to requirements, specs, conformance, and evidence.
   - `blueprint/software/10-requirements.md` (local-first delegation)
 - Evidence lane:
   - `blueprint/50-evidence/eval/EVID-AUTON-04-offloading-safety-longitudinal.md`
+
+### C-AUTON-07 Delegation requires visible intent repair and bounded questioning
+- Sources:
+  - [[tomasev2026-intelligent-delegation]]
+  - [[zhang2025-ace]]
+  - [[yang2025-contextagent]]
+- Mapped contracts:
+  - `blueprint/30-specs/delegation-and-autonomy.md` (four-layer stack, operator contract)
+  - `blueprint/30-specs/tool-capability-api.md` (intent -> plan -> tool intent chain)
+  - `blueprint/30-specs/scheduler-and-interrupts.md` (clarification interrupts)
+  - `blueprint/30-specs/receipts.md` (delegation metadata)
+- Evidence lane:
+  - `blueprint/50-evidence/eval/EVID-AUTON-01-autonomy-corridors.md`
+  - `blueprint/50-evidence/eval/EVID-AUTON-03-policy-anomaly-ux.md`
+
+### C-AUTON-08 Delegation quality must be measured as offloading calibration
+- Sources:
+  - [[risko2016-cognitive-offloading]]
+  - [[grinschgl2023-cognitive-offloading]]
+- Mapped contracts:
+  - `blueprint/30-specs/delegation-and-autonomy.md` (failure modes, surfaced assumptions)
+  - `blueprint/30-specs/receipts.md` (assumptions and uncertainty visibility)
+  - `blueprint/20-system/50-learning-loop.md` (delegation-policy bundle replay)
+  - `blueprint/docs/metrics.md` (autonomy and oversight metrics)
+- Evidence lane:
+  - `blueprint/50-evidence/eval/EVID-AUTON-02-risk-threshold-calibration.md`
+  - `blueprint/50-evidence/eval/EVID-AUTON-04-offloading-safety-longitudinal.md`

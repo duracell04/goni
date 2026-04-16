@@ -5,6 +5,65 @@
   "properties": {
     "mode": {"type": "string"},
     "egress": {"type": "object"},
-    "tool_defaults": {"type": "object"}
-  }
+    "tool_defaults": {"type": "object"},
+    "delegation": {
+      "type": "object",
+      "properties": {
+        "corridor_defaults": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string",
+            "enum": ["no_go", "soft_gate", "autopilot"]
+          }
+        },
+        "clarification": {
+          "type": "object",
+          "properties": {
+            "max_questions_per_task": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "materiality_threshold": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "ask_on_irreversible_actions": {
+              "type": "boolean"
+            }
+          },
+          "additionalProperties": false
+        },
+        "visibility": {
+          "type": "object",
+          "properties": {
+            "surface_assumptions": {
+              "type": "boolean"
+            },
+            "surface_uncertainty": {
+              "type": "boolean"
+            },
+            "require_tool_intent": {
+              "type": "boolean"
+            }
+          },
+          "additionalProperties": false
+        },
+        "irreversible_actions": {
+          "type": "object",
+          "properties": {
+            "require_explicit_approval": {
+              "type": "boolean"
+            },
+            "allow_two_phase_commit": {
+              "type": "boolean"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": true
 }

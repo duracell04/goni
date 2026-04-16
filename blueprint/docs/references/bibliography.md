@@ -422,3 +422,51 @@ Used in:
 - `blueprint/docs/references/personal-twin-autonomy-map.md` (C-AUTON-06)
 Source:
 - https://lutpub.lut.fi/bitstream/handle/10024/166844/MastersThesis_Zafar_MuhammadHarisShahid.pdf
+
+Key: [[tomasev2026-intelligent-delegation]]
+Claim: Delegation should be treated as adaptive task allocation with explicit
+authority, accountability, role boundaries, and intent clarity rather than as
+simple handoff heuristics.
+Relevance:
+- Grounds Goni's policy-first view of delegation engineering and visible intent
+  repair.
+Used in:
+- `blueprint/30-specs/delegation-and-autonomy.md` (delegation-engineering contract)
+- `blueprint/20-system/50-learning-loop.md` (delegation-policy bundles)
+Source:
+- https://arxiv.org/abs/2602.11865
+
+Key: [[zhang2025-ace]]
+Claim: Contexts can be evolved as structured playbooks, allowing systems to
+improve via curated context updates rather than weight changes.
+Relevance:
+- Supports delegation policy bundles and context-first repair of vague intent.
+Used in:
+- `blueprint/30-specs/delegation-and-autonomy.md` (delegation-engineering contract)
+- `blueprint/20-system/50-learning-loop.md` (patch seam rationale)
+Source:
+- https://arxiv.org/abs/2510.04618
+
+Key: [[yang2025-contextagent]]
+Claim: Proactive agents benefit from richer contextual signals and explicit
+benchmarks for deciding when proactive help and tool use are warranted.
+Relevance:
+- Supports context acquisition on behalf of the user and proactive delegation
+  evaluation via trace replay.
+Used in:
+- `blueprint/30-specs/delegation-and-autonomy.md` (delegation-engineering contract)
+- `blueprint/docs/references/personal-twin-autonomy-map.md` (C-AUTON-07)
+Source:
+- https://arxiv.org/abs/2505.14668
+
+Key: [[grinschgl2023-cognitive-offloading]]
+Claim: Cognitive offloading can shift available resources and change
+performance under concurrent-task conditions, not merely reduce effort in the
+abstract.
+Relevance:
+- Supports measuring delegation benefits and cognitive-load transfer over time,
+  not just immediate task completion.
+Used in:
+- `blueprint/docs/references/personal-twin-autonomy-map.md` (C-AUTON-08)
+Source:
+- https://pmc.ncbi.nlm.nih.gov/articles/PMC10728259/

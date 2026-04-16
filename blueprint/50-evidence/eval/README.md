@@ -17,3 +17,24 @@ Evaluation artifacts for reliability, security, and reproducibility.
 - [Risk threshold calibration](/blueprint/50-evidence/eval/EVID-AUTON-02-risk-threshold-calibration.md)
 - [Policy-and-anomaly UX](/blueprint/50-evidence/eval/EVID-AUTON-03-policy-anomaly-ux.md)
 - [Offloading safety longitudinal](/blueprint/50-evidence/eval/EVID-AUTON-04-offloading-safety-longitudinal.md)
+
+## Trace replay harness
+
+Delegation evaluation uses trace replay rather than ad-hoc screenshots or
+anecdotal demos.
+
+Replay suites should include:
+
+- vague intent prompts with gold deliverables,
+- policy bundles that vary corridor, clarification, and visibility rules,
+- receipts and audit traces for each mediated action,
+- outcome labels covering success, overrides, unsafe autonomy, and question
+  usefulness.
+
+Minimum reported dimensions:
+
+- quality/success,
+- turns and latency,
+- user corrections and overrides,
+- surfaced-assumption coverage,
+- question count and question value.

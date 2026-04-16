@@ -18,9 +18,31 @@ Interrupts are raised on:
 - `goal_conflict` detected by predictor
 - explicit user intent
 - policy deadlines or compliance conditions
+- missing information that materially changes safe delegated execution
 
 Interrupts are routed through the scheduler and never call the solver directly.
 Admission is part of the SS-01 arbitration contract.
+
+## 1.1 Clarification interrupts
+
+Clarification is a bounded interrupt subtype for delegation engineering.
+
+Clarification interrupts are allowed only when:
+
+- a missing answer would change corridor or threshold outcome,
+- a missing answer would change tool choice or counterparty/action target,
+- a side effect is irreversible or costly enough that assumptions are
+  insufficient,
+- policy explicitly requires a user answer for the current task class.
+
+Clarification interrupts are not allowed when the missing information can be
+derived from active policy, retrieved context, prior approvals, or stable task
+defaults. In those cases the runtime must proceed under surfaced assumptions or
+block/escalate the action.
+
+The scheduler MUST track clarification budgets and cooldowns separately from
+general solver wakes so an over-questioning agent cannot degrade the operator
+experience.
 
 ## 2. Hysteresis and wake control
 
@@ -94,6 +116,8 @@ Interrupt decisions and solver wakes are recorded with:
 - `task_class`
 - `autonomy_mode`
 - `risk_score`
+- `clarification_status`
+- `delegation_outcome`
 
 ## 7. Related specs
 
@@ -119,7 +143,14 @@ Interrupt decisions and solver wakes are recorded with:
 - [System map](/blueprint/docs/00-system-map.md)
 
 ## Conformance tests
-- TBD: add tests for this spec.
+- clarification interrupts must be suppressed when the answer is derivable from
+  policy or retrieved context
+- clarification interrupts must be raised when missing information materially
+  changes corridor, risk, or irreversible side effects
+- clarification budget exhaustion must lead to surfaced assumptions,
+  escalation, or blocking rather than repeated questioning
+- scheduler audit fields must record `clarification_status` and
+  `delegation_outcome`
 
 
 

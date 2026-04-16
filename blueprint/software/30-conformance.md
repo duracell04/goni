@@ -246,10 +246,29 @@ Target direction:
 
 - Replay labelled delegation traces and assert:
   - all autonomous commits have corridor + threshold evidence in receipts,
-  - all over-threshold actions are blocked or escalated.
+  - all over-threshold actions are blocked or escalated,
+  - all mutating delegated actions preserve `intent_summary`,
+    `plan_summary`, and `tool_intent`,
+  - actions taken under ambiguity include surfaced assumptions and a
+    clarification strategy in receipts.
 - Evaluate escalation quality on labelled events:
   - escalation precision/recall for high-risk actions,
-  - rollback/compensation success for mistaken autonomous actions.
+  - rollback/compensation success for mistaken autonomous actions,
+  - clarification efficiency and question value on vague-intent traces.
+
+**Schema/evidence alignment check (MVP).**
+
+- Receipt schema, receipt spec, and AUTON eval metrics must agree on the
+  presence and naming of:
+  - `task_class`
+  - `autonomy_mode`
+  - `risk_score`
+  - `risk_basis`
+  - `delegation.assumptions`
+  - `delegation.uncertainty_level`
+  - `delegation.question_strategy`
+  - `delegation.tool_intent`
+  - `delegation.delegation_outcome`
 
 ---
 
