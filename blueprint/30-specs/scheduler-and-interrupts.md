@@ -19,6 +19,7 @@ Interrupts are raised on:
 - explicit user intent
 - policy deadlines or compliance conditions
 - missing information that materially changes safe delegated execution
+- unresolved objective ambiguity that requires `co_creation`
 
 Interrupts are routed through the scheduler and never call the solver directly.
 Admission is part of the SS-01 arbitration contract.
@@ -43,6 +44,23 @@ block/escalate the action.
 The scheduler MUST track clarification budgets and cooldowns separately from
 general solver wakes so an over-questioning agent cannot degrade the operator
 experience.
+
+### 1.2 Co-creation interrupts
+
+Co-creation is a separate interrupt subtype for unresolved objective choice.
+
+Co-creation interrupts are allowed only when:
+
+- two or more materially different objectives remain plausible,
+- selecting among them would define the user's goal rather than execute it,
+- policy does not permit silent defaulting for the current task class.
+
+Co-creation interrupts are not allowed for merely missing factual details. In
+those cases the runtime must remain in delegation mode and choose among
+`assume`, `ask_decisive`, or `block`.
+
+The scheduler MUST track co-creation interrupts separately from clarification
+interrupts so goal ambiguity is not conflated with missing-parameter lookup.
 
 ## 2. Hysteresis and wake control
 
@@ -115,13 +133,17 @@ Interrupt decisions and solver wakes are recorded with:
 - `provenance`
 - `task_class`
 - `autonomy_mode`
+- `interaction_mode`
 - `risk_score`
 - `clarification_status`
+- `clarification_decision`
+- `work_order_id`
 - `delegation_outcome`
 
 ## 7. Related specs
 
 - [latent-state-contract.md](/blueprint/30-specs/latent-state-contract.md)
+- [delegation-interface.md](/blueprint/30-specs/delegation-interface.md)
 - [tool-capability-api.md](/blueprint/30-specs/tool-capability-api.md)
 - [symbolic-substrate.md](/blueprint/30-specs/symbolic-substrate.md)
 - [itcr.md](/blueprint/30-specs/itcr.md)
@@ -147,9 +169,12 @@ Interrupt decisions and solver wakes are recorded with:
   policy or retrieved context
 - clarification interrupts must be raised when missing information materially
   changes corridor, risk, or irreversible side effects
+- co-creation interrupts must be raised when goal ambiguity is genuine and must
+  be suppressed for mere factual omission
 - clarification budget exhaustion must lead to surfaced assumptions,
   escalation, or blocking rather than repeated questioning
-- scheduler audit fields must record `clarification_status` and
+- scheduler audit fields must record `interaction_mode`,
+  `clarification_decision`, `clarification_status`, and
   `delegation_outcome`
 
 

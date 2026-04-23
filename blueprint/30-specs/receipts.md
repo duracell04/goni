@@ -44,6 +44,11 @@ for a canonical Goni receipt.
 - autonomy_mode
 - risk_score
 - risk_basis
+- interaction_mode
+- work_order_id
+- done_contract_hash
+- clarification_decision
+- objective_option_count
 - delegation
 
 The `delegation` object MUST expose stable delegation-engineering fields:
@@ -53,6 +58,7 @@ The `delegation` object MUST expose stable delegation-engineering fields:
 - `question_strategy`
 - `tool_intent`
 - `delegation_outcome`
+- `undo_strategy_ref`
 
 ## Receipt completeness profile (normative)
 - `trace_id` identifies the request/run trace for correlation across spans.
@@ -62,6 +68,15 @@ The `delegation` object MUST expose stable delegation-engineering fields:
   `plan_summary`).
 - `memory_diff_refs` is a list of state/memory delta IDs caused by the action.
   Use an empty list when no memory mutation occurred.
+- `interaction_mode` records whether the turn was delegated execution or
+  co-creation.
+- `work_order_id` references the canonical pre-execution Work Order.
+- `done_contract_hash` references the hashed completion contract used for the
+  action.
+- `clarification_decision` records the control-plane branch:
+  `assume | ask_decisive | propose_objectives | block`.
+- `objective_option_count` records how many candidate objectives were surfaced,
+  if any.
 - `delegation.assumptions` lists material assumptions surfaced to the operator
   or carried forward by policy.
 - `delegation.uncertainty_level` records the confidence band used for the
@@ -72,8 +87,11 @@ The `delegation` object MUST expose stable delegation-engineering fields:
   distinct from the user-level goal.
 - `delegation.delegation_outcome` records whether the action was executed,
   queued for review, blocked, escalated, or approved.
+- `delegation.undo_strategy_ref` records the rollback/compensation strategy
+  reference when one exists.
 
 ## Upstream
+- [Delegation interface](/blueprint/30-specs/delegation-interface.md)
 - [Tool capability API](/blueprint/30-specs/tool-capability-api.md)
 - [Delegation and autonomy](/blueprint/30-specs/delegation-and-autonomy.md)
 
@@ -93,9 +111,13 @@ The `delegation` object MUST expose stable delegation-engineering fields:
   `memory_diff_refs`
 - receipts must include `task_class`, `autonomy_mode`, `risk_score`, and
   `risk_basis` for any delegated action
+- delegated/tool-mediated receipts must preserve `interaction_mode`,
+  `work_order_id`, `done_contract_hash`, `clarification_decision`, and
+  `objective_option_count`
 - delegated/tool-mediated receipts must include `delegation.assumptions`,
   `delegation.uncertainty_level`, `delegation.question_strategy`,
-  `delegation.tool_intent`, and `delegation.delegation_outcome`
+  `delegation.tool_intent`, `delegation.delegation_outcome`, and
+  `delegation.undo_strategy_ref`
 - receipt `decision_basis` must preserve `intent_summary` and `plan_summary`
   when a mutating action is proposed or executed
 - third-party framework logs or audit events must not be accepted as the sole

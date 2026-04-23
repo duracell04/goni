@@ -10,6 +10,11 @@ Status: Specified only / roadmap
 This spec defines how Goni maximizes safe background execution of digital work
 while preserving policy-level human control.
 
+The pre-execution reconstruction layer is specified separately in
+`DELEG-INT-01`. This document assumes that delegated execution already carries
+an `interaction_mode`, Work Order, and Done Contract reference before corridor
+policy is evaluated.
+
 Delegation in Goni is not prompt relay. The system is expected to perform part
 of the prompt-work on behalf of the user: infer missing structure, repair vague
 intent into executable form, and acquire just enough extra context to act
@@ -55,11 +60,15 @@ For delegable work, the runtime MUST follow this operator contract:
 
 - infer missing structure from policy, prior context, and task class before
   interrupting the user,
+- classify whether the turn is `delegation` or `co_creation` before tool
+  planning,
 - ask a clarification question only when the answer materially changes risk,
   corridor, tool choice, or irreversible side effects,
+- surface at most two candidate objectives when the goal itself is genuinely
+  ambiguous,
 - surface assumptions and uncertainty when proceeding without clarification,
-- convert repaired intent into a bounded plan and explicit tool intent before
-  any mutating call.
+- convert repaired intent into a Work Order, bounded plan, and explicit tool
+  intent before any mutating call.
 
 This treats delegation as mixed-initiative control under uncertainty rather
 than as literal prompt completion [[horvitz1999-mixed-initiative]]
@@ -105,19 +114,29 @@ Goni uses an "auto unless risky" policy:
 
 `theta_auto` and `theta_soft` are explicit policy parameters and must be auditable.
 
-### 3.1 Clarification policy
+### 3.1 Clarification and co-creation policy
 
 Clarification is a bounded interrupt class, not a default interaction style.
 
 - The runtime MAY ask a decisive clarification question when missing
   information would materially change `risk_score`, `task_class`,
   `autonomy_mode`, or the legality/reversibility of a side effect.
+- The runtime MAY switch to `co_creation` when objective ambiguity is genuine
+  and silent execution would define the user's goal rather than execute it.
 - The runtime MUST NOT ask questions that can be answered from active policy,
   retrieved context, prior approvals, or deterministic task constraints.
 - If clarification budget is exhausted, deferred by policy, or not worth the
   interruption cost, the runtime MUST either:
   - proceed with surfaced assumptions inside the active corridor, or
   - escalate/block the action if safe execution is not possible.
+
+`DELEG-INT-01` is the normative source for:
+
+- `interaction_mode`,
+- `clarification_decision`,
+- Work Order compilation,
+- Done Contract completeness,
+- preview/reconstruction requirements.
 
 Any clarification decision must be auditable through receipts and scheduler
 events.
@@ -127,6 +146,7 @@ events.
 Delegation is policy-first:
 
 - the model proposes intent repair, plans, and tool actions,
+- the pre-execution control plane compiles the Work Order and Done Contract,
 - the kernel authorizes or denies execution,
 - irreversible side effects require explicit approval or an approved two-phase
   commit path,
@@ -167,6 +187,8 @@ success:
 - `complacency_engine`: proceeds confidently despite unresolved ambiguity.
 - `hidden_assumption_executor`: makes materially important assumptions without
   exposing them.
+- `goal_chooser`: silently selects among materially different user objectives
+  instead of entering co-creation mode.
 
 Policies, evals, and replay traces should be able to distinguish these modes so
 fixes can attach to the right control seam.
@@ -204,9 +226,12 @@ assumption visibility, and irreversible-action rules.
   when they materially change safe execution or policy outcome.
 - **I7 - Surfaced assumptions:** proceeding under ambiguity requires explicit
   assumption and uncertainty metadata.
+- **I8 - No silent goal selection:** genuine goal ambiguity must remain visible
+  through `co_creation` handling or blocking.
 
 ## 9. Related specs
 
+- [Delegation interface](/blueprint/30-specs/delegation-interface.md)
 - [Tool capability API](/blueprint/30-specs/tool-capability-api.md)
 - [Scheduler and interrupts](/blueprint/30-specs/scheduler-and-interrupts.md)
 - [Receipts](/blueprint/30-specs/receipts.md)
@@ -214,6 +239,7 @@ assumption visibility, and irreversible-action rules.
 
 ## 10. Upstream
 
+- [Delegation interface](/blueprint/30-specs/delegation-interface.md)
 - [Software requirements](/blueprint/software/10-requirements.md)
 - [Software decisions](/blueprint/software/90-decisions.md)
 
@@ -233,6 +259,7 @@ assumption visibility, and irreversible-action rules.
   `intent_summary -> plan_summary -> tool_intent`
 - clarification interrupts must occur only when a missing answer would change
   corridor, risk, or irreversible behavior
+- objective ambiguity must enter `co_creation` or block, not silent defaulting
 - actions that proceed without clarification must surface assumptions and
   uncertainty in receipts
 - irreversible actions must require explicit approval or a declared two-phase

@@ -96,6 +96,32 @@
                                           "type":  "object",
                                           "additionalProperties":  true
                                       },
+                       "interaction_mode":  {
+                                                 "type":  "string",
+                                                 "enum":  [
+                                                              "delegation",
+                                                              "co_creation"
+                                                          ]
+                                             },
+                       "work_order_id":  {
+                                              "type":  "string"
+                                          },
+                       "done_contract_hash":  {
+                                                  "type":  "string"
+                                              },
+                       "clarification_decision":  {
+                                                      "type":  "string",
+                                                      "enum":  [
+                                                                   "assume",
+                                                                   "ask_decisive",
+                                                                   "propose_objectives",
+                                                                   "block"
+                                                               ]
+                                                  },
+                       "objective_option_count":  {
+                                                      "type":  "integer",
+                                                      "minimum":  0
+                                                  },
                        "budget_delta":  {
                                             "type":  "object",
                                             "additionalProperties":  {
@@ -204,6 +230,9 @@
                        "redaction_profile":  {
                                                  "type":  "string"
                                              },
+                       "undo_strategy_ref":  {
+                                                 "type":  "string"
+                                             },
                        "delegation":  {
                                           "type":  "object",
                                           "properties":  {
@@ -245,7 +274,9 @@
                                                                                                    "not_needed",
                                                                                                    "asked_decisive",
                                                                                                    "skipped_with_assumptions",
-                                                                                                   "user_overrode"
+                                                                                                   "user_overrode",
+                                                                                                   "proposed_objectives",
+                                                                                                   "blocked"
                                                                                                ]
                                                                                   },
                                                              "tool_intent":  {
@@ -260,6 +291,9 @@
                                                                                                       "escalated",
                                                                                                       "approved"
                                                                                                   ]
+                                                                                     },
+                                                             "undo_strategy_ref":  {
+                                                                                         "type":  "string"
                                                                                      }
                                                          },
                                           "additionalProperties":  false

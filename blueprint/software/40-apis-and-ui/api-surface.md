@@ -75,7 +75,12 @@ R = (\text{messages}, \text{model}, \text{tools}, \text{stream}, \text{extras})
 * **extras** *(Goni extensions)* – optional fields such as:
 
   * goni_profile: "interactive" | "background" | "maintenance" (hint for \(\mathcal{K}\)),
-  * goni_rag_mode: "off" | "auto" | "strict" (hint for \(\mathcal{X}\)).
+  * goni_rag_mode: "off" | "auto" | "strict" (hint for \(\mathcal{X}\)),
+  * goni_interaction_mode: "delegation" | "co_creation" (optional override or
+    inspection hint),
+  * goni_output_schema: client-declared desired output contract,
+  * goni_preview_only: request a reconstruction/approval preview without
+    committing side effects.
 
 We do not prescribe a full JSON schema here; the implementation follows OpenAI’s spec plus these extensions.
 
@@ -87,7 +92,8 @@ We do not prescribe a full JSON schema here; the implementation follows OpenAI�
 
   * id, created, model,
   * choices[0].message (final assistant message),
-  * usage (prompt/completion token counts).
+  * usage (prompt/completion token counts),
+  * optional `goni_work_order_ref` and `goni_interaction_mode`.
 
 **Streaming**:
 
@@ -95,6 +101,24 @@ We do not prescribe a full JSON schema here; the implementation follows OpenAI�
 
   * Each event has a data: line with a JSON payload (choices[0].delta).
   * The stream ends with data: [DONE].
+
+### 3.3 Gated responses and reconstruction previews
+
+If a request crosses a soft/hard gate, the API MAY return a reconstruction
+preview instead of executing immediately. The preview must be kernel-backed and
+compact:
+
+- `Goal`
+- `Done`
+- `Assumptions`
+- `Risk`
+- `Question`
+
+Logical response additions:
+
+- `goni_work_order_ref`
+- `goni_reconstruction`
+- `goni_requires_approval`
 
 > **Invariant API-2 (streaming monotonicity)**
 > For a given request \(R\), the concatenation of all streamed delta.content fragments per choice must equal the message.content of the corresponding non-streaming response (up to tokenisation whitespace).
@@ -108,12 +132,17 @@ Serving a single HTTP request proceeds conceptually as:
 1. **Orchestrator**
    Normalises \(R\) into a JobDescriptor:
    
-   J = (\text{class}, \text{budget}, \text{tools}, \text{profile}, \dots)
+   J = (\text{class}, \text{budget}, \text{tools}, \text{profile},
+   \text{interaction\_mode}, \text{work\_order\_ref}, \dots)
    
    where:
 
    * class ∈ {interactive, background, maintenance},
-   * udget encodes token/time limits.
+   * budget encodes token/time limits,
+   * interaction_mode ∈ {delegation, co_creation}.
+
+   Request normalization also compiles a Work Order and Done Contract reference
+   before corridor policy or tool mediation.
 
 2. **Control Plane (\mathcal{K})**
 
@@ -138,6 +167,11 @@ Serving a single HTTP request proceeds conceptually as:
 
 These steps implement the abstract \(\mathsf{Serve}\) function.
 
+> **Invariant API-3 (kernel-backed reconstruction)**
+> Any `goni_reconstruction` object returned by the API must be derivable from
+> Work Order state and policy state. Clients may render it differently, but
+> they may not invent or mutate its substance.
+
 ---
 
 ## 5. Error handling and rate limiting
@@ -151,7 +185,7 @@ Typical error cases:
 * 503 Service Unavailable – resources temporarily exhausted.
 * 500 Internal Server Error – unexpected failure.
 
-> **Invariant API-3 (no silent overload)**
+> **Invariant API-4 (no silent overload)**
 > Overload or rate limiting must result in explicit HTTP errors (429/503); the node may not silently queue unboundedly in ways that violate the Control Plane’s latency and stability assumptions.
 
 ### 5.2 Rate limiting (conceptual)
@@ -171,7 +205,7 @@ The MVP may not enforce strong limits, but the *model* is:
 
 All endpoints are under the /v1 prefix.
 
-> **Invariant API-4 (v1 semantic stability)**
+> **Invariant API-5 (v1 semantic stability)**
 > For any request \(r \in \mathsf{Req}_{\text{v1}}\) that was valid at time \(t_0\), its meaning under /v1 at time \(t_1 \ge t_0\) must not change in a way that breaks well-behaved clients (no backwards-incompatible type/behaviour changes).
 
 Evolution rules:

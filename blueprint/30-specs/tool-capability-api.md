@@ -23,17 +23,24 @@ Logical fields for every tool call:
 - `provenance`
 - `operation_id`
 - `task_class`
+- `interaction_mode` (`delegation` | `co_creation`)
 - `autonomy_mode` (`no_go` | `soft_gate` | `autopilot` | `escalated`)
 - `risk_score`
 - `risk_basis`
+- `work_order_id`
 - `intent_summary` (normalized statement of repaired user intent)
 - `plan_summary` (bounded step plan for the current action)
+- `done_contract_hash`
 - `tool_intent` (why this tool call is needed)
+- `clarification_decision` (`assume` | `ask_decisive` |
+  `propose_objectives` | `block`)
 - `clarification_status` (`not_needed` | `asked_decisive` |
   `skipped_with_assumptions` | `user_overrode`)
+- `objective_option_count`
 - `assumption_refs` (structured references to surfaced assumptions)
 - `delegation_outcome` (`autonomous` | `review` | `blocked` |
   `escalated` | `approved`)
+- `undo_strategy_ref` (optional reference to compensation/rollback path)
 - `idempotency_key` (required for mutating calls)
 - `precondition_refs` (state/version references that must hold at commit time)
 
@@ -62,11 +69,17 @@ Tool results MUST include:
 - `provenance`
 - `operation_id`
 - `task_class`
+- `interaction_mode`
 - `autonomy_mode`
 - `risk_score`
+- `work_order_id`
+- `done_contract_hash`
 - `tool_intent`
+- `clarification_decision`
 - `clarification_status`
+- `objective_option_count`
 - `delegation_outcome`
+- `undo_strategy_ref`
 - `tx_outcome` (`committed` | `rolled_back` | `no_op`)
 - `commit_delta_id` (present when `tx_outcome = committed`)
 
@@ -106,14 +119,20 @@ fields:
 - `result_hash`
 - `provenance`
 - `task_class`
+- `interaction_mode`
 - `autonomy_mode`
 - `risk_score`
 - `risk_basis`
+- `work_order_id`
 - `intent_summary`
 - `plan_summary`
+- `done_contract_hash`
 - `tool_intent`
+- `clarification_decision`
 - `clarification_status`
+- `objective_option_count`
 - `delegation_outcome`
+- `undo_strategy_ref`
 
 See `blueprint/software/50-data/51-schemas-mvp.md` for `AuditRecords` and `CapabilityTokens`.
 
@@ -148,12 +167,15 @@ Tokens are immutable and referenced by ID in tool calls.
   do not define authority, corridor outcome, or receipt semantics.
 - **Intent traceability:** mutating calls preserve an auditable
   `intent -> plan -> tool intent -> authorized execution` chain.
+- **Control-plane traceability:** delegated execution preserves the pre-
+  execution references that explain how the Work Order was formed.
 - **Transactional safety:** mutating calls are atomic (commit or rollback).
 - **Replay safety:** idempotency keys prevent duplicate side effects.
 
 ## 7. Related specs
 
 - [agent-definition.md](/blueprint/30-specs/agent-definition.md)
+- [delegation-interface.md](/blueprint/30-specs/delegation-interface.md)
 - [latent-state-contract.md](/blueprint/30-specs/latent-state-contract.md)
 - [scheduler-and-interrupts.md](/blueprint/30-specs/scheduler-and-interrupts.md)
 - [symbolic-substrate.md](/blueprint/30-specs/symbolic-substrate.md)
@@ -179,12 +201,15 @@ Tokens are immutable and referenced by ID in tool calls.
 ## Conformance tests
 - mutating tool calls must include `intent_summary`, `plan_summary`, and
   `tool_intent`
+- delegated tool calls must preserve `interaction_mode`, `work_order_id`,
+  `done_contract_hash`, and `clarification_decision`
 - mediated outcomes must distinguish autonomous, review, escalated, and denied
   execution
 - irreversible actions must not commit without approval evidence or a declared
   two-phase path
 - audit records and receipts must agree on `autonomy_mode`,
-  `delegation_outcome`, and `clarification_status`
+  `delegation_outcome`, `clarification_status`, and
+  `clarification_decision`
 
 
 

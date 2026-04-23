@@ -113,9 +113,28 @@ Shows:
 - High-level toggles, e.g.:
   - “local-only mode” (no network use),
   - “RAG enabled by default”,
-  - “default model tier for interactive jobs”.
+- “default model tier for interactive jobs”.
 
 Settings changes must map to documented configuration mechanisms (config files or dedicated APIs).
+
+### 3.5 Delegation previews and action cards
+
+The dashboard may show the kernel's reconstruction panel for gated actions:
+
+- Goal
+- Done
+- Assumptions
+- Risk
+- Question
+
+These views are read-only projections of Work Orders, receipts, and policy
+state. The dashboard may approve, reject, or cancel through public APIs, but
+it may not rewrite the underlying reconstruction locally.
+
+> **Invariant UI-4 (kernel-backed reconstruction)**
+> Any approval card or delegation preview shown in the dashboard must be
+> derived from kernel-backed Work Order / receipt state. No UI-only
+> reconstruction objects are allowed.
 
 ---
 
@@ -130,7 +149,7 @@ It does **not** reach into the kernel via private sockets, shared memory, or dir
 
 In token-auth mode, the dashboard typically uses an owner role; in local-trust mode, it inherits the trust of the local OS user.
 
-> **Invariant UI-4 (API completeness)**  
+> **Invariant UI-5 (API completeness)**  
 > Any state change that the dashboard can perform (e.g. cancelling a job, toggling a flag) must be reproducible by scripted API calls. The UI may not perform opaque modifications that clients cannot replicate.
 
 ---
@@ -148,7 +167,7 @@ The MVP dashboard may be:
 MVP requirements:
 
 - If present, it must:
-  - respect UI-1..UI-4,
+  - respect UI-1..UI-5,
   - show at least a basic **Node Overview** and **Workloads** view.
 
 The kernel must *not* depend on the dashboard; it is an optional add-on.

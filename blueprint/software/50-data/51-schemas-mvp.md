@@ -49,6 +49,11 @@ Arrow-first, v1.0 schemas for the canonical tables. Each table is `Spine + Paylo
 - Fields: `request_id: fixed_size_binary[16]`, `task_type: dict<uint8, utf8>`, `state: dict<uint8, utf8>`, `queue_id: dict<uint8, utf8>`, `expected_cost_tokens: uint32`
 - Notes: Lyapunov inputs; append-only state transitions.
 
+### WorkOrders
+- PK: `work_order_id = row_id`
+- Fields: `request_id: fixed_size_binary[16]`, `interaction_mode: dict<uint8, utf8>`, `goal_summary: utf8`, `done_contract_hash: fixed_size_binary[32]`, `done_contract_summary: utf8`, `input_refs: list<utf8>`, `constraint_summary: utf8`, `assumption_refs: list<utf8>`, `plan_summary: utf8`, `tools: list<utf8>`, `risk_class: dict<uint8, utf8>`, `output_schema_ref?: utf8`, `clarification_decision: dict<uint8, utf8>`, `objective_option_count: uint8`, `created_at: timestamp(ms)`, `policy_hash: fixed_size_binary[32]`, `state_snapshot_id: fixed_size_binary[16]`, `provenance: map<utf8, utf8>`
+- Notes: Canonical storage for pre-execution reconstruction. Raw doctrine text, raw prompts, and unbounded prose do not live here; use summaries, hashes, and references only.
+
 ## Plane E – Execution (telemetry)
 
 ### LlmCalls
@@ -124,7 +129,7 @@ Arrow-first, v1.0 schemas for the canonical tables. Each table is `Spine + Paylo
 
 ### AuditRecords
 - PK: `audit_id = row_id`
-- Fields: `agent_id: fixed_size_binary[16]`, `policy_hash: fixed_size_binary[32]`, `state_snapshot_id: fixed_size_binary[16]`, `capability_token_id: fixed_size_binary[16]`, `tool_id: dict<uint8, utf8>`, `args_hash: fixed_size_binary[32]`, `result_hash: fixed_size_binary[32]`, `timestamp: timestamp(ms)`, `provenance: map<utf8, utf8>`, `task_class: dict<uint8, utf8>`, `autonomy_mode: dict<uint8, utf8>`, `risk_score: float32`, `risk_basis: map<utf8, utf8>`, `intent_summary: utf8`, `plan_summary: utf8`, `tool_intent: utf8`, `clarification_status: dict<uint8, utf8>`, `delegation_outcome: dict<uint8, utf8>`
+- Fields: `agent_id: fixed_size_binary[16]`, `policy_hash: fixed_size_binary[32]`, `state_snapshot_id: fixed_size_binary[16]`, `capability_token_id: fixed_size_binary[16]`, `tool_id: dict<uint8, utf8>`, `args_hash: fixed_size_binary[32]`, `result_hash: fixed_size_binary[32]`, `timestamp: timestamp(ms)`, `provenance: map<utf8, utf8>`, `task_class: dict<uint8, utf8>`, `interaction_mode: dict<uint8, utf8>`, `autonomy_mode: dict<uint8, utf8>`, `risk_score: float32`, `risk_basis: map<utf8, utf8>`, `work_order_id: fixed_size_binary[16]`, `intent_summary: utf8`, `plan_summary: utf8`, `done_contract_hash: fixed_size_binary[32]`, `tool_intent: utf8`, `clarification_decision: dict<uint8, utf8>`, `clarification_status: dict<uint8, utf8>`, `objective_option_count: uint8`, `delegation_outcome: dict<uint8, utf8>`, `undo_strategy_ref?: utf8`
 - Notes: audit rows for mutating calls must preserve the visible `intent -> plan -> tool intent` chain without storing raw transcripts.
 
 ### CapabilityTokens
@@ -156,7 +161,7 @@ Arrow-first, v1.0 schemas for the canonical tables. Each table is `Spine + Paylo
 
 ### Receipts (specified only)
 - PK: `receipt_id = row_id`
-- Fields: `timestamp: timestamp(ms)`, `trace_id: fixed_size_binary[16]`, `span_id: fixed_size_binary[16]`, `action_type: utf8`, `task_class: dict<uint8, utf8>`, `autonomy_mode: dict<uint8, utf8>`, `policy_decision: utf8`, `decision_basis: map<utf8, utf8>`, `risk_score: float32`, `risk_basis: map<utf8, utf8>`, `capability_id?: fixed_size_binary[16]`, `input_hash?: fixed_size_binary[32]`, `output_hash?: fixed_size_binary[32]`, `memory_diff_refs?: list<fixed_size_binary[16]>`, `assumptions?: list<utf8>`, `uncertainty_level?: dict<uint8, utf8>`, `question_strategy?: dict<uint8, utf8>`, `tool_intent?: utf8`, `delegation_outcome?: dict<uint8, utf8>`, `prev_hash?: fixed_size_binary[32]`, `chain_hash: fixed_size_binary[32]`
+- Fields: `timestamp: timestamp(ms)`, `trace_id: fixed_size_binary[16]`, `span_id: fixed_size_binary[16]`, `action_type: utf8`, `task_class: dict<uint8, utf8>`, `interaction_mode?: dict<uint8, utf8>`, `autonomy_mode: dict<uint8, utf8>`, `policy_decision: utf8`, `decision_basis: map<utf8, utf8>`, `risk_score: float32`, `risk_basis: map<utf8, utf8>`, `work_order_id?: fixed_size_binary[16]`, `done_contract_hash?: fixed_size_binary[32]`, `clarification_decision?: dict<uint8, utf8>`, `objective_option_count?: uint8`, `capability_id?: fixed_size_binary[16]`, `input_hash?: fixed_size_binary[32]`, `output_hash?: fixed_size_binary[32]`, `memory_diff_refs?: list<fixed_size_binary[16]>`, `assumptions?: list<utf8>`, `uncertainty_level?: dict<uint8, utf8>`, `question_strategy?: dict<uint8, utf8>`, `tool_intent?: utf8`, `delegation_outcome?: dict<uint8, utf8>`, `undo_strategy_ref?: utf8`, `prev_hash?: fixed_size_binary[32]`, `chain_hash: fixed_size_binary[32]`
 - Notes: minimal by default; no raw content. Delegated actions must carry surfaced assumptions and delegated-action outcome metadata.
 
 

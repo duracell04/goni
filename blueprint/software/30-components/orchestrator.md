@@ -31,11 +31,13 @@ It glues external APIs to the internal planes ?? (scheduler/router), ?? (context
    - Check request size against global limits (tokens, tools, attachments).
    - Map model="goni-small" ? internal ModelTier::Small.
    - Map request type to TaskClass (interactive/background).
+   - Compile interaction mode and Work Order metadata before submission.
 
 3. **Job construction**
    - Build
      
-     J = (\text{class}, \text{budget}, \text{tools}, \text{profile}, \dots)
+     J = (\text{class}, \text{budget}, \text{tools}, \text{profile},
+     \text{interaction\_mode}, \text{work\_order\_ref}, \dots)
      
      where udget encodes token/time/energy caps and class ? {interactive, background, maintenance}.
 
@@ -89,6 +91,8 @@ pub struct JobDescriptor {
     pub budget: ResourceBudget,
     pub model_hint: Option<ModelTier>,
     pub tools: Vec<ToolId>,
+    pub interaction_mode: InteractionMode,
+    pub work_order_ref: Option<WorkOrderId>,
     pub user_profile: UserProfile,
     // opaque payload (prompt, metadata) lives in Arrow / ??
 }
@@ -107,6 +111,8 @@ pub trait ControlPlane {
 `
 
 The Orchestrator only calls submit / watch / cancel and forwards streams back to the client.
+It may surface `ReconstructionPreview` data, but that preview must come from
+kernel-backed Work Order state rather than orchestration-local guesses.
 
 ---
 
@@ -148,6 +154,7 @@ The Orchestrator spec here is the single-node kernel perspective; multi-node con
 
 ## 6. Upstream
 - [Job contract](/blueprint/30-specs/job.md)
+- [Delegation interface](/blueprint/30-specs/delegation-interface.md)
 - [Scheduler and interrupts](/blueprint/30-specs/scheduler-and-interrupts.md)
 - [Tool capability API](/blueprint/30-specs/tool-capability-api.md)
 - [LLM runtime](/blueprint/software/30-components/llm-runtime.md)

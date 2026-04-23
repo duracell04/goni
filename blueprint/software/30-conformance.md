@@ -7,6 +7,7 @@ Audience: Researchers, systems engineers, auditors
 Normative contracts referenced by this document:
 
 - Latent State Contract (LSC-01): `blueprint/30-specs/latent-state-contract.md`
+- Delegation interface (DELEG-INT-01): `blueprint/30-specs/delegation-interface.md`
 - Tool syscall envelope (TOOL-01): `blueprint/30-specs/tool-capability-api.md`
 - Agent/process model: `blueprint/30-specs/agent-definition.md`, `blueprint/30-specs/agent-manifest.md`
 - Scheduler/interrupt semantics: `blueprint/30-specs/scheduler-and-interrupts.md`
@@ -245,8 +246,11 @@ Target direction:
 **Empirical check (MVP).**
 
 - Replay labelled delegation traces and assert:
+  - interaction mode is correct for recoverable vs genuinely unsettled goals,
   - all autonomous commits have corridor + threshold evidence in receipts,
   - all over-threshold actions are blocked or escalated,
+  - delegated actions preserve `interaction_mode`, `work_order_id`, and
+    `done_contract_hash`,
   - all mutating delegated actions preserve `intent_summary`,
     `plan_summary`, and `tool_intent`,
   - actions taken under ambiguity include surfaced assumptions and a
@@ -254,7 +258,8 @@ Target direction:
 - Evaluate escalation quality on labelled events:
   - escalation precision/recall for high-risk actions,
   - rollback/compensation success for mistaken autonomous actions,
-  - clarification efficiency and question value on vague-intent traces.
+  - clarification efficiency and question value on vague-intent traces,
+  - branch-efficiency under fixed token budgets.
 
 **Schema/evidence alignment check (MVP).**
 

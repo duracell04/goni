@@ -30,6 +30,30 @@
             },
             "ask_on_irreversible_actions": {
               "type": "boolean"
+            },
+            "default_reversible_decision": {
+              "type": "string",
+              "enum": ["assume", "ask_decisive", "block"]
+            }
+          },
+          "additionalProperties": false
+        },
+        "co_creation": {
+          "type": "object",
+          "properties": {
+            "enabled": {
+              "type": "boolean"
+            },
+            "propose_on_goal_ambiguity": {
+              "type": "boolean"
+            },
+            "max_objective_options": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "fallback_decision": {
+              "type": "string",
+              "enum": ["ask_decisive", "block"]
             }
           },
           "additionalProperties": false

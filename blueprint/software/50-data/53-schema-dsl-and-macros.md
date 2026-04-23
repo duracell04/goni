@@ -112,6 +112,32 @@ define_tables! {
         }
     },
 
+    table WorkOrders {
+        plane: Plane::Control,
+        kind: "WorkOrders",
+        fields: {
+            work_order_id: FixedSizeBinary(16),
+            request_id: FixedSizeBinary(16),
+            interaction_mode: DictU8Utf8,
+            goal_summary: Utf8,
+            done_contract_hash: FixedSizeBinary(32),
+            done_contract_summary: Utf8,
+            input_refs: ListUtf8,
+            constraint_summary: Utf8,
+            assumption_refs: ListUtf8,
+            plan_summary: Utf8,
+            tools: ListUtf8,
+            risk_class: DictU8Utf8,
+            output_schema_ref: Utf8,
+            clarification_decision: DictU8Utf8,
+            objective_option_count: UInt8,
+            created_at: TimestampMsUtc,
+            policy_hash: FixedSizeBinary(32),
+            state_snapshot_id: FixedSizeBinary(16),
+            provenance: MapUtf8Utf8,
+        }
+    },
+
     table AuditRecords {
         plane: Plane::Control,
         kind: "AuditRecords",
@@ -127,14 +153,20 @@ define_tables! {
             timestamp: TimestampMsUtc,
             provenance: MapUtf8Utf8,
             task_class: DictU8Utf8,
+            interaction_mode: DictU8Utf8,
             autonomy_mode: DictU8Utf8,
             risk_score: Float32,
             risk_basis: MapUtf8Utf8,
+            work_order_id: FixedSizeBinary(16),
             intent_summary: Utf8,
             plan_summary: Utf8,
+            done_contract_hash: FixedSizeBinary(32),
             tool_intent: Utf8,
+            clarification_decision: DictU8Utf8,
             clarification_status: DictU8Utf8,
+            objective_option_count: UInt8,
             delegation_outcome: DictU8Utf8,
+            undo_strategy_ref: Utf8,
         }
     },
 
@@ -396,6 +428,8 @@ define_tables! {
 The receipts table is specified in blueprint/software/50-data/51-schemas-mvp.md
 and will be added to the schema DSL in a later revision. When implemented, it
 must preserve the same delegation fields as the receipt JSON schema and the
-receipts spec: surfaced assumptions, uncertainty level, question strategy, tool
-intent, and delegation outcome.
+receipts spec: `interaction_mode`, `work_order_id`, `done_contract_hash`,
+`clarification_decision`, `objective_option_count`, surfaced assumptions,
+uncertainty level, question strategy, tool intent, delegation outcome, and
+`undo_strategy_ref`.
 
