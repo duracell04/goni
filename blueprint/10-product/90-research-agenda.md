@@ -512,3 +512,64 @@ Run + prove path:
 Governance:
 - SECURITY.md, CONTRIBUTING.md, CODEOWNERS.
 - docs/architecture.md + roadmap for enforcement milestones.
+
+17) Programmatic long-context reading (research lane, not architecture claim)
+
+Purpose:
+- Define a research lane for long-context reading strategies that treat large
+  corpora as external state to inspect, rather than assuming that larger prompt
+  windows alone solve the problem.
+
+Research stance:
+- The relevant paper is treated as a technical hypothesis to test, not proof
+  that Goni should replace RAG or claim "perfect memory."
+- Current Goni architecture remains authoritative: context is scarce working
+  memory, retrieval is a tool, and Memory Plane provenance remains mandatory.
+
+Research questions (academically framed):
+- When does programmatic corpus inspection outperform current RAG/context
+  assembly on Goni-relevant tasks?
+- Which operations matter most: search, slice, filter, recursive subread, or
+  hybrid retrieval + targeted reading?
+- How do bounded recursive or parallel subreads affect latency, token spend,
+  and citation fidelity?
+- When does this strategy underperform native in-window reading and simply add
+  orchestration overhead?
+- What receipts and scheduler signals would be required if this lane graduates
+  into a normative architecture path later?
+
+Strategies to compare:
+- Full-context baseline (stuff the prompt and answer directly).
+- Current RAG/context assembly baseline.
+- Programmatic corpus-reading baseline.
+- Hybrid retrieval + programmatic reading baseline.
+
+Core evaluation fixtures:
+- Long single-document QA.
+- Multi-document synthesis.
+- Citation/span extraction.
+- Needle-in-large-corpus lookup.
+- Long-horizon reasoning with evidence distributed across distant spans.
+
+Metrics to report:
+- Answer quality.
+- Citation/span fidelity.
+- Latency and total tokens.
+- Tool-call count.
+- `tokens_scanned` or `document_bytes_scanned`.
+- `slice_count`, `subread_count`, and `recursion_depth`.
+- Branch/variant counters from the existing attention-density lane.
+
+Failure modes to score explicitly:
+- Loses evidence that RAG would have retrieved.
+- Over-scans and wastes budget.
+- Recursive decomposition drifts away from the task.
+- Produces high-confidence answers without evidence-span support.
+- Underperforms the base strategy inside the native context window.
+
+Evidence artifacts to produce:
+- A reading-strategy comparison report.
+- A corpus-reading fidelity report.
+- A recursion-budget safety report.
+- A promotion memo stating whether the lane should remain research-only or
+  advance toward a normative contract.

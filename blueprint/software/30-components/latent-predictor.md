@@ -55,6 +55,26 @@ Key point: retrieval augments state; it does not replace the predictor. The pred
 - how to weight evidence,
 - when to stop retrieving.
 
+## Experimental long-context reading lane
+
+As a research lane, the predictor may also choose **programmatic corpus
+inspection** over large external text environments. This does not replace the
+retrieval baseline; it is a strategy to compare against it.
+
+Experimental action family:
+
+- `corpus.search`
+- `corpus.slice`
+- `corpus.filter`
+- `corpus.subread`
+- `corpus.merge_evidence`
+
+These actions are treated like any other mediated tool plan:
+
+- they are budgeted,
+- they must preserve provenance,
+- and they remain auditable through receipts if promoted beyond research mode.
+
 ## Relationship to planes
 
 - **Data Plane (\(\mathcal{A}\) / \(\mathcal{X}\))**: observations, files, snapshots, events.

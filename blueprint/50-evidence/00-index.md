@@ -15,6 +15,13 @@ status: specified_only
 - eval/EVID-AUTON-02-risk-threshold-calibration.md
 - eval/EVID-AUTON-03-policy-anomaly-ux.md
 - eval/EVID-AUTON-04-offloading-safety-longitudinal.md
+- eval/EVID-AUTON-05-delegation-mode-classification.md
+- eval/EVID-AUTON-06-decisive-question-value.md
+- eval/EVID-AUTON-07-assumption-coverage.md
+- eval/EVID-AUTON-08-branch-efficiency.md
+- eval/EVID-LONGCTX-01-reading-strategy-comparison.md
+- eval/EVID-LONGCTX-02-corpus-reading-fidelity.md
+- eval/EVID-LONGCTX-03-recursion-budget-safety.md
 - receipts/
 - validation/
 - validation/EVID-ENF-01-egress-nonbypass.md

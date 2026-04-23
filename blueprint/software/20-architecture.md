@@ -277,6 +277,21 @@ Implementation constraints:
 - `goni-context` uses only deterministic operations; random tiebreakers are derived from stable chunk IDs.  
 - Budget and similarity calculations are pure functions of inputs.
 
+### 2.5 Research note: programmatic long-context reading
+
+This blueprint may evaluate a separate research lane for **programmatic
+long-context reading**.
+
+- The default architecture remains submodular context selection over retrieved
+  chunks.
+- The research lane allows the predictor to inspect external corpora through
+  tool-mediated operations such as search, slice, filter, and bounded
+  subreads.
+- Any such reading strategy remains bounded by scheduler budgets, tool
+  mediation, and receipt requirements.
+- This is not, in this phase, a claim that programmatic reading replaces the
+  Memory Plane, provenance requirements, or the current retrieval baseline.
+
 ---
 
 ## 3. Control Plane \(\mathcal{K}\) â€“ queueing network and scheduler
@@ -383,6 +398,17 @@ We treat this as a **two-armed bandit** with side information (the features used
 > **Invariant K2 (Router regret).**  
 > On benchmark datasets, empirical regret of `goni-router` compared to an oracle policy that knows ground-truth â€œdifficultyâ€ labels must stay below 0.07.
 
+
+### 3.4a Research note: bounded corpus-reading episodes
+
+If the long-context research lane is exercised, the Control Plane may schedule
+bounded corpus-reading episodes in the same spirit as other tool-mediated
+reasoning bursts.
+
+- These episodes are experimental and do not change the default context path.
+- Recursive or parallel subreads must remain subject to explicit budget limits.
+- If the lane ever becomes normative, the scheduler and receipt contracts will
+  need dedicated fields for scan/subread accounting.
 
 ### 3.5 App ecosystem, identity, and remote presence
 

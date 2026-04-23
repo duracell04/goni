@@ -17,6 +17,15 @@ Evaluation artifacts for reliability, security, and reproducibility.
 - [Risk threshold calibration](/blueprint/50-evidence/eval/EVID-AUTON-02-risk-threshold-calibration.md)
 - [Policy-and-anomaly UX](/blueprint/50-evidence/eval/EVID-AUTON-03-policy-anomaly-ux.md)
 - [Offloading safety longitudinal](/blueprint/50-evidence/eval/EVID-AUTON-04-offloading-safety-longitudinal.md)
+- [Delegation mode classification](/blueprint/50-evidence/eval/EVID-AUTON-05-delegation-mode-classification.md)
+- [Decisive question value](/blueprint/50-evidence/eval/EVID-AUTON-06-decisive-question-value.md)
+- [Assumption coverage](/blueprint/50-evidence/eval/EVID-AUTON-07-assumption-coverage.md)
+- [Branch efficiency](/blueprint/50-evidence/eval/EVID-AUTON-08-branch-efficiency.md)
+
+## Long-context reading lanes
+- [Reading strategy comparison](/blueprint/50-evidence/eval/EVID-LONGCTX-01-reading-strategy-comparison.md)
+- [Corpus-reading fidelity](/blueprint/50-evidence/eval/EVID-LONGCTX-02-corpus-reading-fidelity.md)
+- [Recursion-budget safety](/blueprint/50-evidence/eval/EVID-LONGCTX-03-recursion-budget-safety.md)
 
 ## Trace replay harness
 
@@ -27,6 +36,7 @@ Replay suites should include:
 
 - vague intent prompts with gold deliverables,
 - policy bundles that vary corridor, clarification, and visibility rules,
+- traces that distinguish delegation from co-creation,
 - receipts and audit traces for each mediated action,
 - outcome labels covering success, overrides, unsafe autonomy, and question
   usefulness.
@@ -36,5 +46,15 @@ Minimum reported dimensions:
 - quality/success,
 - turns and latency,
 - user corrections and overrides,
+- interaction-mode classification accuracy,
 - surfaced-assumption coverage,
-- question count and question value.
+- question count and question value,
+- branch_count / variant_count_requested under fixed budgets.
+
+Long-context reading evaluation should additionally report:
+
+- reading strategy used,
+- span/citation fidelity,
+- scan/slice/subread counts,
+- recursion depth,
+- whether the strategy underperformed the native in-window baseline.

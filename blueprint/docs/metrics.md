@@ -71,6 +71,17 @@ This is the minimal scorecard for an operator appliance.
 - Recall@k or a proxy for retrieval quality.
 - Citation coverage or unsupported claim rate.
 
+### 4a) Long-context reading strategy
+- `reading_strategy` (full-context, RAG/context assembly, corpus-reading,
+  hybrid).
+- `document_bytes_scanned` or `tokens_scanned`.
+- `slice_count`.
+- `subread_count`.
+- `recursion_depth`.
+- `evidence_span_count`.
+- `answer_span_fidelity`.
+- `strategy_switch_count`.
+
 ### 5) Governance and receipts
 - Egress decision latency and bytes egressed per request.
 - Blocked egress attempts and redaction events.
@@ -84,6 +95,16 @@ This is the minimal scorecard for an operator appliance.
 - Prefill latency and decode latency per token.
 - Tokens per second and KV cache size per context length.
 - Time to throttle and performance under throttle.
+
+### 6a) Prompt-budget decomposition
+- History tokens carried from prior turns.
+- Context tokens selected by retrieval/context assembly.
+- Tool schema tokens added by tool declarations or function signatures.
+- Output tokens produced for the visible answer.
+- Branch count in the assembled prompt/plan.
+- Variant count requested by the user or control plane.
+- Reasoning-token usage only when the active runtime/provider exposes it
+  directly; hidden internal tokens must not be inferred or fabricated.
 
 ### 7) Reliability
 - Crash-free sessions.
@@ -99,6 +120,9 @@ This is the minimal scorecard for an operator appliance.
   high-risk/ambiguous actions.
 - Unsafe autonomy incident rate: autonomous actions later judged policy-unsafe.
 - Rollback/compensation success rate for autonomous side effects.
+- Delegation/co-creation classification accuracy.
+- Assumption coverage for no-question executions.
+- Branch-efficiency score under fixed token budgets.
 
 ## Example report (with deltas)
 Given:
@@ -115,6 +139,10 @@ Derived:
 - Always report p50/p95/p99 for TTFT and response time.
 - Separate compute time from waiting time (queue, tools, retrieval).
 - Distinguish "model tokens" from "heartbeat chunks."
+- When reporting prompt budgets, separate history/context/tool-schema/output
+  token classes whenever observable.
+- Hidden reasoning-token accounting must not be inferred unless the runtime or
+  provider exposes it directly.
 
 ## Interpretation guide (quick diagnostics)
 - Good TTFC and TTFT with slow TTFST usually means tool or retrieval latency.
