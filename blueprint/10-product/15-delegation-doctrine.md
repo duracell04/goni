@@ -111,16 +111,65 @@ The counter-consideration may appear as a short postscript, exception card, or
 review note. It should be compact enough to protect attention but strong enough
 to prevent silent error propagation.
 
-## 7. Delegation loop
+## 7. Social open-loop reminders
+
+Goni should track social and operational open loops without turning them into
+socially clumsy nagging.
+
+A social open loop exists when:
+
+- another person or organization has implicitly or explicitly promised an
+  action,
+- the expected time or trigger has passed,
+- no completion signal has been observed,
+- and the user's goal still depends on closure.
+
+Goni SHOULD infer open loops from messages, calendars, tasks, documents, and
+receipts, then propose a socially calibrated follow-up under soft-gate approval.
+It SHOULD NOT send reminders to third parties automatically unless a specific
+policy pack explicitly authorizes that task class.
+
+Friendly follow-up style:
+
+- give the other party an exit ramp,
+- avoid blame language,
+- acknowledge that the user may have missed the reply,
+- keep the message short,
+- preserve the relationship while moving the loop toward closure.
+
+Anonymised example object:
+
+```yaml
+open_loop:
+  counterparty: "[person_or_org]"
+  expected_action: "review / feedback / confirmation"
+  expected_by: "[date_or_trigger]"
+  channel: "[channel]"
+  tone: "friendly_professional"
+  status: "waiting"
+  suggested_action: "draft_follow_up"
+  approval_corridor: "soft_gate"
+```
+
+Anonymised follow-up pattern:
+
+> Hi [Name], quick check-in. I am not sure whether I missed your reply, or
+> whether you have not had a chance to look yet.
+
+Repository and blueprint examples SHOULD use anonymised placeholders unless a
+real name is essential to the artefact and has been explicitly requested.
+
+## 8. Delegation loop
 
 The intended operator experience is:
 
 1. user speaks naturally,
 2. Goni reconstructs goal and "done",
-3. Goni decides ask vs assume vs propose,
-4. Goni checks for material counter-evidence or overlooked perspectives,
-5. Goni executes under autonomy corridor policy,
-6. Goni emits a receipt and rollback path when relevant.
+3. Goni detects open loops and relevant waiting states,
+4. Goni decides ask vs assume vs propose,
+5. Goni checks for material counter-evidence or overlooked perspectives,
+6. Goni executes or drafts under autonomy corridor policy,
+7. Goni emits a receipt and rollback path when relevant.
 
 User-facing reconstruction should stay compact:
 
@@ -128,10 +177,11 @@ User-facing reconstruction should stay compact:
 - Done
 - Assumptions
 - Risk
+- Waiting/open-loop state (only when relevant)
 - Counter-consideration (only when material)
 - Question (only when present)
 
-## 8. Product defaults
+## 9. Product defaults
 
 Unless policy says otherwise, Goni should default to:
 
@@ -141,9 +191,12 @@ Unless policy says otherwise, Goni should default to:
 - explicit assumptions whenever execution proceeds without asking,
 - compact counter-considerations when material evidence challenges the user's
   current path,
+- anonymised examples in blueprint/docs unless real names are explicitly
+  required,
+- soft-gated approval for third-party follow-ups,
 - preview plus approval for actions that cross soft/hard gates.
 
-## 9. Relation to specs
+## 10. Relation to specs
 
 This doctrine is implemented normatively by:
 
