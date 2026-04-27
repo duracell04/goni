@@ -159,17 +159,61 @@ Anonymised follow-up pattern:
 Repository and blueprint examples SHOULD use anonymised placeholders unless a
 real name is essential to the artefact and has been explicitly requested.
 
-## 8. Delegation loop
+## 8. Context workspace protocol
+
+Goni should reduce repeated prompting by treating local files and project
+folders as a governed context workspace, not as a manual prompt dump.
+
+The product pattern is:
+
+- stable identity, style, and anti-pattern notes live in durable context,
+- project folders hold briefs, references, drafts, decisions, and open loops,
+- templates capture reusable structure rather than merely reusable wording,
+- outputs and receipts are written back to the workspace so future work can
+  inspect what happened and why.
+
+Before executing, Goni SHOULD assemble context intentionally:
+
+1. stable policy and identity context,
+2. current task and Done Contract,
+3. relevant project state,
+4. relevant examples or templates,
+5. open loops or waiting states,
+6. task refresh and output contract.
+
+Goni MUST NOT blindly stuff an entire workspace into the model. The workspace is
+external state to inspect, filter, and cite. Context assembly remains governed
+by attention-density, privacy, corridor, and receipt rules.
+
+Minimal workspace sketch:
+
+```text
+GONI_WORKSPACE/
+  00-identity/
+  10-projects/
+  20-templates/
+  30-policies/
+  40-memory/
+  50-outputs/
+  60-receipts/
+```
+
+The exact directory structure is implementation detail. The doctrine is that
+Goni should make stable context reusable, current context task-specific, and all
+mutating outputs traceable.
+
+## 9. Delegation loop
 
 The intended operator experience is:
 
 1. user speaks naturally,
 2. Goni reconstructs goal and "done",
 3. Goni detects open loops and relevant waiting states,
-4. Goni decides ask vs assume vs propose,
-5. Goni checks for material counter-evidence or overlooked perspectives,
-6. Goni executes or drafts under autonomy corridor policy,
-7. Goni emits a receipt and rollback path when relevant.
+4. Goni assembles only the relevant workspace context,
+5. Goni decides ask vs assume vs propose,
+6. Goni checks for material counter-evidence or overlooked perspectives,
+7. Goni executes or drafts under autonomy corridor policy,
+8. Goni emits a receipt and rollback path when relevant.
 
 User-facing reconstruction should stay compact:
 
@@ -178,10 +222,11 @@ User-facing reconstruction should stay compact:
 - Assumptions
 - Risk
 - Waiting/open-loop state (only when relevant)
+- Workspace context used (only when useful)
 - Counter-consideration (only when material)
 - Question (only when present)
 
-## 9. Product defaults
+## 10. Product defaults
 
 Unless policy says otherwise, Goni should default to:
 
@@ -194,9 +239,10 @@ Unless policy says otherwise, Goni should default to:
 - anonymised examples in blueprint/docs unless real names are explicitly
   required,
 - soft-gated approval for third-party follow-ups,
+- workspace context reuse before asking the user to restate background,
 - preview plus approval for actions that cross soft/hard gates.
 
-## 10. Relation to specs
+## 11. Relation to specs
 
 This doctrine is implemented normatively by:
 
