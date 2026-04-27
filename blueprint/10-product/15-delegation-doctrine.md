@@ -202,7 +202,40 @@ The exact directory structure is implementation detail. The doctrine is that
 Goni should make stable context reusable, current context task-specific, and all
 mutating outputs traceable.
 
-## 9. Delegation loop
+## 9. Governed semantic memory
+
+Goni memory is not mainly a storage problem. It is a governed retrieval problem.
+
+Dense embeddings make personal memory semantically navigable by mapping notes,
+messages, documents, decisions, and preferences into representations where
+semantic relatedness tends to correlate with geometric proximity. But embedding
+vectors are distributed and non-interpretable; Goni MUST NOT treat vector
+dimensions as explicit fields such as person, urgency, project, permission, or
+emotional tone.
+
+Operational memory therefore combines:
+
+- dense semantic retrieval,
+- sparse / keyword retrieval for names, IDs, rare terms, and exact phrases,
+- metadata filters for person, project, time, source, permission, and validity,
+- chunking rules that define the actual retrievable memory unit,
+- reranking against the current Work Order,
+- provenance, receipts, and user-correctable feedback.
+
+The goal is not "more dimensions" as such. The goal is higher discriminability
+between task-relevant and task-irrelevant memories under a query-specific,
+policy-bounded retrieval function.
+
+Product implication:
+
+- Goni SHOULD reuse memory by meaning before asking the user to restate
+  background.
+- Goni SHOULD recover exact names, IDs, and project titles through hybrid
+  retrieval rather than dense retrieval alone.
+- Goni SHOULD expose enough provenance for the operator to understand why a
+  memory was used.
+
+## 10. Delegation loop
 
 The intended operator experience is:
 
@@ -210,10 +243,12 @@ The intended operator experience is:
 2. Goni reconstructs goal and "done",
 3. Goni detects open loops and relevant waiting states,
 4. Goni assembles only the relevant workspace context,
-5. Goni decides ask vs assume vs propose,
-6. Goni checks for material counter-evidence or overlooked perspectives,
-7. Goni executes or drafts under autonomy corridor policy,
-8. Goni emits a receipt and rollback path when relevant.
+5. Goni retrieves governed semantic memory under metadata and permission
+   constraints,
+6. Goni decides ask vs assume vs propose,
+7. Goni checks for material counter-evidence or overlooked perspectives,
+8. Goni executes or drafts under autonomy corridor policy,
+9. Goni emits a receipt and rollback path when relevant.
 
 User-facing reconstruction should stay compact:
 
@@ -223,10 +258,11 @@ User-facing reconstruction should stay compact:
 - Risk
 - Waiting/open-loop state (only when relevant)
 - Workspace context used (only when useful)
+- Memory/provenance used (only when useful)
 - Counter-consideration (only when material)
 - Question (only when present)
 
-## 10. Product defaults
+## 11. Product defaults
 
 Unless policy says otherwise, Goni should default to:
 
@@ -240,9 +276,11 @@ Unless policy says otherwise, Goni should default to:
   required,
 - soft-gated approval for third-party follow-ups,
 - workspace context reuse before asking the user to restate background,
+- governed semantic memory retrieval with metadata, permissions, chunking,
+  sparse+dense retrieval, and reranking,
 - preview plus approval for actions that cross soft/hard gates.
 
-## 11. Relation to specs
+## 12. Relation to specs
 
 This doctrine is implemented normatively by:
 
