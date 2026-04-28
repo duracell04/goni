@@ -52,6 +52,29 @@ These artifacts MUST satisfy LSC-01:
 
 See `blueprint/30-specs/latent-state-contract.md` for the canonical contract.
 
+### 1.2 Governed semantic retrieval
+
+Memory retrieval is a composite decision function, not pure vector similarity.
+
+The Memory Plane SHOULD combine dense embeddings, sparse retrieval, metadata
+filters, recency weighting, permission checks, and reranking. Dense embeddings
+provide semantic candidate generation; symbolic metadata and policy constraints
+make retrieval accountable.
+
+Embedding vectors MUST NOT be treated as interpretable feature fields.
+Attributes that require inspection or enforcement, such as person, project,
+source, timestamp, permission, validity, quoteability, or retention class, MUST
+be stored explicitly as metadata.
+
+Chunking is part of the memory contract: the retrievable unit must be chosen so
+that context remains meaningful, citeable, permission-aware, and correctable.
+Poor chunking can destroy retrieval quality even when the embedding model is
+strong.
+
+The retrieval target is higher discriminability between task-relevant and
+task-irrelevant memories under a query-specific, policy-bounded retrieval
+function. It is not “more dimensions” as such.
+
 ## 2. v1.0 Table Set (ships in binary)
 
 We ship the following canonical tables in v1.0:
