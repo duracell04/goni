@@ -555,11 +555,22 @@ looked up at inference time through versioned objects. Layers D, E, and F live
 in the control and governance path and may change the deployed bundle only
 through an explicit promotion decision.
 
-This yields a three-speed learning rule:
+This yields a change-velocity gradient: the closer a component is to authority,
+identity, memory integrity, privacy, or irreversible action, the slower it
+moves. Edge artifacts can branch quickly; core artifacts move only through
+evidence-backed promotion.
+
+The operational form is a three-speed learning rule:
 
 - P0: facts and retrieval tuning change fast in Layer C.
 - P1: domain skill changes as scoped patches in Layers B and D.
 - P2: core trunk changes are rare and require compilation into a new \(v_A\).
+
+Applied to models, downloaded candidates live at the fast outer edge, locally
+evaluated bundles move inward, policy-approved bundles move closer to the core,
+and defaults for private memory require slow, receipted promotion. Applied to
+memory, raw observations and chunk candidates move fast, while confirmed user
+preferences move slower and policy or identity memory moves slowest.
 
 Hard attachment seams are:
 

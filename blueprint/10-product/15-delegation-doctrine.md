@@ -110,7 +110,33 @@ User-facing reconstruction should stay compact:
 - Risk
 - Question (only when present)
 
-## 7. Product defaults
+## 7. Change-velocity gradient
+
+Goni should be fluid at the edges and constitutional at the core.
+
+Change velocity decreases as governance centrality increases. Components closest
+to authority, identity, memory integrity, privacy, and irreversible action move
+slowest; components farther from the core may adapt, branch, and experiment
+quickly.
+
+Product implication:
+
+- Prompts, drafts, retrieved context, one-off plans, model candidates, plugins,
+  and experimental retrieval strategies MAY move quickly.
+- Project memory, user preferences, relationship patterns, templates, and
+  recurring workflows SHOULD update often, but with source, timestamp,
+  permission, and correction history.
+- Control-plane policy, Work Orders, model permission rules, memory access
+  classes, and tool-use corridors MUST change through versioned policy,
+  receipts, tests, and rollback.
+- Kernel invariants, privacy posture, capability boundaries, receipt
+  requirements, and local-first sovereignty assumptions MUST change rarely and
+  only through evidence-backed governance.
+
+This is the difference between adaptivity and drift: experiments happen outside
+the core; promotion inward requires evidence.
+
+## 8. Product defaults
 
 Unless policy says otherwise, Goni should default to:
 
@@ -118,9 +144,10 @@ Unless policy says otherwise, Goni should default to:
 - one decisive question maximum per task,
 - at most two objective options in co-creation mode,
 - explicit assumptions whenever execution proceeds without asking,
-- preview plus approval for actions that cross soft/hard gates.
+- preview plus approval for actions that cross soft/hard gates,
+- fast iteration at the edge and evidence-backed promotion toward the core.
 
-## 8. Relation to specs
+## 9. Relation to specs
 
 This doctrine is implemented normatively by:
 

@@ -41,6 +41,14 @@ Operationally, a serious LLM learns in three speeds:
 The governing rule is simple: facts default outward, skill patches stay scoped,
 and core weights absorb only rare durable structure.
 
+This is the system form of Goni's change-velocity gradient: change velocity is
+inversely proportional to governance centrality. Surface artifacts such as
+prompts, drafts, context assemblies, eval packs, plugins, and candidate models
+may move quickly. Control-plane policy, memory access classes, default model
+permissions, and capability corridors move slowly. Kernel invariants,
+constitutional policy, privacy posture, and receipt requirements move only
+through strong evidence, review, versioned governance, and rollback plans.
+
 ## 2.1 Formal state tuple and OS transition loop (normative)
 Operationally, the runtime is modeled as a partially observable control loop.
 Let the kernel-visible state at step `t` be:
