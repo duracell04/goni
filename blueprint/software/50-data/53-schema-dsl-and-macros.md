@@ -327,10 +327,18 @@ define_tables! {
         fields: {
             memory_id: FixedSizeBinary(16),
             kind: DictU8Utf8,
+            memory_class: DictU8Utf8,
             timestamp: TimestampMsUtc,
             value: MapUtf8Utf8,
             confidence: Float32,
             source_chunk_ids: ListUtf8,
+            project_refs: ListUtf8,
+            person_refs: ListUtf8,
+            permission_scope: DictU8Utf8,
+            quoteability: DictU8Utf8,
+            valid_from: TimestampMsUtc,
+            valid_until: TimestampMsUtc,
+            provenance: MapUtf8Utf8,
             confirmed_by_event_id: FixedSizeBinary(16),
             review_at: TimestampMsUtc,
             ttl_ms: UInt32,
@@ -431,5 +439,6 @@ must preserve the same delegation fields as the receipt JSON schema and the
 receipts spec: `interaction_mode`, `work_order_id`, `done_contract_hash`,
 `clarification_decision`, `objective_option_count`, surfaced assumptions,
 uncertainty level, question strategy, tool intent, delegation outcome, and
-`undo_strategy_ref`.
+`undo_strategy_ref`. It must also preserve governed memory fields:
+`memory_read_refs`, `memory_diff_refs`, and `retrieval_basis`.
 

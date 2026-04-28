@@ -87,10 +87,13 @@ Arrow-first, v1.0 schemas for the canonical tables. Each table is `Spine + Paylo
 
 ### MemoryEntries
 - PK: `memory_id = row_id`
-- Fields: `kind: dict<uint8, utf8> (fact|preference|decision|hypothesis|derived)`, `timestamp: timestamp(ms)`,
+- Fields: `kind: dict<uint8, utf8> (fact|preference|decision|hypothesis|derived)`, `memory_class: dict<uint8, utf8> (episodic|semantic|procedural|relational|project|policy)`, `timestamp: timestamp(ms)`,
   `value: map<utf8, utf8>`, `confidence: float32`, `source_chunk_ids: list<utf8>`,
-  `confirmed_by_event_id?: fixed_size_binary[16]`, `review_at?: timestamp(ms)`, `ttl_ms?: uint32`,
-  `conflict_state?: dict<uint8, utf8>`, `embedding?: fixed_size_list<float32>[1536]`, `embedding_dim?: uint16`
+  `project_refs: list<utf8>`, `person_refs: list<utf8>`, `permission_scope: dict<uint8, utf8>`,
+  `quoteability: dict<uint8, utf8>`, `valid_from?: timestamp(ms)`, `valid_until?: timestamp(ms)`,
+  `provenance: map<utf8, utf8>`, `confirmed_by_event_id?: fixed_size_binary[16]`,
+  `review_at?: timestamp(ms)`, `ttl_ms?: uint32`, `conflict_state?: dict<uint8, utf8>`,
+  `embedding?: fixed_size_list<float32>[1536]`, `embedding_dim?: uint16`
 - Notes: `source_chunk_ids` values are UUIDv7 strings referencing `Chunks.chunk_id`; raw text is not stored here.
 
 ## Plane ?? - Knowledge (latent state)
@@ -161,7 +164,7 @@ Arrow-first, v1.0 schemas for the canonical tables. Each table is `Spine + Paylo
 
 ### Receipts (specified only)
 - PK: `receipt_id = row_id`
-- Fields: `timestamp: timestamp(ms)`, `trace_id: fixed_size_binary[16]`, `span_id: fixed_size_binary[16]`, `action_type: utf8`, `task_class: dict<uint8, utf8>`, `interaction_mode?: dict<uint8, utf8>`, `autonomy_mode: dict<uint8, utf8>`, `policy_decision: utf8`, `decision_basis: map<utf8, utf8>`, `risk_score: float32`, `risk_basis: map<utf8, utf8>`, `work_order_id?: fixed_size_binary[16]`, `done_contract_hash?: fixed_size_binary[32]`, `clarification_decision?: dict<uint8, utf8>`, `objective_option_count?: uint8`, `capability_id?: fixed_size_binary[16]`, `input_hash?: fixed_size_binary[32]`, `output_hash?: fixed_size_binary[32]`, `memory_diff_refs?: list<fixed_size_binary[16]>`, `assumptions?: list<utf8>`, `uncertainty_level?: dict<uint8, utf8>`, `question_strategy?: dict<uint8, utf8>`, `tool_intent?: utf8`, `delegation_outcome?: dict<uint8, utf8>`, `undo_strategy_ref?: utf8`, `prev_hash?: fixed_size_binary[32]`, `chain_hash: fixed_size_binary[32]`
+- Fields: `timestamp: timestamp(ms)`, `trace_id: fixed_size_binary[16]`, `span_id: fixed_size_binary[16]`, `action_type: utf8`, `task_class: dict<uint8, utf8>`, `interaction_mode?: dict<uint8, utf8>`, `autonomy_mode: dict<uint8, utf8>`, `policy_decision: utf8`, `decision_basis: map<utf8, utf8>`, `risk_score: float32`, `risk_basis: map<utf8, utf8>`, `work_order_id?: fixed_size_binary[16]`, `done_contract_hash?: fixed_size_binary[32]`, `clarification_decision?: dict<uint8, utf8>`, `objective_option_count?: uint8`, `capability_id?: fixed_size_binary[16]`, `input_hash?: fixed_size_binary[32]`, `output_hash?: fixed_size_binary[32]`, `memory_read_refs: list<fixed_size_binary[16]>`, `memory_diff_refs?: list<fixed_size_binary[16]>`, `retrieval_basis?: map<utf8, utf8>`, `assumptions?: list<utf8>`, `uncertainty_level?: dict<uint8, utf8>`, `question_strategy?: dict<uint8, utf8>`, `tool_intent?: utf8`, `delegation_outcome?: dict<uint8, utf8>`, `undo_strategy_ref?: utf8`, `prev_hash?: fixed_size_binary[32]`, `chain_hash: fixed_size_binary[32]`
 - Notes: minimal by default; no raw content. Delegated actions must carry surfaced assumptions and delegated-action outcome metadata.
 
 

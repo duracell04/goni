@@ -37,6 +37,7 @@ for a canonical Goni receipt.
 - budget_delta
 - input_hash
 - output_hash
+- memory_read_refs
 - memory_diff_refs
 
 ## Delegation fields (required for delegated or tool-mediated actions)
@@ -68,6 +69,16 @@ The `delegation` object MUST expose stable delegation-engineering fields:
   `plan_summary`).
 - `memory_diff_refs` is a list of state/memory delta IDs caused by the action.
   Use an empty list when no memory mutation occurred.
+- `memory_read_refs` is a list of memory IDs, chunk IDs, context item IDs, or
+  retrieval result refs read by the action. Use an empty list when no memory
+  was read.
+- `retrieval_basis` records the retrieval mode, index refs, selected context
+  refs, reranker, permission filters, and policy hash when retrieval affected
+  output or execution. It must not store raw retrieved text by default.
+- `bundle_id`, `manifest_hash`, and `eval_receipt_refs` record governed model
+  bundle provenance when a model route depends on an approved bundle.
+- `assurance_level`, `ml_bom_ref`, and `attestation_refs` record the local
+  installation trust state when model bundle governance affects the route.
 - `interaction_mode` records whether the turn was delegated execution or
   co-creation.
 - `work_order_id` references the canonical pre-execution Work Order.
@@ -108,7 +119,9 @@ The `delegation` object MUST expose stable delegation-engineering fields:
 - receipts must form a valid hash chain
 - receipts must omit raw content by default
 - receipts must include `trace_id`, `span_id`, `decision_basis`, and
-  `memory_diff_refs`
+  `memory_read_refs` and `memory_diff_refs`
+- retrieval-mediated receipts must include `retrieval_basis` when retrieved
+  memory affected output or execution
 - receipts must include `task_class`, `autonomy_mode`, `risk_score`, and
   `risk_basis` for any delegated action
 - delegated/tool-mediated receipts must preserve `interaction_mode`,

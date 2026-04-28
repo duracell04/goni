@@ -19,6 +19,7 @@
                      "budget_delta",
                      "input_hash",
                      "output_hash",
+                     "memory_read_refs",
                      "memory_diff_refs"
                  ],
     "properties":  {
@@ -134,12 +135,58 @@
                        "output_hash":  {
                                            "type":  "string"
                                        },
+                       "memory_read_refs":  {
+                                                "type":  "array",
+                                                "items":  {
+                                                              "type":  "string"
+                                                          }
+                                            },
                        "memory_diff_refs":  {
                                                 "type":  "array",
                                                 "items":  {
                                                               "type":  "string"
                                                           }
                                             },
+                       "retrieval_basis":  {
+                                               "type":  "object",
+                                               "properties":  {
+                                                                  "mode":  {
+                                                                               "type":  "string",
+                                                                               "enum":  [
+                                                                                            "dense",
+                                                                                            "sparse",
+                                                                                            "hybrid",
+                                                                                            "graph",
+                                                                                            "mixed"
+                                                                                        ]
+                                                                           },
+                                                                  "index_refs":  {
+                                                                                     "type":  "array",
+                                                                                     "items":  {
+                                                                                                   "type":  "string"
+                                                                                               }
+                                                                                 },
+                                                                  "reranker_id":  {
+                                                                                      "type":  "string"
+                                                                                  },
+                                                                  "selected_context_refs":  {
+                                                                                                "type":  "array",
+                                                                                                "items":  {
+                                                                                                              "type":  "string"
+                                                                                                          }
+                                                                                            },
+                                                                  "permission_filters":  {
+                                                                                            "type":  "array",
+                                                                                            "items":  {
+                                                                                                          "type":  "string"
+                                                                                                      }
+                                                                                        },
+                                                                  "policy_hash":  {
+                                                                                      "type":  "string"
+                                                                                  }
+                                                              },
+                                               "additionalProperties":  true
+                                           },
                        "execution_id":  {
                                             "type":  "string"
                                         },
@@ -160,6 +207,37 @@
                        "model_id":  {
                                         "type":  "string"
                                     },
+                       "bundle_id":  {
+                                         "type":  "string"
+                                     },
+                       "manifest_hash":  {
+                                             "type":  "string"
+                                         },
+                       "assurance_level":  {
+                                               "type":  "string",
+                                               "enum":  [
+                                                            "L0",
+                                                            "L1",
+                                                            "L2",
+                                                            "L3",
+                                                            "L4"
+                                                        ]
+                                           },
+                       "ml_bom_ref":  {
+                                         "type":  "string"
+                                     },
+                       "attestation_refs":  {
+                                               "type":  "array",
+                                               "items":  {
+                                                             "type":  "string"
+                                                         }
+                                           },
+                       "eval_receipt_refs":  {
+                                                 "type":  "array",
+                                                 "items":  {
+                                                               "type":  "string"
+                                                           }
+                                             },
                        "metering":  {
                                         "type":  "object",
                                         "properties":  {
