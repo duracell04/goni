@@ -8,3 +8,8 @@ Focus:
 - reliability, safety, and governance implications
 
 Do not track supplier pricing here.
+
+## Supplier cards
+- [Local models](/blueprint/60-market/suppliers/local-models.md)
+- [Model registries](/blueprint/60-market/suppliers/model-registries.md)
+- [Ollama Cloud](/blueprint/60-market/suppliers/ollama-cloud.md)

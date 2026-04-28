@@ -18,6 +18,18 @@ should absorb prompt-work on the user's behalf:
 This doctrine explains the desired behavior before those ideas are expressed as
 kernel contracts.
 
+The same rule applies to memory. Goni should not ask the user to decide whether
+something is a saved memory, project note, vector embedding, tag, folder, or
+reminder. The product-facing promise is that Goni turns personal memory into
+governed system work: classify, chunk, index, retrieve, filter, act, and write
+receipts without making the user manage memory architecture.
+
+The defensible claim is architectural, not empirical overclaim. Goni is designed
+to be better suited for personal AI memory because it treats memory as a
+local-first governed retrieval plane rather than a generic product feature.
+Evaluation must still prove task outcomes, retrieval quality, safety, and user
+benefit.
+
 ## 2. Attention-Density Principle
 
 Goni treats every turn as a finite attention budget.
@@ -112,6 +124,7 @@ Unless policy says otherwise, Goni should default to:
 
 This doctrine is implemented normatively by:
 
+- `blueprint/30-specs/memory-retrieval.md`
 - `blueprint/30-specs/delegation-interface.md`
 - `blueprint/30-specs/delegation-and-autonomy.md`
 - `blueprint/30-specs/tool-capability-api.md`

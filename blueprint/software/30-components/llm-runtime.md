@@ -176,6 +176,7 @@ Concrete engines (llama.cpp, vLLM, etc.) implement LlmRuntime:
 ## 7. Downstream
 - [Scheduler and interrupts](/blueprint/30-specs/scheduler-and-interrupts.md)
 - [ITCR](/blueprint/30-specs/itcr.md)
+- [Model bundle registry governance](/blueprint/30-specs/model-registry.md)
 
 ## 8. Adjacent
 - [Orchestrator](/blueprint/software/30-components/orchestrator.md)

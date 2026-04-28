@@ -9,6 +9,153 @@ Relevance:
 Used in:
 - `blueprint/software/50-data/10-axioms-and-planes.md` (Empirical motivation)
 
+Key: [[lewis2020-rag]]
+Claim: Retrieval-augmented generation separates parametric model memory from
+non-parametric retrieved evidence, improving knowledge-intensive generation
+and making retrieved sources part of the generation path.
+Relevance:
+- Supports external, updateable memory rather than storing personal knowledge
+  only in model weights.
+- Grounds Goni's Work Order driven retrieval plane.
+Used in:
+- `blueprint/30-specs/memory-retrieval.md` (Evidence anchors)
+Source:
+- https://arxiv.org/abs/2005.11401
+
+Key: [[reimers2019-sbert]]
+Claim: Sentence-BERT uses siamese/triplet structures to produce sentence
+embeddings that can be compared efficiently for semantic similarity search.
+Relevance:
+- Supports dense semantic retrieval over user-owned chunks.
+- Distinguishes meaning search from exact keyword lookup.
+Used in:
+- `blueprint/30-specs/memory-retrieval.md` (Evidence anchors)
+Source:
+- https://arxiv.org/abs/1908.10084
+
+Key: [[karpukhin2020-dpr]]
+Claim: Dense Passage Retrieval shows learned dual-encoder representations can
+serve as effective passage retrievers for open-domain QA.
+Relevance:
+- Supports dense retrieval as a practical memory-access primitive.
+- Helps motivate reranking and retrieval evaluation as first-class concerns.
+Used in:
+- `blueprint/30-specs/memory-retrieval.md` (Evidence anchors)
+Source:
+- https://arxiv.org/abs/2004.04906
+
+Key: [[kleppmann2019-local-first]]
+Claim: Local-first software treats local device state as primary while preserving
+collaboration and sync, improving ownership, offline use, privacy, longevity,
+and user control compared with server-primary cloud apps.
+Relevance:
+- Grounds Goni's local-first memory ownership and minimized remote context
+  transfer.
+Used in:
+- `blueprint/30-specs/memory-retrieval.md` (Evidence anchors)
+Source:
+- https://www.inkandswitch.com/essay/local-first/
+
+Key: [[deng2023-proactive-dialogue]]
+Claim: Proactive dialogue systems study agents that guide interaction toward
+goals rather than only responding passively.
+Relevance:
+- Supports Goni's default of resolving memory context and open loops as system
+  work when policy allows.
+Used in:
+- `blueprint/30-specs/memory-retrieval.md` (Evidence anchors)
+Source:
+- https://www.ijcai.org/proceedings/2023/738
+
+Key: [[hu2025-memoryagentbench]]
+Claim: Memory-agent evaluation should cover accurate retrieval, test-time
+learning, long-range understanding, and selective forgetting in incremental
+multi-turn settings.
+Relevance:
+- Supports treating memory lifecycle, updates, and forgetting as evaluated
+  system behavior rather than informal chat history.
+Used in:
+- `blueprint/30-specs/memory-retrieval.md` (Evidence anchors)
+Source:
+- https://arxiv.org/abs/2507.05257
+
+Key: [[ntia2024-open-model-weights]]
+Claim: Widely available model weights can broaden participation, decentralize
+market control, and enable use without sharing data with third parties, while
+also creating monitoring, misuse, oversight, and accountability challenges.
+Relevance:
+- Grounds the distinction between decentralized access to weights and unresolved
+  governance over deployment, monitoring, and trust.
+Used in:
+- `blueprint/30-specs/model-registry.md` (Scientific framing)
+Source:
+- https://www.ntia.gov/programs-and-initiatives/artificial-intelligence/open-model-weights-report
+
+Key: [[cyclonedx-mlbom]]
+Claim: CycloneDX ML-BOM represents models, datasets, dependencies, dataset
+provenance, training methodologies, and AI framework configuration for
+transparency and risk assessment.
+Relevance:
+- Supports treating model provenance as machine-readable supply-chain metadata.
+- Provides a basis for making ML-BOM data an input to local policy checks.
+Used in:
+- `blueprint/30-specs/model-registry.md` (Evaluation limits)
+Source:
+- https://cyclonedx.org/capabilities/mlbom/
+
+Key: [[mitchell2019-model-cards]]
+Claim: Model cards document intended use, evaluation procedures, performance
+characteristics, and limitations of trained models.
+Relevance:
+- Supports requiring model card references in approved bundle manifests.
+Used in:
+- `blueprint/30-specs/model-registry.md` (Bundle manifest)
+Source:
+- https://arxiv.org/abs/1810.03993
+
+Key: [[gebru2021-datasheets]]
+Claim: Datasheets for datasets document dataset motivation, composition,
+collection, recommended uses, distribution, maintenance, and other lifecycle
+information to improve transparency and accountability.
+Relevance:
+- Supports recording dataset-lineage references when known.
+Used in:
+- `blueprint/30-specs/model-registry.md` (Bundle manifest)
+Source:
+- https://arxiv.org/abs/1803.09010
+
+Key: [[slsa-framework]]
+Claim: SLSA defines incrementally adoptable supply-chain controls and assurance
+levels to prevent tampering and improve artifact integrity.
+Relevance:
+- Supports Goni's graded assurance model for model artifacts.
+Used in:
+- `blueprint/30-specs/model-registry.md` (Evaluation limits)
+Source:
+- https://slsa.dev/
+
+Key: [[in-toto-framework]]
+Claim: in-toto records and verifies supply-chain steps, actors, order, and
+artifacts so users can inspect how a product moved from initiation to
+installation.
+Relevance:
+- Supports signed attestation chains for model promotion and evaluation
+  receipts.
+Used in:
+- `blueprint/30-specs/model-registry.md` (Evaluation limits)
+Source:
+- https://in-toto.io/
+
+Key: [[spdx-overview]]
+Claim: SPDX is an open standard for communicating bill-of-materials information
+including provenance, license, security, and related supply-chain metadata.
+Relevance:
+- Supports license and provenance exchange for model bundle manifests.
+Used in:
+- `blueprint/30-specs/model-registry.md` (Evaluation limits)
+Source:
+- https://spdx.dev/about/overview/
+
 Key: [[greshake2023-indirect-prompt-injection]]
 Claim: Untrusted retrieved text can inject instructions that hijack tool use
 and control flow in LLM-integrated systems.

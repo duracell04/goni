@@ -70,6 +70,16 @@ entries:
     type: SPEC
     status: specified_only
     path: 30-specs/latent-state-contract.md
+  - id: MEM-RETR-01
+    title: "Governed Memory Retrieval"
+    type: SPEC
+    status: specified_only
+    path: 30-specs/memory-retrieval.md
+  - id: MODEL-REG-01
+    title: "Model Bundle Registry Governance"
+    type: SPEC
+    status: specified_only
+    path: 30-specs/model-registry.md
   - id: NET-01
     title: "Network Gate and Anonymity"
     type: SPEC
