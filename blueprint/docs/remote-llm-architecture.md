@@ -3,16 +3,23 @@
 > Single cloud leg for Goni: the OS talks to the council; the council talks to OpenRouter; OpenRouter fans out to providers.
 
 ## Role in the stack
-- Path: Goni OS Task Router -> local backend (vLLM/sglang on-box) or remote backend (Goni Council service).
+- Path: Goni OS Task Router -> local memory/tools/RAG/models first -> remote
+  backend (Goni Council service) only when local routes are insufficient,
+  too slow, or explicitly requested.
 - Remote backend: Council -> OpenRouter API -> providers/models (OpenAI, Anthropic, DeepSeek, Gemini, etc.) -> optional web/search tools running beside the council.
 - External egress is mediated by the Network Gate (NET-01); the Gate selects DIRECT vs OVERLAY routes for Council calls.
 - Goni OS never calls provider APIs directly; OpenRouter is the only cloud gateway.
 - Council enforces routing policies, budgets, and approval before sending anything out.
+- The routing decision is a receipted event with the local attempt, escalation
+  reason, redaction state, privacy class sent, and cost/latency estimates.
 
 ## Data path, privacy, and cost controls
 - Trim/sanitise context before sending; prefer summaries or extracted facts instead of raw artifacts.
 - Enforce per-call and per-day budgets (tokens or $) and drop to local-only when exceeded or unavailable.
 - Log every remote call (Arrow table) with model/provider, usage/cost, latency, and decision outcome; keep request/response snippets minimal for privacy.
+- Raw private, legal/financial/identity-sensitive, or confidential context
+  remains local by default. Remote routing requires a public-only payload,
+  redaction, or an explicit approval corridor.
 
 ## Data minimization protocol (normative)
 
@@ -21,6 +28,8 @@ When routing to the Council, the orchestrator MUST:
 - Attach a provenance manifest: `request_id`, `prompt_hash`, `source_context_id`, and chunk IDs used.
 - Emit a `RedactionEvents` row with before/after hashes and a structured summary (no raw text).
 - Obey the configured egress mode from `goni-prototype-lab:config/council.yaml` (local-only, structured-only, redacted, or user-approved full context).
+- Emit or update an `llm_route` receipt object that records why local execution
+  was insufficient and what privacy class, if any, left the node.
 
 These rules are enforced at the Network Gate and logged through the Control plane.
 

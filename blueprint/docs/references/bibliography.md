@@ -1,5 +1,42 @@
 # Bibliography (annotated)
 
+Key: [[frugalgpt2023]]
+Claim: LLM cascades, prompt adaptation, and LLM approximation can reduce
+inference cost while preserving or improving task quality.
+Relevance:
+- Grounds Goni's cascade pattern: cheap/private/local routes should be tried
+  before expensive external routes.
+- Goni extends the objective from cost-quality to sovereignty, privacy,
+  latency, energy, auditability, and policy compatibility.
+Used in:
+- `blueprint/10-product/15-delegation-doctrine.md` (Frugal Sovereign Routing)
+- `blueprint/software/20-architecture.md` (Frugal sovereign model router)
+Source:
+- https://huggingface.co/papers/2305.05176
+
+Key: [[routellm2024]]
+Claim: Routers trained from preference data can select between stronger and
+weaker LLMs to reduce cost while preserving much of strong-model performance.
+Relevance:
+- Supports treating routing as a learnable control problem rather than a fixed
+  "always best model" policy.
+- Provides a future path for Goni Lab traces to train routing policies.
+Used in:
+- `blueprint/50-evidence/eval/EVID-ROUTE-01-frugal-sovereign-routing.md`
+Source:
+- https://sky.cs.berkeley.edu/project/routellm/
+
+Key: [[routerbench2024]]
+Claim: Multi-LLM routing needs systematic evaluation because no single model is
+optimal across all tasks and cost-quality points.
+Relevance:
+- Grounds Goni's evidence lane for measuring correct local routing, late
+  escalation, wasted cloud calls, and Council value.
+Used in:
+- `blueprint/50-evidence/eval/EVID-ROUTE-01-frugal-sovereign-routing.md`
+Source:
+- https://huggingface.co/papers/2403.12031
+
 Key: [[liu2023-lost-middle]]
 Claim: Long-context LMs show positional sensitivity; evidence in the middle is
 used less reliably than evidence near prompt boundaries.

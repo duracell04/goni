@@ -319,7 +319,48 @@ Unless policy says otherwise, Goni should default to:
 - preview plus approval for actions that cross soft/hard gates,
 - fast iteration at the edge and evidence-backed promotion toward the core.
 
-## 13. Relation to specs
+## 13. Frugal Sovereign Routing
+
+Goni applies FrugalGPT-style cascades under sovereignty constraints. The default
+route is not the strongest model or the cloud Council. The default route is the
+least external, least costly, sufficiently capable path.
+
+Routing order:
+
+```text
+rule / cache / memory answer
+-> small local model
+-> larger local model
+-> specialist local tool / RAG / corpus reading
+-> local multi-agent check
+-> cloud LLM Council
+-> premium cloud model / multi-model vote
+```
+
+The router SHOULD optimize across quality, latency, cloud cost, privacy leakage
+risk, energy/thermal cost, audit burden, external dependency cost, data
+locality, and the active escalation corridor.
+
+Council escalation SHOULD occur only when one of these predicates is true:
+
+- current public web or broader external model knowledge is required,
+- local confidence or local evidence is insufficient,
+- model disagreement checking is useful for high-stakes work,
+- local compute would exceed the configured time or thermal budget,
+- the user explicitly requests external reasoning,
+- policy authorizes a redacted or public-only cloud payload.
+
+Raw private, legal/financial/identity-sensitive, or confidential context MUST
+NOT be sent to cloud by default. It requires redaction, a policy corridor, or
+explicit approval. The routing decision itself is receipted so cloud escalation
+is accountable instead of implicit.
+
+One-line doctrine:
+
+> FrugalGPT asks which model is cheapest for the task; Goni asks which route is
+> sufficient, private, auditable, and local enough.
+
+## 14. Relation to specs
 
 This doctrine is implemented normatively by:
 

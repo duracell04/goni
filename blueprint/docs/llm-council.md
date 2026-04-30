@@ -22,11 +22,16 @@
   - Not guaranteed to beat the best single cloud call every time.
 
 ## 3. When Goni uses the Council
+- Default rule: Goni tries local memory, local tools, local retrieval, and local
+  models first. The Council is an escalation tier, not the default brain.
 - Explicit user request: UI/API flag `provider="council"` or `mode="paranoid"` routes to council.
 - Orchestrator heuristics (examples):
   - Task classified "high difficulty" or "safety-critical".
   - Context length beyond local model comfort.
   - Sensitive domains where a second opinion is required (e.g., medical/financial summaries).
+  - Current public web or external model knowledge is required and the outgoing
+    payload is public, redacted, or explicitly approved.
+  - Local retrieval has insufficient evidence or local model confidence is low.
 - Hard constraint: if council is unavailable (no network/keys), orchestrator degrades gracefully ("I can only use local models right now") rather than blocking or crashing.
 
 ## 4. Council composition (families and roles)
@@ -56,11 +61,17 @@
 - Data path: only the prompt/context needed for the task goes to cloud; keep local artifacts local where possible.
 - Redaction: orchestrator should strip direct identifiers or use summaries when feasible before cloud send.
 - Keys: stored locally (encrypted config); council use is opt-in and requires explicit configuration.
+- Raw private or sensitive context is not eligible for default Council routing.
+  The router must either keep the task local, send a public/redacted payload, or
+  require an explicit approval corridor.
 
 ## 7. Cost and performance model
 - Assumptions: council is slower and more expensive than local or single-cloud.
 - Guards: soft budget per query (max tokens across members), daily/monthly soft limits.
 - Tracking: log tokens per council call, cost per model, added latency.
+- Routing objective: Council use is justified only when expected quality or
+  evidence value exceeds added latency, cloud cost, privacy risk, audit burden,
+  energy/thermal cost, and external-dependency cost.
 
 ## 8. Failure modes and graceful degradation
 - One model fails (timeout/rate limit): proceed with partial council.
@@ -80,6 +91,9 @@
 - Lab logs latency, tokens, refusal/safety, faithfulness (verifier), and quick win/lose/tie ratings per task tag. These become supervised data for `goni-router` regret tests and for proposing seat/routing changes.
 - Council seats should be adjusted only with evidence from Lab runs (champion labels per task tag, cost/latency deltas). Lab “promote” writes a proposed patch to `goni-prototype-lab:config/council.yaml`; ops review/merge.
 - Web-grounded seats (Perplexity Sonar, Grok) are opt-in and tagged; they are used only when the task tag demands live/current information.
+- The Frugal Sovereign Routing evidence lane measures false local accepts, late
+  escalation, wasted cloud calls, privacy-risk overrides, and whether Council
+  disagreement checking improved the final local synthesis.
 
 ## 10. Example config sketch (informative, not binding)
 ```yaml

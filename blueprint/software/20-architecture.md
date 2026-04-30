@@ -369,12 +369,29 @@ $$
 > $$
 > Simulation tests must show \(\mathbb{E}[L(\mathbf{Q}(t))]\) remains bounded over long horizons under representative workloads.
 
-### 3.4 Model router
+### 3.4 Frugal sovereign model router
 
-We distinguish two model classes:
+Goni's router is local-first and sovereignty-aware. It uses FrugalGPT-style
+cascades, but the objective is not only cost and quality: the route must also
+account for privacy leakage risk, latency, energy/thermal budget, audit burden,
+data locality, external dependency cost, and the active approval corridor.
+
+Default route order:
+
+```text
+rule/cache/memory -> local small -> local large -> local tools/RAG
+-> local multi-agent check -> cloud Council -> premium cloud vote
+```
+
+The first sufficient local route wins. The cloud-side Council is an escalation
+tier, not the default decoder.
+
+At the minimal formal level we distinguish two local model classes and one
+remote escalation class:
 
 - Small model \(M_s\) with cost \(c_s\) (tokens/s, energy).  
 - Large model \(M_\ell\) with cost \(c_\ell \gg c_s\).
+- Remote Council route \(M_r\) with external cost, latency, and privacy terms.
 
 For a request \(x\) and preliminary small-model answer \(\hat{y}_s\), we compute a **calibrated confidence** \(p(x) \in [0,1]\).
 
@@ -386,7 +403,17 @@ Router policy:
 
 Escalation to the cloud-side multi-model path (the [LLM Council](/blueprint/docs/llm-council.md)) follows the triggers in Section 3 of that doc: explicit user request, high difficulty/safety-critical classification, or long-context needs that exceed local comfort.
 
-We treat this as a **two-armed bandit** with side information (the features used to estimate \(p(x)\)).
+The router MUST NOT send raw private or sensitive context to \(M_r\) by default.
+It must either keep execution local, use a redacted/public-only payload, or
+require the configured approval corridor.
+
+Each routing decision emits receipt metadata (`llm_route`) containing the
+classification, selected route, models considered/used, redaction requirement,
+privacy class sent, and policy decision.
+
+We treat this as a contextual routing problem with side information (the
+features used to estimate \(p(x)\)); the prototype is threshold-based, and the
+evaluation lane may later train a learned router from preference/regret data.
 
 > **Theorem 3.2 (Regret bound, sketch).**  
 > Suppose the confidence estimator is \(\epsilon\)-calibrated and the reward gap between correct/incorrect decisions is bounded. Then there exists a threshold policy (approximated by our router) whose regret \(R_T\) over \(T\) requests satisfies:
