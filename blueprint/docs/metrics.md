@@ -124,6 +124,17 @@ This is the minimal scorecard for an operator appliance.
 - Assumption coverage for no-question executions.
 - Branch-efficiency score under fixed token budgets.
 
+### 9) Harness Governance
+- Approval, edit, override, and rejection rates by task class and harness
+  component.
+- Failed retrieval rate and wrong-routing rate for changes to retrieval and
+  model-routing policy.
+- Rollback rate, rollback success rate, and policy violation rate after harness
+  promotion.
+- Prediction hit rate for harness changes: percent of declared predictions that
+  hold over their stated eval window without safety, cost, or latency
+  regression.
+
 ## Example report (with deltas)
 Given:
 - TTFC: 0.663s

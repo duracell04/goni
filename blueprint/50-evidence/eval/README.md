@@ -30,6 +30,9 @@ Evaluation artifacts for reliability, security, and reproducibility.
 ## Routing lanes
 - [Frugal Sovereign Routing](/blueprint/50-evidence/eval/EVID-ROUTE-01-frugal-sovereign-routing.md)
 
+## Harness governance lanes
+- [Harness Change Evaluation](/blueprint/50-evidence/eval/EVID-HARNESS-01-harness-change-evaluation.md)
+
 ## Trace replay harness
 
 Delegation evaluation uses trace replay rather than ad-hoc screenshots or

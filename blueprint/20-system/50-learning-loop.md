@@ -76,6 +76,54 @@ Kernel loop per step:
 4. Commit delta + receipt on success, or rollback + failure receipt on reject.
 5. Emit experience packet for P0/P1/P2 promotion gates.
 
+## 2.1a Harness observability
+Agentic Harness Engineering maps onto Goni as **Harness Governance**: the
+system improves by changing observable operating artefacts, not by letting
+hidden prompts or tool glue drift.
+
+The harness is governed through three observability requirements
+[[lin2026-agentic-harness-engineering]]:
+
+- **Component observability:** prompts, policies, tool manifests, retrieval
+  rules, routing rules, approval corridors, context templates, and receipt
+  formats are file-backed, versioned, and revertible.
+- **Experience observability:** receipts, user edits, approvals, overrides,
+  failed retrievals, wrong model routes, latency, cost, and rollback events are
+  compressed into experience digests instead of replaying raw trajectory logs
+  into the model.
+- **Decision observability:** every harness edit declares its prediction, eval
+  window, measurement signals, retention criteria, and rollback condition.
+
+Example derived artefacts:
+
+```yaml
+experience_digest:
+  task_class: "social_follow_up"
+  outcome: "approved_after_minor_edit"
+  assumption_error: false
+  question_needed: false
+  policy_change_candidate: "use softer reminder template for weak ties"
+  evidence_refs:
+    - receipt_id: "rec_..."
+    - draft_diff_id: "diff_..."
+```
+
+```yaml
+harness_change:
+  id: "followup-template-exit-ramp-v2"
+  target_component: "social_open_loop_policy"
+  prediction:
+    approval_rate: "+10%"
+    user_edit_distance: "-20%"
+    negative_feedback_rate: "no increase"
+  eval_window: "next 30 follow-up drafts"
+  rollback_condition: "negative_feedback_rate > baseline + 5%"
+```
+
+These examples are evaluation artefacts, not receipt-schema fields. Receipts
+remain the canonical source evidence; harness digests are derived summaries used
+for P0/P1/P2 promotion gates.
+
 ## 2.2 Patch seams and allowed attachment points
 Candidate changes may attach only to declared seams:
 
@@ -138,6 +186,13 @@ Delegation-policy promotion specifically requires trace replay over vague-intent
 episodes, comparison against prior policy bundles, and review of question rate,
 override rate, unsafe autonomy, and surfaced-assumption coverage. Failed
 bundles must be rollbackable through the governance ledger.
+
+Harness-policy promotion additionally requires a falsifiable change statement:
+target component, expected outcome delta, evidence sources, eval window,
+retention rule, and rollback condition. A change that improves a narrow task but
+increases interruption rate, policy violations, unreviewed egress, or rollback
+frequency fails promotion unless an explicit higher-level policy accepts that
+trade-off.
 
 ## 6. Unstuck primitives (runtime recovery)
 The runtime must implement explicit recovery behaviors:
