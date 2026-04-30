@@ -31,6 +31,36 @@ Read in the order: **Architecture (20) -> Conformance (30) -> Theory (95)**.
 
 ---
 
+## 0.0a Harness Plane (governance overlay)
+
+The model is not the agent. The agent is the model plus harness: the governed
+operating substrate that selects context, retrieves memory, exposes tools,
+routes models, applies approval corridors, writes receipts, evaluates outcomes,
+and rolls back failed changes.
+
+We call this conceptual overlay the **Goni Harness Plane**. It does not change
+the formal node tuple \(N = (\mathcal{A}, \mathcal{X}, \mathcal{K},
+\mathcal{E})\) in this version. Instead, it names a cross-plane governance
+contract:
+
+- Context Plane: what evidence and memory enter the model context.
+- Control Plane: when Goni asks, assumes, escalates, schedules, or interrupts.
+- Execution Substrate: which models, tools, and sandboxes are available.
+- Policy and receipts: what authority is granted, what must be recorded, and
+  what rollback path exists.
+
+Harness components are versioned artefacts, not hidden glue. Prompts, context
+assembly templates, retrieval policies, routing thresholds, tool manifests,
+approval corridors, receipt formats, and eval packs must be inspectable and
+reversible. A harness change is promoted only when it declares an expected
+effect, measures that effect against receipt-backed evidence, and retains or
+rolls back according to the evaluation result.
+
+This keeps the formal architecture stable while making agent competence an
+observable systems property rather than an unexplained model behavior.
+
+---
+
 ## 0.1 Memory Plane (operational abstraction)
 
 While the formal tuple remains \(N = (\mathcal{A}, \mathcal{X}, \mathcal{K}, \mathcal{E})\), we treat **long-term memory as an external, pluggable service** that the Control/Execution planes call:

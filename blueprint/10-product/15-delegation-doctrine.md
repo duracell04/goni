@@ -300,7 +300,56 @@ Product implication:
 This is the difference between adaptivity and drift: experiments happen outside
 the core; promotion inward requires evidence.
 
-## 12. Product defaults
+## 12. Harness Governance
+
+Goni's intelligence is not only in the model. It is in the governed harness
+that decides what the model sees, may do, must verify, can remember, and must
+undo.
+
+The **Goni Harness Plane** is the product-facing name for this governed
+operating layer. It is not a separate hidden agent framework. It is the
+versioned control overlay across context assembly, memory retrieval, tool
+permissions, routing, approval corridors, receipts, evaluation, and rollback.
+
+Harness artefacts SHOULD be explicit, inspectable, editable, auditable, and
+reversible. At minimum, this includes:
+
+- delegation doctrine and Work Order / Done Contract templates,
+- memory retrieval and context assembly policies,
+- model routing and model-installation policies,
+- approval corridors and social open-loop rules,
+- tool capability manifests and tool-use templates,
+- prompt and context assembly templates,
+- receipt formats and evaluation packs.
+
+Harness improvement MUST NOT be treated as silent prompt drift. A meaningful
+harness change should state what it expects to improve, what evidence will
+measure the change, the evaluation window, and the rollback condition. This
+turns operating-procedure changes into falsifiable artefacts rather than
+folklore.
+
+Goni therefore learns operating procedures, not only memories:
+
+- which workflow worked,
+- which retrieval strategy missed evidence,
+- which clarification was unnecessary,
+- which model route was sufficient,
+- which approval corridor caused friction,
+- which reminder tone was approved,
+- which policy or tool path required rollback.
+
+Receipts remain the source evidence. Higher-level experience digests and
+harness-change manifests are derived artefacts that summarize approval, edit,
+override, rejection, retrieval, routing, latency, cost, policy, and rollback
+signals without feeding raw logs back into the model blindly.
+
+This doctrine follows the ML-systems lesson that non-model infrastructure can
+create hidden debt if it is treated as glue, and the agentic-systems lesson that
+harness design directly shapes task competence [[sculley2015-hidden-tech-debt]]
+[[lin2026-agentic-harness-engineering]]. Goni's local-first stance makes the
+harness user-owned and reversible rather than silently vendor-managed.
+
+## 13. Product defaults
 
 Unless policy says otherwise, Goni should default to:
 
@@ -319,7 +368,7 @@ Unless policy says otherwise, Goni should default to:
 - preview plus approval for actions that cross soft/hard gates,
 - fast iteration at the edge and evidence-backed promotion toward the core.
 
-## 13. Frugal Sovereign Routing
+## 14. Frugal Sovereign Routing
 
 Goni applies FrugalGPT-style cascades under sovereignty constraints. The default
 route is not the strongest model or the cloud Council. The default route is the
@@ -360,7 +409,7 @@ One-line doctrine:
 > FrugalGPT asks which model is cheapest for the task; Goni asks which route is
 > sufficient, private, auditable, and local enough.
 
-## 14. Relation to specs
+## 15. Relation to specs
 
 This doctrine is implemented normatively by:
 
