@@ -202,6 +202,36 @@ Relevance:
 Used in:
 - `blueprint/software/50-data/40-privacy-and-text-confinement.md` (Empirical motivation)
 
+Key: [[sculley2015-hidden-tech-debt]]
+Claim: Real ML systems contain far more than model code, and surrounding
+infrastructure can create hidden technical debt through glue code,
+configuration debt, undeclared consumers, hidden feedback loops, and boundary
+erosion.
+Relevance:
+- Supports treating Goni's non-model operating layer as first-class
+  engineering surface rather than informal glue.
+- Grounds Harness Governance as a way to keep prompts, policies, retrieval,
+  routing, tools, receipts, and evals inspectable and reversible.
+Used in:
+- `blueprint/10-product/15-delegation-doctrine.md` (Harness Governance)
+Source:
+- https://papers.nips.cc/paper/5656-hidden-technical-debt-in-machine-learning-syst
+
+Key: [[lin2026-agentic-harness-engineering]]
+Claim: Agent harnesses shape how models interact with repositories, tools, and
+execution environments; component, experience, and decision observability can
+make harness evolution explicit, evidence-backed, and revertible. Reported
+benchmark gains are promising but should be independently reproduced.
+Relevance:
+- Supports Goni's Harness Plane as a governed layer around model behavior.
+- Motivates falsifiable harness changes with predictions, eval windows,
+  receipt-backed evidence, and rollback conditions.
+Used in:
+- `blueprint/10-product/15-delegation-doctrine.md` (Harness Governance)
+- `blueprint/20-system/50-learning-loop.md` (Harness observability)
+Source:
+- https://arxiv.org/abs/2604.25850
+
 Key: [[tworek2026-decoder]]
 Claim: Reported view that deployed models do not robustly learn from mistakes in
 normal use, and that this limits autonomous improvement without system support.
