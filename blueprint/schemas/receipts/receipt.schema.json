@@ -135,6 +135,83 @@
                        "output_hash":  {
                                            "type":  "string"
                                        },
+                       "llm_route":  {
+                                         "type":  "object",
+                                         "properties":  {
+                                                            "selected_route":  {
+                                                                                   "type":  "string"
+                                                                               },
+                                                            "local_rationale":  {
+                                                                                    "type":  "string"
+                                                                                },
+                                                            "council_rationale":  {
+                                                                                      "type":  "string"
+                                                                                  },
+                                                            "task_difficulty":  {
+                                                                                    "type":  "string"
+                                                                                },
+                                                            "knowledge_locality":  {
+                                                                                       "type":  "string"
+                                                                                   },
+                                                            "sensitivity":  {
+                                                                                "type":  "string"
+                                                                            },
+                                                            "compute_budget":  {
+                                                                                  "type":  "string"
+                                                                              },
+                                                            "risk":  {
+                                                                         "type":  "string"
+                                                                     },
+                                                            "models_considered":  {
+                                                                                      "type":  "array",
+                                                                                      "items":  {
+                                                                                                    "type":  "string"
+                                                                                                }
+                                                                                  },
+                                                            "models_used":  {
+                                                                                "type":  "array",
+                                                                                "items":  {
+                                                                                              "type":  "string"
+                                                                                          }
+                                                                            },
+                                                            "redaction_required":  {
+                                                                                       "type":  "boolean"
+                                                                                   },
+                                                            "privacy_class_sent":  {
+                                                                                       "type":  "string"
+                                                                                   },
+                                                            "cost_estimate":  {
+                                                                                 "type":  "string"
+                                                                             },
+                                                            "latency_estimate":  {
+                                                                                    "type":  "string"
+                                                                                },
+                                                            "quality_confidence":  {
+                                                                                       "type":  "string"
+                                                                                   },
+                                                            "policy_decision":  {
+                                                                                   "type":  "string"
+                                                                               }
+                                                        },
+                                         "required":  [
+                                                          "selected_route",
+                                                          "local_rationale",
+                                                          "task_difficulty",
+                                                          "knowledge_locality",
+                                                          "sensitivity",
+                                                          "compute_budget",
+                                                          "risk",
+                                                          "models_considered",
+                                                          "models_used",
+                                                          "redaction_required",
+                                                          "privacy_class_sent",
+                                                          "cost_estimate",
+                                                          "latency_estimate",
+                                                          "quality_confidence",
+                                                          "policy_decision"
+                                                      ],
+                                         "additionalProperties":  false
+                                     },
                        "memory_read_refs":  {
                                                 "type":  "array",
                                                 "items":  {

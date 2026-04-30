@@ -77,6 +77,11 @@ The `delegation` object MUST expose stable delegation-engineering fields:
   output or execution. It must not store raw retrieved text by default.
 - `bundle_id`, `manifest_hash`, and `eval_receipt_refs` record governed model
   bundle provenance when a model route depends on an approved bundle.
+- `llm_route` records model-routing decisions when an LLM path is selected.
+  It captures the selected route, local/Council rationale, task
+  classification, models considered and used, redaction requirement, privacy
+  class sent, cost/latency estimate labels, confidence label, and policy
+  decision. It must not store raw prompt or retrieved text.
 - `assurance_level`, `ml_bom_ref`, and `attestation_refs` record the local
   installation trust state when model bundle governance affects the route.
 - `interaction_mode` records whether the turn was delegated execution or
@@ -122,6 +127,8 @@ The `delegation` object MUST expose stable delegation-engineering fields:
   `memory_read_refs` and `memory_diff_refs`
 - retrieval-mediated receipts must include `retrieval_basis` when retrieved
   memory affected output or execution
+- model-routing receipts must include `llm_route` when model selection affected
+  output or remote escalation eligibility
 - receipts must include `task_class`, `autonomy_mode`, `risk_score`, and
   `risk_basis` for any delegated action
 - delegated/tool-mediated receipts must preserve `interaction_mode`,
