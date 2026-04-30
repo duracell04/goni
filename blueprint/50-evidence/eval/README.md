@@ -27,6 +27,9 @@ Evaluation artifacts for reliability, security, and reproducibility.
 - [Corpus-reading fidelity](/blueprint/50-evidence/eval/EVID-LONGCTX-02-corpus-reading-fidelity.md)
 - [Recursion-budget safety](/blueprint/50-evidence/eval/EVID-LONGCTX-03-recursion-budget-safety.md)
 
+## Routing lanes
+- [Frugal Sovereign Routing](/blueprint/50-evidence/eval/EVID-ROUTE-01-frugal-sovereign-routing.md)
+
 ## Trace replay harness
 
 Delegation evaluation uses trace replay rather than ad-hoc screenshots or
