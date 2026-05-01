@@ -115,6 +115,14 @@ Concrete engines (llama.cpp, vLLM, etc.) implement LlmRuntime:
 
 * MVP: 1–2 backends is enough (e.g. local small/large model).
 
+Runtime candidates are tracked as technology intelligence in
+[Local Models](/blueprint/60-market/suppliers/local-models.md) and
+[Adjacent Projects](/blueprint/docs/adjacent-projects.md). Examples include
+llama.cpp, Ollama, LocalAI, LM Studio, Jan local server, vLLM, SGLang, TGI,
+TensorRT-LLM, LMDeploy, Xinference, KTransformers, Mistral.rs, and exo.
+These are backend choices behind this interface; none owns routing policy,
+receipts, or capability mediation.
+
 ---
 
 ## 4. Invariants & performance targets
@@ -181,4 +189,5 @@ Concrete engines (llama.cpp, vLLM, etc.) implement LlmRuntime:
 ## 8. Adjacent
 - [Orchestrator](/blueprint/software/30-components/orchestrator.md)
 - [Tool capability API](/blueprint/30-specs/tool-capability-api.md)
-
+- [Local model supplier card](/blueprint/60-market/suppliers/local-models.md)
+- [Adjacent projects map](/blueprint/docs/adjacent-projects.md)

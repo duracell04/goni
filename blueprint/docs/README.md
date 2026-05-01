@@ -15,7 +15,9 @@
 - [Goni SWOT](/blueprint/docs/goni-swot.md) - positioning vs ecosystem.
 - [Inspiration](/blueprint/docs/inspiration.md) - people radar.
 - [Related Projects](/blueprint/docs/related-projects.md) - prior art.
-- [Adjacent Projects](/blueprint/docs/adjacent-projects.md) - agent gateways, local runtimes, and AI OS neighbors.
+- [Adjacent Projects](/blueprint/docs/adjacent-projects.md) - layered ecosystem
+  alternatives map for runtimes, UIs, agents, tools, memory, observability,
+  voice/home, and edge infrastructure.
 - [Reference Products](/blueprint/docs/reference-products/olares.md) - reference pattern and implications.
 - [OS Completeness Checklist](/blueprint/docs/product/os-completeness-checklist.md) - minimum product surfaces.
 - [Glossary](/blueprint/docs/glossary.md) - shared vocabulary.

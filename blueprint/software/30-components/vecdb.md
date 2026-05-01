@@ -81,6 +81,14 @@ Search results MUST at least expose:
 
 This schema is what goni-context expects for the submodular objective and budget accounting.
 
+Adjacent memory and retrieval candidates include Chroma/ChromaDB, Qdrant,
+Milvus, Weaviate, pgvector, Redis, Neon, LlamaIndex, RAGFlow, Unstructured,
+Docling, Marker, Neo4j, Kuzu, Marqo, LanceDB, mem0, Zep, and Obsidian
+AI/plugin patterns. They are tracked in
+[Adjacent Projects](/blueprint/docs/adjacent-projects.md). Goni treats these as
+storage, parsing, retrieval, or state backends; memory governance, selective
+forgetting, and receipt provenance stay in the Goni control plane.
+
 ---
 
 ## 4. Invariants & MVP targets
@@ -125,4 +133,4 @@ ebuild).
 ## 8. Adjacent
 - [Tool capability API](/blueprint/30-specs/tool-capability-api.md)
 - [Orchestrator](/blueprint/software/30-components/orchestrator.md)
-
+- [Adjacent projects map](/blueprint/docs/adjacent-projects.md)

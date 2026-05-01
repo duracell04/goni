@@ -114,6 +114,13 @@ The Orchestrator only calls submit / watch / cancel and forwards streams back to
 It may surface `ReconstructionPreview` data, but that preview must come from
 kernel-backed Work Order state rather than orchestration-local guesses.
 
+Adjacent agent frameworks and workflow builders such as LangGraph, CrewAI,
+AutoGen/AG2, Dify workflows, Flowise, LangFlow, n8n, LibreChat agents,
+OpenClaw-like gateways, Open Interpreter, and MCP tool servers are tracked in
+[Adjacent Projects](/blueprint/docs/adjacent-projects.md). They are useful
+integration references, but they do not replace the Goni orchestrator/control
+plane split or the kernel mediation boundary.
+
 ---
 
 ## 4. Invariants (tied to 30-conformance)
@@ -166,4 +173,4 @@ The Orchestrator spec here is the single-node kernel perspective; multi-node con
 ## 8. Adjacent
 - [Network gate and anonymity](/blueprint/30-specs/network-gate-and-anonymity.md)
 - [Receipts](/blueprint/30-specs/receipts.md)
-
+- [Adjacent projects map](/blueprint/docs/adjacent-projects.md)

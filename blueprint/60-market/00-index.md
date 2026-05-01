@@ -22,3 +22,10 @@
 - players/README.md
 - goni-competitive-landscape.md
 
+## Cross-lane references
+
+- [Adjacent Projects](/blueprint/docs/adjacent-projects.md) - layered map of
+  runtimes, UIs, agents, tool protocols, memory systems, observability,
+  voice/home stacks, and hardware/edge substrates.
+- [Local Models](/blueprint/60-market/suppliers/local-models.md) - local
+  runtime and model-server supplier candidates.
