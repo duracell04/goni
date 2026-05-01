@@ -6,3 +6,4 @@
 - 40-agentic-kernel-foundations.md
 - 45-kernel-blockchain-mapping.md
 - 50-learning-loop.md
+- 55-sovereign-operator-audit-gap-map.md
