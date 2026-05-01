@@ -33,6 +33,28 @@ Evaluation artifacts for reliability, security, and reproducibility.
 ## Harness governance lanes
 - [Harness Change Evaluation](/blueprint/50-evidence/eval/EVID-HARNESS-01-harness-change-evaluation.md)
 
+## Governance gate lanes
+
+These lanes define required evaluation coverage for a sovereign operator. They
+may reuse existing evidence files until dedicated artifacts are added.
+
+- **Policy tests:** verify allow/deny decisions, corridor outcomes, approval
+  evidence, and fail-closed behavior.
+- **Route tests:** verify local-first routing, privacy-class handling, cloud
+  escalation reasons, and refusal when no permitted route exists.
+- **Memory retrieval tests:** verify permission filters, Work Order binding,
+  expired/quarantined memory exclusion, and source waypoint fidelity.
+- **Autonomy-safety tests:** verify open-loop detection, background autonomy
+  triggers, risk thresholds, and user interruption rules.
+- **Rollback tests:** verify idempotency, compensation paths, rollback refs, and
+  no partial side effects after failure.
+- **Parser/ingestion tests:** verify parser identity, source hashes,
+  confidence flags, chunk boundaries, and `parser_basis` receipt coverage.
+
+Governance gates answer "was this allowed and reversible?" in addition to
+"did it work?" Standard observability metrics do not satisfy these gates by
+themselves.
+
 ## Trace replay harness
 
 Delegation evaluation uses trace replay rather than ad-hoc screenshots or

@@ -10,6 +10,10 @@ Each milestone must remain aligned with normative contracts in `blueprint/30-spe
 - Receipts v1 with chain verification and minimal disclosure defaults.
 - Egress gate path wired for mediated external calls only.
 - Smoke path proving "propose -> approve -> execute -> receipt."
+- Kernel contract path proving Work Order -> Done Contract -> capability token
+  -> policy decision -> sandbox class -> receipt tier.
+- Parser and memory-write receipts for governed Knowledge & Context
+  Engineering.
 
 ## Milestone v0.2 - Non-bypass and isolation proof
 
@@ -17,6 +21,13 @@ Each milestone must remain aligned with normative contracts in `blueprint/30-spe
 - Integration tests for direct egress denial outside the gate.
 - Budget and policy outcomes recorded in receipts for replayability.
 - Mixed-load harness that reports interactive vs background behavior.
+- Action-risk isolation matrix tests for reversible writes, code execution,
+  external side effects, and irreversible high-risk actions.
+- Background autonomy taxonomy fixtures for open-loop detection, memory
+  consolidation, periodic audits, model evaluation, policy drift checks, and
+  scheduled briefs.
+- Model provenance path covering ModelManifest, InstallReceipt, EvalReceipt,
+  and RollbackRef before model promotion.
 
 ## Milestone v0.3 - Safe extension and operations layer
 

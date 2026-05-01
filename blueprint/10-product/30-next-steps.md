@@ -18,6 +18,45 @@ more symmetric, and more interconnected without introducing dependency spaghetti
   - egress allowlist enforcement (deny by default)
 - Wire them into CI (fast gates on PRs).
 
+## 2a) Harden sovereign-operator contracts
+- Audit existing Work Order, Done Contract, receipt, CapabilityToken,
+  AutonomyCorridor, memory retrieval, and model-registry specs for one
+  end-to-end governed action path.
+- Ensure the path preserves:
+  - Work Order reference,
+  - Done Contract hash,
+  - capability token,
+  - policy decision,
+  - sandbox class,
+  - receipt tier,
+  - rollback reference where applicable.
+- Add trace fixtures for at least one reversible write and one hard-gated
+  external side effect.
+
+## 2b) Add background autonomy slices
+- Define fixtures for:
+  - open-loop detection,
+  - memory consolidation,
+  - periodic audit,
+  - model evaluation,
+  - policy drift check,
+  - scheduled brief.
+- Each fixture should declare trigger, budget, corridor, receipt expectation,
+  and interrupt rule.
+
+## 2c) Add parser and memory-class hardening
+- Add parser/ingestion fixtures with source hash, parser ID/version, chunk
+  boundaries, confidence flags, and expected `parser_basis`.
+- Add memory-class policy examples for `personal_private`, `project_shared`,
+  `relationship`, `model_system`, `ephemeral`, and `quarantine`.
+- Verify quarantine and expired memory are absent from normal retrieval.
+
+## 2d) Add model provenance pipeline slices
+- Add a model install fixture that produces a ModelManifest and InstallReceipt.
+- Add a model eval fixture that produces an EvalReceipt.
+- Add a rollback fixture that proves RollbackRef can restore the prior approved
+  bundle or quarantine a failed candidate.
+
 ## 3) Expand the OpenAPI surface + stubs
 - Add endpoints for:
   - receipts (list/get/verify)
