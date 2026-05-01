@@ -60,6 +60,26 @@ Each approved bundle MUST have a manifest with:
 The manifest MUST be hash-addressed. A runtime MUST reject undeclared or
 mutated bundle contents.
 
+Conceptual artifacts:
+
+- `ModelManifest`: the hash-addressed bundle manifest above. It is the local
+  statement of what was downloaded, where it came from, what hashes matched,
+  what license and provenance are known, and what task classes are allowed.
+- `InstallReceipt`: the mediated receipt emitted when a model bundle is added,
+  updated, quarantined, deleted, or made available to a runtime. It records
+  source, hashes, manifest hash, installer identity, sandbox/runtime target,
+  and policy result.
+- `EvalReceipt`: the mediated receipt emitted by an evaluation run. It records
+  bundle ID, manifest hash, eval pack, environment, dataset refs, result
+  summary, failure disclosures, and limits of inference.
+- `RollbackRef`: the stable reference to the prior approved bundle, policy
+  state, runtime config, and cache/index state needed to reverse a promotion or
+  quarantine a bad bundle.
+
+These names are governance concepts. They may be stored as receipt fields,
+manifest fields, or separate schema rows in a later version, but the logical
+chain MUST exist before a bundle is promoted inward.
+
 ## 3. Registry roles
 
 Goni distinguishes three roles:
@@ -144,6 +164,10 @@ Model execution receipts SHOULD include:
 Bundle promotion, rollback, deletion, and policy override are mediated actions
 and MUST emit receipts.
 
+Model hubs such as Hugging Face, ModelScope, or any other registry are
+discovery sources, not trust boundaries. Goni decides locally whether a model
+may run, access private memory, call tools, or operate in sensitive contexts.
+
 ## 8. Upstream
 
 - [LLM runtime](/blueprint/software/30-components/llm-runtime.md)
@@ -160,7 +184,8 @@ and MUST emit receipts.
 - Runtime rejects a bundle with a mismatched manifest hash.
 - Runtime rejects private-memory use when permission is `deny`.
 - Runtime rejects sensitive-memory use below the configured assurance floor.
-- Bundle promotion emits a receipt with bundle and manifest hashes.
+- Bundle installation emits an InstallReceipt with bundle and manifest hashes.
+- Bundle promotion emits an EvalReceipt reference and RollbackRef.
 - Route selection can explain why a bundle was eligible for the task class.
 - Local eval receipts state test environment, model hash, result summary, and
   limits of inference.

@@ -15,6 +15,24 @@ Receipts are a Goni-kernel primitive. Third-party gateways, tool hosts, or
 assistant frameworks may emit their own logs, but those logs do not substitute
 for a canonical Goni receipt.
 
+## Receipt tiers
+
+Receipt volume must not drown governance evidence. Goni therefore distinguishes
+receipt tier from ordinary telemetry:
+
+| Tier | Purpose | Examples | Retention posture |
+| --- | --- | --- | --- |
+| `governance` | Authority, approval, policy, or irreversible action evidence. | approvals, denied actions, external side effects, model promotion, policy override | durable, hash-chained |
+| `execution` | Normal mediated work evidence. | tool call, model route, memory read/write, parser-mediated ingestion | durable or compactable by policy |
+| `summary` | High-volume background or batch rollups. | index rebuild summary, scheduled audit summary, Daily Brief generation | durable summary with refs to sampled spans |
+| `telemetry` | Performance and health signals. | latency, queue depth, cache hit, thermal signal | metrics store; not a substitute for receipts |
+
+The receipt tier MUST be derivable from `action_type`, `task_class`, policy
+decision, risk class, and side-effect class. Governance-tier events may not be
+silently downgraded to telemetry. High-volume background events may use summary
+receipts if the summary preserves checked scope, inputs/outputs by hash, policy
+decision, sampled span refs, and failure counts.
+
 ## PROV-DM mapping
 - Entity: input/output artifacts
 - Activity: toolcall, redact, retrieve, write
@@ -84,6 +102,11 @@ The `delegation` object MUST expose stable delegation-engineering fields:
   decision. It must not store raw prompt or retrieved text.
 - `assurance_level`, `ml_bom_ref`, and `attestation_refs` record the local
   installation trust state when model bundle governance affects the route.
+- `receipt_tier` records the governance/execution/summary/telemetry tier used
+  for retention and review policy.
+- `parser_basis` records parser identity, source hash, structure kind,
+  confidence flags, chunk refs, and policy filters when parsing affected memory
+  or context.
 - `interaction_mode` records whether the turn was delegated execution or
   co-creation.
 - `work_order_id` references the canonical pre-execution Work Order.
@@ -142,6 +165,8 @@ The `delegation` object MUST expose stable delegation-engineering fields:
   when a mutating action is proposed or executed
 - third-party framework logs or audit events must not be accepted as the sole
   terminal record of a mediated effect
+- governance-tier events must not be downgraded to telemetry-only records
+- parser-mediated memory/context changes must preserve `parser_basis`
 
 
 

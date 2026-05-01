@@ -96,6 +96,23 @@ Arrow-first, v1.0 schemas for the canonical tables. Each table is `Spine + Paylo
   `embedding?: fixed_size_list<float32>[1536]`, `embedding_dim?: uint16`
 - Notes: `source_chunk_ids` values are UUIDv7 strings referencing `Chunks.chunk_id`; raw text is not stored here.
 
+Policy-level memory class aliases map onto the finite `memory_class` enum
+until a schema version adds first-class values:
+
+| Policy alias | Canonical class | Required policy meaning |
+| --- | --- | --- |
+| `personal_private` | `semantic` or `episodic` | Owner-private memory; remote use denied unless policy explicitly allows distilled context. |
+| `project_shared` | `project` | Project-scoped memory with explicit collaborators or workspace boundary. |
+| `relationship` | `relational` | Person/counterparty memory; higher sensitivity and citation discipline. |
+| `model_system` | `policy` or `procedural` | Model/runtime/system behavior memory; never user-personal by default. |
+| `ephemeral` | `episodic` | Short-lived working memory with expiry or session-bound TTL. |
+| `quarantine` | `policy` | Untrusted, conflicted, poisoned, or pending-review memory; excluded from normal retrieval. |
+
+Any memory write using one of these aliases must preserve owner, class,
+provenance, permission set, expiry policy, and receipt reference in
+`value`/`provenance` or by stable refs. The alias is policy data, not a reason
+to bypass the canonical schema.
+
 ## Plane ?? - Knowledge (latent state)
 
 ### StateSnapshots
