@@ -33,6 +33,19 @@ This aligns with reference-monitor requirements and design principles in
 classical OS security work [[anderson1972-reference-monitor]]
 [[saltzer1975-protection]].
 
+The trusted core is also the only authority layer. External agent frameworks,
+model gateways, runtimes, vector stores, UIs, voice systems, workflow engines,
+and hardware accelerators are replaceable substrates. They may perform work
+behind adapters, but they must not own canonical memory, identity, permissions,
+policy, approvals, receipts, or rollback state.
+
+Kernel modularity rule:
+- interfaces precede implementations,
+- substrate state is non-canonical unless promoted through Goni contracts,
+- remote routes require policy-approved and receipted egress,
+- each external layer must remain swappable,
+- promotion toward the core requires evidence and a rollback path.
+
 ## 3. Mechanisms (minimal viable set)
 
 ### 3.1 Mediation at tool syscall boundary
