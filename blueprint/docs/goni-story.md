@@ -102,7 +102,13 @@ Most "personal AI" tools are personal the way a form letter is personalised:
 - maybe remember a few preferences,
 - store some chat history.
 
-Goni's idea of **personal** is closer to an **AI doppelganger**: a piece of software that learns how you actually deal with your digital life, and starts doing the same.
+Goni's idea of **personal** is closer to a bounded digital representative: a
+piece of software that learns how you actually deal with your digital life, and
+starts handling the delegated parts inside rules you control.
+
+It is not a personality clone. It is a delegation model: enough preference,
+style, project, relationship, approval, and risk context to act competently
+within defined corridors, and to stop when a decision belongs to you.
 
 ### 3.1 One brain, many feeds
 
@@ -341,7 +347,7 @@ Goni isn't trying to run your life. It's trying to prevent future-you from being
 
 If you had to explain Goni to another tech person in one breath:
 
-> **Goni is your AI doppelganger in a box - a small home server running its own OS that ingests your email, calendar, files and finances, learns how you actually deal with them, and starts handling the boring parts for you, using local models for privacy, cloud models for brilliance, and a strict permission system so it never oversteps.**
+> **Goni is your AI representative in a box - a small home server running its own OS that ingests your email, calendar, files and finances, learns enough about how you handle digital life to take delegated work off your plate, using local models for privacy, cloud models only when worth the trade-off, and a strict permission system so it never oversteps.**
 
 Everything else - the Arrow spine, the control plane, the sudo layer - is how we make that sentence technically real, without turning your life into a DevOps project.
 

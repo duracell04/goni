@@ -8,6 +8,8 @@ language into governed execution. Normative behavior lives in
 
 ## 1. Why this doctrine exists
 
+Goni exists to absorb digital friction.
+
 Goni should not require the user to become a prompt engineer. The product
 should absorb prompt-work on the user's behalf:
 
@@ -20,6 +22,11 @@ should absorb prompt-work on the user's behalf:
 This doctrine explains the desired behavior before those ideas are expressed as
 kernel contracts.
 
+Goni is a delegation OS: a local sovereign system that reconstructs human
+intent, manages context, executes digital work, and escalates only when
+judgment, permission, or risk requires it. The stack beneath it is replaceable
+substrate; delegation is the product.
+
 The same rule applies to memory. Goni should not ask the user to decide whether
 something is a saved memory, project note, vector embedding, tag, folder, or
 reminder. The product-facing promise is that Goni turns personal memory into
@@ -31,6 +38,50 @@ to be better suited for personal AI memory because it treats memory as a
 local-first governed retrieval plane rather than a generic product feature.
 Evaluation must still prove task outcomes, retrieval quality, safety, and user
 benefit.
+
+## 1.5 Digital twin as bounded representative
+
+Digital twin does not mean personality clone. In Goni, the twin is a bounded
+representative of the principal in digital space.
+
+It knows enough about the principal to act competently within declared
+corridors:
+
+- preferences and writing style,
+- project context and reusable templates,
+- relationship intelligence,
+- approval history,
+- risk boundaries,
+- memory permissions,
+- recurring workflows,
+- and patterns for when to say: "I can do this, but this crosses a gate."
+
+The goal is not to simulate the human. The goal is to reduce the amount of
+direct interaction the human needs with computers, browsers, online services,
+documents, messages, and follow-up loops while preserving authority.
+
+Old pattern:
+
+```text
+human remembers -> human searches -> human prompts -> human chooses tool
+-> human copies context -> human checks output -> human follows up
+```
+
+Goni pattern:
+
+```text
+human expresses intent naturally
+-> Goni reconstructs goal and done
+-> retrieves governed context
+-> selects tools/models
+-> drafts or acts under corridor
+-> receipts what happened
+-> follows up on open loops
+```
+
+This is why Work Orders, Done Contracts, receipts, autonomy corridors, memory
+governance, routing, and open-loop detection are not bureaucracy. They are the
+mechanism that makes safe reduction of interaction possible.
 
 ## 2. Attention-Density Principle
 

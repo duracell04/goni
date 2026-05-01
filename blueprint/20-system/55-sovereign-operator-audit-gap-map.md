@@ -14,16 +14,59 @@ Core thesis:
 
 > The stack is not Goni. The governance layer is Goni.
 
+Product correction:
+
+> The stack makes Goni possible, but delegation is the product.
+
+Goni exists to absorb digital friction. It reduces direct human interaction
+with computers, the web, online services, documents, people, and tools by
+converting natural intent into governed digital action.
+
 Goni is a private, local, receipt-backed personal operator. Third-party tools
 may provide orchestration, inference, retrieval, user interfaces, voice,
 workflow automation, observability, model gateways, and hardware acceleration.
 They do not own authority.
+
+## 0. Delegation OS lens
+
+The audit should not be read as "build a well-governed AI infrastructure
+stack." The stack is substrate. Goni is a delegation OS: a local sovereign
+system that reconstructs human intent, manages context, executes digital work,
+and escalates only when judgment, permission, or risk requires it.
+
+The intended interaction shift is:
+
+```text
+human remembers -> human searches -> human prompts -> human chooses tool
+-> human copies context -> human checks output -> human follows up
+```
+
+to:
+
+```text
+human expresses intent naturally
+-> Goni reconstructs goal and done
+-> retrieves governed context
+-> selects tools/models
+-> drafts or acts under corridor
+-> receipts what happened
+-> follows up on open loops
+```
+
+The human keeps authority. Goni absorbs clerical work.
+
+Digital twin means bounded representative, not personality clone. Goni should
+know enough about the principal's preferences, style, projects, relationships,
+approval history, risk boundaries, memory permissions, and recurring workflows
+to act competently inside declared corridors and stop when a gate is crossed.
 
 ## 1. What the audit gets right
 
 - Goni must be defined by governance, not by a bundle of tools such as
   LangGraph, MCP, LiteLLM, Ollama, OpenClaw, Qdrant, Home Assistant, or any
   future substrate.
+- Governance exists to make delegation safe enough that the user can interact
+  less, not to make the stack elegant for its own sake.
 - Retrieval must become governed **Knowledge & Context Engineering**, not demo
   RAG (`chunk -> embed -> top-k -> generate`).
 - Model routing is a policy decision over privacy, evidence quality, latency,
@@ -36,6 +79,9 @@ They do not own authority.
 - Observability is insufficient without evaluation gates that answer whether a
   decision was allowed, reversible, properly routed, and supported by permitted
   memory.
+- Browser and online-service automation are not "chat with tools." They are a
+  permissioned interface to the web: inspect, compare, draft, fill only with
+  approval, track expected responses, keep evidence, and receipt outcomes.
 
 ## 2. What already exists
 
