@@ -104,6 +104,380 @@ Links:
 
 ## 3. Adjacent categories and examples
 
+### Source confidence legend
+
+Use this inventory as technology intelligence, not as an implementation
+commitment. Confidence labels mean:
+
+- `verified`: official project site, docs, repository, standards page, or
+  primary paper was found in this pass.
+- `needs verification`: likely real or widely referenced, but status,
+  maintenance, or scope needs a direct official check before use.
+- `stale/deprecated`: real project, but renamed, acquired, discontinued, or
+  superseded enough that it should not be treated as a fresh default.
+- `candidate/unverified`: named in ecosystem notes, but no reliable official
+  source was confirmed in this pass.
+
+### A) Runtime / model serving layer
+
+These are backends for `llm-runtime` or model routing. None replaces Goni's
+kernel, policy, receipt, or memory governance.
+
+| Project | Confidence | Goni relevance |
+| --- | --- | --- |
+| Ollama | `verified` | Simple local model runtime and model manager. |
+| llama.cpp / llama-server | `verified` | Low-level GGUF inference baseline and OpenAI-compatible local server path. |
+| LocalAI | `verified` | Local OpenAI-compatible API with broad backend and multimodal ambitions. |
+| LM Studio | `verified` | Desktop runtime plus OpenAI-compatible local server. |
+| Jan local server | `verified` | Local-first desktop app that can also expose local model serving. |
+| vLLM | `verified` | Production-grade GPU serving and batching path for stronger nodes. |
+| SGLang | `verified` | Serving/runtime layer for structured generation and high-throughput inference. |
+| TensorRT-LLM | `verified` | NVIDIA-optimized high-throughput serving path. |
+| TGI / Hugging Face Text Generation Inference | `verified` | Hugging Face production inference server, useful for GPU-backed deployments. |
+| Mistral.rs | `verified` | Rust inference engine candidate for local and server use. |
+| exo | `verified` | Everyday-device clustering and distributed local inference reference. |
+| BitNet | `needs verification` | 1-bit inference/model-family direction; evaluate by concrete runtime maturity. |
+| KTransformers | `verified` | Heterogeneous/MoE-optimized inference candidate, especially CPU+GPU mixes. |
+| Hugging Face Transformers | `verified` | Research and experimentation baseline, not usually the appliance serving layer. |
+| LMDeploy | `verified` | Efficient LLM deployment/serving framework candidate. |
+| JittorInfer | `needs verification` | China-origin inference candidate tied to Jittor/Ascend-style deployment notes. |
+| Xinference | `verified` | Model-serving platform that can wrap vLLM, SGLang, llama.cpp, MLX, and others. |
+| Xuanwu CLI / 玄武CLI | `needs verification` | Ollama-like domestic CLI/server candidate; confirm license and backend maturity. |
+
+Runtime conclusion for Goni:
+
+- Edge and consumer nodes should bias toward llama.cpp, Ollama-like UX,
+  MLX/Apple paths, or Xinference-style wrappers.
+- GPU servers should evaluate vLLM, SGLang, TGI, TensorRT-LLM, and LMDeploy.
+- Goni's model router should treat all of these as swappable runtime targets
+  behind policy, receipts, budgets, and local/cloud routing.
+
+### B) Self-hosted chat, RAG UI, and app layer
+
+These projects are useful surfaces for chat, document workflows, agent testing,
+or operator UX. They are not the governed control plane.
+
+| Project | Confidence | Goni relevance |
+| --- | --- | --- |
+| Open WebUI | `verified` | Popular self-hosted chat/RAG UI. |
+| AnythingLLM | `verified` | Private document AI, RAG, and agent workflows. |
+| LibreChat | `verified` | Self-hosted multi-provider chat platform with agents/MCP-style integrations. |
+| Jan | `verified` | Local-first desktop chat/runtime surface. |
+| Msty | `verified` | Desktop/local AI app and model/provider UX reference. |
+| Dify | `verified` | Visual workflow, RAG, and agent application platform. |
+| LobeChat | `verified` | Self-hostable chat UI with plugin/provider ecosystem. |
+| GPT4All | `verified` | Local desktop chat and model ecosystem. |
+| Chatbox AI | `verified` | Cross-platform chat client reference. |
+| BionicGPT | `verified` | Self-hosted private GPT/RAG deployment candidate. |
+| Khoj | `verified` | Personal second-brain assistant with local/private knowledge workflows. |
+| PrivateGPT | `verified` | Private document RAG reference implementation/product. |
+| Chatbot UI | `verified` | Lightweight self-hostable chat UI base. |
+| uni-ai-x | `needs verification` | DCloud cross-platform AI chat candidate; confirm license and server model. |
+| AIChatWeb | `candidate/unverified` | Chinese enhanced ChatGPT-Next-Web-style commercial self-hosting candidate. |
+| Alibaba ChatUI | `verified` | Frontend conversational UI component library, not a full operator. |
+
+UI conclusion for Goni:
+
+- AnythingLLM, Open WebUI, LibreChat, Jan, Dify, and Khoj are strong references
+  for user workflows.
+- Goni should keep the UI thin: channel and dashboard surfaces can be swapped,
+  but action authority stays behind the Goni kernel.
+
+### C) Agent gateway, operator, and orchestration layer
+
+This layer is where tool use, channels, memory, planning, workflows, and
+multi-agent behavior get confused. Goni should separate them:
+
+- channel gateway: user reachability and sessions,
+- reasoning/orchestration: state machine and tool loop,
+- kernel: authority, mediation, receipts, policy, and rollback.
+
+| Project | Confidence | Goni relevance |
+| --- | --- | --- |
+| OpenClaw | `verified` | Agent/channel gateway reference for messaging, sessions, tools, and routing. |
+| Jan Agents / OpenClaw integration | `needs verification` | Possible bridge between Jan UX and OpenClaw-style local agents. |
+| OpenDAN | `verified` | Personal AI OS concept and comparison point. |
+| LibreChat agents | `verified` | Agent features inside a self-hosted chat platform. |
+| n8n + LLM tools | `verified` | Workflow automation and integration graph around LLM calls. |
+| LangGraph | `verified` | Stateful graph orchestration, checkpointing, and human-in-the-loop design. |
+| CrewAI | `verified` | Role/crew-based agent orchestration; useful for rapid prototypes. |
+| AutoGen / AG2 | `verified` | Conversational multi-agent framework lineage. |
+| Flowise | `verified` | Visual LLM workflow builder. |
+| LangFlow | `verified` | Visual LangChain-style workflow builder. |
+| Dify workflows | `verified` | Visual app/workflow layer, also listed in UI because it spans layers. |
+| Superagent | `needs verification` | Agent platform candidate; verify current maintenance and deployment model. |
+| OpenDevin | `stale/deprecated` | Coding agent lineage; check current project name/status before adoption. |
+| Eigent | `needs verification` | Multi-agent/operator candidate; verify current official source and maturity. |
+| Hermes Agent | `needs verification` | Server/structured agent candidate; verify official project identity. |
+| NanoClaw | `needs verification` | Security-focused OpenClaw-adjacent candidate; verify exact repo and scope. |
+| NemoClaw | `candidate/unverified` | Named security-focused variant; no reliable official source confirmed here. |
+| memU | `needs verification` | Memory-heavy agent candidate; verify official source and data model. |
+| Open Interpreter | `verified` | Local code/computer-use execution shell; high-risk without mediation. |
+| Aiden | `candidate/unverified` | Personal AI OS/assistant candidate; ambiguous name, needs disambiguation. |
+| CoPaw / QwenPaw | `needs verification` | Alibaba/Tongyi-style personal agent workstation candidate; naming changed in checked source. |
+| LobsterAI / 有道龙虾 | `verified` | NetEase Youdao personal assistant agent with channel and local/sandbox execution notes. |
+| MaxClaw | `candidate/unverified` | MiniMax/OpenClaw-adjacent candidate; no official source confirmed here. |
+| WorkBuddy | `candidate/unverified` | Tencent-style OpenClaw-compatible candidate; no official source confirmed here. |
+| AutoClaw | `needs verification` | Zhipu/OpenClaw installer candidate; verify official ownership and distribution source. |
+
+Agent-layer conclusion for Goni:
+
+- OpenClaw-like systems can be gateways, not foundations.
+- LangGraph-like systems are closer to the reasoning/state-machine layer.
+- n8n, Dify, Flowise, and LangFlow are useful workflow surfaces.
+- Goni's distinctive layer is the governed kernel above all of them:
+  capability-checked tool execution, receipts, rollback, and autonomy corridors.
+
+### D) Tool protocol and execution layer
+
+| Project / protocol | Confidence | Goni relevance |
+| --- | --- | --- |
+| MCP servers / Model Context Protocol | `verified` | Open protocol for connecting AI apps to tools, data sources, and workflows. |
+| Composio | `verified` | Large integration catalog for agent tools; supplier/adapter candidate. |
+| E2B | `verified` | Sandboxed code execution for agents. |
+| Daytona | `verified` | Development/workspace sandbox candidate. |
+| browser-use | `verified` | Browser automation agent framework. |
+| Stagehand | `verified` | Browser automation library using Playwright-style primitives. |
+| Anthropic Computer Use | `verified` | Computer-use reference behavior/model interface, not a local governance layer. |
+| Playwright | `verified` | Deterministic browser automation substrate. |
+| Google A2A / Google ADK | `verified` | Agent-to-agent protocol/devkit direction; complement to MCP, not a replacement. |
+
+Goni implication:
+
+- MCP and A2A are interoperability surfaces.
+- E2B, Daytona, Playwright, browser-use, and Stagehand are execution surfaces.
+- Goni still needs non-bypassable mediation before any tool or browser action.
+
+### E) Memory, RAG, state, and knowledge layer
+
+| Project | Confidence | Goni relevance |
+| --- | --- | --- |
+| mem0 | `verified` | Agent memory layer candidate. |
+| Zep | `verified` | Long-term conversational memory/state service. |
+| Chroma / ChromaDB | `verified` | Local vector store candidate. |
+| Qdrant | `verified` | Current prototype-aligned vector DB candidate. |
+| Milvus | `verified` | Scalable vector DB candidate. |
+| Weaviate | `verified` | Vector DB and hybrid retrieval candidate. |
+| pgvector | `verified` | Postgres vector extension path. |
+| Redis | `verified` | Cache/state/checkpoint substrate. |
+| Neon | `verified` | Serverless Postgres supplier candidate; more cloud than local-first. |
+| LlamaIndex | `verified` | RAG and agentic retrieval framework. |
+| RAGFlow | `verified` | Document understanding and RAG application framework. |
+| Unstructured | `verified` | Document parsing and ingestion pipeline. |
+| Docling | `verified` | Document conversion/parsing pipeline. |
+| Marker | `verified` | PDF/document-to-Markdown extraction candidate. |
+| Neo4j | `verified` | Graph database for knowledge graph / GraphRAG experiments. |
+| Kuzu | `verified` | Embedded graph database candidate. |
+| Marqo | `verified` | Vector search platform candidate. |
+| LanceDB | `verified` | Embedded/vector data lake candidate. |
+| Obsidian AI/plugin patterns | `needs verification` | Personal knowledge integration pattern, not one stable upstream component. |
+
+Goni implication:
+
+- VecDB is only one piece of memory.
+- Durable state, checkpoints, selective forgetting, graph memory, and provenance
+  must remain under Goni governance even when external stores are used.
+
+### F) Observability, evaluation, and model gateway/router layer
+
+| Project | Confidence | Goni relevance |
+| --- | --- | --- |
+| LiteLLM | `verified` | Model-agnostic proxy/router across local and cloud providers. |
+| Portkey | `verified` | AI gateway, routing, guardrail, and observability candidate. |
+| Helicone | `verified` | LLM observability and gateway candidate. |
+| Langfuse | `verified` | Open-source LLM tracing, prompt, eval, and cost observability. |
+| AgentOps | `verified` | Agent-specific observability candidate. |
+| LangSmith | `verified` | LangChain ecosystem tracing/evals platform. |
+| Arize Phoenix | `verified` | Open-source observability/evaluation stack. |
+| Bench360 | `needs verification` | Academic benchmark candidate for local inference comparisons. |
+| PASB | `candidate/unverified` | Personalized Agent Security Benchmark claim needs primary source check. |
+| OpenClaw-RL | `candidate/unverified` | RL personalization extension claim needs primary source check. |
+
+Goni implication:
+
+- Receipts are not the same as observability traces; Goni should support both.
+- Routers like LiteLLM are useful plumbing, but the policy decision remains in
+  Goni's control plane.
+
+### G) Smart-home, local voice, realtime voice, and multimodal layer
+
+| Project | Confidence | Goni relevance |
+| --- | --- | --- |
+| Home Assistant / Nabu Casa | `verified` | Smart-home integration baseline and practical voice/home ecosystem. |
+| Home Assistant Voice Assist | `verified` | Native HA voice path. |
+| Rhasspy | `stale/deprecated` | Offline voice assistant lineage; much of the practical path moved into HA/Wyoming. |
+| OpenVoiceOS | `verified` | Privacy-oriented open voice platform. |
+| Willow | `verified` | ESP32-S3/local voice hardware path. |
+| Wyoming | `verified` | Protocol/integration layer for STT/TTS/wake-word services. |
+| Whisper / Faster Whisper | `verified` | Local speech-to-text candidates. |
+| Piper / Piper TTS | `verified` | Local text-to-speech candidate. |
+| openWakeWord | `verified` | Local wake-word detection candidate. |
+| LiveKit | `verified` | Realtime voice/video agent infrastructure. |
+| Pipecat | `verified` | Realtime conversational AI/voice agent framework. |
+| Daily | `verified` | Realtime voice/video infrastructure supplier. |
+| ESPHome / ESP32 voice satellites | `verified` | Low-cost local voice satellite hardware path. |
+| Linux Voice Assistant | `needs verification` | Possible Wyoming/HA-adjacent voice satellite lineage; verify exact project. |
+| Leon | `verified` | Open-source personal assistant reference. |
+| Home Guardian | `needs verification` | Academic/offline smart-home voice prototype; verify primary source before relying. |
+| Mycroft AI | `stale/deprecated` | Important voice-assistant lineage; OpenVoiceOS is the more current path. |
+| Snips | `stale/deprecated` | France-origin privacy voice lineage; acquired/legacy status. |
+| Mingyuyue | `candidate/unverified` | Chinese modular voice framework claim needs official source check. |
+| wukong-robot | `verified` | Chinese voice assistant/smart speaker project with HA/MQTT relevance. |
+
+Goni implication:
+
+- Home Assistant is the practical smart-home substrate.
+- Wyoming, Piper, Whisper/Faster Whisper, and openWakeWord are the modular
+  local voice stack.
+- LiveKit/Pipecat are separate realtime-agent infrastructure and should not be
+  collapsed into smart-home automation.
+
+### H) Hardware, edge, and deployment substrate
+
+| Project / platform | Confidence | Goni relevance |
+| --- | --- | --- |
+| NVIDIA CUDA / TensorRT | `verified` | GPU acceleration and production throughput path. |
+| Apple Silicon / MLX | `verified` | Local Apple-device inference path and edge development reference. |
+| Intel NUC | `verified` | Small-form-factor node class. |
+| Beelink | `verified` | Mini-PC node class. |
+| Coral TPU | `verified` | Edge accelerator path for small models/signals. |
+| ESP32-S3 | `verified` | Voice satellite microcontroller class. |
+| Off Grid-style phone stacks | `candidate/unverified` | Phone-local AI pattern; needs concrete project/source before use. |
+| exo clustering | `verified` | Home/edge device clustering reference, also listed under runtime. |
+
+Hardware conclusion:
+
+- The physical substrate determines which runtime candidates are realistic.
+- vLLM/SGLang/TensorRT-LLM are GPU-server oriented.
+- llama.cpp, MLX, Ollama-like UX, and Xinference-style wrappers are more
+  plausible on edge, APU, CPU, or desktop-class nodes.
+
+### Selected official source anchors
+
+This list is intentionally biased toward official sites, official docs,
+official repositories, standards pages, or primary papers. It is not an
+endorsement list.
+
+Runtime/model serving:
+
+- Ollama: https://github.com/ollama/ollama
+- llama.cpp: https://github.com/ggml-org/llama.cpp
+- LocalAI: https://localai.io/
+- LM Studio: https://lmstudio.ai/
+- Jan: https://jan.ai/
+- vLLM: https://docs.vllm.ai/
+- SGLang: https://docs.sglang.ai/
+- TensorRT-LLM: https://github.com/NVIDIA/TensorRT-LLM
+- Hugging Face TGI: https://github.com/huggingface/text-generation-inference
+- Mistral.rs: https://github.com/EricLBuehler/mistral.rs
+- exo: https://github.com/exo-explore/exo
+- KTransformers: https://github.com/kvcache-ai/ktransformers
+- Hugging Face Transformers: https://github.com/huggingface/transformers
+- LMDeploy: https://github.com/InternLM/lmdeploy
+- Xinference: https://github.com/xorbitsai/inference
+- Xuanwu CLI / 玄武CLI: https://xw.tsingmao.com/cli-reference
+
+UI/application:
+
+- Open WebUI: https://github.com/open-webui/open-webui
+- AnythingLLM: https://anythingllm.com/
+- LibreChat: https://github.com/danny-avila/LibreChat
+- Msty: https://msty.app/
+- Dify: https://github.com/langgenius/dify
+- LobeChat: https://github.com/lobehub/lobe-chat
+- GPT4All: https://github.com/nomic-ai/gpt4all
+- Chatbox AI: https://github.com/chatboxai/chatbox
+- BionicGPT: https://github.com/bionic-gpt/bionic-gpt
+- Khoj: https://github.com/khoj-ai/khoj
+- PrivateGPT: https://github.com/zylon-ai/private-gpt
+- Chatbot UI: https://github.com/mckaywrigley/chatbot-ui
+- Alibaba ChatUI: https://github.com/alibaba/ChatUI
+
+Agent/workflow/tooling:
+
+- OpenClaw docs: https://docs.openclaw.ai/
+- OpenDAN: https://github.com/OpenDAN-Personal-AI-OS/OpenDAN
+- n8n: https://github.com/n8n-io/n8n
+- LangGraph: https://github.com/langchain-ai/langgraph
+- CrewAI: https://github.com/crewAIInc/crewAI
+- AutoGen: https://github.com/microsoft/autogen
+- AG2: https://github.com/ag2ai/ag2
+- Flowise: https://github.com/FlowiseAI/Flowise
+- LangFlow: https://github.com/langflow-ai/langflow
+- Open Interpreter: https://github.com/openinterpreter/open-interpreter
+- LobsterAI: https://github.com/netease-youdao/lobsterai
+- MCP: https://modelcontextprotocol.io/
+- MCP organization: https://github.com/modelcontextprotocol
+- Composio: https://github.com/ComposioHQ/composio
+- E2B: https://e2b.dev/
+- Daytona: https://www.daytona.io/
+- browser-use: https://github.com/browser-use/browser-use
+- Stagehand: https://github.com/browserbase/stagehand
+- Playwright: https://playwright.dev/
+- Google A2A: https://github.com/google-a2a/A2A
+- Google ADK: https://github.com/google/adk-python
+
+Memory/RAG/observability/router:
+
+- mem0: https://github.com/mem0ai/mem0
+- Zep: https://github.com/getzep/zep
+- Chroma: https://github.com/chroma-core/chroma
+- Qdrant: https://github.com/qdrant/qdrant
+- Milvus: https://github.com/milvus-io/milvus
+- Weaviate: https://github.com/weaviate/weaviate
+- pgvector: https://github.com/pgvector/pgvector
+- Redis: https://github.com/redis/redis
+- Neon: https://neon.com/
+- LlamaIndex: https://github.com/run-llama/llama_index
+- RAGFlow: https://github.com/infiniflow/ragflow
+- Unstructured: https://github.com/Unstructured-IO/unstructured
+- Docling: https://github.com/docling-project/docling
+- Marker: https://github.com/datalab-to/marker
+- Neo4j: https://neo4j.com/
+- Kuzu: https://github.com/kuzudb/kuzu
+- Marqo: https://github.com/marqo-ai/marqo
+- LanceDB: https://github.com/lancedb/lancedb
+- LiteLLM: https://github.com/BerriAI/litellm
+- Portkey: https://github.com/Portkey-AI/gateway
+- Helicone: https://github.com/Helicone/helicone
+- Langfuse: https://github.com/langfuse/langfuse
+- AgentOps: https://github.com/AgentOps-AI/agentops
+- LangSmith: https://www.langchain.com/langsmith
+- Arize Phoenix: https://github.com/Arize-ai/phoenix
+
+Voice/home/hardware:
+
+- Home Assistant: https://www.home-assistant.io/
+- Nabu Casa: https://www.nabucasa.com/
+- Home Assistant Voice: https://www.home-assistant.io/voice_control/
+- Rhasspy: https://rhasspy.readthedocs.io/
+- OpenVoiceOS: https://openvoiceos.org/
+- Willow: https://heywillow.io/
+- Wyoming: https://github.com/rhasspy/wyoming
+- Whisper: https://github.com/openai/whisper
+- Faster Whisper: https://github.com/SYSTRAN/faster-whisper
+- Piper: https://github.com/rhasspy/piper
+- openWakeWord: https://github.com/dscripka/openWakeWord
+- LiveKit: https://github.com/livekit/livekit
+- Pipecat: https://github.com/pipecat-ai/pipecat
+- Daily: https://www.daily.co/
+- ESPHome: https://esphome.io/
+- Leon: https://github.com/leon-ai/leon
+- Mycroft AI: https://github.com/MycroftAI/mycroft-core
+- Snips legacy: https://github.com/snipsco
+- wukong-robot: https://github.com/wzpan/wukong-robot
+- NVIDIA CUDA: https://developer.nvidia.com/cuda-zone
+- NVIDIA TensorRT: https://developer.nvidia.com/tensorrt
+- Apple MLX: https://github.com/ml-explore/mlx
+- Intel NUC: https://www.intel.com/content/www/us/en/products/details/nuc.html
+- Beelink: https://www.bee-link.com/
+- Coral TPU: https://coral.ai/
+- ESP32-S3: https://www.espressif.com/en/products/socs/esp32-s3
+
+---
+
+## 4. Original adjacent categories and examples
+
 ### A) Local AI apps (UX-first)
 
 - Jan: https://jan.ai/
@@ -158,7 +532,7 @@ What to avoid:
 
 ---
 
-## 4. Personal/local AI OS candidates (OS framing)
+## 5. Personal/local AI OS candidates (OS framing)
 
 Closest to "real OS" (installable system or explicit OS substrate):
 
@@ -176,7 +550,7 @@ OS-like framing, but not local-first:
 
 ---
 
-## 5. Local-first shift: hardware and economics signals
+## 6. Local-first shift: hardware and economics signals
 
 Key drivers (system-level, not vendor-specific):
 
@@ -193,7 +567,7 @@ Vendor spec anchors (illustrative, not requirements):
 
 ---
 
-## 6. Productivity + proactivity backbone (primary sources only)
+## 7. Productivity + proactivity backbone (primary sources only)
 
 Status-honest note: this section defines design contracts and justification.
 It does not claim implementation unless separately evidenced by tests or
@@ -356,7 +730,7 @@ Goni mapping (normative):
 
 ---
 
-## 7. Operational Readiness and Adoption
+## 8. Operational Readiness and Adoption
 
 ### 7.1 What researchers would research
 
