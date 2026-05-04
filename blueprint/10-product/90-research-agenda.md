@@ -573,3 +573,83 @@ Evidence artifacts to produce:
 - A recursion-budget safety report.
 - A promotion memo stating whether the lane should remain research-only or
   advance toward a normative contract.
+
+18) Relational Communication Engine (research lane, not kernel replacement)
+
+Purpose:
+- Define a research lane for communication quality as governed generation:
+  relational state, Done Contracts, decoding controls, uncertainty signals,
+  authenticity evaluation, approval corridors, and receipts cooperate without
+  outsourcing care.
+
+Human principle:
+- AI does not replace your relationships. It remembers what your attention
+  cannot.
+- Goni communication support is augmented attentiveness, not simulated
+  intimacy: it externalizes memory, timing, and context so the human can care
+  more reliably.
+- The Relational Communication Engine may improve drafts, ambiguity detection,
+  and relational timing, but it must never decide meaning, care, or sincerity
+  on behalf of the principal.
+
+Research stance:
+- The Goni kernel remains authoritative. Work Orders, Done Contracts, memory
+  governance, approval corridors, receipts, rollback, and policy own the
+  decision boundary.
+- Relational state vectors, logit shaping, activation steering, token entropy,
+  authenticity scoring, and persona-conditioned evaluation are optional
+  substrate mechanisms behind adapters.
+- Entropy and authenticity scores are review and evaluation signals, not proof
+  of social certainty, sincerity, or psychological truth.
+
+Research questions (academically framed):
+- Can a Relational State Vector improve continuity, timing, and tone selection
+  without pretending that warmth, trust, or formality are objective latent axes?
+- Which Done Contract fields are useful as communication objectives: urgency,
+  apology, appreciation, boundary, closure, continuity, or repair?
+- Where do decoding controls help: forbidden phrases, local lexical style,
+  channel constraints, or sequence-level relational signal?
+- When do entropy spikes identify meaningful ambiguity rather than harmless
+  stylistic variation?
+- Can contrastive authenticity scoring reduce generic drafts without rewarding
+  exaggerated style mimicry or performative intimacy?
+
+Strategies to compare:
+- Prompt-only relational drafting baseline.
+- Relationship-memory plus Done Contract baseline.
+- Decoding-control baseline for lexical and channel constraints.
+- Post-generation evaluation baseline for ambiguity and authenticity.
+- Hybrid governed communication baseline combining memory, contract,
+  constrained generation, evaluation, approval, and receipt.
+
+Core evaluation fixtures:
+- Friendly follow-up for a social open loop.
+- Apology or repair message after a missed commitment.
+- Boundary-setting message where warmth and firmness both matter.
+- Appreciation or congratulations message grounded in relationship context.
+- Sensitive message that should be hard-gated rather than drafted freely.
+
+Metrics to report:
+- Human approval rate and edit distance.
+- Clarification and gate-trigger precision.
+- Relationship-context provenance coverage.
+- Ambiguity flag usefulness.
+- Authenticity score calibration against user edits and approvals.
+- Genericness, overfitting, and exaggerated-persona failure rates.
+- Receipt completeness for assumptions, memory basis, model route, and gate
+  outcome.
+
+Failure modes to score explicitly:
+- Treats constructed relationship variables as objective psychology.
+- Uses token entropy as a proxy for social uncertainty without other evidence.
+- Enforces tone through token penalties while missing discourse-level signal.
+- Rewards style mimicry over principal intent.
+- Drafts sensitive outbound communication outside the required approval
+  corridor.
+
+Evidence artifacts to produce:
+- A relational drafting comparison report.
+- An ambiguity and authenticity calibration report.
+- A communication-receipt sample pack with raw content redacted by default.
+- A promotion memo stating whether this lane should remain research-only or
+  advance toward a normative communication contract.
