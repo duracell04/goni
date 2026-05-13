@@ -11,6 +11,7 @@
 - pricing/pay-per-execution.md
 - suppliers/
 - suppliers/README.md
+- suppliers/first-party-llm-chats.md
 - suppliers/ollama-cloud.md
 - suppliers/models-mistral.md
 - suppliers/models-openai.md
