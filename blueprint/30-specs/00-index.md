@@ -12,6 +12,7 @@ This is the catalog of normative contracts in blueprint/30-specs.
 ## Specs
 - [Agent definition](/blueprint/30-specs/agent-definition.md) (AGENT-DEF-01)
 - [Agent manifest](/blueprint/30-specs/agent-manifest.md) (AGENT-MANIFEST-01)
+- [Correction Delta Compiler](/blueprint/30-specs/correction-delta-compiler.md) (CDC-01)
 - [Delegation interface](/blueprint/30-specs/delegation-interface.md) (DELEG-INT-01)
 - [Delegation and autonomy](/blueprint/30-specs/delegation-and-autonomy.md) (DELEG-01)
 - [Agent store governance](/blueprint/30-specs/agents/agent-store.md) (AGENT-STORE-01)
