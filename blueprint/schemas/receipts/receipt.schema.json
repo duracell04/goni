@@ -313,6 +313,64 @@
                                                              },
                                               "additionalProperties":  true
                                           },
+                       "visual_basis":  {
+                                            "type":  "object",
+                                            "properties":  {
+                                                               "source_asset_hashes":  {
+                                                                                           "type":  "array",
+                                                                                           "items":  {
+                                                                                                         "type":  "string"
+                                                                                                     }
+                                                                                       },
+                                                               "source_asset_refs":  {
+                                                                                         "type":  "array",
+                                                                                         "items":  {
+                                                                                                       "type":  "string"
+                                                                                                   }
+                                                                                     },
+                                                               "model_bundle_id":  {
+                                                                                       "type":  "string"
+                                                                                   },
+                                                               "manifest_hash":  {
+                                                                                     "type":  "string"
+                                                                                 },
+                                                               "workflow_hash":  {
+                                                                                     "type":  "string"
+                                                                                 },
+                                                               "prompt_summary":  {
+                                                                                     "type":  "string"
+                                                                                   },
+                                                               "mask_refs":  {
+                                                                                "type":  "array",
+                                                                                "items":  {
+                                                                                              "type":  "string"
+                                                                                          }
+                                                                            },
+                                                               "control_refs":  {
+                                                                                   "type":  "array",
+                                                                                   "items":  {
+                                                                                                 "type":  "string"
+                                                                                             }
+                                                                               },
+                                                               "transformations":  {
+                                                                                       "type":  "array",
+                                                                                       "items":  {
+                                                                                                     "type":  "string"
+                                                                                                 }
+                                                                                   },
+                                                               "verification":  {
+                                                                                   "type":  "object",
+                                                                                   "additionalProperties":  true
+                                                                               },
+                                                               "output_hash":  {
+                                                                                  "type":  "string"
+                                                                              },
+                                                               "rollback_ref":  {
+                                                                                   "type":  "string"
+                                                                               }
+                                                           },
+                                            "additionalProperties":  true
+                                        },
                        "execution_id":  {
                                             "type":  "string"
                                         },
