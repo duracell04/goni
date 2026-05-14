@@ -34,6 +34,7 @@ This is the catalog of normative contracts in blueprint/30-specs.
 - [Symbolic substrate](/blueprint/30-specs/symbolic-substrate.md) (SS-01)
 - [Sync policies](/blueprint/30-specs/sync-policies.md) (SYNC-01)
 - [Tool capability API](/blueprint/30-specs/tool-capability-api.md) (TOOL-01)
+- [Visual Intelligence Plane](/blueprint/30-specs/visual-intelligence-plane.md) (VIS-01)
 
 ## Related hubs
 - [Contracts hub](/blueprint/docs/hubs/contracts.md)
