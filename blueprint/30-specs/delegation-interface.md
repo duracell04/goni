@@ -140,6 +140,24 @@ For `audit_grade` work, the preview SHOULD also expose:
 The preview is derived from the Work Order and policy state. It must not rely
 on UI-only shadow state.
 
+### 2.8 Visual task classes
+
+VIS-01 defines governed visual task classes that use the same WorkOrder and
+DoneContract objects:
+
+- `visual.logo_refinement`
+- `visual.image_edit`
+- `visual.design_board`
+- `visual.diagram`
+- `visual.screenshot_audit`
+- `visual.product_visual`
+- `visual.evidence_annotation`
+
+Visual task classes MUST carry source asset refs, asset permission class,
+visual constraints, output target, and verification requirements through the
+Work Order. They MUST NOT store raw private screenshots, raw image binaries, or
+unbounded OCR text in Control-plane fields.
+
 ## 3. Pre-execution pipeline
 
 Before any mutating tool proposal, externally visible action, or audit-grade
@@ -291,6 +309,7 @@ Unless stricter policy overrides them, the runtime defaults are:
 - [Scheduler and interrupts](/blueprint/30-specs/scheduler-and-interrupts.md)
 - [Tool capability API](/blueprint/30-specs/tool-capability-api.md)
 - [Receipts](/blueprint/30-specs/receipts.md)
+- [Visual Intelligence Plane](/blueprint/30-specs/visual-intelligence-plane.md)
 
 ## 9. Upstream
 
@@ -325,3 +344,6 @@ Unless stricter policy overrides them, the runtime defaults are:
   Work Order proves adequate coverage
 - sticky audit mode must persist across follow-up turns unless reset or a clear
   unrelated task boundary is surfaced
+- visual task classes must preserve source asset refs, permission class,
+  output target, verification requirements, and no raw private image content in
+  Control-plane fields
