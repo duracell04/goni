@@ -33,6 +33,15 @@ silently downgraded to telemetry. High-volume background events may use summary
 receipts if the summary preserves checked scope, inputs/outputs by hash, policy
 decision, sampled span refs, and failure counts.
 
+Learning receipts produced by the Correction Delta Compiler follow the same
+tier rules. A proposed low-risk hypothesis MAY use an execution-tier receipt. An
+accepted, rejected, promoted, high-risk, constitutional, or policy-affecting
+learning update MUST use a governance-tier receipt. Learning receipts MUST
+record source refs, detected delta summary, proposed rule, scope, confidence,
+evidence count, contradiction count, review status, memory diff refs, and
+regression test refs without storing raw draft or user-correction text by
+default.
+
 ## PROV-DM mapping
 - Entity: input/output artifacts
 - Activity: toolcall, redact, retrieve, write
@@ -107,6 +116,12 @@ The `delegation` object MUST expose stable delegation-engineering fields:
 - `parser_basis` records parser identity, source hash, structure kind,
   confidence flags, chunk refs, and policy filters when parsing affected memory
   or context.
+- `learning_basis` records Correction Delta Compiler outputs when correction
+  deltas affect memory, retrieval, prompt assembly, harness policy, or
+  promotion datasets. It captures detected delta class, proposed rule ref,
+  scope, confidence, evidence and contradiction counts, review status,
+  regression refs, source refs, and policy hash. It must not store raw draft or
+  correction text by default.
 - `interaction_mode` records whether the turn was delegated execution or
   co-creation.
 - `work_order_id` references the canonical pre-execution Work Order.
@@ -167,6 +182,8 @@ The `delegation` object MUST expose stable delegation-engineering fields:
   terminal record of a mediated effect
 - governance-tier events must not be downgraded to telemetry-only records
 - parser-mediated memory/context changes must preserve `parser_basis`
+- correction-derived learning changes must preserve `learning_basis`
+  sufficient to audit the update without raw content
 
 
 
