@@ -49,9 +49,20 @@ Each approved bundle MUST have a manifest with:
 - quantization or precision
 - runtime compatibility (`llama.cpp`, `Ollama`, `vLLM`, `SGLang`, or other)
 - approved task classes
+- modality (`text | audio | image | video | multimodal`)
+- visual capabilities when modality includes image or video (`generate`,
+  `inpaint`, `outpaint`, `mask`, `segment`, `detect`, `ocr`, `layout`,
+  `typography`, `style_transfer`, `upscale`, `embed`, `visual_qa`)
+- visual workflow runtime when applicable (`diffusers`, `ComfyUI`, dedicated
+  runtime, or other)
+- visual allowed asset classes (`public_reference`, `project_owned`,
+  `private_screenshot`, `person_identifying`, `brand_sensitive`,
+  `legal_evidence`)
 - private-memory permission (`deny | distilled_only | allowed_by_policy`)
+- license state (`commercial_ok | noncommercial | research_only | unknown`)
 - assurance level (`L0 | L1 | L2 | L3 | L4`)
 - eval receipt refs
+- local eval receipt refs when bundle eligibility depends on local visual evals
 - attestation refs
 - policy hash
 - policy pack refs
@@ -122,6 +133,8 @@ Before a bundle may process private memory, policy MUST check:
 - assurance level,
 - eval receipt coverage for the requested task class,
 - private-memory permission,
+- visual capability coverage and allowed asset class when the task is visual,
+- visual workflow runtime provenance when a node graph or pipeline is used,
 - network and retention policy for the runtime destination,
 - policy pack provenance and override rules.
 
@@ -168,11 +181,23 @@ Model hubs such as Hugging Face, ModelScope, or any other registry are
 discovery sources, not trust boundaries. Goni decides locally whether a model
 may run, access private memory, call tools, or operate in sensitive contexts.
 
+Visual model execution receipts SHOULD also include `modality`,
+`visual_capabilities`, `workflow_runtime`, `allowed_asset_classes`, and local
+visual eval receipt refs when those fields affected eligibility. See VIS-01 for
+the visual receipt extension.
+
+Visual bundle metadata is grounded in primary substrate references rather than
+brand shorthand: FLUX license/state differences [[bfl-flux-repo]],
+Qwen-Image text/editing capability direction [[qwen-image-2-2026]], and
+ComfyUI-style workflow runtime provenance [[comfyui-repo]].
+
 ## 8. Upstream
 
 - [LLM runtime](/blueprint/software/30-components/llm-runtime.md)
+- [Visual runtime](/blueprint/software/30-components/visual-runtime.md)
 - [Tool capability API](/blueprint/30-specs/tool-capability-api.md)
 - [Receipts](/blueprint/30-specs/receipts.md)
+- [Visual Intelligence Plane](/blueprint/30-specs/visual-intelligence-plane.md)
 
 ## 9. Downstream
 
@@ -189,3 +214,6 @@ may run, access private memory, call tools, or operate in sensitive contexts.
 - Route selection can explain why a bundle was eligible for the task class.
 - Local eval receipts state test environment, model hash, result summary, and
   limits of inference.
+- Visual routes reject bundles without required visual capabilities, allowed
+  asset class, license state, workflow runtime provenance, and visual eval
+  coverage for the requested task class.
