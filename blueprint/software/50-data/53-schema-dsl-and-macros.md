@@ -439,6 +439,7 @@ must preserve the same delegation fields as the receipt JSON schema and the
 receipts spec: `interaction_mode`, `work_order_id`, `done_contract_hash`,
 `clarification_decision`, `objective_option_count`, surfaced assumptions,
 uncertainty level, question strategy, tool intent, delegation outcome, and
-`undo_strategy_ref`. It must also preserve governed memory fields:
-`memory_read_refs`, `memory_diff_refs`, and `retrieval_basis`.
+`undo_strategy_ref`. It must also preserve governed memory and learning fields:
+`memory_read_refs`, `memory_diff_refs`, `retrieval_basis`, and
+`learning_basis`.
 
