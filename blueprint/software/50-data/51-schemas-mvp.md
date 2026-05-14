@@ -22,6 +22,16 @@ Arrow-first, v1.0 schemas for the canonical tables. Each table is `Spine + Paylo
 - Fields: `chunk_id: fixed_size_binary[16]`, `model_id: dict<uint8, utf8>`, `vector: fixed_size_list<float32>[1536]`, `dim: uint16`
 - Notes: Lance index on `vector`.
 
+### VisualAssets (specified-only extension)
+- PK: `visual_asset_id = row_id`
+- Fields: `asset_type: dict<uint8, utf8> (logo|screenshot|product_photo|diagram|social_post|document_page|mask|generated_output)`, `source_hash: fixed_size_binary[32]`, `storage_uri: utf8`, `mime_type: utf8`, `rights_status: dict<uint8, utf8> (owned|licensed|public|unknown)`, `privacy_class: dict<uint8, utf8>`, `permission_scope: dict<uint8, utf8>`, `project_refs: list<utf8>`, `person_refs: list<utf8>`, `style_tags: list<utf8>`, `detected_object_refs: list<utf8>`, `ocr_chunk_refs: list<fixed_size_binary[16]>`, `embedding_refs: list<fixed_size_binary[16]>`, `approved_output_refs: list<fixed_size_binary[16]>`, `receipt_refs: list<fixed_size_binary[16]>`, `created_at: timestamp(ms)`, `provenance: map<utf8, utf8>`
+- Notes: Stores governed metadata and refs only. Raw image binaries, masks, and full OCR text are content-addressed artifacts outside this row; OCR text lives in Chunks when retained. This table is specified-only until added to the executable schema DSL.
+
+### VisualAssetDerivations (specified-only extension)
+- PK: `derivation_id = row_id`
+- Fields: `source_asset_ids: list<fixed_size_binary[16]>`, `output_asset_id: fixed_size_binary[16]`, `work_order_id: fixed_size_binary[16]`, `done_contract_hash: fixed_size_binary[32]`, `workflow_hash: fixed_size_binary[32]`, `model_bundle_ids: list<utf8>`, `mask_refs: list<utf8>`, `control_refs: list<utf8>`, `transformation_summary: map<utf8, utf8>`, `verification_summary: map<utf8, utf8>`, `rollback_ref?: utf8`, `receipt_id: fixed_size_binary[16]`, `created_at: timestamp(ms)`, `provenance: map<utf8, utf8>`
+- Notes: Records visual provenance and rollback references without embedding raw prompts, raw image content, or unbounded OCR text. This table is specified-only until added to the executable schema DSL.
+
 ## Plane ?? – Context (ephemeral)
 
 ### Prompts
@@ -123,6 +133,12 @@ provenance, permission set, expiry policy, and receipt reference in
 `value`/`provenance` or by stable refs. The alias is policy data, not a reason
 to bypass the canonical schema.
 
+Visual memory uses VisualAssets and VisualAssetDerivations for governed asset
+metadata and lineage. Long-lived user preferences about visual style or approved
+brand decisions may still be stored as MemoryEntries, but must reference
+VisualAssets, receipt refs, and policy scope rather than copying raw image
+content into memory values.
+
 ## Plane ?? - Knowledge (latent state)
 
 ### StateSnapshots
@@ -185,13 +201,16 @@ to bypass the canonical schema.
 ## Invariants
 - All IDs are `fixed_size_binary[16]` (UUIDv7) and equal `Spine.row_id` for their table.
 - No `LargeUtf8` outside `Chunks.text` and `Prompts.text` (TXT axiom).
+- Visual asset rows store metadata and content-addressed refs only; raw image
+  binaries, masks, and full OCR text are not stored in Control-plane records or
+  receipts.
 - Dictionaries enumerate finite vocabularies; adding a new label/value requires schema version bump.
 - Latent state, audit, and manifest records include `agent_id`, `policy_hash`,
   `state_snapshot_id`, and `provenance` (directly or by reference).
 
 ### Receipts (specified only)
 - PK: `receipt_id = row_id`
-- Fields: `timestamp: timestamp(ms)`, `trace_id: fixed_size_binary[16]`, `span_id: fixed_size_binary[16]`, `action_type: utf8`, `task_class: dict<uint8, utf8>`, `interaction_mode?: dict<uint8, utf8>`, `autonomy_mode: dict<uint8, utf8>`, `policy_decision: utf8`, `decision_basis: map<utf8, utf8>`, `risk_score: float32`, `risk_basis: map<utf8, utf8>`, `work_order_id?: fixed_size_binary[16]`, `done_contract_hash?: fixed_size_binary[32]`, `clarification_decision?: dict<uint8, utf8>`, `objective_option_count?: uint8`, `capability_id?: fixed_size_binary[16]`, `input_hash?: fixed_size_binary[32]`, `output_hash?: fixed_size_binary[32]`, `memory_read_refs: list<fixed_size_binary[16]>`, `memory_diff_refs?: list<fixed_size_binary[16]>`, `retrieval_basis?: map<utf8, utf8>`, `learning_basis?: map<utf8, utf8>`, `assumptions?: list<utf8>`, `uncertainty_level?: dict<uint8, utf8>`, `question_strategy?: dict<uint8, utf8>`, `tool_intent?: utf8`, `delegation_outcome?: dict<uint8, utf8>`, `undo_strategy_ref?: utf8`, `prev_hash?: fixed_size_binary[32]`, `chain_hash: fixed_size_binary[32]`
+- Fields: `timestamp: timestamp(ms)`, `trace_id: fixed_size_binary[16]`, `span_id: fixed_size_binary[16]`, `action_type: utf8`, `task_class: dict<uint8, utf8>`, `interaction_mode?: dict<uint8, utf8>`, `autonomy_mode: dict<uint8, utf8>`, `policy_decision: utf8`, `decision_basis: map<utf8, utf8>`, `risk_score: float32`, `risk_basis: map<utf8, utf8>`, `work_order_id?: fixed_size_binary[16]`, `done_contract_hash?: fixed_size_binary[32]`, `clarification_decision?: dict<uint8, utf8>`, `objective_option_count?: uint8`, `capability_id?: fixed_size_binary[16]`, `input_hash?: fixed_size_binary[32]`, `output_hash?: fixed_size_binary[32]`, `memory_read_refs: list<fixed_size_binary[16]>`, `memory_diff_refs?: list<fixed_size_binary[16]>`, `retrieval_basis?: map<utf8, utf8>`, `learning_basis?: map<utf8, utf8>`, `visual_basis?: map<utf8, utf8>`, `assumptions?: list<utf8>`, `uncertainty_level?: dict<uint8, utf8>`, `question_strategy?: dict<uint8, utf8>`, `tool_intent?: utf8`, `delegation_outcome?: dict<uint8, utf8>`, `undo_strategy_ref?: utf8`, `prev_hash?: fixed_size_binary[32]`, `chain_hash: fixed_size_binary[32]`
 - Notes: minimal by default; no raw content. Delegated actions must carry surfaced assumptions and delegated-action outcome metadata.
 
 
