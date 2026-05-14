@@ -23,6 +23,7 @@ product surfaces, planes, contracts/specs, governance, and evidence.
 ## Planes and contracts
 - [Planes hub](/blueprint/docs/hubs/planes.md)
 - [Contracts hub](/blueprint/docs/hubs/contracts.md)
+- [Visual Intelligence Plane](/blueprint/30-specs/visual-intelligence-plane.md)
 - [Governance hub](/blueprint/docs/hubs/governance.md)
 - [Product surfaces hub](/blueprint/docs/hubs/product-surfaces.md)
 
