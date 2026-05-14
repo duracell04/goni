@@ -116,6 +116,12 @@ The `delegation` object MUST expose stable delegation-engineering fields:
 - `parser_basis` records parser identity, source hash, structure kind,
   confidence flags, chunk refs, and policy filters when parsing affected memory
   or context.
+- `visual_basis` records source asset hashes and refs, model bundle ID,
+  manifest hash, workflow hash, compact prompt summary, mask refs, control
+  refs, transformation summaries, verification results, output hash, and
+  rollback ref when visual analysis, generation, editing, or memory updates
+  affected the action. It must not store raw private images, raw screenshots,
+  full OCR text, or unbounded prompts by default.
 - `learning_basis` records Correction Delta Compiler outputs when correction
   deltas affect memory, retrieval, prompt assembly, harness policy, or
   promotion datasets. It captures detected delta class, proposed rule ref,
@@ -148,6 +154,7 @@ The `delegation` object MUST expose stable delegation-engineering fields:
 - [Delegation interface](/blueprint/30-specs/delegation-interface.md)
 - [Tool capability API](/blueprint/30-specs/tool-capability-api.md)
 - [Delegation and autonomy](/blueprint/30-specs/delegation-and-autonomy.md)
+- [Visual Intelligence Plane](/blueprint/30-specs/visual-intelligence-plane.md)
 
 ## Downstream
 - [Receipt schema](/blueprint/docs/receipts/receipt-schema.md)
@@ -184,6 +191,10 @@ The `delegation` object MUST expose stable delegation-engineering fields:
 - parser-mediated memory/context changes must preserve `parser_basis`
 - correction-derived learning changes must preserve `learning_basis`
   sufficient to audit the update without raw content
+- visual actions must preserve `visual_basis` with source hashes, workflow
+  hash, output hash, verification summary, and rollback ref where applicable
+- visual receipts must omit raw private screenshots, image binaries, full OCR
+  text, and unbounded prompts by default
 
 
 
