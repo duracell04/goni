@@ -96,6 +96,16 @@ Arrow-first, v1.0 schemas for the canonical tables. Each table is `Spine + Paylo
   `embedding?: fixed_size_list<float32>[1536]`, `embedding_dim?: uint16`
 - Notes: `source_chunk_ids` values are UUIDv7 strings referencing `Chunks.chunk_id`; raw text is not stored here.
 
+Correction-derived preference learning uses this table without adding a new
+canonical table in v1. Learned preferences from the Correction Delta Compiler
+use `kind = hypothesis | preference | derived` and `memory_class =
+procedural | policy | project | relational` depending on scope. The `value` and
+`provenance` maps must preserve, at minimum, scope, confidence, evidence count,
+contradiction count, decay policy, review status, source refs, learning receipt
+refs, memory diff refs, and regression test refs. Raw correction text remains in
+allowed Knowledge or Context plane fields only; memory entries store refs,
+hashes, summaries, and governance metadata.
+
 Policy-level memory class aliases map onto the finite `memory_class` enum
 until a schema version adds first-class values:
 
@@ -181,7 +191,7 @@ to bypass the canonical schema.
 
 ### Receipts (specified only)
 - PK: `receipt_id = row_id`
-- Fields: `timestamp: timestamp(ms)`, `trace_id: fixed_size_binary[16]`, `span_id: fixed_size_binary[16]`, `action_type: utf8`, `task_class: dict<uint8, utf8>`, `interaction_mode?: dict<uint8, utf8>`, `autonomy_mode: dict<uint8, utf8>`, `policy_decision: utf8`, `decision_basis: map<utf8, utf8>`, `risk_score: float32`, `risk_basis: map<utf8, utf8>`, `work_order_id?: fixed_size_binary[16]`, `done_contract_hash?: fixed_size_binary[32]`, `clarification_decision?: dict<uint8, utf8>`, `objective_option_count?: uint8`, `capability_id?: fixed_size_binary[16]`, `input_hash?: fixed_size_binary[32]`, `output_hash?: fixed_size_binary[32]`, `memory_read_refs: list<fixed_size_binary[16]>`, `memory_diff_refs?: list<fixed_size_binary[16]>`, `retrieval_basis?: map<utf8, utf8>`, `assumptions?: list<utf8>`, `uncertainty_level?: dict<uint8, utf8>`, `question_strategy?: dict<uint8, utf8>`, `tool_intent?: utf8`, `delegation_outcome?: dict<uint8, utf8>`, `undo_strategy_ref?: utf8`, `prev_hash?: fixed_size_binary[32]`, `chain_hash: fixed_size_binary[32]`
+- Fields: `timestamp: timestamp(ms)`, `trace_id: fixed_size_binary[16]`, `span_id: fixed_size_binary[16]`, `action_type: utf8`, `task_class: dict<uint8, utf8>`, `interaction_mode?: dict<uint8, utf8>`, `autonomy_mode: dict<uint8, utf8>`, `policy_decision: utf8`, `decision_basis: map<utf8, utf8>`, `risk_score: float32`, `risk_basis: map<utf8, utf8>`, `work_order_id?: fixed_size_binary[16]`, `done_contract_hash?: fixed_size_binary[32]`, `clarification_decision?: dict<uint8, utf8>`, `objective_option_count?: uint8`, `capability_id?: fixed_size_binary[16]`, `input_hash?: fixed_size_binary[32]`, `output_hash?: fixed_size_binary[32]`, `memory_read_refs: list<fixed_size_binary[16]>`, `memory_diff_refs?: list<fixed_size_binary[16]>`, `retrieval_basis?: map<utf8, utf8>`, `learning_basis?: map<utf8, utf8>`, `assumptions?: list<utf8>`, `uncertainty_level?: dict<uint8, utf8>`, `question_strategy?: dict<uint8, utf8>`, `tool_intent?: utf8`, `delegation_outcome?: dict<uint8, utf8>`, `undo_strategy_ref?: utf8`, `prev_hash?: fixed_size_binary[32]`, `chain_hash: fixed_size_binary[32]`
 - Notes: minimal by default; no raw content. Delegated actions must carry surfaced assumptions and delegated-action outcome metadata.
 
 
