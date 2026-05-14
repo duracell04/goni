@@ -20,6 +20,7 @@ status: specified_only
 - eval/EVID-AUTON-07-assumption-coverage.md
 - eval/EVID-AUTON-08-branch-efficiency.md
 - eval/EVID-HARNESS-01-harness-change-evaluation.md
+- eval/EVID-HARNESS-02-correction-delta-compiler.md
 - eval/EVID-ROUTE-01-frugal-sovereign-routing.md
 - eval/EVID-LONGCTX-01-reading-strategy-comparison.md
 - eval/EVID-LONGCTX-02-corpus-reading-fidelity.md
