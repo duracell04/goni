@@ -4,10 +4,10 @@ DOC-ID: PLANE-01
 Defines responsibilities, allowed foreign keys, and forbidden field types per plane. Arrow types live in `51-schemas-mvp.md`; this document is conceptual.
 
 ## Plane 𝒜 – Knowledge (immutable corpus)
-- Concepts: `Doc`, `Chunk`, `Embedding`.
-- Tables: Docs, Chunks, Embeddings, StateSnapshots, StateDeltas, LatentSummaries, MemoryEntries.
-- Allowed FK targets from other planes: `Chunks.chunk_id` (referenced by 𝒳.ContextItems), `Embeddings.chunk_id`.
-- Forbidden: no inbound FK from ℰ to `text`; no mutable state.
+- Concepts: `Doc`, `Chunk`, `Embedding`; specified-only visual extensions add `VisualAsset` and `VisualAssetDerivation`.
+- Tables: Docs, Chunks, Embeddings, StateSnapshots, StateDeltas, LatentSummaries, MemoryEntries. Specified-only extensions: VisualAssets, VisualAssetDerivations.
+- Allowed FK targets from other planes: `Chunks.chunk_id` (referenced by 𝒳.ContextItems), `Embeddings.chunk_id`, and `VisualAssets.visual_asset_id` after the visual schema extension is implemented.
+- Forbidden: no inbound FK from ℰ to `text`; no raw image binaries in Control-plane records; no mutable state.
 
 ## Plane 𝒳 – Context (ephemeral)
 - Concepts: live prompt text and selected retrieval units.
