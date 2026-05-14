@@ -100,6 +100,10 @@ We ship the following canonical tables in v1.0:
 19. PlatformCapabilities
 20. Metrics
 
+Specified-only visual extensions queued for a schema DSL/prototype slice:
+VisualAssets and VisualAssetDerivations. They do not ship in the current binary
+table set until added to `53-schema-dsl-and-macros.md` and the executable DSL.
+
 Any new canonical table must be added to the schema DSL (see
 `53-schema-dsl-and-macros.md`) and documented in `51-schemas-mvp.md`.
 
