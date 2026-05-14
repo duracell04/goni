@@ -31,7 +31,7 @@ backend. Backends are swappable if they preserve the contract below.
 A governed memory pipeline MUST implement these stages:
 
 1. Observe incoming items such as chats, files, notes, tasks, emails, events,
-   corrections, and prior outputs.
+   corrections, accepted/rejected drafts, and prior outputs.
 2. Classify each candidate into an explicit memory class:
    `episodic | semantic | procedural | relational | project | policy`.
 3. Parse and type source material into structured evidence candidates. Parser
@@ -105,6 +105,34 @@ Parser receipts MUST NOT store raw extracted text by default. They store hashes,
 refs, structure summaries, and confidence metadata sufficient to replay or
 challenge the parse.
 
+## 4.1 Correction-derived memory
+
+Correction deltas are first-class observed inputs. A correction delta is the
+structured difference between an agent-produced draft and a principal-approved
+or principal-corrected output. It may indicate factual error, tone
+miscalibration, structure preference, missing evidence, privacy risk, excessive
+branching, or task-scope misunderstanding.
+
+Correction-derived memory MUST flow through the Correction Delta Compiler before
+it can affect durable memory, retrieval, prompt assembly, or harness policy.
+The compiler proposes scoped rules, validates support, checks contradictions,
+and emits learning receipts for accepted updates.
+
+Accepted learned preferences SHOULD map to existing memory classes:
+
+| Preference scope | Memory class |
+| --- | --- |
+| How the principal wants work done | `procedural` |
+| Delegation authority, approval, or safety defaults | `policy` |
+| Project-specific style or operating preference | `project` |
+| Recipient, relationship, or channel-specific preference | `relational` |
+
+Single corrections SHOULD be stored as scoped hypotheses with TTL or review
+status. Repeated corrections may become preferences after evidence aggregation
+and contradiction checks. Raw correction text MUST remain confined to allowed
+Knowledge or Context plane fields; memory entries and receipts store hashes,
+refs, summaries, and governance metadata by default.
+
 ## 5. Evidence anchors
 
 The architecture is supported by prior work on retrieval-augmented generation,
@@ -133,6 +161,7 @@ do not prove that Goni is better before product evaluation.
 ## 7. Upstream
 
 - [Delegation interface](/blueprint/30-specs/delegation-interface.md)
+- [Correction Delta Compiler](/blueprint/30-specs/correction-delta-compiler.md)
 - [Latent state contract](/blueprint/30-specs/latent-state-contract.md)
 - [Receipts](/blueprint/30-specs/receipts.md)
 
@@ -147,6 +176,8 @@ do not prove that Goni is better before product evaluation.
 - A retrieval-mediated action emits `memory_read_refs`.
 - A memory mutation emits `memory_diff_refs`.
 - A parser-mediated memory write emits `parser_basis`.
+- A correction-derived memory write emits a learning receipt and
+  `memory_diff_refs`.
 - Retrieval against the same Work Order, fixed index, fixed reranker, and fixed
   policy hash is deterministic.
 - Expired or policy-denied memory is absent from selected context.
