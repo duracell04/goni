@@ -33,6 +33,7 @@ Evaluation artifacts for reliability, security, and reproducibility.
 
 ## Harness governance lanes
 - [Harness Change Evaluation](/blueprint/50-evidence/eval/EVID-HARNESS-01-harness-change-evaluation.md)
+- [Correction Delta Compiler Evaluation](/blueprint/50-evidence/eval/EVID-HARNESS-02-correction-delta-compiler.md)
 
 ## Governance gate lanes
 
