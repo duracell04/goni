@@ -193,6 +193,70 @@ Used in:
 Source:
 - https://spdx.dev/about/overview/
 
+Key: [[bfl-flux-repo]]
+Claim: The FLUX official inference repository documents available FLUX.1 model
+variants, model links, and license differences, including Apache-licensed and
+non-commercial variants.
+Relevance:
+- Grounds visual model bundle license-state tracking for image generation
+  substrate.
+- Supports VIS-01's requirement that visual model families enter Goni through
+  governed bundle manifests rather than informal model names.
+Used in:
+- `blueprint/30-specs/visual-intelligence-plane.md` (Execution substrate)
+- `blueprint/30-specs/model-registry.md` (Visual bundle metadata)
+Source:
+- https://github.com/black-forest-labs/flux
+
+Key: [[qwen-image-2-2026]]
+Claim: Qwen-Image-2.0 presents an image generation foundation model focused on
+high-fidelity generation, precise image editing, long text rendering,
+multilingual typography, photorealism, instruction following, and deployment.
+Relevance:
+- Grounds the visual-plane need to track typography and editing as explicit
+  visual capabilities, not just generic generation.
+Used in:
+- `blueprint/30-specs/visual-intelligence-plane.md` (Execution substrate)
+- `blueprint/30-specs/model-registry.md` (Visual bundle metadata)
+Source:
+- https://arxiv.org/abs/2605.10730
+
+Key: [[sam2-2024]]
+Claim: SAM 2 is a foundation model for promptable visual segmentation in images
+and videos, improving image segmentation accuracy and speed over SAM in the
+reported setting.
+Relevance:
+- Grounds mask and segmentation as first-class visual execution steps and
+  verification inputs.
+Used in:
+- `blueprint/30-specs/visual-intelligence-plane.md` (Execution substrate)
+Source:
+- https://arxiv.org/abs/2408.00714
+
+Key: [[meta-sam2-page]]
+Claim: Meta describes SAM 2 as a unified image and video object segmentation
+model whose outputs can support downstream AI systems, including editing
+workflows.
+Relevance:
+- Supports treating segmentation outputs as governed intermediate artifacts
+  with refs in visual receipts.
+Used in:
+- `blueprint/30-specs/visual-intelligence-plane.md` (Execution substrate)
+Source:
+- https://ai.meta.com/sam2/
+
+Key: [[comfyui-repo]]
+Claim: ComfyUI is a modular diffusion model GUI, API, and backend with a
+graph/node interface for visual workflows.
+Relevance:
+- Grounds the Visual Runtime's use of hashed node-graph workflows as execution
+  substrate while keeping Goni policy and receipts outside the backend.
+Used in:
+- `blueprint/30-specs/visual-intelligence-plane.md` (Execution substrate)
+- `blueprint/software/30-components/visual-runtime.md` (Backend substrate)
+Source:
+- https://github.com/Comfy-Org/ComfyUI
+
 Key: [[greshake2023-indirect-prompt-injection]]
 Claim: Untrusted retrieved text can inject instructions that hijack tool use
 and control flow in LLM-integrated systems.
