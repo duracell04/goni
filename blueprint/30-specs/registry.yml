@@ -10,6 +10,11 @@ entries:
     type: SPEC
     status: specified_only
     path: 30-specs/agent-manifest.md
+  - id: CDC-01
+    title: "Correction Delta Compiler"
+    type: SPEC
+    status: specified_only
+    path: 30-specs/correction-delta-compiler.md
   - id: DELEG-01
     title: "Delegation and Autonomy"
     type: SPEC
