@@ -78,6 +78,16 @@
       "owner_area": "docs"
     },
     {
+      "id": "BOUND-01",
+      "title": "Vision, Memory, and Actuation Boundaries",
+      "role": "spec",
+      "group": "specs",
+      "path": "30-specs/vision-memory-actuation-boundaries.md",
+      "anchors": ["DOC-ID: BOUND-01"],
+      "status": "specified_only",
+      "owner_area": "docs"
+    },
+    {
       "id": "ITCR-01",
       "title": "ITCR",
       "role": "spec",
