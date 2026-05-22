@@ -371,6 +371,48 @@
                                                            },
                                             "additionalProperties":  true
                                         },
+                       "boundary_basis":  {
+                                              "type":  "object",
+                                              "properties":  {
+                                                                 "observation_scope_ref":  {
+                                                                                             "type":  "string"
+                                                                                         },
+                                                                 "extraction_profile":  {
+                                                                                            "type":  "string"
+                                                                                        },
+                                                                 "memory_class":  {
+                                                                                     "type":  "string",
+                                                                                     "enum":  [
+                                                                                                  "episodic",
+                                                                                                  "semantic",
+                                                                                                  "procedural",
+                                                                                                  "relational",
+                                                                                                  "project",
+                                                                                                  "policy"
+                                                                                              ]
+                                                                                 },
+                                                                 "actuation_class":  {
+                                                                                         "type":  "string"
+                                                                                     },
+                                                                 "sandbox_profile":  {
+                                                                                         "type":  "string"
+                                                                                     },
+                                                                 "approval_refs":  {
+                                                                                       "type":  "array",
+                                                                                       "items":  {
+                                                                                                     "type":  "string"
+                                                                                                 }
+                                                                                   },
+                                                                 "rollback_or_repair_ref":  {
+                                                                                                "type":  "string"
+                                                                                            },
+                                                                 "raw_content_retained":  {
+                                                                                            "type":  "boolean",
+                                                                                            "default":  false
+                                                                                        }
+                                                             },
+                                              "additionalProperties":  true
+                                          },
                        "execution_id":  {
                                             "type":  "string"
                                         },
