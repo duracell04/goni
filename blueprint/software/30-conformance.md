@@ -9,6 +9,8 @@ Normative contracts referenced by this document:
 - Latent State Contract (LSC-01): `blueprint/30-specs/latent-state-contract.md`
 - Delegation interface (DELEG-INT-01): `blueprint/30-specs/delegation-interface.md`
 - Tool syscall envelope (TOOL-01): `blueprint/30-specs/tool-capability-api.md`
+- Vision, memory, and actuation boundaries (BOUND-01):
+  `blueprint/30-specs/vision-memory-actuation-boundaries.md`
 - Agent/process model: `blueprint/30-specs/agent-definition.md`, `blueprint/30-specs/agent-manifest.md`
 - Scheduler/interrupt semantics: `blueprint/30-specs/scheduler-and-interrupts.md`
 - Delegation/autonomy semantics: `blueprint/30-specs/delegation-and-autonomy.md`
@@ -446,6 +448,12 @@ A node qualifies as an **MVP-conformant Goni implementation** if:
 - [ ] All Wasm tools and engines declare capability sets; host enforces them.  
 - [ ] There exists at least one configuration where all essential functionality runs without network access (local-first invariant).
 - [ ] Deterministic preset passes the self-loop drift check (bitwise-stable tokens for fixed prompt; blueprint/hardware/driver versions logged).
+- [ ] Desktop/browser/vision-mediated paths keep observation, extraction,
+  memory, actuation, egress, sandbox, approval, and receipt boundaries separate.
+- [ ] Synthetic input requires an actuation grant, capability token, sandbox
+  profile, autonomy corridor, and receipt.
+- [ ] Remote extraction of screen/app/browser context routes through the
+  Network Gate.
 
 ### Governed model evolution
 
