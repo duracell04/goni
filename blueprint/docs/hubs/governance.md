@@ -15,6 +15,7 @@ This hub connects privacy, threat, trust boundaries, and audit requirements.
 
 ## Related contracts
 - [Receipts spec](/blueprint/30-specs/receipts.md)
+- [Vision, memory, and actuation boundaries](/blueprint/30-specs/vision-memory-actuation-boundaries.md)
 - [Network gate and anonymity](/blueprint/30-specs/network-gate-and-anonymity.md)
 - [Tool capability API](/blueprint/30-specs/tool-capability-api.md)
 - [Isolation and tool sandboxes](/blueprint/30-specs/isolation-and-tool-sandboxes.md)
