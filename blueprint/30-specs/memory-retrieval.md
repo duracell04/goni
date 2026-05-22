@@ -13,6 +13,11 @@ user-managed folder, tag, or "remember this" feature. The user states work
 intent; the kernel classifies, parses, indexes, filters, retrieves, reranks,
 verifies, cites, and receipts memory as system work.
 
+Observation and context extraction do not create memory authority. Screen
+frames, OCR, accessibility trees, summaries, embeddings, audio transcripts, and
+layout facts may enter durable memory only through a memory grant mediated by
+BOUND-01.
+
 The term RAG may still appear in compatibility notes, UI labels, and supplier
 comparisons. In Goni's architecture, the stronger layer name is Knowledge &
 Context Engineering because retrieval is only one stage in an audit-capable
@@ -52,6 +57,10 @@ A governed memory pipeline MUST implement these stages:
 11. Materialize only selected evidence into the Context Plane.
 12. Emit receipts for parsing, memory reads, memory writes, and selected
     context materialization when those stages affect output or execution.
+
+For desktop, browser, and vision-derived inputs, stages 1-4 MUST preserve
+Desktop Agent Firewall boundary refs. A parser or extractor may produce
+candidate chunks without gaining authority to store or reuse them.
 
 ## 3. Work Order binding
 
@@ -153,6 +162,9 @@ do not prove that Goni is better before product evaluation.
   uncertainty.
 - Private memory MUST NOT be sent to remote runtimes unless policy explicitly
   allows the destination and purpose.
+- Observed or extracted screen/app context MUST NOT be stored, indexed, or
+  reused unless a memory grant permits the memory class, retention posture, and
+  source scope.
 - Deletion or redaction MUST trigger reindexing or tombstoning sufficient to
   prevent normal retrieval.
 - Memory answers that rely on retrieved evidence SHOULD expose source refs or
@@ -164,6 +176,7 @@ do not prove that Goni is better before product evaluation.
 - [Correction Delta Compiler](/blueprint/30-specs/correction-delta-compiler.md)
 - [Latent state contract](/blueprint/30-specs/latent-state-contract.md)
 - [Receipts](/blueprint/30-specs/receipts.md)
+- [Vision, memory, and actuation boundaries](/blueprint/30-specs/vision-memory-actuation-boundaries.md)
 
 ## 8. Downstream
 
@@ -183,3 +196,5 @@ do not prove that Goni is better before product evaluation.
 - Expired or policy-denied memory is absent from selected context.
 - Raw retrieved text is confined to allowed Knowledge/Context Plane fields.
 - Raw parser output is confined to allowed Knowledge/Context Plane fields.
+- desktop/browser/vision-derived memory writes require a memory grant separate
+  from observation and extraction permission
