@@ -23,6 +23,8 @@ isolation follows the action class:
 | Action class | Examples | Minimum isolation | Gate type |
 | --- | --- | --- | --- |
 | `read_only_retrieval` | local search, metadata read, vector lookup | process isolation or equivalent capability sandbox | capability check |
+| `screen_capture_observation` | screen/window/tab capture, accessibility-tree read, OCR candidate extraction | OS permission boundary plus isolated capture/extraction worker; no memory write or network by default | observation/extraction capability check |
+| `desktop_browser_actuation` | synthetic mouse/keyboard/scroll, browser DOM mutation, GUI automation | isolated desktop/browser session, container, or microVM-class boundary for untrusted or internet-exposed surfaces; no host credentials by default | soft or hard gate by risk |
 | `reversible_local_write` | draft file, temporary index update, local note edit with snapshot | container/gVisor-style sandbox plus rollback reference | soft gate or autopilot if policy allows |
 | `code_execution` | shell, Python, browser automation with local credentials, package install | microVM/Firecracker-class isolation or stronger; no ambient host credentials | hard gate unless explicitly pre-approved |
 | `external_side_effect` | email send, calendar mutation, API write, publish action | isolated executor plus egress gate and idempotency/rollback plan where possible | soft or hard gate by risk |
@@ -31,10 +33,16 @@ isolation follows the action class:
 The matrix defines minimums. Policy may require stronger isolation or block the
 action. If the required isolation is unavailable, execution fails closed.
 
+Screen capture, accessibility extraction, and synthetic input do not share one
+authority class. Observation/extraction workers must not inherit actuation or
+memory-write authority. Desktop or browser actuation must present an actuation
+grant and pass BOUND-01 before tool execution.
+
 ## Upstream
 - [Tool capability API](/blueprint/30-specs/tool-capability-api.md)
 - [Network gate and anonymity](/blueprint/30-specs/network-gate-and-anonymity.md)
 - [Privacy and text confinement](/blueprint/software/50-data/40-privacy-and-text-confinement.md)
+- [Vision, memory, and actuation boundaries](/blueprint/30-specs/vision-memory-actuation-boundaries.md)
 
 ## Downstream
 - [OS and base image](/blueprint/software/30-components/os-and-base-image.md)
@@ -50,6 +58,10 @@ action. If the required isolation is unavailable, execution fails closed.
 - unavailable required isolation fails closed
 - irreversible high-risk actions require explicit approval evidence and dual
   receipts
+- screen capture/extraction sandboxes cannot write memory or synthesize input
+  without separate grants
+- desktop/browser actuation requires an actuation grant and fails closed if the
+  required sandbox profile is unavailable
 
 
 
