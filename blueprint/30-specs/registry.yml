@@ -20,6 +20,11 @@ entries:
     type: SPEC
     status: specified_only
     path: 30-specs/delegation-and-autonomy.md
+  - id: BOUND-01
+    title: "Vision, Memory, and Actuation Boundaries"
+    type: SPEC
+    status: specified_only
+    path: 30-specs/vision-memory-actuation-boundaries.md
   - id: AGENT-STORE-01
     title: "Agent Store Governance"
     type: SPEC
