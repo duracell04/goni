@@ -55,6 +55,9 @@ small for Anonymous Mode.
 
 Remote LLM traffic is just another egress class. The Gate routes Council calls
 either DIRECT or OVERLAY according to policy (see blueprint/docs/remote-llm-architecture.md).
+Remote extraction of observed screen, app, browser, OCR, accessibility, or
+audio context is egress. The Gate must mediate it even when the upstream
+capture or extraction step was locally authorized.
 
 ## 4. Network egress syscall
 
@@ -76,6 +79,9 @@ Requirements:
 - Caller MUST present a network capability token (TOOL-01).
 - Gate MUST validate route/purpose/budget/retention constraints.
 - Gate MUST emit an audit receipt for every external transfer.
+- If the payload derives from observed desktop, browser, or vision context, the
+  caller MUST also present boundary refs proving extraction permission and
+  permitted remote submission under BOUND-01.
 
 ## 5. Policy model (Control Plane)
 
@@ -112,6 +118,8 @@ emit a receipt that records the mode, profile, and enforcement decision.
    state_snapshot_id.
 5. Anonymous Mode receipts are non-deanonymizing by default; logging is treated
    as a side channel and minimized unless explicitly enabled.
+6. Extracted screen/app context cannot be sent to a remote model or service
+   without both extraction permission and Network Gate approval.
 
 ## 7. Two network personalities (policy bundles)
 
@@ -193,6 +201,7 @@ the user explicitly opts into verbose logging.
 - [Tool capability API](/blueprint/30-specs/tool-capability-api.md)
 - [Mesh and WireGuard](/blueprint/software/30-components/mesh-and-wireguard.md)
 - [Isolation and tool sandboxes](/blueprint/30-specs/isolation-and-tool-sandboxes.md)
+- [Vision, memory, and actuation boundaries](/blueprint/30-specs/vision-memory-actuation-boundaries.md)
 
 ## 13. Downstream
 - [Remote LLM Architecture](/blueprint/docs/remote-llm-architecture.md)
@@ -203,7 +212,10 @@ the user explicitly opts into verbose logging.
 - [System map](/blueprint/docs/00-system-map.md)
 
 ## Conformance tests
-- TBD: add tests for this spec.
+- external egress without Gate mediation is denied
+- remote extraction of screen/app/browser context requires both extraction
+  permission and network capability
+- payloads that exceed the configured egress mode are blocked and receipted
 
 
 
