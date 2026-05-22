@@ -66,6 +66,8 @@ default.
 - output_hash
 - memory_read_refs
 - memory_diff_refs
+- boundary_basis (required when observation, extraction, memory, actuation,
+  sandbox, approval, or egress boundaries affected the decision)
 
 ## Delegation fields (required for delegated or tool-mediated actions)
 - task_class
@@ -128,6 +130,11 @@ The `delegation` object MUST expose stable delegation-engineering fields:
   scope, confidence, evidence and contradiction counts, review status,
   regression refs, source refs, and policy hash. It must not store raw draft or
   correction text by default.
+- `boundary_basis` records Desktop Agent Firewall decisions when observation,
+  extraction, memory, actuation, sandbox, approval, rollback/repair, or remote
+  extraction boundaries affected the action. It captures refs and compact
+  policy decisions, not raw private screen content, OCR text, accessibility
+  dumps, audio transcripts, or unbounded prompts.
 - `interaction_mode` records whether the turn was delegated execution or
   co-creation.
 - `work_order_id` references the canonical pre-execution Work Order.
@@ -155,6 +162,7 @@ The `delegation` object MUST expose stable delegation-engineering fields:
 - [Tool capability API](/blueprint/30-specs/tool-capability-api.md)
 - [Delegation and autonomy](/blueprint/30-specs/delegation-and-autonomy.md)
 - [Visual Intelligence Plane](/blueprint/30-specs/visual-intelligence-plane.md)
+- [Vision, memory, and actuation boundaries](/blueprint/30-specs/vision-memory-actuation-boundaries.md)
 
 ## Downstream
 - [Receipt schema](/blueprint/docs/receipts/receipt-schema.md)
@@ -195,6 +203,11 @@ The `delegation` object MUST expose stable delegation-engineering fields:
   hash, output hash, verification summary, and rollback ref where applicable
 - visual receipts must omit raw private screenshots, image binaries, full OCR
   text, and unbounded prompts by default
+- desktop/browser/vision-mediated actions must include `boundary_basis` when a
+  boundary transition affected observation, extraction, memory, actuation,
+  sandboxing, approval, egress, or rollback/repair
+- denied boundary transitions must emit an auditable receipt or receipt-linked
+  record without storing raw private content by default
 
 
 
