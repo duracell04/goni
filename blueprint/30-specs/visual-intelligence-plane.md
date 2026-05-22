@@ -13,6 +13,11 @@ and visual receipts are execution capabilities under the same Work Order, Done
 Contract, capability policy, model registry, receipt, and rollback rules as the
 rest of Goni.
 
+Visual analysis is not automatically visual memory or visual actuation. Seeing
+or parsing pixels grants no authority to store extracted facts, send them to a
+remote model, or perform synthetic input. BOUND-01 governs the transition from
+observation to extraction, memory, egress, and actuation.
+
 The model makes pixels. The kernel makes those pixels accountable.
 
 Core invariant: Goni owns authority; visual models and ComfyUI-style workflows
@@ -27,6 +32,11 @@ This spec applies to tasks that inspect, transform, generate, annotate, compare,
 or remember image-like artifacts, including screenshots, diagrams, document
 pages, product photos, brand assets, mockups, evidence images, masks, and
 generated outputs.
+
+When the source asset is a live screen, desktop app, browser tab, accessibility
+tree, or OS event stream, the task also carries Desktop Agent Firewall boundary
+metadata. A screenshot audit may stop at observation and extraction; it may not
+write memory or act unless separate grants authorize those powers.
 
 Visual execution backends may include ComfyUI-compatible workflow engines,
 diffusion runtimes, segmentation models, open-set detectors, OCR/layout
@@ -260,6 +270,8 @@ minimal correction and no governance violation.
   content-addressed artifacts outside Control-plane records.
 - Mixed visual tasks inherit the strictest permission posture, receipt fields,
   and verification requirements among their task profiles.
+- Visual observation, extraction, memory, remote submission, and actuation
+  remain separate governed powers under BOUND-01.
 
 ## 13. Upstream
 
@@ -267,6 +279,7 @@ minimal correction and no governance violation.
 - [Model bundle registry governance](/blueprint/30-specs/model-registry.md)
 - [Receipts](/blueprint/30-specs/receipts.md)
 - [Tool capability API](/blueprint/30-specs/tool-capability-api.md)
+- [Vision, memory, and actuation boundaries](/blueprint/30-specs/vision-memory-actuation-boundaries.md)
 
 ## 14. Downstream
 
@@ -297,3 +310,5 @@ minimal correction and no governance violation.
   provenance, and receipt refs
 - verification failures must block, retry, request approval, or downgrade the
   deliverable rather than being silently ignored
+- visual analysis must not imply memory write, remote extraction, or synthetic
+  input authority
