@@ -45,7 +45,8 @@ A governed memory pipeline MUST implement these stages:
 4. Chunk source material into retrievable units such as decisions, source-backed
    facts, actions, open loops, table regions, and paragraph chunks.
 5. Index with dense semantic vectors plus sparse, exact-match, graph, and
-   metadata signals where available.
+   metadata signals where available. Graph retrieval MUST follow CGG-01 when
+   edge traversal affects context assembly.
 6. Attach explicit metadata for source, timestamp, project, person,
    permissions, quoteability, confidence, validity window, and expiry.
 7. Retrieve against the canonical Work Order, not only the raw user utterance.
@@ -92,6 +93,10 @@ When retrieval affects output or execution, receipts SHOULD include
 - retrieval mode (`dense | sparse | hybrid | graph | mixed`),
 - index refs or versions,
 - reranker id or policy,
+- graph snapshot/config refs, traversal depth, scoring policy, and decay policy
+  when graph traversal is used,
+- ContextPack refs, inclusion reasons, omission reasons, and compression policy
+  when graph traversal compiles a ContextPack,
 - selected context refs,
 - source trust and permission filters,
 - policy hash.
@@ -174,6 +179,7 @@ do not prove that Goni is better before product evaluation.
 
 - [Delegation interface](/blueprint/30-specs/delegation-interface.md)
 - [Correction Delta Compiler](/blueprint/30-specs/correction-delta-compiler.md)
+- [Context Gravity Graph](/blueprint/30-specs/context-gravity-graph.md)
 - [Latent state contract](/blueprint/30-specs/latent-state-contract.md)
 - [Receipts](/blueprint/30-specs/receipts.md)
 - [Vision, memory, and actuation boundaries](/blueprint/30-specs/vision-memory-actuation-boundaries.md)
@@ -189,6 +195,9 @@ do not prove that Goni is better before product evaluation.
 - A retrieval-mediated action emits `memory_read_refs`.
 - A memory mutation emits `memory_diff_refs`.
 - A parser-mediated memory write emits `parser_basis`.
+- A graph-mediated retrieval emits graph snapshot/config refs, scoring policy,
+  decay policy, ContextPack refs, selected refs, omission reasons, compression
+  policy, and permission filters in `retrieval_basis`.
 - A correction-derived memory write emits a learning receipt and
   `memory_diff_refs`.
 - Retrieval against the same Work Order, fixed index, fixed reranker, and fixed
