@@ -11,6 +11,7 @@ Evaluation artifacts for reliability, security, and reproducibility.
 - [Prompt injection](/blueprint/50-evidence/eval/EVID-SEC-01-prompt-injection.md)
 - [Memory poisoning](/blueprint/50-evidence/eval/EVID-SEC-02-memory-poisoning.md)
 - [Trace replayability](/blueprint/50-evidence/eval/EVID-SEC-03-trace-replayability.md)
+- [Desktop Agent Firewall](/blueprint/50-evidence/eval/EVID-DESK-01-desktop-agent-firewall.md)
 - [Open adversarial evaluation](/blueprint/50-evidence/eval/EVID-ALIGN-01-open-adversarial-evaluation.md)
 
 ## Delegation lanes
@@ -52,6 +53,9 @@ may reuse existing evidence files until dedicated artifacts are added.
   no partial side effects after failure.
 - **Parser/ingestion tests:** verify parser identity, source hashes,
   confidence flags, chunk boundaries, and `parser_basis` receipt coverage.
+- **Desktop Agent Firewall tests:** verify observation, extraction, memory,
+  actuation, egress, sandbox, approval, and receipt boundaries remain separate
+  for desktop/browser/vision-mediated agents.
 - **Open adversarial tests:** verify that promoted models, tools, memory
   policies, routing rules, harness changes, and autonomy expansions pass
   versioned adversarial scenarios before they move closer to the principal's
