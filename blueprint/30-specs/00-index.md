@@ -27,6 +27,7 @@ This is the catalog of normative contracts in blueprint/30-specs.
 - [ITCR](/blueprint/30-specs/itcr.md) (ITCR-01)
 - [Job contract](/blueprint/30-specs/job.md) (JOB-01)
 - [Latent state contract](/blueprint/30-specs/latent-state-contract.md) (LSC-01)
+- [Context Gravity Graph](/blueprint/30-specs/context-gravity-graph.md) (CGG-01)
 - [Governed memory retrieval](/blueprint/30-specs/memory-retrieval.md) (MEM-RETR-01)
 - [Model bundle registry governance](/blueprint/30-specs/model-registry.md) (MODEL-REG-01)
 - [Network gate and anonymity](/blueprint/30-specs/network-gate-and-anonymity.md) (NET-01)
