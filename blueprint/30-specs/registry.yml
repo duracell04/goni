@@ -80,6 +80,11 @@ entries:
     type: SPEC
     status: specified_only
     path: 30-specs/latent-state-contract.md
+  - id: CGG-01
+    title: "Context Gravity Graph"
+    type: SPEC
+    status: specified_only
+    path: 30-specs/context-gravity-graph.md
   - id: MEM-RETR-01
     title: "Governed Memory Retrieval"
     type: SPEC
