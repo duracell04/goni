@@ -12,6 +12,7 @@ This hub connects the plane model to the rest of the blueprint.
 ## Related contracts
 - [Symbolic substrate](/blueprint/30-specs/symbolic-substrate.md)
 - [Latent state contract](/blueprint/30-specs/latent-state-contract.md)
+- [Vision, memory, and actuation boundaries](/blueprint/30-specs/vision-memory-actuation-boundaries.md)
 - [Visual Intelligence Plane](/blueprint/30-specs/visual-intelligence-plane.md)
 
 ## Upstream
