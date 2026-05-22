@@ -6,6 +6,87 @@
     "mode": {"type": "string"},
     "egress": {"type": "object"},
     "tool_defaults": {"type": "object"},
+    "desktop_agent_firewall": {
+      "type": "object",
+      "properties": {
+        "default_observation_scope": {
+          "type": "object",
+          "additionalProperties": true
+        },
+        "allowed_extraction_modes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "none",
+              "ocr",
+              "accessibility",
+              "layout_parse",
+              "summarization",
+              "embedding",
+              "remote_model_submission"
+            ]
+          }
+        },
+        "memory_classes_by_task_class": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "episodic",
+                "semantic",
+                "procedural",
+                "relational",
+                "project",
+                "policy"
+              ]
+            }
+          }
+        },
+        "actuation_classes_by_corridor": {
+          "type": "object",
+          "properties": {
+            "no_go": {
+              "type": "array",
+              "items": {"type": "string"}
+            },
+            "soft_gate": {
+              "type": "array",
+              "items": {"type": "string"}
+            },
+            "autopilot": {
+              "type": "array",
+              "items": {"type": "string"}
+            }
+          },
+          "additionalProperties": false
+        },
+        "remote_extraction_egress": {
+          "type": "object",
+          "properties": {
+            "default": {
+              "type": "string",
+              "enum": ["deny", "local_only", "redacted_only", "user_approved"]
+            },
+            "allowed_purposes": {
+              "type": "array",
+              "items": {"type": "string"}
+            },
+            "required_redaction_profile": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": true
+        },
+        "deny_observation_to_actuation_by_default": {
+          "type": "boolean",
+          "default": true
+        }
+      },
+      "additionalProperties": false
+    },
     "delegation": {
       "type": "object",
       "properties": {
