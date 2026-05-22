@@ -21,6 +21,9 @@ Logical fields for every tool call:
 - `state_snapshot_id`
 - `policy_hash`
 - `provenance`
+- `boundary_basis` (refs to observation, extraction, memory, actuation,
+  sandbox, approval, and rollback/repair boundary decisions when a desktop,
+  browser, or vision-mediated surface is involved)
 - `operation_id`
 - `task_class`
 - `interaction_mode` (`delegation` | `co_creation`)
@@ -56,6 +59,14 @@ Third-party adapters, agent gateways, or external assistant frameworks do not
 satisfy this mediation requirement on their own. If they expose tools or
 actions to Goni, those effects MUST still pass through Goni-issued capability
 tokens and Goni policy evaluation before execution.
+
+Synthetic input is a tool syscall. Mouse, keyboard, scroll, drag, browser DOM
+mutation, shell command, filesystem write, external API mutation, and publish
+actions are actuation events. They MUST NOT be treated as ambient desktop
+authority inherited from a screen-sharing, accessibility, browser, or
+computer-use session. If an action starts from observed screen or app context,
+BOUND-01 defines the required boundary chain before this tool envelope may
+execute.
 
 ## 2. Tool result envelope
 
@@ -171,11 +182,15 @@ Tokens are immutable and referenced by ID in tool calls.
   execution references that explain how the Work Order was formed.
 - **Transactional safety:** mutating calls are atomic (commit or rollback).
 - **Replay safety:** idempotency keys prevent duplicate side effects.
+- **Boundary separation:** observation, extraction, memory, actuation, egress,
+  and sandbox authority remain separate capability grants for desktop,
+  browser, and vision-mediated actions.
 
 ## 7. Related specs
 
 - [agent-definition.md](/blueprint/30-specs/agent-definition.md)
 - [delegation-interface.md](/blueprint/30-specs/delegation-interface.md)
+- [vision-memory-actuation-boundaries.md](/blueprint/30-specs/vision-memory-actuation-boundaries.md)
 - [latent-state-contract.md](/blueprint/30-specs/latent-state-contract.md)
 - [scheduler-and-interrupts.md](/blueprint/30-specs/scheduler-and-interrupts.md)
 - [symbolic-substrate.md](/blueprint/30-specs/symbolic-substrate.md)
@@ -191,6 +206,7 @@ Tokens are immutable and referenced by ID in tool calls.
 - [Isolation and tool sandboxes](/blueprint/30-specs/isolation-and-tool-sandboxes.md)
 - [Network gate and anonymity](/blueprint/30-specs/network-gate-and-anonymity.md)
 - [Delegation and autonomy](/blueprint/30-specs/delegation-and-autonomy.md)
+- [Vision, memory, and actuation boundaries](/blueprint/30-specs/vision-memory-actuation-boundaries.md)
 - [Orchestrator](/blueprint/software/30-components/orchestrator.md)
 
 ## 10. Adjacent
@@ -210,6 +226,10 @@ Tokens are immutable and referenced by ID in tool calls.
 - audit records and receipts must agree on `autonomy_mode`,
   `delegation_outcome`, `clarification_status`, and
   `clarification_decision`
+- synthetic input must require an actuation grant and capability token
+- desktop/browser/vision-mediated tool calls must preserve `boundary_basis`
+  when observation, extraction, memory, or actuation boundaries affected the
+  decision
 
 
 
