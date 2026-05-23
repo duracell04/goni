@@ -15,6 +15,7 @@ This is the catalog of normative contracts in blueprint/30-specs.
 - [Correction Delta Compiler](/blueprint/30-specs/correction-delta-compiler.md) (CDC-01)
 - [Delegation interface](/blueprint/30-specs/delegation-interface.md) (DELEG-INT-01)
 - [Delegation and autonomy](/blueprint/30-specs/delegation-and-autonomy.md) (DELEG-01)
+- [Delegated Agent Treasury](/blueprint/30-specs/delegated-agent-treasury.md) (DAT-01)
 - [Vision, memory, and actuation boundaries](/blueprint/30-specs/vision-memory-actuation-boundaries.md) (BOUND-01)
 - [Agent store governance](/blueprint/30-specs/agents/agent-store.md) (AGENT-STORE-01)
 - [Execution metering and budget units](/blueprint/30-specs/metering/SPEC-METER-01-execution-metering.md) (METER-01)
