@@ -5,6 +5,7 @@ Vision, roadmap, next steps, and product-facing research agendas.
 Not here: normative specs or evidence.
 
 Primary documents:
+- `05-sovereign-delegation-os-thesis.md` (academic product thesis and doctrine synthesis)
 - `10-vision.md` (category framing and product thesis)
 - `15-delegation-doctrine.md` (attention density and delegation posture)
 - `20-roadmap.md` (milestones)
