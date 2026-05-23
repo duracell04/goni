@@ -72,6 +72,25 @@ We do **not** require:
 - Full, from-scratch training of very large models on-device.
 - Matching the throughput of data-center GPU servers.
 
+### 3.1.1 Compute substrate boundaries
+
+Goni MVP hardware targets local AI inference and adjacent classical AI
+workloads. AI hardware accelerates tensor and matrix operations through CPUs,
+GPUs, TPUs, NPUs, high-bandwidth memory, fast interconnects, memory locality,
+compiler/runtime optimization, and energy-efficient scheduling.
+
+Quantum hardware is a different physical computation substrate. It preserves
+and transforms fragile quantum states through qubit control, isolation from
+noise, measurement systems, error correction, and classical control
+electronics. A quantum processor MUST NOT be treated as a drop-in accelerator
+for the MVP local AI runtime.
+
+The MVP platform requirements therefore remain focused on unified memory,
+sustained bandwidth, thermal stability, storage endurance, telemetry, and
+runtime backend readiness. Future external compute or offload APIs may remain
+substrate-agnostic, but they MUST NOT introduce a quantum dependency into the
+MVP hardware baseline.
+
 ### 3.2 Memory & Storage
 
 The system must:
