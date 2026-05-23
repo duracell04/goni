@@ -47,12 +47,28 @@ At a high level, the Goni hardware should:
 
 ---
 
-## 1.1 Physical constraints that define local ITCR
+## 1.1 Compute substrate boundary
+
+The Goni MVP is a classical AI appliance. Its hardware accelerates local
+inference, embeddings, retrieval, indexing, adapter tuning, and burst reasoning
+through conventional compute substrates: CPU, GPU, NPU, memory hierarchy,
+storage, interconnects, and runtime/compiler support.
+
+Quantum computing is out of scope for MVP hardware. It is a different
+engineering problem: preserving and transforming quantum states with qubit
+control, isolation, measurement, error correction, and classical control
+electronics. Quantum processors may matter later for specific mathematical
+subproblems, but they are not stronger AI accelerators and are not part of the
+Goni baseline.
+
+---
+
+## 1.2 Physical constraints that define local ITCR
 
 This section encodes the hardware consequences of inference-time compute
 reasoning (ITCR) as platform constraints and interfaces, not performance claims.
 
-### 1.1.1 Memory wall (roofline framing)
+### 1.2.1 Memory wall (roofline framing)
 
 Define arithmetic intensity as:
 
@@ -63,7 +79,7 @@ can be more compute-bound. As a result, platform selection MUST prioritize
 sustained bandwidth, latency stability, and memory residency over peak TOPS.
 See `blueprint/hardware/appendix/roofline.md` for the roofline primer.
 
-### 1.1.2 Two-regime power model
+### 1.2.2 Two-regime power model
 
 Goni operates in two regimes:
 
@@ -74,7 +90,7 @@ The product requirement is to minimize solver duty cycle while preserving burst
 responsiveness without destabilizing thermals. Hardware MUST support stable
 operation under both regimes, with telemetry to distinguish them.
 
-### 1.1.3 Memory topology
+### 1.2.3 Memory topology
 
 UMA reduces copies but shares bandwidth; a discrete GPU provides dedicated VRAM
 bandwidth but incurs PCIe transfer and wake penalties.
@@ -83,13 +99,13 @@ Normative requirement:
 - UMA is preferred for high-frequency state exchange.
 - dGPU is acceptable only if state shuttling over PCIe is avoided.
 
-### 1.1.4 Supported minimum vs reference platform
+### 1.2.4 Supported minimum vs reference platform
 
 Hardware SHOULD define a supported minimum and a reference platform for
 validation. This file must remain qualitative; quantitative targets live in
 `blueprint/hardware/90-decisions.md` and are updated only with evidence.
 
-### 1.1.5 Traceability map (signals to actions)
+### 1.2.5 Traceability map (signals to actions)
 
 Telemetry signal -> scheduler decision -> runtime routing -> persistence action:
 
@@ -103,7 +119,7 @@ Cross-layer links:
 - runtime routing -> `blueprint/software/30-components/llm-runtime.md`
 - duty cycle/hysteresis -> `blueprint/30-specs/scheduler-and-interrupts.md`
 
-### 1.1.6 Failure modes and fallbacks
+### 1.2.6 Failure modes and fallbacks
 
 The platform MUST expose enough signals to detect and mitigate:
 
