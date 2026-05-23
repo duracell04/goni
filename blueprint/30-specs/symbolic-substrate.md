@@ -24,7 +24,42 @@ Non-goals:
 - full logic programming, HTN planners, or a complete policy language.
 - storage layout changes (F_sparse remains map<utf8, utf8>).
 
-## 2. Terminology
+## 2. Computation layer distinction
+
+SS-01 uses "symbolic" narrowly. It does not claim that AI, classical
+computing, and quantum computing are competing logics of the same kind. They
+operate at different explanatory layers:
+
+- Classical computation is deterministic symbolic state transition.
+- AI computation is statistical inference and representation learning running
+  on classical hardware.
+- Quantum computation is physical state evolution and measurement over quantum
+  states.
+
+For Goni, this distinction fixes the authority boundary. LLMs and other AI
+systems may infer, rank, summarize, draft, classify, or propose state changes.
+Those outputs remain advisory until SS-01 validates them against policy, facts,
+schemas, constraints, and capabilities. Quantum computation is a distinct
+physical substrate, not a stronger form of AI or a bypass around symbolic
+validation.
+
+| Dimension | Classical computing | AI computation | Quantum computation |
+| --- | --- | --- | --- |
+| Core object | Bit or symbolic state | Vector, parameter, or distribution | Qubit or quantum state |
+| Main operation | Deterministic state transition | Statistical inference | Unitary state evolution and measurement |
+| Probability type | Optional simulated randomness | Epistemic or model uncertainty | Physical measurement probability |
+| Mathematical base | Logic, algorithms, automata | Statistics, optimization, linear algebra | Hilbert spaces, amplitudes, operators |
+| Main output | Exact computation | Prediction, generation, or classification | Sampled classical result after measurement |
+| Failure mode | Bug, wrong algorithm, wrong input | Hallucination, overfitting, bias, drift | Decoherence, noise, error accumulation |
+| Hardware today | CPU, GPU, ASIC | GPU, TPU, NPU, accelerators | Quantum processors plus classical control |
+
+Goni's runtime stack is therefore layered: classical systems control execution,
+AI systems infer patterns and propose artifacts, and any future quantum system
+would only accelerate specific mathematical subproblems where its physical
+structure is useful. None of those layers replaces the deterministic
+arbitration contract defined here.
+
+## 3. Terminology
 
 - fact: a keyed proposition stored in F_sparse (observed or derived).
 - goal: a desired state or outcome stored in F_sparse.
@@ -36,7 +71,7 @@ Non-goals:
 - validation: symbolic evaluation of a proposal against policy, facts, and
   schemas.
 
-## 3. Arbitration contract
+## 4. Arbitration contract
 
 The kernel enforces the following sequence for any state mutation or tool call:
 
@@ -67,7 +102,7 @@ Invariants:
 - All arbitration decisions are auditable and tied to state_snapshot_id.
 - LLM output is advisory; only validated proposals can execute.
 
-## 4. Authority model (F_sparse namespaces)
+## 5. Authority model (F_sparse namespaces)
 
 F_sparse is a map of namespaced keys. Authority is enforced by policy:
 
@@ -78,7 +113,7 @@ F_sparse is a map of namespaced keys. Authority is enforced by policy:
 
 All writes occur through StateDeltas. Direct mutation is forbidden.
 
-## 4.1 Confirmed vs speculation thresholds
+## 5.1 Confirmed vs speculation thresholds
 
 For MemoryEntries:
 - A claim is **confirmed** if `confirmed_by_event_id` is present, or if
@@ -88,7 +123,7 @@ For MemoryEntries:
   `ttl_ms` or `review_at` value, and MUST NOT be promoted to `fact` without
   new evidence.
 
-## 5. Failure semantics
+## 6. Failure semantics
 
 When validation fails, the kernel must choose one of:
 - block: deny action and record the failure in AuditRecords.
@@ -98,7 +133,7 @@ When validation fails, the kernel must choose one of:
 
 Failures never execute tool calls and never commit state changes.
 
-## 6. Minimal constraint payload (v1)
+## 7. Minimal constraint payload (v1)
 
 Constraint values in F_sparse are versioned JSON objects. Minimal shape:
 
@@ -124,23 +159,23 @@ Example constraints (JSON values stored under constraint.* keys):
   {"v":1,"effect":"deny","subject":{"tool_id":"fs.write"},
    "when":{"op":"missing","args":["fact.source_ref"]},"on_fail":"ask"}
 
-## 7. Related specs
+## 8. Related specs
 
 - blueprint/30-specs/latent-state-contract.md
 - blueprint/30-specs/tool-capability-api.md
 - blueprint/30-specs/scheduler-and-interrupts.md
 - blueprint/30-specs/agent-manifest.md
 
-## 8. Upstream
+## 9. Upstream
 - [Plane contracts](/blueprint/software/50-data/30-plane-contracts.md)
 - [Schema MVP](/blueprint/software/50-data/51-schemas-mvp.md)
 
-## 9. Downstream
+## 10. Downstream
 - [Tool capability API](/blueprint/30-specs/tool-capability-api.md)
 - [Latent state contract](/blueprint/30-specs/latent-state-contract.md)
 - [Scheduler and interrupts](/blueprint/30-specs/scheduler-and-interrupts.md)
 
-## 10. Adjacent
+## 11. Adjacent
 - [ITCR](/blueprint/30-specs/itcr.md)
 - [Agent definition](/blueprint/30-specs/agent-definition.md)
 - [System map](/blueprint/docs/00-system-map.md)
