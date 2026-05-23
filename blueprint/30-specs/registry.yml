@@ -20,6 +20,11 @@ entries:
     type: SPEC
     status: specified_only
     path: 30-specs/delegation-and-autonomy.md
+  - id: DAT-01
+    title: "Delegated Agent Treasury"
+    type: SPEC
+    status: specified_only
+    path: 30-specs/delegated-agent-treasury.md
   - id: BOUND-01
     title: "Vision, Memory, and Actuation Boundaries"
     type: SPEC
