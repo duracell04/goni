@@ -13,6 +13,10 @@ How this relates to `blueprint/docs/related-projects.md`:
   prior art (EXO, Cake, prima.cpp, Beowulf, llama.cpp).
 - This document covers **ecosystem neighbors** (runtimes, apps, gateways, and
   "AI OS" framing) and the system/product insights they imply.
+- `blueprint/docs/references/gonios-research-neighbor-map.md` is the focused
+  primary-source academic map for memory OS, local-first agent runtime,
+  receipts/governance, and benchmark neighbors. Keep large ecosystem tables
+  here; keep layer-mapped research synthesis there.
 
 ---
 
