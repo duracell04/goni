@@ -17,4 +17,7 @@ Additions:
 Delegation research traceability:
 - [Personal twin autonomy map](/blueprint/docs/references/personal-twin-autonomy-map.md)
 
+Research-neighbor synthesis:
+- [GoniOS research neighbor map](/blueprint/docs/references/gonios-research-neighbor-map.md)
+
 See `bibliography.md` for the current list.
