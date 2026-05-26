@@ -748,3 +748,144 @@ Used in:
 - `blueprint/docs/references/personal-twin-autonomy-map.md` (C-AUTON-08)
 Source:
 - https://pmc.ncbi.nlm.nih.gov/articles/PMC10728259/
+
+Key: [[packer2023-memgpt]]
+Claim: MemGPT frames LLM memory as virtual context management with explicit
+movement between limited context and external memory.
+Relevance:
+- Anchors GoniOS memory/state discussions around managed context instead of
+  unbounded transcript growth.
+Used in:
+- `blueprint/docs/references/gonios-research-neighbor-map.md`
+Source:
+- https://arxiv.org/abs/2310.08560
+
+Key: [[xu2025-memos]]
+Claim: MemOS proposes memory as a first-class system resource for LLM
+applications, with lifecycle and service-management concerns.
+Relevance:
+- Supports evaluating Goni memory as an operating substrate, while keeping
+  claims separate from implementation status.
+Used in:
+- `blueprint/docs/references/gonios-research-neighbor-map.md`
+Source:
+- https://arxiv.org/abs/2505.22101
+
+Key: [[mei2024-aios]]
+Claim: AIOS proposes an LLM agent operating system with scheduling, context,
+memory, storage, access control, tools, and agent SDK layers.
+Relevance:
+- Provides an academic comparison point for Goni scheduler, context, and
+  orchestration contracts.
+Used in:
+- `blueprint/docs/references/gonios-research-neighbor-map.md`
+Source:
+- https://arxiv.org/abs/2403.16971
+
+Key: [[wu2024-oscopilot]]
+Claim: OS-Copilot/FRIDAY studies a generalist computer agent operating across
+web, terminal, files, applications, and multimodal OS surfaces.
+Relevance:
+- Informs Goni action execution and computer-use evaluation without replacing
+  capability mediation or receipts.
+Used in:
+- `blueprint/docs/references/gonios-research-neighbor-map.md`
+Source:
+- https://arxiv.org/abs/2402.07456
+
+Key: [[xie2024-osworld]]
+Claim: OSWorld provides a benchmark for multimodal agents operating in real
+computer environments.
+Relevance:
+- Supports future Goni LifeBench design for desktop/operator task evaluation.
+Used in:
+- `blueprint/docs/references/gonios-research-neighbor-map.md`
+Source:
+- https://os-world.github.io/
+
+Key: [[zhou2023-webarena]]
+Claim: WebArena provides a realistic, self-hostable web environment for
+building and evaluating autonomous web agents.
+Relevance:
+- Supports reproducible delegated web-action tests with synthetic/public
+  fixtures.
+Used in:
+- `blueprint/docs/references/gonios-research-neighbor-map.md`
+Source:
+- https://arxiv.org/abs/2307.13854
+
+Key: [[drouin2024-workarena]]
+Claim: WorkArena evaluates agents on realistic enterprise and knowledge-work
+tasks.
+Relevance:
+- Informs Action Card and Daily Brief task design for office-style delegation,
+  while remaining distinct from personal-memory evaluation.
+Used in:
+- `blueprint/docs/references/gonios-research-neighbor-map.md`
+Source:
+- https://arxiv.org/abs/2403.07718
+
+Key: [[deng2023-mind2web]]
+Claim: Mind2Web provides a generalist web-agent dataset and benchmark for
+learning and evaluating web interactions across sites.
+Relevance:
+- Provides task-representation and generalization lessons for Goni web-action
+  fixtures.
+Used in:
+- `blueprint/docs/references/gonios-research-neighbor-map.md`
+Source:
+- https://osu-nlp-group.github.io/Mind2Web/
+
+Key: [[liu2023-agentbench]]
+Claim: AgentBench evaluates LLMs as agents across multiple environments.
+Relevance:
+- Supports broad benchmark design ideas while making clear that Goni needs
+  personal-memory, receipt, and privacy metrics beyond generic agent scores.
+Used in:
+- `blueprint/docs/references/gonios-research-neighbor-map.md`
+Source:
+- https://openreview.net/forum?id=zAdUB0aCTQ
+
+Key: [[agentguard2025]]
+Claim: AgentGuard studies runtime verification of AI agents through formal
+events and monitorable properties.
+Relevance:
+- Informs Goni assurance and belief-state discussions without implying POMDP or
+  MDP implementation.
+Used in:
+- `blueprint/docs/references/gonios-research-neighbor-map.md`
+Source:
+- https://arxiv.org/abs/2509.23864
+
+Key: [[nelson2026-delegation-receipts]]
+Claim: The Delegation Receipt Protocol draft defines signed authorization and
+receipt objects for AI-agent delegation.
+Relevance:
+- Strong reference point for Goni receipt fields, scope boundaries, time
+  windows, and model-state commitments.
+Used in:
+- `blueprint/docs/references/gonios-research-neighbor-map.md`
+Source:
+- https://datatracker.ietf.org/doc/draft-nelson-agent-delegation-receipts/
+
+Key: [[authenticated-delegation-2025]]
+Claim: Authenticated Delegation and Authorized AI Agents frames agent authority
+through authenticated, authorized, and auditable delegation.
+Relevance:
+- Grounds Goni's bounded authority model in identity and access-management
+  concepts.
+Used in:
+- `blueprint/docs/references/gonios-research-neighbor-map.md`
+Source:
+- https://arxiv.org/abs/2501.09674
+
+Key: [[yang2024-swe-agent]]
+Claim: SWE-agent shows that agent-computer interface design materially affects
+autonomous software-engineering task performance.
+Relevance:
+- Supports treating Goni tool/action interfaces as first-class evaluation
+  surfaces, not incidental prompts.
+Used in:
+- `blueprint/docs/references/gonios-research-neighbor-map.md`
+Source:
+- https://proceedings.neurips.cc/paper_files/paper/2024/hash/5a7c947568c1b1328ccc5230172e1e7c-Abstract-Conference.html
