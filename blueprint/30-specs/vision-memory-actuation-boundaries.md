@@ -23,6 +23,7 @@ This spec applies to:
 - local GUI agents using screenshot or framebuffer loops,
 - cloud computer-use systems that request screenshots and return actions,
 - browser automation and browser-isolated tools,
+- embodied robot sensor and actuator systems,
 - OS memory layers that record screen, audio, accessibility, or OCR history,
 - desktop integrations that read app context through accessibility APIs,
 - permissioned-view assistants that observe and annotate only,
@@ -200,6 +201,7 @@ These are measurement dimensions. This spec does not assert benchmark values.
 - [Tool capability API](/blueprint/30-specs/tool-capability-api.md)
 - [Receipts](/blueprint/30-specs/receipts.md)
 - [Visual Intelligence Plane](/blueprint/30-specs/visual-intelligence-plane.md)
+- [Embodied Robot Control Plane](/blueprint/30-specs/embodied-robot-control-plane.md)
 - [Governed memory retrieval](/blueprint/30-specs/memory-retrieval.md)
 - [Isolation and tool sandboxes](/blueprint/30-specs/isolation-and-tool-sandboxes.md)
 - [Network gate and anonymity](/blueprint/30-specs/network-gate-and-anonymity.md)
