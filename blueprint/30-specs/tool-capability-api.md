@@ -68,6 +68,13 @@ computer-use session. If an action starts from observed screen or app context,
 BOUND-01 defines the required boundary chain before this tool envelope may
 execute.
 
+Robot skills are also tool syscalls when they cause or prepare physical-world
+effects. Movement, navigation, grasping, carrying, sorting, cleaning, device
+operation, person assistance, security patrol, remote-supervised action, and
+robot-cloud command paths require capability-scoped mediation under ROBOT-01.
+Robot vendor SDKs, fleet managers, teleoperation systems, or middleware logs do
+not create authority without a Goni capability token and policy decision.
+
 ## 2. Tool result envelope
 
 Tool results MUST include:
@@ -191,6 +198,7 @@ Tokens are immutable and referenced by ID in tool calls.
 - [agent-definition.md](/blueprint/30-specs/agent-definition.md)
 - [delegation-interface.md](/blueprint/30-specs/delegation-interface.md)
 - [vision-memory-actuation-boundaries.md](/blueprint/30-specs/vision-memory-actuation-boundaries.md)
+- [embodied-robot-control-plane.md](/blueprint/30-specs/embodied-robot-control-plane.md)
 - [latent-state-contract.md](/blueprint/30-specs/latent-state-contract.md)
 - [scheduler-and-interrupts.md](/blueprint/30-specs/scheduler-and-interrupts.md)
 - [symbolic-substrate.md](/blueprint/30-specs/symbolic-substrate.md)
@@ -207,6 +215,7 @@ Tokens are immutable and referenced by ID in tool calls.
 - [Network gate and anonymity](/blueprint/30-specs/network-gate-and-anonymity.md)
 - [Delegation and autonomy](/blueprint/30-specs/delegation-and-autonomy.md)
 - [Vision, memory, and actuation boundaries](/blueprint/30-specs/vision-memory-actuation-boundaries.md)
+- [Embodied Robot Control Plane](/blueprint/30-specs/embodied-robot-control-plane.md)
 - [Orchestrator](/blueprint/software/30-components/orchestrator.md)
 
 ## 10. Adjacent
