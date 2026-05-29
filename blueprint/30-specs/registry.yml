@@ -25,6 +25,11 @@ entries:
     type: SPEC
     status: specified_only
     path: 30-specs/delegated-agent-treasury.md
+  - id: ROBOT-01
+    title: "Embodied Robot Control Plane"
+    type: SPEC
+    status: specified_only
+    path: 30-specs/embodied-robot-control-plane.md
   - id: BOUND-01
     title: "Vision, Memory, and Actuation Boundaries"
     type: SPEC
