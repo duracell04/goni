@@ -135,6 +135,14 @@ The `delegation` object MUST expose stable delegation-engineering fields:
   extraction boundaries affected the action. It captures refs and compact
   policy decisions, not raw private screen content, OCR text, accessibility
   dumps, audio transcripts, or unbounded prompts.
+- `robot_basis` records embodied robot decisions when robot observation,
+  extraction, memory, physical actuation, egress, remote supervision, safety
+  envelopes, or verification affected the action. It captures robot refs,
+  adapter refs, mandate refs, environment scope refs, actuation grant refs,
+  sensor basis refs, policy decisions, verification summaries, intervention
+  state, and rollback/repair refs. It must not store raw private maps, raw
+  video, raw audio, full sensor logs, unrestricted telemetry, or unbounded
+  transcripts by default.
 - `interaction_mode` records whether the turn was delegated execution or
   co-creation.
 - `work_order_id` references the canonical pre-execution Work Order.
@@ -163,6 +171,7 @@ The `delegation` object MUST expose stable delegation-engineering fields:
 - [Delegation and autonomy](/blueprint/30-specs/delegation-and-autonomy.md)
 - [Visual Intelligence Plane](/blueprint/30-specs/visual-intelligence-plane.md)
 - [Vision, memory, and actuation boundaries](/blueprint/30-specs/vision-memory-actuation-boundaries.md)
+- [Embodied Robot Control Plane](/blueprint/30-specs/embodied-robot-control-plane.md)
 
 ## Downstream
 - [Receipt schema](/blueprint/docs/receipts/receipt-schema.md)
@@ -208,6 +217,11 @@ The `delegation` object MUST expose stable delegation-engineering fields:
   sandboxing, approval, egress, or rollback/repair
 - denied boundary transitions must emit an auditable receipt or receipt-linked
   record without storing raw private content by default
+- robot-mediated actions must include `robot_basis` when robot observation,
+  extraction, memory, physical actuation, egress, remote supervision, safety
+  envelopes, or verification affected the action
+- robot receipts must omit raw private maps, raw video, raw audio, full sensor
+  logs, unrestricted telemetry, and unbounded transcripts by default
 
 
 
