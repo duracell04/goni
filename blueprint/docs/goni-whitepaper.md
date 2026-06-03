@@ -59,6 +59,32 @@ used for ambiguity resolution or human-facing output, not the control loop.
 This is infrastructure-first and model-agnostic: JEPA-style latent prediction is
 compatible inspiration, not a mandatory training objective.
 
+## Operational auditability (PAL framing)
+
+Goni adopts the Personal AI Ledger (PAL) framing for personal agent safety:
+the model's neural internals may remain opaque, but its interactions with the
+user's world can be made operationally auditable. The practical question is not
+only "why did this token appear?", but "what context did the system use, which
+memory or tool boundary was crossed, what was proposed, who approved it, what
+changed, and how can the change be inspected or reversed?"
+
+In Goni terms, PAL is not a separate product layer. It is the academic framing
+for the local reference-monitor kernel, capability-mediated tools, provenance
+receipts, policy gates, and rollback references already used throughout the
+blueprint:
+
+```text
+The AI may think freely,
+act only through receipts,
+and change itself only through versioned adaptation receipts.
+```
+
+This is operational auditability, not mechanistic interpretability. Hash-linked
+receipts provide tamper evidence, not truth. Git-backed rollback applies to
+versioned file state, not to every real-world consequence such as sent messages,
+published content, or external social effects. For those actions, Goni records
+compensation or repair references rather than promising perfect undo.
+
 ## Latent-first as power and thermal strategy
 
 Latent-first cognition is a **power/thermal constraint**, not only a modeling
