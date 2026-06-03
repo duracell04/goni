@@ -41,6 +41,17 @@ Operationally, a serious LLM learns in three speeds:
 The governing rule is simple: facts default outward, skill patches stay scoped,
 and core weights absorb only rare durable structure.
 
+This maps to the PAL adaptation ladder:
+
+1. Prompt or policy steering first, because it is cheap, inspectable, and easy
+   to roll back.
+2. Governed memory and retrieval second, because factual and preference context
+   should remain external, citeable, and reversible where possible.
+3. Adapter or preference-dataset generation third, only after repeated evidence,
+   replay evaluation, and promotion review.
+4. Full fine-tuning last and rarely, because it is harder to debug, evaluate,
+   and reverse than prompt, memory, policy, or adapter changes.
+
 This is the system form of Goni's change-velocity gradient: change velocity is
 inversely proportional to governance centrality. Surface artifacts such as
 prompts, drafts, context assemblies, eval packs, plugins, and candidate models
@@ -170,6 +181,12 @@ DPO-style preference datasets only after enough evidence, replay evaluation,
 and promotion review. Core policy and constitutional defaults require explicit
 approval and slow promotion.
 
+Worldview, tone, and ideology-shaped adapters require extra caution. Their goal
+is to help the system understand and respect the principal's preferred framing,
+not to collapse critique into agreement. Promotion evidence MUST check for
+overfitting, confirmation bias, degraded general reasoning, refusal drift, and
+loss of useful adversarial critique.
+
 CDC MUST guard against overfitting. A single correction creates a scoped
 hypothesis; repeated corrections create a preference candidate; an accepted
 learning card creates a policy or memory candidate with receipt; stable defaults
@@ -235,6 +252,11 @@ Minimum promotion evidence by class:
 - P1: P0 evidence plus safety and latency non-regression.
 - P2: P1 evidence plus explicit approval, durable gains across repeated runs,
   and signed bundle metadata for rollback.
+
+Adapter and worldview-lens promotion additionally requires comparative
+evaluation against at least one neutral or critic lens. The promotion record
+must show the expected behavior change, task scope, eval refs, active model
+stack refs, approval state, and rollback path.
 
 Delegation-policy promotion specifically requires trace replay over vague-intent
 episodes, comparison against prior policy bundles, and review of question rate,
