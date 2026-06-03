@@ -42,6 +42,17 @@ evidence count, contradiction count, review status, memory diff refs, and
 regression test refs without storing raw draft or user-correction text by
 default.
 
+Model adaptation receipts follow the same governance-tier rule when model
+behavior is changed, promoted, rolled back, or made eligible for a new runtime
+route. This includes adapter promotion, LoRA/QLoRA/DPO-style preference
+artifacts, prompt/policy bundle promotion, worldview or task-lens activation,
+and any model-stack change that affects private memory, tool access, or default
+behavior. Adaptation receipts MUST record base bundle refs, adapter or bundle
+identity, training or preference dataset refs, training config refs, eval refs,
+expected behavior change summary, approval status, active runtime selection,
+and rollback ref. They must store hashes, refs, summaries, and policy decisions
+by default, not raw private prompts, memory text, or training examples.
+
 ## PROV-DM mapping
 - Entity: input/output artifacts
 - Activity: toolcall, redact, retrieve, write
@@ -106,6 +117,9 @@ The `delegation` object MUST expose stable delegation-engineering fields:
   output or execution. It must not store raw retrieved text by default.
 - `bundle_id`, `manifest_hash`, and `eval_receipt_refs` record governed model
   bundle provenance when a model route depends on an approved bundle.
+- `model_stack_basis` records active base bundle, adapter set, system
+  prompt/policy version, memory or retrieval bundle refs, eval receipt refs,
+  and route policy hash when those choices affected output or tool eligibility.
 - `llm_route` records model-routing decisions when an LLM path is selected.
   It captures the selected route, local/Council rationale, task
   classification, models considered and used, redaction requirement, privacy
@@ -130,6 +144,13 @@ The `delegation` object MUST expose stable delegation-engineering fields:
   scope, confidence, evidence and contradiction counts, review status,
   regression refs, source refs, and policy hash. It must not store raw draft or
   correction text by default.
+- `adaptation_basis` records governed model adaptation when a model stack,
+  adapter, preference dataset, prompt/policy bundle, or worldview/task lens is
+  changed or promoted. It captures base bundle refs, adapter refs, training or
+  preference dataset refs, training config refs, expected behavior summary,
+  evaluation refs, approval refs, active runtime selection, policy hash, and
+  rollback ref. It must not store raw private prompts, memory text, or training
+  examples by default.
 - `boundary_basis` records Desktop Agent Firewall decisions when observation,
   extraction, memory, actuation, sandbox, approval, rollback/repair, or remote
   extraction boundaries affected the action. It captures refs and compact
@@ -191,6 +212,8 @@ The `delegation` object MUST expose stable delegation-engineering fields:
   memory affected output or execution
 - model-routing receipts must include `llm_route` when model selection affected
   output or remote escalation eligibility
+- model-stack receipts must include `model_stack_basis` when adapters, prompt
+  policy, memory bundle refs, or eval refs affected output or eligibility
 - receipts must include `task_class`, `autonomy_mode`, `risk_score`, and
   `risk_basis` for any delegated action
 - delegated/tool-mediated receipts must preserve `interaction_mode`,
@@ -208,6 +231,9 @@ The `delegation` object MUST expose stable delegation-engineering fields:
 - parser-mediated memory/context changes must preserve `parser_basis`
 - correction-derived learning changes must preserve `learning_basis`
   sufficient to audit the update without raw content
+- model adaptation changes must preserve `adaptation_basis` sufficient to audit
+  base bundle, adapter, dataset refs, eval refs, approval, active runtime
+  selection, and rollback without raw private training content
 - visual actions must preserve `visual_basis` with source hashes, workflow
   hash, output hash, verification summary, and rollback ref where applicable
 - visual receipts must omit raw private screenshots, image binaries, full OCR
