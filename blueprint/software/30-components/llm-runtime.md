@@ -36,7 +36,10 @@ It is the only component allowed to “speak” to GPUs/NPUs and LLM backends di
     - nominal tokens/s,
     - memory footprint / device requirements,
     - supported shape buckets and graph-compile constraints (for NPUs),
-    - KV-cache limits and paging mode (contiguous vs segmented).
+    - KV-cache limits and paging mode (contiguous vs segmented),
+    - optional speculative/draft-model support: compatible draft bundles,
+      maximum draft length, confidence-head availability, and verifier batch
+      constraints.
 
 - **Utilisation reporting**
   - Track and expose current load (per model and per device) to scheduler / resman in ??.
@@ -55,6 +58,8 @@ It is the only component allowed to “speak” to GPUs/NPUs and LLM backends di
 - ? Choosing which model tier to use (router).  
 - ? Selecting RAG context (context selector).  
 - ? Managing global queueing or admission control.
+- ? Deciding whether speculative drafts are accepted, shortened, escalated, or
+  sent to a council. Those decisions stay in the router/control plane.
 - ? Mutating base weights, promoting patches, or learning online in production.
 
 ---
@@ -77,6 +82,14 @@ pub struct ModelCapabilities {
     pub tokens_per_second: f32,
     pub mem_bytes: u64,
     pub devices: Vec<DeviceKind>,
+    pub speculative: Option<SpeculativeCapabilities>,
+}
+
+pub struct SpeculativeCapabilities {
+    pub compatible_draft_bundles: Vec<BundleId>,
+    pub max_draft_tokens: usize,
+    pub reports_token_confidence: bool,
+    pub verifier_batch_constraints: Vec<ShapeBucket>,
 }
 
 pub struct UtilizationMetrics {
@@ -114,6 +127,12 @@ pub trait LlmRuntime {
 Concrete engines (llama.cpp, vLLM, etc.) implement LlmRuntime:
 
 * MVP: 1–2 backends is enough (e.g. local small/large model).
+
+Backends may optionally expose speculative decoding with a draft model or
+attached draft heads. vLLM documents this draft/verify path, while DSpark is a
+production example of semi-autoregressive drafting plus confidence-scheduled
+verification; DeepSpec is the related DeepSeek training/evaluation codebase for
+speculative drafters. [[vllm-speculative-decoding]] [[cheng2026-dspark]] [[deepseek2026-deepspec]]
 
 Runtime candidates are tracked as technology intelligence in
 [Local Models](/blueprint/60-market/suppliers/local-models.md) and
