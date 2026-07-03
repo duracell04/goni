@@ -24,6 +24,9 @@
 ## 3. When Goni uses the Council
 - Default rule: Goni tries local memory, local tools, local retrieval, and local
   models first. The Council is an escalation tier, not the default brain.
+- Council rule: use councils only at uncertainty boundaries, not for routine
+  local work. A council call must buy external freshness, material model
+  diversity, high-stakes review, or a clear confidence/risk reduction.
 - Explicit user request: UI/API flag `provider="council"` or `mode="paranoid"` routes to council.
 - Orchestrator heuristics (examples):
   - Task classified "high difficulty" or "safety-critical".
@@ -39,6 +42,9 @@
   - Members: generate first-pass answers and reviews.
   - Chairman: synthesizes final answer; can be distinct or one of the members.
   - Specialists: code, web-grounded, reasoning, safety.
+  - Asymmetric reviewers: prefer assigned functions over generic duplicate
+    opinions, e.g. main answer, critic, privacy/risk checker, action-safety
+    checker, and style/domain reviewer.
 - Families to seat (bind exact IDs in config, not here):
   - OpenAI: GPT-4.1 (chair), GPT-4.1-mini or GPT-4o (fast vote).
   - Anthropic: Claude Opus 4.x / 4.5 (alt chair), Claude Sonnet 4.x, Haiku 4.5.
