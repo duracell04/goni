@@ -114,7 +114,15 @@ The kernel exposes explicit modes:
 - Thermal throttle
 - Offline-safe
 
-Mode changes adjust budgets, wake rates, and compaction thresholds.
+Mode changes adjust budgets, wake rates, compaction thresholds, model tier,
+context length, verifier budget, draft length, parallel-agent count, and
+background refresh rate.
+
+When a runtime supports speculative or draft-model inference, the scheduler may
+budget the maximum draft prefix, verifier tokens, and confidence cutoff exposed
+to the router/control plane. The runtime executes the chosen bundle and reports
+capabilities; it does not decide whether to accept, verify, escalate, or send
+work to a council.
 
 ## 5. Invariants
 
@@ -122,6 +130,9 @@ Mode changes adjust budgets, wake rates, and compaction thresholds.
 - **No hidden queues:** all work enters the scheduler.
 - **Wake hysteresis:** the kernel enforces cooldowns and rate limits.
 - **Budget enforcement:** CPU/GPU time, disk writes, and solver calls are capped.
+- **Routing remains external:** runtime backends may expose speculative decoding
+  controls, but routing, escalation, and acceptance policy remain in the
+  router/control plane.
 
 ## 6. Audit fields
 
