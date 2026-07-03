@@ -449,6 +449,10 @@ cascades, but the objective is not only cost and quality: the route must also
 account for privacy leakage risk, latency, energy/thermal budget, audit burden,
 data locality, external dependency cost, and the active approval corridor.
 
+The operating rule is: run the smallest local computation that can safely solve
+the task, then escalate only when confidence, risk, freshness, or capability
+constraints justify the extra cost.
+
 Default route order:
 
 ```text
@@ -458,6 +462,13 @@ rule/cache/memory -> local small -> local large -> local tools/RAG
 
 The first sufficient local route wins. The cloud-side Council is an escalation
 tier, not the default decoder.
+
+DSpark is evidence for the same systems pattern at token scale: cheap draft
+work is useful only when a stronger verifier, calibrated confidence estimates,
+and load-aware scheduling decide how much draft to trust. For Goni, this maps
+to local routers and small models drafting or classifying, stronger local models
+verifying, and cloud/council routes remaining exceptional rather than default
+intelligence. [[cheng2026-dspark]] [[deepseek2026-v4-dspark-hf]]
 
 At the minimal formal level we distinguish two local model classes and one
 remote escalation class:
@@ -475,6 +486,11 @@ Router policy:
 3. Else compare expected value of escalation vs continuation.
 
 Escalation to the cloud-side multi-model path (the [LLM Council](/blueprint/docs/llm-council.md)) follows the triggers in Section 3 of that doc: explicit user request, high difficulty/safety-critical classification, or long-context needs that exceed local comfort.
+
+It is also allowed when current public information is required and the outgoing
+payload is public, redacted, or explicitly approved. It is not a default route
+for ordinary private context, routine drafting, or tasks where a local verifier
+has sufficient confidence.
 
 The router MUST NOT send raw private or sensitive context to \(M_r\) by default.
 It must either keep execution local, use a redacted/public-only payload, or
