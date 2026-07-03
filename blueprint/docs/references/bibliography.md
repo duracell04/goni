@@ -889,3 +889,58 @@ Used in:
 - `blueprint/docs/references/gonios-research-neighbor-map.md`
 Source:
 - https://proceedings.neurips.cc/paper_files/paper/2024/hash/5a7c947568c1b1328ccc5230172e1e7c-Abstract-Conference.html
+
+Key: [[cheng2026-dspark]]
+Claim: DSpark is a speculative decoding framework that combines
+semi-autoregressive drafting, confidence-scheduled verification, and
+hardware-aware scheduling. Its reported live DeepSeek-V4 deployment gains are
+60%-85% per-user generation speed for V4-Flash and 57%-78% for V4-Pro against
+the prior MTP-1 baseline. The nominal +661% aggregate throughput figure is a
+strict-SLA frontier result, not a representative general 7x throughput claim;
+moderate aggregate throughput gains are closer to about 50%.
+Relevance:
+- Supports Goni's adaptive-inference doctrine: draft cheaply, verify with
+  calibrated confidence, and schedule verifier work according to real hardware
+  load.
+Used in:
+- `blueprint/software/20-architecture.md`
+- `blueprint/software/30-components/llm-runtime.md`
+Source:
+- https://www.alphaxiv.org/abs/2026.dspark
+
+Key: [[deepseek2026-v4-dspark-hf]]
+Claim: DeepSeek-V4-Pro-DSpark is not a new foundation model; it is the same
+DeepSeek-V4-Pro checkpoint with an additional speculative decoding module
+attached.
+Relevance:
+- Prevents Goni from treating DSpark as a new base-model supplier. It is
+  evidence for runtime orchestration around a model, not for replacing Goni's
+  model-selection policy.
+Used in:
+- `blueprint/software/20-architecture.md`
+Source:
+- https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro-DSpark
+
+Key: [[deepseek2026-deepspec]]
+Claim: DeepSpec is DeepSeek's public, MIT-licensed codebase for training and
+evaluating speculative decoding algorithms, including DSpark-related draft
+model artifacts.
+Relevance:
+- Gives Goni a concrete reference for treating draft models as trainable and
+  evaluable components behind the runtime interface.
+Used in:
+- `blueprint/software/30-components/llm-runtime.md`
+Source:
+- https://github.com/deepseek-ai/DeepSpec
+
+Key: [[vllm-speculative-decoding]]
+Claim: vLLM exposes speculative decoding as an inference feature where a draft
+path proposes candidate tokens and the target model verifies them.
+Relevance:
+- Supports representing speculative decoding as an optional backend/runtime
+  capability while keeping routing and escalation policy in Goni's control
+  plane.
+Used in:
+- `blueprint/software/30-components/llm-runtime.md`
+Source:
+- https://docs.vllm.ai/en/stable/features/speculative_decoding/
