@@ -7,3 +7,4 @@
 - 45-kernel-blockchain-mapping.md
 - 50-learning-loop.md
 - 55-sovereign-operator-audit-gap-map.md
+- 60-cognitive-exocortex-model.md
