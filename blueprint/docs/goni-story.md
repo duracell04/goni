@@ -110,7 +110,26 @@ It is not a personality clone. It is a delegation model: enough preference,
 style, project, relationship, approval, and risk context to act competently
 within defined corridors, and to stop when a decision belongs to you.
 
-### 3.1 One brain, many feeds
+Goni's architecture can be understood as a **cognitive exocortex**: your own
+judgement remains sovereign, durable memory preserves what is known, and a
+governed AI layer investigates and acts within authority you can inspect and
+revoke. That metaphor complements the product identity -- a delegation OS and
+bounded digital representative -- rather than replacing it.
+
+### 3.1 First brain: your judgement stays sovereign
+
+You remain responsible for goals, values, and final judgement. Goni may handle
+routine work inside pre-authorized corridors, but those corridors are bounded,
+revocable, and subject to correction or veto. Higher-risk or out-of-scope work
+comes back to you as a visible proposal.
+
+This is not autonomy for its own sake. It is deliberate delegation:
+
+- You decide what outcomes matter.
+- You define what Goni may observe, remember, draft, or commit.
+- You can inspect why it acted, narrow its authority, or stop it.
+
+### 3.2 Second brain: one durable memory, many feeds
 
 Over time, the Goni box builds a **temporal model** of your digital life:
 
@@ -126,9 +145,12 @@ It doesn't do this by guessing from vibes; it watches what you actually do with:
 - money (pay late/on time),
 - tasks (finish/postpone/forget).
 
-All of that is captured in the Arrow spine and simple metrics, not magic psychology.
+Source material, derived memory, and temporary context remain distinct. All of
+that is governed through the Arrow spine, memory lifecycle, and simple metrics,
+not magic psychology. Evidence stays tied to provenance and integrity metadata,
+while authorized retention, redaction, deletion, and tombstoning still apply.
 
-### 3.2 One kernel, many surfaces
+### 3.3 Third brain: one governed cognitive layer, many surfaces
 
 You can talk to Goni in multiple ways:
 
@@ -144,9 +166,12 @@ But under all those faces there's only one **Goni OS kernel**:
 - one permission system,
 - one memory spine.
 
-No matter where you poke it from, you're dealing with the same brain.
+The active layer perceives, retrieves, plans, verifies, and prepares actions.
+No matter which surface you use, it operates through the same governed kernel
+and canonical memory rather than becoming a separate assistant with its own
+hidden authority or state.
 
-### 3.3 One set of rules about what it's allowed to do
+### 3.4 Digital meninges: one protective rule system
 
 This is where "personal" becomes **governed**:
 
@@ -162,6 +187,19 @@ The result is a relationship that feels less like a toy model and more like a ju
 > "Here's what you're allowed to see.  
 > Here's what you're allowed to do.  
 > Ask me when you're not sure."
+
+The architecture groups these protections as **digital meninges**:
+
+- a hard security perimeter for identity, secrets, storage, sandboxing, and
+  network egress;
+- an orchestration layer for capabilities, context movement, budgets, and
+  scheduling;
+- provenance and epistemic controls around evidence, claims, memory, and
+  receipts.
+
+These are reader-facing names for existing Goni controls, not extra services or
+a second set of contracts. The detailed mapping is in the
+[Cognitive Exocortex Model](/blueprint/20-system/60-cognitive-exocortex-model.md).
 
 ---
 
@@ -223,7 +261,12 @@ Under the narrative, Goni OS is pretty simple conceptually. It has three big res
 2. **Decide what matters and what to do** (judgement + scheduling).  
 3. **Act within strict boundaries** (permissions + routing).
 
-### 5.1 Memory: the Arrow spine
+In the exocortex model, durable memory is the second brain and the governed
+active layer is the third brain. The human remains the first brain: Goni can
+rank, plan, and recommend, but goals, values, delegated authority, correction,
+and veto stay with the operator.
+
+### 5.1 Second-brain memory: the Arrow spine
 
 Instead of scattering data across dozens of app-specific stores, Goni OS builds a **single schema** for your life:
 
@@ -241,7 +284,7 @@ It stores them in a columnar format (Apache Arrow) so that:
 
 It's like giving your life a proper database, instead of treating it as an afterthought.
 
-### 5.2 Judgement: the context and control planes
+### 5.2 Third-brain planning: the context and control planes
 
 On top of that memory, Goni OS runs:
 

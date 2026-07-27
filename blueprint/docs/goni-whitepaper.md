@@ -6,8 +6,35 @@ Human-readable description of the Goni concept.
 >
 > - Start with [`goni-story.md`](/blueprint/docs/goni-story.md) if you want the high-level narrative.
 > - Read this whitepaper (`goni-whitepaper.md`) for the kernel/planes/Arrow details.
+> - Use the [Cognitive Exocortex Model](/blueprint/20-system/60-cognitive-exocortex-model.md) for the first/second/third-brain crosswalk.
 > - Check [`goni-swot.md`](/blueprint/docs/goni-swot.md) for the market / positioning view.
 > - See [`related-projects.md`](/blueprint/docs/related-projects.md) for prior art and neighbors.
+
+## Cognitive exocortex model
+
+Status: Specified only / roadmap
+
+Goni remains a **delegation OS** and bounded digital representative. The term
+**cognitive exocortex** explains how its responsibilities fit together; it is
+not a replacement product identity or a second formal architecture.
+
+| Explanatory term | Goni responsibility |
+| --- | --- |
+| **First brain** | The human principal supplies goals, values, delegated authority, final judgement, correction, and veto. |
+| **Second brain** | The Vault and governed Knowledge/Memory responsibilities preserve evidence, episodes, facts, relationships, project state, policy, and reusable procedures. |
+| **Third brain** | The Harness and Context/Control/Execution responsibilities perceive, retrieve, integrate, plan, verify, and prepare or mediate action. |
+| **Digital meninges** | Security, orchestration, provenance, and epistemic controls protect context movement, memory, tools, egress, and receipts across the system. |
+
+This is a bounded metaphor. It does not add services, schemas, trust boundaries,
+or authority to the model. Existing planes and canonical contracts remain the
+source of truth. Human sovereignty allows revocable, pre-authorized action
+corridors; it does not require a fresh approval for every low-risk operation.
+Observation does not authorize durable memory, and model or external text does
+not become trusted instruction merely by entering context.
+
+See the [Cognitive Exocortex Model](/blueprint/20-system/60-cognitive-exocortex-model.md)
+for the complete mapping of memory classes, cortical layers, specialized-module
+metaphors, the governed cognitive cycle, and contract links.
 
 ## Related work & inspiration
 
