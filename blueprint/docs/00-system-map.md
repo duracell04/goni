@@ -8,6 +8,7 @@ product surfaces, planes, contracts/specs, governance, and evidence.
 ## Start here
 - [Goni Story](/blueprint/docs/goni-story.md)
 - [Goni Whitepaper](/blueprint/docs/goni-whitepaper.md)
+- [Cognitive Exocortex Model](/blueprint/20-system/60-cognitive-exocortex-model.md)
 - [Glossary](/blueprint/docs/glossary.md)
 - [Architecture index](/blueprint/docs/ARCHITECTURE.md)
 
@@ -19,6 +20,7 @@ product surfaces, planes, contracts/specs, governance, and evidence.
 - [Performance realism](/blueprint/20-system/30-performance.md)
 - [Agentic kernel foundations](/blueprint/20-system/40-agentic-kernel-foundations.md)
 - [Kernel-blockchain mapping](/blueprint/20-system/45-kernel-blockchain-mapping.md)
+- [Cognitive exocortex model](/blueprint/20-system/60-cognitive-exocortex-model.md)
 
 ## Planes and contracts
 - [Planes hub](/blueprint/docs/hubs/planes.md)

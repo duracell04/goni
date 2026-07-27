@@ -1,6 +1,6 @@
 ﻿# ARCHITECTURE
 
-Status: specified only / roadmap
+Status: Specified only / roadmap
 
 This document summarizes the current architecture and trust boundaries.
 It is a short index; the formal contracts live in blueprint/30-specs/ and blueprint/software/.
@@ -26,6 +26,24 @@ Canonical formulation:
 
 See [Software Architecture](/blueprint/software/20-architecture.md) for the
 formal architecture placement.
+
+## Cognitive exocortex framing
+
+The [Cognitive Exocortex Model](/blueprint/20-system/60-cognitive-exocortex-model.md)
+provides a non-normative way to explain how Goni surrounds the human operator:
+
+- the human first brain retains goals, values, delegated authority, correction,
+  and veto;
+- the second brain is governed durable memory over existing Knowledge and
+  Memory responsibilities;
+- the third brain is active cognition across the Harness, Context, Control, and
+  Execution responsibilities;
+- digital meninges group the cross-cutting security, orchestration,
+  provenance, and epistemic controls.
+
+This framing adds no service, schema, authority, trust boundary, or competing
+contract. The formal architecture and canonical specifications remain the
+source of truth.
 
 ## Components
 - Orchestrator (kernel HTTP): request intake and scheduling.
