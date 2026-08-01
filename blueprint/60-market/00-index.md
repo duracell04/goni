@@ -22,6 +22,8 @@
 - players/
 - players/README.md
 - goni-competitive-landscape.md
+- [AI Media Provenance and Meta "AI info" Labels](/blueprint/60-market/ai-media-provenance.md)
+- [Local Personal AI Secretary Landscape](/blueprint/60-market/personal-ai-secretary-landscape.md)
 
 ## Cross-lane references
 
@@ -30,3 +32,7 @@
   voice/home stacks, and hardware/edge substrates.
 - [Local Models](/blueprint/60-market/suppliers/local-models.md) - local
   runtime and model-server supplier candidates.
+- [AI Media Provenance](/blueprint/60-market/ai-media-provenance.md) -
+  snapshot-dated primary-source review of Meta labeling signals and limits.
+- [Local Personal AI Secretary Landscape](/blueprint/60-market/personal-ai-secretary-landscape.md) -
+  verified agent/memory comparison and a specified-only Goni roadmap.
