@@ -17,6 +17,11 @@ How this relates to `blueprint/docs/related-projects.md`:
   primary-source academic map for memory OS, local-first agent runtime,
   receipts/governance, and benchmark neighbors. Keep large ecosystem tables
   here; keep layer-mapped research synthesis there.
+- `blueprint/60-market/personal-ai-secretary-landscape.md` is the
+  snapshot-dated comparison of personal-agent and memory projects, including a
+  specified-only Goni implementation roadmap.
+- `blueprint/60-market/ai-media-provenance.md` is the separate evidence review
+  for Meta AI labels, C2PA/IPTC signals, watermarks, and disclosure limits.
 
 ---
 
@@ -199,6 +204,13 @@ multi-agent behavior get confused. Goni should separate them:
 | Project | Confidence | Goni relevance |
 | --- | --- | --- |
 | OpenClaw | `verified` | Agent/channel gateway reference for messaging, sessions, tools, and routing. |
+| QwenPaw | `verified` | AgentScope-team personal agent with local llama.cpp/Ollama/LM Studio paths, Markdown memory, channels, scheduling, and multi-agent features; useful as a reference or mediated seat. |
+| nanobot | `verified` | Lightweight Python personal-agent runtime with WebUI, self-hosted endpoints, long-term memory, tools, subagents, and scheduled automation. |
+| Hivekeep | `verified` | Self-hosted multi-agent household/team application with continuous sessions, hybrid memory, triggers, connected accounts, and encrypted secret handling. |
+| OpenHuman | `verified` | Early-beta desktop orchestrator with local memory and optional local models, but a managed service path remains part of the default product story. |
+| meld | `verified` | Local-first Markdown/Obsidian knowledge agent with Ollama/BYOK modes, autonomous note edits, and Git safety commits. |
+| Elroy | `verified` | Scriptable terminal memory, reminder, document, and goal assistant with an MCP surface. |
+| ZeroClaw | `verified` | Rust single-binary agent runtime with local/hosted providers, tools, MCP, and many communication channels. |
 | Jan Agents / OpenClaw integration | `needs verification` | Possible bridge between Jan UX and OpenClaw-style local agents. |
 | OpenDAN | `verified` | Personal AI OS concept and comparison point. |
 | LibreChat agents | `verified` | Agent features inside a self-hosted chat platform. |
@@ -218,7 +230,6 @@ multi-agent behavior get confused. Goni should separate them:
 | memU | `needs verification` | Memory-heavy agent candidate; verify official source and data model. |
 | Open Interpreter | `verified` | Local code/computer-use execution shell; high-risk without mediation. |
 | Aiden | `candidate/unverified` | Personal AI OS/assistant candidate; ambiguous name, needs disambiguation. |
-| CoPaw / QwenPaw | `needs verification` | Alibaba/Tongyi-style personal agent workstation candidate; naming changed in checked source. |
 | LobsterAI / 有道龙虾 | `verified` | NetEase Youdao personal assistant agent with channel and local/sandbox execution notes. |
 | MaxClaw | `candidate/unverified` | MiniMax/OpenClaw-adjacent candidate; no official source confirmed here. |
 | WorkBuddy | `candidate/unverified` | Tencent-style OpenClaw-compatible candidate; no official source confirmed here. |
@@ -257,6 +268,9 @@ Goni implication:
 | Project | Confidence | Goni relevance |
 | --- | --- | --- |
 | mem0 | `verified` | Agent memory layer candidate. |
+| MemX | `verified` | Local-first Rust/libSQL memory service with hybrid retrieval and low-confidence rejection; backend experiment, not a full agent. |
+| LightMem | `verified` | Research-backed memory framework with local-model support and deferred consolidation patterns. |
+| EverOS | `verified` | Local-first memory ecosystem with Markdown/SQLite/index methods, integrations, and evaluation assets. |
 | Zep | `verified` | Long-term conversational memory/state service. |
 | Chroma / ChromaDB | `verified` | Local vector store candidate. |
 | Qdrant | `verified` | Current prototype-aligned vector DB candidate. |
@@ -400,6 +414,13 @@ UI/application:
 Agent/workflow/tooling:
 
 - OpenClaw docs: https://docs.openclaw.ai/
+- QwenPaw: https://github.com/agentscope-ai/QwenPaw
+- nanobot: https://github.com/HKUDS/nanobot
+- Hivekeep: https://hivekeep.app/
+- OpenHuman: https://github.com/tinyhumansai/openhuman
+- meld: https://meld.kizz.me/
+- Elroy: https://elroy.bot/
+- ZeroClaw: https://github.com/zeroclaw-labs/zeroclaw
 - OpenDAN: https://github.com/OpenDAN-Personal-AI-OS/OpenDAN
 - n8n: https://github.com/n8n-io/n8n
 - LangGraph: https://github.com/langchain-ai/langgraph
@@ -424,6 +445,9 @@ Agent/workflow/tooling:
 Memory/RAG/observability/router:
 
 - mem0: https://github.com/mem0ai/mem0
+- MemX: https://memx.me/
+- LightMem: https://github.com/zjunlp/LightMem
+- EverOS: https://github.com/EverMind-AI/EverOS
 - Zep: https://github.com/getzep/zep
 - Chroma: https://github.com/chroma-core/chroma
 - Qdrant: https://github.com/qdrant/qdrant
