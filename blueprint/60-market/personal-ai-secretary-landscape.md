@@ -18,6 +18,22 @@ hosted product: remote system instructions, provider-side input/output
 classifiers, account enforcement, service availability, and provider-owned
 tool restrictions no longer have to sit on the live inference path.
 
+Goni's preferred posture is owner-sovereign and open-weight: no mandatory
+provider account, remote policy prompt, server-side classifier, silent
+telemetry, revocable API entitlement, or vendor-controlled behavior update is
+allowed on the default inference path. The owner chooses the checkpoint, chat
+template, system prompt, decoding settings, memory, and optional content
+controls. No mandatory viewpoint or content filter should sit between the
+owner and locally generated text.
+
+This is an architectural allocation of authority, not a promise of polite or
+approved opinions. A sovereign assistant should answer owner-requested text
+queries candidly, including controversial, heterodox, or offensive subjects,
+without adding a third party's moral or political policy layer. Goni should
+govern consequential actions at the capability boundary instead of treating
+the model's speech as the action: generating text is not the same operation as
+sending a message, spending money, deleting data, or controlling a machine.
+
 That does **not** create absolute obedience or remove every constraint:
 
 - model behavior remains learned and probabilistic;
@@ -35,7 +51,9 @@ There is no single refusal switch to disable. Refusal and helpfulness behavior
 is distributed across model weights, prompting, chat templates, decoding,
 optional guard models, and the surrounding application. Local ownership makes
 those layers configurable; it does not make the model deterministic or
-infallible.
+infallible. "No filter" can therefore be a stack policy: no mandatory external
+moderation or application-layer suppression--but cannot honestly guarantee
+that learned weights will never hedge, refuse, omit, or moralize.
 
 For a secretary, a capable instruction- and tool-tuned model is usually a
 better starting point than a raw base model. A base model primarily predicts
@@ -49,8 +67,8 @@ model through behavior and systems evaluation rather than assuming that
 Owning only the model is insufficient. A durable personal operator needs five
 separable layers:
 
-1. **Inference:** a local model runtime with swappable model bundles, bounded
-   context, resource reporting, and offline operation.
+1. **Inference:** a local runtime with swappable, hash-pinned open-weight model
+   bundles, bounded context, resource reporting, and fully offline operation.
 2. **Memory:** working, episodic, semantic, relational/project, and procedural
    records with provenance, retrieval, consolidation, export, and forgetting.
 3. **Orchestration:** scheduled jobs, resumable work, interruption, retries,
@@ -224,6 +242,14 @@ implementation status.
 - Implement and exercise one local OpenAI-compatible backend behind the
   existing runtime abstraction, then add a second backend only when it exposes
   a meaningful hardware or serving difference.
+- Prefer downloadable open-weight checkpoints whose licenses permit the
+  intended local use, modification, and redistribution; pin hashes, templates,
+  tokenizer assets, and quantization metadata so the bundle cannot drift at a
+  provider's discretion.
+- Keep the default local text path free of mandatory moderation sidecars,
+  provider policy prompts, remote entitlement checks, and hidden network
+  dependencies. Any owner-selected content control must be explicit,
+  inspectable, removable, and disabled independently of tool authorization.
 - Evaluate current instruction/tool-capable model bundles on legitimate-request
   completion, schema-valid tool selection, correction following, latency,
   memory use, context pressure, and offline behavior.
@@ -272,28 +298,40 @@ against its parent bundle, and separable from current facts stored in memory.
 
 ### 5. Keep authority profiles explicit
 
-**Conformant Goni** remains the supported product path: maximum-safe autopilot,
-kernel-owned capability checks, risk corridors, egress policy, and receipts.
-Routine work should be governed at policy level rather than interrupted by
-needless confirmations, but authority remains with the owner through the Goni
-kernel.
+**Conformant Goni** makes the owner the root authority. The kernel enforces the
+owner's declared capability scopes, risk corridors, egress policy, and receipt
+requirements; it does not enforce a model vendor's worldview. Routine and
+reversible work should run without paternalistic confirmation loops. Any limit
+that remains must be attributable to an owner-selected policy, a concrete
+resource boundary, or a documented legal/technical constraint.
 
-An **unsupported unrestricted research profile** may remove application-level
-prompt filters and action gates only inside a disposable, credential-free,
-offline sandbox containing synthetic or replaceable data. Because it bypasses
-kernel mediation, it is non-conformant and must not be represented as a Goni
-production mode. Containment belongs outside that runtime: no personal vault,
-network route, reusable credentials, mounted home directory, or access to a
-real communications account.
+A **sovereign local-expression profile** is conformant: it may remove
+application-level output filters, remote moderation, and provider-authored
+policy prompts for local text generation. This does not weaken file, network,
+credential, financial, communications, or device-control permissions. Optional
+owner-defined filters remain pluggable rather than mandatory.
 
-This separation lets researchers measure model behavior without silently
-amending Goni's accepted safety and sovereignty contracts.
+An **unrestricted-execution research profile** may also remove action gates,
+but only inside a disposable, credential-free, offline sandbox containing
+synthetic or replaceable data. Because it bypasses kernel mediation, it is
+non-conformant and must not be represented as a production mode. Containment
+belongs outside that runtime: no personal vault, network route, reusable
+credentials, mounted home directory, or real communications account.
+
+The dividing line is therefore liberty of local computation and expression
+versus authority to impose effects on other systems or people. The first is
+owner-controlled by default; the second remains explicitly delegated and
+receipted.
 
 ## Acceptance evidence for a future implementation
 
 A secretary milestone is credible only when evidence demonstrates:
 
 - a complete local/offline workflow with no undeclared egress;
+- operation without a mandatory provider account, entitlement check, remote
+  moderation service, or hidden policy prompt;
+- a reproducible, hash-pinned open-weight bundle with checkpoint and engine
+  licenses recorded separately;
 - model and tool behavior measured on a versioned evaluation pack;
 - memory recall that shows sources and rejects unsupported matches;
 - correction, export, deletion, and rebuild of durable memory;
