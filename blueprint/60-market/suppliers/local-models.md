@@ -23,6 +23,9 @@ Source confidence uses the same labels as
 | --- | --- | --- |
 | Ollama | `verified` | Simple local model UX and baseline OpenAI-like endpoint candidate. |
 | llama.cpp / llama-server | `verified` | GGUF-first edge runtime and deterministic local baseline. |
+| ExLlamaV3 | `verified` | NVIDIA-native quantized runtime for models and caches that fit substantially in aggregate VRAM. |
+| ik_llama.cpp | `verified` | Experimental llama.cpp fork for specialized CPU, CUDA, quantization, and hybrid-MoE performance work. |
+| Chitu | `verified` | Heterogeneous inference engine spanning CPU, GPU, hybrid, and distributed accelerator configurations. |
 | LocalAI | `verified` | OpenAI-compatible local API with broader backend and multimodal ambitions. |
 | LM Studio | `verified` | Desktop/server bridge for local model experimentation. |
 | Jan local server | `verified` | Local-first app/server candidate for desktop-oriented deployments. |
@@ -33,6 +36,9 @@ Source confidence uses the same labels as
 | Mistral.rs | `verified` | Rust runtime candidate for local/server experiments. |
 | exo | `verified` | Distributed home-device inference reference. |
 | KTransformers | `verified` | Heterogeneous/MoE inference candidate. |
+| Hugging Face Accelerate | `verified` | Generic GPU/CPU/disk model dispatcher for compatibility work and uncommon Transformers architectures. |
+| FlexLLMGen | `verified` | Throughput-oriented GPU/CPU/storage offload reference for large offline jobs. |
+| AirLLM | `verified` | Layer/expert streaming reference for minimum-allocation execution demonstrations, not interactive latency. |
 | Hugging Face Transformers | `verified` | Research and model experimentation substrate. |
 | LMDeploy | `verified` | Efficient deployment/serving candidate. |
 | Xinference | `verified` | Higher-level model-serving platform wrapping multiple engines. |

@@ -2,7 +2,7 @@
 
 Status: Specified only / roadmap (technology intelligence).
 
-Evidence snapshot: 2026-08-01
+Evidence snapshot: 2026-08-02
 
 This brief evaluates the claim that an owner-controlled, persistent local AI
 secretary is practical and maps that capability to Goni. It is not an
@@ -87,6 +87,85 @@ be measured on the target backend and hardware. Model weights fitting in
 memory does not guarantee acceptable latency or enough room for KV cache,
 embeddings, OCR, and concurrent system services.
 
+## Local-inference runtime matrix
+
+This ranking applies one specific criterion: practical usefulness for an
+interactive local AI assistant on constrained hardware. It prioritizes usable
+latency, hardware flexibility, maintainability, and permissive licensing. It
+does not rank projects by the largest model they can technically initialize.
+Latency labels are qualitative selection guidance, not Goni benchmark results.
+
+### A. Local and constrained-hardware runtimes
+
+| Priority | Project | Runtime class | Where the model weights live | Hardware sweet spot | Latency profile | Setup burden | Best use | Decisive limitation |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 1 | [llama.cpp](https://github.com/ggml-org/llama.cpp) | General local runtime | GGUF weights distributed between VRAM and system RAM through partial GPU offload and memory mapping | CPUs, Apple Silicon, NVIDIA, AMD, and Intel; especially 4-24 GB GPUs with adequate RAM | Interactive when most computation remains on GPU; progressively slower as more layers remain on CPU | Low to medium | Default local assistant, broad hardware support, experimentation, and reliable deployment | Extremely large models still require enough aggregate RAM and become CPU-bandwidth constrained when heavily offloaded. |
+| 2 | [ExLlamaV3](https://github.com/turboderp-org/exllamav3) | GPU-native quantized runtime | EXL3 weights reside substantially in aggregate GPU memory, with tensor and expert parallelism across GPUs | Modern NVIDIA GPUs, especially one or several 24 GB cards | Excellent when the model fits in VRAM | Medium | Maximum interactive speed, long conversations, and multi-user local agents on NVIDIA | It is not primarily a CPU or NVMe spillover system; performance depends on fitting the quantized model and cache substantially inside available VRAM. |
+| 3 | [KTransformers](https://github.com/kvcache-ai/ktransformers) | Heterogeneous MoE runtime | Attention and selected components use the GPU; experts can remain in system RAM and execute through optimized CPU kernels and scheduling | One strong GPU plus 128-512 GB of fast RAM, preferably modern DDR5 with high memory bandwidth | Conditionally interactive, depending heavily on model, CPU, and RAM bandwidth | High | Very large sparse MoE models that exceed GPU memory by a wide margin | Architecture support is model-specific, installation is demanding, and memory bandwidth becomes the principal bottleneck. |
+| 4 | [ik_llama.cpp](https://github.com/ikawrakow/ik_llama.cpp) | Experimental high-performance llama.cpp fork | GGUF weights split selectively between CPU and CUDA, with specialized MoE kernels, tensor overrides, and additional quantization formats | Technical users with strong AVX2/AVX-512 CPUs and NVIDIA CUDA GPUs | Good to conditional, particularly for supported MoE workloads | High | Additional CPU or hybrid-MoE performance beyond mainline llama.cpp | The fork diverges from mainline, and its documentation identifies CPU and CUDA as the fully functional, performant backends; compatibility and configuration risk are higher. |
+| 5 | [Chitu](https://github.com/thu-pacman/chitu) | Heterogeneous enterprise inference engine | Supports CPU, single-GPU, CPU-GPU hybrid, and distributed accelerator configurations, including FP4 and FP8 conversion paths | NVIDIA or Chinese accelerator infrastructure, from one card to multi-node deployments | Conditional to production-grade, depending on configuration | High | Large MoE deployment where heterogeneous hardware and later scaling matter | It is more operationally complex than desktop-focused runtimes, with a smaller international user ecosystem and more platform-specific deployment paths. |
+| 6 | [Hugging Face Accelerate](https://huggingface.co/docs/accelerate/concept_guides/big_model_inference) | Generic model dispatcher and offloader | Modules can be allocated across GPU, CPU, and memory-mapped disk through an explicit or automatic device map | Researchers supporting uncommon Transformers architectures | Usually slow under heavy offload | Medium to high | Compatibility experiments, custom architectures, and implementation work | Multi-GPU model parallelism is deliberately basic and can leave GPUs operating sequentially; Accelerate is a compatibility layer, not a highly optimized local inference engine. |
+| 7 | [FlexLLMGen](https://github.com/FMInference/FlexLLMGen) | Throughput-oriented offload engine | GPU, CPU, and storage are jointly scheduled, using compression and large effective batches | One commodity GPU running large offline jobs | Batch-oriented, not conversational | High | Overnight extraction, benchmarking, data processing, and high-volume offline inference | Its optimization target is aggregate throughput over long jobs rather than low first-token latency or interactive chat. |
+| 8 | [AirLLM](https://github.com/lyogavin/airllm) | Layer-wise or expert-wise streaming runtime | Individual layers or routed experts are repeatedly loaded from storage into GPU memory | Small VRAM, very large SSD capacity, and workloads where execution matters more than response time | Proof-of-execution for extreme models | Medium | Architecture inspection, compatibility testing, and demonstrating that a checkpoint can technically execute | It minimizes peak VRAM by transferring the bottleneck to storage traffic, weight movement, and token latency. Its Kimi K3 demonstration used 3.72 GB peak allocation on an RTX 6000 Ada, not an actual 4 GB card. |
+
+### B. Production-serving engines
+
+These engines solve a different problem and therefore remain outside the
+constrained-hardware ranking.
+
+| Project | License | Primary optimization | Hardware assumption | Best use | Why it is not an AirLLM replacement |
+| --- | --- | --- | --- | --- | --- |
+| [vLLM](https://docs.vllm.ai/) | Apache 2.0 | Continuous batching, cache management, tensor parallelism, pipeline parallelism, and expert parallelism | The model is sensibly distributed across sufficient accelerator memory | High-throughput OpenAI-compatible serving, multi-user systems, and large production deployments | It optimizes execution after weights have been properly placed; it does not primarily turn a tiny GPU into a practical host for a trillion-parameter checkpoint. |
+| [SGLang](https://docs.sglang.ai/) | Apache 2.0 | RadixAttention, prefix caching, structured generation, speculative decoding, and distributed serving | One adequately sized GPU through large clusters | Agent systems, repeated prefixes, structured outputs, and production inference | Its strengths are latency and throughput at serving scale, rather than continuous disk streaming under severe VRAM constraints. |
+
+### Kimi K3 status on 2026-08-02
+
+| Runtime | Snapshot status | Practical interpretation |
+| --- | --- | --- |
+| [AirLLM](https://github.com/lyogavin/airllm) | Publicly demonstrated with 3.72 GB peak VRAM on one RTX 6000 Ada through per-expert streaming | Lowest documented GPU allocation in this comparison, but primarily an execution demonstration rather than a fast assistant path. |
+| [vLLM](https://vllm-project.github.io/2026/07/27/k3.html) | Live K3 support includes multimodal processing, tool calling, reasoning output, structured output, and production deployment recipes | Strongest current production path, provided substantial accelerator infrastructure is available. |
+| [llama.cpp](https://github.com/ggml-org/llama.cpp/pull/26185) | Text-model support remains an open, unmerged upstream pull request; a full-size multimodal fork reports functional layer splitting while row and tensor splitting remain requested | Promising for GGUF and hybrid deployment, but too fresh and fork-dependent to call stable. See the current [split-mode request](https://github.com/ggml-org/llama.cpp/issues/26365). |
+| [KTransformers](https://github.com/kvcache-ai/ktransformers/issues/2109) | No released K3 support was evident; the support request opened on 2026-07-28 remains unresolved | Potentially interesting for a RAM-heavy workstation, but not K3-ready at this snapshot. |
+
+### How to read the matrix
+
+- **Weight placement matters:** a small VRAM number can hide a large system-RAM
+  or storage requirement. The physical location of the remaining weights is
+  part of the hardware cost.
+- **Capacity is not latency:** initialization, eventual token generation, and
+  productive interactive response are three different thresholds. This matrix
+  ranks for the third.
+- **Serving is not offloading:** vLLM and SGLang improve execution and
+  concurrency after a model has been provisioned. AirLLM, Accelerate, and
+  FlexLLMGen instead explore increasingly aggressive memory hierarchies.
+- **Operations matter:** installation, supported architectures, backend
+  maturity, and configuration risk affect the reliability of a daily personal
+  assistant as much as a peak benchmark does.
+
+Four-bit arithmetic also sets a useful lower bound. Seventy billion weights at
+four bits require `70,000,000,000 x 4 / 8 = 35,000,000,000` bytes, approximately
+35 GB before quantization metadata, higher-precision tensors, KV cache, and
+runtime buffers. A 24 GB GPU therefore requires CPU offload, multiple GPUs, a
+lower effective bitrate, or a smaller model; ordinary 4-bit quantization alone
+does not make a 70B model VRAM-resident on that card.
+
+All engine codebases in the two tables use permissive MIT or Apache 2.0
+licenses. The license for any selected model checkpoint is separate and must be
+reviewed independently.
+
+### Backend decision hierarchy
+
+1. Use llama.cpp as the safest overall foundation for a dependable local AI
+   secretary.
+2. Prefer ExLlamaV3 when the deployment is NVIDIA-only and the selected model
+   plus cache fit substantially in aggregate VRAM.
+3. Use KTransformers as the specialist option for very large sparse MoE models
+   on a RAM-heavy workstation.
+4. Move to vLLM or SGLang when the assistant becomes a multi-user or production
+   service with adequate accelerator memory.
+5. Treat AirLLM as a research, compatibility, and minimum-allocation instrument
+   rather than the primary interactive backend.
+
 ## Verified project landscape
 
 The projects below are real and active or available as of the evidence
@@ -127,8 +206,11 @@ Instead:
 - use QwenPaw, nanobot, Hivekeep, OpenHuman, meld, Elroy, and ZeroClaw as
   comparative references or optional mediated adapters;
 - evaluate MemX, LightMem, and EverOS behind the Memory Plane contract;
-- keep local runtimes such as llama.cpp, Ollama, LM Studio, or vLLM behind the
-  existing `LlmRuntime` abstraction; and
+- use llama.cpp as the default local foundation, ExLlamaV3 for VRAM-resident
+  NVIDIA workloads, KTransformers for RAM-heavy sparse MoE experiments,
+  vLLM/SGLang for serving scale, and AirLLM only for compatibility or
+  minimum-allocation demonstrations, all behind the existing `LlmRuntime`
+  abstraction; and
 - promote only components that pass offline, provenance, resource, and
   conformance tests on Goni hardware.
 
@@ -233,6 +315,15 @@ A secretary milestone is credible only when evidence demonstrates:
 - [Elroy official documentation](https://elroy.bot/)
 - [ZeroClaw official repository](https://github.com/zeroclaw-labs/zeroclaw)
 - [llama.cpp official repository](https://github.com/ggml-org/llama.cpp)
+- [ExLlamaV3 official repository](https://github.com/turboderp-org/exllamav3)
+- [KTransformers official repository](https://github.com/kvcache-ai/ktransformers)
+- [ik_llama.cpp official repository](https://github.com/ikawrakow/ik_llama.cpp)
+- [Chitu official repository](https://github.com/thu-pacman/chitu)
+- [Hugging Face Accelerate big-model inference documentation](https://huggingface.co/docs/accelerate/concept_guides/big_model_inference)
+- [FlexLLMGen official repository](https://github.com/FMInference/FlexLLMGen)
+- [AirLLM official repository](https://github.com/lyogavin/airllm)
+- [vLLM official documentation](https://docs.vllm.ai/)
+- [SGLang official documentation](https://docs.sglang.ai/)
 - Meta, [Our responsible approach to Meta AI and Meta Llama
   3](https://ai.meta.com/blog/meta-llama-3-meta-ai-responsibility/), for the
   distinction between pretrained, instruction-tuned, and system safeguard

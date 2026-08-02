@@ -136,6 +136,9 @@ kernel, policy, receipt, or memory governance.
 | --- | --- | --- |
 | Ollama | `verified` | Simple local model runtime and model manager. |
 | llama.cpp / llama-server | `verified` | Low-level GGUF inference baseline and OpenAI-compatible local server path. |
+| ExLlamaV3 | `verified` | NVIDIA-native quantized runtime for models and caches that fit substantially in aggregate VRAM. |
+| ik_llama.cpp | `verified` | Experimental llama.cpp fork for specialized CPU, CUDA, quantization, and hybrid-MoE performance work. |
+| Chitu | `verified` | Heterogeneous inference engine spanning CPU, GPU, hybrid, and distributed accelerator configurations. |
 | LocalAI | `verified` | Local OpenAI-compatible API with broad backend and multimodal ambitions. |
 | LM Studio | `verified` | Desktop runtime plus OpenAI-compatible local server. |
 | Jan local server | `verified` | Local-first desktop app that can also expose local model serving. |
@@ -147,6 +150,9 @@ kernel, policy, receipt, or memory governance.
 | exo | `verified` | Everyday-device clustering and distributed local inference reference. |
 | BitNet | `needs verification` | 1-bit inference/model-family direction; evaluate by concrete runtime maturity. |
 | KTransformers | `verified` | Heterogeneous/MoE-optimized inference candidate, especially CPU+GPU mixes. |
+| Hugging Face Accelerate | `verified` | Generic GPU/CPU/disk model dispatcher for compatibility work and uncommon Transformers architectures. |
+| FlexLLMGen | `verified` | Throughput-oriented GPU/CPU/storage offload reference for large offline jobs. |
+| AirLLM | `verified` | Layer/expert streaming reference for minimum-allocation execution demonstrations, not interactive latency. |
 | Hugging Face Transformers | `verified` | Research and experimentation baseline, not usually the appliance serving layer. |
 | LMDeploy | `verified` | Efficient LLM deployment/serving framework candidate. |
 | JittorInfer | `needs verification` | China-origin inference candidate tied to Jittor/Ascend-style deployment notes. |
@@ -380,6 +386,9 @@ Runtime/model serving:
 
 - Ollama: https://github.com/ollama/ollama
 - llama.cpp: https://github.com/ggml-org/llama.cpp
+- ExLlamaV3: https://github.com/turboderp-org/exllamav3
+- ik_llama.cpp: https://github.com/ikawrakow/ik_llama.cpp
+- Chitu: https://github.com/thu-pacman/chitu
 - LocalAI: https://localai.io/
 - LM Studio: https://lmstudio.ai/
 - Jan: https://jan.ai/
@@ -390,6 +399,9 @@ Runtime/model serving:
 - Mistral.rs: https://github.com/EricLBuehler/mistral.rs
 - exo: https://github.com/exo-explore/exo
 - KTransformers: https://github.com/kvcache-ai/ktransformers
+- Hugging Face Accelerate: https://github.com/huggingface/accelerate
+- FlexLLMGen: https://github.com/FMInference/FlexLLMGen
+- AirLLM: https://github.com/lyogavin/airllm
 - Hugging Face Transformers: https://github.com/huggingface/transformers
 - LMDeploy: https://github.com/InternLM/lmdeploy
 - Xinference: https://github.com/xorbitsai/inference
