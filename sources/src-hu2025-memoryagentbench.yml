@@ -1,0 +1,6 @@
+id: SRC-HU2025-MEMORYAGENTBENCH
+title: hu2025-memoryagentbench
+kind: academic
+citation: https://arxiv.org/abs/2507.05257
+notes: Memory-agent evaluation should cover accurate retrieval, test-time learning, long-range understanding, and selective forgetting in incremental multi-turn settings.
+url: https://arxiv.org/abs/2507.05257

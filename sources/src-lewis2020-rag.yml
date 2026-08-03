@@ -1,0 +1,6 @@
+id: SRC-LEWIS2020-RAG
+title: lewis2020-rag
+kind: academic
+citation: https://arxiv.org/abs/2005.11401
+notes: Retrieval-augmented generation separates parametric model memory from non-parametric retrieved evidence, improving knowledge-intensive generation and making retrieved sources part of the generation path.
+url: https://arxiv.org/abs/2005.11401

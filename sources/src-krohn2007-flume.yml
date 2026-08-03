@@ -1,0 +1,6 @@
+id: SRC-KROHN2007-FLUME
+title: krohn2007-flume
+kind: academic
+citation: https://pdos.csail.mit.edu/papers/flume-sosp07.pdf
+notes: Shows decentralized information-flow control integrated with standard OS abstractions.
+url: https://pdos.csail.mit.edu/papers/flume-sosp07.pdf

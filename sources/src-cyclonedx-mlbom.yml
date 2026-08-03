@@ -1,0 +1,6 @@
+id: SRC-CYCLONEDX-MLBOM
+title: cyclonedx-mlbom
+kind: web
+citation: https://cyclonedx.org/capabilities/mlbom/
+notes: CycloneDX ML-BOM represents models, datasets, dependencies, dataset provenance, training methodologies, and AI framework configuration for transparency and risk assessment.
+url: https://cyclonedx.org/capabilities/mlbom/

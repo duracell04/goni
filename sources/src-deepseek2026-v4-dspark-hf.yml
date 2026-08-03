@@ -1,0 +1,6 @@
+id: SRC-DEEPSEEK2026-V4-DSPARK-HF
+title: deepseek2026-v4-dspark-hf
+kind: web
+citation: https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro-DSpark
+notes: DeepSeek-V4-Pro-DSpark is not a new foundation model; it is the same DeepSeek-V4-Pro checkpoint with an additional speculative decoding module attached.
+url: https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro-DSpark

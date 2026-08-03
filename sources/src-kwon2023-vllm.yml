@@ -1,0 +1,6 @@
+id: SRC-KWON2023-VLLM
+title: kwon2023-vllm
+kind: academic
+citation: https://arxiv.org/pdf/2309.06180
+notes: Identifies KV-cache memory management as central to LLM serving throughput and introduces PagedAttention to reduce fragmentation.
+url: https://arxiv.org/pdf/2309.06180

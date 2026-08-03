@@ -1,0 +1,162 @@
+version: 1
+entries:
+  - id: AGENT-DEF-01
+    title: "Agent Definition (Goni OS)"
+    type: SPEC
+    status: specified_only
+    path: 30-specs/agent-definition.md
+  - id: AGENT-MANIFEST-01
+    title: "Agent Manifest"
+    type: SPEC
+    status: specified_only
+    path: 30-specs/agent-manifest.md
+  - id: CDC-01
+    title: "Correction Delta Compiler"
+    type: SPEC
+    status: specified_only
+    path: 30-specs/correction-delta-compiler.md
+  - id: DELEG-01
+    title: "Delegation and Autonomy"
+    type: SPEC
+    status: specified_only
+    path: 30-specs/delegation-and-autonomy.md
+  - id: DAT-01
+    title: "Delegated Agent Treasury"
+    type: SPEC
+    status: specified_only
+    path: 30-specs/delegated-agent-treasury.md
+  - id: ROBOT-01
+    title: "Embodied Robot Control Plane"
+    type: SPEC
+    status: specified_only
+    path: 30-specs/embodied-robot-control-plane.md
+  - id: BOUND-01
+    title: "Vision, Memory, and Actuation Boundaries"
+    type: SPEC
+    status: specified_only
+    path: 30-specs/vision-memory-actuation-boundaries.md
+  - id: AGENT-STORE-01
+    title: "Agent Store Governance"
+    type: SPEC
+    status: specified_only
+    path: 30-specs/agents/agent-store.md
+  - id: METER-01
+    title: "Execution Metering and Budget Units"
+    type: SPEC
+    status: specified_only
+    path: 30-specs/metering/SPEC-METER-01-execution-metering.md
+  - id: METER-02
+    title: "Receipt Metering Fields"
+    type: SPEC
+    status: specified_only
+    path: 30-specs/metering/SPEC-METER-02-receipt-metering-fields.md
+  - id: SPEC-KERN-01
+    title: "Agent Kernel ABI"
+    type: SPEC
+    status: specified_only
+    path: 30-specs/kernel/SPEC-KERN-01-agent-kernel-abi.md
+  - id: SPEC-TXN-01
+    title: "Transactional Tool Execution"
+    type: SPEC
+    status: specified_only
+    path: 30-specs/kernel/SPEC-TXN-01-transactional-tools.md
+  - id: SPEC-POL-01
+    title: "Policy Language (Capabilities + IFC)"
+    type: SPEC
+    status: specified_only
+    path: 30-specs/kernel/SPEC-POL-01-policy-language.md
+  - id: SPEC-ENF-01
+    title: "Non-bypassable Mediation on Linux"
+    type: SPEC
+    status: specified_only
+    path: 30-specs/kernel/SPEC-ENF-01-non-bypassable-mediation.md
+  - id: SANDBOX-01
+    title: "Isolation and Tool Sandboxes"
+    type: SPEC
+    status: specified_only
+    path: 30-specs/isolation-and-tool-sandboxes.md
+  - id: ITCR-01
+    title: "Inference-Time Compute Reasoning"
+    type: SPEC
+    status: specified_only
+    path: 30-specs/itcr.md
+  - id: JOB-01
+    title: "Job Contract"
+    type: SPEC
+    status: specified_only
+    path: 30-specs/job.md
+  - id: LSC-01
+    title: "Latent State Contract"
+    type: SPEC
+    status: specified_only
+    path: 30-specs/latent-state-contract.md
+  - id: CGG-01
+    title: "Context Gravity Graph"
+    type: SPEC
+    status: specified_only
+    path: 30-specs/context-gravity-graph.md
+  - id: MEM-RETR-01
+    title: "Governed Memory Retrieval"
+    type: SPEC
+    status: specified_only
+    path: 30-specs/memory-retrieval.md
+  - id: MODEL-REG-01
+    title: "Model Bundle Registry Governance"
+    type: SPEC
+    status: specified_only
+    path: 30-specs/model-registry.md
+  - id: NET-01
+    title: "Network Gate and Anonymity"
+    type: SPEC
+    status: specified_only
+    path: 30-specs/network-gate-and-anonymity.md
+  - id: REC-01
+    title: "Receipts"
+    type: SPEC
+    status: specified_only
+    path: 30-specs/receipts.md
+  - id: SCHED-01
+    title: "Scheduler and Interrupts"
+    type: SPEC
+    status: specified_only
+    path: 30-specs/scheduler-and-interrupts.md
+  - id: SS-01
+    title: "Symbolic Substrate"
+    type: SPEC
+    status: specified_only
+    path: 30-specs/symbolic-substrate.md
+  - id: SYNC-01
+    title: "Sync Policies"
+    type: SPEC
+    status: specified_only
+    path: 30-specs/sync-policies.md
+  - id: TOOL-01
+    title: "Tool Capability API"
+    type: SPEC
+    status: specified_only
+    path: 30-specs/tool-capability-api.md
+  - id: CRDT-AUDIT-01
+    title: "CRDT: audit"
+    type: SPEC
+    status: specified_only
+    path: 30-specs/crdt/audit.md
+  - id: CRDT-DECISIONS-01
+    title: "CRDT: decisions"
+    type: SPEC
+    status: specified_only
+    path: 30-specs/crdt/decisions.md
+  - id: CRDT-NOTES-01
+    title: "CRDT: notes"
+    type: SPEC
+    status: specified_only
+    path: 30-specs/crdt/notes.md
+  - id: CRDT-PREFS-01
+    title: "CRDT: prefs"
+    type: SPEC
+    status: specified_only
+    path: 30-specs/crdt/prefs.md
+  - id: CRDT-TASKS-01
+    title: "CRDT: tasks"
+    type: SPEC
+    status: specified_only
+    path: 30-specs/crdt/tasks.md

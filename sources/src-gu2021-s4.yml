@@ -1,0 +1,6 @@
+id: SRC-GU2021-S4
+title: gu2021-s4
+kind: academic
+citation: https://arxiv.org/abs/2111.00396
+notes: Structured state-space sequence models can handle long-range dependencies efficiently and compete on long-sequence benchmarks.
+url: https://arxiv.org/abs/2111.00396

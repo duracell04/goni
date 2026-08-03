@@ -1,0 +1,6 @@
+id: SRC-CHENG2026-DSPARK
+title: cheng2026-dspark
+kind: web
+citation: https://www.alphaxiv.org/abs/2026.dspark
+notes: DSpark is a speculative decoding framework that combines semi-autoregressive drafting, confidence-scheduled verification, and hardware-aware scheduling. Its reported live DeepSeek-V4 deployment gains are 60%-85% per-user generation speed for V4-Flash and 57%-78% for V4-Pro against the prior MTP-1 baseline. The nominal +661% aggregate throughput figure is a strict-SLA frontier result, not a representative general 7x throughput claim; moderate aggregate throughput gains are closer to about 50%.
+url: https://www.alphaxiv.org/abs/2026.dspark

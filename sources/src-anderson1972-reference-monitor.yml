@@ -1,0 +1,6 @@
+id: SRC-ANDERSON1972-REFERENCE-MONITOR
+title: anderson1972-reference-monitor
+kind: web
+citation: https://csrc.nist.rip/publications/history/ande72.pdf
+notes: 'Defines core properties of reference validation mechanisms/reference monitor style enforcement: always invoked, tamper resistant, and analyzable.'
+url: https://csrc.nist.rip/publications/history/ande72.pdf

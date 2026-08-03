@@ -1,0 +1,6 @@
+id: SRC-DAO2022-FLASHATTENTION
+title: dao2022-flashattention
+kind: academic
+citation: https://arxiv.org/abs/2205.14135
+notes: IO-aware exact attention implementation provides substantial practical speed/memory gains without changing attention semantics.
+url: https://arxiv.org/abs/2205.14135

@@ -1,0 +1,6 @@
+id: SRC-SALTZER1975-PROTECTION
+title: saltzer1975-protection
+kind: web
+citation: https://www.cl.cam.ac.uk/teaching/1011/R01/75-protection.pdf
+notes: Establishes protection design principles including least privilege and economy of mechanism.
+url: https://www.cl.cam.ac.uk/teaching/1011/R01/75-protection.pdf

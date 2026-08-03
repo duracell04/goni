@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://goni.dev/schema/source.schema.json",
+  "title": "GONI source record",
+  "type": "object",
+  "required": ["id", "title", "kind", "citation"],
+  "additionalProperties": false,
+  "properties": {
+    "id": {"type": "string", "pattern": "^SRC-[A-Z0-9-]+$"},
+    "title": {"type": "string", "minLength": 1},
+    "kind": {"enum": ["academic", "web", "dataset", "repository", "internal", "measurement"]},
+    "citation": {"type": "string", "minLength": 1},
+    "url": {"type": "string"},
+    "revision": {"type": "string"},
+    "accessed": {"type": "string", "format": "date"},
+    "notes": {"type": "string"}
+  }
+}

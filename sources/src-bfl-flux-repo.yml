@@ -1,0 +1,6 @@
+id: SRC-BFL-FLUX-REPO
+title: bfl-flux-repo
+kind: web
+citation: https://github.com/black-forest-labs/flux
+notes: The FLUX official inference repository documents available FLUX.1 model variants, model links, and license differences, including Apache-licensed and non-commercial variants.
+url: https://github.com/black-forest-labs/flux

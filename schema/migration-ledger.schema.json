@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://goni.dev/schema/migration-ledger.schema.json",
+  "title": "GONI migration ledger",
+  "type": "object",
+  "required": ["baseline", "entries"],
+  "additionalProperties": false,
+  "properties": {
+    "baseline": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["legacy_path", "disposition", "original_revision", "primary_node", "extracted_nodes", "notes"],
+        "additionalProperties": false,
+        "properties": {
+          "legacy_path": {"type": "string"},
+          "disposition": {"enum": ["extract", "move", "artifact", "archive", "remove-generated"]},
+          "original_revision": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+          "primary_node": {"type": ["string", "null"]},
+          "extracted_nodes": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+          "headings": {"type": "array", "items": {"type": "object"}},
+          "notes": {"type": "string"}
+        }
+      }
+    }
+  }
+}

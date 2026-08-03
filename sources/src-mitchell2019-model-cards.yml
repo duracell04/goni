@@ -1,0 +1,6 @@
+id: SRC-MITCHELL2019-MODEL-CARDS
+title: mitchell2019-model-cards
+kind: academic
+citation: https://arxiv.org/abs/1810.03993
+notes: Model cards document intended use, evaluation procedures, performance characteristics, and limitations of trained models.
+url: https://arxiv.org/abs/1810.03993

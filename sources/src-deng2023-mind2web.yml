@@ -1,0 +1,6 @@
+id: SRC-DENG2023-MIND2WEB
+title: deng2023-mind2web
+kind: web
+citation: https://osu-nlp-group.github.io/Mind2Web/
+notes: Mind2Web provides a generalist web-agent dataset and benchmark for learning and evaluating web interactions across sites.
+url: https://osu-nlp-group.github.io/Mind2Web/

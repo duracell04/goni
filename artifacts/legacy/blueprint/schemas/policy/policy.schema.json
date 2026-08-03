@@ -1,0 +1,174 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Policy",
+  "type": "object",
+  "properties": {
+    "mode": {"type": "string"},
+    "egress": {"type": "object"},
+    "tool_defaults": {"type": "object"},
+    "desktop_agent_firewall": {
+      "type": "object",
+      "properties": {
+        "default_observation_scope": {
+          "type": "object",
+          "additionalProperties": true
+        },
+        "allowed_extraction_modes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "none",
+              "ocr",
+              "accessibility",
+              "layout_parse",
+              "summarization",
+              "embedding",
+              "remote_model_submission"
+            ]
+          }
+        },
+        "memory_classes_by_task_class": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "episodic",
+                "semantic",
+                "procedural",
+                "relational",
+                "project",
+                "policy"
+              ]
+            }
+          }
+        },
+        "actuation_classes_by_corridor": {
+          "type": "object",
+          "properties": {
+            "no_go": {
+              "type": "array",
+              "items": {"type": "string"}
+            },
+            "soft_gate": {
+              "type": "array",
+              "items": {"type": "string"}
+            },
+            "autopilot": {
+              "type": "array",
+              "items": {"type": "string"}
+            }
+          },
+          "additionalProperties": false
+        },
+        "remote_extraction_egress": {
+          "type": "object",
+          "properties": {
+            "default": {
+              "type": "string",
+              "enum": ["deny", "local_only", "redacted_only", "user_approved"]
+            },
+            "allowed_purposes": {
+              "type": "array",
+              "items": {"type": "string"}
+            },
+            "required_redaction_profile": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": true
+        },
+        "deny_observation_to_actuation_by_default": {
+          "type": "boolean",
+          "default": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "delegation": {
+      "type": "object",
+      "properties": {
+        "corridor_defaults": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string",
+            "enum": ["no_go", "soft_gate", "autopilot"]
+          }
+        },
+        "clarification": {
+          "type": "object",
+          "properties": {
+            "max_questions_per_task": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "materiality_threshold": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "ask_on_irreversible_actions": {
+              "type": "boolean"
+            },
+            "default_reversible_decision": {
+              "type": "string",
+              "enum": ["assume", "ask_decisive", "block"]
+            }
+          },
+          "additionalProperties": false
+        },
+        "co_creation": {
+          "type": "object",
+          "properties": {
+            "enabled": {
+              "type": "boolean"
+            },
+            "propose_on_goal_ambiguity": {
+              "type": "boolean"
+            },
+            "max_objective_options": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "fallback_decision": {
+              "type": "string",
+              "enum": ["ask_decisive", "block"]
+            }
+          },
+          "additionalProperties": false
+        },
+        "visibility": {
+          "type": "object",
+          "properties": {
+            "surface_assumptions": {
+              "type": "boolean"
+            },
+            "surface_uncertainty": {
+              "type": "boolean"
+            },
+            "require_tool_intent": {
+              "type": "boolean"
+            }
+          },
+          "additionalProperties": false
+        },
+        "irreversible_actions": {
+          "type": "object",
+          "properties": {
+            "require_explicit_approval": {
+              "type": "boolean"
+            },
+            "allow_two_phase_commit": {
+              "type": "boolean"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": true
+}

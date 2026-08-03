@@ -1,0 +1,6 @@
+id: SRC-SAM2-2024
+title: sam2-2024
+kind: academic
+citation: https://arxiv.org/abs/2408.00714
+notes: SAM 2 is a foundation model for promptable visual segmentation in images and videos, improving image segmentation accuracy and speed over SAM in the reported setting.
+url: https://arxiv.org/abs/2408.00714

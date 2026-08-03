@@ -1,49 +1,24 @@
-# Goni - Delegation OS
+# GONI — canonical blueprint knowledge graph
 
-> Goni is a private operator appliance: a local-first digital double that refines your online life into briefs, decisions, and actions - quietly, with receipts, under your rules.
+GONI is a blueprint and architectural plan for a local-first Delegation OS. It is not an implemented, enforced, verified, or non-bypassable runtime unless a specific node cites pinned implementation and test evidence.
 
-Status: Specified only / roadmap.
+## Start here
 
-Goni is an open-source blueprint and prototype lab. It is not shippable hardware or a ready-made product.
+- `knowledge/` contains the canonical atomic nodes and explanatory syntheses.
+- `maps/catalogue.json` is the deterministic machine projection.
+- `EDITORIAL_POLICY.md` defines status, evidence, uncertainty, and provenance boundaries.
+- `ontology/relations.yml` defines the controlled relation vocabulary.
+- `migration/ledger.json` accounts for every file in the pre-migration repository.
+- `artifacts/` contains node-owned non-narrative material.
+- `archive/` is historical and non-canonical.
 
-## What this repo is
+Every migrated node is `status: draft`. Design-bearing material defaults to `implementation_state: specified_only`.
 
-This is a **community-facing engineering blueprint**: a structured, mostly-Markdown knowledge base that captures the **constraints, architecture, decisions, trade-offs, and validation plans** for building the Goni hardware + kernel.
+Runnable experiments remain separate in [goni-prototype-lab](https://github.com/duracell04/goni-prototype-lab). Experimental cognitive architecture remains separate in [goni-cognitive-os](https://github.com/duracell04/goni-cognitive-os). Public documentation is a pinned-commit projection in [goni-docs-hub](https://github.com/duracell04/goni-docs-hub).
 
-The goal is for others to **understand, reproduce, critique, and extend** the design without needing a full product codebase. Runnable artifacts (prototype code, tests, deployments) live in `goni-prototype-lab` (`https://github.com/duracell04/goni-prototype-lab`).
+## Validate
 
-## What it is (plain English)
-
-- Delegation, not chat: a calm operating layer for making and executing decisions.
-- Three surfaces: Daily Brief, Action Cards, Vault.
-- Receipts-first: actions are meant to be reviewable and reconstructable.
-- Local-first by default, with explicit escalation when needed.
-
-## What it is not
-
-- A local chatbot box.
-- A self-hosted cloud assistant.
-- Autonomy without rules.
-
-## How it works (mental model)
-
-Observe -> Distill -> Propose/Act -> Attach receipts -> Store memory.
-
-## Trust posture (design intent)
-
-- Actions are proposed before they happen.
-- Network access is explicit and gated.
-- Receipts are attached to mediated actions.
-- Budgets and policies bound delegation.
-- No outbound telemetry by default.
-
-## Repo layout (reader friendly)
-
-- README.md: this page.
-- blueprint/: the blueprint and prototype index (start at blueprint/README.md).
-
-## Learn more
-
-- Story: blueprint/docs/goni-story.md
-- Glossary: blueprint/docs/glossary.md
-- Full technical blueprint: blueprint/README.md
+```bash
+python tooling/build_catalogue.py --edition-sha <full-git-sha>
+python tooling/validate.py --strict --baseline pre-knowledge-graph-2026-08-03
+```

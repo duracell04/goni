@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ActionCard",
+  "type": "object",
+  "required": ["card_id", "title", "status"],
+  "properties": {
+    "card_id": {"type": "string"},
+    "title": {"type": "string"},
+    "status": {"type": "string", "enum": ["proposed", "approved", "rejected", "snoozed"]},
+    "rationale": {"type": "object"},
+    "receipt_id": {"type": "string"}
+  }
+}

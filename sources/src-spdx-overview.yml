@@ -1,0 +1,6 @@
+id: SRC-SPDX-OVERVIEW
+title: spdx-overview
+kind: web
+citation: https://spdx.dev/about/overview/
+notes: SPDX is an open standard for communicating bill-of-materials information including provenance, license, security, and related supply-chain metadata.
+url: https://spdx.dev/about/overview/

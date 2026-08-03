@@ -1,0 +1,6 @@
+id: SRC-RFC3161-TSP
+title: rfc3161-tsp
+kind: web
+citation: https://www.ietf.org/rfc/rfc3161.txt
+notes: Internet standard for trusted timestamping via Time-Stamp Protocol.
+url: https://www.ietf.org/rfc/rfc3161.txt

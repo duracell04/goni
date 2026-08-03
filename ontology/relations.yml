@@ -1,0 +1,39 @@
+version: 1
+relations:
+  - id: supports
+    inverse: supported_by
+    description: Provides an affirmative reason or evidence for the target.
+  - id: objects_to
+    inverse: objected_to_by
+    description: States a substantive objection to the target.
+  - id: refines
+    inverse: refined_by
+    description: Makes the target more precise without replacing it.
+  - id: depends_on
+    inverse: depended_on_by
+    description: Requires the target to be meaningful or satisfiable.
+  - id: conflicts_with
+    symmetric: true
+    description: Cannot be jointly accepted with the target as written.
+  - id: supersedes
+    inverse: superseded_by
+    acyclic: true
+    description: Replaces the target as the current draft position.
+  - id: tests
+    inverse: tested_by
+    description: Defines an experiment or evidence-bearing check for the target.
+  - id: implements
+    inverse: implemented_by
+    description: Points to pinned implementation evidence for the target.
+  - id: synthesizes
+    inverse: synthesized_by
+    description: Includes the target in a larger explanatory narrative.
+  - id: derived_from
+    inverse: derives
+    description: Records a material derivation boundary.
+
+policy:
+  authored_edges_only: true
+  generated_inverse_edges: true
+  self_relations: forbidden
+  duplicate_edges: forbidden

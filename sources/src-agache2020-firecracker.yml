@@ -1,0 +1,6 @@
+id: SRC-AGACHE2020-FIRECRACKER
+title: agache2020-firecracker
+kind: web
+citation: https://www.usenix.org/system/files/nsdi20-paper-agache.pdf
+notes: Describes microVM design with reduced attack surface and low overhead for multi-tenant serverless workloads.
+url: https://www.usenix.org/system/files/nsdi20-paper-agache.pdf
