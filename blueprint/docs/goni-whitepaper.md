@@ -7,6 +7,7 @@ Human-readable description of the Goni concept.
 > - Start with [`goni-story.md`](/blueprint/docs/goni-story.md) if you want the high-level narrative.
 > - Read this whitepaper (`goni-whitepaper.md`) for the kernel/planes/Arrow details.
 > - Use the [Cognitive Exocortex Model](/blueprint/20-system/60-cognitive-exocortex-model.md) for the first/second/third-brain crosswalk.
+> - Use the [Local Sovereign Knowledge Runtime](/blueprint/20-system/65-local-sovereign-knowledge-runtime.md) for the local-expression, provenance, contradiction, and governed-effects posture.
 > - Check [`goni-swot.md`](/blueprint/docs/goni-swot.md) for the market / positioning view.
 > - See [`related-projects.md`](/blueprint/docs/related-projects.md) for prior art and neighbors.
 
@@ -35,6 +36,23 @@ not become trusted instruction merely by entering context.
 See the [Cognitive Exocortex Model](/blueprint/20-system/60-cognitive-exocortex-model.md)
 for the complete mapping of memory classes, cortical layers, specialized-module
 metaphors, the governed cognitive cycle, and contract links.
+
+## Local sovereign knowledge runtime
+
+Status: Specified only / roadmap
+
+Goni treats local computation and expression as owner-controlled while keeping
+durable and external effects behind kernel capabilities. Open-weight,
+offline-capable, account-free inference is the default posture. Sources remain
+distinct from OCR, extraction, summaries, interpretations, and owner or
+delegate assertions; contradictions and historical validity remain visible
+rather than being collapsed into central doctrine.
+
+This posture adds no plane or schema. MEM-RETR-01 governs source derivation,
+CGG-01 governs temporal and contradiction behavior, REC-01 provides
+purpose-limited reconstruction, and TOOL-01 draws the hard commit boundary.
+See the [Local Sovereign Knowledge Runtime](/blueprint/20-system/65-local-sovereign-knowledge-runtime.md)
+for the complete framing.
 
 ## Related work & inspiration
 
