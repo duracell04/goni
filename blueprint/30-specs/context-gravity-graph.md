@@ -221,6 +221,29 @@ Examples:
 - If node F is old but pinned, temporal decay is reduced or disabled, while
   policy and permission checks still apply.
 
+### 5.1 Conflict-preserving query modes
+
+Contradiction does not grant the graph authority to manufacture consensus. A
+Work Order that encounters materially conflicting claims MUST preserve both
+sides and select behavior according to the query purpose:
+
+| Query mode | Required behavior |
+| --- | --- |
+| `descriptive` | Return the material competing claims, provenance, confidence, validity, and conflict basis. |
+| `historical` | Apply the requested validity window and distinguish later amendments or supersession. |
+| `operational` | Apply a controlling rule only when the principal or an explicitly delegated role supplied one; retain material dissent as context. |
+
+If an operational query has no authorized controlling rule, the runtime MUST
+surface the conflict, ask, or escalate under the Work Order rather than infer
+authority from graph weight, model confidence, source count, or majority
+agreement.
+
+A conflict resolution may change which node controls future operational
+selection, but MUST NOT delete or rewrite the competing node, its provenance,
+or the `contradicts` relationship. The decision and its authority basis MUST be
+receipt-linked. Formal policy and observed practice remain separate nodes or
+claims even when one controls the current operation.
+
 ## 6. Identity Resolution
 
 CGG-01 distinguishes identity from relation. Similar phrases may describe the
@@ -239,6 +262,13 @@ Merge operations MUST preserve source refs and receipts. Split operations MUST
 preserve prior aliases and explain why one cluster became multiple concepts.
 Concept clusters may influence salience through `same_theme_as`, `refines`, or
 `applies_to` edges, but they do not override canonical node identity.
+
+The ontology MUST be no broader than necessary for retrieval, permission,
+temporal reasoning, and principal-directed action. Merge and split operations
+MUST preserve dissent, rationale, prior identities, and undo refs. Inferred
+relationships MUST remain distinguishable from principal-set or imported
+explicit relationships. No merge, cluster score, or canonical label creates
+truth or operational authority by itself: the map is not the territory.
 
 ## 7. Context Compression Policy
 
@@ -348,6 +378,7 @@ and `compression_not_allowed`.
 - [Retrieval component](/blueprint/software/retrieval/README.md)
 - [Vector database](/blueprint/software/30-components/vecdb.md)
 - Future schema revision for `KnowledgeGraphEdges` and optional `ContextPacks`
+- [Local Sovereign Knowledge Runtime](/blueprint/20-system/65-local-sovereign-knowledge-runtime.md)
 
 ## Conformance Tests
 
@@ -369,6 +400,14 @@ and `compression_not_allowed`.
 - Weight components remain inspectable: explicit, inferred, reinforced, and
   final.
 - Compression form is recorded for every compressed selected item.
+- Descriptive and historical conflict queries preserve material competing
+  claims instead of collapsing them into one answer.
+- An operational conflict query cannot select a controlling rule without an
+  explicit principal or delegated authority basis.
+- Conflict resolution changes operational selection without deleting the
+  competing claim or contradiction edge.
+- Ontology merges and splits preserve prior identities, dissent, rationale,
+  provenance, and undo refs.
 
 ## Acceptance Fixtures
 
@@ -382,5 +421,13 @@ and `compression_not_allowed`.
   because it is pinned, while still obeying policy filters.
 - Contradictory nodes: two candidate facts linked by `contradicts` are surfaced
   as uncertainty rather than merged into one assertion.
+- Formal versus practice: a formal rule and conflicting observed practice both
+  remain retrievable; only an explicit authority rule controls an operational
+  decision.
+- Unauthorized resolution: a high-confidence graph majority cannot resolve a
+  contradiction or create operational authority without a principal or
+  delegated rule.
+- Reversible ontology: a concept merge preserves both prior IDs, dissent, and
+  an undo ref; reversing it restores the prior identities.
 - Deterministic ordering: the same Work Order, graph snapshot, scoring policy,
   decay policy, token budget, and indexes produce the same ContextPack ordering.
