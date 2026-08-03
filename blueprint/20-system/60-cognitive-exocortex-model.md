@@ -170,3 +170,4 @@ Adjacent:
 - [Receipts](/blueprint/30-specs/receipts.md)
 - [Scheduler and Interrupts](/blueprint/30-specs/scheduler-and-interrupts.md)
 - [Learning Loop](/blueprint/20-system/50-learning-loop.md)
+- [Local Sovereign Knowledge Runtime](/blueprint/20-system/65-local-sovereign-knowledge-runtime.md)
