@@ -1,0 +1,6 @@
+id: SRC-META-SAM2-PAGE
+title: meta-sam2-page
+kind: web
+citation: https://ai.meta.com/sam2/
+notes: Meta describes SAM 2 as a unified image and video object segmentation model whose outputs can support downstream AI systems, including editing workflows.
+url: https://ai.meta.com/sam2/

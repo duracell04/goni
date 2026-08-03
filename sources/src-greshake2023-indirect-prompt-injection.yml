@@ -1,0 +1,5 @@
+id: SRC-GRESHAKE2023-INDIRECT-PROMPT-INJECTION
+title: greshake2023-indirect-prompt-injection
+kind: web
+citation: Legacy annotated bibliography key [[greshake2023-indirect-prompt-injection]]
+notes: Untrusted retrieved text can inject instructions that hijack tool use and control flow in LLM-integrated systems.

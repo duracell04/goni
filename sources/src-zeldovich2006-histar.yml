@@ -1,0 +1,6 @@
+id: SRC-ZELDOVICH2006-HISTAR
+title: zeldovich2006-histar
+kind: academic
+citation: https://www.scs.stanford.edu/~nickolai/papers/zeldovich-histar.pdf
+notes: Presents OS design with explicit information-flow control and small trusted computing base goals.
+url: https://www.scs.stanford.edu/~nickolai/papers/zeldovich-histar.pdf

@@ -1,0 +1,6 @@
+id: SRC-HABER1991-TIMESTAMP
+title: haber1991-timestamp
+kind: web
+citation: https://www.staroceans.org/e-book/Haber_Stornetta.pdf
+notes: Introduces cryptographic digital timestamping with chained commitments.
+url: https://www.staroceans.org/e-book/Haber_Stornetta.pdf

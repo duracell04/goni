@@ -1,0 +1,6 @@
+id: SRC-GIPP2015-BTC-TIMESTAMP
+title: gipp2015-btc-timestamp
+kind: academic
+citation: https://arxiv.org/pdf/1502.04015
+notes: Demonstrates decentralized trusted timestamping by anchoring to Bitcoin.
+url: https://arxiv.org/pdf/1502.04015

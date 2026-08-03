@@ -1,0 +1,6 @@
+id: SRC-REIMERS2019-SBERT
+title: reimers2019-sbert
+kind: academic
+citation: https://arxiv.org/abs/1908.10084
+notes: Sentence-BERT uses siamese/triplet structures to produce sentence embeddings that can be compared efficiently for semantic similarity search.
+url: https://arxiv.org/abs/1908.10084

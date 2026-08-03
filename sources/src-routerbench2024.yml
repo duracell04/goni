@@ -1,0 +1,6 @@
+id: SRC-ROUTERBENCH2024
+title: routerbench2024
+kind: academic
+citation: https://huggingface.co/papers/2403.12031
+notes: Multi-LLM routing needs systematic evaluation because no single model is optimal across all tasks and cost-quality points.
+url: https://huggingface.co/papers/2403.12031

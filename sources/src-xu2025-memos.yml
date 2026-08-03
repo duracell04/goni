@@ -1,0 +1,6 @@
+id: SRC-XU2025-MEMOS
+title: xu2025-memos
+kind: academic
+citation: https://arxiv.org/abs/2505.22101
+notes: MemOS proposes memory as a first-class system resource for LLM applications, with lifecycle and service-management concerns.
+url: https://arxiv.org/abs/2505.22101

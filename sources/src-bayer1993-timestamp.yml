@@ -1,0 +1,6 @@
+id: SRC-BAYER1993-TIMESTAMP
+title: bayer1993-timestamp
+kind: academic
+citation: https://www.math.columbia.edu/~bayer/papers/Timestamp_BHS93.pdf
+notes: Improves timestamping efficiency and reliability using Merkle-tree batching.
+url: https://www.math.columbia.edu/~bayer/papers/Timestamp_BHS93.pdf

@@ -1,0 +1,6 @@
+id: SRC-WATSON2014-CHERI
+title: watson2014-cheri
+kind: academic
+citation: https://murdoch.is/papers/cl14cheriisa.pdf
+notes: Introduces CHERI capability extensions for hardware-supported memory and authority safety.
+url: https://murdoch.is/papers/cl14cheriisa.pdf

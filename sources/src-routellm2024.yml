@@ -1,0 +1,6 @@
+id: SRC-ROUTELLM2024
+title: routellm2024
+kind: web
+citation: https://sky.cs.berkeley.edu/project/routellm/
+notes: Routers trained from preference data can select between stronger and weaker LLMs to reduce cost while preserving much of strong-model performance.
+url: https://sky.cs.berkeley.edu/project/routellm/

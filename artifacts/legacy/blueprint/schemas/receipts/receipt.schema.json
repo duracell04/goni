@@ -1,0 +1,607 @@
+{
+    "$schema":  "https://json-schema.org/draft/2020-12/schema",
+    "title":  "Receipt",
+    "type":  "object",
+    "required":  [
+                     "receipt_id",
+                     "timestamp",
+                     "trace_id",
+                     "span_id",
+                     "actor_id",
+                     "action_type",
+                     "capability_id",
+                     "task_class",
+                     "autonomy_mode",
+                     "policy_decision",
+                     "decision_basis",
+                     "risk_score",
+                     "risk_basis",
+                     "budget_delta",
+                     "input_hash",
+                     "output_hash",
+                     "memory_read_refs",
+                     "memory_diff_refs"
+                 ],
+    "properties":  {
+                       "receipt_id":  {
+                                          "type":  "string"
+                                      },
+                       "timestamp":  {
+                                         "type":  "string",
+                                         "format":  "date-time"
+                                     },
+                       "trace_id":  {
+                                        "type":  "string"
+                                    },
+                       "span_id":  {
+                                       "type":  "string"
+                                   },
+                       "actor_id":  {
+                                        "type":  "string"
+                                    },
+                       "action_type":  {
+                                           "type":  "string"
+                                       },
+                       "capability_id":  {
+                                             "type":  "string"
+                                         },
+                       "task_class":  {
+                                          "type":  "string"
+                                      },
+                       "autonomy_mode":  {
+                                             "type":  "string",
+                                             "enum":  [
+                                                          "no_go",
+                                                          "soft_gate",
+                                                          "autopilot",
+                                                          "escalated",
+                                                          "review"
+                                                      ]
+                                         },
+                       "policy_decision":  {
+                                               "type":  "string"
+                                           },
+                       "decision_basis":  {
+                                              "type":  "object",
+                                              "properties":  {
+                                                                 "policy_hash":  {
+                                                                                     "type":  "string"
+                                                                                 },
+                                                                 "rule_ids":  {
+                                                                                  "type":  "array",
+                                                                                  "items":  {
+                                                                                                "type":  "string"
+                                                                                            }
+                                                                              },
+                                                                 "approval_refs":  {
+                                                                                       "type":  "array",
+                                                                                       "items":  {
+                                                                                                     "type":  "string"
+                                                                                                 }
+                                                                                   },
+                                                                 "intent_summary":  {
+                                                                                        "type":  "string"
+                                                                                    },
+                                                                 "plan_summary":  {
+                                                                                      "type":  "string"
+                                                                                  }
+                                                             },
+                                              "additionalProperties":  true
+                                          },
+                       "risk_score":  {
+                                          "type":  "number",
+                                          "minimum":  0,
+                                          "maximum":  1
+                                      },
+                       "risk_basis":  {
+                                          "type":  "object",
+                                          "additionalProperties":  true
+                                      },
+                       "interaction_mode":  {
+                                                 "type":  "string",
+                                                 "enum":  [
+                                                              "delegation",
+                                                              "co_creation"
+                                                          ]
+                                             },
+                       "work_order_id":  {
+                                              "type":  "string"
+                                          },
+                       "done_contract_hash":  {
+                                                  "type":  "string"
+                                              },
+                       "clarification_decision":  {
+                                                      "type":  "string",
+                                                      "enum":  [
+                                                                   "assume",
+                                                                   "ask_decisive",
+                                                                   "propose_objectives",
+                                                                   "block"
+                                                               ]
+                                                  },
+                       "objective_option_count":  {
+                                                      "type":  "integer",
+                                                      "minimum":  0
+                                                  },
+                       "budget_delta":  {
+                                            "type":  "object",
+                                            "additionalProperties":  {
+                                                                         "type":  "number"
+                                                                     }
+                                        },
+                       "input_hash":  {
+                                          "type":  "string"
+                                      },
+                       "output_hash":  {
+                                           "type":  "string"
+                                       },
+                       "llm_route":  {
+                                         "type":  "object",
+                                         "properties":  {
+                                                            "selected_route":  {
+                                                                                   "type":  "string"
+                                                                               },
+                                                            "local_rationale":  {
+                                                                                    "type":  "string"
+                                                                                },
+                                                            "council_rationale":  {
+                                                                                      "type":  "string"
+                                                                                  },
+                                                            "task_difficulty":  {
+                                                                                    "type":  "string"
+                                                                                },
+                                                            "knowledge_locality":  {
+                                                                                       "type":  "string"
+                                                                                   },
+                                                            "sensitivity":  {
+                                                                                "type":  "string"
+                                                                            },
+                                                            "compute_budget":  {
+                                                                                  "type":  "string"
+                                                                              },
+                                                            "risk":  {
+                                                                         "type":  "string"
+                                                                     },
+                                                            "models_considered":  {
+                                                                                      "type":  "array",
+                                                                                      "items":  {
+                                                                                                    "type":  "string"
+                                                                                                }
+                                                                                  },
+                                                            "models_used":  {
+                                                                                "type":  "array",
+                                                                                "items":  {
+                                                                                              "type":  "string"
+                                                                                          }
+                                                                            },
+                                                            "redaction_required":  {
+                                                                                       "type":  "boolean"
+                                                                                   },
+                                                            "privacy_class_sent":  {
+                                                                                       "type":  "string"
+                                                                                   },
+                                                            "cost_estimate":  {
+                                                                                 "type":  "string"
+                                                                             },
+                                                            "latency_estimate":  {
+                                                                                    "type":  "string"
+                                                                                },
+                                                            "quality_confidence":  {
+                                                                                       "type":  "string"
+                                                                                   },
+                                                            "policy_decision":  {
+                                                                                   "type":  "string"
+                                                                               }
+                                                        },
+                                         "required":  [
+                                                          "selected_route",
+                                                          "local_rationale",
+                                                          "task_difficulty",
+                                                          "knowledge_locality",
+                                                          "sensitivity",
+                                                          "compute_budget",
+                                                          "risk",
+                                                          "models_considered",
+                                                          "models_used",
+                                                          "redaction_required",
+                                                          "privacy_class_sent",
+                                                          "cost_estimate",
+                                                          "latency_estimate",
+                                                          "quality_confidence",
+                                                          "policy_decision"
+                                                      ],
+                                         "additionalProperties":  false
+                                     },
+                       "memory_read_refs":  {
+                                                "type":  "array",
+                                                "items":  {
+                                                              "type":  "string"
+                                                          }
+                                            },
+                       "memory_diff_refs":  {
+                                                "type":  "array",
+                                                "items":  {
+                                                              "type":  "string"
+                                                          }
+                                            },
+                       "retrieval_basis":  {
+                                               "type":  "object",
+                                               "properties":  {
+                                                                  "mode":  {
+                                                                               "type":  "string",
+                                                                               "enum":  [
+                                                                                            "dense",
+                                                                                            "sparse",
+                                                                                            "hybrid",
+                                                                                            "graph",
+                                                                                            "mixed"
+                                                                                        ]
+                                                                           },
+                                                                  "index_refs":  {
+                                                                                     "type":  "array",
+                                                                                     "items":  {
+                                                                                                   "type":  "string"
+                                                                                               }
+                                                                                 },
+                                                                  "reranker_id":  {
+                                                                                      "type":  "string"
+                                                                                  },
+                                                                  "selected_context_refs":  {
+                                                                                                "type":  "array",
+                                                                                                "items":  {
+                                                                                                              "type":  "string"
+                                                                                                          }
+                                                                                            },
+                                                                  "permission_filters":  {
+                                                                                            "type":  "array",
+                                                                                            "items":  {
+                                                                                                          "type":  "string"
+                                                                                                      }
+                                                                                        },
+                                                                  "policy_hash":  {
+                                                                                      "type":  "string"
+                                                                                  }
+                                                              },
+                                               "additionalProperties":  true
+                                           },
+                       "learning_basis":  {
+                                              "type":  "object",
+                                              "properties":  {
+                                                                 "delta_class":  {
+                                                                                     "type":  "array",
+                                                                                     "items":  {
+                                                                                                   "type":  "string"
+                                                                                               }
+                                                                                 },
+                                                                 "proposed_rule_ref":  {
+                                                                                           "type":  "string"
+                                                                                       },
+                                                                 "scope":  {
+                                                                               "type":  "string"
+                                                                           },
+                                                                 "confidence":  {
+                                                                                    "type":  "number",
+                                                                                    "minimum":  0,
+                                                                                    "maximum":  1
+                                                                                },
+                                                                 "evidence_count":  {
+                                                                                        "type":  "integer",
+                                                                                        "minimum":  0
+                                                                                    },
+                                                                 "contradiction_count":  {
+                                                                                             "type":  "integer",
+                                                                                             "minimum":  0
+                                                                                         },
+                                                                 "review_status":  {
+                                                                                       "type":  "string"
+                                                                                   },
+                                                                 "regression_test_refs":  {
+                                                                                              "type":  "array",
+                                                                                              "items":  {
+                                                                                                            "type":  "string"
+                                                                                                        }
+                                                                                          },
+                                                                 "source_refs":  {
+                                                                                     "type":  "array",
+                                                                                     "items":  {
+                                                                                                   "type":  "string"
+                                                                                               }
+                                                                                 },
+                                                                 "policy_hash":  {
+                                                                                     "type":  "string"
+                                                                                 }
+                                                             },
+                                              "additionalProperties":  true
+                                          },
+                       "visual_basis":  {
+                                            "type":  "object",
+                                            "properties":  {
+                                                               "source_asset_hashes":  {
+                                                                                           "type":  "array",
+                                                                                           "items":  {
+                                                                                                         "type":  "string"
+                                                                                                     }
+                                                                                       },
+                                                               "source_asset_refs":  {
+                                                                                         "type":  "array",
+                                                                                         "items":  {
+                                                                                                       "type":  "string"
+                                                                                                   }
+                                                                                     },
+                                                               "model_bundle_id":  {
+                                                                                       "type":  "string"
+                                                                                   },
+                                                               "manifest_hash":  {
+                                                                                     "type":  "string"
+                                                                                 },
+                                                               "workflow_hash":  {
+                                                                                     "type":  "string"
+                                                                                 },
+                                                               "prompt_summary":  {
+                                                                                     "type":  "string"
+                                                                                   },
+                                                               "mask_refs":  {
+                                                                                "type":  "array",
+                                                                                "items":  {
+                                                                                              "type":  "string"
+                                                                                          }
+                                                                            },
+                                                               "control_refs":  {
+                                                                                   "type":  "array",
+                                                                                   "items":  {
+                                                                                                 "type":  "string"
+                                                                                             }
+                                                                               },
+                                                               "transformations":  {
+                                                                                       "type":  "array",
+                                                                                       "items":  {
+                                                                                                     "type":  "string"
+                                                                                                 }
+                                                                                   },
+                                                               "verification":  {
+                                                                                   "type":  "object",
+                                                                                   "additionalProperties":  true
+                                                                               },
+                                                               "output_hash":  {
+                                                                                  "type":  "string"
+                                                                              },
+                                                               "rollback_ref":  {
+                                                                                   "type":  "string"
+                                                                               }
+                                                           },
+                                            "additionalProperties":  true
+                                        },
+                       "boundary_basis":  {
+                                              "type":  "object",
+                                              "properties":  {
+                                                                 "observation_scope_ref":  {
+                                                                                             "type":  "string"
+                                                                                         },
+                                                                 "extraction_profile":  {
+                                                                                            "type":  "string"
+                                                                                        },
+                                                                 "memory_class":  {
+                                                                                     "type":  "string",
+                                                                                     "enum":  [
+                                                                                                  "episodic",
+                                                                                                  "semantic",
+                                                                                                  "procedural",
+                                                                                                  "relational",
+                                                                                                  "project",
+                                                                                                  "policy"
+                                                                                              ]
+                                                                                 },
+                                                                 "actuation_class":  {
+                                                                                         "type":  "string"
+                                                                                     },
+                                                                 "sandbox_profile":  {
+                                                                                         "type":  "string"
+                                                                                     },
+                                                                 "approval_refs":  {
+                                                                                       "type":  "array",
+                                                                                       "items":  {
+                                                                                                     "type":  "string"
+                                                                                                 }
+                                                                                   },
+                                                                 "rollback_or_repair_ref":  {
+                                                                                                "type":  "string"
+                                                                                            },
+                                                                 "raw_content_retained":  {
+                                                                                            "type":  "boolean",
+                                                                                            "default":  false
+                                                                                        }
+                                                             },
+                                              "additionalProperties":  true
+                                          },
+                       "execution_id":  {
+                                            "type":  "string"
+                                        },
+                       "parent_execution_id":  {
+                                                   "type":  "string"
+                                               },
+                       "execution_type":  {
+                                              "type":  "string",
+                                              "enum":  [
+                                                           "action",
+                                                           "tool",
+                                                           "model"
+                                                       ]
+                                          },
+                       "provider":  {
+                                        "type":  "string"
+                                    },
+                       "model_id":  {
+                                        "type":  "string"
+                                    },
+                       "bundle_id":  {
+                                         "type":  "string"
+                                     },
+                       "manifest_hash":  {
+                                             "type":  "string"
+                                         },
+                       "assurance_level":  {
+                                               "type":  "string",
+                                               "enum":  [
+                                                            "L0",
+                                                            "L1",
+                                                            "L2",
+                                                            "L3",
+                                                            "L4"
+                                                        ]
+                                           },
+                       "ml_bom_ref":  {
+                                         "type":  "string"
+                                     },
+                       "attestation_refs":  {
+                                               "type":  "array",
+                                               "items":  {
+                                                             "type":  "string"
+                                                         }
+                                           },
+                       "eval_receipt_refs":  {
+                                                 "type":  "array",
+                                                 "items":  {
+                                                               "type":  "string"
+                                                           }
+                                             },
+                       "metering":  {
+                                        "type":  "object",
+                                        "properties":  {
+                                                           "tokens_in":  {
+                                                                             "type":  "integer",
+                                                                             "minimum":  0
+                                                                         },
+                                                           "tokens_out":  {
+                                                                              "type":  "integer",
+                                                                              "minimum":  0
+                                                                          },
+                                                           "latency_ms":  {
+                                                                              "type":  "integer",
+                                                                              "minimum":  0
+                                                                          },
+                                                           "tool_calls":  {
+                                                                              "type":  "integer",
+                                                                              "minimum":  0
+                                                                          },
+                                                           "bytes_egress":  {
+                                                                                "type":  "integer",
+                                                                                "minimum":  0
+                                                                            },
+                                                           "ram_peak_bytes":  {
+                                                                                  "type":  "integer",
+                                                                                  "minimum":  0
+                                                                              }
+                                                       },
+                                        "additionalProperties":  false
+                                    },
+                       "budget_spent":  {
+                                            "type":  "object",
+                                            "additionalProperties":  {
+                                                                         "type":  "number"
+                                                                     }
+                                        },
+                       "egress":  {
+                                      "type":  "array",
+                                      "items":  {
+                                                    "type":  "object",
+                                                    "properties":  {
+                                                                       "destination":  {
+                                                                                           "type":  "string"
+                                                                                       },
+                                                                       "bytes_out":  {
+                                                                                         "type":  "integer",
+                                                                                         "minimum":  0
+                                                                                     },
+                                                                       "reason":  {
+                                                                                      "type":  "string"
+                                                                                  }
+                                                                   },
+                                                    "required":  [
+                                                                     "destination"
+                                                                 ],
+                                                    "additionalProperties":  false
+                                                }
+                                  },
+                       "source_refs":  {
+                                           "type":  "array",
+                                           "items":  {
+                                                         "type":  "string"
+                                                     }
+                                       },
+                       "approval_id":  {
+                                           "type":  "string"
+                                       },
+                       "redaction_profile":  {
+                                                 "type":  "string"
+                                             },
+                       "undo_strategy_ref":  {
+                                                 "type":  "string"
+                                             },
+                       "delegation":  {
+                                          "type":  "object",
+                                          "properties":  {
+                                                             "assumptions":  {
+                                                                                 "type":  "array",
+                                                                                 "items":  {
+                                                                                               "type":  "object",
+                                                                                               "properties":  {
+                                                                                                                  "statement":  {
+                                                                                                                                    "type":  "string"
+                                                                                                                                },
+                                                                                                                  "source":  {
+                                                                                                                                 "type":  "string"
+                                                                                                                             },
+                                                                                                                  "confidence":  {
+                                                                                                                                     "type":  "number",
+                                                                                                                                     "minimum":  0,
+                                                                                                                                     "maximum":  1
+                                                                                                                                 }
+                                                                                                              },
+                                                                                               "required":  [
+                                                                                                                "statement"
+                                                                                                            ],
+                                                                                               "additionalProperties":  false
+                                                                                           }
+                                                                             },
+                                                             "uncertainty_level":  {
+                                                                                       "type":  "string",
+                                                                                       "enum":  [
+                                                                                                    "low",
+                                                                                                    "medium",
+                                                                                                    "high",
+                                                                                                    "unknown"
+                                                                                                ]
+                                                                                   },
+                                                             "question_strategy":  {
+                                                                                      "type":  "string",
+                                                                                      "enum":  [
+                                                                                                   "not_needed",
+                                                                                                   "asked_decisive",
+                                                                                                   "skipped_with_assumptions",
+                                                                                                   "user_overrode",
+                                                                                                   "proposed_objectives",
+                                                                                                   "blocked"
+                                                                                               ]
+                                                                                  },
+                                                             "tool_intent":  {
+                                                                                 "type":  "string"
+                                                                             },
+                                                             "delegation_outcome":  {
+                                                                                         "type":  "string",
+                                                                                         "enum":  [
+                                                                                                      "autonomous",
+                                                                                                      "review",
+                                                                                                      "blocked",
+                                                                                                      "escalated",
+                                                                                                      "approved"
+                                                                                                  ]
+                                                                                     },
+                                                             "undo_strategy_ref":  {
+                                                                                         "type":  "string"
+                                                                                     }
+                                                         },
+                                          "additionalProperties":  false
+                                             }
+                   },
+    "additionalProperties":  true
+}

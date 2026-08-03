@@ -1,0 +1,32 @@
+---
+id: GONI-PRINCIPLE-7D813B2026E1
+title: 8. Invariants
+type: principle
+status: draft
+implementation_state: specified_only
+proposition: 'Policy completeness: default-deny with explicit allow rules only.'
+domains:
+- kernel
+- policy
+- specs
+aliases: []
+relations: []
+sources: []
+artifacts: []
+uncertainty: Preserved from the legacy draft without status promotion or newly inferred evidence strength.
+legacy:
+- path: blueprint/30-specs/kernel/SPEC-POL-01-policy-language.md
+  heading: 8. Invariants
+  revision: c93972edd18e2b5ad118be428d6c83042f8702eb
+---
+
+# 8. Invariants
+
+> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.
+
+## 8. Invariants
+
+- Policy completeness: default-deny with explicit allow rules only.
+- No hidden downgrade: all label downgrades are explicit and logged.
+- No ambient budget use: every resource spend maps to a capability budget.
+- Deterministic decision encoding for same policy + input context.

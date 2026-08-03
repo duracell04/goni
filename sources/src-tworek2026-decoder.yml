@@ -1,0 +1,5 @@
+id: SRC-TWOREK2026-DECODER
+title: tworek2026-decoder
+kind: web
+citation: Legacy annotated bibliography key [[tworek2026-decoder]]
+notes: Reported view that deployed models do not robustly learn from mistakes in normal use, and that this limits autonomous improvement without system support.

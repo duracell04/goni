@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "JobSpec",
+  "type": "object",
+  "required": ["job_id", "class"],
+  "properties": {
+    "job_id": {"type": "string"},
+    "class": {"type": "string", "enum": ["interactive", "background", "maintenance"]},
+    "priority": {"type": "integer"},
+    "deadline": {"type": "string"}
+  }
+}

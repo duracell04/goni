@@ -1,0 +1,35 @@
+---
+id: CRDT-DECISIONS-01
+title: 'CRDT: decisions'
+type: decision
+status: draft
+implementation_state: specified_only
+proposition: "\uFEFF--- id: CRDT-DECISIONS-01 type: SPEC status: specified_only Status: Specified only / roadmap This file defines merge semantics for decisions artifacts."
+domains:
+- crdt
+- specs
+aliases: []
+relations: []
+sources: []
+artifacts: []
+uncertainty: Preserved from the legacy draft without status promotion or newly inferred evidence strength.
+legacy:
+- path: blueprint/30-specs/crdt/decisions.md
+  heading: 'CRDT: decisions'
+  revision: b0cc5f3b78265e3c4ecefaeb94209ce1e0e251e3
+---
+
+# CRDT: decisions
+
+> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.
+
+# CRDT: decisions
+﻿---
+id: CRDT-DECISIONS-01
+type: SPEC
+status: specified_only
+---
+
+Status: Specified only / roadmap
+
+This file defines merge semantics for decisions artifacts.

@@ -1,0 +1,6 @@
+id: SRC-WATSON2010-CAPSICUM
+title: watson2010-capsicum
+kind: academic
+citation: https://www.usenix.org/legacy/event/sec10/tech/full_papers/Watson.pdf
+notes: Demonstrates practical capability mode for compartmentalization in a UNIX-like OS.
+url: https://www.usenix.org/legacy/event/sec10/tech/full_papers/Watson.pdf

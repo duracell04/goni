@@ -1,0 +1,6 @@
+id: SRC-SLSA-FRAMEWORK
+title: slsa-framework
+kind: web
+citation: https://slsa.dev/
+notes: SLSA defines incrementally adoptable supply-chain controls and assurance levels to prevent tampering and improve artifact integrity.
+url: https://slsa.dev/

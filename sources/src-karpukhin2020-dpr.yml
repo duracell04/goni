@@ -1,0 +1,6 @@
+id: SRC-KARPUKHIN2020-DPR
+title: karpukhin2020-dpr
+kind: academic
+citation: https://arxiv.org/abs/2004.04906
+notes: Dense Passage Retrieval shows learned dual-encoder representations can serve as effective passage retrievers for open-domain QA.
+url: https://arxiv.org/abs/2004.04906

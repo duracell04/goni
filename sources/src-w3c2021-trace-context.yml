@@ -1,0 +1,6 @@
+id: SRC-W3C2021-TRACE-CONTEXT
+title: w3c2021-trace-context
+kind: web
+citation: https://www.w3.org/TR/trace-context/
+notes: Standardizes trace correlation headers across distributed systems.
+url: https://www.w3.org/TR/trace-context/
