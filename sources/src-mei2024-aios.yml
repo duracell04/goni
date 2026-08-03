@@ -1,0 +1,6 @@
+id: SRC-MEI2024-AIOS
+title: mei2024-aios
+kind: academic
+citation: https://arxiv.org/abs/2403.16971
+notes: AIOS proposes an LLM agent operating system with scheduling, context, memory, storage, access control, tools, and agent SDK layers.
+url: https://arxiv.org/abs/2403.16971

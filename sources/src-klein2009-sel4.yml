@@ -1,0 +1,6 @@
+id: SRC-KLEIN2009-SEL4
+title: klein2009-sel4
+kind: academic
+citation: https://www.sigops.org/s/conferences/sosp/2009/papers/klein-sosp09.pdf
+notes: Demonstrates machine-checked functional correctness for a microkernel.
+url: https://www.sigops.org/s/conferences/sosp/2009/papers/klein-sosp09.pdf

@@ -1,0 +1,17 @@
+openapi: 3.0.0
+info:
+  title: Goni Orchestrator API
+  version: 0.1.0
+paths:
+  /v1/chat/completions:
+    post:
+      summary: Chat completion
+      responses:
+        "200":
+          description: ok
+  /healthz:
+    get:
+      summary: Health
+      responses:
+        "200":
+          description: ok

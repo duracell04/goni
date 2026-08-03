@@ -1,0 +1,6 @@
+id: SRC-ETHEREUM-CONSENSUS-VALIDATOR
+title: ethereum-consensus-validator
+kind: web
+citation: https://ethereum.github.io/consensus-specs/specs/phase0/validator/
+notes: Ethereum consensus spec guidance for honest validator behavior and slashing-protection constraints.
+url: https://ethereum.github.io/consensus-specs/specs/phase0/validator/

@@ -1,0 +1,6 @@
+id: SRC-IN-TOTO-FRAMEWORK
+title: in-toto-framework
+kind: web
+citation: https://in-toto.io/
+notes: in-toto records and verifies supply-chain steps, actors, order, and artifacts so users can inspect how a product moved from initiation to installation.
+url: https://in-toto.io/

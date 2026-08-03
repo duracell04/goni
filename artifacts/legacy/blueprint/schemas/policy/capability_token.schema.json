@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "CapabilityToken",
+  "type": "object",
+  "required": ["token_id", "scopes", "expires_at"],
+  "properties": {
+    "token_id": {"type": "string"},
+    "scopes": {"type": "array", "items": {"type": "string"}},
+    "expires_at": {"type": "string"},
+    "boundary_grants": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["capability_kind", "scope", "expires_at"],
+        "properties": {
+          "capability_kind": {
+            "type": "string",
+            "enum": ["observation", "extraction", "memory", "actuation", "egress"]
+          },
+          "scope": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "expires_at": {"type": "string"},
+          "revocation": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "sandbox_profile": {"type": "string"},
+          "approval_requirement": {
+            "type": "string",
+            "enum": [
+              "none",
+              "queued_review",
+              "soft_gate",
+              "hard_gate",
+              "two_phase_commit",
+              "explicit_confirmation"
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

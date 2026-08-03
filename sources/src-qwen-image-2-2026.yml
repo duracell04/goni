@@ -1,0 +1,6 @@
+id: SRC-QWEN-IMAGE-2-2026
+title: qwen-image-2-2026
+kind: academic
+citation: https://arxiv.org/abs/2605.10730
+notes: Qwen-Image-2.0 presents an image generation foundation model focused on high-fidelity generation, precise image editing, long text rendering, multilingual typography, photorealism, instruction following, and deployment.
+url: https://arxiv.org/abs/2605.10730

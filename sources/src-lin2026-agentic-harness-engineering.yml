@@ -1,0 +1,6 @@
+id: SRC-LIN2026-AGENTIC-HARNESS-ENGINEERING
+title: lin2026-agentic-harness-engineering
+kind: academic
+citation: https://arxiv.org/abs/2604.25850
+notes: Agent harnesses shape how models interact with repositories, tools, and execution environments; component, experience, and decision observability can make harness evolution explicit, evidence-backed, and revertible. Reported benchmark gains are promising but should be independently reproduced.
+url: https://arxiv.org/abs/2604.25850

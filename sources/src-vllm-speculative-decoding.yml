@@ -1,0 +1,6 @@
+id: SRC-VLLM-SPECULATIVE-DECODING
+title: vllm-speculative-decoding
+kind: web
+citation: https://docs.vllm.ai/en/stable/features/speculative_decoding/
+notes: vLLM exposes speculative decoding as an inference feature where a draft path proposes candidate tokens and the target model verifies them.
+url: https://docs.vllm.ai/en/stable/features/speculative_decoding/

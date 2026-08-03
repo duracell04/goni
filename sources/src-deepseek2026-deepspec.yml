@@ -1,0 +1,6 @@
+id: SRC-DEEPSEEK2026-DEEPSPEC
+title: deepseek2026-deepspec
+kind: web
+citation: https://github.com/deepseek-ai/DeepSpec
+notes: DeepSpec is DeepSeek's public, MIT-licensed codebase for training and evaluating speculative decoding algorithms, including DSpark-related draft model artifacts.
+url: https://github.com/deepseek-ai/DeepSpec

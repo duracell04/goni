@@ -1,0 +1,6 @@
+id: SRC-PENG2023-RWKV
+title: peng2023-rwkv
+kind: academic
+citation: https://arxiv.org/abs/2305.13048
+notes: RWKV combines transformer-style training parallelism with recurrent inference and reports scaling to large model sizes.
+url: https://arxiv.org/abs/2305.13048

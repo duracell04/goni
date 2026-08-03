@@ -1,0 +1,6 @@
+id: SRC-W3C2013-PROV
+title: w3c2013-prov
+kind: web
+citation: https://www.w3.org/TR/prov-overview/
+notes: Provides interoperable provenance data model (entities, activities, agents) for describing derivation and accountability.
+url: https://www.w3.org/TR/prov-overview/

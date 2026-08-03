@@ -1,0 +1,6 @@
+id: SRC-FRUGALGPT2023
+title: frugalgpt2023
+kind: academic
+citation: https://huggingface.co/papers/2305.05176
+notes: LLM cascades, prompt adaptation, and LLM approximation can reduce inference cost while preserving or improving task quality.
+url: https://huggingface.co/papers/2305.05176

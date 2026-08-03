@@ -1,0 +1,6 @@
+id: SRC-SCULLEY2015-HIDDEN-TECH-DEBT
+title: sculley2015-hidden-tech-debt
+kind: academic
+citation: https://papers.nips.cc/paper/5656-hidden-technical-debt-in-machine-learning-syst
+notes: Real ML systems contain far more than model code, and surrounding infrastructure can create hidden technical debt through glue code, configuration debt, undeclared consumers, hidden feedback loops, and boundary erosion.
+url: https://papers.nips.cc/paper/5656-hidden-technical-debt-in-machine-learning-syst

@@ -1,0 +1,6 @@
+id: SRC-LIU2023-AGENTBENCH
+title: liu2023-agentbench
+kind: web
+citation: https://openreview.net/forum?id=zAdUB0aCTQ
+notes: AgentBench evaluates LLMs as agents across multiple environments.
+url: https://openreview.net/forum?id=zAdUB0aCTQ

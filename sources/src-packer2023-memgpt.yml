@@ -1,0 +1,6 @@
+id: SRC-PACKER2023-MEMGPT
+title: packer2023-memgpt
+kind: academic
+citation: https://arxiv.org/abs/2310.08560
+notes: MemGPT frames LLM memory as virtual context management with explicit movement between limited context and external memory.
+url: https://arxiv.org/abs/2310.08560

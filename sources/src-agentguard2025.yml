@@ -1,0 +1,6 @@
+id: SRC-AGENTGUARD2025
+title: agentguard2025
+kind: academic
+citation: https://arxiv.org/abs/2509.23864
+notes: AgentGuard studies runtime verification of AI agents through formal events and monitorable properties.
+url: https://arxiv.org/abs/2509.23864

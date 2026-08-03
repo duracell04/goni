@@ -1,0 +1,5 @@
+id: SRC-LIU2023-LOST-MIDDLE
+title: liu2023-lost-middle
+kind: web
+citation: Legacy annotated bibliography key [[liu2023-lost-middle]]
+notes: Long-context LMs show positional sensitivity; evidence in the middle is used less reliably than evidence near prompt boundaries.

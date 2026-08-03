@@ -1,0 +1,6 @@
+id: SRC-NELSON2026-DELEGATION-RECEIPTS
+title: nelson2026-delegation-receipts
+kind: web
+citation: https://datatracker.ietf.org/doc/draft-nelson-agent-delegation-receipts/
+notes: The Delegation Receipt Protocol draft defines signed authorization and receipt objects for AI-agent delegation.
+url: https://datatracker.ietf.org/doc/draft-nelson-agent-delegation-receipts/

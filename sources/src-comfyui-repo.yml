@@ -1,0 +1,6 @@
+id: SRC-COMFYUI-REPO
+title: comfyui-repo
+kind: web
+citation: https://github.com/Comfy-Org/ComfyUI
+notes: ComfyUI is a modular diffusion model GUI, API, and backend with a graph/node interface for visual workflows.
+url: https://github.com/Comfy-Org/ComfyUI

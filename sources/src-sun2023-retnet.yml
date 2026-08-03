@@ -1,0 +1,6 @@
+id: SRC-SUN2023-RETNET
+title: sun2023-retnet
+kind: academic
+citation: https://arxiv.org/abs/2307.08621
+notes: RetNet proposes a retentive architecture intended as an alternative foundation sequence model with favorable inference properties.
+url: https://arxiv.org/abs/2307.08621
