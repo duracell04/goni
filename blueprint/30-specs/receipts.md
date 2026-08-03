@@ -35,7 +35,7 @@ decision, sampled span refs, and failure counts.
 
 Learning receipts produced by the Correction Delta Compiler follow the same
 tier rules. A proposed low-risk hypothesis MAY use an execution-tier receipt. An
-accepted, rejected, promoted, high-risk, constitutional, or policy-affecting
+accepted, rejected, promoted, high-risk, authority-affecting, or policy-affecting
 learning update MUST use a governance-tier receipt. Learning receipts MUST
 record source refs, detected delta summary, proposed rule, scope, confidence,
 evidence count, contradiction count, review status, memory diff refs, and
@@ -52,6 +52,32 @@ identity, training or preference dataset refs, training config refs, eval refs,
 expected behavior change summary, approval status, active runtime selection,
 and rollback ref. They must store hashes, refs, summaries, and policy decisions
 by default, not raw private prompts, memory text, or training examples.
+
+## Owner-facing purpose and privacy boundary
+
+Receipts exist so the principal and explicitly delegated reviewers can
+reconstruct meaningful governed transitions. They are evidence about what the
+system did; they are not truth, moral authority, or accountability merely by
+volume.
+
+REC-01 does not create a higher receipt tier merely because generated text is
+controversial, heterodox, offensive, or politically sensitive. An ordinary LLM
+call may still produce the execution or telemetry evidence required by runtime
+policy, but content viewpoint alone MUST NOT create tool authority, external
+disclosure, or expanded monitoring.
+
+Receipt collection MUST remain purpose-limited to mediated actions, durable
+knowledge changes, policy decisions, and configured operational evidence. It
+MUST NOT be interpreted as authority for ambient worker surveillance,
+continuous private-activity capture, or collection unrelated to a governed
+system transition.
+
+Meaningful knowledge changes such as durable memory commits, ontology merges
+or splits, and selection of a controlling operational rule MUST preserve their
+source refs, authority basis, policy hash, memory diff refs, and rollback or
+undo refs through the applicable existing receipt fields. This adds no receipt
+schema fields. Receipt access, retention, and disclosure remain permission- and
+policy-scoped by the principal.
 
 ## PROV-DM mapping
 - Entity: input/output artifacts
@@ -201,11 +227,19 @@ The `delegation` object MUST expose stable delegation-engineering fields:
 ## Adjacent
 - [Network gate and anonymity](/blueprint/30-specs/network-gate-and-anonymity.md)
 - [System map](/blueprint/docs/00-system-map.md)
+- [Local Sovereign Knowledge Runtime](/blueprint/20-system/65-local-sovereign-knowledge-runtime.md)
 
 ## Conformance tests
 - any mediated action must emit exactly one receipt
 - receipts must form a valid hash chain
 - receipts must omit raw content by default
+- viewpoint or content classification alone must not elevate receipt tier,
+  create tool authority, or expand monitoring
+- receipt collection must remain scoped to governed system transitions rather
+  than ambient human activity
+- durable memory commits, ontology merges/splits, and controlling-rule changes
+  must preserve source, authority, policy, diff, and undo refs using existing
+  receipt fields
 - receipts must include `trace_id`, `span_id`, `decision_basis`, and
   `memory_read_refs` and `memory_diff_refs`
 - retrieval-mediated receipts must include `retrieval_basis` when retrieved
