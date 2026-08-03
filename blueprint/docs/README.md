@@ -6,6 +6,7 @@
 - [Goni Story](/blueprint/docs/goni-story.md) - narrative, human-first overview.
 - [Goni Whitepaper](/blueprint/docs/goni-whitepaper.md) - system architecture and invariants.
 - [Cognitive Exocortex Model](/blueprint/20-system/60-cognitive-exocortex-model.md) - non-normative first/second/third-brain crosswalk to Goni contracts.
+- [Local Sovereign Knowledge Runtime](/blueprint/20-system/65-local-sovereign-knowledge-runtime.md) - owner-controlled local expression, provenance, contradiction, and governed-effects posture.
 - [LLM Council](/blueprint/docs/llm-council.md) - when/how the orchestrator escalates to the cloud council.
 - [Goni Lab](/blueprint/docs/goni-lab.md) - LM Arena–style evals feeding router + council policy.
 - [Remote LLM Architecture](/blueprint/docs/remote-llm-architecture.md) - cloud leg via Council -> OpenRouter, budgets, and runtime modes.
