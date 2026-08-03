@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://goni.dev/schema/node.schema.json",
+  "title": "GONI knowledge node",
+  "type": "object",
+  "required": [
+    "id",
+    "title",
+    "type",
+    "status",
+    "implementation_state",
+    "proposition",
+    "relations",
+    "sources",
+    "legacy"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "id": {"type": "string", "pattern": "^[A-Z][A-Z0-9]*(?:-[A-Z0-9]+)+$"},
+    "title": {"type": "string", "minLength": 1},
+    "type": {
+      "enum": [
+        "thesis", "principle", "specification", "decision", "proposal",
+        "objection", "evidence", "experiment", "synthesis", "glossary",
+        "implementation-map"
+      ]
+    },
+    "status": {"const": "draft"},
+    "implementation_state": {
+      "enum": ["not_applicable", "specified_only", "implemented_untested", "implemented_tested"]
+    },
+    "proposition": {"type": "string", "minLength": 1},
+    "domains": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "aliases": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "relations": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/relation"}
+    },
+    "sources": {
+      "type": "array",
+      "items": {"type": "string", "pattern": "^SRC-[A-Z0-9-]+$"},
+      "uniqueItems": true
+    },
+    "artifacts": {
+      "type": "array",
+      "items": {"type": "string"},
+      "uniqueItems": true
+    },
+    "uncertainty": {"type": "string"},
+    "legacy": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/legacyPointer"}
+    }
+  },
+  "$defs": {
+    "relation": {
+      "type": "object",
+      "required": ["type", "target"],
+      "additionalProperties": false,
+      "properties": {
+        "type": {"type": "string"},
+        "target": {"type": "string"},
+        "note": {"type": "string"}
+      }
+    },
+    "legacyPointer": {
+      "type": "object",
+      "required": ["path", "revision"],
+      "additionalProperties": false,
+      "properties": {
+        "path": {"type": "string"},
+        "heading": {"type": "string"},
+        "revision": {"type": "string", "pattern": "^[0-9a-f]{40}$"}
+      }
+    }
+  }
+}

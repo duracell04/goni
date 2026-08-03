@@ -1,12 +1,16 @@
-# GOVERNANCE
+# Governance
 
-Decision flow:
-- Specs: changes require an RFC in blueprint/docs/rfcs/ and a review.
-- Prototype code: PRs with tests or a clear rationale if tests are not feasible.
-- Security/policy changes: follow SECURITY.md for disclosure and review.
+GONI is currently maintained by its founder. The repository is designed to grow into academic-style review without pretending that review capacity already exists.
 
-Current maintainership:
-- Until a maintainer list exists, decisions follow PR review by the repo owner.
+Canonical propositions change through reviewable topic branches and history-preserving merge commits. Every migrated proposition begins as draft. A later status promotion must identify the affected node IDs, address recorded objections, and cite the review decision. When two-reviewer governance becomes operational, status promotion and relation-vocabulary changes require two independent approvals; until then, such changes remain draft and the founder records the decision rationale.
 
-Conflicts:
-- Resolve in PR discussion; if unresolved, open an RFC and record the decision.
+Experimental repositories may submit pinned evidence or objections. They cannot automatically change node status, implementation state, or canonical wording.
+
+Repository files are authoritative for operating rules:
+
+- `schema/` defines machine contracts.
+- `ontology/relations.yml` defines relations.
+- `EDITORIAL_POLICY.md` defines knowledge and evidence boundaries.
+- `COMMIT_STANDARD.md` defines historical provenance requirements.
+- `CONTRIBUTING.md` defines the contributor workflow.
+- `tooling/validate.py` is the executable strict validator.
