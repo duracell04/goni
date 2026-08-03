@@ -38,6 +38,27 @@ The principle that Goni receives authority from the human principal and does
 not own the principal's goals or values. Authority remains bounded, inspectable,
 revocable, and subject to correction and veto.
 
+## Local sovereign knowledge runtime
+
+The owner-controlled posture in which local inference, evidence, derived
+knowledge, contradiction, and expression remain under the principal's keys and
+policy, while durable or external effects require kernel mediation. It adds no
+canonical plane. See the
+[Local Sovereign Knowledge Runtime](/blueprint/20-system/65-local-sovereign-knowledge-runtime.md).
+
+## Expression/effects boundary
+
+The boundary between private local generation or analysis and an attempt to
+commit durable state or affect another system. Expression carries no tool
+authority; durable memory changes, sending, publishing, payment, deletion,
+network mutation, and actuation require the applicable capability.
+
+## Derived artifact
+
+A technical representation, machine enrichment, human interpretation, or
+principal/delegate assertion produced from original evidence. It remains
+source-linked and MUST NOT silently overwrite or impersonate that evidence.
+
 ## Second brain
 
 The reader-facing name for Goni's durable memory responsibilities: governed
