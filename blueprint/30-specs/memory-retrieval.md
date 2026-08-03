@@ -63,6 +63,48 @@ For desktop, browser, and vision-derived inputs, stages 1-4 MUST preserve
 Desktop Agent Firewall boundary refs. A parser or extractor may produce
 candidate chunks without gaining authority to store or reuse them.
 
+### 2.1 Source and derived-artifact separation
+
+The retrieval pipeline MUST preserve the distinction between original evidence
+and every representation or interpretation derived from it. A source, technical
+representation, machine enrichment, human interpretation, and principal or
+delegate assertion are different artifacts even when they describe the same
+subject.
+
+Implementations MUST preserve a bounded derivation stage in existing
+`MemoryEntries.value` or `MemoryEntries.provenance`, or through stable refs to
+the corresponding source and receipt. The logical stages are:
+
+`technical_representation | machine_enrichment | human_interpretation |
+principal_assertion`.
+
+These labels do not add a schema field or expand the finite `MemoryEntries.kind`
+enum. Derived memory continues to use existing kinds, source refs, and
+provenance maps.
+
+- Derived artifacts MUST retain source refs, parser or model identity where
+  applicable, confidence, permission scope, validity, and receipt refs.
+- Derived artifacts MUST NOT overwrite or impersonate original evidence.
+- If authorized retention, deletion, or redaction removes a source, dependent
+  artifacts MUST expose the source as unavailable, redacted, or tombstoned.
+- Model output MUST NOT promote itself into a principal assertion, policy, or
+  controlling operational rule. That requires an explicit principal action or
+  an authorized delegated event with a receipt.
+- Formal policy and observed practice MUST remain separately attributable when
+  they conflict. Neither silently rewrites the other.
+
+Retrieval MUST preserve four temporal meanings when they are material:
+
+1. when the source event occurred,
+2. when the system recorded or derived the artifact,
+3. the `valid_from` / `valid_until` window in which the claim or rule applied,
+4. when it was superseded, withdrawn, redacted, or otherwise ceased to control.
+
+Existing timestamps, validity fields, conflict state, provenance maps, CGG
+edges, and receipt refs carry these meanings; this contract introduces no new
+canonical table. As-of queries MUST apply the requested validity window and
+MUST NOT silently substitute a current claim for a historical one.
+
 ## 3. Work Order binding
 
 Memory retrieval MUST be bound to `work_order_id` when retrieval is performed
@@ -189,6 +231,7 @@ do not prove that Goni is better before product evaluation.
 - [Schema MVP](/blueprint/software/50-data/51-schemas-mvp.md)
 - [Retrieval component](/blueprint/software/retrieval/README.md)
 - [Vector database](/blueprint/software/30-components/vecdb.md)
+- [Local Sovereign Knowledge Runtime](/blueprint/20-system/65-local-sovereign-knowledge-runtime.md)
 
 ## Conformance tests
 
@@ -207,3 +250,12 @@ do not prove that Goni is better before product evaluation.
 - Raw parser output is confined to allowed Knowledge/Context Plane fields.
 - desktop/browser/vision-derived memory writes require a memory grant separate
   from observation and extraction permission
+- A technical representation, machine enrichment, human interpretation, or
+  principal assertion retains its derivation stage and original source refs.
+- A derived artifact cannot overwrite or impersonate original evidence.
+- A model-produced claim cannot become a principal assertion or controlling
+  operational rule without an authorized event and receipt.
+- An as-of query selects evidence by the requested validity window instead of
+  silently applying the current version.
+- Conflicting formal policy and observed practice remain separately
+  attributable and retrievable.
