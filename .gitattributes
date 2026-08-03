@@ -1,0 +1,3 @@
+# Generated machine interfaces must remain byte-identical across platforms.
+maps/*.json text eol=lf
+migration/*.json text eol=lf
