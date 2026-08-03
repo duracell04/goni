@@ -1,0 +1,39 @@
+name: Knowledge Graph
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+      - "agent/**"
+
+permissions:
+  contents: read
+
+jobs:
+  strict-validation:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: tooling/requirements.txt
+      - name: Install deterministic tooling
+        run: python -m pip install -r tooling/requirements.txt
+      - name: Build pinned projection
+        run: python tooling/build_catalogue.py --edition-sha "$GITHUB_SHA"
+      - name: Run strict validation
+        run: python tooling/validate.py --strict --baseline pre-knowledge-graph-2026-08-03
+      - name: Verify deterministic projection is committed
+        shell: bash
+        run: |
+          set -euo pipefail
+          before=$(sha256sum maps/catalogue.json)
+          python tooling/build_catalogue.py --edition-sha "$GITHUB_SHA"
+          after=$(sha256sum maps/catalogue.json)
+          test "$before" = "$after"
+          git diff --exit-code -- maps/catalogue.json

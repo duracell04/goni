@@ -1,6 +1,15 @@
 # Default owner
 * @duracell04
 
-# Kernel and policy
-/blueprint/software/kernel/ @duracell04
-/blueprint/docs/specs/ @duracell04
+# Canonical contracts and governance
+/schema/ @duracell04
+/ontology/ @duracell04
+/EDITORIAL_POLICY.md @duracell04
+/COMMIT_STANDARD.md @duracell04
+/GOVERNANCE.md @duracell04
+
+# Canonical graph and deterministic interfaces
+/knowledge/ @duracell04
+/sources/ @duracell04
+/migration/ @duracell04
+/tooling/ @duracell04
