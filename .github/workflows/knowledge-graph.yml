@@ -27,7 +27,9 @@ jobs:
       - name: Build pinned projection
         run: python tooling/build_catalogue.py --edition-sha "$GITHUB_SHA"
       - name: Run strict validation
-        run: python tooling/validate.py --strict --baseline pre-knowledge-graph-2026-08-03
+        env:
+          VALIDATION_HEAD: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: python tooling/validate.py --strict --baseline pre-knowledge-graph-2026-08-03 --head "$VALIDATION_HEAD"
       - name: Verify deterministic projection is committed
         shell: bash
         run: |

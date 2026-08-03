@@ -79,8 +79,8 @@ def message_files(message: str) -> list[str]:
     return sorted(line[2:].strip() for line in match.group(1).splitlines() if line.startswith("- "))
 
 
-def validate_commits(repo: Path, baseline: str, errors: list[str]) -> None:
-    commits = git(repo, "rev-list", "--reverse", f"{baseline}..HEAD").splitlines()
+def validate_commits(repo: Path, baseline: str, head: str, errors: list[str]) -> None:
+    commits = git(repo, "rev-list", "--reverse", f"{baseline}..{head}").splitlines()
     for commit in commits:
         message = git(repo, "show", "-s", "--format=%B", commit)
         if not all(section in message for section in MESSAGE_SECTIONS):
@@ -97,6 +97,7 @@ def main() -> int:
     parser.add_argument("--repo", type=Path, default=Path(__file__).resolve().parents[1])
     parser.add_argument("--strict", action="store_true")
     parser.add_argument("--baseline", default="pre-knowledge-graph-2026-08-03")
+    parser.add_argument("--head", default="HEAD", help="Authored history tip to validate; PR CI must pass the PR head SHA, not GitHub's synthetic merge SHA")
     parser.add_argument("--skip-commits", action="store_true")
     args = parser.parse_args()
     repo = args.repo.resolve()
@@ -205,7 +206,8 @@ def main() -> int:
         errors.append("maps/catalogue.json is absent or differs from deterministic projection")
 
     if args.strict and not args.skip_commits:
-        validate_commits(repo, baseline_sha, errors)
+        validation_head = git(repo, "rev-parse", args.head).strip()
+        validate_commits(repo, baseline_sha, validation_head, errors)
 
     if errors:
         for error in errors:
