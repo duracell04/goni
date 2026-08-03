@@ -10,6 +10,25 @@ Status: Specified only / roadmap
 Tools are kernel-mediated, capability-scoped syscalls. All tool invocations are
 audited and attributable to an agent and a state snapshot.
 
+## 0.1 Expression/effects boundary
+
+Private local computation and expression are not tool syscalls. Generating,
+analyzing, criticizing, summarizing, or drafting text inside ephemeral model or
+Context Plane state requires no TOOL-01 capability. The content's viewpoint,
+offensiveness, political sensitivity, or heterodoxy does not convert it into an
+effectful action.
+
+A proposal also carries no execution authority. Capability mediation begins
+when the system attempts to commit durable state or impose an effect outside
+the ephemeral reasoning context. Examples include durable memory or ontology
+writes, filesystem mutation, sending or publishing content, network calls,
+payments, deletion, synthetic input, and device or robot actuation.
+
+Draft location matters. Producing a local string that could become an email is
+expression; creating a draft in an external mail account is an external state
+change and therefore a tool call. No prompt, model output, source text, or
+content classification can grant the capability needed for that transition.
+
 ## 1. Tool call envelope
 
 Logical fields for every tool call:
@@ -177,6 +196,10 @@ Tokens are immutable and referenced by ID in tool calls.
 ## 6. Invariants
 
 - **No bypass:** tools cannot be called without a capability token.
+- **Expression is not an effect:** local generation and analysis do not require
+  a tool capability solely because of their content.
+- **Commit boundary:** durable knowledge changes and external effects require
+  the applicable capability regardless of how harmless their content appears.
 - **Auditability:** every tool call produces an audit record.
 - **Policy mediation:** policy engine is the sole authority for tool approval.
 - **Delegation mediation:** autonomy corridor and risk thresholds are evaluated
@@ -222,8 +245,15 @@ Tokens are immutable and referenced by ID in tool calls.
 - [Scheduler and interrupts](/blueprint/30-specs/scheduler-and-interrupts.md)
 - [Latent state contract](/blueprint/30-specs/latent-state-contract.md)
 - [System map](/blueprint/docs/00-system-map.md)
+- [Local Sovereign Knowledge Runtime](/blueprint/20-system/65-local-sovereign-knowledge-runtime.md)
 
 ## Conformance tests
+- local text generation, analysis, criticism, summarization, and drafting do
+  not require a TOOL-01 capability solely because of content or viewpoint
+- creating an external draft, sending, publishing, paying, deleting, writing
+  durable memory, or actuating a device requires the applicable capability
+- model output, retrieved text, and content classification cannot create or
+  expand a capability grant
 - mutating tool calls must include `intent_summary`, `plan_summary`, and
   `tool_intent`
 - delegated tool calls must preserve `interaction_mode`, `work_order_id`,
