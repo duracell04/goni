@@ -8,7 +8,7 @@ on:
       - "agent/**"
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   strict-validation:
@@ -26,17 +26,6 @@ jobs:
         run: python -m pip install -r tooling/requirements.txt
       - name: Build pinned projection
         run: python tooling/build_catalogue.py --edition-sha "$GITHUB_SHA"
-      - name: Stage generated projection on this temporary branch
-        shell: bash
-        run: |
-          set -euo pipefail
-          if ! git diff --quiet -- maps/catalogue.json; then
-            git config user.name "goni-projection-bot"
-            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add maps/catalogue.json
-            git commit -m "chore: stage generated catalogue"
-            git push origin "HEAD:${GITHUB_REF_NAME}"
-          fi
       - name: Run strict validation
         env:
           VALIDATION_HEAD: ${{ github.event.pull_request.head.sha || github.sha }}
