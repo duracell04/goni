@@ -35,28 +35,7 @@ jobs:
             git config user.name "goni-projection-bot"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
             git add maps/catalogue.json
-            git commit -m "kg(projection): materialize scratch catalogue
-
-Intent:
-Materialize the deterministic catalogue required to validate the scratch knowledge-graph workstream.
-
-Rationale:
-The scratch branch is being used only to obtain the exact repository-generated projection before the final topic history is rebuilt from main; the canonical workflow is restored in the final tree.
-
-Status:
-implemented-and-tested
-
-Contracts:
-- maps/catalogue.json
-
-Files:
-- maps/catalogue.json
-
-Evidence:
-- python tooling/build_catalogue.py --edition-sha $GITHUB_SHA
-
-Unresolved:
-- none"
+            git commit -m $'kg(projection): materialize scratch catalogue\n\nIntent:\nMaterialize the deterministic catalogue required to validate the scratch knowledge-graph workstream.\n\nRationale:\nThe scratch branch is used only to obtain the exact repository-generated projection before the final topic history is rebuilt from main; the canonical workflow is restored in the final tree.\n\nStatus:\nimplemented-and-tested\n\nContracts:\n- maps/catalogue.json\n\nFiles:\n- maps/catalogue.json\n\nEvidence:\n- python tooling/build_catalogue.py --edition-sha $GITHUB_SHA\n\nUnresolved:\n- none'
             git push origin "HEAD:${GITHUB_REF_NAME}"
           fi
       - name: Run strict validation
