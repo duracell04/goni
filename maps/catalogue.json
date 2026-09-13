@@ -17,6 +17,14 @@
       "node": "AGENT-STORE-01"
     },
     {
+      "alias": "AI Bliss Point",
+      "node": "MSC-01"
+    },
+    {
+      "alias": "Adaptive Delegation Optimum",
+      "node": "MSC-01"
+    },
+    {
       "alias": "CONTEXT-GRAVITY-GRAPH",
       "node": "CGG-01"
     },
@@ -223,6 +231,10 @@
     {
       "alias": "VISUAL-RUNTIME",
       "node": "VIS-RUNTIME-01"
+    },
+    {
+      "alias": "smallest sufficient governance",
+      "node": "MSC-01"
     }
   ],
   "indexes": {
@@ -372,6 +384,9 @@
         "GONI-SYNTHESIS-E2FB2167D274",
         "SPEC-KERN-01"
       ],
+      "autonomy": [
+        "MSC-01"
+      ],
       "billing": [
         "BILL-01",
         "BILL-02"
@@ -484,6 +499,13 @@
         "SCHEMA-MVP-01",
         "SPINE-01",
         "ZCO-01"
+      ],
+      "delegation": [
+        "DELEG-INT-01",
+        "MSC-01"
+      ],
+      "governance": [
+        "MSC-01"
       ],
       "hardware": [
         "ADR-INDEX-HW",
@@ -955,6 +977,9 @@
         "GONI-SPEC-F558CFB6C817",
         "GONI-SPEC-FC72CAAED1BC",
         "NET-01"
+      ],
+      "orchestration": [
+        "DELEG-INT-01"
       ],
       "policy": [
         "EVID-AUTON-03",
@@ -1666,6 +1691,9 @@
         "GONI-SYNTHESIS-D5A359AF7D66",
         "GONI-SYNTHESIS-F0626F7EFE2C",
         "REF-GONIOS-NEIGHBOR-01"
+      ],
+      "routing": [
+        "MSC-01"
       ],
       "security": [
         "GONI-PROPOSAL-05B21F15B3C6",
@@ -2569,6 +2597,9 @@
         "GONI-IMAP-806084944930",
         "GONI-IMAP-C81B874637DF",
         "GONI-IMAP-D8C62A5CAD22"
+      ],
+      "verification": [
+        "MSC-01"
       ]
     },
     "by_status": {
@@ -4457,6 +4488,7 @@
         "MODELS-ANTHROPIC",
         "MODELS-MISTRAL",
         "MODELS-OPENAI",
+        "MSC-01",
         "NET-01",
         "NONBYPASS-INTEGRATION-METRICS",
         "OLLAMA-CLOUD",
@@ -5292,7 +5324,8 @@
         "GONI-PRINCIPLE-E216CB231421",
         "GONI-PRINCIPLE-F53185B15CF9",
         "GONI-PRINCIPLE-FCA3E2C7A10C",
-        "GONI-PRINCIPLE-FD9D88AD1223"
+        "GONI-PRINCIPLE-FD9D88AD1223",
+        "MSC-01"
       ],
       "proposal": [
         "AI-MEDIA-PROVENANCE",
@@ -10870,9 +10903,11 @@
         "DELEGATION-INTERFACE"
       ],
       "artifacts": [],
-      "body": "# DELEG-INT-01 - Delegation Interface\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n# DELEG-INT-01 - Delegation Interface\nDOC-ID: DELEG-INT-01\nStatus: Specified only / roadmap\n\nThis spec defines the pre-execution control plane that reconstructs user intent\ninto kernel-governed execution objects before corridor policy, tool mediation,\nor receipt emission occurs.",
+      "body": "# DELEG-INT-01 - Delegation Interface\n\n> Status boundary: this is a `draft` / `specified_only` architecture contract. It defines intended pre-execution behavior, not an implemented or empirically validated orchestrator.\n\n## 1. Purpose\n\nGoni treats delegation as **intent compilation**, not prompt relay. The principal supplies intent, preferences, corrections, relevant private knowledge, and authority. The orchestrator reconstructs that input into a stable, reviewable task contract before execution crosses the kernel boundary.\n\nThe target transformation is:\n\n`principal intent -> gap detection -> context acquisition -> specification -> routing -> execution -> verification -> integration`\n\nIn compact form:\n\n> **Goni compiles human intent into model-specific, authority-bounded, verifiable delegations.**\n\nThe orchestrator may use one model, several specialist agents, deterministic software, or a council of models to perform the cognitive work. None of those components gains authority merely by being more capable. The kernel remains the authority boundary for tools, capabilities, side effects, approvals, and receipts.\n\n## 2. Principal-orchestrator boundary\n\nThe principal should not need to diagnose the task perfectly or write an expert prompt before useful work can begin. The orchestrator is responsible for identifying which information is missing, whether that missing information matters, and the least costly reliable way to obtain it.\n\nMissing information should be classified by source and decision ownership. The orchestrator should prefer, in policy-permitted order, evidence already available from:\n\n- active policy and mandates;\n- stable principal preferences and prior approvals;\n- current task and repository state;\n- local memory and retrieval;\n- connected tools and authorized external sources;\n- deterministic constraints and validation systems;\n- specialist agents or model deliberation; and\n- the principal when the uncertainty is irreducibly principal-owned.\n\nPrincipal interruption is justified when the unresolved variable materially concerns:\n\n- goal identity or preference;\n- a value judgment or trade-off that the principal has not delegated;\n- authority to cross a capability or policy boundary;\n- inaccessible private knowledge that cannot be recovered elsewhere;\n- acceptance of an irreversible or materially consequential choice; or\n- ambiguity whose expected cost exceeds the cost of interruption.\n\nHuman attention is therefore a governed resource. The orchestrator should minimize unnecessary interruption while preserving informed principal control.\n\n## 3. Gap-resolution loop\n\nBefore compiling an executable Work Order, the orchestrator should maintain a bounded epistemic loop:\n\n1. **Observe:** extract atomic facts, current state, explicit requests, constraints, and authority already granted.\n2. **Hypothesize:** identify plausible interpretations of the objective and the missing variables that could change execution.\n3. **Value the gaps:** estimate whether resolving each unknown can materially change correctness, risk, cost, or authority.\n4. **Acquire:** resolve high-value gaps from the cheapest sufficiently reliable authorized source.\n5. **Escalate:** ask the principal or invoke additional deliberation only when local resolution is insufficient and the expected value justifies the cost.\n6. **Compile:** produce the Work Order, Done Contract, model/tool allocation, verification plan, and stop condition.\n7. **Execute and measure:** delegate bounded work, collect outputs and receipts, and compare them with the contract.\n8. **Integrate or reopen:** accept verified work, repair a bounded failure, or reopen the relevant gap if new evidence changes the task model.\n\nThis loop should preserve the distinction between observations, orchestrator inferences, principal-endorsed objectives, and granted authority.\n\n## 4. Delegation compilation\n\nAn executable delegation should be compiled from a model-independent task contract and a model-specific execution scaffold.\n\n### 4.1 Canonical task contract\n\nThe stable contract should identify at least:\n\n- the objective and intended outcome;\n- authoritative context and source hierarchy;\n- hard invariants and constraints;\n- assumptions and unresolved uncertainty;\n- authority boundaries and permitted effects;\n- deliverable and output contract;\n- acceptance criteria and required evidence;\n- verification and rollback requirements; and\n- the stop or escalation condition.\n\nThis contract should remain semantically stable when the execution model changes.\n\n### 4.2 Model-specific execution scaffold\n\nThe orchestrator should adapt the execution scaffold to the effective agent system, including where relevant:\n\n- model family and checkpoint;\n- observed task competence and instruction reliability;\n- reasoning mode or budget;\n- context-window characteristics;\n- local versus remote execution;\n- quantization or other capability-affecting deployment choices;\n- tool and retrieval support;\n- structured-output reliability;\n- task horizon and constraint coupling; and\n- available deterministic verification.\n\nStronger agents can receive broader coherent objectives and more solution-space freedom when the task is observable and verifiable. Smaller, weaker, quantized, or locally constrained models can receive narrower work units, clearer schemas, lower simultaneous constraint coupling, examples where they add information, and more frequent deterministic checkpoints.\n\nThe orchestrator should move complexity from prose into orchestration, state, tools, tests, schemas, and feedback loops whenever those mechanisms provide stronger guarantees at lower cognitive cost.\n\n## 5. Context allocation\n\nThe orchestrator may maintain a much larger global task and principal context than any individual worker needs. Worker context should be selected for task relevance rather than broadcast indiscriminately.\n\nThe intended pattern is:\n\n`global context -> relevance selection -> agent-specific working context`\n\nEach sub-agent should receive the minimum sufficient context required to understand its objective, constraints, interfaces, evidence boundary, and acceptance criteria. Additional context should be included when its expected contribution exceeds its attention, latency, privacy, or contradiction cost.\n\nThis allows global coherence without forcing every worker to reason over the entire principal state.\n\n## 6. Agent and mechanism routing\n\nThe orchestrator should choose the cheapest sufficiently capable mechanism for each subproblem. Candidate mechanisms include:\n\n- deterministic software for exact state, arithmetic, schemas, permissions, validation, and other must-be-exact operations;\n- a local model for bounded semantic work where privacy, latency, or sovereignty dominates;\n- a stronger remote model when policy permits and expected capability gain justifies egress and cost;\n- specialist agents for separable domain or tool tasks; and\n- an LLM Council for selected uncertainty or review boundaries.\n\nRouting decisions should consider task difficulty, consequence, reversibility, verifiability, privacy, expected regret, latency, cost, and current model evidence rather than model prestige alone.\n\n## 7. Council escalation\n\nThe LLM Council is a cognitive escalation mechanism, not a standing committee for routine work. The orchestrator should invoke it when the expected reduction in decision error, uncertainty, or blind spots exceeds the added cost, latency, privacy exposure, and integration burden.\n\nCouncil escalation is especially relevant when:\n\n- several materially plausible interpretations or strategies remain after ordinary retrieval and reasoning;\n- consequences are high and independent review has meaningful expected value;\n- evidence conflicts or the orchestrator detects fragile assumptions;\n- the decision is difficult to reverse;\n- specialist perspectives are genuinely complementary; or\n- a single model's confidence is poorly calibrated for the task.\n\nCouncil quality depends on error diversity more than headcount. Where feasible, the orchestrator should prefer independent first-pass reasoning, heterogeneous model or specialist roles, explicit criticism or falsification, and a separate synthesis or adjudication step. Repeated copies of the same model and context should not be treated as equivalent to independent evidence.\n\nCouncil outputs remain proposals and evidence for the orchestrator. They do not expand the principal's mandate, bypass the kernel, or acquire execution authority.\n\n## 8. Verification and stopping\n\nThe orchestrator should compile verification independently from model intelligence. More capable reasoning can justify broader execution freedom inside an authorized corridor, while verification depth remains proportional to consequence, irreversibility, observability, and error loss.\n\nPreferred closed-loop execution is:\n\n`understand -> act -> measure -> correct -> verify`\n\nThe system should stop when the Done Contract and required evidence are satisfied. Additional work requires a substantive new objective, unresolved acceptance criterion, detected failure, or justified optimization opportunity whose expected value exceeds its cost.\n\n## 9. Clarification policy\n\nThe existing clarification outcomes remain:\n\n`ClarificationDecision = assume | ask_decisive | propose_objectives | block`\n\nThe orchestrator should:\n\n- `assume` when policy, context, and reversibility make surfaced assumptions sufficient;\n- `ask_decisive` when one principal-owned answer materially changes the objective, authority, risk, or irreversible path;\n- `propose_objectives` when goal identity itself remains materially ambiguous; and\n- `block` when no authorized path can make safe progress.\n\nQuestions that can be answered reliably from authorized system context should be resolved by the orchestrator instead of transferred to the principal.\n\n## 10. Invariants\n\n- **I1 - Principal sovereignty:** the orchestrator may infer and propose; principal-owned goals, values, and undelegated trade-offs remain principal decisions.\n- **I2 - Authority independence:** model capability, confidence, council agreement, or reasoning effort cannot enlarge the authority corridor.\n- **I3 - Kernel mediation:** mutating or externally visible effects remain subject to kernel policy, capability checks, approval requirements, and receipts.\n- **I4 - Work-order first:** consequential delegated execution requires a stable Work Order and Done Contract.\n- **I5 - Machine-resolvable gaps first:** authorized context and tools should resolve material factual gaps before the principal is interrupted.\n- **I6 - Minimum sufficient context:** sub-agents receive task-relevant context sufficient for their contracts without default full-context broadcast.\n- **I7 - Model-relative scaffolding:** decomposition, prompt detail, context, and checkpoints adapt to effective model capability and environment.\n- **I8 - Verification independence:** reasoning capability and execution authority do not substitute for required evidence or deterministic checks.\n- **I9 - Council proportionality:** council deliberation is invoked when its expected epistemic value justifies its total cost.\n- **I10 - Corrigibility:** assumptions, inferred objectives, routing decisions, and material uncertainty remain reviewable and correctable.\n\n## 11. Architectural consequence\n\nPrompt engineering becomes an internal compilation problem. The principal interacts primarily through intent, preferences, corrections, and authority. Goni is responsible for producing the smallest sufficient specification and execution scaffold for the selected agent system, then verifying the resulting state under the kernel's authority boundary.\n\nThis preserves the core system doctrine:\n\n> Models reason. The kernel authorizes. Tools act. Receipts prove.",
       "domains": [
-        "specs"
+        "specs",
+        "delegation",
+        "orchestration"
       ],
       "id": "DELEG-INT-01",
       "implementation_state": "specified_only",
@@ -10884,13 +10919,34 @@
         }
       ],
       "path": "knowledge/specifications/deleg-int-01-deleg-int-01-delegation-interface.md",
-      "proposition": "DOC-ID: DELEG-INT-01 Status: Specified only / roadmap This spec defines the pre-execution control plane that reconstructs user intent into kernel-governed execution objects before corridor policy, tool mediation, or receipt emission occurs.",
-      "relations": [],
+      "proposition": "The pre-execution control plane compiles principal intent into model-specific, authority-bounded, verifiable delegations by resolving machine-answerable gaps, minimizing principal interruption, selecting task-specific context and agents, and escalating deliberation only when its expected value justifies its cost.",
+      "relations": [
+        {
+          "note": "Makes prompt reconstruction, clarification, model routing, and verification explicit pre-execution control-plane responsibilities.",
+          "target": "DELEG-01",
+          "type": "refines"
+        },
+        {
+          "note": "Model-relative delegation requires governed knowledge of available model bundles and their effective capabilities.",
+          "target": "MODEL-REG-01",
+          "type": "depends_on"
+        },
+        {
+          "note": "Delegation compilation allocates context, scaffolding, verification, and interruption according to minimum sufficient control.",
+          "target": "MSC-01",
+          "type": "depends_on"
+        },
+        {
+          "note": "Council deliberation is an optional escalation path available to the orchestrator when additional independent reasoning has positive expected value.",
+          "target": "LLM-COUNCIL",
+          "type": "depends_on"
+        }
+      ],
       "sources": [],
       "status": "draft",
       "title": "DELEG-INT-01 - Delegation Interface",
       "type": "specification",
-      "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
+      "uncertainty": "This specifies target orchestration behavior. Gap-value estimation, model capability profiles, interruption costs, council thresholds, and compiler policies remain uncalibrated and unimplemented unless separately evidenced."
     },
     {
       "aliases": [],
@@ -59496,6 +59552,49 @@
     },
     {
       "aliases": [
+        "Adaptive Delegation Optimum",
+        "AI Bliss Point",
+        "smallest sufficient governance"
+      ],
+      "artifacts": [],
+      "body": "# Minimum Sufficient Control Principle\n\n> Status boundary: this is a `draft` / `specified_only` design principle. The optimization framing below defines intended system behavior, not an empirically calibrated policy or observed runtime property.\n\n## Proposition\n\nGoni should apply the least control sufficient to keep expected delegation risk within policy, scaling cognitive effort with task difficulty and governance effort with consequence while preserving autonomy where actions are reversible, verifiable, and bounded.\n\nThe principle generalizes the idea of a smallest sufficient specification into **smallest sufficient governance**. More control is valuable while it removes material uncertainty, protects an invariant, or reduces consequential risk enough to justify its cost. Beyond that point, extra specification, context, verification, approval, or architectural prescription can add friction, conflict, rigidity, or interference without improving the outcome enough to justify the burden.\n\n## Conceptual optimization\n\nLet `a` denote useful execution autonomy and `c` denote control intensity. A conceptual objective is:\n\n\\[\n(a^*, c^*) = \\arg\\max_{a,c}\\left[V(a) - C_{exec}(a) - C_{control}(c) - P_{fail}(a,c)L_{fail}\\right]\n\\]\n\nThis is a design heuristic rather than a calibrated utility function. Goni should increase control while the expected marginal reduction in failure loss exceeds the marginal cost of that control.\n\nThe resulting optimum is task-dependent. There is no universal trust level or fixed amount of supervision that is correct for every action.\n\n## Separate cognition from governance\n\nTwo allocations must remain distinct:\n\n- **Cognitive effort scales primarily with difficulty.** Constraint coupling, ambiguity, horizon length, exactness requirements, and task novelty can justify more context, stronger models, deeper reasoning, tool-assisted analysis, or additional feedback loops.\n- **Governance effort scales primarily with consequence.** High loss, irreversibility, weak verifiability, large blast radius, external side effects, or legal and financial significance justify narrower capability corridors, stronger verification, approval gates, and rollback requirements.\n\nA task may therefore be intellectually difficult but operationally harmless, or cognitively trivial but highly consequential. Greater reasoning allocation must not imply greater execution authority.\n\n## Control-allocation signals\n\n| Signal | Preferred response |\n| --- | --- |\n| Higher task difficulty, coupling, novelty, or exactness | Increase cognitive effort and verification targeted at correctness. |\n| Higher consequence, irreversibility, ambiguity, or external side effects | Increase governance intensity and narrow authority. |\n| Higher reversibility, testability, observability, and bounded blast radius | Permit broader autonomous execution within policy. |\n| Low-information or redundant instruction | Preserve model discretion instead of adding control. |\n| Cheap, reliable automated checks | Prefer closed-loop verification over prospective micromanagement. |\n\nThis preserves a central distinction: **autonomy is not authority**. Goni can grant high execution autonomy inside a tightly bounded authority corridor.\n\n## Minimum sufficient specification and context\n\nPrompt detail, context, scope, constraints, tool access, and reasoning effort are control surfaces rather than ends in themselves. Goni should add them when they resolve a concrete ambiguity, protect a hard invariant, or materially increase expected outcome quality.\n\nAdditional specification can exhibit diminishing and, under interference, negative marginal returns. Harm is most likely when new instructions introduce contradiction, irrelevant context, premature architecture, constraint coupling, proxy optimization, or unnecessary reduction of useful degrees of freedom. Long specifications remain appropriate when the task genuinely requires them.\n\nFor consequential multi-step work, feedback can substitute for large amounts of prospective instruction:\n\n`understand -> act -> measure -> correct -> verify`\n\nThe preferred execution unit is one coherent consequential objective that can be completed, checked, and either accepted or rolled back as a closed loop.\n\n## Proportional verification\n\nVerification should be economically proportional to expected error loss. A useful heuristic is:\n\n\\[\nEV(verification) \\approx P(error) \\times L(error) \\times P(detection \\mid verification)\n\\]\n\nGoni should add verification while its expected benefit exceeds its marginal cost. Cheap, reversible, highly observable actions can tolerate lightweight checks; expensive, hidden, irreversible, or legally consequential effects require stronger independent evidence or human authorization.\n\n## System implications\n\nA future implementation of this principle can let the orchestrator, router, kernel, and policy layer allocate several controls independently:\n\n- specification and prompt detail;\n- context and retrieval budget;\n- model class and reasoning budget;\n- scope and execution horizon;\n- tool and capability scope;\n- autonomy-corridor width;\n- verification depth and evaluator independence;\n- human approval thresholds;\n- rollback requirements; and\n- receipt and evidence depth.\n\nThe orchestrator can compile different task contracts for different model and tool configurations while preserving one model-independent objective and one kernel-owned authority boundary. Stronger agents can receive broader solution-space freedom when verification is adequate; weaker, smaller, or locally constrained agents can receive narrower work units and more frequent deterministic checkpoints. Model capability changes the execution scaffold, not the authority granted to it.\n\nThis turns the principle into an adaptive delegation policy rather than a fixed prompt template. The kernel can preserve maximum useful delegation while policy remains the authority boundary.\n\n## Boundary conditions\n\nThis principle does **not** claim a universal inverted-U relationship between control and performance. Additional control may simply reach diminishing returns; it becomes counterproductive when it creates interference, conflict, rigidity, or disproportionate cost.\n\nThe principle also does not authorize broader corridors by itself. Existing mandates, policy, capability scopes, and explicit approval requirements remain authoritative. `MSC-01` governs how much control to allocate *within* those boundaries.\n\n## Operational shorthand\n\n> Spend instructions where uncertainty is expensive. Spend verification where errors are expensive. Preserve freedom where intelligent judgment has value.",
+      "domains": [
+        "delegation",
+        "governance",
+        "autonomy",
+        "verification",
+        "routing"
+      ],
+      "id": "MSC-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/principles/principle-msc-01-minimum-sufficient-control.md",
+      "proposition": "Goni should apply the least control sufficient to keep expected delegation risk within policy, scaling cognitive effort with task difficulty and governance effort with consequence while preserving autonomy where actions are reversible, verifiable, and bounded.",
+      "relations": [
+        {
+          "note": "Operationalizes bounded delegation as a marginal control-allocation principle.",
+          "target": "DELEG-01",
+          "type": "refines"
+        },
+        {
+          "note": "Makes autonomy-corridor width and escalation explicitly proportional to consequence, reversibility, and verifiability.",
+          "target": "GONI-DECISION-5A5B3B8A34CA",
+          "type": "refines"
+        },
+        {
+          "note": "Separates cognition allocation by task difficulty from governance allocation by consequence.",
+          "target": "GONI-DECISION-84F201170733",
+          "type": "refines"
+        }
+      ],
+      "sources": [],
+      "status": "draft",
+      "title": "Minimum Sufficient Control Principle",
+      "type": "principle",
+      "uncertainty": "Qualitative design principle; control costs, failure probabilities, and policy thresholds are not yet empirically calibrated."
+    },
+    {
+      "aliases": [
         "NETWORK-GATE-AND-ANONYMITY"
       ],
       "artifacts": [],
@@ -61753,6 +61852,18 @@
     {
       "projection": "generated",
       "source": "DELEG-01",
+      "target": "DELEG-INT-01",
+      "type": "refined_by"
+    },
+    {
+      "projection": "generated",
+      "source": "DELEG-01",
+      "target": "MSC-01",
+      "type": "refined_by"
+    },
+    {
+      "projection": "generated",
+      "source": "DELEG-01",
       "target": "GONI-EVIDENCE-4D46D89DBD78",
       "type": "supported_by"
     },
@@ -61767,6 +61878,34 @@
       "source": "DELEG-01",
       "target": "GONI-EVIDENCE-ADA29BB66BC9",
       "type": "supported_by"
+    },
+    {
+      "note": "Council deliberation is an optional escalation path available to the orchestrator when additional independent reasoning has positive expected value.",
+      "projection": "authored",
+      "source": "DELEG-INT-01",
+      "target": "LLM-COUNCIL",
+      "type": "depends_on"
+    },
+    {
+      "note": "Model-relative delegation requires governed knowledge of available model bundles and their effective capabilities.",
+      "projection": "authored",
+      "source": "DELEG-INT-01",
+      "target": "MODEL-REG-01",
+      "type": "depends_on"
+    },
+    {
+      "note": "Delegation compilation allocates context, scaffolding, verification, and interruption according to minimum sufficient control.",
+      "projection": "authored",
+      "source": "DELEG-INT-01",
+      "target": "MSC-01",
+      "type": "depends_on"
+    },
+    {
+      "note": "Makes prompt reconstruction, clarification, model routing, and verification explicit pre-execution control-plane responsibilities.",
+      "projection": "authored",
+      "source": "DELEG-INT-01",
+      "target": "DELEG-01",
+      "type": "refines"
     },
     {
       "projection": "generated",
@@ -61821,6 +61960,18 @@
       "source": "GONI-DECISION-05A8056FB235",
       "target": "GONI-SYNTHESIS-15FDDF75571E",
       "type": "synthesized_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-DECISION-5A5B3B8A34CA",
+      "target": "MSC-01",
+      "type": "refined_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-DECISION-84F201170733",
+      "target": "MSC-01",
+      "type": "refined_by"
     },
     {
       "projection": "authored",
@@ -66677,6 +66828,12 @@
       "type": "synthesizes"
     },
     {
+      "projection": "generated",
+      "source": "LLM-COUNCIL",
+      "target": "DELEG-INT-01",
+      "type": "depended_on_by"
+    },
+    {
       "projection": "authored",
       "source": "LLM-COUNCIL",
       "target": "GONI-OBJECTION-998CA377412F",
@@ -66997,6 +67154,12 @@
     {
       "projection": "generated",
       "source": "MODEL-REG-01",
+      "target": "DELEG-INT-01",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
+      "source": "MODEL-REG-01",
       "target": "GONI-EVIDENCE-2B6A30AD4862",
       "type": "supported_by"
     },
@@ -67047,6 +67210,33 @@
       "source": "MODEL-REG-01",
       "target": "GONI-EVIDENCE-F46464FBC1EF",
       "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "MSC-01",
+      "target": "DELEG-INT-01",
+      "type": "depended_on_by"
+    },
+    {
+      "note": "Operationalizes bounded delegation as a marginal control-allocation principle.",
+      "projection": "authored",
+      "source": "MSC-01",
+      "target": "DELEG-01",
+      "type": "refines"
+    },
+    {
+      "note": "Makes autonomy-corridor width and escalation explicitly proportional to consequence, reversibility, and verifiability.",
+      "projection": "authored",
+      "source": "MSC-01",
+      "target": "GONI-DECISION-5A5B3B8A34CA",
+      "type": "refines"
+    },
+    {
+      "note": "Separates cognition allocation by task difficulty from governance allocation by consequence.",
+      "projection": "authored",
+      "source": "MSC-01",
+      "target": "GONI-DECISION-84F201170733",
+      "type": "refines"
     },
     {
       "projection": "authored",
