@@ -8,7 +8,7 @@ on:
       - "agent/**"
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   strict-validation:
@@ -26,18 +26,6 @@ jobs:
         run: python -m pip install -r tooling/requirements.txt
       - name: Build pinned projection
         run: python tooling/build_catalogue.py --edition-sha "$GITHUB_SHA"
-      - name: Materialize scratch projection
-        if: github.event_name == 'push' && github.ref == 'refs/heads/agent/minimum-sufficient-control'
-        shell: bash
-        run: |
-          set -euo pipefail
-          if ! git diff --quiet -- maps/catalogue.json; then
-            git config user.name "goni-projection-bot"
-            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add maps/catalogue.json
-            git commit -m $'kg(projection): materialize scratch catalogue\n\nIntent:\nMaterialize the deterministic catalogue required to validate the scratch knowledge-graph workstream.\n\nRationale:\nThe scratch branch is used only to obtain the exact repository-generated projection before the final topic history is rebuilt from main; the canonical workflow is restored in the final tree.\n\nStatus:\nimplemented-and-tested\n\nContracts:\n- maps/catalogue.json\n\nFiles:\n- maps/catalogue.json\n\nEvidence:\n- python tooling/build_catalogue.py --edition-sha $GITHUB_SHA\n\nUnresolved:\n- none'
-            git push origin "HEAD:${GITHUB_REF_NAME}"
-          fi
       - name: Run strict validation
         env:
           VALIDATION_HEAD: ${{ github.event.pull_request.head.sha || github.sha }}
