@@ -19,12 +19,12 @@ relations:
 - type: refines
   target: DELEG-01
   note: Operationalizes bounded delegation as a marginal control-allocation principle.
-- type: elaborates
+- type: refines
   target: GONI-DECISION-5A5B3B8A34CA
-  note: Provides the control-allocation logic for autonomy-corridor width and escalation.
-- type: elaborates
+  note: Makes autonomy-corridor width and escalation explicitly proportional to consequence, reversibility, and verifiability.
+- type: refines
   target: GONI-DECISION-84F201170733
-  note: Separates cognition allocation by difficulty from governance allocation by consequence.
+  note: Separates cognition allocation by task difficulty from governance allocation by consequence.
 sources: []
 artifacts: []
 uncertainty: Qualitative design principle; control costs, failure probabilities, and policy thresholds are not yet empirically calibrated.
@@ -98,7 +98,7 @@ Goni should add verification while its expected benefit exceeds its marginal cos
 
 ## System implications
 
-A future implementation of this principle can let the planner, router, kernel, and policy layer allocate several controls independently:
+A future implementation of this principle can let the orchestrator, router, kernel, and policy layer allocate several controls independently:
 
 - specification and prompt detail;
 - context and retrieval budget;
@@ -110,6 +110,8 @@ A future implementation of this principle can let the planner, router, kernel, a
 - human approval thresholds;
 - rollback requirements; and
 - receipt and evidence depth.
+
+The orchestrator can compile different task contracts for different model and tool configurations while preserving one model-independent objective and one kernel-owned authority boundary. Stronger agents can receive broader solution-space freedom when verification is adequate; weaker, smaller, or locally constrained agents can receive narrower work units and more frequent deterministic checkpoints. Model capability changes the execution scaffold, not the authority granted to it.
 
 This turns the principle into an adaptive delegation policy rather than a fixed prompt template. The kernel can preserve maximum useful delegation while policy remains the authority boundary.
 
