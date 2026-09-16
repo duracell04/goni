@@ -8,9 +8,7 @@ proposition: '| Project | Primary source | GoniOS layer mapping | What Goni shou
 domains:
 - research
 aliases: []
-relations:
-- type: refined_by
-  target: GONI-SYNTHESIS-83E91B709969
+relations: []
 sources:
 - SRC-PACKER2023-MEMGPT
 - SRC-KWON2023-PAGEDATTENTION
