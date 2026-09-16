@@ -26,6 +26,11 @@ jobs:
         run: python -m pip install -r tooling/requirements.txt
       - name: Build pinned projection
         run: python tooling/build_catalogue.py --edition-sha "$GITHUB_SHA"
+      - name: Upload generated catalogue
+        uses: actions/upload-artifact@v4
+        with:
+          name: generated-catalogue
+          path: maps/catalogue.json
       - name: Run strict validation
         env:
           VALIDATION_HEAD: ${{ github.event.pull_request.head.sha || github.sha }}
