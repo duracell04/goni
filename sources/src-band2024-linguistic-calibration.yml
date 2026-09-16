@@ -1,0 +1,9 @@
+id: SRC-BAND2024-LINGUISTIC-CALIBRATION
+title: "Linguistic Calibration of Long-Form Generations"
+kind: academic
+citation: >-
+  Band, N., Li, X., Ma, T., & Hashimoto, T. (2024). Linguistic Calibration of Long-Form Generations. Proceedings of ICML 2024, PMLR 235, 2732-2778.
+url: https://proceedings.mlr.press/v235/band24a.html
+accessed: 2026-09-16
+notes: >-
+  Shows that ordinary long-form model confidence statements are not automatically calibrated and develops a decision-oriented notion of linguistic calibration.
