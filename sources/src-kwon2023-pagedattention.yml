@@ -1,0 +1,7 @@
+id: SRC-KWON2023-PAGEDATTENTION
+title: kwon2023-pagedattention
+kind: academic
+citation: https://arxiv.org/abs/2309.06180
+url: https://arxiv.org/abs/2309.06180
+accessed: "2026-09-16"
+notes: Kwon et al. introduce PagedAttention and vLLM, applying operating-system virtual-memory and paging ideas to dynamic KV-cache management. The source supports the systems analogy that logical availability can be decoupled from physical residency; it does not itself establish semantic memory, provenance, or authority semantics for GONI.

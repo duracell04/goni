@@ -223,6 +223,10 @@
     {
       "alias": "VISUAL-RUNTIME",
       "node": "VIS-RUNTIME-01"
+    },
+    {
+      "alias": "semantic page fault",
+      "node": "GONI-SPECIFICATION-BB656A72DF7D"
     }
   ],
   "indexes": {
@@ -372,6 +376,20 @@
         "GONI-SYNTHESIS-E2FB2167D274",
         "SPEC-KERN-01"
       ],
+      "architecture": [
+        "GONI-EVIDENCE-C7E2E223D66C",
+        "GONI-EVIDENCE-DAB82B3FB23C",
+        "GONI-EVIDENCE-FEFC105378DC",
+        "GONI-SPECIFICATION-BB656A72DF7D",
+        "GONI-SPECIFICATION-C64D8275BA34",
+        "GONI-SYNTHESIS-83E91B709969",
+        "GONI-THESIS-18044634B6FC",
+        "GONI-THESIS-AEA4F8746318"
+      ],
+      "authority": [
+        "GONI-SYNTHESIS-83E91B709969",
+        "GONI-THESIS-18044634B6FC"
+      ],
       "billing": [
         "BILL-01",
         "BILL-02"
@@ -484,6 +502,9 @@
         "SCHEMA-MVP-01",
         "SPINE-01",
         "ZCO-01"
+      ],
+      "evaluation": [
+        "GONI-EXPERIMENT-1256ECCB8E28"
       ],
       "hardware": [
         "ADR-INDEX-HW",
@@ -895,6 +916,7 @@
       "memory": [
         "BOUND-01",
         "EVID-SEC-02",
+        "GONI-EXPERIMENT-1256ECCB8E28",
         "GONI-EXPERIMENT-290E879EE8E2",
         "GONI-EXPERIMENT-4193B6DF2A2A",
         "GONI-EXPERIMENT-811EDB4A82A5",
@@ -924,8 +946,13 @@
         "GONI-SPEC-F9FED158CE1F",
         "GONI-SPEC-FE4FB11BB885",
         "GONI-SPEC-FE99E83F8C83",
+        "GONI-SPECIFICATION-BB656A72DF7D",
+        "GONI-SPECIFICATION-C64D8275BA34",
         "GONI-SYNTHESIS-161FC810382A",
+        "GONI-SYNTHESIS-83E91B709969",
         "GONI-SYNTHESIS-AE048AF3026D",
+        "GONI-THESIS-18044634B6FC",
+        "GONI-THESIS-AEA4F8746318",
         "MEM-RETR-01",
         "MEMORY-ARCHITECTURE"
       ],
@@ -1632,6 +1659,7 @@
         "GONI-EVIDENCE-C34EADD55136",
         "GONI-EVIDENCE-C46AA7D2113E",
         "GONI-EVIDENCE-C6C7F17766D8",
+        "GONI-EVIDENCE-C7E2E223D66C",
         "GONI-EVIDENCE-C8B1B409E3E4",
         "GONI-EVIDENCE-CAAF62683B58",
         "GONI-EVIDENCE-CBC1E82C1776",
@@ -1642,6 +1670,7 @@
         "GONI-EVIDENCE-D7A6DC40334B",
         "GONI-EVIDENCE-D7AF89CD48E0",
         "GONI-EVIDENCE-DAB828C1B80C",
+        "GONI-EVIDENCE-DAB82B3FB23C",
         "GONI-EVIDENCE-DE30FF49B389",
         "GONI-EVIDENCE-E0D25AE15AB0",
         "GONI-EVIDENCE-E3F3DC159250",
@@ -1655,6 +1684,7 @@
         "GONI-EVIDENCE-F74B86E725FB",
         "GONI-EVIDENCE-FAA487C54065",
         "GONI-EVIDENCE-FBA1A33CF61A",
+        "GONI-EVIDENCE-FEFC105378DC",
         "GONI-EXPERIMENT-7DE7B307CB98",
         "GONI-SYNTHESIS-0382450FEF34",
         "GONI-SYNTHESIS-3BAF6D1DACDF",
@@ -1666,6 +1696,9 @@
         "GONI-SYNTHESIS-D5A359AF7D66",
         "GONI-SYNTHESIS-F0626F7EFE2C",
         "REF-GONIOS-NEIGHBOR-01"
+      ],
+      "retrieval": [
+        "GONI-SPECIFICATION-BB656A72DF7D"
       ],
       "security": [
         "GONI-PROPOSAL-05B21F15B3C6",
@@ -2776,6 +2809,7 @@
         "GONI-EVIDENCE-C34EADD55136",
         "GONI-EVIDENCE-C46AA7D2113E",
         "GONI-EVIDENCE-C6C7F17766D8",
+        "GONI-EVIDENCE-C7E2E223D66C",
         "GONI-EVIDENCE-C8B1B409E3E4",
         "GONI-EVIDENCE-CAAF62683B58",
         "GONI-EVIDENCE-CBC1E82C1776",
@@ -2786,6 +2820,7 @@
         "GONI-EVIDENCE-D7A6DC40334B",
         "GONI-EVIDENCE-D7AF89CD48E0",
         "GONI-EVIDENCE-DAB828C1B80C",
+        "GONI-EVIDENCE-DAB82B3FB23C",
         "GONI-EVIDENCE-DE30FF49B389",
         "GONI-EVIDENCE-E0D25AE15AB0",
         "GONI-EVIDENCE-E3F3DC159250",
@@ -2799,6 +2834,7 @@
         "GONI-EVIDENCE-F74B86E725FB",
         "GONI-EVIDENCE-FAA487C54065",
         "GONI-EVIDENCE-FBA1A33CF61A",
+        "GONI-EVIDENCE-FEFC105378DC",
         "GONI-EXPERIMENT-0002BABA3DAF",
         "GONI-EXPERIMENT-00E7C79F4A95",
         "GONI-EXPERIMENT-04D89CD2474E",
@@ -2811,6 +2847,7 @@
         "GONI-EXPERIMENT-0DAA5AB0751B",
         "GONI-EXPERIMENT-10BE600D16C3",
         "GONI-EXPERIMENT-12553A8BC54B",
+        "GONI-EXPERIMENT-1256ECCB8E28",
         "GONI-EXPERIMENT-17AD373C1ACF",
         "GONI-EXPERIMENT-1AE48EF895D6",
         "GONI-EXPERIMENT-1F8811AD87C7",
@@ -3912,6 +3949,8 @@
         "GONI-SPEC-FEDFE25D0BD2",
         "GONI-SPEC-FF000C878367",
         "GONI-SPEC-FF2D2F8D0491",
+        "GONI-SPECIFICATION-BB656A72DF7D",
+        "GONI-SPECIFICATION-C64D8275BA34",
         "GONI-STORY",
         "GONI-SWOT",
         "GONI-SYNTHESIS-00B5C471FF0F",
@@ -4170,6 +4209,7 @@
         "GONI-SYNTHESIS-802CFFA2F1E3",
         "GONI-SYNTHESIS-810174F1C076",
         "GONI-SYNTHESIS-82B0A8CFB3C0",
+        "GONI-SYNTHESIS-83E91B709969",
         "GONI-SYNTHESIS-8410A572B71A",
         "GONI-SYNTHESIS-844D4060E6D2",
         "GONI-SYNTHESIS-84822AD77041",
@@ -4415,6 +4455,7 @@
         "GONI-SYNTHESIS-FEC452FE3082",
         "GONI-SYNTHESIS-FF1804B9EA23",
         "GONI-SYNTHESIS-FFFD0BDE80BE",
+        "GONI-THESIS-18044634B6FC",
         "GONI-THESIS-3234CF1EA4B0",
         "GONI-THESIS-32FBF8431A3E",
         "GONI-THESIS-349EB2E79136",
@@ -4425,6 +4466,7 @@
         "GONI-THESIS-7BFB74017D50",
         "GONI-THESIS-826C859B5D30",
         "GONI-THESIS-98AE2B9284ED",
+        "GONI-THESIS-AEA4F8746318",
         "GONI-THESIS-AF23C6EB181B",
         "GONI-THESIS-AF4B6A0B4A2D",
         "GONI-THESIS-B09E3475FE2C",
@@ -4669,6 +4711,7 @@
         "GONI-EVIDENCE-C34EADD55136",
         "GONI-EVIDENCE-C46AA7D2113E",
         "GONI-EVIDENCE-C6C7F17766D8",
+        "GONI-EVIDENCE-C7E2E223D66C",
         "GONI-EVIDENCE-C8B1B409E3E4",
         "GONI-EVIDENCE-CAAF62683B58",
         "GONI-EVIDENCE-CBC1E82C1776",
@@ -4679,6 +4722,7 @@
         "GONI-EVIDENCE-D7A6DC40334B",
         "GONI-EVIDENCE-D7AF89CD48E0",
         "GONI-EVIDENCE-DAB828C1B80C",
+        "GONI-EVIDENCE-DAB82B3FB23C",
         "GONI-EVIDENCE-DE30FF49B389",
         "GONI-EVIDENCE-E0D25AE15AB0",
         "GONI-EVIDENCE-E3F3DC159250",
@@ -4691,7 +4735,8 @@
         "GONI-EVIDENCE-F548C655D101",
         "GONI-EVIDENCE-F74B86E725FB",
         "GONI-EVIDENCE-FAA487C54065",
-        "GONI-EVIDENCE-FBA1A33CF61A"
+        "GONI-EVIDENCE-FBA1A33CF61A",
+        "GONI-EVIDENCE-FEFC105378DC"
       ],
       "experiment": [
         "BOM-NOTES",
@@ -4733,6 +4778,7 @@
         "GONI-EXPERIMENT-0DAA5AB0751B",
         "GONI-EXPERIMENT-10BE600D16C3",
         "GONI-EXPERIMENT-12553A8BC54B",
+        "GONI-EXPERIMENT-1256ECCB8E28",
         "GONI-EXPERIMENT-17AD373C1ACF",
         "GONI-EXPERIMENT-1AE48EF895D6",
         "GONI-EXPERIMENT-1F8811AD87C7",
@@ -5900,6 +5946,8 @@
         "GONI-SPEC-FEDFE25D0BD2",
         "GONI-SPEC-FF000C878367",
         "GONI-SPEC-FF2D2F8D0491",
+        "GONI-SPECIFICATION-BB656A72DF7D",
+        "GONI-SPECIFICATION-C64D8275BA34",
         "HREQ-01",
         "ITCR-01",
         "JOB-01",
@@ -6186,6 +6234,7 @@
         "GONI-SYNTHESIS-802CFFA2F1E3",
         "GONI-SYNTHESIS-810174F1C076",
         "GONI-SYNTHESIS-82B0A8CFB3C0",
+        "GONI-SYNTHESIS-83E91B709969",
         "GONI-SYNTHESIS-8410A572B71A",
         "GONI-SYNTHESIS-844D4060E6D2",
         "GONI-SYNTHESIS-84822AD77041",
@@ -6459,6 +6508,7 @@
         "THREAT-MODEL"
       ],
       "thesis": [
+        "GONI-THESIS-18044634B6FC",
         "GONI-THESIS-3234CF1EA4B0",
         "GONI-THESIS-32FBF8431A3E",
         "GONI-THESIS-349EB2E79136",
@@ -6469,6 +6519,7 @@
         "GONI-THESIS-7BFB74017D50",
         "GONI-THESIS-826C859B5D30",
         "GONI-THESIS-98AE2B9284ED",
+        "GONI-THESIS-AEA4F8746318",
         "GONI-THESIS-AF23C6EB181B",
         "GONI-THESIS-AF4B6A0B4A2D",
         "GONI-THESIS-B09E3475FE2C",
@@ -15793,6 +15844,33 @@
     {
       "aliases": [],
       "artifacts": [],
+      "body": "# Source claim: JustVugg Colibrì\n\n## Reported observation\n\nThe Colibrì repository describes a local mixture-of-experts inference runtime that manages expert placement across faster and slower storage or memory tiers. Its design uses routing demand, caching, hot-state placement, migration, and prefetching so that frequently needed components can remain closer to execution while colder components remain recoverable from lower tiers.\n\n## GONI interpretation\n\nColibrì is useful as an engineering analogy for cognitive residency: an item's placement can change access latency without redefining the item's identity. This supports GONI's separation of semantic memory class from residency and its preference for demotion over destructive deletion when recovery remains valuable.\n\n## Limitation\n\nModel-weight or expert placement is not equivalent to semantic memory management. Colibrì does not establish GONI's provenance, truth, retention, page-fault, or authority rules.",
+      "domains": [
+        "research",
+        "architecture"
+      ],
+      "id": "GONI-EVIDENCE-C7E2E223D66C",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/evidence/goni-evidence-c7e2e223d66c-source-claim-justvugg2026-colibri.md",
+      "proposition": "Colibrì presents an inference runtime in which model components are placed across heterogeneous memory tiers and promoted, cached, or prefetched according to routing demand.",
+      "relations": [
+        {
+          "target": "GONI-SPECIFICATION-C64D8275BA34",
+          "type": "supports"
+        }
+      ],
+      "sources": [
+        "SRC-JUSTVUGG2026-COLIBRI"
+      ],
+      "status": "draft",
+      "title": "Source claim: JustVugg Colibrì",
+      "type": "evidence",
+      "uncertainty": "This is repository-level engineering evidence rather than peer-reviewed validation. Claimed performance and behavior should be independently reproduced before being treated as measured GONI evidence."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
       "body": "# Source claim: watson2014-cheri\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\nKey: [[watson2014-cheri]]\nClaim: Introduces CHERI capability extensions for hardware-supported memory and\nauthority safety.\nRelevance:\n- Future hardening path for capability enforcement below OS layer.\nUsed in:\n- `blueprint/20-system/40-agentic-kernel-foundations.md` (Capabilities)\nSource:\n- https://murdoch.is/papers/cl14cheriisa.pdf",
       "domains": [
         "research"
@@ -16109,6 +16187,33 @@
       "title": "Source claim: lewis2020-rag",
       "type": "evidence",
       "uncertainty": "The legacy bibliography summarizes the source; the cited source must be consulted for scope and limitations."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Source claim: Google LiteRT-LM 2026\n\n## Reported observation\n\nGoogle describes LiteRT-LM as supporting stateful sessions whose context can be saved and restored, including serialization of large KV-cache state. The same engineering material describes memory-local execution and dynamic loading of model components so active memory use can vary with the current task.\n\n## GONI interpretation\n\nThese mechanisms show that local inference state need not be permanently resident to remain recoverable. They are therefore relevant implementation precedents for GONI's broader rehydration concept and for separating active inference state from recoverable system state.\n\n## Limitation\n\nA persisted KV cache is neither a provenance-bearing source archive nor a governed semantic memory system. LiteRT-LM does not establish GONI's retrieval, retention, permission, or authorization semantics, and vendor performance numbers require independent reproduction before use as benchmark evidence.",
+      "domains": [
+        "research",
+        "architecture"
+      ],
+      "id": "GONI-EVIDENCE-DAB82B3FB23C",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/evidence/goni-evidence-dab82b3fb23c-source-claim-google2026-litert-lm.md",
+      "proposition": "LiteRT-LM supports stateful on-device inference through session save and restore, KV-cache persistence, memory-local execution, and dynamic loading of model components.",
+      "relations": [
+        {
+          "target": "GONI-SPECIFICATION-BB656A72DF7D",
+          "type": "supports"
+        }
+      ],
+      "sources": [
+        "SRC-GOOGLE2026-LITERT-LM"
+      ],
+      "status": "draft",
+      "title": "Source claim: Google LiteRT-LM 2026",
+      "type": "evidence",
+      "uncertainty": "The source is a Google engineering publication and includes vendor-reported performance claims. It supports the existence of state-continuity mechanisms, not GONI's semantic-memory or authority rules."
     },
     {
       "aliases": [],
@@ -16537,6 +16642,33 @@
     {
       "aliases": [],
       "artifacts": [],
+      "body": "# Source claim: Kwon et al. 2023 PagedAttention\n\n## Reported observation\n\nKwon et al. describe PagedAttention, which partitions KV-cache state into blocks and manages their placement using concepts analogous to operating-system virtual memory. The design reduces fragmentation and enables flexible sharing of KV-cache blocks across sequences.\n\n## GONI interpretation\n\nThe result is a systems precedent for separating logical availability from physical residency. GONI applies that separation at a different layer: active model context is treated as one residency tier within a larger recoverable cognitive state.\n\n## Limitation\n\nPagedAttention does not establish that semantic memories, user evidence, permissions, or authority should be paged in the same manner. Those are independent GONI design claims requiring their own evaluation.",
+      "domains": [
+        "research",
+        "architecture"
+      ],
+      "id": "GONI-EVIDENCE-FEFC105378DC",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/evidence/goni-evidence-fefc105378dc-source-claim-kwon2023-pagedattention.md",
+      "proposition": "PagedAttention demonstrates that LLM serving can decouple logical KV-cache organization from contiguous physical memory placement by applying paging and virtual-memory concepts.",
+      "relations": [
+        {
+          "target": "GONI-THESIS-AEA4F8746318",
+          "type": "supports"
+        }
+      ],
+      "sources": [
+        "SRC-KWON2023-PAGEDATTENTION"
+      ],
+      "status": "draft",
+      "title": "Source claim: Kwon et al. 2023 PagedAttention",
+      "type": "evidence",
+      "uncertainty": "The source concerns KV-cache memory management and serving throughput. Its relevance to cognitive memory is analogical and architectural, not direct empirical validation of GONI's semantic or governance model."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
       "body": "# Long-context reading lanes\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n## Long-context reading lanes\n- [Reading strategy comparison](/blueprint/50-evidence/eval/EVID-LONGCTX-01-reading-strategy-comparison.md)\n- [Corpus-reading fidelity](/blueprint/50-evidence/eval/EVID-LONGCTX-02-corpus-reading-fidelity.md)\n- [Recursion-budget safety](/blueprint/50-evidence/eval/EVID-LONGCTX-03-recursion-budget-safety.md)",
       "domains": [
         "repository"
@@ -16833,6 +16965,42 @@
       "title": "11. Evaluation metrics",
       "type": "experiment",
       "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Hierarchical Memory Evaluation\n\nThe experiment compares three memory strategies over long-horizon delegated tasks:\n\n1. a full-context oracle where feasible;\n2. repeated lossy compaction without exact rehydration;\n3. hierarchical recoverable memory with pinned state, exact archival state, retrieval, and semantic-page-fault handling.\n\nThe primary outcome is not token survival. It is downstream decision quality. A system-level target is:\n\n`P(correct next action | active context + recoverable memory + authoritative state)`\n\nA weighted critical-state recall metric may be used for facts or constraints with heterogeneous importance:\n\n`R_w = Σ_i w_i · 1[f_i recoverable] / Σ_i w_i`\n\nThe evaluation should also measure task success, source and provenance recovery, semantic drift, contradictions detected before action, page-fault precision and recall, page-in latency, retrieval cost, unnecessary context tokens, and recovery of exact identifiers, files, commits, or prior decisions. Authority violations must be measured separately so memory quality cannot conceal privilege escalation.\n\nA useful optimization framing is:\n\n`J = E[D] + λE[L] + μC_compute + νC_storage`\n\nwhere `D` is task distortion relative to the oracle, `L` is latency, and the remaining terms capture compute and storage costs. The coefficients must be declared before comparing systems.\n\nThe experiment should use fixed task traces and a predefined critical-state ledger so evaluation does not reward a system for retaining easy facts while losing high-consequence constraints. Repeated compaction should be evaluated across multiple compaction cycles to quantify cumulative semantic drift rather than a single summary operation.\n\nResults become evidence only after the workload, implementation, seeds where applicable, hardware, model, retrieval configuration, budgets, and raw outputs are pinned as reproducible artifacts.",
+      "domains": [
+        "evaluation",
+        "memory"
+      ],
+      "id": "GONI-EXPERIMENT-1256ECCB8E28",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/experiments/goni-experiment-1256eccb8e28-hierarchical-memory-evaluation.md",
+      "proposition": "Evaluate whether recoverable hierarchical memory preserves task-relevant state and correct-next-action quality better than repeated lossy compaction at comparable context and latency budgets.",
+      "relations": [
+        {
+          "target": "GONI-THESIS-AEA4F8746318",
+          "type": "tests"
+        },
+        {
+          "target": "GONI-SPECIFICATION-BB656A72DF7D",
+          "type": "tests"
+        },
+        {
+          "target": "GONI-SPECIFICATION-C64D8275BA34",
+          "type": "tests"
+        }
+      ],
+      "sources": [
+        "SRC-PACKER2023-MEMGPT",
+        "SRC-KWON2023-PAGEDATTENTION"
+      ],
+      "status": "draft",
+      "title": "Hierarchical Memory Evaluation",
+      "type": "experiment",
+      "uncertainty": "This node specifies an evaluation protocol, not completed evidence. Thresholds and workload distributions must be fixed before execution."
     },
     {
       "aliases": [],
@@ -44675,6 +44843,73 @@
       "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
     },
     {
+      "aliases": [
+        "semantic page fault"
+      ],
+      "artifacts": [],
+      "body": "# Context Rehydration and Semantic Page Faults\n\nA **semantic page fault** is a cognitive miss: the system identifies that information needed for the current reasoning step is absent from active context but may exist in recoverable state.\n\nThe intended transition is:\n\n`miss → retrieve → rehydrate → re-evaluate`\n\nrather than:\n\n`miss → guess`\n\nCandidate triggers include uncertainty about a recoverable fact, a reference to an earlier decision whose rationale is absent, a missing exact identifier or file state, conflict between a summary and pinned state, a consequential action that requires source evidence, or detection that a compressed representation omitted an invariant needed for the next step.\n\nRehydration should recover the smallest sufficient evidence-bearing state. The router may combine semantic similarity, lexical matching, exact identifiers, structural links, temporal signals, dependency information, current-plan state, file paths, Git references, and policy metadata. A useful abstraction is:\n\n`R(q,s) = f(R_semantic, R_lexical, R_structural, R_temporal, R_dependency, R_plan)`\n\nLossy summaries may assist routing, salience estimation, and context assembly, but should retain provenance pointers and should not silently supersede the underlying source. In compact form:\n\n**Summaries are indexes; sources remain the evidence-bearing memory.**\n\nRehydration itself grants no execution permission. Retrieved state enters reasoning subject to the same provenance, retention, confidentiality, and authority checks that applied before paging.",
+      "domains": [
+        "memory",
+        "retrieval",
+        "architecture"
+      ],
+      "id": "GONI-SPECIFICATION-BB656A72DF7D",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/specifications/goni-specification-bb656a72df7d-context-rehydration-and-semantic-page-faults.md",
+      "proposition": "When information required for a consequential reasoning step is absent from active context but recoverable from governed memory or authoritative state, the system should retrieve and rehydrate that information before substituting an unsupported reconstruction.",
+      "relations": [
+        {
+          "target": "GONI-THESIS-AEA4F8746318",
+          "type": "refines"
+        },
+        {
+          "target": "GONI-SPECIFICATION-C64D8275BA34",
+          "type": "depends_on"
+        }
+      ],
+      "sources": [
+        "SRC-PACKER2023-MEMGPT",
+        "SRC-GOOGLE2026-LITERT-LM"
+      ],
+      "status": "draft",
+      "title": "Context Rehydration and Semantic Page Faults",
+      "type": "specification",
+      "uncertainty": "Detection quality, acceptable miss rates, and page-in policies remain empirical questions. The term semantic page fault is a GONI design abstraction rather than a claim of established terminology."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Cognitive Memory Residency Contract\n\nFor a memory item `m`, GONI models at least two independent dimensions:\n\n`m = (semantic_class, residency)`\n\nThe semantic class describes the item's role in the cognitive system. Residency describes how immediately the item can be supplied to inference. Residency is therefore a performance and availability property, not a truth or permission label.\n\nA provisional residency hierarchy is:\n\n- `L0 Active`: material currently supplied to attention or represented in active inference state.\n- `L1 Pinned`: task-critical state that should remain immediately recoverable, including the current objective, mandate, approved constraints, invariants, and unresolved blockers.\n- `L2 Hot`: frequently relevant structured state such as current project decisions, entities, recent episodes, and dependency context.\n- `L3 Warm Exact`: exact prior turns, documents, tool outputs, source passages, and optionally persisted inference state that can be rehydrated when needed.\n- `L4 Canonical Archive`: durable source artifacts, receipts, files, Git state, databases, and other authoritative or reconstructable system state.\n\nA transition `L_i → L_j` may alter expected latency, context cost, memory footprint, or recomputation cost. It must not, by itself, change whether a claim is true, whether a source is authoritative, whether provenance exists, whether retention is permitted, or whether an action is authorized.\n\nAccordingly:\n\n**Placement should determine latency, not truth.**\n\nDemotion is preferred to destructive forgetting when the information remains worth retaining and the marginal storage cost is below the expected value of future recovery. Promotion should be driven by expected near-term utility, criticality, dependency structure, and retrieval cost rather than recency alone.",
+      "domains": [
+        "memory",
+        "architecture"
+      ],
+      "id": "GONI-SPECIFICATION-C64D8275BA34",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/specifications/goni-specification-c64d8275ba34-cognitive-memory-residency-contract.md",
+      "proposition": "Cognitive memory class and residency are orthogonal dimensions, and changes in residency may change retrieval cost without silently changing epistemic status, provenance, retention authority, or execution authority.",
+      "relations": [
+        {
+          "target": "GONI-THESIS-AEA4F8746318",
+          "type": "refines"
+        },
+        {
+          "target": "GONI-SYNTHESIS-2F274E6CBCF8",
+          "type": "depends_on"
+        }
+      ],
+      "sources": [
+        "SRC-KWON2023-PAGEDATTENTION",
+        "SRC-JUSTVUGG2026-COLIBRI"
+      ],
+      "status": "draft",
+      "title": "Cognitive Memory Residency Contract",
+      "type": "specification",
+      "uncertainty": "The tier boundaries and promotion or demotion policies are specified abstractions. Concrete thresholds require measurement on target hardware and workloads."
+    },
+    {
       "aliases": [],
       "artifacts": [],
       "body": "# Goni Story\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n﻿# Goni Story - Your AI Doppelganger in a Box\n\n> Target audience: technically literate people who want a life upgrade, not another side project (founders, engineers, indie hackers, senior ICs).\n>\n> Use this text for: website \"About\" page, launch blog post, or onboarding material for early testers. It pairs with `goni-whitepaper.md` (architecture) and `goni-swot.md` (positioning).\n\n---",
@@ -51860,6 +52095,53 @@
     {
       "aliases": [],
       "artifacts": [],
+      "body": "# Virtual Cognitive Memory and Governed Delegation\n\nThe relevant architecture contains three orthogonal hierarchies.\n\n## 1. Model-memory residency\n\nInference components may occupy faster or slower physical tiers such as accelerator memory, system RAM, and local storage. KV caches, model weights, experts, adapters, and multimodal encoders can be loaded, unloaded, shared, serialized, or prefetched. PagedAttention, Colibrì, and LiteRT-LM provide different precedents for treating data movement and residency as first-class systems concerns.\n\nThe objective of this hierarchy is computational efficiency. It says where inference state lives and how costly it is to access.\n\n## 2. Cognitive-memory residency\n\nGONI separately distinguishes active context from pinned, hot, warm-exact, and canonical recoverable state. This hierarchy concerns what evidence or state should be immediately available to reasoning and what may be recovered on demand.\n\nThe objective is task-relevant continuity under bounded context. The governing invariant is that demotion may change access cost while preserving provenance, epistemic status, and recoverability according to retention policy.\n\nA semantic page fault occurs when required information is absent from active context but potentially recoverable. The specified response is retrieval, rehydration, and re-evaluation rather than unsupported reconstruction.\n\n## 3. Authority\n\nA third hierarchy governs what the delegated system may do: mandate, corridor, capability, mediated action, and receipt. This hierarchy is neither a memory cache nor a model-performance scale.\n\nRetrieving more information, promoting a memory item, selecting a stronger model, or escalating to a remote model does not expand the current mandate. Authority changes require an explicit authorization path.\n\n## Combined architecture\n\nThe three hierarchies can interact but must not collapse:\n\n`physical/model residency ≠ cognitive residency ≠ authority`\n\nA model may page in evidence without receiving tool access. A remote model may receive a redacted ContextPack without gaining access to the complete local archive. A locally pinned instruction may remain highly available while still being non-authoritative if it is merely a model-generated suggestion. Conversely, an authoritative constraint may remain in cold canonical state and still retain its normative status even when it is not currently resident in the model context.\n\nThe resulting compact doctrine is:\n\n- **Active context is a cache, not memory.**\n- **Summaries are indexes, not sources.**\n- **Placement should determine latency, not truth.**\n- **Model capability should determine reasoning quality, not authority.**\n- **Models reason. The kernel authorizes. Tools act. Receipts prove.**\n\nThis framing converts long-context operation from a binary choice between retaining everything and compressing everything into a governed residency problem. It also preserves GONI's central sovereignty requirement: performance optimizations may alter where state is processed, but they do not silently relocate ownership of memory, policy, permissions, or evidence outside the GONI control boundary.",
+      "domains": [
+        "memory",
+        "architecture",
+        "authority"
+      ],
+      "id": "GONI-SYNTHESIS-83E91B709969",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/syntheses/goni-synthesis-83e91b709969-virtual-cognitive-memory-and-governed-delegation.md",
+      "proposition": "GONI should keep model-memory residency, cognitive-memory residency, and delegated authority as three independent hierarchies that interact through explicit mediation rather than collapsing into one control dimension.",
+      "relations": [
+        {
+          "target": "GONI-THESIS-AEA4F8746318",
+          "type": "synthesizes"
+        },
+        {
+          "target": "GONI-SPECIFICATION-C64D8275BA34",
+          "type": "synthesizes"
+        },
+        {
+          "target": "GONI-SPECIFICATION-BB656A72DF7D",
+          "type": "synthesizes"
+        },
+        {
+          "target": "GONI-THESIS-18044634B6FC",
+          "type": "synthesizes"
+        },
+        {
+          "target": "GONI-SYNTHESIS-D5A359AF7D66",
+          "type": "refines"
+        }
+      ],
+      "sources": [
+        "SRC-PACKER2023-MEMGPT",
+        "SRC-KWON2023-PAGEDATTENTION",
+        "SRC-JUSTVUGG2026-COLIBRI",
+        "SRC-GOOGLE2026-LITERT-LM"
+      ],
+      "status": "draft",
+      "title": "Virtual Cognitive Memory and Governed Delegation",
+      "type": "synthesis",
+      "uncertainty": "This synthesis combines established external systems mechanisms with specified-only GONI abstractions. It does not claim that the complete architecture has been implemented or empirically validated."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
       "body": "# A) Local AI apps (UX-first)\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n### A) Local AI apps (UX-first)\n\n- Jan: https://jan.ai/\n- GPT4All: https://github.com/nomic-ai/gpt4all\n- AnythingLLM: https://anythingllm.com/\n- Open WebUI: https://github.com/open-webui/open-webui\n\nThese projects are valuable for UI and workflows, but do not usually provide\nkernel-level governance or audited tool execution.",
       "domains": [
         "repository"
@@ -56151,7 +56433,7 @@
     {
       "aliases": [],
       "artifacts": [],
-      "body": "# Memory OS and state\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n## Memory OS and state\n\n| Project | Primary source | GoniOS layer mapping | What Goni should learn | What Goni should not import | Confidence |\n| --- | --- | --- | --- | --- | --- |\n| MemGPT / Letta | https://arxiv.org/abs/2310.08560 | Tabulation, memoization, rolling state, virtual context | Treat context as managed memory with explicit movement between short and long-term stores. | Do not equate chat history management with Goni's full authority, receipt, and policy system. | `primary-source verified` |\n| Letta | https://github.com/letta-ai/letta | Agent memory runtime | Study practical APIs for long-running agents with external memory. | Do not let an agent framework own canonical Goni memory or policy state. | `primary-source verified` |\n| MemOS | https://arxiv.org/abs/2505.22101 | Memory as OS-level resource | Study memory lifecycle, memory scheduling, and memory service boundaries for LLM systems. | Do not claim Goni implements a memory OS unless the memory object contract and runtime wiring exist. | `primary-source verified` |\n| MemPalace | https://github.com/mempalace/mempalace | Hierarchical local memory and retrieval | Compare memory topology, hierarchy, and retrieval organization against Vault and Context Gravity Graph designs. | Do not import benchmark claims without reproducing them in Goni Lab. | `primary-source verified` |\n| Basic Memory | https://github.com/basicmachines-co/basic-memory | Local-first writable memory, graph-like notes | Study Markdown-backed local memory and MCP-facing workflows as a simple Vault substrate pattern. | Do not treat Markdown notes as sufficient for receipts, expiry, invalidation, or policy mediation. | `primary-source verified` |",
+      "body": "# Memory OS and state\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n## Memory OS and state\n\n| Project | Primary source | GoniOS layer mapping | What Goni should learn | What Goni should not import | Confidence |\n| --- | --- | --- | --- | --- | --- |\n| MemGPT / Letta | https://arxiv.org/abs/2310.08560 | Tabulation, memoization, rolling state, virtual context | Treat context as managed memory with explicit movement between short and long-term stores. | Do not equate chat history management with Goni's full authority, receipt, and policy system. | `primary-source verified` |\n| Letta | https://github.com/letta-ai/letta | Agent memory runtime | Study practical APIs for long-running agents with external memory. | Do not let an agent framework own canonical Goni memory or policy state. | `primary-source verified` |\n| MemOS | https://arxiv.org/abs/2505.22101 | Memory as OS-level resource | Study memory lifecycle, memory scheduling, and memory service boundaries for LLM systems. | Do not claim Goni implements a memory OS unless the memory object contract and runtime wiring exist. | `primary-source verified` |\n| MemPalace | https://github.com/mempalace/mempalace | Hierarchical local memory and retrieval | Compare memory topology, hierarchy, and retrieval organization against Vault and Context Gravity Graph designs. | Do not import benchmark claims without reproducing them in Goni Lab. | `primary-source verified` |\n| Basic Memory | https://github.com/basicmachines-co/basic-memory | Local-first writable memory, graph-like notes | Study Markdown-backed local memory and MCP-facing workflows as a simple Vault substrate pattern. | Do not treat Markdown notes as sufficient for receipts, expiry, invalidation, or policy mediation. | `primary-source verified` |\n| PagedAttention / vLLM | https://arxiv.org/abs/2309.06180 | Physical inference-memory residency | Use paging as a systems precedent for decoupling logical availability from contiguous physical residency. | Do not treat KV-cache paging as direct evidence for semantic memory, provenance, or authority. | `academic primary source` |\n| Colibrì | https://github.com/JustVugg/colibri/blob/main/README.md | Heterogeneous model-memory placement | Study heat-based placement, caching, migration, and prefetch as engineering patterns for residency management. | Do not treat repository-level performance claims as independently validated or equate expert placement with cognitive memory. | `repository primary source` |\n| LiteRT-LM | https://developers.googleblog.com/blazing-fast-on-device-genai-with-litert-lm/ | Stateful local inference and recoverable KV state | Study session save/restore, serialized KV state, memory locality, and dynamic component loading as local continuity mechanisms. | Do not equate persisted inference state with evidence-bearing memory or infer GONI authority semantics from vendor runtime features. | `vendor engineering source` |\n\nThe updated comparison motivates a distinction that the original research-neighbor map did not make explicit: model-memory residency, cognitive-memory residency, and delegated authority are separate architectural dimensions. The dedicated synthesis `GONI-SYNTHESIS-83E91B709969` develops that distinction without changing the evidentiary status of the projects listed here.",
       "domains": [
         "research"
       ],
@@ -56167,11 +56449,16 @@
       "path": "knowledge/syntheses/goni-synthesis-d5a359af7d66-memory-os-and-state.md",
       "proposition": "| Project | Primary source | GoniOS layer mapping | What Goni should learn | What Goni should not import | Confidence | | MemGPT / Letta | https://arxiv.org/abs/2310.08560 | Tabulation, memoization, rolling state, virtual context | Treat context as managed memory with explicit movement between short and long-term stores.",
       "relations": [],
-      "sources": [],
+      "sources": [
+        "SRC-PACKER2023-MEMGPT",
+        "SRC-KWON2023-PAGEDATTENTION",
+        "SRC-JUSTVUGG2026-COLIBRI",
+        "SRC-GOOGLE2026-LITERT-LM"
+      ],
       "status": "draft",
       "title": "Memory OS and state",
       "type": "synthesis",
-      "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
+      "uncertainty": "The original rows are preserved from the migrated draft. New rows distinguish academic, repository, and vendor engineering evidence and do not promote GONI implementation status."
     },
     {
       "aliases": [],
@@ -58180,6 +58467,36 @@
     {
       "aliases": [],
       "artifacts": [],
+      "body": "# Retrieval Is Not Authorization\n\nGONI separates epistemic capability from delegated authority. A model may receive more evidence, a larger context, a retrieved source, a stronger inference backend, or a cloud escalation while remaining inside exactly the same mandate and capability boundaries.\n\nThe intended invariants are:\n\n`Δcontext ↛ Δauthority`\n\n`Δmodel_capability ↛ Δauthority`\n\nAccordingly, paging a memory item into active context does not grant tool rights; higher retrieval confidence does not bypass policy mediation; a larger local or remote model does not receive a wider capability token merely because it can reason better; and cloud escalation does not automatically inherit unrestricted access to local memory or network egress.\n\nThis distinction is necessary because cognitive residency, model capability, and execution authority solve different system problems. Collapsing them would allow a performance optimization to become an implicit privilege escalation.\n\nThe compact design rule is:\n\n**Model capability determines reasoning capacity. The kernel determines authority.**\n\nThis thesis specializes the broader GONI system architecture in which models reason, the kernel authorizes, tools act, and receipts prove.",
+      "domains": [
+        "authority",
+        "memory",
+        "architecture"
+      ],
+      "id": "GONI-THESIS-18044634B6FC",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/theses/goni-thesis-18044634b6fc-retrieval-is-not-authorization.md",
+      "proposition": "Increasing the information available to a model, or replacing it with a more capable model, must not by itself enlarge the authority granted to the delegated system.",
+      "relations": [
+        {
+          "target": "GONI-THESIS-E1FB8B4F7772",
+          "type": "refines"
+        },
+        {
+          "target": "GONI-SPECIFICATION-BB656A72DF7D",
+          "type": "depends_on"
+        }
+      ],
+      "sources": [],
+      "status": "draft",
+      "title": "Retrieval Is Not Authorization",
+      "type": "thesis",
+      "uncertainty": "This is a normative architectural constraint. Runtime non-bypassability requires separate implementation and test evidence."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
       "body": "# 9. Local-First Computing and Network Governance\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n## 9. Local-First Computing and Network Governance\n\nGoni's local-first thesis is not simply that models run on local\nhardware. Local-first means that core functions are intended to be computable\nusing local state and local compute; network access is capability-scoped;\nexternal calls are optional, transparent, budgeted, and receipt-linked; and\nremote model usage passes through an explicit network gate in the target\narchitecture.\n\nThis is important because \"local AI\" can become marketing if network behavior\nremains implicit. A serious sovereign AI system treats network egress as an\neffect requiring governance. Private memory is not intended to leak to cloud\nservices by accident. Remote inference does not occur merely because a model router\nfound it convenient. The network gate is therefore a core authority boundary,\nnot an implementation detail.\n\nThe simplest early version of this principle is strict: default-deny egress as\nthe design intent, one mediated egress API, explicit policy modes, and receipts\nfor outbound calls. More complex modes can emerge later, but the first proof\nneeds to show that local-first behavior is testable rather than aspirational. The\nnetwork gate design is specified in\n[network-gate-and-anonymity.md](/blueprint/30-specs/network-gate-and-anonymity.md).",
       "domains": [
         "product"
@@ -58426,6 +58743,38 @@
       "title": "15. Academic Contribution",
       "type": "thesis",
       "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Virtual Cognitive Memory\n\nGONI distinguishes the model's currently active context from the larger state the system can recover. At time `t`, let:\n\n`C_t ⊆ A_t ⊆ R_t`\n\nwhere `C_t` is active context, `A_t` is addressable memory available to retrieval, and `R_t` is recoverable state, including governed memory plus authoritative external state such as files, Git, databases, source artifacts, and receipts.\n\nThe architectural implication is that context-window pressure should ordinarily be handled as a residency problem rather than as an instruction to destroy state. Information may leave active context while remaining recoverable. A later need for that information should therefore trigger retrieval or rehydration before the system substitutes a confident reconstruction.\n\nThis thesis extends the existing continuity-layer thesis without replacing GONI's semantic memory taxonomy. Working, semantic, episodic, procedural, and evidence-bearing state describe what a memory item is. Residency describes where and how readily it can be recovered.\n\nThe design objective is not maximal retained context. It is high task-relevant recoverability under bounded latency, compute, and context budgets. A compact system should therefore optimize the probability of correct future action given active context, recoverable memory, and authoritative state rather than optimize token retention in isolation.",
+      "domains": [
+        "memory",
+        "architecture"
+      ],
+      "id": "GONI-THESIS-AEA4F8746318",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/theses/goni-thesis-aea4f8746318-virtual-cognitive-memory.md",
+      "proposition": "A sovereign personal AI should treat active context as a bounded cache over a larger recoverable cognitive state rather than as the memory system itself.",
+      "relations": [
+        {
+          "target": "GONI-THESIS-B09E3475FE2C",
+          "type": "refines"
+        },
+        {
+          "target": "GONI-SYNTHESIS-2F274E6CBCF8",
+          "type": "depends_on"
+        }
+      ],
+      "sources": [
+        "SRC-PACKER2023-MEMGPT",
+        "SRC-KWON2023-PAGEDATTENTION"
+      ],
+      "status": "draft",
+      "title": "Virtual Cognitive Memory",
+      "type": "thesis",
+      "uncertainty": "The proposition is architectural and specified-only. The virtual-memory analogy is a design abstraction; empirical benefit for GONI must be established by evaluation."
     },
     {
       "aliases": [],
@@ -62256,6 +62605,12 @@
     },
     {
       "projection": "authored",
+      "source": "GONI-EVIDENCE-C7E2E223D66C",
+      "target": "GONI-SPECIFICATION-C64D8275BA34",
+      "type": "supports"
+    },
+    {
+      "projection": "authored",
       "source": "GONI-EVIDENCE-C8B1B409E3E4",
       "target": "GONI-SYNTHESIS-8A0BE005D5C2",
       "type": "supports"
@@ -62312,6 +62667,12 @@
       "projection": "authored",
       "source": "GONI-EVIDENCE-DAB828C1B80C",
       "target": "MEM-RETR-01",
+      "type": "supports"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-EVIDENCE-DAB82B3FB23C",
+      "target": "GONI-SPECIFICATION-BB656A72DF7D",
       "type": "supports"
     },
     {
@@ -62403,6 +62764,30 @@
       "source": "GONI-EVIDENCE-FBA1A33CF61A",
       "target": "REF-GONIOS-NEIGHBOR-01",
       "type": "supports"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-EVIDENCE-FEFC105378DC",
+      "target": "GONI-THESIS-AEA4F8746318",
+      "type": "supports"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-EXPERIMENT-1256ECCB8E28",
+      "target": "GONI-SPECIFICATION-BB656A72DF7D",
+      "type": "tests"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-EXPERIMENT-1256ECCB8E28",
+      "target": "GONI-SPECIFICATION-C64D8275BA34",
+      "type": "tests"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-EXPERIMENT-1256ECCB8E28",
+      "target": "GONI-THESIS-AEA4F8746318",
+      "type": "tests"
     },
     {
       "projection": "generated",
@@ -62613,6 +62998,78 @@
       "source": "GONI-SPEC-75D0D2E5F296",
       "target": "GONI-SYNTHESIS-E3B321C24C67",
       "type": "synthesized_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-SPECIFICATION-BB656A72DF7D",
+      "target": "GONI-THESIS-18044634B6FC",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SPECIFICATION-BB656A72DF7D",
+      "target": "GONI-SPECIFICATION-C64D8275BA34",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SPECIFICATION-BB656A72DF7D",
+      "target": "GONI-THESIS-AEA4F8746318",
+      "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-SPECIFICATION-BB656A72DF7D",
+      "target": "GONI-EVIDENCE-DAB82B3FB23C",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-SPECIFICATION-BB656A72DF7D",
+      "target": "GONI-SYNTHESIS-83E91B709969",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-SPECIFICATION-BB656A72DF7D",
+      "target": "GONI-EXPERIMENT-1256ECCB8E28",
+      "type": "tested_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-SPECIFICATION-C64D8275BA34",
+      "target": "GONI-SPECIFICATION-BB656A72DF7D",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SPECIFICATION-C64D8275BA34",
+      "target": "GONI-SYNTHESIS-2F274E6CBCF8",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SPECIFICATION-C64D8275BA34",
+      "target": "GONI-THESIS-AEA4F8746318",
+      "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-SPECIFICATION-C64D8275BA34",
+      "target": "GONI-EVIDENCE-C7E2E223D66C",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-SPECIFICATION-C64D8275BA34",
+      "target": "GONI-SYNTHESIS-83E91B709969",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-SPECIFICATION-C64D8275BA34",
+      "target": "GONI-EXPERIMENT-1256ECCB8E28",
+      "type": "tested_by"
     },
     {
       "projection": "authored",
@@ -63997,6 +64454,18 @@
     {
       "projection": "generated",
       "source": "GONI-SYNTHESIS-2F274E6CBCF8",
+      "target": "GONI-SPECIFICATION-C64D8275BA34",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-SYNTHESIS-2F274E6CBCF8",
+      "target": "GONI-THESIS-AEA4F8746318",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-SYNTHESIS-2F274E6CBCF8",
       "target": "SYS-04",
       "type": "synthesized_by"
     },
@@ -64965,6 +65434,36 @@
       "source": "GONI-SYNTHESIS-82B0A8CFB3C0",
       "target": "GONI-STORY",
       "type": "synthesized_by"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SYNTHESIS-83E91B709969",
+      "target": "GONI-SYNTHESIS-D5A359AF7D66",
+      "type": "refines"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SYNTHESIS-83E91B709969",
+      "target": "GONI-SPECIFICATION-BB656A72DF7D",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SYNTHESIS-83E91B709969",
+      "target": "GONI-SPECIFICATION-C64D8275BA34",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SYNTHESIS-83E91B709969",
+      "target": "GONI-THESIS-18044634B6FC",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SYNTHESIS-83E91B709969",
+      "target": "GONI-THESIS-AEA4F8746318",
+      "type": "synthesizes"
     },
     {
       "projection": "generated",
@@ -66055,6 +66554,12 @@
     {
       "projection": "generated",
       "source": "GONI-SYNTHESIS-D5A359AF7D66",
+      "target": "GONI-SYNTHESIS-83E91B709969",
+      "type": "refined_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-SYNTHESIS-D5A359AF7D66",
       "target": "REF-GONIOS-NEIGHBOR-01",
       "type": "synthesized_by"
     },
@@ -66563,10 +67068,82 @@
       "type": "synthesized_by"
     },
     {
+      "projection": "authored",
+      "source": "GONI-THESIS-18044634B6FC",
+      "target": "GONI-SPECIFICATION-BB656A72DF7D",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-THESIS-18044634B6FC",
+      "target": "GONI-THESIS-E1FB8B4F7772",
+      "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-THESIS-18044634B6FC",
+      "target": "GONI-SYNTHESIS-83E91B709969",
+      "type": "synthesized_by"
+    },
+    {
       "projection": "generated",
       "source": "GONI-THESIS-468CFFD9870E",
       "target": "GONI-SYNTHESIS-0FE689876A05",
       "type": "synthesized_by"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-THESIS-AEA4F8746318",
+      "target": "GONI-SYNTHESIS-2F274E6CBCF8",
+      "type": "depends_on"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-THESIS-AEA4F8746318",
+      "target": "GONI-SPECIFICATION-BB656A72DF7D",
+      "type": "refined_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-THESIS-AEA4F8746318",
+      "target": "GONI-SPECIFICATION-C64D8275BA34",
+      "type": "refined_by"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-THESIS-AEA4F8746318",
+      "target": "GONI-THESIS-B09E3475FE2C",
+      "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-THESIS-AEA4F8746318",
+      "target": "GONI-EVIDENCE-FEFC105378DC",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-THESIS-AEA4F8746318",
+      "target": "GONI-SYNTHESIS-83E91B709969",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-THESIS-AEA4F8746318",
+      "target": "GONI-EXPERIMENT-1256ECCB8E28",
+      "type": "tested_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-THESIS-B09E3475FE2C",
+      "target": "GONI-THESIS-AEA4F8746318",
+      "type": "refined_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-THESIS-E1FB8B4F7772",
+      "target": "GONI-THESIS-18044634B6FC",
+      "type": "refined_by"
     },
     {
       "projection": "authored",
@@ -68325,6 +68902,16 @@
       "url": "https://arxiv.org/pdf/1502.04015"
     },
     {
+      "accessed": "2026-09-16",
+      "citation": "https://developers.googleblog.com/blazing-fast-on-device-genai-with-litert-lm/",
+      "id": "SRC-GOOGLE2026-LITERT-LM",
+      "kind": "web",
+      "notes": "Google describes LiteRT-LM session save/restore, serialization of large KV-cache state, memory-local execution, dynamic loading of multimodal encoders, and constrained decoding for on-device inference. This is vendor engineering evidence for state continuity and memory-locality mechanisms; it does not establish GONI governance, provenance, or authority semantics.",
+      "path": "sources/src-google2026-litert-lm.yml",
+      "title": "google2026-litert-lm",
+      "url": "https://developers.googleblog.com/blazing-fast-on-device-genai-with-litert-lm/"
+    },
+    {
       "citation": "Legacy annotated bibliography key [[greshake2023-indirect-prompt-injection]]",
       "id": "SRC-GRESHAKE2023-INDIRECT-PROMPT-INJECTION",
       "kind": "web",
@@ -68405,6 +68992,16 @@
       "url": "https://in-toto.io/"
     },
     {
+      "accessed": "2026-09-16",
+      "citation": "https://github.com/JustVugg/colibri/blob/main/README.md",
+      "id": "SRC-JUSTVUGG2026-COLIBRI",
+      "kind": "repository",
+      "notes": "Colibrì presents an MoE inference runtime that treats VRAM, RAM, and storage as a managed hierarchy, using routing heat, hot-store placement, caching, and prefetching while aiming to preserve model semantics across residency tiers. It is engineering evidence for placement and staging patterns, not academic proof of GONI semantic-memory or authority claims.",
+      "path": "sources/src-justvugg2026-colibri.yml",
+      "title": "justvugg2026-colibri",
+      "url": "https://github.com/JustVugg/colibri/blob/main/README.md"
+    },
+    {
       "citation": "https://arxiv.org/abs/2004.04906",
       "id": "SRC-KARPUKHIN2020-DPR",
       "kind": "academic",
@@ -68439,6 +69036,16 @@
       "path": "sources/src-krohn2007-flume.yml",
       "title": "krohn2007-flume",
       "url": "https://pdos.csail.mit.edu/papers/flume-sosp07.pdf"
+    },
+    {
+      "accessed": "2026-09-16",
+      "citation": "https://arxiv.org/abs/2309.06180",
+      "id": "SRC-KWON2023-PAGEDATTENTION",
+      "kind": "academic",
+      "notes": "Kwon et al. introduce PagedAttention and vLLM, applying operating-system virtual-memory and paging ideas to dynamic KV-cache management. The source supports the systems analogy that logical availability can be decoupled from physical residency; it does not itself establish semantic memory, provenance, or authority semantics for GONI.",
+      "path": "sources/src-kwon2023-pagedattention.yml",
+      "title": "kwon2023-pagedattention",
+      "url": "https://arxiv.org/abs/2309.06180"
     },
     {
       "citation": "https://arxiv.org/pdf/2309.06180",
