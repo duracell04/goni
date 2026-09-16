@@ -1,0 +1,9 @@
+id: SRC-CHOI2025-GROUP-CONFORMITY
+title: "An Empirical Study of Group Conformity in Multi-Agent Systems"
+kind: academic
+citation: >-
+  Choi, M., Kim, K., Chae, S., & Baek, S. (2025). An Empirical Study of Group Conformity in Multi-Agent Systems. Findings of ACL 2025, 5123-5139. https://doi.org/10.18653/v1/2025.findings-acl.265
+url: https://aclanthology.org/2025.findings-acl.265/
+accessed: 2026-09-16
+notes: >-
+  Reports group-conformity effects in simulated multi-agent discussions, including influence from numerical majorities and stronger agents.

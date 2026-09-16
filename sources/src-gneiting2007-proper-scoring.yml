@@ -1,0 +1,9 @@
+id: SRC-GNEITING2007-PROPER-SCORING
+title: "Strictly Proper Scoring Rules, Prediction, and Estimation"
+kind: academic
+citation: >-
+  Gneiting, T., & Raftery, A. E. (2007). Strictly Proper Scoring Rules, Prediction, and Estimation. Journal of the American Statistical Association, 102(477), 359-378. https://doi.org/10.1198/016214506000001437
+url: https://www.tandfonline.com/doi/abs/10.1198/016214506000001437
+accessed: 2026-09-16
+notes: >-
+  Provides the formal basis for proper and strictly proper scoring rules, relevant when outcomes eventually become observable and probabilistic confidence can be scored.
