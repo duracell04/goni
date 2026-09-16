@@ -3,5 +3,5 @@ title: google2026-litert-lm
 kind: web
 citation: https://developers.googleblog.com/blazing-fast-on-device-genai-with-litert-lm/
 url: https://developers.googleblog.com/blazing-fast-on-device-genai-with-litert-lm/
-accessed: 2026-09-16
+accessed: "2026-09-16"
 notes: Google describes LiteRT-LM session save/restore, serialization of large KV-cache state, memory-local execution, dynamic loading of multimodal encoders, and constrained decoding for on-device inference. This is vendor engineering evidence for state continuity and memory-locality mechanisms; it does not establish GONI governance, provenance, or authority semantics.
