@@ -1,0 +1,7 @@
+id: SRC-ZHANG2023-H2O
+title: zhang2023-h2o
+kind: academic
+citation: https://arxiv.org/abs/2306.14048
+url: https://arxiv.org/abs/2306.14048
+accessed: 2026-09-20
+notes: H2O reports that cumulative attention in generative LLM inference is concentrated on a small subset of heavy-hitter tokens and proposes a KV-cache eviction policy that retains heavy hitters together with recent tokens. The result motivates measuring non-uniform future utility at the KV level; it does not establish a universal Zipf law for all Goni memory or retrieval workloads.
