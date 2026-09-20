@@ -1,0 +1,7 @@
+id: SRC-DEEPSEEK2024-V2
+title: deepseek2024-v2
+kind: academic
+citation: https://arxiv.org/abs/2405.04434
+url: https://arxiv.org/abs/2405.04434
+accessed: '2026-09-20'
+notes: DeepSeek-V2 introduces Multi-head Latent Attention (MLA), which compresses the conventional KV-cache representation into a latent vector to reduce inference memory. It motivates treating representation size as a separate optimization axis from sequence selection.

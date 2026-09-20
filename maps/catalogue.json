@@ -223,6 +223,18 @@
     {
       "alias": "VISUAL-RUNTIME",
       "node": "VIS-RUNTIME-01"
+    },
+    {
+      "alias": "authority-state-is-not-a-cache",
+      "node": "GONI-DECISION-9AF49466170D"
+    },
+    {
+      "alias": "large-latent-state-small-active-state",
+      "node": "GONI-PRINCIPLE-9062425CD490"
+    },
+    {
+      "alias": "semantic-working-set-management",
+      "node": "GONI-IMAP-66D2DBD94204"
     }
   ],
   "indexes": {
@@ -234,6 +246,7 @@
         "DAT-01",
         "EVID-DESK-01",
         "GONI-DECISION-410431892DF4",
+        "GONI-DECISION-9AF49466170D",
         "GONI-DECISION-D3C113E7804F",
         "GONI-EXPERIMENT-560F1D86253B",
         "GONI-EXPERIMENT-5F299100AA67",
@@ -250,6 +263,7 @@
         "GONI-IMAP-FAF1377484A3",
         "GONI-PRINCIPLE-470D2E8E950A",
         "GONI-PRINCIPLE-772A7FA7ECEF",
+        "GONI-PRINCIPLE-9062425CD490",
         "GONI-PRINCIPLE-A7D58080EBA1",
         "GONI-PRINCIPLE-AF21F6040FDC",
         "GONI-PRINCIPLE-FCA3E2C7A10C",
@@ -428,6 +442,7 @@
         "GONI-IMAP-5FFD8D83919B",
         "GONI-IMAP-60ACFEB4E8BA",
         "GONI-IMAP-63C6C47522CB",
+        "GONI-IMAP-66D2DBD94204",
         "GONI-IMAP-6B9AE1678609",
         "GONI-IMAP-6D6D5E0BC83B",
         "GONI-IMAP-73A7D11E27CF",
@@ -475,6 +490,7 @@
         "GONI-PRINCIPLE-329BE7E070FA",
         "GONI-PRINCIPLE-6B55404006C2",
         "GONI-PRINCIPLE-8E2E987DEBFA",
+        "GONI-PRINCIPLE-9062425CD490",
         "GONI-PRINCIPLE-A20DFFCA6C92",
         "GONI-PRINCIPLE-B40DDEFD1872",
         "GONI-PRINCIPLE-D0161AB0CE1A",
@@ -651,12 +667,17 @@
       ],
       "kernel": [
         "GONI-DECISION-5346D37FC858",
+        "GONI-DECISION-9AF49466170D",
+        "GONI-EVIDENCE-55CFEAFCBF16",
+        "GONI-EVIDENCE-6F21B6FCEF3C",
+        "GONI-EXPERIMENT-0A1F9BC4014A",
         "GONI-EXPERIMENT-9C433FEA9457",
         "GONI-EXPERIMENT-B7F7C906E1A9",
         "GONI-IMAP-0882BF9C6229",
         "GONI-IMAP-224C3DAE744A",
         "GONI-IMAP-30E51C1595CF",
         "GONI-IMAP-3F313F669F21",
+        "GONI-IMAP-66D2DBD94204",
         "GONI-IMAP-906E925EFBEB",
         "GONI-IMAP-A1A90A190EB2",
         "GONI-IMAP-CE3172C5DAD5",
@@ -666,6 +687,7 @@
         "GONI-PRINCIPLE-470D2E8E950A",
         "GONI-PRINCIPLE-7D813B2026E1",
         "GONI-PRINCIPLE-8C0DB401EE76",
+        "GONI-PRINCIPLE-9062425CD490",
         "GONI-PRINCIPLE-9249B8613105",
         "GONI-SPEC-06EEDDD84AB3",
         "GONI-SPEC-0C02110BCFDB",
@@ -1598,9 +1620,11 @@
         "GONI-EVIDENCE-51DB0D0B39EC",
         "GONI-EVIDENCE-52DCF407A2C5",
         "GONI-EVIDENCE-5574C93F6E86",
+        "GONI-EVIDENCE-55CFEAFCBF16",
         "GONI-EVIDENCE-56B5B8B0531E",
         "GONI-EVIDENCE-59ED5AA23C5A",
         "GONI-EVIDENCE-610890F5302A",
+        "GONI-EVIDENCE-6F21B6FCEF3C",
         "GONI-EVIDENCE-70D1E8DA8CB7",
         "GONI-EVIDENCE-74D41B123063",
         "GONI-EVIDENCE-75A36E3C49C5",
@@ -1655,6 +1679,7 @@
         "GONI-EVIDENCE-F74B86E725FB",
         "GONI-EVIDENCE-FAA487C54065",
         "GONI-EVIDENCE-FBA1A33CF61A",
+        "GONI-EXPERIMENT-0A1F9BC4014A",
         "GONI-EXPERIMENT-7DE7B307CB98",
         "GONI-SYNTHESIS-0382450FEF34",
         "GONI-SYNTHESIS-3BAF6D1DACDF",
@@ -1668,6 +1693,7 @@
         "REF-GONIOS-NEIGHBOR-01"
       ],
       "security": [
+        "GONI-DECISION-9AF49466170D",
         "GONI-PROPOSAL-05B21F15B3C6",
         "GONI-PROPOSAL-7BFF3F4092F3",
         "GONI-PROPOSAL-86A12AAD0F01",
@@ -1710,6 +1736,7 @@
         "GONI-DECISION-EF1D6F7F085E",
         "GONI-DECISION-FEB39440C565",
         "GONI-DECISION-FEDF62BF576F",
+        "GONI-EXPERIMENT-0A1F9BC4014A",
         "GONI-EXPERIMENT-F2AB32D85916",
         "GONI-IMAP-02A57946B140",
         "GONI-IMAP-034B288EB63B",
@@ -1811,6 +1838,7 @@
         "GONI-IMAP-63C6C47522CB",
         "GONI-IMAP-63D246ADC58E",
         "GONI-IMAP-642F0A22A071",
+        "GONI-IMAP-66D2DBD94204",
         "GONI-IMAP-691F7CF4FBCE",
         "GONI-IMAP-6B28A77ADB85",
         "GONI-IMAP-6B9AE1678609",
@@ -1963,6 +1991,7 @@
         "GONI-PRINCIPLE-8DBD117DF580",
         "GONI-PRINCIPLE-8E2E987DEBFA",
         "GONI-PRINCIPLE-8FC6EE7AB8FF",
+        "GONI-PRINCIPLE-9062425CD490",
         "GONI-PRINCIPLE-99769DA756A5",
         "GONI-PRINCIPLE-99ECE17758BF",
         "GONI-PRINCIPLE-A20DFFCA6C92",
@@ -2456,6 +2485,8 @@
         "VIS-01"
       ],
       "system": [
+        "GONI-DECISION-9AF49466170D",
+        "GONI-EXPERIMENT-0A1F9BC4014A",
         "GONI-EXPERIMENT-5ADAC18F09F9",
         "GONI-EXPERIMENT-74A237B262BC",
         "GONI-EXPERIMENT-9C433FEA9457",
@@ -2467,6 +2498,7 @@
         "GONI-IMAP-3297C8C9E391",
         "GONI-IMAP-3F313F669F21",
         "GONI-IMAP-65B9A1D332D6",
+        "GONI-IMAP-66D2DBD94204",
         "GONI-IMAP-906E925EFBEB",
         "GONI-IMAP-A1A90A190EB2",
         "GONI-IMAP-CE3172C5DAD5",
@@ -2474,6 +2506,7 @@
         "GONI-IMAP-DEB85253C87D",
         "GONI-IMAP-ED288DB4EAF5",
         "GONI-PRINCIPLE-80DD85BB01A0",
+        "GONI-PRINCIPLE-9062425CD490",
         "GONI-PRINCIPLE-9A3BCC1A464F",
         "GONI-SYNTHESIS-01B0D71A3FA3",
         "GONI-SYNTHESIS-02674F890E73",
@@ -2687,6 +2720,7 @@
         "GONI-DECISION-8D661AD70D88",
         "GONI-DECISION-9008D0359A7E",
         "GONI-DECISION-9479537ABD0D",
+        "GONI-DECISION-9AF49466170D",
         "GONI-DECISION-9D3236E5D2AC",
         "GONI-DECISION-A1955B13B011",
         "GONI-DECISION-A30E9CD72D1F",
@@ -2742,9 +2776,11 @@
         "GONI-EVIDENCE-51DB0D0B39EC",
         "GONI-EVIDENCE-52DCF407A2C5",
         "GONI-EVIDENCE-5574C93F6E86",
+        "GONI-EVIDENCE-55CFEAFCBF16",
         "GONI-EVIDENCE-56B5B8B0531E",
         "GONI-EVIDENCE-59ED5AA23C5A",
         "GONI-EVIDENCE-610890F5302A",
+        "GONI-EVIDENCE-6F21B6FCEF3C",
         "GONI-EVIDENCE-70D1E8DA8CB7",
         "GONI-EVIDENCE-74D41B123063",
         "GONI-EVIDENCE-75A36E3C49C5",
@@ -2806,6 +2842,7 @@
         "GONI-EXPERIMENT-07A1AA51D44F",
         "GONI-EXPERIMENT-07BA056E641E",
         "GONI-EXPERIMENT-08C498121F9D",
+        "GONI-EXPERIMENT-0A1F9BC4014A",
         "GONI-EXPERIMENT-0A35259EE5EA",
         "GONI-EXPERIMENT-0B50C81FA38B",
         "GONI-EXPERIMENT-0DAA5AB0751B",
@@ -3057,6 +3094,7 @@
         "GONI-IMAP-655CEDA0DA49",
         "GONI-IMAP-65B9A1D332D6",
         "GONI-IMAP-66C7740C369F",
+        "GONI-IMAP-66D2DBD94204",
         "GONI-IMAP-686FE25C071D",
         "GONI-IMAP-68EE0DB927F4",
         "GONI-IMAP-691F7CF4FBCE",
@@ -3320,6 +3358,7 @@
         "GONI-PRINCIPLE-8DBD117DF580",
         "GONI-PRINCIPLE-8E2E987DEBFA",
         "GONI-PRINCIPLE-8FC6EE7AB8FF",
+        "GONI-PRINCIPLE-9062425CD490",
         "GONI-PRINCIPLE-90FEE084B108",
         "GONI-PRINCIPLE-9249B8613105",
         "GONI-PRINCIPLE-9726D0E382F2",
@@ -4578,6 +4617,7 @@
         "GONI-DECISION-8D661AD70D88",
         "GONI-DECISION-9008D0359A7E",
         "GONI-DECISION-9479537ABD0D",
+        "GONI-DECISION-9AF49466170D",
         "GONI-DECISION-9D3236E5D2AC",
         "GONI-DECISION-A1955B13B011",
         "GONI-DECISION-A30E9CD72D1F",
@@ -4635,9 +4675,11 @@
         "GONI-EVIDENCE-51DB0D0B39EC",
         "GONI-EVIDENCE-52DCF407A2C5",
         "GONI-EVIDENCE-5574C93F6E86",
+        "GONI-EVIDENCE-55CFEAFCBF16",
         "GONI-EVIDENCE-56B5B8B0531E",
         "GONI-EVIDENCE-59ED5AA23C5A",
         "GONI-EVIDENCE-610890F5302A",
+        "GONI-EVIDENCE-6F21B6FCEF3C",
         "GONI-EVIDENCE-70D1E8DA8CB7",
         "GONI-EVIDENCE-74D41B123063",
         "GONI-EVIDENCE-75A36E3C49C5",
@@ -4728,6 +4770,7 @@
         "GONI-EXPERIMENT-07A1AA51D44F",
         "GONI-EXPERIMENT-07BA056E641E",
         "GONI-EXPERIMENT-08C498121F9D",
+        "GONI-EXPERIMENT-0A1F9BC4014A",
         "GONI-EXPERIMENT-0A35259EE5EA",
         "GONI-EXPERIMENT-0B50C81FA38B",
         "GONI-EXPERIMENT-0DAA5AB0751B",
@@ -4989,6 +5032,7 @@
         "GONI-IMAP-655CEDA0DA49",
         "GONI-IMAP-65B9A1D332D6",
         "GONI-IMAP-66C7740C369F",
+        "GONI-IMAP-66D2DBD94204",
         "GONI-IMAP-686FE25C071D",
         "GONI-IMAP-68EE0DB927F4",
         "GONI-IMAP-691F7CF4FBCE",
@@ -5271,6 +5315,7 @@
         "GONI-PRINCIPLE-8DBD117DF580",
         "GONI-PRINCIPLE-8E2E987DEBFA",
         "GONI-PRINCIPLE-8FC6EE7AB8FF",
+        "GONI-PRINCIPLE-9062425CD490",
         "GONI-PRINCIPLE-90FEE084B108",
         "GONI-PRINCIPLE-9249B8613105",
         "GONI-PRINCIPLE-9726D0E382F2",
@@ -13083,6 +13128,39 @@
       "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
     },
     {
+      "aliases": [
+        "authority-state-is-not-a-cache"
+      ],
+      "artifacts": [],
+      "body": "# Probabilistic cognition, deterministic authority\n\nGoni may aggressively optimize the representations used for reasoning:\n\n- approximate retrieval;\n- embeddings and ANN indexes;\n- summaries and distilled state;\n- compressed or quantized memory representations;\n- KV-cache paging, retention, or eviction;\n- prefix caches;\n- learned relevance or reuse estimates;\n- sparse model or tool routing.\n\nThose mechanisms are cognitive accelerators. They are not the source of\nauthority.\n\nThe authority path MUST resolve against canonical kernel-owned state for\nmandates, policy, capabilities, approval corridors, budgets, revocation, and\nother facts that determine whether an effect is permitted.\n\nThe governing rule is:\n\n[\n\boxed{\n\text{probabilistic allocation for cognition}\n+\n\text{canonical authority for effects}\n}\n]\n\nA cached or summarized authority-related representation MAY help the system\nprepare a proposal, classify a task, or prioritize work. Before consequential\nexecution, the kernel MUST evaluate the authoritative state required by the\nrelevant policy contract.\n\nThis boundary prevents an efficiency mechanism from silently changing\npermissions. Cache eviction, approximation error, stale summaries, or\ncompression loss may reduce answer quality; they MUST NOT widen authority.\n\nAny future optimization that makes policy, mandate, capability, revocation, or\napproval decisions depend exclusively on lossy state requires an explicit\nreplacement decision and a new safety argument.",
+      "domains": [
+        "agent",
+        "kernel",
+        "security",
+        "system"
+      ],
+      "id": "GONI-DECISION-9AF49466170D",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/decisions/goni-decision-9af49466170d-probabilistic-cognition-deterministic-authority.md",
+      "proposition": "Lossy, approximate, probabilistic, compressed, cached, or evictable representations may assist cognition but may not constitute the authoritative source of mandates, capabilities, policy, revocation, or other kernel-owned authority state.",
+      "relations": [
+        {
+          "target": "GONI-THESIS-7BFB74017D50",
+          "type": "refines"
+        },
+        {
+          "target": "GONI-PRINCIPLE-9062425CD490",
+          "type": "depends_on"
+        }
+      ],
+      "sources": [],
+      "status": "draft",
+      "title": "Probabilistic cognition, deterministic authority",
+      "type": "decision",
+      "uncertainty": "This decision specifies an architectural boundary. Concrete canonical stores, signatures, replication, and recovery semantics remain governed by their respective authority and receipt specifications."
+    },
+    {
       "aliases": [],
       "artifacts": [],
       "body": "# Context\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n## Context\nWhat problem are we solving? What constraints matter?",
@@ -14693,6 +14771,33 @@
     {
       "aliases": [],
       "artifacts": [],
+      "body": "# Source claim: deepseek2024-v2\n\nDeepSeek-V2 introduces Multi-head Latent Attention (MLA) as an architectural\nmethod for reducing the memory footprint of the KV cache by compressing the\nrepresentation that must be retained for attention.\n\nFor Goni, the important systems implication is that KV optimization has at least\ntwo independent axes:\n\n1. **sequence selection** — how many historical states remain active;\n2. **representation compression** — how many bytes each retained state requires.\n\nThe source supports treating these as distinct experimental variables. Goni\nshould preserve backend modularity and benchmark architecture-specific\ncompression rather than making MLA itself a kernel invariant.",
+      "domains": [
+        "research",
+        "kernel"
+      ],
+      "id": "GONI-EVIDENCE-55CFEAFCBF16",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/evidence/goni-evidence-55cfeafcbf16-source-claim-deepseek2024-v2.md",
+      "proposition": "DeepSeek-V2 reports that Multi-head Latent Attention compresses the conventional KV-cache representation into a latent representation, demonstrating that KV representation size can be optimized separately from sequence selection.",
+      "relations": [
+        {
+          "target": "GONI-SYNTHESIS-227700D474C6",
+          "type": "supports"
+        }
+      ],
+      "sources": [
+        "SRC-DEEPSEEK2024-V2"
+      ],
+      "status": "draft",
+      "title": "Source claim: deepseek2024-v2",
+      "type": "evidence",
+      "uncertainty": "MLA is architecture-specific evidence, not proof that the same representation scheme should be imposed on Goni runtimes or models."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
       "body": "# Source claim: liu2023-agentbench\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\nKey: [[liu2023-agentbench]]\nClaim: AgentBench evaluates LLMs as agents across multiple environments.\nRelevance:\n- Supports broad benchmark design ideas while making clear that Goni needs\n  personal-memory, receipt, and privacy metrics beyond generic agent scores.\nUsed in:\n- `blueprint/docs/references/gonios-research-neighbor-map.md`\nSource:\n- https://openreview.net/forum?id=zAdUB0aCTQ",
       "domains": [
         "research"
@@ -14785,6 +14890,33 @@
       "title": "Source claim: gipp2015-btc-timestamp",
       "type": "evidence",
       "uncertainty": "The legacy bibliography summarizes the source; the cited source must be consulted for scope and limitations."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Source claim: zhang2023-h2o\n\nH2O reports a heavy-hitter effect in generative transformer attention: a relatively\nsmall subset of tokens accumulates a disproportionate share of attention value.\nThe paper proposes retaining those heavy hitters together with recent tokens when\nthe KV cache must be constrained.\n\nFor Goni, the relevant observation is narrower than lexical Zipf's law. It\nsupports testing whether future inference utility is sufficiently concentrated to\njustify non-uniform cache allocation. It does not justify treating frequent token\nidentity as reusable KV state, because KV representations remain\ncontext-dependent.\n\nThe source therefore supports a research direction: measure concentration at the\nactual abstraction being optimized, then compare utility-aware retention against\nuniform, recency-only, and fixed-budget baselines.",
+      "domains": [
+        "research",
+        "kernel"
+      ],
+      "id": "GONI-EVIDENCE-6F21B6FCEF3C",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/evidence/goni-evidence-6f21b6fcef3c-source-claim-zhang2023-h2o.md",
+      "proposition": "H2O reports that attention value during generative inference is concentrated on a comparatively small subset of heavy-hitter tokens and uses that observation to motivate utility-aware KV-cache retention.",
+      "relations": [
+        {
+          "target": "GONI-SYNTHESIS-227700D474C6",
+          "type": "supports"
+        }
+      ],
+      "sources": [
+        "SRC-ZHANG2023-H2O"
+      ],
+      "status": "draft",
+      "title": "Source claim: zhang2023-h2o",
+      "type": "evidence",
+      "uncertainty": "The reported concentration is model-, workload-, layer-, and implementation-dependent. It does not establish that lexical Zipf frequency is a sufficient KV-importance estimator or that Goni memory access follows a universal power law."
     },
     {
       "aliases": [],
@@ -16708,6 +16840,44 @@
       "title": "Core checks",
       "type": "experiment",
       "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Concentration-aware cognitive resource allocation\n\n## Hypothesis\n\nFor at least some Goni workloads, a small fraction of available memory,\ncontextual state, KV state, prefixes, or model capacity accounts for a large\nfraction of future useful accesses. If that concentration can be estimated\ncheaply, adaptive budgets should reduce memory, bandwidth, latency, energy, or\ncloud cost without unacceptable degradation.\n\nThe hypothesis is rejected for any abstraction where concentration is weak,\nunstable, too expensive to estimate, or where false negatives cause\nunacceptable quality loss.\n\n## Measurements\n\nFor each eligible workload and abstraction, record ranked utility or relevance\nscores (s_1 ge s_2 ge dots ge s_N). Report:\n\n- cumulative mass captured by top (K);\n- entropy of normalized scores;\n- optional fitted tail or power-law diagnostics with uncertainty;\n- stability across task classes, model families, layers, heads, and inference\n  phases where observable;\n- temporal overlap between successive working sets;\n- false-negative cost and recovery behavior.\n\nA normalized concentration signal may use:\n\n[\np_i=\frac{s_i}{sum_j s_j},\nqquad\nH=-sum_i p_ilog p_i.\n]\n\nEntropy is one candidate control signal, not the required implementation.\n\n## Strategies to compare\n\n1. fixed retrieval (K) + fixed context budget;\n2. adaptive retrieval (K) + existing submodular context selection;\n3. recency-only cache retention;\n4. utility-aware retention using measured reuse or importance signals;\n5. fixed model tier;\n6. existing frugal sovereign model routing;\n7. concentration-aware model or verification budget as an experimental variant.\n\nWhere the runtime exposes KV controls, compare conventional paging or recency\nbaselines with heavy-hitter-style retention. Where a supported architecture\noffers latent KV compression, measure representation compression independently\nfrom sequence selection.\n\n## Metrics\n\nReport at minimum:\n\n- task answer quality;\n- Recall@k and citation/span fidelity;\n- false-negative rate for decisive evidence;\n- context tokens;\n- TTFT and end-to-end latency;\n- tokens/s where relevant;\n- bytes of KV or working state fetched per generated token where measurable;\n- peak memory and bandwidth;\n- cache hit rate;\n- local/cloud route rate and cost;\n- energy or thermal proxy where available.\n\nAuthority metrics remain separate. No experiment may treat a cache hit,\nretrieval rank, or compressed representation as sufficient authorization for a\nside effect.\n\n## Promotion criterion\n\nA concentration-aware policy may advance from research to a normative contract\nonly when it demonstrates a repeatable improvement on a named workload and\nhardware profile while staying inside predefined quality and safety thresholds.\n\nThe experiment SHOULD report where adaptive selection loses. A negative result\nis useful evidence that uniform or simpler policies remain preferable for that\nworkload.",
+      "domains": [
+        "research",
+        "kernel",
+        "software",
+        "system"
+      ],
+      "id": "GONI-EXPERIMENT-0A1F9BC4014A",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/experiments/goni-experiment-0a1f9bc4014a-concentration-aware-resource-allocation.md",
+      "proposition": "Measure whether Goni-relevant access and relevance distributions are sufficiently concentrated that adaptive retrieval, context, cache, and model budgets can reduce resource use while preserving answer quality, citation fidelity, and authority-layer safety.",
+      "relations": [
+        {
+          "target": "GONI-PRINCIPLE-9062425CD490",
+          "type": "tests"
+        },
+        {
+          "target": "GONI-IMAP-66D2DBD94204",
+          "type": "tests"
+        },
+        {
+          "target": "GONI-SYNTHESIS-227700D474C6",
+          "type": "tests"
+        }
+      ],
+      "sources": [
+        "SRC-ZHANG2023-H2O",
+        "SRC-DEEPSEEK2024-V2"
+      ],
+      "status": "draft",
+      "title": "Concentration-aware cognitive resource allocation",
+      "type": "experiment",
+      "uncertainty": "The central empirical question is deliberately unresolved: Goni must measure concentration at each managed abstraction instead of assuming a universal Zipf exponent."
     },
     {
       "aliases": [],
@@ -23023,6 +23193,47 @@
       "title": "1.2.2 Two-regime power model",
       "type": "implementation-map",
       "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
+    },
+    {
+      "aliases": [
+        "semantic-working-set-management"
+      ],
+      "artifacts": [],
+      "body": "# Adaptive working-set management\n\nGoni's existing retrieval and Context Plane already separate a large durable\nstate from a bounded model context. Adaptive working-set management makes the\nresource boundary itself responsive to the current task.\n\n## 1. Adaptive candidate breadth\n\nCandidate generation SHOULD begin from hardware-friendly discrete retrieval\nbudgets such as:\n\n[\nK in {128, 256, 512, 1024},\n]\n\nor backend-specific equivalents. The selected bucket may depend on relevance\nconcentration, query complexity, risk, and available latency or token budgets.\n\nA conceptual sufficient-mass rule is:\n\n[\nK(q)=minleft{K:\n\frac{sum_{r=1}^{K}s_r}\n{sum_{r=1}^{N}s_r}ge\tau\n\night}.\n]\n\nThe implementation is not required to fit a power law. Entropy, cumulative\nmass, score gaps, calibrated recall estimates, or another validated\nconcentration statistic may control the bucket.\n\nCandidate generation SHOULD bias toward recall. Missing one decisive item can\nbe more damaging than retrieving several irrelevant candidates, while later\nreranking and submodular selection can remove false positives.\n\n## 2. Context budget remains a separate decision\n\nRetrieval breadth (K) and final context budget (B) are independent controls.\n\n[\n\text{retrieve candidates}\n\nightarrow\n\text{rerank/filter}\n\nightarrow\n\text{submodular selection under }B.\n]\n\nA broad candidate set need not imply a large prompt. This preserves the existing\nContext Plane guarantee while allowing Goni to search more widely when evidence\nis diffuse.\n\n## 3. Residency tiers\n\nMemory lifecycle classes remain semantic categories. Residency is an orthogonal\nsystems property:\n\n- **hot** — current task or project state at highest useful fidelity;\n- **warm** — high-probability reusable state, summaries, embeddings, or\n  compressed representations;\n- **cold** — canonical durable state that remains addressable but is not kept in\n  the active working set;\n- **external** — policy-permitted connectors or remote sources accessed only\n  through existing mediation.\n\nPromotion and demotion SHOULD consider recency, reuse frequency, task or project\naffinity, consequence, reconstruction cost, and storage or bandwidth cost.\n\n## 4. Utility-aware admission and eviction\n\nThe baseline policy SHOULD compare recency-only strategies with an explicit\nutility model. A conceptual score is:\n\n[\nScore_i=\n\frac{\nP(mathrm{reuse}_i)\n\times\nImpact_i\n\times\nReconstructionCost_i\n}{\nStorageCost_i\n}.\n]\n\nThis expression is a research scaffold, not a fixed production formula.\nSemantic importance and popularity MUST remain separable: rarely accessed state\nmay still be decisive.\n\nAdmission MAY be predictive. At creation time, Goni may estimate:\n\n[\nP(\text{future relevance}mid\n\text{content, task, project, position, access history}).\n]\n\n## 5. Temporal locality\n\nThe active working set SHOULD exploit continuity across adjacent work. Consecutive\nrequests in the same task or project often reuse overlapping state, so a\nproject-aware working set can reduce repeated retrieval, prefill, and\nreconstruction work.\n\nReuse MUST remain invalidatable when policy, mandate, provenance, source state,\nor user intent materially changes.\n\n## 6. Observability\n\nA future implementation SHOULD log enough information to evaluate:\n\n- retrieval bucket selected;\n- concentration statistic;\n- candidate recall and downstream citation coverage;\n- context tokens selected;\n- cache hit rate;\n- promotion/demotion decisions;\n- estimated versus observed reuse;\n- latency, bandwidth, memory, energy, and quality deltas.\n\nThe purpose is closed-loop allocation: measure whether a smaller active set\npreserves the required answer and action quality before making the policy more\naggressive.",
+      "domains": [
+        "data",
+        "kernel",
+        "software",
+        "system"
+      ],
+      "id": "GONI-IMAP-66D2DBD94204",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/implementation-maps/goni-imap-66d2dbd94204-adaptive-working-set-management.md",
+      "proposition": "Goni should adapt retrieval breadth, context budget, residency tier, and cache admission or eviction to measured relevance concentration, task state, consequence, and reconstruction cost while preserving the existing Context Plane and Memory Plane contracts.",
+      "relations": [
+        {
+          "target": "GONI-PRINCIPLE-9062425CD490",
+          "type": "depends_on"
+        },
+        {
+          "target": "GONI-IMAP-086FADF076BA",
+          "type": "refines"
+        },
+        {
+          "target": "GONI-IMAP-E2D8A099B27A",
+          "type": "refines"
+        },
+        {
+          "target": "GONI-SPEC-2F762878317A",
+          "type": "refines"
+        }
+      ],
+      "sources": [],
+      "status": "draft",
+      "title": "Adaptive working-set management",
+      "type": "implementation-map",
+      "uncertainty": "This is a specified architecture extension. Thresholds, concentration metrics, residency tiers, and cache policies require empirical calibration and must not be presented as implemented behavior."
     },
     {
       "aliases": [],
@@ -29683,6 +29894,44 @@
       "title": "4. Invariants (tied to 30-conformance)",
       "type": "principle",
       "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
+    },
+    {
+      "aliases": [
+        "large-latent-state-small-active-state"
+      ],
+      "artifacts": [],
+      "body": "# Non-uniform cognitive resource allocation\n\nGoni should treat memory, context, inference, retrieval, and model capacity as\nlarge addressable spaces from which only a small task-relevant working set\nbecomes active at a given moment.\n\nThe design rule is:\n\n[\n\text{estimate usefulness cheaply}\n\nightarrow\n\text{activate the smallest sufficient subset}\n\nightarrow\n\text{spend expensive computation there}.\n]\n\nA conceptual allocation score for an item (i) is:\n\n[\nU_i =\n\frac{\nP(i\text{ will be useful again})\n\times\nImpact_i\n\times\nReconstructionCost_i\n}{\nStorageCost_i + BandwidthCost_i + ComputeCost_i\n}.\n]\n\nThis is a systems principle, not a claim that one universal scoring function is\nalready known. The relevant distribution must be measured at the abstraction\nbeing managed: retrieved evidence, contextual state, KV blocks, prefixes,\nexperts, models, tools, or verification work.\n\nThe principle generalizes Goni's existing architecture:\n\n- the Arrow/Vault state can remain large while the Context Plane remains bounded;\n- retrieval may produce a candidate set larger than the final working context;\n- the model router may prefer the smallest sufficient local computation;\n- KV residency may be selective under memory and bandwidth pressure;\n- external models and tools remain exceptional resources activated when local\n  evidence, confidence, capability, or freshness is insufficient.\n\nThe architectural target is therefore:\n\n[\n\boxed{\n\text{large logical capacity}\n+\n\text{small dynamically selected active state}\n}\n]\n\nGoni MUST NOT infer low consequence merely from low frequency. Rare evidence can\nbe mission-critical. Frequency, semantic relevance, consequence, provenance,\nand reconstruction cost remain distinct variables.\n\nThis principle is compatible with heavy-tailed or Zipf-like access when such\nconcentration is observed, but it does not assume a universal exponent or a\nuniversal power-law distribution in advance.",
+      "domains": [
+        "agent",
+        "data",
+        "kernel",
+        "software",
+        "system"
+      ],
+      "id": "GONI-PRINCIPLE-9062425CD490",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/principles/goni-principle-9062425cd490-non-uniform-cognitive-resource-allocation.md",
+      "proposition": "Goni should keep large logical capacity addressable while activating the smallest sufficient task-relevant working set, allocating scarce cognitive resources according to expected marginal utility rather than uniformly.",
+      "relations": [
+        {
+          "target": "GONI-PRINCIPLE-B40DDEFD1872",
+          "type": "refines"
+        },
+        {
+          "target": "GONI-IMAP-EB2133E6965D",
+          "type": "supports"
+        },
+        {
+          "target": "GONI-SYNTHESIS-227700D474C6",
+          "type": "supports"
+        }
+      ],
+      "sources": [],
+      "status": "draft",
+      "title": "Non-uniform cognitive resource allocation",
+      "type": "principle",
+      "uncertainty": "Heavy-tailed access is an empirical hypothesis at each abstraction level. Lexical Zipf frequency does not establish a universal distribution for KV importance, memory retrieval, prefix reuse, expert activation, or tool demand."
     },
     {
       "aliases": [],
@@ -47263,7 +47512,7 @@
     {
       "aliases": [],
       "artifacts": [],
-      "body": "# 3.5 Cognitive resource scheduling (KV cache as memory object)\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n### 3.5 Cognitive resource scheduling (KV cache as memory object)\n\nInteractive agent scheduling must include LLM-serving memory realities:\n- KV cache residency and fragmentation affect tail latency,\n- scheduler decisions should include memory residency and bandwidth,\n- eviction/admission policy must be explicit under mixed workloads.\n\nRelated foundations:\n- PagedAttention and memory-management analysis in vLLM\n  [[kwon2023-vllm]].",
+      "body": "# 3.5 Cognitive resource scheduling (KV cache as memory object)\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n### 3.5 Cognitive resource scheduling (KV cache as memory object)\n\nInteractive agent scheduling must include LLM-serving memory realities:\n\n- KV-cache residency and fragmentation affect tail latency;\n- scheduler decisions should include memory residency and bandwidth;\n- admission and eviction policy must be explicit under mixed workloads;\n- representation size and sequence retention are separate optimization axes;\n- irregular sparsity must be evaluated against hardware locality, batching, and\n  kernel overhead.\n\n## Three distinct KV optimization axes\n\nGoni should keep three questions separate.\n\n### 1. Residency and paging\n\nPagedAttention demonstrates that KV memory management and fragmentation can\nmaterially affect serving throughput. This supports treating cache residency as\na first-class scheduler concern rather than an opaque runtime detail.\n[[kwon2023-vllm]]\n\n### 2. Sequence selection\n\nH2O reports heavy-hitter behavior in cumulative attention and proposes retaining\nimportant historical tokens together with recent tokens under a constrained\ncache. For Goni, the transferable research question is whether future utility\nis sufficiently concentrated to justify non-uniform retention.\n[[zhang2023-h2o]]\n\nHeavy-hitter observations MUST NOT be translated into lexical-frequency rules.\nA token identity does not define one reusable KV state; KV vectors remain\ncontext-dependent.\n\nA cache policy may compare signals such as:\n\n- recency;\n- cumulative attention or another observed-use signal;\n- estimated future reuse;\n- semantic or task importance;\n- reconstruction cost;\n- storage and bandwidth cost.\n\nHeavy-hitter retention is a baseline to evaluate, not a universal invariant.\nLong-range dependencies can reactivate previously cold states, so aggressive\nretention policies need recall-oriented candidate mechanisms, protected recent\nstate, or another measured recovery path.\n\n### 3. Representation compression\n\nDeepSeek-V2's Multi-head Latent Attention demonstrates an architecture-specific\nmethod for reducing how many bytes of KV representation must be retained.\n[[deepseek2024-v2]]\n\nThis is complementary to sequence selection:\n\n[\n\text{KV cost}\napprox\n\text{surviving sequence states}\n\times\n\text{representation bytes per state}\n\times\n\text{layer residency}.\n]\n\nA runtime may improve one axis without changing the others. Goni SHOULD measure\nthem separately so a gain from latent representation compression is not\nmistaken for a gain from eviction, and vice versa.\n\n## Variable fidelity as a research direction\n\nWhere runtimes permit multiple precisions or representations, Goni may test\nwhether higher-value states deserve higher-fidelity storage while lower-value\nstates use compressed forms.\n\nA conceptual allocation rule is:\n\n[\nbits_i\npropto\nP(\text{future use}_i)\n\times\nImportance_i.\n]\n\nThis frames KV optimization as a rate-distortion problem: reduce memory and\nbandwidth while bounding degradation in output quality. The formula is a\nresearch scaffold, not a prescribed bit-allocation algorithm.\n\n## Hardware-aware constraint\n\nA theoretically sparse policy can lose in practice if candidate selection,\nrandom memory access, synchronization, decompression, or small irregular\nkernels cost more than the attention work avoided.\n\nTherefore evaluation SHOULD report end-to-end effects on:\n\n- TTFT and decode latency;\n- throughput;\n- bytes moved from accelerator memory;\n- peak KV memory;\n- GPU or accelerator occupancy where observable;\n- energy or thermal proxy;\n- output quality and long-range recall.\n\nBlock-level selection, contiguous layouts, and discrete cache budgets may be\npreferable to finer-grained policies when they preserve batching and predictable\nkernels.\n\n## Goni boundary\n\nKV state is cognitive working state. Approximate retention or compression may\nchange what the model can recall during reasoning, but it MUST NOT become the\nsole source of kernel authority for mandates, capabilities, policy, approval,\nor revocation.\n\nRelated foundations:\n\n- PagedAttention and memory-management analysis in vLLM [[kwon2023-vllm]];\n- H2O heavy-hitter KV-cache retention [[zhang2023-h2o]];\n- DeepSeek-V2 Multi-head Latent Attention [[deepseek2024-v2]].",
       "domains": [
         "agent",
         "kernel",
@@ -47279,13 +47528,30 @@
         }
       ],
       "path": "knowledge/syntheses/goni-synthesis-227700d474c6-3-5-cognitive-resource-scheduling-kv-cache-as-memory-object.md",
-      "proposition": "Interactive agent scheduling must include LLM-serving memory realities: KV cache residency and fragmentation affect tail latency, scheduler decisions should include memory residency and bandwidth, eviction/admission policy must be explicit under mixed workloads.",
-      "relations": [],
-      "sources": [],
+      "proposition": "Interactive agent scheduling must include LLM-serving memory realities: KV cache residency, representation size, fragmentation, bandwidth, admission, and eviction affect tail latency and should be evaluated as explicit scheduling variables under mixed workloads.",
+      "relations": [
+        {
+          "target": "GONI-PRINCIPLE-9062425CD490",
+          "type": "depends_on"
+        },
+        {
+          "target": "GONI-EVIDENCE-6F21B6FCEF3C",
+          "type": "synthesizes"
+        },
+        {
+          "target": "GONI-EVIDENCE-55CFEAFCBF16",
+          "type": "synthesizes"
+        }
+      ],
+      "sources": [
+        "SRC-KWON2023-VLLM",
+        "SRC-ZHANG2023-H2O",
+        "SRC-DEEPSEEK2024-V2"
+      ],
       "status": "draft",
       "title": "3.5 Cognitive resource scheduling (KV cache as memory object)",
       "type": "synthesis",
-      "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
+      "uncertainty": "PagedAttention, heavy-hitter retention, and MLA address different parts of the KV problem. Their reported benefits do not establish one universal Goni cache policy; model, workload, hardware, and backend effects must be measured independently."
     },
     {
       "aliases": [],
@@ -61824,6 +62090,18 @@
     },
     {
       "projection": "authored",
+      "source": "GONI-DECISION-9AF49466170D",
+      "target": "GONI-PRINCIPLE-9062425CD490",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-DECISION-9AF49466170D",
+      "target": "GONI-THESIS-7BFB74017D50",
+      "type": "refines"
+    },
+    {
+      "projection": "authored",
       "source": "GONI-EVIDENCE-0577AE42BDFA",
       "target": "MEM-RETR-01",
       "type": "supports"
@@ -62034,6 +62312,18 @@
     },
     {
       "projection": "authored",
+      "source": "GONI-EVIDENCE-55CFEAFCBF16",
+      "target": "GONI-SYNTHESIS-227700D474C6",
+      "type": "supports"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-EVIDENCE-55CFEAFCBF16",
+      "target": "GONI-SYNTHESIS-227700D474C6",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "authored",
       "source": "GONI-EVIDENCE-56B5B8B0531E",
       "target": "REF-GONIOS-NEIGHBOR-01",
       "type": "supports"
@@ -62049,6 +62339,18 @@
       "source": "GONI-EVIDENCE-610890F5302A",
       "target": "GONI-IMAP-ED288DB4EAF5",
       "type": "supports"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-EVIDENCE-6F21B6FCEF3C",
+      "target": "GONI-SYNTHESIS-227700D474C6",
+      "type": "supports"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-EVIDENCE-6F21B6FCEF3C",
+      "target": "GONI-SYNTHESIS-227700D474C6",
+      "type": "synthesized_by"
     },
     {
       "projection": "authored",
@@ -62405,6 +62707,24 @@
       "type": "supports"
     },
     {
+      "projection": "authored",
+      "source": "GONI-EXPERIMENT-0A1F9BC4014A",
+      "target": "GONI-IMAP-66D2DBD94204",
+      "type": "tests"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-EXPERIMENT-0A1F9BC4014A",
+      "target": "GONI-PRINCIPLE-9062425CD490",
+      "type": "tests"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-EXPERIMENT-0A1F9BC4014A",
+      "target": "GONI-SYNTHESIS-227700D474C6",
+      "type": "tests"
+    },
+    {
       "projection": "generated",
       "source": "GONI-EXPERIMENT-5ADAC18F09F9",
       "target": "SYS-02",
@@ -62439,6 +62759,12 @@
       "source": "GONI-EXPERIMENT-F5667C1994A9",
       "target": "GONI-SYNTHESIS-0534045D4E2A",
       "type": "synthesized_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-IMAP-086FADF076BA",
+      "target": "GONI-IMAP-66D2DBD94204",
+      "type": "refined_by"
     },
     {
       "projection": "generated",
@@ -62483,10 +62809,52 @@
       "type": "synthesized_by"
     },
     {
+      "projection": "authored",
+      "source": "GONI-IMAP-66D2DBD94204",
+      "target": "GONI-PRINCIPLE-9062425CD490",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-IMAP-66D2DBD94204",
+      "target": "GONI-IMAP-086FADF076BA",
+      "type": "refines"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-IMAP-66D2DBD94204",
+      "target": "GONI-IMAP-E2D8A099B27A",
+      "type": "refines"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-IMAP-66D2DBD94204",
+      "target": "GONI-SPEC-2F762878317A",
+      "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-IMAP-66D2DBD94204",
+      "target": "GONI-EXPERIMENT-0A1F9BC4014A",
+      "type": "tested_by"
+    },
+    {
       "projection": "generated",
       "source": "GONI-IMAP-BA907320A2DF",
       "target": "GONI-SYNTHESIS-15FDDF75571E",
       "type": "synthesized_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-IMAP-E2D8A099B27A",
+      "target": "GONI-IMAP-66D2DBD94204",
+      "type": "refined_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-IMAP-EB2133E6965D",
+      "target": "GONI-PRINCIPLE-9062425CD490",
+      "type": "supported_by"
     },
     {
       "projection": "generated",
@@ -62598,6 +62966,48 @@
     },
     {
       "projection": "generated",
+      "source": "GONI-PRINCIPLE-9062425CD490",
+      "target": "GONI-DECISION-9AF49466170D",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-PRINCIPLE-9062425CD490",
+      "target": "GONI-IMAP-66D2DBD94204",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-PRINCIPLE-9062425CD490",
+      "target": "GONI-SYNTHESIS-227700D474C6",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-PRINCIPLE-9062425CD490",
+      "target": "GONI-PRINCIPLE-B40DDEFD1872",
+      "type": "refines"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-PRINCIPLE-9062425CD490",
+      "target": "GONI-IMAP-EB2133E6965D",
+      "type": "supports"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-PRINCIPLE-9062425CD490",
+      "target": "GONI-SYNTHESIS-227700D474C6",
+      "type": "supports"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-PRINCIPLE-9062425CD490",
+      "target": "GONI-EXPERIMENT-0A1F9BC4014A",
+      "type": "tested_by"
+    },
+    {
+      "projection": "generated",
       "source": "GONI-PRINCIPLE-90FEE084B108",
       "target": "ADJACENT-PROJECTS",
       "type": "synthesized_by"
@@ -62607,6 +63017,18 @@
       "source": "GONI-PRINCIPLE-9A3BCC1A464F",
       "target": "LSKR-01",
       "type": "synthesized_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-PRINCIPLE-B40DDEFD1872",
+      "target": "GONI-PRINCIPLE-9062425CD490",
+      "type": "refined_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-SPEC-2F762878317A",
+      "target": "GONI-IMAP-66D2DBD94204",
+      "type": "refined_by"
     },
     {
       "projection": "generated",
@@ -63905,10 +64327,52 @@
       "type": "synthesized_by"
     },
     {
+      "projection": "authored",
+      "source": "GONI-SYNTHESIS-227700D474C6",
+      "target": "GONI-PRINCIPLE-9062425CD490",
+      "type": "depends_on"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-SYNTHESIS-227700D474C6",
+      "target": "GONI-EVIDENCE-55CFEAFCBF16",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-SYNTHESIS-227700D474C6",
+      "target": "GONI-EVIDENCE-6F21B6FCEF3C",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-SYNTHESIS-227700D474C6",
+      "target": "GONI-PRINCIPLE-9062425CD490",
+      "type": "supported_by"
+    },
+    {
       "projection": "generated",
       "source": "GONI-SYNTHESIS-227700D474C6",
       "target": "GONI-SYNTHESIS-8A0BE005D5C2",
       "type": "synthesized_by"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SYNTHESIS-227700D474C6",
+      "target": "GONI-EVIDENCE-55CFEAFCBF16",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SYNTHESIS-227700D474C6",
+      "target": "GONI-EVIDENCE-6F21B6FCEF3C",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-SYNTHESIS-227700D474C6",
+      "target": "GONI-EXPERIMENT-0A1F9BC4014A",
+      "type": "tested_by"
     },
     {
       "projection": "generated",
@@ -66569,6 +67033,12 @@
       "type": "synthesized_by"
     },
     {
+      "projection": "generated",
+      "source": "GONI-THESIS-7BFB74017D50",
+      "target": "GONI-DECISION-9AF49466170D",
+      "type": "refined_by"
+    },
+    {
       "projection": "authored",
       "source": "GONI-WHITEPAPER",
       "target": "GONI-SYNTHESIS-08E40F4E74E3",
@@ -68226,6 +68696,16 @@
       "url": "https://arxiv.org/abs/2205.14135"
     },
     {
+      "accessed": "2026-09-20",
+      "citation": "https://arxiv.org/abs/2405.04434",
+      "id": "SRC-DEEPSEEK2024-V2",
+      "kind": "academic",
+      "notes": "DeepSeek-V2 introduces Multi-head Latent Attention (MLA), which compresses the conventional KV-cache representation into a latent vector to reduce inference memory. It motivates treating representation size as a separate optimization axis from sequence selection.",
+      "path": "sources/src-deepseek2024-v2.yml",
+      "title": "deepseek2024-v2",
+      "url": "https://arxiv.org/abs/2405.04434"
+    },
+    {
       "citation": "https://github.com/deepseek-ai/DeepSpec",
       "id": "SRC-DEEPSEEK2026-DEEPSPEC",
       "kind": "web",
@@ -68869,6 +69349,16 @@
       "path": "sources/src-zeldovich2006-histar.yml",
       "title": "zeldovich2006-histar",
       "url": "https://www.scs.stanford.edu/~nickolai/papers/zeldovich-histar.pdf"
+    },
+    {
+      "accessed": "2026-09-20",
+      "citation": "https://arxiv.org/abs/2306.14048",
+      "id": "SRC-ZHANG2023-H2O",
+      "kind": "academic",
+      "notes": "H2O reports that cumulative attention in generative LLM inference is concentrated on a small subset of heavy-hitter tokens and proposes a KV-cache eviction policy that retains heavy hitters together with recent tokens. The result motivates measuring non-uniform future utility at the KV level; it does not establish a universal Zipf law for all Goni memory or retrieval workloads.",
+      "path": "sources/src-zhang2023-h2o.yml",
+      "title": "zhang2023-h2o",
+      "url": "https://arxiv.org/abs/2306.14048"
     },
     {
       "citation": "https://arxiv.org/abs/2510.04618",
