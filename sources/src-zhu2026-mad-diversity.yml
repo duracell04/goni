@@ -4,6 +4,6 @@ kind: academic
 citation: >-
   Zhu, X., Zhang, C., Chi, Y., Stafford, T., Collier, N., & Vlachos, A. (2026). Demystifying Multi-Agent Debate: The Role of Confidence and Diversity. Findings of ACL 2026, 33909-33930. https://doi.org/10.18653/v1/2026.findings-acl.1694
 url: https://aclanthology.org/2026.findings-acl.1694/
-accessed: 2026-09-16
+accessed: "2026-09-16"
 notes: >-
   Identifies initial viewpoint diversity and explicit calibrated confidence communication as important mechanisms absent from vanilla homogeneous debate.

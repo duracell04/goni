@@ -4,6 +4,6 @@ kind: academic
 citation: >-
   Ladha, K. K. (1995). Information pooling through majority-rule voting: Condorcet's jury theorem with correlated votes. Journal of Economic Behavior & Organization, 26(3), 353-372. https://doi.org/10.1016/0167-2681(94)00068-P
 url: https://www.sciencedirect.com/science/article/abs/pii/016726819400068P
-accessed: 2026-09-16
+accessed: "2026-09-16"
 notes: >-
   Shows that the information-pooling advantage of majority rule degrades as correlation among votes increases, providing a classical analogue for correlated model errors.

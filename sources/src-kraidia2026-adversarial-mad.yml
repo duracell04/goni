@@ -4,6 +4,6 @@ kind: academic
 citation: >-
   Kraidia, I., Qaddara, I., Almutairi, A., et al. (2026). When collaboration fails: persuasion driven adversarial influence in multi agent large language model debate. Scientific Reports, 16, 11640. https://doi.org/10.1038/s41598-026-42705-7
 url: https://www.nature.com/articles/s41598-026-42705-7
-accessed: 2026-09-16
+accessed: "2026-09-16"
 notes: >-
   Reports that a strategically persuasive adversarial agent can materially reduce multi-agent debate accuracy and increase incorrect consensus. Supports treating rhetorical influence as an epistemic attack surface.

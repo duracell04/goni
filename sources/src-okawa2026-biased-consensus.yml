@@ -4,6 +4,6 @@ kind: academic
 citation: >-
   Okawa, M. (2026). Emergence of Biased Consensus in Multi-Agent LLM Debates. arXiv:2608.02827.
 url: https://arxiv.org/abs/2608.02827
-accessed: 2026-09-16
+accessed: "2026-09-16"
 notes: >-
   Preprint. Uses physics-inspired social-dynamics models to analyze transitions toward collective biased consensus and reports that agent heterogeneity can suppress the transition.

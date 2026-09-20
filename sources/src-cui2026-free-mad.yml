@@ -4,6 +4,6 @@ kind: academic
 citation: >-
   Cui, Y., Fu, H., Zhang, H., Wang, L., & Zuo, C. (2026). Free-MAD: Consensus-Free Multi-Agent Debate. Findings of ACL 2026, 31977-31997. https://doi.org/10.18653/v1/2026.findings-acl.1600
 url: https://aclanthology.org/2026.findings-acl.1600/
-accessed: 2026-09-16
+accessed: "2026-09-16"
 notes: >-
   Reports conformity-driven error propagation and proposes a consensus-free, trajectory-scored debate protocol with an anti-conformity mechanism.
