@@ -82,7 +82,23 @@ def message_files(message: str) -> list[str]:
 def validate_commits(repo: Path, baseline: str, head: str, errors: list[str]) -> None:
     commits = git(repo, "rev-list", "--reverse", f"{baseline}..{head}").splitlines()
     for commit in commits:
+        parents = git(repo, "rev-list", "--parents", "-n", "1", commit).split()
         message = git(repo, "show", "-s", "--format=%B", commit)
+
+        # Integration merges are graph/provenance wrappers rather than decision
+        # units. The substantive changes remain attributable to the topic
+        # commits on the second-parent history, which retain the full message
+        # anatomy and Files-vs-diff check below. Keep merge topology narrow so
+        # an octopus merge cannot silently bypass decision-level provenance.
+        if len(parents) > 2:
+            if len(parents) != 3:
+                errors.append(f"merge commit {commit[:12]} must have exactly two parents")
+                continue
+            subject = message.splitlines()[0].strip() if message.strip() else ""
+            if not subject:
+                errors.append(f"merge commit {commit[:12]} lacks an integration summary")
+            continue
+
         if not all(section in message for section in MESSAGE_SECTIONS):
             errors.append(f"commit {commit[:12]} does not contain the complete COMMIT_STANDARD anatomy")
             continue
