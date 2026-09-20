@@ -11,12 +11,12 @@ domains:
 - system
 aliases: []
 relations:
-- type: synthesized_by
+- type: depends_on
   target: GONI-PRINCIPLE-9062425CD490
-- type: refined_by
-  target: GONI-IMAP-66D2DBD94204
-- type: tested_by
-  target: GONI-EXPERIMENT-0A1F9BC4014A
+- type: synthesizes
+  target: GONI-EVIDENCE-6F21B6FCEF3C
+- type: synthesizes
+  target: GONI-EVIDENCE-55CFEAFCBF16
 sources:
 - SRC-KWON2023-VLLM
 - SRC-ZHANG2023-H2O
