@@ -22,7 +22,7 @@ sources:
 - SRC-ZHANG2023-H2O
 - SRC-DEEPSEEK2024-V2
 artifacts: []
-uncertainty: The central empirical question is deliberately unresolved: Goni must measure concentration at each managed abstraction instead of assuming a universal Zipf exponent.
+uncertainty: 'The central empirical question is deliberately unresolved: Goni must measure concentration at each managed abstraction instead of assuming a universal Zipf exponent.'
 legacy: []
 ---
 
