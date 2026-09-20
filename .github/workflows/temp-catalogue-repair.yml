@@ -10,7 +10,6 @@ permissions:
 
 jobs:
   regenerate:
-    if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -34,26 +33,31 @@ jobs:
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          cat > /tmp/commit-message.txt <<EOF
+          kg(projection): regenerate AI systems catalogue
+
+          Intent:
+          Regenerate the deterministic canonical catalogue after adding and repairing the AI-systems knowledge nodes.
+
+          Rationale:
+          The catalogue is a machine-generated projection of canonical knowledge and must match the repository tree before strict validation can pass.
+
+          Status:
+          specified-only
+
+          Contracts:
+          - maps/catalogue.json
+
+          Files:
+          - maps/catalogue.json
+
+          Evidence:
+          - python tooling/build_catalogue.py --edition-sha $GITHUB_SHA
+
+          Unresolved:
+          - none
+          EOF
+          sed -i 's/^          //' /tmp/commit-message.txt
           git add maps/catalogue.json
-          git commit -m "kg(projection): regenerate AI systems catalogue" \
-            -m "Intent:
-Regenerate the deterministic canonical catalogue after adding and repairing the AI-systems knowledge nodes.
-
-Rationale:
-The catalogue is a machine-generated projection of canonical knowledge and must match the repository tree before strict validation can pass.
-
-Status:
-specified-only
-
-Contracts:
-- maps/catalogue.json
-
-Files:
-- maps/catalogue.json
-
-Evidence:
-- python tooling/build_catalogue.py --edition-sha $GITHUB_SHA
-
-Unresolved:
-- none"
+          git commit -F /tmp/commit-message.txt
           git push
