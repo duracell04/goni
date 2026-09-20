@@ -28,9 +28,18 @@ legacy: []
 
 Goni is modeled as a governed closed-loop controller:
 
-[
-Goal/State ightarrow Observe ightarrow Context ightarrow Cognition ightarrow Authorization ightarrow Action ightarrow Observe ightarrow Verify ightarrow Receipt ightarrow State Update
-]
+```text
+Goal / State
+→ Observe
+→ Context
+→ Cognition
+→ Authorization
+→ Action
+→ Observe
+→ Verify
+→ Receipt
+→ State Update
+```
 
 The authority step is a first-class boundary. Model output may propose an action; it does not itself grant permission to execute that action.
 

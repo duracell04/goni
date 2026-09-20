@@ -24,10 +24,9 @@ legacy: []
 
 A second plausible answer from the same model and substantially the same evidence is a new sample from the inference process.
 
-[
-regenerate 
-eq verify
-]
+```text
+regeneration != verification
+```
 
 Reflection and revision may improve quality, but confidence should rise only when the new pass introduces a meaningful verification signal: executable checks, new source evidence, an independent measurement channel, or another task-appropriate external constraint.
 

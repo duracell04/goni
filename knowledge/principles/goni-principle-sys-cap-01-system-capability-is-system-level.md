@@ -29,10 +29,10 @@ Goni evaluates an AI system at the level of the complete execution loop rather t
 
 A useful abstraction is:
 
-[
-C_{system} = f(M,H,S,T,E,V)
-]
+```text
+C_system = f(M, H, S, T, E, V)
+```
 
-where (M) is the model, (H) the harness, (S) canonical state and context management, (T) tools and action interfaces, (E) the execution environment, and (V) verification.
+Here, M is the model, H the harness, S canonical state and context management, T tools and action interfaces, E the execution environment, and V verification.
 
 This principle requires two distinct comparison modes. **Model comparisons** hold the surrounding scaffold approximately constant. **System comparisons** evaluate each complete configuration as deployed. Results from one mode must not be presented as if they answered the other.

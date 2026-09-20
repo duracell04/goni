@@ -26,8 +26,16 @@ legacy: []
 
 Terminal success can hide fragile execution. Goni should evaluate both the final outcome and how the system reached it.
 
-[
-E(	au) = (success, recovery, unnecessary actions, violations, latency, cost, state integrity, reproducibility)
-]
+```text
+E(trajectory) =
+(success,
+ recovery,
+ unnecessary actions,
+ violations,
+ latency,
+ cost,
+ state integrity,
+ reproducibility)
+```
 
 Metrics should remain decomposed rather than collapsing immediately into one score. This preserves the evidence needed to distinguish efficient, policy-compliant execution from accidental or excessively costly success.

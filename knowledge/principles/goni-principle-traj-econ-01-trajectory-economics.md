@@ -24,11 +24,11 @@ legacy: []
 
 # Trajectory Economics
 
-For an agent trajectory with (N) steps:
+For an agent trajectory with N steps:
 
-[
-C_{task} approx sum_{t=1}^{N}(C_{input,t}+C_{reasoning,t}+C_{output,t}+C_{tool,t})
-]
+```text
+C_task ≈ Σ[t=1..N] (C_input,t + C_reasoning,t + C_output,t + C_tool,t)
+```
 
 Goni should additionally track latency and, for local execution where measurable, energy or thermal cost.
 

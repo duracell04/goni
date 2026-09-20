@@ -40,9 +40,18 @@ legacy: []
 
 The combined architecture is:
 
-[
-Principal ightarrow Canonical State ightarrow Context/Harness ightarrow Model Cognition ightarrow Authority Kernel ightarrow Typed Action ightarrow Environment ightarrow Verification ightarrow Receipt ightarrow State Update
-]
+```text
+Principal
+→ Canonical State
+→ Context / Harness
+→ Model Cognition
+→ Authority Kernel
+→ Typed Action
+→ Environment
+→ Verification
+→ Receipt
+→ State Update
+```
 
 The design assigns probabilistic models responsibility for semantic judgment where they add value and moves exact state, permissions, schemas, deterministic checks, and consequential authority into inspectable mechanisms.
 

@@ -22,12 +22,11 @@ legacy: []
 
 # Verifier–Objective Gap
 
-For a verifier (V):
+For a verifier V:
 
-[
-V(x)=1 
-otRightarrow x=globally correct
-]
+```text
+V(x) = 1  does not imply  x is globally correct
+```
 
 A test, judge, policy check, benchmark, or reward signal measures a proxy for the desired outcome. Increasing optimizer strength raises the importance of keeping that proxy aligned with the principal's actual objective.
 

@@ -24,10 +24,9 @@ legacy: []
 
 A council vote is informative only to the extent that its errors are independent.
 
-[
-N agreeing evaluators 
-eq N independent observations
-]
+```text
+N agreeing evaluators != N independent observations
+```
 
 Goni should record and, where useful, diversify the dimensions that can generate independent information: model family, evidence source, retrieval corpus, tool access, verifier type, execution environment, search branch, and assigned objective.
 

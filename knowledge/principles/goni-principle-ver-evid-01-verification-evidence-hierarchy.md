@@ -24,17 +24,13 @@ legacy: []
 
 Goni should seek the strongest task-appropriate evidence available. A default ordering is:
 
-[
+```text
 external ground truth
->
-deterministic executable test
->
-independent external evidence
->
-independent model evaluator
->
-producer self review
-]
+> deterministic executable test
+> independent external evidence
+> independent model evaluator
+> producer self-review
+```
 
 The hierarchy measures grounding and independence, not rhetorical confidence. Each verification result should identify the property checked, the evidence source, and the limitations of that check.
 

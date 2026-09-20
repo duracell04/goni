@@ -27,9 +27,12 @@ Tool ergonomics changes the reasoning burden placed on a model. Goni should pref
 
 For semantically equivalent integrations, the default preference is:
 
-[
-typed API/IPC > CLI > structured UI/accessibility surface > visual computer use
-]
+```text
+typed API / IPC
+> CLI
+> structured UI / accessibility surface
+> visual computer use
+```
 
 The preference reflects reliability and information density. Visual interaction remains an important compatibility layer.
 

@@ -24,15 +24,15 @@ legacy: []
 
 At inference:
 
-[
-action_t ightarrow observation_t ightarrow state_{t+1}
-]
+```text
+action_t → observation_t → state_(t+1)
+```
 
 During training:
 
-[
-action_t ightarrow feedback/reward_t ightarrow weights_{t+1}
-]
+```text
+action_t → feedback/reward_t → weights_(t+1)
+```
 
 The analogy matters because behaviors currently implemented in prompts, routing, retries, planning, or tool-selection scaffolds may later migrate into model weights through post-training.
 
