@@ -254,6 +254,11 @@
         "GONI-PRINCIPLE-AF21F6040FDC",
         "GONI-PRINCIPLE-FCA3E2C7A10C",
         "GONI-PRINCIPLE-FD9D88AD1223",
+        "GONI-PRINCIPLE-GOV-LOOP-01",
+        "GONI-PRINCIPLE-HARNESS-EVOL-01",
+        "GONI-PRINCIPLE-SYS-CAP-01",
+        "GONI-PRINCIPLE-TOOL-ERG-01",
+        "GONI-PRINCIPLE-TRAJ-EVAL-01",
         "GONI-PROPOSAL-0B80EB2A84E3",
         "GONI-PROPOSAL-0E0E7B2A27DB",
         "GONI-PROPOSAL-13912DD8EBA6",
@@ -333,6 +338,7 @@
         "GONI-SPEC-FAFD2299D41C",
         "GONI-SPEC-FE0FC20CEC5A",
         "GONI-SPEC-FF000C878367",
+        "GONI-SPEC-HANDOFF-01",
         "GONI-SYNTHESIS-018E3523309A",
         "GONI-SYNTHESIS-02464E295AA4",
         "GONI-SYNTHESIS-171D7BBBFDDA",
@@ -363,6 +369,7 @@
         "GONI-SYNTHESIS-993ADA865BA4",
         "GONI-SYNTHESIS-A5E56B434FF9",
         "GONI-SYNTHESIS-AEFB57867DD7",
+        "GONI-SYNTHESIS-AI-SYSTEMS-01",
         "GONI-SYNTHESIS-B3726E8936C0",
         "GONI-SYNTHESIS-BCE3D2E753CF",
         "GONI-SYNTHESIS-BD7FD2CC38AF",
@@ -370,6 +377,7 @@
         "GONI-SYNTHESIS-CC4921DED1BB",
         "GONI-SYNTHESIS-DF627E719B9D",
         "GONI-SYNTHESIS-E2FB2167D274",
+        "GONI-SYNTHESIS-FEEDBACK-SYMMETRY-01",
         "SPEC-KERN-01"
       ],
       "billing": [
@@ -484,6 +492,19 @@
         "SCHEMA-MVP-01",
         "SPINE-01",
         "ZCO-01"
+      ],
+      "evaluation": [
+        "GONI-PRINCIPLE-EVAL-INDEP-01",
+        "GONI-PRINCIPLE-HARNESS-EVOL-01",
+        "GONI-PRINCIPLE-SYS-CAP-01",
+        "GONI-PRINCIPLE-TRAJ-ECON-01",
+        "GONI-PRINCIPLE-TRAJ-EVAL-01",
+        "GONI-PRINCIPLE-VER-EVID-01",
+        "GONI-PRINCIPLE-VER-GAP-01",
+        "GONI-PRINCIPLE-VER-REGEN-01"
+      ],
+      "governance": [
+        "GONI-PRINCIPLE-VER-GAP-01"
       ],
       "hardware": [
         "ADR-INDEX-HW",
@@ -667,6 +688,7 @@
         "GONI-PRINCIPLE-7D813B2026E1",
         "GONI-PRINCIPLE-8C0DB401EE76",
         "GONI-PRINCIPLE-9249B8613105",
+        "GONI-PRINCIPLE-GOV-LOOP-01",
         "GONI-SPEC-06EEDDD84AB3",
         "GONI-SPEC-0C02110BCFDB",
         "GONI-SPEC-14AA0EDAFDD4",
@@ -900,6 +922,7 @@
         "GONI-EXPERIMENT-811EDB4A82A5",
         "GONI-PRINCIPLE-147FB93142B7",
         "GONI-PRINCIPLE-74DF1AAD27E7",
+        "GONI-PRINCIPLE-MEM-TAX-01",
         "GONI-SPEC-009C1109395A",
         "GONI-SPEC-04ACE219CCF4",
         "GONI-SPEC-05849C49B127",
@@ -924,10 +947,17 @@
         "GONI-SPEC-F9FED158CE1F",
         "GONI-SPEC-FE4FB11BB885",
         "GONI-SPEC-FE99E83F8C83",
+        "GONI-SPEC-HANDOFF-01",
         "GONI-SYNTHESIS-161FC810382A",
         "GONI-SYNTHESIS-AE048AF3026D",
         "MEM-RETR-01",
         "MEMORY-ARCHITECTURE"
+      ],
+      "models": [
+        "GONI-PRINCIPLE-EVAL-INDEP-01",
+        "GONI-PRINCIPLE-HET-INTEL-01",
+        "GONI-PRINCIPLE-MODEL-ADAPTER-01",
+        "GONI-PRINCIPLE-TRAJ-ECON-01"
       ],
       "network": [
         "GONI-IMAP-B21D85F4146E",
@@ -955,6 +985,9 @@
         "GONI-SPEC-F558CFB6C817",
         "GONI-SPEC-FC72CAAED1BC",
         "NET-01"
+      ],
+      "performance": [
+        "GONI-PRINCIPLE-TRAJ-ECON-01"
       ],
       "policy": [
         "EVID-AUTON-03",
@@ -1057,6 +1090,9 @@
         "OS-COMPLETENESS-CHECKLIST",
         "SURF-00",
         "THESIS-SOVEREIGN-DELEG-OS-01"
+      ],
+      "reasoning": [
+        "GONI-PRINCIPLE-VER-REGEN-01"
       ],
       "repository": [
         "ADJACENT-PROJECTS",
@@ -1665,6 +1701,7 @@
         "GONI-SYNTHESIS-D3554320FEBD",
         "GONI-SYNTHESIS-D5A359AF7D66",
         "GONI-SYNTHESIS-F0626F7EFE2C",
+        "GONI-SYNTHESIS-FEEDBACK-SYMMETRY-01",
         "REF-GONIOS-NEIGHBOR-01"
       ],
       "security": [
@@ -2433,6 +2470,7 @@
         "GONI-SPEC-FEDFE25D0BD2",
         "GONI-SPEC-FF000C878367",
         "GONI-SPEC-FF2D2F8D0491",
+        "GONI-SPEC-HANDOFF-01",
         "ITCR-01",
         "JOB-01",
         "LSC-01",
@@ -2475,6 +2513,13 @@
         "GONI-IMAP-ED288DB4EAF5",
         "GONI-PRINCIPLE-80DD85BB01A0",
         "GONI-PRINCIPLE-9A3BCC1A464F",
+        "GONI-PRINCIPLE-GOV-LOOP-01",
+        "GONI-PRINCIPLE-HARNESS-EVOL-01",
+        "GONI-PRINCIPLE-HET-INTEL-01",
+        "GONI-PRINCIPLE-MEM-TAX-01",
+        "GONI-PRINCIPLE-MODEL-ADAPTER-01",
+        "GONI-PRINCIPLE-SYS-CAP-01",
+        "GONI-PRINCIPLE-VER-EVID-01",
         "GONI-SYNTHESIS-01B0D71A3FA3",
         "GONI-SYNTHESIS-02674F890E73",
         "GONI-SYNTHESIS-0EBA46BE828D",
@@ -2525,6 +2570,7 @@
         "GONI-SYNTHESIS-AC95773C8B83",
         "GONI-SYNTHESIS-AE2511CE8769",
         "GONI-SYNTHESIS-AFBEE6461C7F",
+        "GONI-SYNTHESIS-AI-SYSTEMS-01",
         "GONI-SYNTHESIS-B1D94E9EF74C",
         "GONI-SYNTHESIS-B40BE32783C2",
         "GONI-SYNTHESIS-B52DA93E132F",
@@ -2554,6 +2600,9 @@
         "SYS-02",
         "SYS-03",
         "SYS-04"
+      ],
+      "tools": [
+        "GONI-PRINCIPLE-TOOL-ERG-01"
       ],
       "validation": [
         "CI-VALIDATION-01",
@@ -3339,9 +3388,22 @@
         "GONI-PRINCIPLE-DB6A897B24AE",
         "GONI-PRINCIPLE-DF202BE9A6E0",
         "GONI-PRINCIPLE-E216CB231421",
+        "GONI-PRINCIPLE-EVAL-INDEP-01",
         "GONI-PRINCIPLE-F53185B15CF9",
         "GONI-PRINCIPLE-FCA3E2C7A10C",
         "GONI-PRINCIPLE-FD9D88AD1223",
+        "GONI-PRINCIPLE-GOV-LOOP-01",
+        "GONI-PRINCIPLE-HARNESS-EVOL-01",
+        "GONI-PRINCIPLE-HET-INTEL-01",
+        "GONI-PRINCIPLE-MEM-TAX-01",
+        "GONI-PRINCIPLE-MODEL-ADAPTER-01",
+        "GONI-PRINCIPLE-SYS-CAP-01",
+        "GONI-PRINCIPLE-TOOL-ERG-01",
+        "GONI-PRINCIPLE-TRAJ-ECON-01",
+        "GONI-PRINCIPLE-TRAJ-EVAL-01",
+        "GONI-PRINCIPLE-VER-EVID-01",
+        "GONI-PRINCIPLE-VER-GAP-01",
+        "GONI-PRINCIPLE-VER-REGEN-01",
         "GONI-PROPOSAL-05B21F15B3C6",
         "GONI-PROPOSAL-095C86A56DD4",
         "GONI-PROPOSAL-09EB7E4D771F",
@@ -3912,6 +3974,7 @@
         "GONI-SPEC-FEDFE25D0BD2",
         "GONI-SPEC-FF000C878367",
         "GONI-SPEC-FF2D2F8D0491",
+        "GONI-SPEC-HANDOFF-01",
         "GONI-STORY",
         "GONI-SWOT",
         "GONI-SYNTHESIS-00B5C471FF0F",
@@ -4267,6 +4330,7 @@
         "GONI-SYNTHESIS-AF00EE33D7AF",
         "GONI-SYNTHESIS-AFBEE6461C7F",
         "GONI-SYNTHESIS-AFE4B3FB242E",
+        "GONI-SYNTHESIS-AI-SYSTEMS-01",
         "GONI-SYNTHESIS-B1D94E9EF74C",
         "GONI-SYNTHESIS-B2574CD9CAC2",
         "GONI-SYNTHESIS-B3726E8936C0",
@@ -4413,6 +4477,7 @@
         "GONI-SYNTHESIS-FDCB7F6973F9",
         "GONI-SYNTHESIS-FE25FC35D7F3",
         "GONI-SYNTHESIS-FEC452FE3082",
+        "GONI-SYNTHESIS-FEEDBACK-SYMMETRY-01",
         "GONI-SYNTHESIS-FF1804B9EA23",
         "GONI-SYNTHESIS-FFFD0BDE80BE",
         "GONI-THESIS-3234CF1EA4B0",
@@ -5290,9 +5355,22 @@
         "GONI-PRINCIPLE-DB6A897B24AE",
         "GONI-PRINCIPLE-DF202BE9A6E0",
         "GONI-PRINCIPLE-E216CB231421",
+        "GONI-PRINCIPLE-EVAL-INDEP-01",
         "GONI-PRINCIPLE-F53185B15CF9",
         "GONI-PRINCIPLE-FCA3E2C7A10C",
-        "GONI-PRINCIPLE-FD9D88AD1223"
+        "GONI-PRINCIPLE-FD9D88AD1223",
+        "GONI-PRINCIPLE-GOV-LOOP-01",
+        "GONI-PRINCIPLE-HARNESS-EVOL-01",
+        "GONI-PRINCIPLE-HET-INTEL-01",
+        "GONI-PRINCIPLE-MEM-TAX-01",
+        "GONI-PRINCIPLE-MODEL-ADAPTER-01",
+        "GONI-PRINCIPLE-SYS-CAP-01",
+        "GONI-PRINCIPLE-TOOL-ERG-01",
+        "GONI-PRINCIPLE-TRAJ-ECON-01",
+        "GONI-PRINCIPLE-TRAJ-EVAL-01",
+        "GONI-PRINCIPLE-VER-EVID-01",
+        "GONI-PRINCIPLE-VER-GAP-01",
+        "GONI-PRINCIPLE-VER-REGEN-01"
       ],
       "proposal": [
         "AI-MEDIA-PROVENANCE",
@@ -5900,6 +5978,7 @@
         "GONI-SPEC-FEDFE25D0BD2",
         "GONI-SPEC-FF000C878367",
         "GONI-SPEC-FF2D2F8D0491",
+        "GONI-SPEC-HANDOFF-01",
         "HREQ-01",
         "ITCR-01",
         "JOB-01",
@@ -6283,6 +6362,7 @@
         "GONI-SYNTHESIS-AF00EE33D7AF",
         "GONI-SYNTHESIS-AFBEE6461C7F",
         "GONI-SYNTHESIS-AFE4B3FB242E",
+        "GONI-SYNTHESIS-AI-SYSTEMS-01",
         "GONI-SYNTHESIS-B1D94E9EF74C",
         "GONI-SYNTHESIS-B2574CD9CAC2",
         "GONI-SYNTHESIS-B3726E8936C0",
@@ -6429,6 +6509,7 @@
         "GONI-SYNTHESIS-FDCB7F6973F9",
         "GONI-SYNTHESIS-FE25FC35D7F3",
         "GONI-SYNTHESIS-FEC452FE3082",
+        "GONI-SYNTHESIS-FEEDBACK-SYMMETRY-01",
         "GONI-SYNTHESIS-FF1804B9EA23",
         "GONI-SYNTHESIS-FFFD0BDE80BE",
         "GONI-WHITEPAPER",
@@ -30169,6 +30250,35 @@
     {
       "aliases": [],
       "artifacts": [],
+      "body": "# Evaluator Independence And Correlated Error\n\nA council vote is informative only to the extent that its errors are independent.\n\n```text\nN agreeing evaluators != N independent observations\n```\n\nGoni should record and, where useful, diversify the dimensions that can generate independent information: model family, evidence source, retrieval corpus, tool access, verifier type, execution environment, search branch, and assigned objective.\n\nCouncil confidence should be based on evidence diversity and observed calibration rather than simple majority size.",
+      "domains": [
+        "evaluation",
+        "models"
+      ],
+      "id": "GONI-PRINCIPLE-EVAL-INDEP-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/principles/goni-principle-eval-indep-01-evaluator-independence-and-correlated-error.md",
+      "proposition": "Confidence should increase with independent information rather than raw evaluator count; models or agents that share evidence, training distributions, prompts, tools, or reasoning patterns may produce strongly correlated errors.",
+      "relations": [
+        {
+          "target": "GONI-LAB",
+          "type": "refines"
+        },
+        {
+          "target": "GONI-PRINCIPLE-VER-EVID-01",
+          "type": "depends_on"
+        }
+      ],
+      "sources": [],
+      "status": "draft",
+      "title": "Evaluator Independence And Correlated Error",
+      "type": "principle",
+      "uncertainty": "Effective evaluator independence is difficult to estimate directly; diversity dimensions are proxies that require empirical calibration."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
       "body": "# 6. Invariants\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n## 6. Invariants\n\n- **No bypass:** tools cannot be called without a capability token.\n- **Expression is not an effect:** local generation and analysis do not require\n  a tool capability solely because of their content.\n- **Commit boundary:** durable knowledge changes and external effects require\n  the applicable capability regardless of how harmless their content appears.\n- **Auditability:** every tool call produces an audit record.\n- **Policy mediation:** policy engine is the sole authority for tool approval.\n- **Delegation mediation:** autonomy corridor and risk thresholds are evaluated\n  before execution.\n- **Kernel-owned authority:** external frameworks may surface actions, but they\n  do not define authority, corridor outcome, or receipt semantics.\n- **Intent traceability:** mutating calls preserve an auditable\n  `intent -> plan -> tool intent -> authorized execution` chain.\n- **Control-plane traceability:** delegated execution preserves the pre-\n  execution references that explain how the Work Order was formed.\n- **Transactional safety:** mutating calls are atomic (commit or rollback).\n- **Replay safety:** idempotency keys prevent duplicate side effects.\n- **Boundary separation:** observation, extraction, memory, actuation, egress,\n  and sandbox authority remain separate capability grants for desktop,\n  browser, and vision-mediated actions.",
       "domains": [
         "specs"
@@ -30241,6 +30351,384 @@
       "title": "10. Safety Invariants",
       "type": "principle",
       "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Governed Closed-Loop Execution\n\nGoni is modeled as a governed closed-loop controller:\n\n```text\nGoal / State\n→ Observe\n→ Context\n→ Cognition\n→ Authorization\n→ Action\n→ Observe\n→ Verify\n→ Receipt\n→ State Update\n```\n\nThe authority step is a first-class boundary. Model output may propose an action; it does not itself grant permission to execute that action.\n\nThe loop closes only after external consequences are observed and the relevant evidence, receipt, and canonical state are updated.",
+      "domains": [
+        "agent",
+        "kernel",
+        "system"
+      ],
+      "id": "GONI-PRINCIPLE-GOV-LOOP-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/principles/goni-principle-gov-loop-01-governed-closed-loop-execution.md",
+      "proposition": "Goni should execute delegated work as a governed closed loop in which cognition proposes, the kernel authorizes, tools act, external consequences are observed, verification produces evidence, receipts record the boundary decision, and canonical state is updated.",
+      "relations": [
+        {
+          "target": "DOCTRINE-DELEG-01",
+          "type": "refines"
+        },
+        {
+          "target": "TOOL-01",
+          "type": "depends_on"
+        },
+        {
+          "target": "REC-01",
+          "type": "depends_on"
+        }
+      ],
+      "sources": [
+        "SRC-TOMASEV2026-INTELLIGENT-DELEGATION"
+      ],
+      "status": "draft",
+      "title": "Governed Closed-Loop Execution",
+      "type": "principle",
+      "uncertainty": "Specified systems framing. Individual loops may omit steps when the task is read-only or no durable state change is warranted."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Model–Harness Co-Evolution\n\nThe boundary between model capability and harness responsibility changes over time.\n\nEvery substantial compensatory mechanism should preserve the observed weakness it addresses, predicted system benefit, evaluation signal, revalidation trigger, and removal or simplification condition.\n\nWhen a model generation changes materially, Goni should rerun the original evaluation before carrying the workaround forward. This limits scaffold debt and keeps the harness at the smallest sufficient level of complexity.",
+      "domains": [
+        "agent",
+        "evaluation",
+        "system"
+      ],
+      "id": "GONI-PRINCIPLE-HARNESS-EVOL-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/principles/goni-principle-harness-evol-01-model-harness-co-evolution.md",
+      "proposition": "Harness mechanisms introduced to compensate for a model weakness should carry explicit revalidation criteria so they can be retained, simplified, or removed as model capabilities change.",
+      "relations": [
+        {
+          "target": "GONI-SYNTHESIS-DC66DA308CAE",
+          "type": "refines"
+        },
+        {
+          "target": "SYS-03",
+          "type": "refines"
+        }
+      ],
+      "sources": [
+        "SRC-LIN2026-AGENTIC-HARNESS-ENGINEERING",
+        "SRC-SCULLEY2015-HIDDEN-TECH-DEBT"
+      ],
+      "status": "draft",
+      "title": "Model–Harness Co-Evolution",
+      "type": "principle",
+      "uncertainty": "The optimal revalidation cadence depends on model turnover, task criticality, and the cost of maintaining each harness mechanism."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Heterogeneous Intelligence Allocation\n\nGoni should allocate work by comparative advantage:\n\n- semantic ambiguity and open-ended synthesis → suitable model,\n- exact arithmetic → deterministic computation,\n- structured lookup → database or index,\n- constraint solving → solver,\n- authority and permissions → kernel policy,\n- schema and type validity → deterministic validator,\n- executable properties → executable tests.\n\nThis reduces the amount of correctness that depends on stochastic model behavior while preserving model freedom where semantic judgment has value.",
+      "domains": [
+        "models",
+        "system"
+      ],
+      "id": "GONI-PRINCIPLE-HET-INTEL-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/principles/goni-principle-het-intel-01-heterogeneous-intelligence-allocation.md",
+      "proposition": "Goni should allocate operations to the mechanism with comparative advantage, using probabilistic models for semantic judgment and deterministic systems for exact state, arithmetic, schemas, permissions, policy decisions, and executable verification where those properties can be computed directly.",
+      "relations": [
+        {
+          "target": "GONI-THESIS-7BFB74017D50",
+          "type": "supports"
+        },
+        {
+          "target": "MODEL-REG-01",
+          "type": "refines"
+        }
+      ],
+      "sources": [
+        "SRC-SCULLEY2015-HIDDEN-TECH-DEBT"
+      ],
+      "status": "draft",
+      "title": "Heterogeneous Intelligence Allocation",
+      "type": "principle",
+      "uncertainty": "The boundary between probabilistic and deterministic work is task-dependent and can shift as specialized models and conventional algorithms improve."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Memory And Context Mechanism Taxonomy\n\nGoni should preserve explicit distinctions among raw interaction history, lossy compaction, generated summaries, query-driven retrieval, canonical structured state, episodic memory, and learned or weight-level memory.\n\nThese mechanisms fail differently. Raw history creates attention and cost pressure; summaries can delete nuance; retrieval can omit relevant state; structured state can lose unmodeled context; learned memory is difficult to inspect and reverse.\n\nMemory architecture should be selected by the property the system needs to preserve rather than by context-window capacity alone.",
+      "domains": [
+        "memory",
+        "system"
+      ],
+      "id": "GONI-PRINCIPLE-MEM-TAX-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/principles/goni-principle-mem-tax-01-memory-and-context-mechanism-taxonomy.md",
+      "proposition": "Raw history, compaction, summaries, retrieval, canonical state, episodic memory, and learned memory are distinct mechanisms with different information-loss, omission, staleness, and cost characteristics and should not be treated as interchangeable.",
+      "relations": [
+        {
+          "target": "GONI-SYNTHESIS-D5A359AF7D66",
+          "type": "refines"
+        },
+        {
+          "target": "GONI-SPEC-C0EC9D0B0A06",
+          "type": "depends_on"
+        }
+      ],
+      "sources": [
+        "SRC-PACKER2023-MEMGPT"
+      ],
+      "status": "draft",
+      "title": "Memory And Context Mechanism Taxonomy",
+      "type": "principle",
+      "uncertainty": "The preferred mixture of mechanisms remains an empirical architecture question and should be evaluated by workload."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Portable Semantic Core With Model-Specific Adapters\n\nGoni's semantic contract should remain portable across model families and providers. The portable layer owns goals, state, authority, action semantics, evidence, receipts, and acceptance tests.\n\nThin adapters MAY exploit native tool schemas, reasoning-state APIs, context caching, structured output modes, KV-cache behavior, speculative decoding, and local runtime features.\n\nThe adapter improves execution efficiency or quality; it does not become the canonical owner of policy, memory, authority, or receipts.",
+      "domains": [
+        "models",
+        "system"
+      ],
+      "id": "GONI-PRINCIPLE-MODEL-ADAPTER-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/principles/goni-principle-model-adapter-01-portable-semantic-core-with-model-specific-adapters.md",
+      "proposition": "Goni should keep goals, canonical state, permissions, actions, evidence, tests, and receipts provider-independent while allowing thin model-specific adapters to exploit provider or runtime capabilities without transferring authority to the model layer.",
+      "relations": [
+        {
+          "target": "GONI-SPEC-9D8A0A7F0F70",
+          "type": "refines"
+        },
+        {
+          "target": "MODEL-REG-01",
+          "type": "refines"
+        }
+      ],
+      "sources": [
+        "SRC-ROUTERBENCH2024"
+      ],
+      "status": "draft",
+      "title": "Portable Semantic Core With Model-Specific Adapters",
+      "type": "principle",
+      "uncertainty": "The adapter boundary must be validated against real providers; excessive abstraction can suppress capabilities while excessive specialization can reduce portability."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# System Capability Is System-Level\n\nGoni evaluates an AI system at the level of the complete execution loop rather than attributing observed behavior to the model alone.\n\nA useful abstraction is:\n\n```text\nC_system = f(M, H, S, T, E, V)\n```\n\nHere, M is the model, H the harness, S canonical state and context management, T tools and action interfaces, E the execution environment, and V verification.\n\nThis principle requires two distinct comparison modes. **Model comparisons** hold the surrounding scaffold approximately constant. **System comparisons** evaluate each complete configuration as deployed. Results from one mode must not be presented as if they answered the other.",
+      "domains": [
+        "agent",
+        "evaluation",
+        "system"
+      ],
+      "id": "GONI-PRINCIPLE-SYS-CAP-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/principles/goni-principle-sys-cap-01-system-capability-is-system-level.md",
+      "proposition": "Observed AI capability is a property of the complete execution system—model, harness, canonical state, tools, environment, and verification—not of the model alone.",
+      "relations": [
+        {
+          "target": "DOCTRINE-DELEG-01",
+          "type": "refines"
+        },
+        {
+          "target": "GONI-THESIS-7BFB74017D50",
+          "type": "supports"
+        }
+      ],
+      "sources": [
+        "SRC-LIN2026-AGENTIC-HARNESS-ENGINEERING",
+        "SRC-SCULLEY2015-HIDDEN-TECH-DEBT"
+      ],
+      "status": "draft",
+      "title": "System Capability Is System-Level",
+      "type": "principle",
+      "uncertainty": "Specified design principle. The exact contribution of each system component is workload- and model-dependent and must be measured under controlled evaluation."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Agent-Native Interface Quality\n\nTool ergonomics changes the reasoning burden placed on a model. Goni should prefer machine-legible action surfaces that make valid actions and failure states explicit.\n\nFor semantically equivalent integrations, the default preference is:\n\n```text\ntyped API / IPC\n> CLI\n> structured UI / accessibility surface\n> visual computer use\n```\n\nThe preference reflects reliability and information density. Visual interaction remains an important compatibility layer.\n\nHigh-quality action interfaces should expose deterministic identifiers, typed inputs and outputs, machine-readable errors, idempotency or explicit transactional semantics, and auditable side effects.",
+      "domains": [
+        "agent",
+        "tools"
+      ],
+      "id": "GONI-PRINCIPLE-TOOL-ERG-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/principles/goni-principle-tool-erg-01-agent-native-interface-quality.md",
+      "proposition": "Action-interface quality is part of system capability; Goni tools should reduce model inference burden through narrow typed operations, explicit state, deterministic identifiers, structured errors, idempotency, and auditable side effects.",
+      "relations": [
+        {
+          "target": "TOOL-01",
+          "type": "refines"
+        },
+        {
+          "target": "SPEC-TXN-01",
+          "type": "depends_on"
+        }
+      ],
+      "sources": [
+        "SRC-YANG2024-SWE-AGENT"
+      ],
+      "status": "draft",
+      "title": "Agent-Native Interface Quality",
+      "type": "principle",
+      "uncertainty": "Interface preferences are task-dependent; visual interaction remains necessary when the target system exposes no reliable structured action surface."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Trajectory Economics\n\nFor an agent trajectory with N steps:\n\n```text\nC_task ≈ Σ[t=1..N] (C_input,t + C_reasoning,t + C_output,t + C_tool,t)\n```\n\nGoni should additionally track latency and, for local execution where measurable, energy or thermal cost.\n\nUseful system metrics include successful delegated work per unit of money, wall-clock time, and energy.",
+      "domains": [
+        "evaluation",
+        "models",
+        "performance"
+      ],
+      "id": "GONI-PRINCIPLE-TRAJ-ECON-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/principles/goni-principle-traj-econ-01-trajectory-economics.md",
+      "proposition": "Agent economics should be measured over complete trajectories because small per-step differences in context, inference, tools, latency, and energy compound across long-running delegated work.",
+      "relations": [
+        {
+          "target": "GONI-SYNTHESIS-44FB7018181A",
+          "type": "refines"
+        },
+        {
+          "target": "GONI-PRINCIPLE-TRAJ-EVAL-01",
+          "type": "depends_on"
+        }
+      ],
+      "sources": [
+        "SRC-ROUTERBENCH2024"
+      ],
+      "status": "draft",
+      "title": "Trajectory Economics",
+      "type": "principle",
+      "uncertainty": "Exact cost terms depend on local hardware, provider pricing, caching behavior, concurrency, and task structure."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Trajectory-Level Agent Evaluation\n\nTerminal success can hide fragile execution. Goni should evaluate both the final outcome and how the system reached it.\n\n```text\nE(trajectory) =\n(success,\n recovery,\n unnecessary actions,\n violations,\n latency,\n cost,\n state integrity,\n reproducibility)\n```\n\nMetrics should remain decomposed rather than collapsing immediately into one score. This preserves the evidence needed to distinguish efficient, policy-compliant execution from accidental or excessively costly success.",
+      "domains": [
+        "agent",
+        "evaluation"
+      ],
+      "id": "GONI-PRINCIPLE-TRAJ-EVAL-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/principles/goni-principle-traj-eval-01-trajectory-level-agent-evaluation.md",
+      "proposition": "Agent evaluation should measure the quality of the execution trajectory in addition to terminal task success, including recovery, unnecessary actions, constraint violations, latency, cost, state integrity, and reproducibility.",
+      "relations": [
+        {
+          "target": "GONI-SPEC-5211A9E877AD",
+          "type": "refines"
+        },
+        {
+          "target": "GONI-LAB",
+          "type": "refines"
+        },
+        {
+          "target": "EVID-HARNESS-01",
+          "type": "supports"
+        }
+      ],
+      "sources": [],
+      "status": "draft",
+      "title": "Trajectory-Level Agent Evaluation",
+      "type": "principle",
+      "uncertainty": "Metric weights must vary by task class and consequence; no single scalar score is specified here."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Verification Evidence Hierarchy\n\nGoni should seek the strongest task-appropriate evidence available. A default ordering is:\n\n```text\nexternal ground truth\n> deterministic executable test\n> independent external evidence\n> independent model evaluator\n> producer self-review\n```\n\nThe hierarchy measures grounding and independence, not rhetorical confidence. Each verification result should identify the property checked, the evidence source, and the limitations of that check.\n\nVerification evidence supports a receipt; it does not convert an open-ended task into mathematical proof.",
+      "domains": [
+        "evaluation",
+        "system"
+      ],
+      "id": "GONI-PRINCIPLE-VER-EVID-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/principles/goni-principle-ver-evid-01-verification-evidence-hierarchy.md",
+      "proposition": "Goni should prefer verification channels with stronger external grounding and lower dependence on the producing model, while recording what property each channel actually establishes.",
+      "relations": [
+        {
+          "target": "GONI-SPEC-FD6CC59ECC08",
+          "type": "refines"
+        },
+        {
+          "target": "GONI-SPEC-43169414D3A8",
+          "type": "refines"
+        }
+      ],
+      "sources": [],
+      "status": "draft",
+      "title": "Verification Evidence Hierarchy",
+      "type": "principle",
+      "uncertainty": "The ordering is a default engineering heuristic rather than a universal total order; task-specific evidence quality can reverse adjacent levels."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Verifier–Objective Gap\n\nFor a verifier V:\n\n```text\nV(x) = 1  does not imply  x is globally correct\n```\n\nA test, judge, policy check, benchmark, or reward signal measures a proxy for the desired outcome. Increasing optimizer strength raises the importance of keeping that proxy aligned with the principal's actual objective.\n\nGoni evaluation should combine visible tests with relevant invariants, adversarial cases, hidden or withheld checks where appropriate, and end-to-end outcome review. A passed verifier is evidence with a defined scope.",
+      "domains": [
+        "evaluation",
+        "governance"
+      ],
+      "id": "GONI-PRINCIPLE-VER-GAP-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/principles/goni-principle-ver-gap-01-verifier-objective-gap.md",
+      "proposition": "Passing a verifier establishes only the property represented by that verifier; it does not establish global task correctness or complete alignment with the principal's objective.",
+      "relations": [
+        {
+          "target": "GONI-PRINCIPLE-VER-EVID-01",
+          "type": "refines"
+        },
+        {
+          "target": "EVID-HARNESS-01",
+          "type": "supports"
+        }
+      ],
+      "sources": [],
+      "status": "draft",
+      "title": "Verifier–Objective Gap",
+      "type": "principle",
+      "uncertainty": "The size of the verifier–objective gap is task-specific and must be investigated empirically."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Regeneration Is Distinct From Verification\n\nA second plausible answer from the same model and substantially the same evidence is a new sample from the inference process.\n\n```text\nregeneration != verification\n```\n\nReflection and revision may improve quality, but confidence should rise only when the new pass introduces a meaningful verification signal: executable checks, new source evidence, an independent measurement channel, or another task-appropriate external constraint.\n\nReceipts and evaluation logs should preserve that distinction.",
+      "domains": [
+        "evaluation",
+        "reasoning"
+      ],
+      "id": "GONI-PRINCIPLE-VER-REGEN-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/principles/goni-principle-ver-regen-01-regeneration-is-distinct-from-verification.md",
+      "proposition": "Regeneration, reflection, or self-critique without materially new evidence is another inference attempt and must not by itself be treated as verification or as a reason to increase confidence.",
+      "relations": [
+        {
+          "target": "GONI-PRINCIPLE-VER-EVID-01",
+          "type": "refines"
+        },
+        {
+          "target": "GONI-SPEC-FD6CC59ECC08",
+          "type": "refines"
+        }
+      ],
+      "sources": [],
+      "status": "draft",
+      "title": "Regeneration Is Distinct From Verification",
+      "type": "principle",
+      "uncertainty": "A second inference can still improve an answer; this principle concerns the epistemic status of that improvement, not whether iterative generation can be useful."
     },
     {
       "aliases": [],
@@ -44677,6 +45165,42 @@
     {
       "aliases": [],
       "artifacts": [],
+      "body": "# Stateful Agent Handoff Contract\n\nA handoff is a state transfer, not a transcript transfer.\n\nA minimum handoff object SHOULD reference the Work Order and Done Contract, current StateSnapshot, completed action and receipt references, evidence and artifact references, unresolved questions and blockers, active authority or corridor context, and next permitted actions.\n\nRaw conversation or trajectory history MAY be attached when it contains task-relevant information that canonical state has not preserved. It is not the default state carrier.",
+      "domains": [
+        "agent",
+        "memory",
+        "specs"
+      ],
+      "id": "GONI-SPEC-HANDOFF-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/specifications/goni-spec-handoff-01-stateful-agent-handoff-contract.md",
+      "proposition": "Cross-agent and cross-context handoffs should transmit canonical task state, authority context, evidence references, completed work, open issues, and next permitted actions rather than relying on replay of the complete conversational or cognitive history.",
+      "relations": [
+        {
+          "target": "GONI-SPEC-C0EC9D0B0A06",
+          "type": "refines"
+        },
+        {
+          "target": "DELEG-INT-01",
+          "type": "depends_on"
+        },
+        {
+          "target": "GONI-SPEC-5211A9E877AD",
+          "type": "depends_on"
+        }
+      ],
+      "sources": [
+        "SRC-PACKER2023-MEMGPT"
+      ],
+      "status": "draft",
+      "title": "Stateful Agent Handoff Contract",
+      "type": "specification",
+      "uncertainty": "The exact serialized schema is intentionally left open until an implementation lane validates the minimum sufficient handoff payload."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
       "body": "# Goni Story\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n﻿# Goni Story - Your AI Doppelganger in a Box\n\n> Target audience: technically literate people who want a life upgrade, not another side project (founders, engineers, indie hackers, senior ICs).\n>\n> Use this text for: website \"About\" page, launch blog post, or onboarding material for early testers. It pairs with `goni-whitepaper.md` (architecture) and `goni-swot.md` (positioning).\n\n---",
       "domains": [
         "repository"
@@ -54371,6 +54895,67 @@
     {
       "aliases": [],
       "artifacts": [],
+      "body": "# Governed Adaptive AI Systems Engineering\n\nThe combined architecture is:\n\n```text\nPrincipal\n→ Canonical State\n→ Context / Harness\n→ Model Cognition\n→ Authority Kernel\n→ Typed Action\n→ Environment\n→ Verification\n→ Receipt\n→ State Update\n```\n\nThe design assigns probabilistic models responsibility for semantic judgment where they add value and moves exact state, permissions, schemas, deterministic checks, and consequential authority into inspectable mechanisms.\n\n**Models reason. The kernel authorizes. Tools act. Receipts prove.**\n\nCapability emerges from the full closed loop, confidence emerges from evidence, and adaptation should preserve the authority boundary as models and harnesses co-evolve.",
+      "domains": [
+        "agent",
+        "system"
+      ],
+      "id": "GONI-SYNTHESIS-AI-SYSTEMS-01",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/syntheses/goni-synthesis-ai-systems-01-governed-adaptive-ai-systems-engineering.md",
+      "proposition": "Goni is best understood as governed adaptive AI systems engineering: probabilistic cognition operates inside explicit state, harness, authority, action, verification, evidence, and accountability structures.",
+      "relations": [
+        {
+          "target": "GONI-PRINCIPLE-SYS-CAP-01",
+          "type": "synthesizes"
+        },
+        {
+          "target": "GONI-PRINCIPLE-GOV-LOOP-01",
+          "type": "synthesizes"
+        },
+        {
+          "target": "GONI-PRINCIPLE-VER-EVID-01",
+          "type": "synthesizes"
+        },
+        {
+          "target": "GONI-PRINCIPLE-EVAL-INDEP-01",
+          "type": "synthesizes"
+        },
+        {
+          "target": "GONI-PRINCIPLE-HARNESS-EVOL-01",
+          "type": "synthesizes"
+        },
+        {
+          "target": "GONI-PRINCIPLE-TOOL-ERG-01",
+          "type": "synthesizes"
+        },
+        {
+          "target": "GONI-SPEC-HANDOFF-01",
+          "type": "synthesizes"
+        },
+        {
+          "target": "GONI-PRINCIPLE-TRAJ-EVAL-01",
+          "type": "synthesizes"
+        },
+        {
+          "target": "GONI-PRINCIPLE-HET-INTEL-01",
+          "type": "synthesizes"
+        },
+        {
+          "target": "GONI-PRINCIPLE-MODEL-ADAPTER-01",
+          "type": "synthesizes"
+        }
+      ],
+      "sources": [],
+      "status": "draft",
+      "title": "Governed Adaptive AI Systems Engineering",
+      "type": "synthesis",
+      "uncertainty": "This synthesis organizes specified design principles; it does not promote any runtime claim beyond the evidence already recorded by individual nodes."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
       "body": "# 5. Promotion gates (how fixes become durable)\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n## 5. Promotion gates (how fixes become durable)\nFixes follow an explicit pipeline:\n\n1. Inbox: raw failure packet, untrusted.\n2. RFC: structured proposal with target seam, promotion class, and rollback\n   pointer.\n3. SPEC: formal contract or schema change, if needed.\n4. ADR: decision record with rationale and alternatives.\n5. EVID: evaluation results, non-regression report, and replay artefacts.\n\nMinimum promotion evidence by class:\n\n- P0: scoped task improvement plus reproducible replay on the affected suite.\n- P1: P0 evidence plus safety and latency non-regression.\n- P2: P1 evidence plus explicit approval, durable gains across repeated runs,\n  and signed bundle metadata for rollback.\n\nAdapter and worldview-lens promotion additionally requires comparative\nevaluation against at least one neutral or critic lens. The promotion record\nmust show the expected behavior change, task scope, eval refs, active model\nstack refs, approval state, and rollback path.\n\nDelegation-policy promotion specifically requires trace replay over vague-intent\nepisodes, comparison against prior policy bundles, and review of question rate,\noverride rate, unsafe autonomy, and surfaced-assumption coverage. Failed\nbundles must be rollbackable through the governance ledger.\n\nHarness-policy promotion additionally requires a falsifiable change statement:\ntarget component, expected outcome delta, evidence sources, eval window,\nretention rule, and rollback condition. A change that improves a narrow task but\nincreases interruption rate, policy violations, unreviewed egress, or rollback\nfrequency fails promotion unless an explicit higher-level policy accepts that\ntrade-off.",
       "domains": [
         "system"
@@ -58130,6 +58715,35 @@
     {
       "aliases": [],
       "artifacts": [],
+      "body": "# Training–Inference Feedback-Loop Symmetry\n\nAt inference:\n\n```text\naction_t → observation_t → state_(t+1)\n```\n\nDuring training:\n\n```text\naction_t → feedback/reward_t → weights_(t+1)\n```\n\nThe analogy matters because behaviors currently implemented in prompts, routing, retries, planning, or tool-selection scaffolds may later migrate into model weights through post-training.\n\nGoni should keep authority, canonical state, evidence, and receipts outside that moving boundary.",
+      "domains": [
+        "agent",
+        "research"
+      ],
+      "id": "GONI-SYNTHESIS-FEEDBACK-SYMMETRY-01",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/syntheses/goni-synthesis-feedback-symmetry-01-training-inference-feedback-loop-symmetry.md",
+      "proposition": "Training-time agent learning and inference-time agent execution share a feedback-loop structure in which actions produce feedback, while the update target differs: model weights during training and state or governed harness artifacts during execution.",
+      "relations": [
+        {
+          "target": "SYS-03",
+          "type": "synthesizes"
+        },
+        {
+          "target": "GONI-PRINCIPLE-HARNESS-EVOL-01",
+          "type": "synthesizes"
+        }
+      ],
+      "sources": [],
+      "status": "draft",
+      "title": "Training–Inference Feedback-Loop Symmetry",
+      "type": "synthesis",
+      "uncertainty": "This is a structural analogy, not a claim that training-time optimization and inference-time state updates are mathematically equivalent."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
       "body": "# 3) Receipt\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n## 3) Receipt\n- Purpose: immutable audit record for mediated actions.\n- Contract anchors: `30-specs/receipts.md`, `schemas/receipts/receipt.schema.json`.\n- Core invariant: every mediated action emits one verifiable receipt.\n- Metrics: receipt coverage, verification latency, redaction coverage.",
       "domains": [
         "system"
@@ -61770,6 +62384,24 @@
     },
     {
       "projection": "generated",
+      "source": "DELEG-INT-01",
+      "target": "GONI-SPEC-HANDOFF-01",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
+      "source": "DOCTRINE-DELEG-01",
+      "target": "GONI-PRINCIPLE-GOV-LOOP-01",
+      "type": "refined_by"
+    },
+    {
+      "projection": "generated",
+      "source": "DOCTRINE-DELEG-01",
+      "target": "GONI-PRINCIPLE-SYS-CAP-01",
+      "type": "refined_by"
+    },
+    {
+      "projection": "generated",
       "source": "DOCTRINE-DELEG-01",
       "target": "GONI-EVIDENCE-25F334DB139D",
       "type": "supported_by"
@@ -61784,6 +62416,18 @@
       "projection": "generated",
       "source": "DOCTRINE-DELEG-01",
       "target": "GONI-EVIDENCE-B00A650DCCD4",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "EVID-HARNESS-01",
+      "target": "GONI-PRINCIPLE-TRAJ-EVAL-01",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "EVID-HARNESS-01",
+      "target": "GONI-PRINCIPLE-VER-GAP-01",
       "type": "supported_by"
     },
     {
@@ -62544,6 +63188,18 @@
     },
     {
       "projection": "generated",
+      "source": "GONI-LAB",
+      "target": "GONI-PRINCIPLE-EVAL-INDEP-01",
+      "type": "refined_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-LAB",
+      "target": "GONI-PRINCIPLE-TRAJ-EVAL-01",
+      "type": "refined_by"
+    },
+    {
+      "projection": "generated",
       "source": "GONI-OBJECTION-16A9274BEE9C",
       "target": "RFC-0000-TEMPLATE",
       "type": "synthesized_by"
@@ -62609,9 +63265,333 @@
       "type": "synthesized_by"
     },
     {
+      "projection": "authored",
+      "source": "GONI-PRINCIPLE-EVAL-INDEP-01",
+      "target": "GONI-PRINCIPLE-VER-EVID-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-PRINCIPLE-EVAL-INDEP-01",
+      "target": "GONI-LAB",
+      "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-PRINCIPLE-EVAL-INDEP-01",
+      "target": "GONI-SYNTHESIS-AI-SYSTEMS-01",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-PRINCIPLE-GOV-LOOP-01",
+      "target": "REC-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-PRINCIPLE-GOV-LOOP-01",
+      "target": "TOOL-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-PRINCIPLE-GOV-LOOP-01",
+      "target": "DOCTRINE-DELEG-01",
+      "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-PRINCIPLE-GOV-LOOP-01",
+      "target": "GONI-SYNTHESIS-AI-SYSTEMS-01",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-PRINCIPLE-HARNESS-EVOL-01",
+      "target": "GONI-SYNTHESIS-DC66DA308CAE",
+      "type": "refines"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-PRINCIPLE-HARNESS-EVOL-01",
+      "target": "SYS-03",
+      "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-PRINCIPLE-HARNESS-EVOL-01",
+      "target": "GONI-SYNTHESIS-AI-SYSTEMS-01",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-PRINCIPLE-HARNESS-EVOL-01",
+      "target": "GONI-SYNTHESIS-FEEDBACK-SYMMETRY-01",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-PRINCIPLE-HET-INTEL-01",
+      "target": "MODEL-REG-01",
+      "type": "refines"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-PRINCIPLE-HET-INTEL-01",
+      "target": "GONI-THESIS-7BFB74017D50",
+      "type": "supports"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-PRINCIPLE-HET-INTEL-01",
+      "target": "GONI-SYNTHESIS-AI-SYSTEMS-01",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-PRINCIPLE-MEM-TAX-01",
+      "target": "GONI-SPEC-C0EC9D0B0A06",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-PRINCIPLE-MEM-TAX-01",
+      "target": "GONI-SYNTHESIS-D5A359AF7D66",
+      "type": "refines"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-PRINCIPLE-MODEL-ADAPTER-01",
+      "target": "GONI-SPEC-9D8A0A7F0F70",
+      "type": "refines"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-PRINCIPLE-MODEL-ADAPTER-01",
+      "target": "MODEL-REG-01",
+      "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-PRINCIPLE-MODEL-ADAPTER-01",
+      "target": "GONI-SYNTHESIS-AI-SYSTEMS-01",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-PRINCIPLE-SYS-CAP-01",
+      "target": "DOCTRINE-DELEG-01",
+      "type": "refines"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-PRINCIPLE-SYS-CAP-01",
+      "target": "GONI-THESIS-7BFB74017D50",
+      "type": "supports"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-PRINCIPLE-SYS-CAP-01",
+      "target": "GONI-SYNTHESIS-AI-SYSTEMS-01",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-PRINCIPLE-TOOL-ERG-01",
+      "target": "SPEC-TXN-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-PRINCIPLE-TOOL-ERG-01",
+      "target": "TOOL-01",
+      "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-PRINCIPLE-TOOL-ERG-01",
+      "target": "GONI-SYNTHESIS-AI-SYSTEMS-01",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-PRINCIPLE-TRAJ-ECON-01",
+      "target": "GONI-PRINCIPLE-TRAJ-EVAL-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-PRINCIPLE-TRAJ-ECON-01",
+      "target": "GONI-SYNTHESIS-44FB7018181A",
+      "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-PRINCIPLE-TRAJ-EVAL-01",
+      "target": "GONI-PRINCIPLE-TRAJ-ECON-01",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-PRINCIPLE-TRAJ-EVAL-01",
+      "target": "GONI-LAB",
+      "type": "refines"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-PRINCIPLE-TRAJ-EVAL-01",
+      "target": "GONI-SPEC-5211A9E877AD",
+      "type": "refines"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-PRINCIPLE-TRAJ-EVAL-01",
+      "target": "EVID-HARNESS-01",
+      "type": "supports"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-PRINCIPLE-TRAJ-EVAL-01",
+      "target": "GONI-SYNTHESIS-AI-SYSTEMS-01",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-PRINCIPLE-VER-EVID-01",
+      "target": "GONI-PRINCIPLE-EVAL-INDEP-01",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-PRINCIPLE-VER-EVID-01",
+      "target": "GONI-PRINCIPLE-VER-GAP-01",
+      "type": "refined_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-PRINCIPLE-VER-EVID-01",
+      "target": "GONI-PRINCIPLE-VER-REGEN-01",
+      "type": "refined_by"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-PRINCIPLE-VER-EVID-01",
+      "target": "GONI-SPEC-43169414D3A8",
+      "type": "refines"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-PRINCIPLE-VER-EVID-01",
+      "target": "GONI-SPEC-FD6CC59ECC08",
+      "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-PRINCIPLE-VER-EVID-01",
+      "target": "GONI-SYNTHESIS-AI-SYSTEMS-01",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-PRINCIPLE-VER-GAP-01",
+      "target": "GONI-PRINCIPLE-VER-EVID-01",
+      "type": "refines"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-PRINCIPLE-VER-GAP-01",
+      "target": "EVID-HARNESS-01",
+      "type": "supports"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-PRINCIPLE-VER-REGEN-01",
+      "target": "GONI-PRINCIPLE-VER-EVID-01",
+      "type": "refines"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-PRINCIPLE-VER-REGEN-01",
+      "target": "GONI-SPEC-FD6CC59ECC08",
+      "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-SPEC-43169414D3A8",
+      "target": "GONI-PRINCIPLE-VER-EVID-01",
+      "type": "refined_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-SPEC-5211A9E877AD",
+      "target": "GONI-SPEC-HANDOFF-01",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-SPEC-5211A9E877AD",
+      "target": "GONI-PRINCIPLE-TRAJ-EVAL-01",
+      "type": "refined_by"
+    },
+    {
       "projection": "generated",
       "source": "GONI-SPEC-75D0D2E5F296",
       "target": "GONI-SYNTHESIS-E3B321C24C67",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-SPEC-9D8A0A7F0F70",
+      "target": "GONI-PRINCIPLE-MODEL-ADAPTER-01",
+      "type": "refined_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-SPEC-C0EC9D0B0A06",
+      "target": "GONI-PRINCIPLE-MEM-TAX-01",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-SPEC-C0EC9D0B0A06",
+      "target": "GONI-SPEC-HANDOFF-01",
+      "type": "refined_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-SPEC-FD6CC59ECC08",
+      "target": "GONI-PRINCIPLE-VER-EVID-01",
+      "type": "refined_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-SPEC-FD6CC59ECC08",
+      "target": "GONI-PRINCIPLE-VER-REGEN-01",
+      "type": "refined_by"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SPEC-HANDOFF-01",
+      "target": "DELEG-INT-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SPEC-HANDOFF-01",
+      "target": "GONI-SPEC-5211A9E877AD",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SPEC-HANDOFF-01",
+      "target": "GONI-SPEC-C0EC9D0B0A06",
+      "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-SPEC-HANDOFF-01",
+      "target": "GONI-SYNTHESIS-AI-SYSTEMS-01",
       "type": "synthesized_by"
     },
     {
@@ -64291,6 +65271,12 @@
     {
       "projection": "generated",
       "source": "GONI-SYNTHESIS-44FB7018181A",
+      "target": "GONI-PRINCIPLE-TRAJ-ECON-01",
+      "type": "refined_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-SYNTHESIS-44FB7018181A",
       "target": "LLM-COUNCIL",
       "type": "synthesized_by"
     },
@@ -65657,6 +66643,66 @@
       "type": "synthesized_by"
     },
     {
+      "projection": "authored",
+      "source": "GONI-SYNTHESIS-AI-SYSTEMS-01",
+      "target": "GONI-PRINCIPLE-EVAL-INDEP-01",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SYNTHESIS-AI-SYSTEMS-01",
+      "target": "GONI-PRINCIPLE-GOV-LOOP-01",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SYNTHESIS-AI-SYSTEMS-01",
+      "target": "GONI-PRINCIPLE-HARNESS-EVOL-01",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SYNTHESIS-AI-SYSTEMS-01",
+      "target": "GONI-PRINCIPLE-HET-INTEL-01",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SYNTHESIS-AI-SYSTEMS-01",
+      "target": "GONI-PRINCIPLE-MODEL-ADAPTER-01",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SYNTHESIS-AI-SYSTEMS-01",
+      "target": "GONI-PRINCIPLE-SYS-CAP-01",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SYNTHESIS-AI-SYSTEMS-01",
+      "target": "GONI-PRINCIPLE-TOOL-ERG-01",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SYNTHESIS-AI-SYSTEMS-01",
+      "target": "GONI-PRINCIPLE-TRAJ-EVAL-01",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SYNTHESIS-AI-SYSTEMS-01",
+      "target": "GONI-PRINCIPLE-VER-EVID-01",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SYNTHESIS-AI-SYSTEMS-01",
+      "target": "GONI-SPEC-HANDOFF-01",
+      "type": "synthesizes"
+    },
+    {
       "projection": "generated",
       "source": "GONI-SYNTHESIS-B1D94E9EF74C",
       "target": "SYS-03",
@@ -66055,6 +67101,12 @@
     {
       "projection": "generated",
       "source": "GONI-SYNTHESIS-D5A359AF7D66",
+      "target": "GONI-PRINCIPLE-MEM-TAX-01",
+      "type": "refined_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-SYNTHESIS-D5A359AF7D66",
       "target": "REF-GONIOS-NEIGHBOR-01",
       "type": "synthesized_by"
     },
@@ -66111,6 +67163,12 @@
       "source": "GONI-SYNTHESIS-DC576E54071D",
       "target": "GONI-SYNTHESIS-0534045D4E2A",
       "type": "synthesized_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-SYNTHESIS-DC66DA308CAE",
+      "target": "GONI-PRINCIPLE-HARNESS-EVOL-01",
+      "type": "refined_by"
     },
     {
       "projection": "generated",
@@ -66551,6 +67609,18 @@
       "type": "synthesized_by"
     },
     {
+      "projection": "authored",
+      "source": "GONI-SYNTHESIS-FEEDBACK-SYMMETRY-01",
+      "target": "GONI-PRINCIPLE-HARNESS-EVOL-01",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SYNTHESIS-FEEDBACK-SYMMETRY-01",
+      "target": "SYS-03",
+      "type": "synthesizes"
+    },
+    {
       "projection": "generated",
       "source": "GONI-SYNTHESIS-FF1804B9EA23",
       "target": "GONI-SYNTHESIS-A0E6383F24D4",
@@ -66567,6 +67637,18 @@
       "source": "GONI-THESIS-468CFFD9870E",
       "target": "GONI-SYNTHESIS-0FE689876A05",
       "type": "synthesized_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-THESIS-7BFB74017D50",
+      "target": "GONI-PRINCIPLE-HET-INTEL-01",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-THESIS-7BFB74017D50",
+      "target": "GONI-PRINCIPLE-SYS-CAP-01",
+      "type": "supported_by"
     },
     {
       "projection": "authored",
@@ -66997,6 +68079,18 @@
     {
       "projection": "generated",
       "source": "MODEL-REG-01",
+      "target": "GONI-PRINCIPLE-HET-INTEL-01",
+      "type": "refined_by"
+    },
+    {
+      "projection": "generated",
+      "source": "MODEL-REG-01",
+      "target": "GONI-PRINCIPLE-MODEL-ADAPTER-01",
+      "type": "refined_by"
+    },
+    {
+      "projection": "generated",
+      "source": "MODEL-REG-01",
       "target": "GONI-EVIDENCE-2B6A30AD4862",
       "type": "supported_by"
     },
@@ -67341,6 +68435,12 @@
       "source": "REC-00",
       "target": "GONI-SYNTHESIS-B5E3F8C4862B",
       "type": "synthesizes"
+    },
+    {
+      "projection": "generated",
+      "source": "REC-01",
+      "target": "GONI-PRINCIPLE-GOV-LOOP-01",
+      "type": "depended_on_by"
     },
     {
       "projection": "generated",
@@ -67703,6 +68803,12 @@
       "type": "synthesizes"
     },
     {
+      "projection": "generated",
+      "source": "SPEC-TXN-01",
+      "target": "GONI-PRINCIPLE-TOOL-ERG-01",
+      "type": "depended_on_by"
+    },
+    {
       "projection": "authored",
       "source": "SURF-00",
       "target": "GONI-SYNTHESIS-59D0C243100A",
@@ -67915,6 +69021,12 @@
     {
       "projection": "generated",
       "source": "SYS-03",
+      "target": "GONI-PRINCIPLE-HARNESS-EVOL-01",
+      "type": "refined_by"
+    },
+    {
+      "projection": "generated",
+      "source": "SYS-03",
       "target": "GONI-EVIDENCE-23EFDA500D02",
       "type": "supported_by"
     },
@@ -67947,6 +69059,12 @@
       "source": "SYS-03",
       "target": "GONI-EVIDENCE-C0A236FAD0BD",
       "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "SYS-03",
+      "target": "GONI-SYNTHESIS-FEEDBACK-SYMMETRY-01",
+      "type": "synthesized_by"
     },
     {
       "projection": "authored",
@@ -68061,6 +69179,18 @@
       "source": "SYS-04",
       "target": "GONI-SYNTHESIS-F3DC36FB8C4B",
       "type": "synthesizes"
+    },
+    {
+      "projection": "generated",
+      "source": "TOOL-01",
+      "target": "GONI-PRINCIPLE-GOV-LOOP-01",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
+      "source": "TOOL-01",
+      "target": "GONI-PRINCIPLE-TOOL-ERG-01",
+      "type": "refined_by"
     },
     {
       "projection": "generated",
