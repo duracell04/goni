@@ -27,4 +27,4 @@ Unresolved:
 - <question or none>
 ```
 
-Topic commits contain one coherent concern. Integration uses two-parent `--no-ff` merge commits so topic history and rationale remain visible. Integration merges are graph/provenance wrappers rather than new decision units: they require a non-empty integration summary, while the substantive parent commits retain the full anatomy above. Octopus merges are rejected. Historical commits are never rewritten. For non-merge decision commits, the strict validator compares the `Files` section with the commit's actual first-parent diff.
+Topic commits contain one coherent concern. Integration uses two-parent `--no-ff` merge commits so topic history and rationale remain visible. A merge is an integration event, not a new decision unit. Integration merges are graph/provenance wrappers rather than new decision units: they require a non-empty integration summary, while the substantive parent commits retain the full anatomy above. Octopus merges are rejected. Historical commits are never rewritten. For non-merge decision commits, the strict validator compares the `Files` section with the commit's actual first-parent diff.
