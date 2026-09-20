@@ -1,6 +1,6 @@
 # Commit standard
 
-Repository history is architectural provenance. Every non-baseline commit in the reconstruction must be reviewable and use this message anatomy:
+Repository history is architectural provenance. Every non-baseline **decision commit** in the reconstruction must be reviewable and use this message anatomy:
 
 ```text
 kg(<scope>): <imperative summary>
@@ -27,4 +27,4 @@ Unresolved:
 - <question or none>
 ```
 
-Topic commits contain one coherent concern. Integration uses `--no-ff` merge commits so topic history and rationale remain visible. Historical commits are never rewritten. The strict validator compares the `Files` section with the commit's actual first-parent diff.
+Topic commits contain one coherent concern. Integration uses two-parent `--no-ff` merge commits so topic history and rationale remain visible. Integration merges are graph/provenance wrappers rather than new decision units: they require a non-empty integration summary, while the substantive parent commits retain the full anatomy above. Octopus merges are rejected. Historical commits are never rewritten. For non-merge decision commits, the strict validator compares the `Files` section with the commit's actual first-parent diff.
