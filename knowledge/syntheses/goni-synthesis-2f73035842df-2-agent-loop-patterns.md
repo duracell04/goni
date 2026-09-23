@@ -8,8 +8,11 @@ proposition: '**Shunyu Yao** Why track: ReAct-style reasoning/acting loops and r
 domains:
 - repository
 aliases: []
-relations: []
-sources: []
+relations:
+- type: synthesized_by
+  target: AGENT-ONTOLOGY-01
+sources:
+- SRC-YAO2023-REACT
 artifacts: []
 uncertainty: Preserved from the legacy draft without status promotion or newly inferred evidence strength.
 legacy:
