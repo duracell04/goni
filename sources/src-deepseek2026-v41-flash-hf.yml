@@ -3,7 +3,7 @@ title: DeepSeek-V4.1-Flash model card and technical-report release material
 kind: web
 citation: https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash
 url: https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash
-accessed: 2026-09-18
+accessed: "2026-09-18"
 notes: >-
   First-party DeepSeek release material. Reported architecture and efficiency
   figures are vendor/author claims unless independently reproduced. The model
