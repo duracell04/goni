@@ -4,7 +4,7 @@ title: 'Source claim: agent accountability requires auditability'
 type: evidence
 status: draft
 implementation_state: not_applicable
-proposition: Nian et al. distinguish accountability, auditability, and auditing and define five auditability dimensions: action recoverability, lifecycle coverage, policy checkability, responsibility attribution, and evidence integrity.
+proposition: 'Nian et al. distinguish accountability, auditability, and auditing and define five auditability dimensions: action recoverability, lifecycle coverage, policy checkability, responsibility attribution, and evidence integrity.'
 domains:
 - research
 - audit
