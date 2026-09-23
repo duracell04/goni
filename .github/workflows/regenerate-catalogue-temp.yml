@@ -1,0 +1,78 @@
+name: Temporary catalogue regeneration
+
+on:
+  push:
+    branches:
+      - research/probabilistic-decision-control-2026-09-23
+
+permissions:
+  contents: write
+
+jobs:
+  regenerate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: tooling/requirements.txt
+
+      - name: Install deterministic tooling
+        run: python -m pip install -r tooling/requirements.txt
+
+      - name: Build catalogue
+        run: python tooling/build_catalogue.py --edition-sha "$GITHUB_SHA"
+
+      - name: Validate canonical graph
+        run: python tooling/validate.py --strict --baseline pre-knowledge-graph-2026-08-03 --head "$GITHUB_SHA"
+
+      - name: Commit generated catalogue when changed
+        shell: bash
+        run: |
+          if git diff --quiet -- maps/catalogue.json; then
+            echo "Catalogue already current."
+            exit 0
+          fi
+
+          git config user.name "goni-catalogue-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add maps/catalogue.json
+
+          cat > /tmp/commit-message.txt <<'EOF'
+          kg(catalogue): regenerate probabilistic decision-control projection
+
+          Intent:
+          Commit the deterministic catalogue generated from the current canonical probabilistic decision-control knowledge graph.
+
+          Rationale:
+          Canonical Markdown and source records are authoritative, while maps/catalogue.json is the repository-required deterministic machine projection. Generation is performed by tooling/build_catalogue.py on GitHub's runner to avoid transport-dependent reconstruction.
+
+          Status:
+          implemented-and-tested
+
+          Contracts:
+          - maps/catalogue.json
+          - tooling/build_catalogue.py
+
+          Files:
+          - maps/catalogue.json
+
+          Evidence:
+          - python tooling/build_catalogue.py --edition-sha $GITHUB_SHA
+          - python tooling/validate.py --strict --baseline pre-knowledge-graph-2026-08-03 --head $GITHUB_SHA
+
+          Unresolved:
+          - none
+          EOF
+
+          sed -i 's/^          //' /tmp/commit-message.txt
+          git commit -F /tmp/commit-message.txt
+          git push origin HEAD:"${{ github.ref_name }}"
