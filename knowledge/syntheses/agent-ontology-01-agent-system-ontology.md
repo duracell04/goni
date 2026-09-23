@@ -15,6 +15,8 @@ aliases:
 relations:
 - type: refines
   target: GONI-THESIS-E1FB8B4F7772
+- type: synthesizes
+  target: GONI-SYNTHESIS-2F73035842DF
 sources:
 - SRC-YAO2023-REACT
 - SRC-SCHICK2023-TOOLFORMER
