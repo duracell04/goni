@@ -1,0 +1,7 @@
+id: SRC-ZHANG2026-AGENTIC-RL
+title: zhang2026-agentic-rl
+kind: academic
+citation: https://arxiv.org/abs/2509.02547
+notes: The survey contrasts single-step LLM reinforcement learning with temporally extended, partially observable agentic reinforcement learning and uses a POMDP framing for agent-environment interaction.
+url: https://arxiv.org/abs/2509.02547
+accessed: "2026-09-23"

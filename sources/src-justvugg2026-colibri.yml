@@ -1,0 +1,7 @@
+id: SRC-JUSTVUGG2026-COLIBRI
+title: justvugg2026-colibri
+kind: repository
+citation: https://github.com/JustVugg/colibri/blob/main/README.md
+url: https://github.com/JustVugg/colibri/blob/main/README.md
+accessed: "2026-09-16"
+notes: Colibrì presents an MoE inference runtime that treats VRAM, RAM, and storage as a managed hierarchy, using routing heat, hot-store placement, caching, and prefetching while aiming to preserve model semantics across residency tiers. It is engineering evidence for placement and staging patterns, not academic proof of GONI semantic-memory or authority claims.

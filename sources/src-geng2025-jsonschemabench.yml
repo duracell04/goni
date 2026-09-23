@@ -1,0 +1,7 @@
+id: SRC-GENG2025-JSONSCHEMABENCH
+title: "Generating Structured Outputs from Language Models: Benchmark and Studies"
+kind: academic
+citation: "Geng, S., Cooper, H., Moskal, M., Jenkins, S., Berman, J., Ranchin, N., West, R., Horvitz, E., & Nori, H. (2025). Generating Structured Outputs from Language Models: Benchmark and Studies. arXiv:2501.10868."
+url: https://arxiv.org/abs/2501.10868
+accessed: "2026-09-23"
+notes: Introduces JSONSchemaBench with 10,000 real-world JSON schemas and evaluates constrained-decoding systems on compliance, coverage, efficiency, and output quality. Relevant to Goni structured tool-call generation and backend evaluation.

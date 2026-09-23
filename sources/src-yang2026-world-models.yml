@@ -1,0 +1,7 @@
+id: SRC-YANG2026-WORLD-MODELS
+title: yang2026-world-models
+kind: academic
+citation: https://arxiv.org/abs/2602.00785
+notes: Yang argues for world models as intermediaries that model dynamics, rewards, and task distributions so agents can learn and plan when real-world action execution is expensive.
+url: https://arxiv.org/abs/2602.00785
+accessed: "2026-09-23"

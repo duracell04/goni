@@ -4,11 +4,13 @@ title: 2.6 WorkOrder
 type: specification
 status: draft
 implementation_state: specified_only
-proposition: 'Every executable turn MUST compile a WorkOrder with: goal done_contract inputs constraints assumptions plan tools risk_class output_schema work_quality_mode For audit_grade work, the Work Order MUST additionally carry: evidence_scope: sources, refs, paths, time windows, artifacts, and explicit exclusions.'
+proposition: 'Every executable turn MUST compile a WorkOrder with: goal done_contract inputs constraints assumptions plan tools tool_surface_ref risk_class output_schema work_quality_mode. The tool_surface_ref identifies the bounded model-visible projection compiled under TOOL-SURFACE-01; kernel authority remains independent. For audit_grade work, the Work Order MUST additionally carry an explicit evidence scope.'
 domains:
 - specs
 aliases: []
-relations: []
+relations:
+- type: depends_on
+  target: TOOL-SURFACE-01
 sources: []
 artifacts: []
 uncertainty: Preserved from the legacy draft without status promotion or newly inferred evidence strength.
@@ -33,6 +35,7 @@ Every executable turn MUST compile a `WorkOrder` with:
 - `assumptions`
 - `plan`
 - `tools`
+- `tool_surface_ref`
 - `risk_class`
 - `output_schema`
 - `work_quality_mode`
@@ -49,6 +52,6 @@ For `audit_grade` work, the Work Order MUST additionally carry:
   loop.
 - `audit_sticky`: whether audit-grade mode persists across follow-up turns.
 
-The Work Order is the canonical pre-execution object. Downstream components may
-store summarized or referenced forms, but the logical object MUST preserve all
-of the fields above.
+The Work Order is the canonical pre-execution object. `tools` records the task-level tool semantics or eligible capability set; `tool_surface_ref` binds the exact model-visible projection used for the current execution scaffold under `TOOL-SURFACE-01`. Tool visibility is not execution authority.
+
+Downstream components may store summarized or referenced forms, but the logical object MUST preserve all of the fields above.

@@ -9,7 +9,8 @@ domains:
 - repository
 aliases: []
 relations: []
-sources: []
+sources:
+- SRC-MEI2025-CONTEXT-ENGINEERING
 artifacts: []
 uncertainty: Preserved from the legacy draft without status promotion or newly inferred evidence strength.
 legacy:
