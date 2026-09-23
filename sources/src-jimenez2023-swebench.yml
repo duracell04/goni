@@ -1,0 +1,7 @@
+id: SRC-JIMENEZ2023-SWEBENCH
+title: jimenez2023-swebench
+kind: academic
+citation: https://arxiv.org/abs/2310.06770
+notes: SWE-bench evaluates whether language-model systems can resolve real GitHub issues by modifying codebases, with success determined by executable repository tests rather than model self-assessment.
+url: https://arxiv.org/abs/2310.06770
+accessed: 2026-09-23

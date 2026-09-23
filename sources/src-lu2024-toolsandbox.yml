@@ -1,0 +1,7 @@
+id: SRC-LU2024-TOOLSANDBOX
+title: lu2024-toolsandbox
+kind: academic
+citation: https://arxiv.org/abs/2408.04682
+notes: ToolSandbox evaluates stateful conversational tool use with implicit state dependencies, insufficient-information cases, and milestone checks across arbitrary trajectories.
+url: https://arxiv.org/abs/2408.04682
+accessed: 2026-09-23
