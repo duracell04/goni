@@ -1,0 +1,7 @@
+id: SRC-LANGCHAIN2026-JEV-HARNESS
+title: langchain2026-jev-harness
+kind: web
+citation: "LangChain. Building a Harness with Jev. 17 September 2026."
+url: https://www.langchain.com/blog/building-a-harness-with-jev
+accessed: 2026-09-23
+notes: "Third-party framework article showing Jev used for agent-loop decisions and structured evaluation; repeats TypeSafe-reported headline speed/cost claims rather than independently reproducing the full vendor benchmark."
