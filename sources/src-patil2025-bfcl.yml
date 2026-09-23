@@ -1,0 +1,7 @@
+id: SRC-PATIL2025-BFCL
+title: "The Berkeley Function Calling Leaderboard (BFCL): From Tool Use to Agentic Evaluation of Large Language Models"
+kind: academic
+citation: "Patil, S. G., Mao, H., Yan, F., Ji, C. C.-J., Suresh, V., Stoica, I., & Gonzalez, J. E. (2025). The Berkeley Function Calling Leaderboard (BFCL): From Tool Use to Agentic Evaluation of Large Language Models. Proceedings of the 42nd International Conference on Machine Learning, PMLR 267, 48371-48392."
+url: https://proceedings.mlr.press/v267/patil25a.html
+accessed: "2026-09-23"
+notes: BFCL evaluates function calling as a distinct capability, including serial and parallel calls, abstention, and stateful multi-step agentic behavior. It is useful as an external reference for Goni tool-call evaluation, not as a substitute for deployment-specific local evaluation.
