@@ -17,6 +17,14 @@
       "node": "AGENT-STORE-01"
     },
     {
+      "alias": "BOUNDED-DECISION-MODEL",
+      "node": "DECISION-MODEL-01"
+    },
+    {
+      "alias": "CALIBRATION-CONTRACT",
+      "node": "CAL-01"
+    },
+    {
       "alias": "CONTEXT-GRAVITY-GRAPH",
       "node": "CGG-01"
     },
@@ -133,6 +141,10 @@
       "node": "EVID-SEC-03"
     },
     {
+      "alias": "EXPECTED-LOSS-CONTROL",
+      "node": "LOSS-01"
+    },
+    {
       "alias": "GONI-COMPETITIVE-LANDSCAPE",
       "node": "MARKET-LANDSCAPE-01"
     },
@@ -161,8 +173,20 @@
       "node": "NET-01"
     },
     {
+      "alias": "PROBABILISTIC-DECISION-CONTROL-SYNTHESIS",
+      "node": "GONI-SYNTHESIS-PROBABILISTIC-DECISION-CONTROL-01"
+    },
+    {
       "alias": "PRODUCT-SURFACES",
       "node": "SURF-00"
+    },
+    {
+      "alias": "RECALIBRATION-LIFECYCLE",
+      "node": "CAL-DRIFT-01"
+    },
+    {
+      "alias": "RISK-COVERAGE-CONTRACT",
+      "node": "SELECTIVE-01"
     },
     {
       "alias": "SCHEDULER-AND-INTERRUPTS",
@@ -211,6 +235,10 @@
     {
       "alias": "TOOL-CAPABILITY-API",
       "node": "TOOL-01"
+    },
+    {
+      "alias": "UNCERTAINTY-EVIDENCE",
+      "node": "CONFIDENCE-01"
     },
     {
       "alias": "VISION-MEMORY-ACTUATION-BOUNDARIES",
@@ -268,6 +296,7 @@
         "GONI-PRINCIPLE-AF21F6040FDC",
         "GONI-PRINCIPLE-FCA3E2C7A10C",
         "GONI-PRINCIPLE-FD9D88AD1223",
+        "GONI-PRINCIPLE-GOV-LOOP-01",
         "GONI-PROPOSAL-0B80EB2A84E3",
         "GONI-PROPOSAL-0E0E7B2A27DB",
         "GONI-PROPOSAL-13912DD8EBA6",
@@ -384,7 +413,15 @@
         "GONI-SYNTHESIS-CC4921DED1BB",
         "GONI-SYNTHESIS-DF627E719B9D",
         "GONI-SYNTHESIS-E2FB2167D274",
+        "GONI-SYNTHESIS-PROBABILISTIC-DECISION-CONTROL-01",
         "SPEC-KERN-01"
+      ],
+      "assurance": [
+        "GONI-EVIDENCE-STRUCTURED-01",
+        "GONI-PRINCIPLE-VALIDITY-CORRECTNESS-01"
+      ],
+      "audit": [
+        "CONFIDENCE-01"
       ],
       "billing": [
         "BILL-01",
@@ -500,6 +537,21 @@
         "SCHEMA-MVP-01",
         "SPINE-01",
         "ZCO-01"
+      ],
+      "evaluation": [
+        "CAL-01",
+        "CAL-DRIFT-01",
+        "CONFIDENCE-01",
+        "GONI-EVIDENCE-CAL-GUO-01",
+        "GONI-EVIDENCE-CAL-SCORING-01",
+        "GONI-EVIDENCE-DECISION-THEORY-01",
+        "GONI-EVIDENCE-DRIFT-01",
+        "GONI-EVIDENCE-SELECTIVE-01",
+        "GONI-EXPERIMENT-DECISION-LAYER-01",
+        "GONI-PRINCIPLE-TRAJ-ECON-01",
+        "GONI-SYNTHESIS-PROBABILISTIC-DECISION-CONTROL-01",
+        "LOSS-01",
+        "SELECTIVE-01"
       ],
       "hardware": [
         "ADR-INDEX-HW",
@@ -689,6 +741,7 @@
         "GONI-PRINCIPLE-8C0DB401EE76",
         "GONI-PRINCIPLE-9062425CD490",
         "GONI-PRINCIPLE-9249B8613105",
+        "GONI-PRINCIPLE-GOV-LOOP-01",
         "GONI-SPEC-06EEDDD84AB3",
         "GONI-SPEC-0C02110BCFDB",
         "GONI-SPEC-14AA0EDAFDD4",
@@ -758,15 +811,20 @@
         "GONI-SYNTHESIS-BD7FD2CC38AF",
         "GONI-SYNTHESIS-CC4921DED1BB",
         "GONI-SYNTHESIS-DF627E719B9D",
+        "GONI-SYNTHESIS-PROBABILISTIC-DECISION-CONTROL-01",
         "SPEC-ENF-01",
         "SPEC-KERN-01",
         "SPEC-POL-01",
         "SPEC-TXN-01"
       ],
+      "learning": [
+        "CAL-DRIFT-01"
+      ],
       "market": [
         "AI-MEDIA-PROVENANCE",
         "FIRST-PARTY-LLM-CHATS",
         "GONI-DECISION-1A750217A0DF",
+        "GONI-EVIDENCE-JEV-20260923",
         "GONI-EXPERIMENT-5EC52FDC4B47",
         "GONI-GLOSSARY-999007EFF178",
         "GONI-OBJECTION-642AC4065922",
@@ -898,6 +956,7 @@
         "GONI-SYNTHESIS-C112DC984083",
         "GONI-SYNTHESIS-C44C5D0BB095",
         "GONI-SYNTHESIS-DA8AA9ACE2AE",
+        "GONI-SYNTHESIS-DECISION-MODEL-LANDSCAPE-20260923",
         "GONI-SYNTHESIS-EB863E9C14D2",
         "GONI-SYNTHESIS-F50543516194",
         "GONI-SYNTHESIS-FD8D944B035F",
@@ -951,6 +1010,24 @@
         "MEM-RETR-01",
         "MEMORY-ARCHITECTURE"
       ],
+      "models": [
+        "CAL-01",
+        "CAL-DRIFT-01",
+        "CONFIDENCE-01",
+        "DECISION-MODEL-01",
+        "GONI-EVIDENCE-CAL-GUO-01",
+        "GONI-EVIDENCE-DRIFT-01",
+        "GONI-EVIDENCE-JEV-20260923",
+        "GONI-EVIDENCE-SELECTIVE-01",
+        "GONI-EVIDENCE-STRUCTURED-01",
+        "GONI-EXPERIMENT-DECISION-LAYER-01",
+        "GONI-PRINCIPLE-HET-INTEL-01",
+        "GONI-PRINCIPLE-TRAJ-ECON-01",
+        "GONI-PRINCIPLE-VALIDITY-CORRECTNESS-01",
+        "GONI-SYNTHESIS-DECISION-MODEL-LANDSCAPE-20260923",
+        "GONI-SYNTHESIS-PROBABILISTIC-DECISION-CONTROL-01",
+        "SELECTIVE-01"
+      ],
       "network": [
         "GONI-IMAP-B21D85F4146E",
         "GONI-OBJECTION-387E7E37F44E",
@@ -978,9 +1055,13 @@
         "GONI-SPEC-FC72CAAED1BC",
         "NET-01"
       ],
+      "performance": [
+        "GONI-PRINCIPLE-TRAJ-ECON-01"
+      ],
       "policy": [
         "EVID-AUTON-03",
         "GONI-DECISION-5346D37FC858",
+        "GONI-EVIDENCE-DECISION-THEORY-01",
         "GONI-EXPERIMENT-223625F5043D",
         "GONI-EXPERIMENT-9ABEBF7FD322",
         "GONI-EXPERIMENT-B68618B9E97A",
@@ -1000,6 +1081,7 @@
         "GONI-SPEC-E51871F72C7C",
         "GONI-SPEC-F23D7DFBD81D",
         "GONI-SPEC-F58CCAA78BFD",
+        "LOSS-01",
         "SPEC-POL-01"
       ],
       "product": [
@@ -1658,6 +1740,8 @@
         "GONI-EVIDENCE-C6C7F17766D8",
         "GONI-EVIDENCE-C8B1B409E3E4",
         "GONI-EVIDENCE-CAAF62683B58",
+        "GONI-EVIDENCE-CAL-GUO-01",
+        "GONI-EVIDENCE-CAL-SCORING-01",
         "GONI-EVIDENCE-CBC1E82C1776",
         "GONI-EVIDENCE-CCFEBA63D6EB",
         "GONI-EVIDENCE-CD12704E4116",
@@ -1667,6 +1751,8 @@
         "GONI-EVIDENCE-D7AF89CD48E0",
         "GONI-EVIDENCE-DAB828C1B80C",
         "GONI-EVIDENCE-DE30FF49B389",
+        "GONI-EVIDENCE-DECISION-THEORY-01",
+        "GONI-EVIDENCE-DRIFT-01",
         "GONI-EVIDENCE-E0D25AE15AB0",
         "GONI-EVIDENCE-E3F3DC159250",
         "GONI-EVIDENCE-E62201B777D3",
@@ -1679,6 +1765,9 @@
         "GONI-EVIDENCE-F74B86E725FB",
         "GONI-EVIDENCE-FAA487C54065",
         "GONI-EVIDENCE-FBA1A33CF61A",
+        "GONI-EVIDENCE-JEV-20260923",
+        "GONI-EVIDENCE-SELECTIVE-01",
+        "GONI-EVIDENCE-STRUCTURED-01",
         "GONI-EXPERIMENT-0A1F9BC4014A",
         "GONI-EXPERIMENT-7DE7B307CB98",
         "GONI-SYNTHESIS-0382450FEF34",
@@ -1689,8 +1778,14 @@
         "GONI-SYNTHESIS-9767C3468D90",
         "GONI-SYNTHESIS-D3554320FEBD",
         "GONI-SYNTHESIS-D5A359AF7D66",
+        "GONI-SYNTHESIS-DECISION-MODEL-LANDSCAPE-20260923",
         "GONI-SYNTHESIS-F0626F7EFE2C",
         "REF-GONIOS-NEIGHBOR-01"
+      ],
+      "routing": [
+        "GONI-EXPERIMENT-DECISION-LAYER-01",
+        "LOSS-01",
+        "SELECTIVE-01"
       ],
       "security": [
         "GONI-DECISION-9AF49466170D",
@@ -2050,14 +2145,18 @@
         "BILL-01",
         "BILL-02",
         "BOUND-01",
+        "CAL-01",
+        "CAL-DRIFT-01",
         "CDC-01",
         "CGG-01",
+        "CONFIDENCE-01",
         "CRDT-AUDIT-01",
         "CRDT-DECISIONS-01",
         "CRDT-NOTES-01",
         "CRDT-PREFS-01",
         "CRDT-TASKS-01",
         "DAT-01",
+        "DECISION-MODEL-01",
         "DELEG-01",
         "DELEG-INT-01",
         "GONI-DECISION-0A6C9EA70AEE",
@@ -2464,6 +2563,7 @@
         "GONI-SPEC-FF2D2F8D0491",
         "ITCR-01",
         "JOB-01",
+        "LOSS-01",
         "LSC-01",
         "MEM-RETR-01",
         "METER-01",
@@ -2474,6 +2574,7 @@
         "ROBOT-01",
         "SANDBOX-01",
         "SCHED-01",
+        "SELECTIVE-01",
         "SPEC-ENF-01",
         "SPEC-INDEX-00",
         "SPEC-KERN-01",
@@ -2485,6 +2586,7 @@
         "VIS-01"
       ],
       "system": [
+        "DECISION-MODEL-01",
         "GONI-DECISION-9AF49466170D",
         "GONI-EXPERIMENT-0A1F9BC4014A",
         "GONI-EXPERIMENT-5ADAC18F09F9",
@@ -2508,6 +2610,9 @@
         "GONI-PRINCIPLE-80DD85BB01A0",
         "GONI-PRINCIPLE-9062425CD490",
         "GONI-PRINCIPLE-9A3BCC1A464F",
+        "GONI-PRINCIPLE-GOV-LOOP-01",
+        "GONI-PRINCIPLE-HET-INTEL-01",
+        "GONI-PRINCIPLE-VALIDITY-CORRECTNESS-01",
         "GONI-SYNTHESIS-01B0D71A3FA3",
         "GONI-SYNTHESIS-02674F890E73",
         "GONI-SYNTHESIS-0EBA46BE828D",
@@ -2581,6 +2686,7 @@
         "GONI-SYNTHESIS-F3DC36FB8C4B",
         "GONI-SYNTHESIS-FF1804B9EA23",
         "GONI-SYNTHESIS-FFFD0BDE80BE",
+        "GONI-SYNTHESIS-PROBABILISTIC-DECISION-CONTROL-01",
         "LSKR-01",
         "SOV-AUDIT-01",
         "SYS-00",
@@ -2623,9 +2729,12 @@
         "BOM-V1-APU-NODE",
         "BOM-V2-FRAMEWORK-395-128GB",
         "BOUND-01",
+        "CAL-01",
+        "CAL-DRIFT-01",
         "CDC-01",
         "CGG-01",
         "CI-VALIDATION-01",
+        "CONFIDENCE-01",
         "CRDT-AUDIT-01",
         "CRDT-DECISIONS-01",
         "CRDT-NOTES-01",
@@ -2633,6 +2742,7 @@
         "CRDT-TASKS-01",
         "DASHBOARD-CONCEPTS",
         "DAT-01",
+        "DECISION-MODEL-01",
         "DELEG-01",
         "DELEG-INT-01",
         "DOCTRINE-DELEG-01",
@@ -2814,6 +2924,8 @@
         "GONI-EVIDENCE-C6C7F17766D8",
         "GONI-EVIDENCE-C8B1B409E3E4",
         "GONI-EVIDENCE-CAAF62683B58",
+        "GONI-EVIDENCE-CAL-GUO-01",
+        "GONI-EVIDENCE-CAL-SCORING-01",
         "GONI-EVIDENCE-CBC1E82C1776",
         "GONI-EVIDENCE-CCFEBA63D6EB",
         "GONI-EVIDENCE-CD12704E4116",
@@ -2823,6 +2935,8 @@
         "GONI-EVIDENCE-D7AF89CD48E0",
         "GONI-EVIDENCE-DAB828C1B80C",
         "GONI-EVIDENCE-DE30FF49B389",
+        "GONI-EVIDENCE-DECISION-THEORY-01",
+        "GONI-EVIDENCE-DRIFT-01",
         "GONI-EVIDENCE-E0D25AE15AB0",
         "GONI-EVIDENCE-E3F3DC159250",
         "GONI-EVIDENCE-E62201B777D3",
@@ -2835,6 +2949,9 @@
         "GONI-EVIDENCE-F74B86E725FB",
         "GONI-EVIDENCE-FAA487C54065",
         "GONI-EVIDENCE-FBA1A33CF61A",
+        "GONI-EVIDENCE-JEV-20260923",
+        "GONI-EVIDENCE-SELECTIVE-01",
+        "GONI-EVIDENCE-STRUCTURED-01",
         "GONI-EXPERIMENT-0002BABA3DAF",
         "GONI-EXPERIMENT-00E7C79F4A95",
         "GONI-EXPERIMENT-04D89CD2474E",
@@ -2926,6 +3043,7 @@
         "GONI-EXPERIMENT-D6763371BDE8",
         "GONI-EXPERIMENT-D8AFFA4F3813",
         "GONI-EXPERIMENT-D92B998E4E97",
+        "GONI-EXPERIMENT-DECISION-LAYER-01",
         "GONI-EXPERIMENT-DF672487E92F",
         "GONI-EXPERIMENT-E132DBE64F0F",
         "GONI-EXPERIMENT-E1EA330B8EEA",
@@ -3381,6 +3499,10 @@
         "GONI-PRINCIPLE-F53185B15CF9",
         "GONI-PRINCIPLE-FCA3E2C7A10C",
         "GONI-PRINCIPLE-FD9D88AD1223",
+        "GONI-PRINCIPLE-GOV-LOOP-01",
+        "GONI-PRINCIPLE-HET-INTEL-01",
+        "GONI-PRINCIPLE-TRAJ-ECON-01",
+        "GONI-PRINCIPLE-VALIDITY-CORRECTNESS-01",
         "GONI-PROPOSAL-05B21F15B3C6",
         "GONI-PROPOSAL-095C86A56DD4",
         "GONI-PROPOSAL-09EB7E4D771F",
@@ -4394,6 +4516,7 @@
         "GONI-SYNTHESIS-DD9F0D4AD1CA",
         "GONI-SYNTHESIS-DDBEE22569C3",
         "GONI-SYNTHESIS-DE368186E963",
+        "GONI-SYNTHESIS-DECISION-MODEL-LANDSCAPE-20260923",
         "GONI-SYNTHESIS-DEDEB088F913",
         "GONI-SYNTHESIS-DF48E13A9D35",
         "GONI-SYNTHESIS-DF627E719B9D",
@@ -4454,6 +4577,7 @@
         "GONI-SYNTHESIS-FEC452FE3082",
         "GONI-SYNTHESIS-FF1804B9EA23",
         "GONI-SYNTHESIS-FFFD0BDE80BE",
+        "GONI-SYNTHESIS-PROBABILISTIC-DECISION-CONTROL-01",
         "GONI-THESIS-3234CF1EA4B0",
         "GONI-THESIS-32FBF8431A3E",
         "GONI-THESIS-349EB2E79136",
@@ -4482,6 +4606,7 @@
         "LLM-COUNCIL",
         "LLM-RUNTIME",
         "LOCAL-MODELS",
+        "LOSS-01",
         "LSC-01",
         "LSKR-01",
         "MARKET-LANDSCAPE-01",
@@ -4528,6 +4653,7 @@
         "SEC-00",
         "SEC-10",
         "SEC-20",
+        "SELECTIVE-01",
         "SOV-AUDIT-01",
         "SPEC-00",
         "SPEC-ENF-01",
@@ -4713,6 +4839,8 @@
         "GONI-EVIDENCE-C6C7F17766D8",
         "GONI-EVIDENCE-C8B1B409E3E4",
         "GONI-EVIDENCE-CAAF62683B58",
+        "GONI-EVIDENCE-CAL-GUO-01",
+        "GONI-EVIDENCE-CAL-SCORING-01",
         "GONI-EVIDENCE-CBC1E82C1776",
         "GONI-EVIDENCE-CCFEBA63D6EB",
         "GONI-EVIDENCE-CD12704E4116",
@@ -4722,6 +4850,8 @@
         "GONI-EVIDENCE-D7AF89CD48E0",
         "GONI-EVIDENCE-DAB828C1B80C",
         "GONI-EVIDENCE-DE30FF49B389",
+        "GONI-EVIDENCE-DECISION-THEORY-01",
+        "GONI-EVIDENCE-DRIFT-01",
         "GONI-EVIDENCE-E0D25AE15AB0",
         "GONI-EVIDENCE-E3F3DC159250",
         "GONI-EVIDENCE-E62201B777D3",
@@ -4733,7 +4863,10 @@
         "GONI-EVIDENCE-F548C655D101",
         "GONI-EVIDENCE-F74B86E725FB",
         "GONI-EVIDENCE-FAA487C54065",
-        "GONI-EVIDENCE-FBA1A33CF61A"
+        "GONI-EVIDENCE-FBA1A33CF61A",
+        "GONI-EVIDENCE-JEV-20260923",
+        "GONI-EVIDENCE-SELECTIVE-01",
+        "GONI-EVIDENCE-STRUCTURED-01"
       ],
       "experiment": [
         "BOM-NOTES",
@@ -4854,6 +4987,7 @@
         "GONI-EXPERIMENT-D6763371BDE8",
         "GONI-EXPERIMENT-D8AFFA4F3813",
         "GONI-EXPERIMENT-D92B998E4E97",
+        "GONI-EXPERIMENT-DECISION-LAYER-01",
         "GONI-EXPERIMENT-DF672487E92F",
         "GONI-EXPERIMENT-E132DBE64F0F",
         "GONI-EXPERIMENT-E1EA330B8EEA",
@@ -5337,7 +5471,11 @@
         "GONI-PRINCIPLE-E216CB231421",
         "GONI-PRINCIPLE-F53185B15CF9",
         "GONI-PRINCIPLE-FCA3E2C7A10C",
-        "GONI-PRINCIPLE-FD9D88AD1223"
+        "GONI-PRINCIPLE-FD9D88AD1223",
+        "GONI-PRINCIPLE-GOV-LOOP-01",
+        "GONI-PRINCIPLE-HET-INTEL-01",
+        "GONI-PRINCIPLE-TRAJ-ECON-01",
+        "GONI-PRINCIPLE-VALIDITY-CORRECTNESS-01"
       ],
       "proposal": [
         "AI-MEDIA-PROVENANCE",
@@ -5516,13 +5654,17 @@
         "BILL-01",
         "BILL-02",
         "BOUND-01",
+        "CAL-01",
+        "CAL-DRIFT-01",
         "CDC-01",
         "CGG-01",
+        "CONFIDENCE-01",
         "CRDT-AUDIT-01",
         "CRDT-NOTES-01",
         "CRDT-PREFS-01",
         "CRDT-TASKS-01",
         "DAT-01",
+        "DECISION-MODEL-01",
         "DELEG-01",
         "DELEG-INT-01",
         "GONI-SPEC-0010B69A98F0",
@@ -5948,6 +6090,7 @@
         "HREQ-01",
         "ITCR-01",
         "JOB-01",
+        "LOSS-01",
         "LSC-01",
         "MEM-RETR-01",
         "METER-01",
@@ -5959,6 +6102,7 @@
         "SANDBOX-01",
         "SCHED-01",
         "SCHEDULER-SPEC",
+        "SELECTIVE-01",
         "SPEC-ENF-01",
         "SPEC-INDEX-00",
         "SPEC-KERN-01",
@@ -6416,6 +6560,7 @@
         "GONI-SYNTHESIS-DD9F0D4AD1CA",
         "GONI-SYNTHESIS-DDBEE22569C3",
         "GONI-SYNTHESIS-DE368186E963",
+        "GONI-SYNTHESIS-DECISION-MODEL-LANDSCAPE-20260923",
         "GONI-SYNTHESIS-DEDEB088F913",
         "GONI-SYNTHESIS-DF48E13A9D35",
         "GONI-SYNTHESIS-DF627E719B9D",
@@ -6476,6 +6621,7 @@
         "GONI-SYNTHESIS-FEC452FE3082",
         "GONI-SYNTHESIS-FF1804B9EA23",
         "GONI-SYNTHESIS-FFFD0BDE80BE",
+        "GONI-SYNTHESIS-PROBABILISTIC-DECISION-CONTROL-01",
         "GONI-WHITEPAPER",
         "GOV-00",
         "LLM-COUNCIL",
@@ -10621,6 +10767,80 @@
     },
     {
       "aliases": [
+        "CALIBRATION-CONTRACT"
+      ],
+      "artifacts": [],
+      "body": "# Probabilistic Calibration Contract\n\n## 1. Accuracy and calibration are distinct\n\nAccuracy concerns whether selected decisions are correct. Calibration concerns\nwhether reported probabilities correspond to empirical frequencies over a\ndefined evaluation population.\n\nAccordingly:\n\n\\[\n\\text{accuracy} \\neq \\text{calibration}.\n\\]\n\nA score in \\([0,1]\\) is not automatically a probability, and a probability is\nnot automatically calibrated.\n\n## 2. Calibration record\n\nBefore calibrated confidence is used for routing, abstention, or\nconsequence-sensitive control, the system SHOULD have a versioned calibration\nrecord containing at least:\n\n- estimator and model/checkpoint identity;\n- relevant harness, prompt, adapter, or decision-schema version;\n- task and target-event definition;\n- calibration and evaluation dataset identities;\n- sampling period or snapshot date where relevant;\n- in-domain population description;\n- calibration method, if any;\n- raw-score semantics;\n- calibrated-probability semantics;\n- metric definitions and parameters;\n- empirical results;\n- known limitations and validity scope.\n\n## 3. Evaluation views\n\nFor probability-bearing classification or bounded-decision tasks, evaluation\nSHOULD include multiple complementary views where applicable:\n\n- reliability diagram or calibration curve;\n- a proper scoring rule such as Brier/quadratic score for suitable discrete outcomes;\n- negative log-likelihood/log score where supported;\n- expected calibration error or another binned diagnostic, with binning recorded;\n- ordinary task performance such as accuracy, F1, or task-specific loss.\n\nNo single metric is treated as a universal certificate.\n\n## 4. Example diagnostics\n\nA generic binned expected calibration error is\n\n\\[\n\\operatorname{ECE}\n=\n\\sum_{b=1}^{B}\n\\frac{|I_b|}{n}\n\\left|\n\\operatorname{acc}(I_b)-\\operatorname{conf}(I_b)\n\\right|.\n\\]\n\nFor binary forecasts with probability \\(p_i\\) and realized outcome\n\\(y_i \\in \\{0,1\\}\\), a Brier-style score is\n\n\\[\n\\operatorname{BS}\n=\n\\frac{1}{n}\\sum_{i=1}^{n}(p_i-y_i)^2.\n\\]\n\nFor a predicted distribution assigning probability \\(P(y_i)\\) to the\nobserved outcome,\n\n\\[\n\\operatorname{NLL}\n=\n-\\frac{1}{n}\\sum_{i=1}^{n}\\log P(y_i).\n\\]\n\nMetric direction, binning, normalization, and target event MUST be recorded in\nthe evaluation artifact.\n\n## 5. Calibration methods\n\nPost-hoc transformations MAY be evaluated, but no method is an architectural\ndefault merely because it performs well in another model family or dataset.\n\nThe promoted calibration artifact is the evaluated mapping and its evidence,\nnot the name of a technique.\n\n## 6. Authority boundary\n\nCalibration can inform local acceptance, abstention, model escalation,\nverification intensity, and review priority.\n\nCalibration does not create capabilities or permission:\n\n\\[\n\\text{calibrated confidence} \\not\\Rightarrow \\text{authority}.\n\\]\n\nCanonical authority continues to resolve through kernel policy.",
+      "domains": [
+        "evaluation",
+        "models",
+        "specs"
+      ],
+      "id": "CAL-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/specifications/cal-01-probabilistic-calibration-contract.md",
+      "proposition": "A confidence value may be used as calibrated probability only when a versioned calibration record identifies the estimator, evaluation distribution, metric definitions, empirical results, and validity scope supporting that interpretation.",
+      "relations": [
+        {
+          "target": "GONI-IMAP-EB2133E6965D",
+          "type": "refines"
+        },
+        {
+          "target": "DECISION-MODEL-01",
+          "type": "depends_on"
+        }
+      ],
+      "sources": [
+        "SRC-GUO2017-CALIBRATION",
+        "SRC-GNEITING-RAFTERY2007-SCORING"
+      ],
+      "status": "draft",
+      "title": "Probabilistic Calibration Contract",
+      "type": "specification",
+      "uncertainty": "Calibration is distribution-, task-, estimator-, and version-dependent. No single metric or post-hoc calibration method is sufficient for every decision model or deployment."
+    },
+    {
+      "aliases": [
+        "RECALIBRATION-LIFECYCLE"
+      ],
+      "artifacts": [],
+      "body": "# Calibration Drift and Revalidation Lifecycle\n\nCalibration evidence has an operating scope. It SHOULD NOT be assumed to remain\nvalid after material changes to model, harness, decision schema, user/task\npopulation, input source, or environmental conditions.\n\nThe governed lifecycle is:\n\nobserve outcomes\n-> compare with calibration assumptions\n-> detect or suspect shift\n-> mark affected calibration evidence degraded or out-of-scope\n-> recalibrate or re-evaluate\n-> promote, reject, or rollback\n\nWhen calibration evidence becomes invalid or materially uncertain, the safe\ndefault is to reduce autonomous coverage, increase verification, or escalate\nrather than silently broadening authority.\n\nRecalibration changes statistical evidence and routing behavior. It MUST NOT\nexpand capabilities, mandates, or approval corridors.\n\nPromoted calibration changes SHOULD be versioned, evidence-linked, reversible,\nand visible in relevant routing or decision receipts.",
+      "domains": [
+        "evaluation",
+        "learning",
+        "models",
+        "specs"
+      ],
+      "id": "CAL-DRIFT-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/specifications/cal-drift-01-calibration-drift-and-revalidation.md",
+      "proposition": "Calibration artifacts and confidence thresholds should be distribution-scoped, versioned, monitored for invalidating changes, and revalidated before promotion to a changed operating domain.",
+      "relations": [
+        {
+          "target": "CAL-01",
+          "type": "depends_on"
+        },
+        {
+          "target": "CONFIDENCE-01",
+          "type": "depends_on"
+        },
+        {
+          "target": "GONI-PRINCIPLE-GOV-LOOP-01",
+          "type": "refines"
+        }
+      ],
+      "sources": [
+        "SRC-OVADIA2019-UNCERTAINTY-SHIFT"
+      ],
+      "status": "draft",
+      "title": "Calibration Drift and Revalidation Lifecycle",
+      "type": "specification",
+      "uncertainty": "Reliable drift detection is itself an empirical problem. This contract defines governance responses to suspected or known shift rather than one universal detector."
+    },
+    {
+      "aliases": [
         "CORRECTION-DELTA-COMPILER"
       ],
       "artifacts": [],
@@ -10699,6 +10919,43 @@
       "title": "80 – Validation & CI",
       "type": "implementation-map",
       "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
+    },
+    {
+      "aliases": [
+        "UNCERTAINTY-EVIDENCE"
+      ],
+      "artifacts": [],
+      "body": "# Confidence Evidence Provenance\n\nA scalar such as 0.92 is insufficient to reconstruct why a routing or autonomy\ndecision trusted a model output.\n\nWhen confidence materially affects acceptance, abstention, escalation,\nverification intensity, or review priority, Goni SHOULD preserve a logical\nConfidenceEvidence record containing at least:\n\n- estimator or model identity;\n- checkpoint/version/hash where applicable;\n- harness, prompt, adapter, or decision-schema version where behavior depends on it;\n- target event or decision definition;\n- raw score and its declared semantics;\n- calibrated probability, if calibration is claimed;\n- calibration artifact/version reference;\n- calibration/evaluation domain;\n- selection threshold or control rule applied;\n- timestamp;\n- drift or validity status;\n- links to the Work Order and relevant receipt.\n\nRaw score and calibrated probability SHOULD remain separate fields.\n\nConfidence evidence is cognitive provenance. It is not canonical policy state,\na capability, a mandate, or permission.\n\nA human-readable receipt MAY project this record into a concise explanation,\nwhile the underlying evidence retains the identifiers required for\nreconstruction.",
+      "domains": [
+        "audit",
+        "evaluation",
+        "models",
+        "specs"
+      ],
+      "id": "CONFIDENCE-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/specifications/confidence-01-confidence-evidence-provenance.md",
+      "proposition": "Confidence used in routing, abstention, verification intensity, or consequence-sensitive control should be represented as provenance-bearing evidence rather than as an unqualified scalar.",
+      "relations": [
+        {
+          "target": "CAL-01",
+          "type": "depends_on"
+        },
+        {
+          "target": "SELECTIVE-01",
+          "type": "depends_on"
+        },
+        {
+          "target": "REC-01",
+          "type": "refines"
+        }
+      ],
+      "sources": [],
+      "status": "draft",
+      "title": "Confidence Evidence Provenance",
+      "type": "specification",
+      "uncertainty": "This is a specified-only logical record. Concrete storage-table promotion and receipt-schema migration should occur only with an implementation slice."
     },
     {
       "aliases": [],
@@ -10882,6 +11139,42 @@
       "title": "DAT-01 - Delegated Agent Treasury",
       "type": "specification",
       "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
+    },
+    {
+      "aliases": [
+        "BOUNDED-DECISION-MODEL"
+      ],
+      "artifacts": [],
+      "body": "# Bounded Semantic Decision Model Contract\n\n## 1. Purpose\n\nMany software decisions require semantic interpretation while the useful output\nspace is known before inference. Examples include boolean judgments,\nclassification among declared alternatives, ordinal rubric decisions, or scores\nwithin an explicit interval.\n\nFor these tasks Goni should support a bounded decision primitive independently\nof open-ended language generation.\n\n## 2. Abstract interface\n\nLet (s) denote supplied state and let\n\n[\nQ = \\{q_1, \\ldots, q_n\\}\n]\n\nbe typed question schemas. Each question (q_j) declares an answer space\n(Y_j).\n\nA decision model exposes the conceptual mapping\n\n[\nD(s,Q)\n\\rightarrow\n\\{\\widehat{P}(Y_1\\mid s,q_1),\\ldots,\n  \\widehat{P}(Y_n\\mid s,q_n)\\}.\n]\n\nAn implementation MAY return a selected answer together with scores or\nprobabilities instead of materializing a complete distribution when the\ncontract makes those semantics explicit.\n\nSupported logical shapes may include:\n\n- Boolean: (Y=\\{false,true\\});\n- Choice<K>: one result from an explicitly declared finite set;\n- Ordinal<K>: an ordered finite scale;\n- BoundedScore[a,b]: a score whose legal range is fixed by the schema;\n- Abstain: an explicit non-decision where the model or selector declines\n  coverage.\n\n## 3. Structural properties\n\nThe question schema MUST define the legal output domain before the result is\nconsumed by software.\n\nStructural validity and semantic correctness are separate properties. A value\ninside (Y_j) can still be the wrong semantic decision.\n\nA probability-like field MUST NOT be described as calibrated merely because it\nlies in ([0,1]). Calibration is governed separately.\n\n## 4. Batched decision evaluation\n\nThe interface SHOULD permit several bounded questions to be evaluated against\nthe same supplied state in one request. This is an interface property; it does\nnot imply that a particular implementation evaluates those questions in\nphysical parallelism.\n\nThis allows a runtime to avoid repeated natural-language round trips when\nmultiple bounded judgments concern the same observation.\n\n## 5. Relationship to generative models\n\nA bounded decision result is useful when software needs a typed judgment.\nNatural-language generation remains appropriate when the required artifact is\nitself linguistic, such as an explanation, draft, synthesis, or conversation.\n\nA system MAY use the same underlying model family for both interfaces, but the\ncontracts remain distinct.\n\n## 6. Authority invariant\n\nA decision-model result is cognitive evidence.\n\nIt is never, by itself:\n\n- a capability token;\n- a policy grant;\n- a mandate;\n- a revocation decision;\n- permission to create an external effect.\n\nBefore consequential execution, the kernel evaluates canonical authority state\nunder the applicable policy contract.\n\nFormally,\n\n[\n\\text{DecisionModelOutput} \\not\\Rightarrow \\text{Authority}.\n]\n\n## 7. Provider independence\n\nThe contract does not privilege a vendor, model architecture, training method,\nlocal runtime, or hosted service. Providers are replaceable implementations\nwhose empirical properties must be established by evidence and matched\nevaluation.",
+      "domains": [
+        "models",
+        "specs",
+        "system"
+      ],
+      "id": "DECISION-MODEL-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/specifications/decision-model-01-bounded-semantic-decision-model.md",
+      "proposition": "A bounded semantic decision model maps supplied state and typed, predefined question schemas to decisions or predictive distributions over bounded answer spaces without requiring natural-language generation as the output contract.",
+      "relations": [
+        {
+          "target": "GONI-PRINCIPLE-HET-INTEL-01",
+          "type": "refines"
+        },
+        {
+          "target": "GONI-THESIS-AF4B6A0B4A2D",
+          "type": "refines"
+        },
+        {
+          "target": "GONI-DECISION-9AF49466170D",
+          "type": "depends_on"
+        }
+      ],
+      "sources": [],
+      "status": "draft",
+      "title": "Bounded Semantic Decision Model Contract",
+      "type": "specification",
+      "uncertainty": "This is a provider- and architecture-independent interface proposal. It does not assert that any particular model family is calibrated, faster, cheaper, or semantically superior."
     },
     {
       "aliases": [
@@ -13029,7 +13322,7 @@
     {
       "aliases": [],
       "artifacts": [],
-      "body": "# D-009 – Small-then-big model routing with regret budget\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n## D-009 – Small-then-big model routing with regret budget\n\n**Formal statement**\n\nWe treat the routing problem as a decision between:\n\n- \\(a_s\\): answer with small model only.  \n- \\(a_\\ell\\): escalate to large model.\n\nWe define a **regret budget** \\(\\bar{R}\\), and require that:\n$$\n\\limsup_{T \\to \\infty} \\frac{R_T}{T} \\le \\bar{R}\n$$\nwith \\(\\bar{R} = 0.07\\) by default.\n\nHere \\(R_T\\) is regret vs an oracle policy that knows the “true” best action per request.\n\n**Rationale**\n\n- Makes the “small-first” heuristic quantifiable: we know how much quality we trade for speed/cost.  \n- Provides a clear metric for validating router training and calibration.\n\n**Consequence**\n\n- Router changes must be evaluated on standard corpora with regret estimates.  \n- “Always large model” is allowed as a configuration but is explicitly outside the regret accounting (it corresponds to the oracle upper bound on quality, not the baseline).\n\n---",
+      "body": "# D-009 – Small-then-big model routing with regret budget\n\nThe minimal pedagogical routing problem distinguishes:\n\n- a_s: accept the result from a cheaper/smaller route;\n- a_l: escalate to a stronger/more expensive route.\n\nReal deployments MAY use a larger action set including deterministic checks,\nbounded decision models, local models, remote models, multi-model verification,\nor principal review.\n\nFor a policy pi and an oracle comparator pi*, cumulative regret may be written:\n\nR_T = sum from t=1..T of [L(pi(x_t), y_t) - L(pi*(x_t), y_t)],\n\nwith the exact loss definition and comparator recorded by the benchmark.\n\nRegret remains useful because it quantifies the cost of approximate routing\nagainst a declared oracle. It is not sufficient on its own.\n\nRouter evaluation SHOULD additionally report, where applicable:\n\n- predictive calibration;\n- risk-coverage behavior;\n- consequence-sensitive expected loss;\n- false local accepts and late escalations;\n- latency and monetary cost;\n- local energy/thermal cost where measurable;\n- privacy and egress exposure;\n- trajectory-level economics.\n\nThe historical draft target of average regret <= 0.07 is retained only as a\npossible benchmark configuration when explicitly declared. It is not a\nuniversal invariant and MUST NOT be interpreted as theoretically justified\nacross tasks.\n\nA routing threshold or regret target is promotable only relative to a specified\ndataset, task distribution, oracle construction, loss function, consequence\nclass, and model/harness version.\n\nHard policy and authority constraints remain outside the regret trade-off:\neconomic or predictive advantage cannot authorize a prohibited action.",
       "domains": [
         "software"
       ],
@@ -13043,13 +13336,34 @@
         }
       ],
       "path": "knowledge/decisions/goni-decision-84f201170733-d-009-small-then-big-model-routing-with-regret-budget.md",
-      "proposition": "**Formal statement** We treat the routing problem as a decision between: \\(a_s\\): answer with small model only.",
-      "relations": [],
-      "sources": [],
+      "proposition": "Model routing should be evaluated as a contextual decision problem in which regret, calibration, selective risk, consequence-sensitive loss, latency, cost, privacy, energy, and authority constraints are measured explicitly; any numeric regret target is benchmark-specific rather than a universal architectural constant.",
+      "relations": [
+        {
+          "target": "CAL-01",
+          "type": "depends_on"
+        },
+        {
+          "target": "SELECTIVE-01",
+          "type": "depends_on"
+        },
+        {
+          "target": "LOSS-01",
+          "type": "depends_on"
+        },
+        {
+          "target": "GONI-IMAP-EB2133E6965D",
+          "type": "refines"
+        }
+      ],
+      "sources": [
+        "SRC-FRUGALGPT2023",
+        "SRC-ROUTELLM2024",
+        "SRC-ROUTERBENCH2024"
+      ],
       "status": "draft",
       "title": "D-009 – Small-then-big model routing with regret budget",
       "type": "decision",
-      "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
+      "uncertainty": "The original migrated draft used 0.07 as a default average-regret target without repository evidence deriving that value. This revision preserves regret as a metric while demoting numeric targets to benchmark-specific configuration."
     },
     {
       "aliases": [],
@@ -15989,6 +16303,61 @@
     {
       "aliases": [],
       "artifacts": [],
+      "body": "# Accuracy does not establish probability calibration\n\nGuo et al. evaluate calibration in modern neural networks and report that high\npredictive accuracy can coexist with poor confidence calibration. They also\nevaluate several post-hoc calibration approaches.\n\nFor Goni, the supported inference is deliberately narrow:\n\n- correctness rate and probability calibration are separate empirical properties;\n- a numeric confidence field should not be treated as a calibrated probability\n  without evaluation;\n- calibration procedures require dataset- and model-scoped validation.\n\nThis source does not establish that any single calibration method is universally\noptimal, nor does it directly evaluate contemporary language models or bounded\nsemantic decision models.",
+      "domains": [
+        "research",
+        "models",
+        "evaluation"
+      ],
+      "id": "GONI-EVIDENCE-CAL-GUO-01",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/evidence/goni-evidence-cal-guo-01-accuracy-is-not-calibration.md",
+      "proposition": "Guo et al. (2017) provide empirical evidence that modern neural networks can be accurate while their reported confidence is poorly calibrated, so predictive accuracy alone is insufficient evidence that confidence values represent empirical correctness likelihood.",
+      "relations": [
+        {
+          "target": "CAL-01",
+          "type": "supports"
+        }
+      ],
+      "sources": [
+        "SRC-GUO2017-CALIBRATION"
+      ],
+      "status": "draft",
+      "title": "Accuracy does not establish probability calibration",
+      "type": "evidence",
+      "uncertainty": "The experiments study specific supervised classification architectures and datasets from 2017. They establish the conceptual distinction between accuracy and calibration but do not establish calibration behavior for current language or decision models."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Proper scoring rules evaluate probabilistic forecasts\n\nGneiting and Raftery develop the theory of proper and strictly proper scoring\nrules. Such rules evaluate predictive distributions rather than only top-label\ncorrectness.\n\nFor Goni this supports evaluating confidence-bearing cognition with proper\nscores in addition to classification accuracy. The concrete score must match\nthe prediction object and task.\n\nProper scoring is an evaluation foundation, not an authority mechanism and not\na guarantee that a forecast remains calibrated outside the evaluated\ndistribution.",
+      "domains": [
+        "research",
+        "evaluation"
+      ],
+      "id": "GONI-EVIDENCE-CAL-SCORING-01",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/evidence/goni-evidence-cal-scoring-01-proper-scoring-rules.md",
+      "proposition": "Gneiting and Raftery (2007) establish strictly proper scoring rules as principled evaluation functions for probabilistic forecasts, supporting the use of proper scores such as logarithmic and quadratic/Brier-style scores when assessing confidence-bearing decision models.",
+      "relations": [
+        {
+          "target": "CAL-01",
+          "type": "supports"
+        }
+      ],
+      "sources": [
+        "SRC-GNEITING-RAFTERY2007-SCORING"
+      ],
+      "status": "draft",
+      "title": "Proper scoring rules evaluate probabilistic forecasts",
+      "type": "evidence",
+      "uncertainty": "A proper score evaluates probabilistic forecasts under its mathematical assumptions; it does not by itself guarantee calibration under distribution shift or establish an operational decision threshold."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
       "body": "# Source claim: in-toto-framework\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\nKey: [[in-toto-framework]]\nClaim: in-toto records and verifies supply-chain steps, actors, order, and\nartifacts so users can inspect how a product moved from initiation to\ninstallation.\nRelevance:\n- Supports signed attestation chains for model promotion and evaluation\n  receipts.\nUsed in:\n- `blueprint/30-specs/model-registry.md` (Evaluation limits)\nSource:\n- https://in-toto.io/",
       "domains": [
         "research"
@@ -16273,6 +16642,62 @@
       "title": "Source claim: drouin2024-workarena",
       "type": "evidence",
       "uncertainty": "The legacy bibliography summarizes the source; the cited source must be consulted for scope and limitations."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Decision theory separates predictive beliefs from action loss\n\nStatistical decision theory distinguishes beliefs about uncertain outcomes from\nthe losses attached to available actions. An action can therefore be rational\nunder one consequence structure and irrational under another even when the\npredictive probabilities are identical.\n\nFor Goni, this supports consequence-sensitive routing and escalation. It does\nnot imply that all governance constraints should be reduced to a scalar utility\nfunction; authority and prohibited actions remain hard policy constraints.",
+      "domains": [
+        "research",
+        "evaluation",
+        "policy"
+      ],
+      "id": "GONI-EVIDENCE-DECISION-THEORY-01",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/evidence/goni-evidence-decision-theory-01-expected-loss.md",
+      "proposition": "Classical statistical decision theory selects actions by minimizing expected loss under a probability model and loss function, supporting a separation between predictive uncertainty and the consequences assigned to possible decisions.",
+      "relations": [
+        {
+          "target": "LOSS-01",
+          "type": "supports"
+        }
+      ],
+      "sources": [
+        "SRC-BERGER1985-STATISTICAL-DECISION-THEORY"
+      ],
+      "status": "draft",
+      "title": "Decision theory separates predictive beliefs from action loss",
+      "type": "evidence",
+      "uncertainty": "Classical Bayes decision theory supplies the mathematical framework, while concrete Goni losses and hard policy constraints require domain-specific design and empirical governance."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Uncertainty quality can degrade under dataset shift\n\nOvadia et al. evaluate predictive uncertainty as test distributions move away\nfrom training conditions and report degradation under dataset shift.\n\nFor Goni this supports treating calibration as scoped evidence rather than a\npermanent intrinsic property of a model. Material changes in the task,\npopulation, model, harness, or input distribution can invalidate prior\noperating-point evidence and should trigger re-evaluation.",
+      "domains": [
+        "research",
+        "evaluation",
+        "models"
+      ],
+      "id": "GONI-EVIDENCE-DRIFT-01",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/evidence/goni-evidence-drift-01-calibration-under-shift.md",
+      "proposition": "Ovadia et al. (2019) provide empirical evidence that predictive uncertainty behavior can degrade under dataset shift, supporting distribution-scoped calibration evidence and explicit revalidation after material operating changes.",
+      "relations": [
+        {
+          "target": "CAL-DRIFT-01",
+          "type": "supports"
+        }
+      ],
+      "sources": [
+        "SRC-OVADIA2019-UNCERTAINTY-SHIFT"
+      ],
+      "status": "draft",
+      "title": "Uncertainty quality can degrade under dataset shift",
+      "type": "evidence",
+      "uncertainty": "The source evaluates particular supervised learning methods and benchmark shifts. It supports the general need to test uncertainty under shift, not a universal drift detector for Goni."
     },
     {
       "aliases": [],
@@ -16665,6 +17090,96 @@
       "title": "Source claim: agentguard2025",
       "type": "evidence",
       "uncertainty": "The legacy bibliography summarizes the source; the cited source must be consulted for scope and limitations."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Jev demonstrates a commercial bounded probabilistic decision-model interface\n\nSnapshot date: 2026-09-23.\n\n## Supported interface facts\n\nTypeSafe documents Jev as accepting supplied state plus predefined questions and\nreturning typed probabilistic decisions rather than ordinary generated text.\n\nVercel independently documents the deployed API surface as supporting bounded\nChoice, Score, and Boolean questions with probabilities and states that multiple\ndeclared questions can be evaluated within one request.\n\nLangChain documents use of Jev inside an agent harness for bounded evaluations\nand control decisions.\n\nThese observations support the practical relevance of DECISION-MODEL-01: a\nbounded semantic decision interface can exist as a first-class model primitive\nrather than merely as JSON generated by a conversational LLM.\n\n## Claims requiring stronger evidence\n\nTypeSafe additionally reports:\n\n- a new model architecture;\n- a parallel sampler;\n- Reinforcement Learning for Calibrated Decisions (RLCD);\n- very large speed and cost advantages on its workflow evaluations;\n- language such as \"can't hallucinate\" or \"zero hallucinations.\"\n\nThese are vendor claims. The public materials reviewed here do not provide\nsufficient methodological detail to independently reproduce the architecture,\ntraining procedure, broad calibration properties, or generalized semantic error\nrate.\n\nStructural boundedness also does not imply semantic correctness under\nGONI-PRINCIPLE-VALIDITY-CORRECTNESS-01.\n\n## Architectural interpretation\n\nJev is evidence for the category, not a dependency.\n\nA hosted decision-model provider can occupy DECISION-MODEL-01 only through the\nsame routing, Network Gate, privacy, calibration, and evidence rules as other\nremote cognition providers.\n\nA Jev probability can inform selective prediction and consequence-sensitive\nrouting. It does not create authority.\n\nThe term \"System One Model\" is retained as TypeSafe terminology inspired by\ndual-process psychology, not adopted as a settled scientific taxonomy.",
+      "domains": [
+        "market",
+        "models",
+        "research"
+      ],
+      "id": "GONI-EVIDENCE-JEV-20260923",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/evidence/goni-evidence-jev-20260923-bounded-decision-model.md",
+      "proposition": "As of 23 September 2026, TypeSafe AI's Jev provides a commercially available interface that evaluates supplied state against predefined typed questions and returns bounded Choice, Score, or Boolean decisions with attached probabilities; this supports the practical relevance of a generic bounded decision-model interface but does not validate TypeSafe's broader performance or calibration claims.",
+      "relations": [
+        {
+          "target": "DECISION-MODEL-01",
+          "type": "supports"
+        },
+        {
+          "target": "GONI-PRINCIPLE-HET-INTEL-01",
+          "type": "supports"
+        }
+      ],
+      "sources": [
+        "SRC-TYPESAFE2026-JEV",
+        "SRC-VERCEL2026-JEV-GATEWAY",
+        "SRC-LANGCHAIN2026-JEV-HARNESS"
+      ],
+      "status": "draft",
+      "title": "Jev demonstrates a commercial bounded probabilistic decision-model interface",
+      "type": "evidence",
+      "uncertainty": "Jev is newly released. Its architecture and RLCD method are not publicly specified enough here for independent reproduction, and vendor claims about calibration, hallucination, speed, and cost must be evaluated separately on representative workloads."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Selective prediction exposes a risk-coverage trade-off\n\nGeifman and El-Yaniv study predictive systems with a reject option: the system\nanswers a subset of cases and abstains on the remainder. Performance is\ntherefore characterized jointly by coverage and the risk incurred on accepted\ncases.\n\nFor Goni, the supported abstraction is the general selective-prediction\nproblem. A selector may be implemented by thresholds, learned models, rules, or\nother mechanisms. The cited work does not establish which selector is optimal\nfor Goni workloads.",
+      "domains": [
+        "research",
+        "evaluation",
+        "models"
+      ],
+      "id": "GONI-EVIDENCE-SELECTIVE-01",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/evidence/goni-evidence-selective-01-risk-coverage.md",
+      "proposition": "Selective prediction literature formalizes systems that abstain on part of the input space and evaluates the resulting trade-off between coverage and predictive risk.",
+      "relations": [
+        {
+          "target": "SELECTIVE-01",
+          "type": "supports"
+        }
+      ],
+      "sources": [
+        "SRC-GEIFMAN2019-SELECTIVENET"
+      ],
+      "status": "draft",
+      "title": "Selective prediction exposes a risk-coverage trade-off",
+      "type": "evidence",
+      "uncertainty": "SelectiveNet is one concrete learned approach. Goni adopts the general reject-option and risk-coverage concepts without requiring its architecture or training procedure."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Output constraints establish form, not semantic correctness\n\nGrammar constraints can ensure that generated strings belong to a permitted\nformal language. The resulting output may nevertheless encode the wrong class,\nargument, value, or decision for the underlying task.\n\nFor Goni, this supports separate assurance claims for structure and meaning.\nA zero malformed-output rate is not evidence of zero semantic error.",
+      "domains": [
+        "research",
+        "models",
+        "assurance"
+      ],
+      "id": "GONI-EVIDENCE-STRUCTURED-01",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/evidence/goni-evidence-structured-01-validity-not-correctness.md",
+      "proposition": "Grammar-constrained decoding can restrict generation to structurally legal outputs while task accuracy remains a separate empirical property, supporting a strict separation between schema validity and semantic correctness.",
+      "relations": [
+        {
+          "target": "GONI-PRINCIPLE-VALIDITY-CORRECTNESS-01",
+          "type": "supports"
+        }
+      ],
+      "sources": [
+        "SRC-GENG2023-GRAMMAR-CONSTRAINED-DECODING"
+      ],
+      "status": "draft",
+      "title": "Output constraints establish form, not semantic correctness",
+      "type": "evidence",
+      "uncertainty": "The cited paper studies grammar-constrained generation on structured NLP tasks; the general assurance distinction also applies beyond that specific decoding method."
     },
     {
       "aliases": [],
@@ -18957,6 +19472,56 @@
       "title": "Scenario",
       "type": "experiment",
       "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Heterogeneous Decision-Layer Benchmark\n\n## Research question\n\nFor bounded semantic decisions, where does each computational primitive lie on\nthe quality-cost-latency-calibration-privacy frontier under matched conditions?\n\n## Candidate mechanisms\n\nAt minimum, compare:\n\n1. deterministic rule or exact program where a meaningful rule baseline exists;\n2. embedding or semantic router;\n3. task-specific classifier;\n4. generalized bounded semantic decision model;\n5. small generative model with constrained structured output;\n6. stronger deliberative/reasoning model.\n\nA benchmark MAY omit an inapplicable mechanism for a task, but the omission and\nreason MUST be recorded.\n\n## Matched conditions\n\nComparisons SHOULD hold constant as far as possible:\n\n- task definition and label ontology;\n- train/calibration/test split;\n- available task context;\n- tool permissions;\n- authority corridor;\n- target output schema;\n- hardware or remote-provider accounting;\n- retry policy;\n- evaluation budget.\n\nCalibration data MUST remain distinct from final held-out evaluation data.\n\n## Metrics\n\nReport task-appropriate semantic quality, such as accuracy, macro/micro F1, or\ntask-specific loss.\n\nFor confidence-bearing mechanisms report where applicable:\n\n- Brier or other proper score;\n- negative log-likelihood;\n- ECE with binning definition;\n- reliability diagram;\n- risk-coverage curve;\n- area-under-risk-coverage or another declared summary.\n\nOperational metrics SHOULD include:\n\n- correct local accept rate;\n- false local accept rate;\n- unnecessary escalation rate;\n- late escalation rate;\n- false-authorize attempts before kernel policy;\n- p50/p95 latency;\n- monetary cost;\n- token/input-output volume where applicable;\n- local energy or thermal cost where measurable;\n- network/egress exposure;\n- trajectory-level cost for multi-step workflows.\n\n## Consequence sensitivity\n\nMetrics MUST be stratified by consequence class where the loss structure differs.\nA mechanism that is adequate for reversible classification is not thereby\nvalidated for high-impact autonomous action.\n\n## Promotion rule\n\nNo mechanism becomes a default solely from vendor benchmarks, architecture\nclaims, or aggregate accuracy.\n\nPromotion requires representative matched evidence showing that it occupies an\nacceptable operating region for the intended task and consequence class while\npreserving privacy, policy, and authority invariants.\n\n## Falsification\n\nThe heterogeneous-intelligence thesis is weakened for a target workload if a\nsingle mechanism consistently dominates realistic alternatives across semantic\nquality, calibrated risk, latency, economic cost, privacy exposure, and\nverification burden under matched conditions.",
+      "domains": [
+        "evaluation",
+        "models",
+        "routing"
+      ],
+      "id": "GONI-EXPERIMENT-DECISION-LAYER-01",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/experiments/goni-experiment-decision-layer-01-heterogeneous-decision-benchmark.md",
+      "proposition": "Goni should compare deterministic rules, semantic routers, task-specific classifiers, bounded decision models, small structured-output generative models, and stronger reasoning models on matched bounded-decision workloads before promoting any mechanism as a default route.",
+      "relations": [
+        {
+          "target": "GONI-PRINCIPLE-HET-INTEL-01",
+          "type": "tests"
+        },
+        {
+          "target": "DECISION-MODEL-01",
+          "type": "tests"
+        },
+        {
+          "target": "CAL-01",
+          "type": "tests"
+        },
+        {
+          "target": "SELECTIVE-01",
+          "type": "tests"
+        },
+        {
+          "target": "LOSS-01",
+          "type": "tests"
+        },
+        {
+          "target": "GONI-IMAP-EB2133E6965D",
+          "type": "tests"
+        }
+      ],
+      "sources": [
+        "SRC-FRUGALGPT2023",
+        "SRC-ROUTELLM2024",
+        "SRC-ROUTERBENCH2024"
+      ],
+      "status": "draft",
+      "title": "Heterogeneous Decision-Layer Benchmark",
+      "type": "experiment",
+      "uncertainty": "This is a planned matched evaluation. No mechanism is assumed to dominate globally; results are expected to vary by workload, hardware, consequence class, and deployment constraints."
     },
     {
       "aliases": [],
@@ -27900,7 +28465,7 @@
     {
       "aliases": [],
       "artifacts": [],
-      "body": "# 3.4 Frugal sovereign model router\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n### 3.4 Frugal sovereign model router\n\nGoni's router is local-first and sovereignty-aware. It uses FrugalGPT-style\ncascades, but the objective is not only cost and quality: the route must also\naccount for privacy leakage risk, latency, energy/thermal budget, audit burden,\ndata locality, external dependency cost, and the active approval corridor.\n\nThe operating rule is: run the smallest local computation that can safely solve\nthe task, then escalate only when confidence, risk, freshness, or capability\nconstraints justify the extra cost.\n\nDefault route order:\n\n```text\nrule/cache/memory -> local small -> local large -> local tools/RAG\n-> local multi-agent check -> cloud Council -> premium cloud vote\n```\n\nThe first sufficient local route wins. The cloud-side Council is an escalation\ntier, not the default decoder.\n\nDSpark is evidence for the same systems pattern at token scale: cheap draft\nwork is useful only when a stronger verifier, calibrated confidence estimates,\nand load-aware scheduling decide how much draft to trust. For Goni, this maps\nto local routers and small models drafting or classifying, stronger local models\nverifying, and cloud/council routes remaining exceptional rather than default\nintelligence. [[cheng2026-dspark]] [[deepseek2026-v4-dspark-hf]]\n\nAt the minimal formal level we distinguish two local model classes and one\nremote escalation class:\n\n- Small model \\(M_s\\) with cost \\(c_s\\) (tokens/s, energy).  \n- Large model \\(M_\\ell\\) with cost \\(c_\\ell \\gg c_s\\).\n- Remote Council route \\(M_r\\) with external cost, latency, and privacy terms.\n\nFor a request \\(x\\) and preliminary small-model answer \\(\\hat{y}_s\\), we compute a **calibrated confidence** \\(p(x) \\in [0,1]\\).\n\nRouter policy:\n\n1. If \\(p(x) > \\tau_{\\mathrm{accept}}\\): accept small model output.  \n2. If \\(p(x) < \\tau_{\\mathrm{escalate}}\\) and early in the generation: escalate.  \n3. Else compare expected value of escalation vs continuation.\n\nEscalation to the cloud-side multi-model path (the [LLM Council](/blueprint/docs/llm-council.md)) follows the triggers in Section 3 of that doc: explicit user request, high difficulty/safety-critical classification, or long-context needs that exceed local comfort.\n\nIt is also allowed when current public information is required and the outgoing\npayload is public, redacted, or explicitly approved. It is not a default route\nfor ordinary private context, routine drafting, or tasks where a local verifier\nhas sufficient confidence.\n\nThe router MUST NOT send raw private or sensitive context to \\(M_r\\) by default.\nIt must either keep execution local, use a redacted/public-only payload, or\nrequire the configured approval corridor.\n\nEach routing decision emits receipt metadata (`llm_route`) containing the\nclassification, selected route, models considered/used, redaction requirement,\nprivacy class sent, and policy decision.\n\nWe treat this as a contextual routing problem with side information (the\nfeatures used to estimate \\(p(x)\\)); the prototype is threshold-based, and the\nevaluation lane may later train a learned router from preference/regret data.\n\n> **Theorem 3.2 (Regret bound, sketch).**  \n> Suppose the confidence estimator is \\(\\epsilon\\)-calibrated and the reward gap between correct/incorrect decisions is bounded. Then there exists a threshold policy (approximated by our router) whose regret \\(R_T\\) over \\(T\\) requests satisfies:\n> $$\n> \\frac{R_T}{T} \\le \\beta(\\epsilon)\n> $$\n> with \\(\\beta(\\epsilon)\\) small. In practice we target \\(\\beta(\\epsilon) \\le 0.07\\).\n\n> **Invariant K2 (Router regret).**  \n> On benchmark datasets, empirical regret of `goni-router` compared to an oracle policy that knows ground-truth â€œdifficultyâ€ labels must stay below 0.07.",
+      "body": "# 3.4 Frugal sovereign model router\n\nGoni's router is local-first and sovereignty-aware. Its objective is broader\nthan model cost and answer quality: route choice may also depend on privacy\nleakage risk, latency, energy/thermal budget, audit burden, data locality,\nexternal dependency cost, consequence class, and the active approval corridor.\n\nThe operating rule is to use the smallest sufficient computation whose evidence\nsupports the required operating point, then escalate when uncertainty,\nconsequence, freshness, capability, or verification requirements justify the\nadditional cost.\n\nA default mechanism ordering may resemble:\n\nrule/cache/memory\n-> deterministic checker or retrieval\n-> task-specific classifier or bounded decision model\n-> local small generative model\n-> local stronger reasoning model\n-> local multi-model verification\n-> policy-permitted remote model/council\n-> principal review\n\nThis ordering is a policy template, not a claim that every task traverses every\nstage or that the same order is optimal universally.\n\nFor a candidate route result r on input x, confidence may be used only when the\nrelevant calibration evidence is in scope under CAL-01. SELECTIVE-01 determines\nwhether the cognitive result is accepted or abstained from at the configured\nrisk-coverage operating point. LOSS-01 determines how the cost of error,\nescalation, delay, and other consequences affects the control decision.\n\nRemote escalation remains subject to network, privacy, and approval policy. Raw\nprivate or sensitive context is not sent merely because a remote route has\nhigher expected model quality.\n\nEach consequential routing decision SHOULD link its receipt to:\n\n- mechanisms considered;\n- mechanism selected;\n- calibration/confidence evidence where used;\n- acceptance or abstention rule;\n- consequence class and applicable loss/control policy;\n- redaction and privacy state;\n- model or tool identities;\n- resulting policy decision.\n\nThe router may still be modeled as a contextual bandit or related online\ndecision problem for suitable workloads. Regret is one evaluation axis among\nseveral. Numeric regret targets are experiment-specific and require an explicit\nloss definition, oracle, workload, and evaluation protocol.\n\nRouting evidence can influence cognition and escalation. It cannot itself\nexpand mandates, capabilities, or authority.",
       "domains": [
         "software"
       ],
@@ -27914,13 +28479,34 @@
         }
       ],
       "path": "knowledge/implementation-maps/goni-imap-eb2133e6965d-3-4-frugal-sovereign-model-router.md",
-      "proposition": "Goni's router is local-first and sovereignty-aware.",
-      "relations": [],
-      "sources": [],
+      "proposition": "Goni's router is local-first and sovereignty-aware; it allocates among heterogeneous cognitive mechanisms using calibrated evidence, selective acceptance, consequence-sensitive loss, and resource/privacy constraints while leaving authority decisions to the kernel.",
+      "relations": [
+        {
+          "target": "CAL-01",
+          "type": "depends_on"
+        },
+        {
+          "target": "SELECTIVE-01",
+          "type": "depends_on"
+        },
+        {
+          "target": "LOSS-01",
+          "type": "depends_on"
+        },
+        {
+          "target": "GONI-PRINCIPLE-HET-INTEL-01",
+          "type": "refines"
+        }
+      ],
+      "sources": [
+        "SRC-FRUGALGPT2023",
+        "SRC-ROUTELLM2024",
+        "SRC-ROUTERBENCH2024"
+      ],
       "status": "draft",
       "title": "3.4 Frugal sovereign model router",
       "type": "implementation-map",
-      "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
+      "uncertainty": "The concrete route set, estimators, thresholds, and utility terms remain empirical and workload-specific. This node specifies an allocation shape rather than verified runtime behavior."
     },
     {
       "aliases": [],
@@ -30490,6 +31076,147 @@
       "title": "10. Safety Invariants",
       "type": "principle",
       "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Governed Closed-Loop Execution\n\nGoni is modeled as a governed closed-loop controller:\n\n```text\nGoal / State\n-> Observe\n-> Context\n-> Cognition\n-> Authorization\n-> Action\n-> Observe\n-> Verify\n-> Receipt\n-> State Update\n```\n\nThe authority step is a first-class boundary. Model output may propose an action;\nit does not itself grant permission to execute that action.\n\nThe loop does not close at tool invocation. Where an action has external or\ndurable consequences, the system should observe the resulting state, verify\nrelevant postconditions, attach evidence to the action receipt, and update\ncanonical state only through the governing memory and policy contracts.\n\nThis framing makes later adaptation testable. Outcomes can be compared with\nprior predictions, routing choices, uncertainty estimates, and verification\nresults without allowing those statistical signals to rewrite authority state\ndirectly.",
+      "domains": [
+        "agent",
+        "kernel",
+        "system"
+      ],
+      "id": "GONI-PRINCIPLE-GOV-LOOP-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/principles/goni-principle-gov-loop-01-governed-closed-loop-execution.md",
+      "proposition": "Goni should execute delegated work as a governed closed loop in which cognition proposes, the kernel authorizes, tools act, external consequences are observed, verification produces evidence, receipts record the boundary decision, and canonical state is updated.",
+      "relations": [
+        {
+          "target": "DOCTRINE-DELEG-01",
+          "type": "refines"
+        },
+        {
+          "target": "TOOL-01",
+          "type": "depends_on"
+        },
+        {
+          "target": "REC-01",
+          "type": "depends_on"
+        }
+      ],
+      "sources": [],
+      "status": "draft",
+      "title": "Governed Closed-Loop Execution",
+      "type": "principle",
+      "uncertainty": "Specified systems framing. Individual loops may omit action-specific stages when a task is read-only or no durable state change is warranted."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Heterogeneous Intelligence Allocation\n\nGoni should allocate work by comparative advantage rather than treating a\ngenerative language model as the universal computational primitive.\n\nA useful default taxonomy is:\n\n- exact arithmetic, deterministic transformations, validation, and reproducible\n  calculations -> deterministic computation;\n- structured lookup -> database, index, or retrieval system;\n- constraint satisfaction -> solver;\n- stable semantic boundaries -> task-specific classifier where justified;\n- bounded semantic judgment over a predefined answer space -> probabilistic\n  decision model;\n- open-ended drafting, synthesis, and explanation -> generative model;\n- difficult multi-step deliberation -> reasoning model or governed multi-model\n  escalation;\n- consequential permission -> kernel policy against canonical authority state;\n- unresolved principal-owned value trade-offs -> principal escalation.\n\nThese are allocation categories, not permanent model classes. A task may move\nbetween them as evidence, model capability, deterministic tooling, and operating\ncosts change.\n\nThe governing rule is to use the simplest mechanism that preserves the required\nquality and assurance properties. Probabilistic models remain valuable where\nsemantic judgment is genuinely uncertain. Exact state, permissions, schemas,\nand directly computable invariants should not depend on stochastic model\nbehavior merely because a model can express an answer.\n\nThis principle strengthens latent-first cognition: language is one projection of\nmachine state, not the mandatory representation of every intermediate\ncomputation. It also strengthens the authority boundary: model capability can\nchange how cognition is performed without changing what the system is permitted\nto do.",
+      "domains": [
+        "models",
+        "system"
+      ],
+      "id": "GONI-PRINCIPLE-HET-INTEL-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/principles/goni-principle-het-intel-01-heterogeneous-intelligence-allocation.md",
+      "proposition": "Goni should allocate operations to the mechanism with comparative advantage, using deterministic computation for exactly specifiable properties, bounded probabilistic models for semantic judgments over defined answer spaces, generative models for open-ended synthesis, and the kernel for authority decisions.",
+      "relations": [
+        {
+          "target": "GONI-THESIS-7BFB74017D50",
+          "type": "supports"
+        },
+        {
+          "target": "MODEL-REG-01",
+          "type": "refines"
+        },
+        {
+          "target": "GONI-THESIS-AF4B6A0B4A2D",
+          "type": "refines"
+        },
+        {
+          "target": "GONI-IMAP-EB2133E6965D",
+          "type": "refines"
+        },
+        {
+          "target": "GONI-DECISION-9AF49466170D",
+          "type": "refines"
+        }
+      ],
+      "sources": [
+        "SRC-SCULLEY2015-HIDDEN-TECH-DEBT"
+      ],
+      "status": "draft",
+      "title": "Heterogeneous Intelligence Allocation",
+      "type": "principle",
+      "uncertainty": "The boundary between probabilistic and deterministic work is task-dependent and can shift as specialized models, conventional algorithms, and hardware improve."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Trajectory Economics\n\nThe economically relevant unit for delegated AI is successful work, not an\nisolated model call.\n\nFor a trajectory with (N) steps, a minimal accounting model is:\n\n[\nC_{task}\n=\n\\sum_{t=1}^{N}\n\\left(\nC_{context,t}\n+\nC_{inference,t}\n+\nC_{tool,t}\n+\nC_{verification,t}\n\\right).\n]\n\nThe system should additionally track dimensions that are not naturally reducible\nto the same monetary unit:\n\n- wall-clock latency and queueing delay;\n- local energy or thermal cost where measurable;\n- network and privacy exposure;\n- external-dependency use;\n- human interruption and review burden;\n- rollback or compensation cost after incorrect action.\n\nA locally cheaper inference can increase total task cost if it creates\nadditional iterations, verification work, tool failures, repeated context\nreconstruction, or principal interruptions. Conversely, a more expensive\ninference may improve whole-trajectory economics when it reliably shortens the\npath to a verified result.\n\nAccordingly, per-call cost and token efficiency remain useful operational\nmetrics, while promotion decisions should evaluate successful delegated work per\nunit of money, time, energy, privacy exposure, and human attention where those\nquantities can be measured.\n\nNo universal scalar weighting is assumed. Hard authority, privacy, and safety\nconstraints remain constraints rather than exchangeable economic terms.",
+      "domains": [
+        "evaluation",
+        "models",
+        "performance"
+      ],
+      "id": "GONI-PRINCIPLE-TRAJ-ECON-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/principles/goni-principle-traj-econ-01-trajectory-economics.md",
+      "proposition": "Agent economics should be measured over complete trajectories because small per-step differences in context, inference, tools, verification, latency, privacy exposure, and energy compound across long-running delegated work.",
+      "relations": [
+        {
+          "target": "GONI-SYNTHESIS-44FB7018181A",
+          "type": "refines"
+        },
+        {
+          "target": "GONI-PRINCIPLE-HET-INTEL-01",
+          "type": "supports"
+        }
+      ],
+      "sources": [
+        "SRC-ROUTERBENCH2024"
+      ],
+      "status": "draft",
+      "title": "Trajectory Economics",
+      "type": "principle",
+      "uncertainty": "Exact cost terms and useful weighting depend on local hardware, provider pricing, caching, concurrency, verification burden, privacy policy, and task structure."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Structural Validity Is Not Semantic Correctness\n\nLet Y be the permitted output space and let y* denote the correct task answer.\n\nStructural validity establishes y in Y.\n\nSemantic correctness establishes y = y*.\n\nIn general:\n\ny in Y does not imply y = y*.\n\nTherefore the repository distinguishes:\n\n- parser/schema/grammar validity;\n- semantic decision quality;\n- probability calibration;\n- policy authorization.\n\nEach property requires its own evidence or deterministic proof path.\n\nA bounded decision model with no malformed outputs may still select the wrong\nlegal decision. Likewise, a generative model constrained to valid JSON can\nstill produce semantically false JSON.",
+      "domains": [
+        "assurance",
+        "models",
+        "system"
+      ],
+      "id": "GONI-PRINCIPLE-VALIDITY-CORRECTNESS-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/principles/goni-principle-validity-correctness-01-structural-validity-is-not-semantic-correctness.md",
+      "proposition": "Deterministic schema or grammar validity establishes that an output belongs to the permitted representation space; semantic correctness remains a separate empirical or evidentiary property.",
+      "relations": [
+        {
+          "target": "DECISION-MODEL-01",
+          "type": "refines"
+        },
+        {
+          "target": "GONI-PRINCIPLE-HET-INTEL-01",
+          "type": "supports"
+        }
+      ],
+      "sources": [
+        "SRC-GENG2023-GRAMMAR-CONSTRAINED-DECODING"
+      ],
+      "status": "draft",
+      "title": "Structural Validity Is Not Semantic Correctness",
+      "type": "principle",
+      "uncertainty": "Semantic correctness may itself be deterministic for some domains when a complete formal verifier exists. The distinction concerns what a structural validator alone proves."
     },
     {
       "aliases": [],
@@ -56842,6 +57569,44 @@
     {
       "aliases": [],
       "artifacts": [],
+      "body": "# Bounded Decision-Model Landscape Snapshot — 2026-09-23\n\nRecent product infrastructure demonstrates growing interest in model interfaces\noptimized for bounded software decisions rather than open-ended language\ngeneration.\n\nThe architectural conclusion is intentionally provider-neutral:\n\nstate\n-> bounded semantic questions\n-> typed decisions / predictive scores\n-> calibrated selection where evidence permits\n-> deterministic software control\n-> kernel authorization for effects\n\nThis category may reduce the cost of frequent semantic judgments inside agent\nand automation loops. It may also be reproduced by task-specific classifiers,\nfuture open models, or generative models exposed through a bounded interface.\n\nAccordingly, current products should be treated as benchmark candidates under\nGONI-EXPERIMENT-DECISION-LAYER-01. Their branding, training claims, or\ndistribution channels do not determine architectural authority.",
+      "domains": [
+        "market",
+        "models",
+        "research"
+      ],
+      "id": "GONI-SYNTHESIS-DECISION-MODEL-LANDSCAPE-20260923",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/syntheses/goni-synthesis-decision-model-landscape-20260923.md",
+      "proposition": "The emerging bounded decision-model category strengthens the case for a provider-independent semantic decision interface inside heterogeneous cognition, while current products remain empirical candidates rather than architectural authorities.",
+      "relations": [
+        {
+          "target": "GONI-EVIDENCE-JEV-20260923",
+          "type": "synthesizes"
+        },
+        {
+          "target": "DECISION-MODEL-01",
+          "type": "synthesizes"
+        },
+        {
+          "target": "GONI-EXPERIMENT-DECISION-LAYER-01",
+          "type": "synthesizes"
+        }
+      ],
+      "sources": [
+        "SRC-TYPESAFE2026-JEV",
+        "SRC-VERCEL2026-JEV-GATEWAY",
+        "SRC-LANGCHAIN2026-JEV-HARNESS"
+      ],
+      "status": "draft",
+      "title": "Bounded Decision-Model Landscape Snapshot — 2026-09-23",
+      "type": "synthesis",
+      "uncertainty": "The category is very young and terminology is unstable. Open/local alternatives and comparative evidence should be added only when sufficiently sourced and evaluated."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
       "body": "# What Goni is (fast)\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n## What Goni is (fast)\n\n**User truth**\n\n- Your private operator: always-on, local-first, loyal to your attention.\n- A refinery: raw inputs -> distilled facts -> action cards -> durable memory.\n\n**Technical truth**\n\n- An appliance-grade OS + data spine + governance layer + job framework.\n- Local models by default; explicit, logged escalation to external models.\n\n**The three surfaces**\n\n- **Daily Brief**: compressed priorities and risks.\n- **Action Cards**: binary decisions with context + rationale + receipts.\n- **Vault**: your distilled, searchable memory.\n\n**Core loop**\n\nObserve -> Distill -> Propose/Act -> Attach receipts -> Store memory.\n\n**Why it matters**\n\n- Signal protection, time recovery, governed autonomy, sovereignty.",
       "domains": [
         "repository"
@@ -58444,6 +59209,80 @@
       "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
     },
     {
+      "aliases": [
+        "PROBABILISTIC-DECISION-CONTROL-SYNTHESIS"
+      ],
+      "artifacts": [],
+      "body": "# Governed Probabilistic Decision Control\n\nThe combined architecture separates the questions that agentic systems often\ncollapse into a single model call.\n\n1. What appears true or useful?\n   Heterogeneous cognition selects an appropriate deterministic or probabilistic\n   mechanism.\n\n2. How reliable is that inference?\n   Calibration evidence determines whether reported confidence has an empirical\n   probability interpretation in the current domain.\n\n3. Should the system accept the cognitive result?\n   Selective prediction chooses acceptance or abstention at an evaluated\n   risk-coverage operating point.\n\n4. What is the consequence of being wrong?\n   Consequence-sensitive control evaluates asymmetric losses and escalation\n   costs.\n\n5. Is the resulting effect permitted?\n   The kernel resolves authority from canonical mandates, capabilities, policy,\n   approvals, budgets, and revocation state.\n\n6. What happened after action?\n   Mediated execution is observed, verified, receipted, and reconciled with\n   canonical state.\n\n7. Does the statistical evidence still hold?\n   Outcomes feed calibration monitoring, drift detection, re-evaluation, and\n   controlled promotion or rollback.\n\nThe resulting conceptual flow is:\n\nstate\n-> heterogeneous inference\n-> calibrated uncertainty\n-> selective accept / abstain\n-> consequence-sensitive control\n-> canonical kernel authorization\n-> mediated action\n-> observation and verification\n-> receipt and state update\n-> calibration / routing evidence update\n\n## Core distinctions\n\nCapability is not authority.\n\nConfidence is not authority.\n\nSchema validity is not semantic correctness.\n\nCalibration is not accuracy.\n\nA model can become more capable without receiving additional permissions. A\nmodel can be highly confident without having permission to act. An output can be\nperfectly typed and semantically wrong. A model can be accurate on average while\nits probabilities are unreliable.\n\n## Allocation objective\n\nThe system-level optimization problem is multi-objective. Depending on the task\nit may consider:\n\n- semantic task loss;\n- calibration quality;\n- selective risk and coverage;\n- consequence-weighted expected loss;\n- latency;\n- monetary and compute cost;\n- local energy/thermal cost;\n- privacy and egress exposure;\n- verification burden;\n- human interruption;\n- trajectory-level economics.\n\nThese objectives operate inside hard authority, privacy, and safety constraints.\nThey are not permitted to trade away a policy prohibition.\n\n## Architectural doctrine\n\nProbabilistic cognition supplies beliefs and proposals.\n\nStatistical control determines when those beliefs are sufficiently supported to\naccept, abstain, verify, or escalate.\n\nThe kernel determines whether an effect is authorized.\n\nTools execute only through mediated capabilities.\n\nReceipts and verification make consequences reconstructable.\n\nObserved outcomes improve future calibration and routing evidence without\nsilently modifying authority.\n\nIn compact form:\n\nModels and algorithms estimate.\nCalibration quantifies evidential reliability.\nSelective control accepts or escalates.\nLoss models consequence.\nThe kernel authorizes.\nTools act.\nVerification observes.\nReceipts prove.\nEvidence recalibrates.",
+      "domains": [
+        "agent",
+        "evaluation",
+        "kernel",
+        "models",
+        "system"
+      ],
+      "id": "GONI-SYNTHESIS-PROBABILISTIC-DECISION-CONTROL-01",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/syntheses/goni-synthesis-probabilistic-decision-control-01.md",
+      "proposition": "Goni should treat probabilistic cognition, calibration, selective prediction, consequence-sensitive control, deterministic authority, mediated action, verification, and recalibration as distinct but connected layers in one governed feedback system.",
+      "relations": [
+        {
+          "target": "GONI-PRINCIPLE-HET-INTEL-01",
+          "type": "synthesizes"
+        },
+        {
+          "target": "DECISION-MODEL-01",
+          "type": "synthesizes"
+        },
+        {
+          "target": "CAL-01",
+          "type": "synthesizes"
+        },
+        {
+          "target": "SELECTIVE-01",
+          "type": "synthesizes"
+        },
+        {
+          "target": "LOSS-01",
+          "type": "synthesizes"
+        },
+        {
+          "target": "CONFIDENCE-01",
+          "type": "synthesizes"
+        },
+        {
+          "target": "CAL-DRIFT-01",
+          "type": "synthesizes"
+        },
+        {
+          "target": "GONI-DECISION-9AF49466170D",
+          "type": "synthesizes"
+        },
+        {
+          "target": "GONI-PRINCIPLE-GOV-LOOP-01",
+          "type": "synthesizes"
+        },
+        {
+          "target": "GONI-PRINCIPLE-VALIDITY-CORRECTNESS-01",
+          "type": "synthesizes"
+        },
+        {
+          "target": "GONI-PRINCIPLE-TRAJ-ECON-01",
+          "type": "synthesizes"
+        },
+        {
+          "target": "GONI-EXPERIMENT-DECISION-LAYER-01",
+          "type": "synthesizes"
+        }
+      ],
+      "sources": [],
+      "status": "draft",
+      "title": "Governed Probabilistic Decision Control",
+      "type": "synthesis",
+      "uncertainty": "This synthesis introduces no implementation claim. Thresholds, calibrated operating regions, loss functions, and preferred mechanisms remain empirical and consequence-specific."
+    },
+    {
       "aliases": [],
       "artifacts": [],
       "body": "# 9. Local-First Computing and Network Governance\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n## 9. Local-First Computing and Network Governance\n\nGoni's local-first thesis is not simply that models run on local\nhardware. Local-first means that core functions are intended to be computable\nusing local state and local compute; network access is capability-scoped;\nexternal calls are optional, transparent, budgeted, and receipt-linked; and\nremote model usage passes through an explicit network gate in the target\narchitecture.\n\nThis is important because \"local AI\" can become marketing if network behavior\nremains implicit. A serious sovereign AI system treats network egress as an\neffect requiring governance. Private memory is not intended to leak to cloud\nservices by accident. Remote inference does not occur merely because a model router\nfound it convenient. The network gate is therefore a core authority boundary,\nnot an implementation detail.\n\nThe simplest early version of this principle is strict: default-deny egress as\nthe design intent, one mediated egress API, explicit policy modes, and receipts\nfor outbound calls. More complex modes can emerge later, but the first proof\nneeds to show that local-first behavior is testable rather than aspirational. The\nnetwork gate design is specified in\n[network-gate-and-anonymity.md](/blueprint/30-specs/network-gate-and-anonymity.md).",
@@ -59265,6 +60104,49 @@
       "title": "Local Models - Supplier Card",
       "type": "proposal",
       "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
+    },
+    {
+      "aliases": [
+        "EXPECTED-LOSS-CONTROL"
+      ],
+      "artifacts": [],
+      "body": "# Consequence-Sensitive Decision Control\n\nLet A be the available cognitive/control actions, such as accept, verify,\nescalate, ask, defer, or deny. Let Y describe the uncertain relevant outcome\nand let c denote consequence context.\n\nWithin the action set already permitted by policy, a decision rule may select:\n\na*(x,c) = argmin over a in A_allowed of E[L(a,Y,c) | x].\n\nThis separates three questions:\n\n1. what outcomes appear likely;\n2. what losses follow from each action/outcome pair;\n3. which actions are permitted at all.\n\nThe third question is authoritative and remains kernel-owned.\n\n## Asymmetric error costs\n\nFalse acceptance and unnecessary escalation need not have equal cost. For some\neffect classes:\n\nL(false authorization) >> L(unnecessary escalation).\n\nFor reversible low-impact classification the gap may be much smaller.\n\nTherefore one global confidence threshold is not an adequate policy for all\ntasks. Operating points SHOULD be scoped by consequence class and validated\nagainst the relevant loss structure.\n\n## Hard constraints dominate optimization\n\nExpected-loss optimization MUST operate inside policy constraints:\n\nA_allowed = {a in A : PolicyAllows(a, S_authority)}.\n\nIf policy denies an effect, predictive confidence and expected utility cannot\nauthorize it.\n\nIrreversible, legally constrained, privacy-sensitive, or otherwise\nconsequential actions MAY impose explicit approval requirements independent of\nconfidence.",
+      "domains": [
+        "evaluation",
+        "policy",
+        "routing",
+        "specs"
+      ],
+      "id": "LOSS-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/specifications/loss-01-consequence-sensitive-decision-control.md",
+      "proposition": "Autonomous acceptance, escalation, clarification, deferral, or denial should be selected using consequence-sensitive expected loss within the set of actions already permitted by kernel policy.",
+      "relations": [
+        {
+          "target": "CAL-01",
+          "type": "depends_on"
+        },
+        {
+          "target": "SELECTIVE-01",
+          "type": "depends_on"
+        },
+        {
+          "target": "GONI-SPEC-8911D8AA7EE0",
+          "type": "refines"
+        },
+        {
+          "target": "GONI-DECISION-9AF49466170D",
+          "type": "depends_on"
+        }
+      ],
+      "sources": [
+        "SRC-BERGER1985-STATISTICAL-DECISION-THEORY"
+      ],
+      "status": "draft",
+      "title": "Consequence-Sensitive Decision Control",
+      "type": "specification",
+      "uncertainty": "Loss functions, consequence classes, and acceptable residual risk require domain-specific governance and cannot be inferred from model confidence alone."
     },
     {
       "aliases": [
@@ -60862,6 +61744,45 @@
       "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
     },
     {
+      "aliases": [
+        "RISK-COVERAGE-CONTRACT"
+      ],
+      "artifacts": [],
+      "body": "# Selective Prediction and Abstention Contract\n\nLet f(x) produce a candidate prediction and let g(x) in {0,1} determine whether\nthe system accepts that prediction.\n\nFor a simple confidence threshold:\n\ng_tau(x) = 1[p_hat(x) >= tau].\n\nCoverage is the accepted fraction of the operating distribution:\n\nphi(tau) = E[g_tau(X)].\n\nGiven task loss l, selective risk is:\n\nR_sel(tau) = E[l(f(X),Y) g_tau(X)] / E[g_tau(X)],\n\nwhen coverage is non-zero.\n\nThe system SHOULD evaluate a family of operating points rather than reporting\nonly one unconditional accuracy number. Risk-coverage curves make explicit how\nreliability changes as autonomous coverage expands or contracts.\n\nAbstention is a valid cognitive outcome. It may route to:\n\n- a stronger local model;\n- a deterministic checker or tool;\n- a multi-model verifier;\n- a remote model where policy permits;\n- principal review where the unresolved uncertainty is principal-owned.\n\nAbstention does not imply human interruption by default.\n\nSelection is separate from authority. Acceptance by a selector means only that\nthe cognitive result passed the configured epistemic operating point. Any\neffectful action remains subject to kernel policy and canonical authority state.",
+      "domains": [
+        "evaluation",
+        "models",
+        "routing",
+        "specs"
+      ],
+      "id": "SELECTIVE-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/specifications/selective-01-selective-prediction-and-abstention.md",
+      "proposition": "Confidence-bearing cognition should support an explicit accept-versus-abstain selection policy whose quality is evaluated by coverage-conditioned risk rather than by unconditional accuracy alone.",
+      "relations": [
+        {
+          "target": "CAL-01",
+          "type": "depends_on"
+        },
+        {
+          "target": "GONI-IMAP-EB2133E6965D",
+          "type": "refines"
+        },
+        {
+          "target": "GONI-SPEC-8911D8AA7EE0",
+          "type": "refines"
+        }
+      ],
+      "sources": [
+        "SRC-GEIFMAN2019-SELECTIVENET"
+      ],
+      "status": "draft",
+      "title": "Selective Prediction and Abstention Contract",
+      "type": "specification",
+      "uncertainty": "Threshold form is a minimal abstraction. Real selectors may use richer features, conformal methods, ensembles, verification signals, or task-specific policies."
+    },
+    {
       "aliases": [],
       "artifacts": [],
       "body": "# Sovereign Operator Audit Gap Map\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n# Sovereign Operator Audit Gap Map\nDOC-ID: SOV-AUDIT-01\nStatus: Specified only / roadmap\n\nThis note integrates the sovereign-operator audit into the blueprint without\nturning it into a new stack prescription.\n\nCore thesis:\n\n> The stack is not Goni. The governance layer is Goni.\n\nProduct correction:\n\n> The stack makes Goni possible, but delegation is the product.\n\nGoni exists to absorb digital friction. It reduces direct human interaction\nwith computers, the web, online services, documents, people, and tools by\nconverting natural intent into governed digital action.\n\nGoni is a private, local, receipt-backed personal operator. Third-party tools\nmay provide orchestration, inference, retrieval, user interfaces, voice,\nworkflow automation, observability, model gateways, and hardware acceleration.\nThey do not own authority.",
@@ -62018,6 +62939,192 @@
     },
     {
       "projection": "generated",
+      "source": "CAL-01",
+      "target": "CAL-DRIFT-01",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
+      "source": "CAL-01",
+      "target": "CONFIDENCE-01",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
+      "source": "CAL-01",
+      "target": "GONI-DECISION-84F201170733",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
+      "source": "CAL-01",
+      "target": "GONI-IMAP-EB2133E6965D",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
+      "source": "CAL-01",
+      "target": "LOSS-01",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
+      "source": "CAL-01",
+      "target": "SELECTIVE-01",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "authored",
+      "source": "CAL-01",
+      "target": "DECISION-MODEL-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "CAL-01",
+      "target": "GONI-IMAP-EB2133E6965D",
+      "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "CAL-01",
+      "target": "GONI-EVIDENCE-CAL-GUO-01",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "CAL-01",
+      "target": "GONI-EVIDENCE-CAL-SCORING-01",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "CAL-01",
+      "target": "GONI-SYNTHESIS-PROBABILISTIC-DECISION-CONTROL-01",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "generated",
+      "source": "CAL-01",
+      "target": "GONI-EXPERIMENT-DECISION-LAYER-01",
+      "type": "tested_by"
+    },
+    {
+      "projection": "authored",
+      "source": "CAL-DRIFT-01",
+      "target": "CAL-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "CAL-DRIFT-01",
+      "target": "CONFIDENCE-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "CAL-DRIFT-01",
+      "target": "GONI-PRINCIPLE-GOV-LOOP-01",
+      "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "CAL-DRIFT-01",
+      "target": "GONI-EVIDENCE-DRIFT-01",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "CAL-DRIFT-01",
+      "target": "GONI-SYNTHESIS-PROBABILISTIC-DECISION-CONTROL-01",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "generated",
+      "source": "CONFIDENCE-01",
+      "target": "CAL-DRIFT-01",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "authored",
+      "source": "CONFIDENCE-01",
+      "target": "CAL-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "CONFIDENCE-01",
+      "target": "SELECTIVE-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "CONFIDENCE-01",
+      "target": "REC-01",
+      "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "CONFIDENCE-01",
+      "target": "GONI-SYNTHESIS-PROBABILISTIC-DECISION-CONTROL-01",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "generated",
+      "source": "DECISION-MODEL-01",
+      "target": "CAL-01",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "authored",
+      "source": "DECISION-MODEL-01",
+      "target": "GONI-DECISION-9AF49466170D",
+      "type": "depends_on"
+    },
+    {
+      "projection": "generated",
+      "source": "DECISION-MODEL-01",
+      "target": "GONI-PRINCIPLE-VALIDITY-CORRECTNESS-01",
+      "type": "refined_by"
+    },
+    {
+      "projection": "authored",
+      "source": "DECISION-MODEL-01",
+      "target": "GONI-PRINCIPLE-HET-INTEL-01",
+      "type": "refines"
+    },
+    {
+      "projection": "authored",
+      "source": "DECISION-MODEL-01",
+      "target": "GONI-THESIS-AF4B6A0B4A2D",
+      "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "DECISION-MODEL-01",
+      "target": "GONI-EVIDENCE-JEV-20260923",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "DECISION-MODEL-01",
+      "target": "GONI-SYNTHESIS-DECISION-MODEL-LANDSCAPE-20260923",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "generated",
+      "source": "DECISION-MODEL-01",
+      "target": "GONI-SYNTHESIS-PROBABILISTIC-DECISION-CONTROL-01",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "generated",
+      "source": "DECISION-MODEL-01",
+      "target": "GONI-EXPERIMENT-DECISION-LAYER-01",
+      "type": "tested_by"
+    },
+    {
+      "projection": "generated",
       "source": "DELEG-01",
       "target": "GONI-EVIDENCE-4D46D89DBD78",
       "type": "supported_by"
@@ -62033,6 +63140,12 @@
       "source": "DELEG-01",
       "target": "GONI-EVIDENCE-ADA29BB66BC9",
       "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "DOCTRINE-DELEG-01",
+      "target": "GONI-PRINCIPLE-GOV-LOOP-01",
+      "type": "refined_by"
     },
     {
       "projection": "generated",
@@ -62090,15 +63203,63 @@
     },
     {
       "projection": "authored",
+      "source": "GONI-DECISION-84F201170733",
+      "target": "CAL-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-DECISION-84F201170733",
+      "target": "LOSS-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-DECISION-84F201170733",
+      "target": "SELECTIVE-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-DECISION-84F201170733",
+      "target": "GONI-IMAP-EB2133E6965D",
+      "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-DECISION-9AF49466170D",
+      "target": "DECISION-MODEL-01",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-DECISION-9AF49466170D",
+      "target": "LOSS-01",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "authored",
       "source": "GONI-DECISION-9AF49466170D",
       "target": "GONI-PRINCIPLE-9062425CD490",
       "type": "depends_on"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-DECISION-9AF49466170D",
+      "target": "GONI-PRINCIPLE-HET-INTEL-01",
+      "type": "refined_by"
     },
     {
       "projection": "authored",
       "source": "GONI-DECISION-9AF49466170D",
       "target": "GONI-THESIS-7BFB74017D50",
       "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-DECISION-9AF49466170D",
+      "target": "GONI-SYNTHESIS-PROBABILISTIC-DECISION-CONTROL-01",
+      "type": "synthesized_by"
     },
     {
       "projection": "authored",
@@ -62570,6 +63731,18 @@
     },
     {
       "projection": "authored",
+      "source": "GONI-EVIDENCE-CAL-GUO-01",
+      "target": "CAL-01",
+      "type": "supports"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-EVIDENCE-CAL-SCORING-01",
+      "target": "CAL-01",
+      "type": "supports"
+    },
+    {
+      "projection": "authored",
       "source": "GONI-EVIDENCE-CBC1E82C1776",
       "target": "MODEL-REG-01",
       "type": "supports"
@@ -62620,6 +63793,18 @@
       "projection": "authored",
       "source": "GONI-EVIDENCE-DE30FF49B389",
       "target": "REF-GONIOS-NEIGHBOR-01",
+      "type": "supports"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-EVIDENCE-DECISION-THEORY-01",
+      "target": "LOSS-01",
+      "type": "supports"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-EVIDENCE-DRIFT-01",
+      "target": "CAL-DRIFT-01",
       "type": "supports"
     },
     {
@@ -62708,6 +63893,36 @@
     },
     {
       "projection": "authored",
+      "source": "GONI-EVIDENCE-JEV-20260923",
+      "target": "DECISION-MODEL-01",
+      "type": "supports"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-EVIDENCE-JEV-20260923",
+      "target": "GONI-PRINCIPLE-HET-INTEL-01",
+      "type": "supports"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-EVIDENCE-JEV-20260923",
+      "target": "GONI-SYNTHESIS-DECISION-MODEL-LANDSCAPE-20260923",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-EVIDENCE-SELECTIVE-01",
+      "target": "SELECTIVE-01",
+      "type": "supports"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-EVIDENCE-STRUCTURED-01",
+      "target": "GONI-PRINCIPLE-VALIDITY-CORRECTNESS-01",
+      "type": "supports"
+    },
+    {
+      "projection": "authored",
       "source": "GONI-EXPERIMENT-0A1F9BC4014A",
       "target": "GONI-IMAP-66D2DBD94204",
       "type": "tests"
@@ -62753,6 +63968,54 @@
       "source": "GONI-EXPERIMENT-BEC00C3480C2",
       "target": "ADJACENT-PROJECTS",
       "type": "synthesized_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-EXPERIMENT-DECISION-LAYER-01",
+      "target": "GONI-SYNTHESIS-DECISION-MODEL-LANDSCAPE-20260923",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-EXPERIMENT-DECISION-LAYER-01",
+      "target": "GONI-SYNTHESIS-PROBABILISTIC-DECISION-CONTROL-01",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-EXPERIMENT-DECISION-LAYER-01",
+      "target": "CAL-01",
+      "type": "tests"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-EXPERIMENT-DECISION-LAYER-01",
+      "target": "DECISION-MODEL-01",
+      "type": "tests"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-EXPERIMENT-DECISION-LAYER-01",
+      "target": "GONI-IMAP-EB2133E6965D",
+      "type": "tests"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-EXPERIMENT-DECISION-LAYER-01",
+      "target": "GONI-PRINCIPLE-HET-INTEL-01",
+      "type": "tests"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-EXPERIMENT-DECISION-LAYER-01",
+      "target": "LOSS-01",
+      "type": "tests"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-EXPERIMENT-DECISION-LAYER-01",
+      "target": "SELECTIVE-01",
+      "type": "tests"
     },
     {
       "projection": "generated",
@@ -62851,10 +64114,64 @@
       "type": "refined_by"
     },
     {
+      "projection": "authored",
+      "source": "GONI-IMAP-EB2133E6965D",
+      "target": "CAL-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-IMAP-EB2133E6965D",
+      "target": "LOSS-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-IMAP-EB2133E6965D",
+      "target": "SELECTIVE-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-IMAP-EB2133E6965D",
+      "target": "CAL-01",
+      "type": "refined_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-IMAP-EB2133E6965D",
+      "target": "GONI-DECISION-84F201170733",
+      "type": "refined_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-IMAP-EB2133E6965D",
+      "target": "GONI-PRINCIPLE-HET-INTEL-01",
+      "type": "refined_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-IMAP-EB2133E6965D",
+      "target": "SELECTIVE-01",
+      "type": "refined_by"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-IMAP-EB2133E6965D",
+      "target": "GONI-PRINCIPLE-HET-INTEL-01",
+      "type": "refines"
+    },
+    {
       "projection": "generated",
       "source": "GONI-IMAP-EB2133E6965D",
       "target": "GONI-PRINCIPLE-9062425CD490",
       "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-IMAP-EB2133E6965D",
+      "target": "GONI-EXPERIMENT-DECISION-LAYER-01",
+      "type": "tested_by"
     },
     {
       "projection": "generated",
@@ -63025,6 +64342,150 @@
       "type": "refined_by"
     },
     {
+      "projection": "authored",
+      "source": "GONI-PRINCIPLE-GOV-LOOP-01",
+      "target": "REC-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-PRINCIPLE-GOV-LOOP-01",
+      "target": "TOOL-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-PRINCIPLE-GOV-LOOP-01",
+      "target": "CAL-DRIFT-01",
+      "type": "refined_by"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-PRINCIPLE-GOV-LOOP-01",
+      "target": "DOCTRINE-DELEG-01",
+      "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-PRINCIPLE-GOV-LOOP-01",
+      "target": "GONI-SYNTHESIS-PROBABILISTIC-DECISION-CONTROL-01",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-PRINCIPLE-HET-INTEL-01",
+      "target": "DECISION-MODEL-01",
+      "type": "refined_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-PRINCIPLE-HET-INTEL-01",
+      "target": "GONI-IMAP-EB2133E6965D",
+      "type": "refined_by"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-PRINCIPLE-HET-INTEL-01",
+      "target": "GONI-DECISION-9AF49466170D",
+      "type": "refines"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-PRINCIPLE-HET-INTEL-01",
+      "target": "GONI-IMAP-EB2133E6965D",
+      "type": "refines"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-PRINCIPLE-HET-INTEL-01",
+      "target": "GONI-THESIS-AF4B6A0B4A2D",
+      "type": "refines"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-PRINCIPLE-HET-INTEL-01",
+      "target": "MODEL-REG-01",
+      "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-PRINCIPLE-HET-INTEL-01",
+      "target": "GONI-EVIDENCE-JEV-20260923",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-PRINCIPLE-HET-INTEL-01",
+      "target": "GONI-PRINCIPLE-TRAJ-ECON-01",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-PRINCIPLE-HET-INTEL-01",
+      "target": "GONI-PRINCIPLE-VALIDITY-CORRECTNESS-01",
+      "type": "supported_by"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-PRINCIPLE-HET-INTEL-01",
+      "target": "GONI-THESIS-7BFB74017D50",
+      "type": "supports"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-PRINCIPLE-HET-INTEL-01",
+      "target": "GONI-SYNTHESIS-PROBABILISTIC-DECISION-CONTROL-01",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-PRINCIPLE-HET-INTEL-01",
+      "target": "GONI-EXPERIMENT-DECISION-LAYER-01",
+      "type": "tested_by"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-PRINCIPLE-TRAJ-ECON-01",
+      "target": "GONI-SYNTHESIS-44FB7018181A",
+      "type": "refines"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-PRINCIPLE-TRAJ-ECON-01",
+      "target": "GONI-PRINCIPLE-HET-INTEL-01",
+      "type": "supports"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-PRINCIPLE-TRAJ-ECON-01",
+      "target": "GONI-SYNTHESIS-PROBABILISTIC-DECISION-CONTROL-01",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-PRINCIPLE-VALIDITY-CORRECTNESS-01",
+      "target": "DECISION-MODEL-01",
+      "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-PRINCIPLE-VALIDITY-CORRECTNESS-01",
+      "target": "GONI-EVIDENCE-STRUCTURED-01",
+      "type": "supported_by"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-PRINCIPLE-VALIDITY-CORRECTNESS-01",
+      "target": "GONI-PRINCIPLE-HET-INTEL-01",
+      "type": "supports"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-PRINCIPLE-VALIDITY-CORRECTNESS-01",
+      "target": "GONI-SYNTHESIS-PROBABILISTIC-DECISION-CONTROL-01",
+      "type": "synthesized_by"
+    },
+    {
       "projection": "generated",
       "source": "GONI-SPEC-2F762878317A",
       "target": "GONI-IMAP-66D2DBD94204",
@@ -63035,6 +64496,18 @@
       "source": "GONI-SPEC-75D0D2E5F296",
       "target": "GONI-SYNTHESIS-E3B321C24C67",
       "type": "synthesized_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-SPEC-8911D8AA7EE0",
+      "target": "LOSS-01",
+      "type": "refined_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-SPEC-8911D8AA7EE0",
+      "target": "SELECTIVE-01",
+      "type": "refined_by"
     },
     {
       "projection": "authored",
@@ -64751,6 +66224,12 @@
       "source": "GONI-SYNTHESIS-43BDE59A8D90",
       "target": "GONI-SYNTHESIS-E7232FF8EC37",
       "type": "synthesized_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-SYNTHESIS-44FB7018181A",
+      "target": "GONI-PRINCIPLE-TRAJ-ECON-01",
+      "type": "refined_by"
     },
     {
       "projection": "generated",
@@ -66601,6 +68080,24 @@
       "type": "synthesized_by"
     },
     {
+      "projection": "authored",
+      "source": "GONI-SYNTHESIS-DECISION-MODEL-LANDSCAPE-20260923",
+      "target": "DECISION-MODEL-01",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SYNTHESIS-DECISION-MODEL-LANDSCAPE-20260923",
+      "target": "GONI-EVIDENCE-JEV-20260923",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SYNTHESIS-DECISION-MODEL-LANDSCAPE-20260923",
+      "target": "GONI-EXPERIMENT-DECISION-LAYER-01",
+      "type": "synthesizes"
+    },
+    {
       "projection": "generated",
       "source": "GONI-SYNTHESIS-DEDEB088F913",
       "target": "GONI-SYNTHESIS-15FDDF75571E",
@@ -67027,6 +68524,78 @@
       "type": "synthesized_by"
     },
     {
+      "projection": "authored",
+      "source": "GONI-SYNTHESIS-PROBABILISTIC-DECISION-CONTROL-01",
+      "target": "CAL-01",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SYNTHESIS-PROBABILISTIC-DECISION-CONTROL-01",
+      "target": "CAL-DRIFT-01",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SYNTHESIS-PROBABILISTIC-DECISION-CONTROL-01",
+      "target": "CONFIDENCE-01",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SYNTHESIS-PROBABILISTIC-DECISION-CONTROL-01",
+      "target": "DECISION-MODEL-01",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SYNTHESIS-PROBABILISTIC-DECISION-CONTROL-01",
+      "target": "GONI-DECISION-9AF49466170D",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SYNTHESIS-PROBABILISTIC-DECISION-CONTROL-01",
+      "target": "GONI-EXPERIMENT-DECISION-LAYER-01",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SYNTHESIS-PROBABILISTIC-DECISION-CONTROL-01",
+      "target": "GONI-PRINCIPLE-GOV-LOOP-01",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SYNTHESIS-PROBABILISTIC-DECISION-CONTROL-01",
+      "target": "GONI-PRINCIPLE-HET-INTEL-01",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SYNTHESIS-PROBABILISTIC-DECISION-CONTROL-01",
+      "target": "GONI-PRINCIPLE-TRAJ-ECON-01",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SYNTHESIS-PROBABILISTIC-DECISION-CONTROL-01",
+      "target": "GONI-PRINCIPLE-VALIDITY-CORRECTNESS-01",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SYNTHESIS-PROBABILISTIC-DECISION-CONTROL-01",
+      "target": "LOSS-01",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SYNTHESIS-PROBABILISTIC-DECISION-CONTROL-01",
+      "target": "SELECTIVE-01",
+      "type": "synthesizes"
+    },
+    {
       "projection": "generated",
       "source": "GONI-THESIS-468CFFD9870E",
       "target": "GONI-SYNTHESIS-0FE689876A05",
@@ -67036,6 +68605,24 @@
       "projection": "generated",
       "source": "GONI-THESIS-7BFB74017D50",
       "target": "GONI-DECISION-9AF49466170D",
+      "type": "refined_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-THESIS-7BFB74017D50",
+      "target": "GONI-PRINCIPLE-HET-INTEL-01",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-THESIS-AF4B6A0B4A2D",
+      "target": "DECISION-MODEL-01",
+      "type": "refined_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-THESIS-AF4B6A0B4A2D",
+      "target": "GONI-PRINCIPLE-HET-INTEL-01",
       "type": "refined_by"
     },
     {
@@ -67235,6 +68822,60 @@
       "source": "LLM-RUNTIME",
       "target": "GONI-EVIDENCE-B17FC339E5F3",
       "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "LOSS-01",
+      "target": "GONI-DECISION-84F201170733",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
+      "source": "LOSS-01",
+      "target": "GONI-IMAP-EB2133E6965D",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "authored",
+      "source": "LOSS-01",
+      "target": "CAL-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "LOSS-01",
+      "target": "GONI-DECISION-9AF49466170D",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "LOSS-01",
+      "target": "SELECTIVE-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "LOSS-01",
+      "target": "GONI-SPEC-8911D8AA7EE0",
+      "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "LOSS-01",
+      "target": "GONI-EVIDENCE-DECISION-THEORY-01",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "LOSS-01",
+      "target": "GONI-SYNTHESIS-PROBABILISTIC-DECISION-CONTROL-01",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "generated",
+      "source": "LOSS-01",
+      "target": "GONI-EXPERIMENT-DECISION-LAYER-01",
+      "type": "tested_by"
     },
     {
       "projection": "authored",
@@ -67463,6 +69104,12 @@
       "source": "METRICS-01",
       "target": "GONI-SYNTHESIS-FC6B81D6EEB3",
       "type": "synthesizes"
+    },
+    {
+      "projection": "generated",
+      "source": "MODEL-REG-01",
+      "target": "GONI-PRINCIPLE-HET-INTEL-01",
+      "type": "refined_by"
     },
     {
       "projection": "generated",
@@ -67814,6 +69461,18 @@
     },
     {
       "projection": "generated",
+      "source": "REC-01",
+      "target": "GONI-PRINCIPLE-GOV-LOOP-01",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
+      "source": "REC-01",
+      "target": "CONFIDENCE-01",
+      "type": "refined_by"
+    },
+    {
+      "projection": "generated",
       "source": "REF-GONIOS-NEIGHBOR-01",
       "target": "GONI-EVIDENCE-180EEFB60BD6",
       "type": "supported_by"
@@ -68093,6 +69752,66 @@
       "source": "SANDBOX-00",
       "target": "GONI-SYNTHESIS-CD2687CE4118",
       "type": "synthesizes"
+    },
+    {
+      "projection": "generated",
+      "source": "SELECTIVE-01",
+      "target": "CONFIDENCE-01",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
+      "source": "SELECTIVE-01",
+      "target": "GONI-DECISION-84F201170733",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
+      "source": "SELECTIVE-01",
+      "target": "GONI-IMAP-EB2133E6965D",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
+      "source": "SELECTIVE-01",
+      "target": "LOSS-01",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "authored",
+      "source": "SELECTIVE-01",
+      "target": "CAL-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "SELECTIVE-01",
+      "target": "GONI-IMAP-EB2133E6965D",
+      "type": "refines"
+    },
+    {
+      "projection": "authored",
+      "source": "SELECTIVE-01",
+      "target": "GONI-SPEC-8911D8AA7EE0",
+      "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "SELECTIVE-01",
+      "target": "GONI-EVIDENCE-SELECTIVE-01",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "SELECTIVE-01",
+      "target": "GONI-SYNTHESIS-PROBABILISTIC-DECISION-CONTROL-01",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "generated",
+      "source": "SELECTIVE-01",
+      "target": "GONI-EXPERIMENT-DECISION-LAYER-01",
+      "type": "tested_by"
     },
     {
       "projection": "authored",
@@ -68534,6 +70253,12 @@
     },
     {
       "projection": "generated",
+      "source": "TOOL-01",
+      "target": "GONI-PRINCIPLE-GOV-LOOP-01",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
       "source": "VIS-01",
       "target": "GONI-EVIDENCE-120C9708D024",
       "type": "supported_by"
@@ -68623,6 +70348,15 @@
       "path": "sources/src-bayer1993-timestamp.yml",
       "title": "bayer1993-timestamp",
       "url": "https://www.math.columbia.edu/~bayer/papers/Timestamp_BHS93.pdf"
+    },
+    {
+      "citation": "Berger, James O. (1985). Statistical Decision Theory and Bayesian Analysis, 2nd ed. Springer.",
+      "id": "SRC-BERGER1985-STATISTICAL-DECISION-THEORY",
+      "kind": "academic",
+      "notes": "Classical treatment of decision-making under uncertainty through loss functions, posterior expected loss, and Bayes actions.",
+      "path": "sources/src-berger1985-statistical-decision-theory.yml",
+      "title": "berger1985-statistical-decision-theory",
+      "url": "https://link.springer.com/book/10.1007/978-1-4757-4286-2"
     },
     {
       "citation": "https://github.com/black-forest-labs/flux",
@@ -68796,6 +70530,24 @@
       "url": "https://arxiv.org/abs/1803.09010"
     },
     {
+      "citation": "Geifman, Yonatan; El-Yaniv, Ran (2019). SelectiveNet: A Deep Neural Network with an Integrated Reject Option. Proceedings of the 36th International Conference on Machine Learning, PMLR 97:2151-2159.",
+      "id": "SRC-GEIFMAN2019-SELECTIVENET",
+      "kind": "academic",
+      "notes": "Formalizes selective prediction with an explicit reject option and evaluates the risk-coverage trade-off.",
+      "path": "sources/src-geifman2019-selectivenet.yml",
+      "title": "geifman2019-selectivenet",
+      "url": "https://proceedings.mlr.press/v97/geifman19a.html"
+    },
+    {
+      "citation": "Geng, Saibo; Josifoski, Martin; Peyrard, Maxime; West, Robert (2023). Grammar-Constrained Decoding for Structured NLP Tasks without Finetuning. Proceedings of EMNLP 2023.",
+      "id": "SRC-GENG2023-GRAMMAR-CONSTRAINED-DECODING",
+      "kind": "academic",
+      "notes": "Studies grammar-constrained decoding that restricts generation to outputs valid under a formal grammar, separating structural output constraints from semantic task performance.",
+      "path": "sources/src-geng2023-grammar-constrained-decoding.yml",
+      "title": "geng2023-grammar-constrained-decoding",
+      "url": "https://aclanthology.org/2023.emnlp-main.674/"
+    },
+    {
       "citation": "https://arxiv.org/pdf/1502.04015",
       "id": "SRC-GIPP2015-BTC-TIMESTAMP",
       "kind": "academic",
@@ -68803,6 +70555,15 @@
       "path": "sources/src-gipp2015-btc-timestamp.yml",
       "title": "gipp2015-btc-timestamp",
       "url": "https://arxiv.org/pdf/1502.04015"
+    },
+    {
+      "citation": "Gneiting, Tilmann; Raftery, Adrian E. (2007). Strictly Proper Scoring Rules, Prediction, and Estimation. Journal of the American Statistical Association 102(477):359-378.",
+      "id": "SRC-GNEITING-RAFTERY2007-SCORING",
+      "kind": "academic",
+      "notes": "Develops strictly proper scoring rules for probabilistic forecasts and their use in evaluating predictive distributions.",
+      "path": "sources/src-gneiting-raftery2007-scoring.yml",
+      "title": "gneiting-raftery2007-scoring",
+      "url": "https://sites.stat.washington.edu/people/raftery/Research/PDF/Gneiting2007jasa.pdf"
     },
     {
       "citation": "Legacy annotated bibliography key [[greshake2023-indirect-prompt-injection]]",
@@ -68838,6 +70599,15 @@
       "path": "sources/src-guner2020-rpa-capability.yml",
       "title": "guner2020-rpa-capability",
       "url": "https://aisel.aisnet.org/ecis2020_rp/153/"
+    },
+    {
+      "citation": "Guo, Chuan; Pleiss, Geoff; Sun, Yu; Weinberger, Kilian Q. (2017). On Calibration of Modern Neural Networks. Proceedings of the 34th International Conference on Machine Learning, PMLR 70:1321-1330.",
+      "id": "SRC-GUO2017-CALIBRATION",
+      "kind": "academic",
+      "notes": "Shows empirically that predictive accuracy and probability calibration are distinct properties for modern neural networks and evaluates post-hoc calibration methods including temperature scaling.",
+      "path": "sources/src-guo2017-calibration.yml",
+      "title": "guo2017-calibration",
+      "url": "https://proceedings.mlr.press/v70/guo17a.html"
     },
     {
       "citation": "https://www.staroceans.org/e-book/Haber_Stornetta.pdf",
@@ -68937,6 +70707,16 @@
       "path": "sources/src-lampson1974-protection.yml",
       "title": "lampson1974-protection",
       "url": "https://dl.acm.org/doi/pdf/10.1145/775265.775268"
+    },
+    {
+      "accessed": "2026-09-23",
+      "citation": "LangChain. Building a Harness with Jev. 17 September 2026.",
+      "id": "SRC-LANGCHAIN2026-JEV-HARNESS",
+      "kind": "web",
+      "notes": "Third-party framework article showing Jev used for agent-loop decisions and structured evaluation; repeats TypeSafe-reported headline speed/cost claims rather than independently reproducing the full vendor benchmark.",
+      "path": "sources/src-langchain2026-jev-harness.yml",
+      "title": "langchain2026-jev-harness",
+      "url": "https://www.langchain.com/blog/building-a-harness-with-jev"
     },
     {
       "citation": "https://arxiv.org/abs/2005.11401",
@@ -69044,6 +70824,15 @@
       "path": "sources/src-ntia2024-open-model-weights.yml",
       "title": "ntia2024-open-model-weights",
       "url": "https://www.ntia.gov/programs-and-initiatives/artificial-intelligence/open-model-weights-report"
+    },
+    {
+      "citation": "Ovadia, Yaniv et al. (2019). Can You Trust Your Model's Uncertainty? Evaluating Predictive Uncertainty Under Dataset Shift. Advances in Neural Information Processing Systems 32.",
+      "id": "SRC-OVADIA2019-UNCERTAINTY-SHIFT",
+      "kind": "academic",
+      "notes": "Evaluates predictive uncertainty under dataset shift and shows that uncertainty quality can degrade as distribution shift increases.",
+      "path": "sources/src-ovadia2019-uncertainty-shift.yml",
+      "title": "ovadia2019-uncertainty-shift",
+      "url": "https://proceedings.neurips.cc/paper/2019/hash/8558cb408c1d76621371888657d2eb1d-Abstract.html"
     },
     {
       "citation": "https://arxiv.org/abs/2310.08560",
@@ -69232,6 +71021,26 @@
       "notes": "Reported view that deployed models do not robustly learn from mistakes in normal use, and that this limits autonomous improvement without system support.",
       "path": "sources/src-tworek2026-decoder.yml",
       "title": "tworek2026-decoder"
+    },
+    {
+      "accessed": "2026-09-23",
+      "citation": "TypeSafe AI. Introducing System One Models & Jev. 15 September 2026.",
+      "id": "SRC-TYPESAFE2026-JEV",
+      "kind": "web",
+      "notes": "Primary vendor announcement describing Jev's state-plus-typed-question interface, probability-bearing decisions, claimed new architecture, parallel sampler, RLCD training, and vendor benchmark claims. Performance, calibration, and 'can't hallucinate' statements are vendor claims.",
+      "path": "sources/src-typesafe2026-jev.yml",
+      "title": "typesafe2026-jev",
+      "url": "https://typesafe.ai/blog/introducing-system-one-models-and-jev"
+    },
+    {
+      "accessed": "2026-09-23",
+      "citation": "Vercel. TypeSafe AI's Jev now available on AI Gateway. 16 September 2026.",
+      "id": "SRC-VERCEL2026-JEV-GATEWAY",
+      "kind": "web",
+      "notes": "Independent platform documentation confirming Jev availability through Vercel AI Gateway and the typed Choice, Score, and Boolean decision interface with probabilities; vendor speed/cost figures are explicitly attributed to TypeSafe.",
+      "path": "sources/src-vercel2026-jev-gateway.yml",
+      "title": "vercel2026-jev-gateway",
+      "url": "https://vercel.com/changelog/typesafe-ai-jev-now-available-on-ai-gateway"
     },
     {
       "citation": "https://docs.vllm.ai/en/stable/features/speculative_decoding/",

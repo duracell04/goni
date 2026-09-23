@@ -4,14 +4,25 @@ title: 3.4 Frugal sovereign model router
 type: implementation-map
 status: draft
 implementation_state: specified_only
-proposition: Goni's router is local-first and sovereignty-aware.
+proposition: "Goni's router is local-first and sovereignty-aware; it allocates among heterogeneous cognitive mechanisms using calibrated evidence, selective acceptance, consequence-sensitive loss, and resource/privacy constraints while leaving authority decisions to the kernel."
 domains:
 - software
 aliases: []
-relations: []
-sources: []
+relations:
+- type: depends_on
+  target: CAL-01
+- type: depends_on
+  target: SELECTIVE-01
+- type: depends_on
+  target: LOSS-01
+- type: refines
+  target: GONI-PRINCIPLE-HET-INTEL-01
+sources:
+- SRC-FRUGALGPT2023
+- SRC-ROUTELLM2024
+- SRC-ROUTERBENCH2024
 artifacts: []
-uncertainty: Preserved from the legacy draft without status promotion or newly inferred evidence strength.
+uncertainty: "The concrete route set, estimators, thresholds, and utility terms remain empirical and workload-specific. This node specifies an allocation shape rather than verified runtime behavior."
 legacy:
 - path: blueprint/software/20-architecture.md
   heading: 3.4 Frugal sovereign model router
@@ -20,76 +31,55 @@ legacy:
 
 # 3.4 Frugal sovereign model router
 
-> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.
+Goni's router is local-first and sovereignty-aware. Its objective is broader
+than model cost and answer quality: route choice may also depend on privacy
+leakage risk, latency, energy/thermal budget, audit burden, data locality,
+external dependency cost, consequence class, and the active approval corridor.
 
-### 3.4 Frugal sovereign model router
+The operating rule is to use the smallest sufficient computation whose evidence
+supports the required operating point, then escalate when uncertainty,
+consequence, freshness, capability, or verification requirements justify the
+additional cost.
 
-Goni's router is local-first and sovereignty-aware. It uses FrugalGPT-style
-cascades, but the objective is not only cost and quality: the route must also
-account for privacy leakage risk, latency, energy/thermal budget, audit burden,
-data locality, external dependency cost, and the active approval corridor.
+A default mechanism ordering may resemble:
 
-The operating rule is: run the smallest local computation that can safely solve
-the task, then escalate only when confidence, risk, freshness, or capability
-constraints justify the extra cost.
+rule/cache/memory
+-> deterministic checker or retrieval
+-> task-specific classifier or bounded decision model
+-> local small generative model
+-> local stronger reasoning model
+-> local multi-model verification
+-> policy-permitted remote model/council
+-> principal review
 
-Default route order:
+This ordering is a policy template, not a claim that every task traverses every
+stage or that the same order is optimal universally.
 
-```text
-rule/cache/memory -> local small -> local large -> local tools/RAG
--> local multi-agent check -> cloud Council -> premium cloud vote
-```
+For a candidate route result r on input x, confidence may be used only when the
+relevant calibration evidence is in scope under CAL-01. SELECTIVE-01 determines
+whether the cognitive result is accepted or abstained from at the configured
+risk-coverage operating point. LOSS-01 determines how the cost of error,
+escalation, delay, and other consequences affects the control decision.
 
-The first sufficient local route wins. The cloud-side Council is an escalation
-tier, not the default decoder.
+Remote escalation remains subject to network, privacy, and approval policy. Raw
+private or sensitive context is not sent merely because a remote route has
+higher expected model quality.
 
-DSpark is evidence for the same systems pattern at token scale: cheap draft
-work is useful only when a stronger verifier, calibrated confidence estimates,
-and load-aware scheduling decide how much draft to trust. For Goni, this maps
-to local routers and small models drafting or classifying, stronger local models
-verifying, and cloud/council routes remaining exceptional rather than default
-intelligence. [[cheng2026-dspark]] [[deepseek2026-v4-dspark-hf]]
+Each consequential routing decision SHOULD link its receipt to:
 
-At the minimal formal level we distinguish two local model classes and one
-remote escalation class:
+- mechanisms considered;
+- mechanism selected;
+- calibration/confidence evidence where used;
+- acceptance or abstention rule;
+- consequence class and applicable loss/control policy;
+- redaction and privacy state;
+- model or tool identities;
+- resulting policy decision.
 
-- Small model \(M_s\) with cost \(c_s\) (tokens/s, energy).  
-- Large model \(M_\ell\) with cost \(c_\ell \gg c_s\).
-- Remote Council route \(M_r\) with external cost, latency, and privacy terms.
+The router may still be modeled as a contextual bandit or related online
+decision problem for suitable workloads. Regret is one evaluation axis among
+several. Numeric regret targets are experiment-specific and require an explicit
+loss definition, oracle, workload, and evaluation protocol.
 
-For a request \(x\) and preliminary small-model answer \(\hat{y}_s\), we compute a **calibrated confidence** \(p(x) \in [0,1]\).
-
-Router policy:
-
-1. If \(p(x) > \tau_{\mathrm{accept}}\): accept small model output.  
-2. If \(p(x) < \tau_{\mathrm{escalate}}\) and early in the generation: escalate.  
-3. Else compare expected value of escalation vs continuation.
-
-Escalation to the cloud-side multi-model path (the [LLM Council](/blueprint/docs/llm-council.md)) follows the triggers in Section 3 of that doc: explicit user request, high difficulty/safety-critical classification, or long-context needs that exceed local comfort.
-
-It is also allowed when current public information is required and the outgoing
-payload is public, redacted, or explicitly approved. It is not a default route
-for ordinary private context, routine drafting, or tasks where a local verifier
-has sufficient confidence.
-
-The router MUST NOT send raw private or sensitive context to \(M_r\) by default.
-It must either keep execution local, use a redacted/public-only payload, or
-require the configured approval corridor.
-
-Each routing decision emits receipt metadata (`llm_route`) containing the
-classification, selected route, models considered/used, redaction requirement,
-privacy class sent, and policy decision.
-
-We treat this as a contextual routing problem with side information (the
-features used to estimate \(p(x)\)); the prototype is threshold-based, and the
-evaluation lane may later train a learned router from preference/regret data.
-
-> **Theorem 3.2 (Regret bound, sketch).**  
-> Suppose the confidence estimator is \(\epsilon\)-calibrated and the reward gap between correct/incorrect decisions is bounded. Then there exists a threshold policy (approximated by our router) whose regret \(R_T\) over \(T\) requests satisfies:
-> $$
-> \frac{R_T}{T} \le \beta(\epsilon)
-> $$
-> with \(\beta(\epsilon)\) small. In practice we target \(\beta(\epsilon) \le 0.07\).
-
-> **Invariant K2 (Router regret).**  
-> On benchmark datasets, empirical regret of `goni-router` compared to an oracle policy that knows ground-truth â€œdifficultyâ€ labels must stay below 0.07.
+Routing evidence can influence cognition and escalation. It cannot itself
+expand mandates, capabilities, or authority.
