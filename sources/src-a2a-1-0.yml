@@ -1,0 +1,7 @@
+id: SRC-A2A-1-0
+title: agent2agent-protocol-1-0
+kind: web
+citation: https://a2a-protocol.org/latest/specification/
+notes: The Agent2Agent protocol specifies interoperable communication between independent agent systems, including agent discovery or capability description, task-oriented interaction, messages, artifacts, and protocol bindings.
+url: https://a2a-protocol.org/latest/specification/
+accessed: "2026-09-23"

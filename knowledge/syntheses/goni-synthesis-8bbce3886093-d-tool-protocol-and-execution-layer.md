@@ -9,7 +9,9 @@ domains:
 - repository
 aliases: []
 relations: []
-sources: []
+sources:
+- SRC-MCP-2026-07-28
+- SRC-A2A-1-0
 artifacts: []
 uncertainty: Preserved from the legacy draft without status promotion or newly inferred evidence strength.
 legacy:

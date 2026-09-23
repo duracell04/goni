@@ -1,0 +1,7 @@
+id: SRC-WALLACE2024-INSTRUCTION-HIERARCHY
+title: wallace2024-instruction-hierarchy
+kind: academic
+citation: https://arxiv.org/abs/2404.13208
+notes: Wallace et al. identify lack of instruction privilege as a core prompt-injection weakness and train models to prioritize privileged instructions over conflicting lower-privilege text.
+url: https://arxiv.org/abs/2404.13208
+accessed: "2026-09-23"

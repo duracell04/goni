@@ -9,7 +9,10 @@ domains:
 - research
 aliases: []
 relations: []
-sources: []
+sources:
+- SRC-PACKER2023-MEMGPT
+- SRC-XU2025-MEMOS
+- SRC-HU2026-AGENT-MEMORY-SURVEY
 artifacts: []
 uncertainty: Preserved from the legacy draft without status promotion or newly inferred evidence strength.
 legacy:

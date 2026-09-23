@@ -1,0 +1,7 @@
+id: SRC-DOSHI2026-SAFE-TOOL-USE
+title: doshi2026-safe-tool-use
+kind: academic
+citation: https://arxiv.org/abs/2601.08012
+notes: Doshi et al. argue that model-based safeguards improve reliability but cannot guarantee safe tool use, and propose enforceable specifications over information flows and tool sequences.
+url: https://arxiv.org/abs/2601.08012
+accessed: "2026-09-23"

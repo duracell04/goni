@@ -1,0 +1,7 @@
+id: SRC-TRAN2026-COMPUTE-NORMALIZED-MULTIAGENT
+title: tran2026-compute-normalized-multiagent
+kind: academic
+citation: https://arxiv.org/abs/2604.02460
+notes: Tran and Kiela compare single-agent and multi-agent LLM systems under matched reasoning-token budgets and find that many apparent multi-agent gains are confounded by additional test-time compute and context effects.
+url: https://arxiv.org/abs/2604.02460
+accessed: "2026-09-23"

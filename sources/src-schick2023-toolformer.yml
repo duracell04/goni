@@ -1,0 +1,7 @@
+id: SRC-SCHICK2023-TOOLFORMER
+title: schick2023-toolformer
+kind: academic
+citation: https://arxiv.org/abs/2302.04761
+notes: Toolformer studies language models learning when to call external APIs, which tools to call, what arguments to pass, and how to incorporate tool results.
+url: https://arxiv.org/abs/2302.04761
+accessed: "2026-09-23"

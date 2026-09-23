@@ -1,0 +1,7 @@
+id: SRC-DEBENEDETTI2024-AGENTDOJO
+title: debenedetti2024-agentdojo
+kind: academic
+citation: https://arxiv.org/abs/2406.13352
+notes: AgentDojo evaluates attacks and defenses for tool-using LLM agents that interact with untrusted data and external tools.
+url: https://arxiv.org/abs/2406.13352
+accessed: "2026-09-23"

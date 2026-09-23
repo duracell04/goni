@@ -17,6 +17,10 @@
       "node": "AGENT-STORE-01"
     },
     {
+      "alias": "API CLI GUI selection",
+      "node": "INTERFACE-SELECTION-01"
+    },
+    {
       "alias": "CONTEXT-GRAVITY-GRAPH",
       "node": "CGG-01"
     },
@@ -149,6 +153,10 @@
       "node": "LSC-01"
     },
     {
+      "alias": "MCP versus A2A",
+      "node": "INTEROP-MCP-A2A-01"
+    },
+    {
       "alias": "MEMORY-RETRIEVAL",
       "node": "MEM-RETR-01"
     },
@@ -163,6 +171,10 @@
     {
       "alias": "PRODUCT-SURFACES",
       "node": "SURF-00"
+    },
+    {
+      "alias": "RAG and context engineering",
+      "node": "RAG-CONTEXT-01"
     },
     {
       "alias": "SCHEDULER-AND-INTERRUPTS",
@@ -225,16 +237,92 @@
       "node": "VIS-RUNTIME-01"
     },
     {
+      "alias": "access surface model",
+      "node": "INTERFACE-MODEL-01"
+    },
+    {
+      "alias": "agent ontology",
+      "node": "AGENT-ONTOLOGY-01"
+    },
+    {
+      "alias": "agent systems research map",
+      "node": "AGENT-SYSTEMS-MAP-01"
+    },
+    {
+      "alias": "agentic AI",
+      "node": "AGENTICNESS-01"
+    },
+    {
+      "alias": "agentic system ontology",
+      "node": "AGENT-ONTOLOGY-01"
+    },
+    {
+      "alias": "agenticness",
+      "node": "AGENTICNESS-01"
+    },
+    {
+      "alias": "auditability model",
+      "node": "AUDIT-RUNTIME-01"
+    },
+    {
       "alias": "authority-state-is-not-a-cache",
       "node": "GONI-DECISION-9AF49466170D"
+    },
+    {
+      "alias": "belief state",
+      "node": "AGENT-STATE-01"
+    },
+    {
+      "alias": "consequence simulation",
+      "node": "WORLD-MODEL-01"
+    },
+    {
+      "alias": "epistemic versus causal tools",
+      "node": "TOOL-EFFECT-01"
+    },
+    {
+      "alias": "governed self-evolution",
+      "node": "ADAPTATION-LEVELS-01"
+    },
+    {
+      "alias": "instruction data boundary",
+      "node": "TRUST-INPUT-01"
+    },
+    {
+      "alias": "interface taxonomy",
+      "node": "INTERFACE-MODEL-01"
     },
     {
       "alias": "large-latent-state-small-active-state",
       "node": "GONI-PRINCIPLE-9062425CD490"
     },
     {
+      "alias": "long-horizon agent evaluation",
+      "node": "TRAJECTORY-EVAL-01"
+    },
+    {
+      "alias": "multi-agent evaluation",
+      "node": "MULTIAGENT-EVAL-01"
+    },
+    {
+      "alias": "partial observability",
+      "node": "AGENT-STATE-01"
+    },
+    {
       "alias": "semantic-working-set-management",
       "node": "GONI-IMAP-66D2DBD94204"
+    },
+    {
+      "alias": "trajectory reliability",
+      "node": "TRAJECTORY-EVAL-01"
+    },
+    {
+      "alias": "trusted instruction boundary",
+      "node": "TRUST-INPUT-01"
+    },
+    {
+      "alias": "world model",
+      "node": "WORLD-MODEL-01"
     }
   ],
   "indexes": {
@@ -386,12 +474,45 @@
         "GONI-SYNTHESIS-E2FB2167D274",
         "SPEC-KERN-01"
       ],
+      "agents": [
+        "AGENT-ONTOLOGY-01",
+        "AGENT-STATE-01",
+        "AGENT-SYSTEMS-MAP-01",
+        "AGENTICNESS-01",
+        "EVID-A2A-INTEROPERABILITY-01",
+        "EVID-AGENTIC-LLM-TAXONOMY-01",
+        "EVID-AGENTIC-RL-POMDP-01",
+        "EVID-COMPUTE-NORMALIZED-MULTIAGENT-01",
+        "EVID-CONTINUAL-EXPERIENCE-COLLAPSE-01",
+        "EVID-OSWORLD2-LONG-HORIZON-01",
+        "EVID-REACT-AGENT-LOOP-01",
+        "EVID-SELF-EVOLVING-TAXONOMY-01",
+        "EVID-WORLD-MODEL-INTERMEDIARY-01",
+        "INTEROP-MCP-A2A-01",
+        "MULTIAGENT-EVAL-01",
+        "TRAJECTORY-EVAL-01",
+        "WORLD-MODEL-01"
+      ],
+      "audit": [
+        "AUDIT-RUNTIME-01",
+        "EVID-AUDITABLE-AGENTS-01"
+      ],
+      "authority": [
+        "TOOL-EFFECT-01",
+        "TRUST-INPUT-01"
+      ],
       "billing": [
         "BILL-01",
         "BILL-02"
       ],
       "community": [
         "GONI-PROPOSAL-9D10D978BDC3"
+      ],
+      "context": [
+        "EVID-CONTEXT-ENGINEERING-TAXONOMY-01",
+        "EVID-INSTRUCTION-HIERARCHY-01",
+        "RAG-CONTEXT-01",
+        "TRUST-INPUT-01"
       ],
       "crdt": [
         "CRDT-AUDIT-01",
@@ -500,6 +621,18 @@
         "SCHEMA-MVP-01",
         "SPINE-01",
         "ZCO-01"
+      ],
+      "evaluation": [
+        "EVID-COMPUTE-NORMALIZED-MULTIAGENT-01",
+        "EVID-OSWORLD2-LONG-HORIZON-01",
+        "EVID-SWEBENCH-EXECUTABLE-VERIFICATION-01",
+        "EVID-TAUBENCH-RELIABILITY-01",
+        "EVID-TOOLSANDBOX-STATEFUL-EVAL-01",
+        "MULTIAGENT-EVAL-01",
+        "TRAJECTORY-EVAL-01"
+      ],
+      "governance": [
+        "ADAPTATION-LEVELS-01"
       ],
       "hardware": [
         "ADR-INDEX-HW",
@@ -665,6 +798,16 @@
         "OS-AND-BASE-IMAGE",
         "POWER-AND-PSU"
       ],
+      "interfaces": [
+        "INTERFACE-MODEL-01",
+        "INTERFACE-SELECTION-01"
+      ],
+      "interoperability": [
+        "EVID-A2A-INTEROPERABILITY-01",
+        "EVID-MCP-SEMANTICS-01",
+        "INTERFACE-MODEL-01",
+        "INTEROP-MCP-A2A-01"
+      ],
       "kernel": [
         "GONI-DECISION-5346D37FC858",
         "GONI-DECISION-9AF49466170D",
@@ -762,6 +905,11 @@
         "SPEC-KERN-01",
         "SPEC-POL-01",
         "SPEC-TXN-01"
+      ],
+      "learning": [
+        "ADAPTATION-LEVELS-01",
+        "EVID-CONTINUAL-EXPERIENCE-COLLAPSE-01",
+        "EVID-SELF-EVOLVING-TAXONOMY-01"
       ],
       "market": [
         "AI-MEDIA-PROVENANCE",
@@ -916,6 +1064,7 @@
       ],
       "memory": [
         "BOUND-01",
+        "EVID-AGENT-MEMORY-DYNAMICS-01",
         "EVID-SEC-02",
         "GONI-EXPERIMENT-290E879EE8E2",
         "GONI-EXPERIMENT-4193B6DF2A2A",
@@ -949,7 +1098,8 @@
         "GONI-SYNTHESIS-161FC810382A",
         "GONI-SYNTHESIS-AE048AF3026D",
         "MEM-RETR-01",
-        "MEMORY-ARCHITECTURE"
+        "MEMORY-ARCHITECTURE",
+        "RAG-CONTEXT-01"
       ],
       "network": [
         "GONI-IMAP-B21D85F4146E",
@@ -978,6 +1128,10 @@
         "GONI-SPEC-FC72CAAED1BC",
         "NET-01"
       ],
+      "planning": [
+        "EVID-WORLD-MODEL-INTERMEDIARY-01",
+        "WORLD-MODEL-01"
+      ],
       "policy": [
         "EVID-AUTON-03",
         "GONI-DECISION-5346D37FC858",
@@ -1003,6 +1157,7 @@
         "SPEC-POL-01"
       ],
       "product": [
+        "AGENTICNESS-01",
         "DOCTRINE-DELEG-01",
         "GONI-OBJECTION-0CC876FB8D27",
         "GONI-PRINCIPLE-197860126029",
@@ -1079,6 +1234,13 @@
         "OS-COMPLETENESS-CHECKLIST",
         "SURF-00",
         "THESIS-SOVEREIGN-DELEG-OS-01"
+      ],
+      "provenance": [
+        "AUDIT-RUNTIME-01",
+        "EVID-AUDITABLE-AGENTS-01"
+      ],
+      "reliability": [
+        "EVID-TAUBENCH-RELIABILITY-01"
       ],
       "repository": [
         "ADJACENT-PROJECTS",
@@ -1589,6 +1751,29 @@
         "THREAT-MODEL"
       ],
       "research": [
+        "AGENT-ONTOLOGY-01",
+        "AGENT-STATE-01",
+        "AGENT-SYSTEMS-MAP-01",
+        "EVID-A2A-INTEROPERABILITY-01",
+        "EVID-AGENT-MEMORY-DYNAMICS-01",
+        "EVID-AGENTDOJO-UNTRUSTED-DATA-01",
+        "EVID-AGENTIC-LLM-TAXONOMY-01",
+        "EVID-AGENTIC-RL-POMDP-01",
+        "EVID-AUDITABLE-AGENTS-01",
+        "EVID-COMPUTE-NORMALIZED-MULTIAGENT-01",
+        "EVID-CONTEXT-ENGINEERING-TAXONOMY-01",
+        "EVID-CONTINUAL-EXPERIENCE-COLLAPSE-01",
+        "EVID-INSTRUCTION-HIERARCHY-01",
+        "EVID-MCP-SEMANTICS-01",
+        "EVID-OSWORLD2-LONG-HORIZON-01",
+        "EVID-REACT-AGENT-LOOP-01",
+        "EVID-SAFE-TOOL-USE-01",
+        "EVID-SELF-EVOLVING-TAXONOMY-01",
+        "EVID-SWEBENCH-EXECUTABLE-VERIFICATION-01",
+        "EVID-TAUBENCH-RELIABILITY-01",
+        "EVID-TOOLFORMER-TOOL-SELECTION-01",
+        "EVID-TOOLSANDBOX-STATEFUL-EVAL-01",
+        "EVID-WORLD-MODEL-INTERMEDIARY-01",
         "GONI-EVIDENCE-0577AE42BDFA",
         "GONI-EVIDENCE-074976FCCFF9",
         "GONI-EVIDENCE-0C67B820C927",
@@ -1690,7 +1875,17 @@
         "GONI-SYNTHESIS-D3554320FEBD",
         "GONI-SYNTHESIS-D5A359AF7D66",
         "GONI-SYNTHESIS-F0626F7EFE2C",
-        "REF-GONIOS-NEIGHBOR-01"
+        "MULTIAGENT-EVAL-01",
+        "RAG-CONTEXT-01",
+        "REF-GONIOS-NEIGHBOR-01",
+        "TRAJECTORY-EVAL-01",
+        "WORLD-MODEL-01"
+      ],
+      "safety": [
+        "EVID-AGENTDOJO-UNTRUSTED-DATA-01",
+        "EVID-INSTRUCTION-HIERARCHY-01",
+        "EVID-SAFE-TOOL-USE-01",
+        "TRUST-INPUT-01"
       ],
       "security": [
         "GONI-DECISION-9AF49466170D",
@@ -1712,6 +1907,7 @@
         "AXIOMS-01",
         "CI-VALIDATION-01",
         "DASHBOARD-CONCEPTS",
+        "EVID-SWEBENCH-EXECUTABLE-VERIFICATION-01",
         "GONI-DECISION-0532C27DA3CC",
         "GONI-DECISION-1A482B12FFB8",
         "GONI-DECISION-1D38615A3B48",
@@ -2484,7 +2680,17 @@
         "TOOL-01",
         "VIS-01"
       ],
+      "state": [
+        "AGENT-STATE-01",
+        "EVID-AGENTIC-RL-POMDP-01"
+      ],
       "system": [
+        "ADAPTATION-LEVELS-01",
+        "AGENT-ONTOLOGY-01",
+        "AGENT-STATE-01",
+        "AGENT-SYSTEMS-MAP-01",
+        "AGENTICNESS-01",
+        "AUDIT-RUNTIME-01",
         "GONI-DECISION-9AF49466170D",
         "GONI-EXPERIMENT-0A1F9BC4014A",
         "GONI-EXPERIMENT-5ADAC18F09F9",
@@ -2581,12 +2787,28 @@
         "GONI-SYNTHESIS-F3DC36FB8C4B",
         "GONI-SYNTHESIS-FF1804B9EA23",
         "GONI-SYNTHESIS-FFFD0BDE80BE",
+        "INTERFACE-MODEL-01",
+        "INTERFACE-SELECTION-01",
+        "INTEROP-MCP-A2A-01",
         "LSKR-01",
+        "RAG-CONTEXT-01",
         "SOV-AUDIT-01",
         "SYS-00",
         "SYS-02",
         "SYS-03",
-        "SYS-04"
+        "SYS-04",
+        "TOOL-EFFECT-01",
+        "TRUST-INPUT-01"
+      ],
+      "tools": [
+        "EVID-AGENTDOJO-UNTRUSTED-DATA-01",
+        "EVID-MCP-SEMANTICS-01",
+        "EVID-SAFE-TOOL-USE-01",
+        "EVID-TOOLFORMER-TOOL-SELECTION-01",
+        "EVID-TOOLSANDBOX-STATEFUL-EVAL-01",
+        "INTERFACE-SELECTION-01",
+        "INTEROP-MCP-A2A-01",
+        "TOOL-EFFECT-01"
       ],
       "validation": [
         "CI-VALIDATION-01",
@@ -2606,6 +2828,7 @@
     },
     "by_status": {
       "draft": [
+        "ADAPTATION-LEVELS-01",
         "ADJACENT-PROJECTS",
         "ADR-INDEX-DOCS",
         "ADR-INDEX-HW",
@@ -2613,9 +2836,14 @@
         "ADR-XXXX",
         "AGENT-DEF-01",
         "AGENT-MANIFEST-01",
+        "AGENT-ONTOLOGY-01",
+        "AGENT-STATE-01",
         "AGENT-STORE-01",
+        "AGENT-SYSTEMS-MAP-01",
+        "AGENTICNESS-01",
         "AI-MEDIA-PROVENANCE",
         "API-SURFACE",
+        "AUDIT-RUNTIME-01",
         "AXIOMS-01",
         "BILL-01",
         "BILL-02",
@@ -2638,6 +2866,12 @@
         "DOCTRINE-DELEG-01",
         "ENCLOSURE-NOTES",
         "EVAL-README-00",
+        "EVID-A2A-INTEROPERABILITY-01",
+        "EVID-AGENT-MEMORY-DYNAMICS-01",
+        "EVID-AGENTDOJO-UNTRUSTED-DATA-01",
+        "EVID-AGENTIC-LLM-TAXONOMY-01",
+        "EVID-AGENTIC-RL-POMDP-01",
+        "EVID-AUDITABLE-AGENTS-01",
         "EVID-AUTON-01",
         "EVID-AUTON-02",
         "EVID-AUTON-03",
@@ -2648,6 +2882,9 @@
         "EVID-AUTON-08",
         "EVID-BUDGET-01",
         "EVID-BUDGET-02",
+        "EVID-COMPUTE-NORMALIZED-MULTIAGENT-01",
+        "EVID-CONTEXT-ENGINEERING-TAXONOMY-01",
+        "EVID-CONTINUAL-EXPERIENCE-COLLAPSE-01",
         "EVID-COST-01",
         "EVID-COST-02",
         "EVID-DESK-01",
@@ -2655,13 +2892,24 @@
         "EVID-HARNESS-01",
         "EVID-HARNESS-02",
         "EVID-INDEX-00",
+        "EVID-INSTRUCTION-HIERARCHY-01",
         "EVID-LONGCTX-01",
         "EVID-LONGCTX-02",
         "EVID-LONGCTX-03",
+        "EVID-MCP-SEMANTICS-01",
+        "EVID-OSWORLD2-LONG-HORIZON-01",
+        "EVID-REACT-AGENT-LOOP-01",
         "EVID-ROUTE-01",
+        "EVID-SAFE-TOOL-USE-01",
         "EVID-SEC-01",
         "EVID-SEC-02",
         "EVID-SEC-03",
+        "EVID-SELF-EVOLVING-TAXONOMY-01",
+        "EVID-SWEBENCH-EXECUTABLE-VERIFICATION-01",
+        "EVID-TAUBENCH-RELIABILITY-01",
+        "EVID-TOOLFORMER-TOOL-SELECTION-01",
+        "EVID-TOOLSANDBOX-STATEFUL-EVAL-01",
+        "EVID-WORLD-MODEL-INTERMEDIARY-01",
         "FIRST-PARTY-LLM-CHATS",
         "FRONT-PANEL-MCU",
         "GONI-AGILITY-RULES",
@@ -4476,6 +4724,9 @@
         "GONI-WHITEPAPER",
         "GOV-00",
         "HREQ-01",
+        "INTERFACE-MODEL-01",
+        "INTERFACE-SELECTION-01",
+        "INTEROP-MCP-A2A-01",
         "ITCR-01",
         "JOB-01",
         "LATENT-PREDICTOR",
@@ -4496,6 +4747,7 @@
         "MODELS-ANTHROPIC",
         "MODELS-MISTRAL",
         "MODELS-OPENAI",
+        "MULTIAGENT-EVAL-01",
         "NET-01",
         "NONBYPASS-INTEGRATION-METRICS",
         "OLLAMA-CLOUD",
@@ -4509,6 +4761,7 @@
         "POWER-AND-PSU",
         "PRICING-MODELS",
         "PRIV-01",
+        "RAG-CONTEXT-01",
         "REC-00",
         "REC-01",
         "RECEIPT-SCHEMA",
@@ -4550,8 +4803,12 @@
         "THESIS-SOVEREIGN-DELEG-OS-01",
         "THREAT-MODEL",
         "TOOL-01",
+        "TOOL-EFFECT-01",
+        "TRAJECTORY-EVAL-01",
+        "TRUST-INPUT-01",
         "VIS-01",
         "VIS-RUNTIME-01",
+        "WORLD-MODEL-01",
         "ZCO-01"
       ]
     },
@@ -4644,6 +4901,26 @@
         "GONI-DECISION-FEDF62BF576F"
       ],
       "evidence": [
+        "EVID-A2A-INTEROPERABILITY-01",
+        "EVID-AGENT-MEMORY-DYNAMICS-01",
+        "EVID-AGENTDOJO-UNTRUSTED-DATA-01",
+        "EVID-AGENTIC-LLM-TAXONOMY-01",
+        "EVID-AGENTIC-RL-POMDP-01",
+        "EVID-AUDITABLE-AGENTS-01",
+        "EVID-COMPUTE-NORMALIZED-MULTIAGENT-01",
+        "EVID-CONTEXT-ENGINEERING-TAXONOMY-01",
+        "EVID-CONTINUAL-EXPERIENCE-COLLAPSE-01",
+        "EVID-INSTRUCTION-HIERARCHY-01",
+        "EVID-MCP-SEMANTICS-01",
+        "EVID-OSWORLD2-LONG-HORIZON-01",
+        "EVID-REACT-AGENT-LOOP-01",
+        "EVID-SAFE-TOOL-USE-01",
+        "EVID-SELF-EVOLVING-TAXONOMY-01",
+        "EVID-SWEBENCH-EXECUTABLE-VERIFICATION-01",
+        "EVID-TAUBENCH-RELIABILITY-01",
+        "EVID-TOOLFORMER-TOOL-SELECTION-01",
+        "EVID-TOOLSANDBOX-STATEFUL-EVAL-01",
+        "EVID-WORLD-MODEL-INTERMEDIARY-01",
         "GONI-EVIDENCE-0577AE42BDFA",
         "GONI-EVIDENCE-074976FCCFF9",
         "GONI-EVIDENCE-0C67B820C927",
@@ -4862,9 +5139,12 @@
         "GONI-EXPERIMENT-F2AB32D85916",
         "GONI-EXPERIMENT-F3974392D01F",
         "GONI-EXPERIMENT-F5667C1994A9",
-        "GONI-LAB"
+        "GONI-LAB",
+        "MULTIAGENT-EVAL-01",
+        "TRAJECTORY-EVAL-01"
       ],
       "glossary": [
+        "AGENTICNESS-01",
         "GONI-GLOSSARY-043146DE9D6F",
         "GONI-GLOSSARY-10EA3FC4048F",
         "GONI-GLOSSARY-40FD28A1D22C",
@@ -5289,6 +5569,7 @@
         "GONI-OBJECTION-EEC5A603DDFE"
       ],
       "principle": [
+        "ADAPTATION-LEVELS-01",
         "AXIOMS-01",
         "DOCTRINE-DELEG-01",
         "GONI-PRINCIPLE-0147896F31C8",
@@ -5337,7 +5618,10 @@
         "GONI-PRINCIPLE-E216CB231421",
         "GONI-PRINCIPLE-F53185B15CF9",
         "GONI-PRINCIPLE-FCA3E2C7A10C",
-        "GONI-PRINCIPLE-FD9D88AD1223"
+        "GONI-PRINCIPLE-FD9D88AD1223",
+        "INTERFACE-SELECTION-01",
+        "TOOL-EFFECT-01",
+        "TRUST-INPUT-01"
       ],
       "proposal": [
         "AI-MEDIA-PROVENANCE",
@@ -5507,7 +5791,8 @@
         "SEC-00",
         "SEC-10",
         "SEC-20",
-        "TECH-INTEL-RULES"
+        "TECH-INTEL-RULES",
+        "WORLD-MODEL-01"
       ],
       "specification": [
         "AGENT-DEF-01",
@@ -5972,6 +6257,10 @@
       ],
       "synthesis": [
         "ADJACENT-PROJECTS",
+        "AGENT-ONTOLOGY-01",
+        "AGENT-STATE-01",
+        "AGENT-SYSTEMS-MAP-01",
+        "AUDIT-RUNTIME-01",
         "GONI-AGILITY-RULES",
         "GONI-STORY",
         "GONI-SWOT",
@@ -6478,6 +6767,8 @@
         "GONI-SYNTHESIS-FFFD0BDE80BE",
         "GONI-WHITEPAPER",
         "GOV-00",
+        "INTERFACE-MODEL-01",
+        "INTEROP-MCP-A2A-01",
         "LLM-COUNCIL",
         "LSKR-01",
         "MEMORY-ARCHITECTURE",
@@ -6486,6 +6777,7 @@
         "OS-COMPLETENESS-CHECKLIST",
         "PERSONAL-TWIN-AUTONOMY-MAP",
         "PLANE-00",
+        "RAG-CONTEXT-01",
         "REC-00",
         "RECEIPT-SCHEMA",
         "REF-GONIOS-NEIGHBOR-01",
@@ -10009,6 +10301,37 @@
   ],
   "nodes": [
     {
+      "aliases": [
+        "governed self-evolution"
+      ],
+      "artifacts": [],
+      "body": "# Separate adaptation targets and govern them by reversibility\n\nGoni already separates fast, medium, and slow forms of learning. This principle makes the research rationale explicit.\n\n## Adaptation targets\n\n1. **Inference-time context** — temporary, cheapest to change, expires with the run.\n2. **Persistent memory and retrieval state** — durable but externally inspectable and reversible.\n3. **Workflow, prompt, router, validator, or policy artifacts** — system behavior changes that require versioning and replay.\n4. **Adapters or scoped learned modules** — parametric changes with narrower declared seams.\n5. **Core model weights** — highest-cost, least transparent persistent change.\n\nThe system should increase governance as reversibility falls and blast radius rises.\n\n## Promotion discipline\n\nPersistent learning candidates should carry:\n\n- source experience and provenance,\n- the proposed generalized change,\n- independent evaluation or replay evidence,\n- regression and safety checks,\n- declared affected scopes,\n- rollback or version fallback,\n- approval appropriate to consequence.\n\nExperience is evidence for a candidate improvement, not proof that the system should internalize it.\n\nThe continual-experience literature provides a concrete falsification warning: repeated internalization can compound errors and reduce capability. Goni therefore defaults to external, inspectable adaptation before weight changes.",
+      "domains": [
+        "system",
+        "learning",
+        "governance"
+      ],
+      "id": "ADAPTATION-LEVELS-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/principles/adaptation-levels-01-governed-self-evolution.md",
+      "proposition": "Goni should treat memory updates, retrieval changes, workflow or policy changes, adapters, and model-weight changes as distinct adaptation targets with progressively stronger evidence, review, replay, provenance, and rollback requirements.",
+      "relations": [
+        {
+          "target": "SYS-03",
+          "type": "refines"
+        }
+      ],
+      "sources": [
+        "SRC-GAO2026-SELF-EVOLVING-AGENTS",
+        "SRC-CHEN2026-CONTINUAL-EXPERIENCE"
+      ],
+      "status": "draft",
+      "title": "Separate adaptation targets and govern them by reversibility",
+      "type": "principle",
+      "uncertainty": "Evidence requirements must be calibrated by consequence and reversibility; the cited continual-internalization failure does not generalize to every learning algorithm."
+    },
+    {
       "aliases": [],
       "artifacts": [],
       "body": "# Adjacent Projects - Agent Gateways, Local Runtimes, and AI OS Neighbors\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n# Adjacent Projects - Agent Gateways, Local Runtimes, and AI OS Neighbors\n\nThis document captures projects that are adjacent to Goni's scope but sit\noutside the \"home cluster / distributed inference\" focus of\n`blueprint/docs/related-projects.md`.\n\nIt is meant to be a fast map of what exists, what it is good at, and where\nGoni's \"governed kernel + receipts + confinement\" approach is distinct.\n\nHow this relates to `blueprint/docs/related-projects.md`:\n\n- `blueprint/docs/related-projects.md` covers **home clusters + distributed inference**\n  prior art (EXO, Cake, prima.cpp, Beowulf, llama.cpp).\n- This document covers **ecosystem neighbors** (runtimes, apps, gateways, and\n  \"AI OS\" framing) and the system/product insights they imply.\n- `blueprint/docs/references/gonios-research-neighbor-map.md` is the focused\n  primary-source academic map for memory OS, local-first agent runtime,\n  receipts/governance, and benchmark neighbors. Keep large ecosystem tables\n  here; keep layer-mapped research synthesis there.\n- `blueprint/60-market/personal-ai-secretary-landscape.md` is the\n  snapshot-dated comparison of personal-agent and memory projects, including a\n  specified-only Goni implementation roadmap.\n- `blueprint/60-market/ai-media-provenance.md` is the separate evidence review\n  for Meta AI labels, C2PA/IPTC signals, watermarks, and disclosure limits.\n\n---",
@@ -10358,6 +10681,76 @@
     },
     {
       "aliases": [
+        "agent ontology",
+        "agentic system ontology"
+      ],
+      "artifacts": [],
+      "body": "# Agent system ontology\n\nGoni rejects the common ladder:\n\n```text\nLLM -> RAG -> Agent -> Agentic AI\n```\n\nas a literal architecture or maturity sequence. Those terms refer to different system roles and capabilities that can be composed in multiple ways.\n\n## Canonical distinctions\n\n**Model.** A learned component that maps inputs to outputs. A language model can reason, classify, generate, select actions, or propose tool calls, but model inference alone does not constitute a complete agent.\n\n**Harness or agent runtime.** The software substrate around one or more models that constructs context, exposes tool schemas, parses model outputs, dispatches tools, manages state, enforces budgets and permissions, records observations, and determines when the loop stops or continues.\n\n**Agent.** A bounded process that pursues an objective over time by maintaining task state, selecting actions, receiving observations from an environment, and iterating under a runtime. The policy used to select actions may contain an LLM, deterministic code, specialized models, or combinations of these.\n\n**Agentic system.** A larger system that delegates meaningful sequential decision-making across time. Agenticness is therefore a property of the control relationship and execution loop, not a synonym for multi-agent architecture.\n\n**RAG.** Retrieval-augmented generation is an information-acquisition and context-construction mechanism. An agent may use RAG, invoke retrieval as a tool, receive automatically retrieved context, or operate without retrieval.\n\n**Multi-agent system.** A system containing multiple independently stateful agent processes. Multiple agents are an architectural choice, not a higher maturity level than a single well-governed agent.\n\n## Goni interpretation\n\nThe core Goni loop remains:\n\n```text\nobjective\n  -> context and state\n  -> model-supported decision\n  -> proposed action\n  -> kernel authorization\n  -> tool execution\n  -> observation\n  -> verification\n  -> state update\n  -> continue / replan / stop\n```\n\nReAct is a historical reference for interleaving reasoning and acting, while Toolformer is a reference for learned tool selection. Goni adds a stronger systems boundary: a model may propose an action, but the runtime and kernel determine whether and how that proposal becomes an effect.\n\nThis ontology preserves the existing doctrine:\n\n> Models reason. The kernel authorizes. Tools act. Receipts prove.",
+      "domains": [
+        "system",
+        "research",
+        "agents"
+      ],
+      "id": "AGENT-ONTOLOGY-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/syntheses/agent-ontology-01-agent-system-ontology.md",
+      "proposition": "Goni treats models, agents, harnesses, retrieval, memory, tools, and agentic systems as distinct composable system roles rather than successive maturity stages.",
+      "relations": [
+        {
+          "target": "GONI-THESIS-E1FB8B4F7772",
+          "type": "refines"
+        },
+        {
+          "target": "GONI-SYNTHESIS-2F73035842DF",
+          "type": "synthesizes"
+        }
+      ],
+      "sources": [
+        "SRC-YAO2023-REACT",
+        "SRC-SCHICK2023-TOOLFORMER",
+        "SRC-PLAAT2025-AGENTIC-LLM-SURVEY"
+      ],
+      "status": "draft",
+      "title": "Agent system ontology",
+      "type": "synthesis",
+      "uncertainty": "Agent and agentic-AI terminology is not fully standardized across the literature; these definitions are Goni's canonical conceptual vocabulary, informed by the cited literature."
+    },
+    {
+      "aliases": [
+        "belief state",
+        "partial observability"
+      ],
+      "artifacts": [],
+      "body": "# Partial observability and agent state\n\nA delegated agent rarely sees the full environment state. Goni therefore treats the following concepts as distinct:\n\n- **Environment state (s_t):** the real external condition at time (t), including facts the agent may not be able to observe directly.\n- **Observation (o_t):** information exposed to the agent through an interface, tool result, sensor, API response, CLI output, screenshot, event, or other observation channel.\n- **Belief state (b_t):** the agent's current uncertainty-bearing representation of what is probably true about the environment, derived from prior observations, memory, and inference.\n- **Task state:** explicit workflow progress such as completed steps, pending obligations, checkpoints, retries, budgets, and open preconditions.\n- **Memory:** persistent information available across tasks or sessions under Goni's memory-governance rules.\n- **Model context:** the bounded information payload supplied to a particular model inference.\n\nThese objects may overlap in content while remaining different in authority and lifecycle.\n\nA useful conceptual form is:\n\n[\no_t \\sim O(s_t), \\qquad\nb_{t+1} = U(b_t, o_{t+1}, a_t), \\qquad\na_t \\sim \\pi(a_t \\mid b_t, g)\n]\n\nwhere (g) is the current objective or mandate. This notation is explanatory, not an implementation commitment.\n\n## Consequences for Goni\n\n1. A tool result is an observation, not automatically ground truth.\n2. Memory may be stale, contradicted, superseded, or lower-authority than the current environment.\n3. When consequential state is uncertain, information gathering can be the correct next action.\n4. Verification should inspect the post-action environment rather than assuming that a requested action succeeded.\n5. Clarification or human escalation can be a competent action when the information required for safe delegation is unavailable.\n6. Perception adapters should normalize observation provenance and confidence before observations influence durable memory or consequential action.\n\nThis framing extends Goni's existing latent-state and authority architecture with an explicit epistemic model for what the system knows, what it observes, and what remains uncertain.",
+      "domains": [
+        "system",
+        "research",
+        "agents",
+        "state"
+      ],
+      "id": "AGENT-STATE-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/syntheses/agent-state-01-partial-observability-and-belief-state.md",
+      "proposition": "Goni should distinguish environment state, observations, task state, belief state, memory, and model context because a delegated agent acts under partial and potentially stale information.",
+      "relations": [
+        {
+          "target": "GONI-THESIS-E1FB8B4F7772",
+          "type": "refines"
+        }
+      ],
+      "sources": [
+        "SRC-ZHANG2026-AGENTIC-RL",
+        "SRC-HU2026-AGENT-MEMORY-SURVEY"
+      ],
+      "status": "draft",
+      "title": "Partial observability and agent state",
+      "type": "synthesis",
+      "uncertainty": "This node adopts POMDP vocabulary as a conceptual model for uncertainty and state separation; it does not specify or imply a POMDP solver in the implementation."
+    },
+    {
+      "aliases": [
         "AGENT-STORE"
       ],
       "artifacts": [],
@@ -10383,6 +10776,143 @@
       "title": "AGENT-STORE-01 - Agent Store Governance",
       "type": "specification",
       "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
+    },
+    {
+      "aliases": [
+        "agent systems research map"
+      ],
+      "artifacts": [],
+      "body": "# Agent systems academic map\n\nThis node is the navigation layer for the academic agent-system additions.\n\n## Core ontology\n\n- **AGENT-ONTOLOGY-01** separates model, agent, harness/runtime, RAG, and multi-agent architecture.\n- **AGENTICNESS-01** defines agenticness as delegated sequential authority.\n- **AGENT-STATE-01** adds partial observability, observations, belief state, task state, memory, and current context.\n- **RAG-CONTEXT-01** places retrieval inside broader context engineering.\n- **TOOL-EFFECT-01** separates epistemic access from causal capability.\n\n## Interfaces and interoperability\n\n- **INTERFACE-MODEL-01** separates human interaction, software invocation, triggers, semantic interoperability, transport, and action surfaces.\n- **INTEROP-MCP-A2A-01** distinguishes tool/context interoperability from independent agent interoperability.\n- **INTERFACE-SELECTION-01** selects interfaces by structure and observability instead of an absolute API/CLI/GUI ranking.\n\n## Safety and accountability\n\n- **TRUST-INPUT-01** preserves instruction and data trust boundaries.\n- **AUDIT-RUNTIME-01** maps Goni receipts onto explicit auditability dimensions.\n\n## Evaluation and research frontiers\n\n- **TRAJECTORY-EVAL-01** evaluates long-horizon, repeated, externally verified delegated behavior.\n- **MULTIAGENT-EVAL-01** requires compute-normalized single-agent baselines.\n- **WORLD-MODEL-01** treats consequence simulation as optional advisory cognition.\n- **ADAPTATION-LEVELS-01** governs persistent adaptation by target, reversibility, evidence, and blast radius.\n\nThe intended research target is **reliable delegated autonomy**: increasing useful system initiative only where state, authority, evidence, verification, and recovery remain governable.",
+      "domains": [
+        "research",
+        "system",
+        "agents"
+      ],
+      "id": "AGENT-SYSTEMS-MAP-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/syntheses/agent-systems-map-01-academic-map.md",
+      "proposition": "The agent-systems research layer connects Goni's authority architecture to explicit models of agent ontology, partial observability, context and memory, interfaces, safe tool use, auditability, trajectory reliability, multi-agent evaluation, consequence simulation, and governed adaptation.",
+      "relations": [
+        {
+          "target": "GONI-SYNTHESIS-F0626F7EFE2C",
+          "type": "refines"
+        },
+        {
+          "target": "AGENT-ONTOLOGY-01",
+          "type": "synthesizes"
+        },
+        {
+          "target": "AGENT-STATE-01",
+          "type": "synthesizes"
+        },
+        {
+          "target": "RAG-CONTEXT-01",
+          "type": "synthesizes"
+        },
+        {
+          "target": "TOOL-EFFECT-01",
+          "type": "synthesizes"
+        },
+        {
+          "target": "AGENTICNESS-01",
+          "type": "synthesizes"
+        },
+        {
+          "target": "INTERFACE-MODEL-01",
+          "type": "synthesizes"
+        },
+        {
+          "target": "INTEROP-MCP-A2A-01",
+          "type": "synthesizes"
+        },
+        {
+          "target": "INTERFACE-SELECTION-01",
+          "type": "synthesizes"
+        },
+        {
+          "target": "TRUST-INPUT-01",
+          "type": "synthesizes"
+        },
+        {
+          "target": "AUDIT-RUNTIME-01",
+          "type": "synthesizes"
+        },
+        {
+          "target": "TRAJECTORY-EVAL-01",
+          "type": "synthesizes"
+        },
+        {
+          "target": "MULTIAGENT-EVAL-01",
+          "type": "synthesizes"
+        },
+        {
+          "target": "WORLD-MODEL-01",
+          "type": "synthesizes"
+        },
+        {
+          "target": "ADAPTATION-LEVELS-01",
+          "type": "synthesizes"
+        }
+      ],
+      "sources": [
+        "SRC-YAO2023-REACT",
+        "SRC-SCHICK2023-TOOLFORMER",
+        "SRC-PLAAT2025-AGENTIC-LLM-SURVEY",
+        "SRC-ZHANG2026-AGENTIC-RL",
+        "SRC-MEI2025-CONTEXT-ENGINEERING",
+        "SRC-HU2026-AGENT-MEMORY-SURVEY",
+        "SRC-MCP-2026-07-28",
+        "SRC-A2A-1-0",
+        "SRC-DOSHI2026-SAFE-TOOL-USE",
+        "SRC-WALLACE2024-INSTRUCTION-HIERARCHY",
+        "SRC-DEBENEDETTI2024-AGENTDOJO",
+        "SRC-NIAN2026-AUDITABLE-AGENTS",
+        "SRC-LU2024-TOOLSANDBOX",
+        "SRC-YAO2024-TAUBENCH",
+        "SRC-JIMENEZ2023-SWEBENCH",
+        "SRC-YUAN2026-OSWORLD2",
+        "SRC-TRAN2026-COMPUTE-NORMALIZED-MULTIAGENT",
+        "SRC-YANG2026-WORLD-MODELS",
+        "SRC-GAO2026-SELF-EVOLVING-AGENTS",
+        "SRC-CHEN2026-CONTINUAL-EXPERIENCE"
+      ],
+      "status": "draft",
+      "title": "Agent systems academic map",
+      "type": "synthesis",
+      "uncertainty": "This map integrates current research into Goni's draft architecture; it does not promote any specified-only mechanism to implemented or verified status."
+    },
+    {
+      "aliases": [
+        "agentic AI",
+        "agenticness"
+      ],
+      "artifacts": [],
+      "body": "# Agenticness as delegated sequential authority\n\nGoni uses **agenticness** as a continuous system property.\n\nHigher agenticness means that, within an explicit mandate and authority corridor, the runtime may independently perform more of the following over a longer horizon:\n\n- acquire observations,\n- update task and belief state,\n- choose among actions,\n- invoke permitted tools,\n- verify outcomes,\n- recover or replan,\n- decide when to continue,\n- decide when uncertainty requires human escalation.\n\nThis definition does not imply that more autonomy is always preferable. Goni's design objective is the greatest useful delegated autonomy consistent with policy, evidence, reversibility, user attention, and consequence.\n\nA single-agent runtime can therefore be highly agentic, while a multi-agent system can be minimally agentic if every step requires human approval.",
+      "domains": [
+        "product",
+        "system",
+        "agents"
+      ],
+      "id": "AGENTICNESS-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/glossaries/agenticness-01-delegated-sequential-authority.md",
+      "proposition": "In Goni, agenticness means the degree to which a system is delegated authority to make and execute sequential decisions over time within a mandate, rather than the number of agents or the presence of a particular model technique.",
+      "relations": [
+        {
+          "target": "GONI-THESIS-826C859B5D30",
+          "type": "refines"
+        }
+      ],
+      "sources": [
+        "SRC-PLAAT2025-AGENTIC-LLM-SURVEY",
+        "SRC-ZHANG2026-AGENTIC-RL"
+      ],
+      "status": "draft",
+      "title": "Agenticness as delegated sequential authority",
+      "type": "glossary",
+      "uncertainty": "The term agentic AI remains inconsistently defined across academia and industry; this is Goni's operational definition."
     },
     {
       "aliases": [],
@@ -10433,6 +10963,38 @@
       "title": "Api Surface",
       "type": "implementation-map",
       "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
+    },
+    {
+      "aliases": [
+        "auditability model"
+      ],
+      "artifacts": [],
+      "body": "# Agent auditability model\n\nGoni distinguishes **logging**, **receipts**, **auditability**, and **auditing**.\n\n- **Logs** support operations and debugging.\n- **Receipts** are governance artifacts for consequential state transitions.\n- **Auditability** is the system property that makes later reconstruction and policy assessment possible.\n- **Auditing** is the process of examining trustworthy evidence after or during execution.\n\nThe five auditability dimensions from Nian et al. map naturally onto Goni:\n\n| Dimension | Goni interpretation |\n| --- | --- |\n| Action recoverability | Reconstruct what action or state transition actually occurred. |\n| Lifecycle coverage | Preserve evidence from objective and authorization through execution, observation, verification, and final state. |\n| Policy checkability | Recover the policy, mandate, capability, and relevant version or hash used for the decision. |\n| Responsibility attribution | Identify the principal, runtime/model/tool components, authorization path, and external actors involved. |\n| Evidence integrity | Make tampering, omission, or ambiguity in consequential evidence detectable where feasible. |\n\nA useful consequential-action trace is therefore:\n\n```text\nobjective\n-> evidence/context references\n-> model/runtime decision\n-> requested capability\n-> authorization decision\n-> actual tool execution\n-> resulting observation\n-> verification result\n-> state transition\n-> receipt\n```\n\nThis extends Goni's existing receipt doctrine with an explicit evaluation model for whether receipts are sufficient for accountability.",
+      "domains": [
+        "system",
+        "audit",
+        "provenance"
+      ],
+      "id": "AUDIT-RUNTIME-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/syntheses/audit-runtime-01-agent-auditability-model.md",
+      "proposition": "Goni receipts and runtime evidence should be evaluated for action recoverability, lifecycle coverage, policy checkability, responsibility attribution, and evidence integrity rather than treated as ordinary application logs.",
+      "relations": [
+        {
+          "target": "GONI-THESIS-E9DC181C1E9A",
+          "type": "refines"
+        }
+      ],
+      "sources": [
+        "SRC-NIAN2026-AUDITABLE-AGENTS",
+        "SRC-W3C2013-PROV",
+        "SRC-W3C2021-TRACE-CONTEXT"
+      ],
+      "status": "draft",
+      "title": "Agent auditability model",
+      "type": "synthesis",
+      "uncertainty": "This node maps an external auditability taxonomy onto Goni's receipt doctrine; full compliance with each dimension requires workflow-specific evidence and is not claimed by specification alone."
     },
     {
       "aliases": [],
@@ -11013,6 +11575,176 @@
       "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
     },
     {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Source claim: A2A connects independent agent systems\n\nA2A is designed for communication between agent systems that may be implemented independently and need not expose one another's internal prompts, memory, or tool wiring.\n\nFor Goni, A2A belongs on the horizontal agent-to-agent interoperability boundary, while Goni authority remains local and kernel-owned.",
+      "domains": [
+        "research",
+        "interoperability",
+        "agents"
+      ],
+      "id": "EVID-A2A-INTEROPERABILITY-01",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/evidence/evid-a2a-interoperability-01.md",
+      "proposition": "The Agent2Agent protocol defines interoperable task-oriented communication between independent agent systems, including discovery or capability description and exchange of messages, tasks, status, and artifacts.",
+      "relations": [
+        {
+          "target": "INTEROP-MCP-A2A-01",
+          "type": "supports"
+        }
+      ],
+      "sources": [
+        "SRC-A2A-1-0"
+      ],
+      "status": "draft",
+      "title": "Source claim: A2A connects independent agent systems",
+      "type": "evidence",
+      "uncertainty": "A2A is a protocol boundary, not evidence that multi-agent decomposition is beneficial for a particular Goni workload."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Source claim: agent memory is distinct from RAG and has lifecycle dynamics\n\nHu et al. separate agent memory from retrieval-augmented generation and context engineering, then describe memory through its forms, functions, and evolution over time.\n\nFor Goni, the important consequence is that durable memory, current context, retrieval, task state, and an agent's current beliefs should not be collapsed into one chat-history abstraction.",
+      "domains": [
+        "research",
+        "memory"
+      ],
+      "id": "EVID-AGENT-MEMORY-DYNAMICS-01",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/evidence/evid-agent-memory-dynamics-01.md",
+      "proposition": "Hu et al. distinguish agent memory from RAG and context engineering and analyze memory by form, function, and dynamics including formation, evolution, and retrieval.",
+      "relations": [
+        {
+          "target": "RAG-CONTEXT-01",
+          "type": "supports"
+        },
+        {
+          "target": "AGENT-STATE-01",
+          "type": "supports"
+        }
+      ],
+      "sources": [
+        "SRC-HU2026-AGENT-MEMORY-SURVEY"
+      ],
+      "status": "draft",
+      "title": "Source claim: agent memory is distinct from RAG and has lifecycle dynamics",
+      "type": "evidence",
+      "uncertainty": "The survey's taxonomy is descriptive of a fast-moving research field; Goni's canonical memory classes remain governed by its own data and authority contracts."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Source claim: untrusted tool data can hijack agent behavior\n\nAgentDojo operationalizes the distinction between instructions originating from the principal and adversarial content arriving through tools or data sources.\n\nGoni should therefore retain provenance and trust labels across retrieval and tool boundaries rather than flattening all text into one undifferentiated context stream.",
+      "domains": [
+        "research",
+        "safety",
+        "tools"
+      ],
+      "id": "EVID-AGENTDOJO-UNTRUSTED-DATA-01",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/evidence/evid-agentdojo-untrusted-data-01.md",
+      "proposition": "AgentDojo evaluates tool-using agents in environments where untrusted data can contain prompt injections that attempt to redirect the agent toward malicious tasks.",
+      "relations": [
+        {
+          "target": "TRUST-INPUT-01",
+          "type": "supports"
+        }
+      ],
+      "sources": [
+        "SRC-DEBENEDETTI2024-AGENTDOJO"
+      ],
+      "status": "draft",
+      "title": "Source claim: untrusted tool data can hijack agent behavior",
+      "type": "evidence",
+      "uncertainty": "AgentDojo is an evaluation environment; successful defenses in that benchmark do not establish Goni-wide security guarantees."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Source claim: agentic LLMs span reasoning, acting, and interacting\n\nPlaat et al. organize the field around three broad capability families: reasoning, acting, and interacting.\n\nThis supports a compositional view of agentic systems and cautions against treating RAG, tool use, or multi-agent interaction as successive generations of one architecture.",
+      "domains": [
+        "research",
+        "agents"
+      ],
+      "id": "EVID-AGENTIC-LLM-TAXONOMY-01",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/evidence/evid-agentic-llm-taxonomy-01.md",
+      "proposition": "Plaat et al. organize agentic LLM research around reasoning, acting, and interacting, showing that agentic systems combine several capabilities rather than forming a simple RAG-to-agent maturity ladder.",
+      "relations": [
+        {
+          "target": "AGENT-ONTOLOGY-01",
+          "type": "supports"
+        }
+      ],
+      "sources": [
+        "SRC-PLAAT2025-AGENTIC-LLM-SURVEY"
+      ],
+      "status": "draft",
+      "title": "Source claim: agentic LLMs span reasoning, acting, and interacting",
+      "type": "evidence",
+      "uncertainty": "Agentic terminology remains non-uniform across the literature; Goni uses the survey as a taxonomy reference rather than a binding definition."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Source claim: agentic RL is modeled as temporally extended partial observability\n\nThe Agentic RL survey frames agent behavior as sequential interaction in partially observable environments.\n\nGoni can use that formalism to distinguish world state, observations, internal state or beliefs, actions, and objectives without committing the implementation to a particular reinforcement-learning algorithm.",
+      "domains": [
+        "research",
+        "agents",
+        "state"
+      ],
+      "id": "EVID-AGENTIC-RL-POMDP-01",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/evidence/evid-agentic-rl-pomdp-01.md",
+      "proposition": "Zhang et al. distinguish single-step LLM reinforcement learning from temporally extended agentic interaction and formalize the latter using partially observable Markov decision processes.",
+      "relations": [
+        {
+          "target": "AGENT-STATE-01",
+          "type": "supports"
+        }
+      ],
+      "sources": [
+        "SRC-ZHANG2026-AGENTIC-RL"
+      ],
+      "status": "draft",
+      "title": "Source claim: agentic RL is modeled as temporally extended partial observability",
+      "type": "evidence",
+      "uncertainty": "Goni adopts this as a conceptual vocabulary for state, observation, belief, action, and uncertainty; it does not imply that the current runtime implements a POMDP solver."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Source claim: agent accountability requires auditability\n\nAuditable Agents treats auditability as the system property that makes post-deployment accountability possible.\n\nThe five dimensions provide an academic vocabulary for evaluating whether Goni receipts and provenance support reconstruction rather than merely recording operational logs.",
+      "domains": [
+        "research",
+        "audit",
+        "provenance"
+      ],
+      "id": "EVID-AUDITABLE-AGENTS-01",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/evidence/evid-auditable-agents-01.md",
+      "proposition": "Nian et al. distinguish accountability, auditability, and auditing and define five auditability dimensions: action recoverability, lifecycle coverage, policy checkability, responsibility attribution, and evidence integrity.",
+      "relations": [
+        {
+          "target": "AUDIT-RUNTIME-01",
+          "type": "supports"
+        }
+      ],
+      "sources": [
+        "SRC-NIAN2026-AUDITABLE-AGENTS"
+      ],
+      "status": "draft",
+      "title": "Source claim: agent accountability requires auditability",
+      "type": "evidence",
+      "uncertainty": "The paper provides a general auditability framework; Goni receipts must still be validated against concrete workflows and adversarial failure modes."
+    },
+    {
       "aliases": [
         "EVID-AUTON-01-AUTONOMY-CORRIDORS"
       ],
@@ -11283,6 +12015,89 @@
       "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
     },
     {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Source claim: multi-agent gains can be confounded by extra test-time compute\n\nTran and Kiela provide a methodological warning: architecture comparisons are invalid when one system receives materially more reasoning tokens or other test-time resources.\n\nFor Goni, Council and multi-agent experiments should therefore compare against strong single-agent baselines under matched resource budgets.",
+      "domains": [
+        "research",
+        "evaluation",
+        "agents"
+      ],
+      "id": "EVID-COMPUTE-NORMALIZED-MULTIAGENT-01",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/evidence/evid-compute-normalized-multiagent-01.md",
+      "proposition": "Tran and Kiela show on multi-hop reasoning tasks that under matched reasoning-token budgets single-agent systems can match or outperform multi-agent systems, and that uncontrolled compute and context effects can inflate apparent multi-agent gains.",
+      "relations": [
+        {
+          "target": "MULTIAGENT-EVAL-01",
+          "type": "supports"
+        }
+      ],
+      "sources": [
+        "SRC-TRAN2026-COMPUTE-NORMALIZED-MULTIAGENT"
+      ],
+      "status": "draft",
+      "title": "Source claim: multi-agent gains can be confounded by extra test-time compute",
+      "type": "evidence",
+      "uncertainty": "The result is task- and setup-dependent and should not be generalized into a universal claim that single-agent architectures are superior."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Source claim: context engineering is broader than prompt engineering\n\nMei et al. treat context engineering as a systems discipline that includes retrieval or generation, processing, and management of the information supplied to models.\n\nFor Goni, this supports making RAG one mechanism inside a broader context pipeline rather than a separate maturity stage above or below an agent.",
+      "domains": [
+        "research",
+        "context"
+      ],
+      "id": "EVID-CONTEXT-ENGINEERING-TAXONOMY-01",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/evidence/evid-context-engineering-taxonomy-01.md",
+      "proposition": "Mei et al. define context engineering as systematic optimization of inference-time information and decompose it into retrieval or generation, processing, and management, with RAG, memory, tool-integrated reasoning, and multi-agent systems as integrated implementations.",
+      "relations": [
+        {
+          "target": "RAG-CONTEXT-01",
+          "type": "supports"
+        }
+      ],
+      "sources": [
+        "SRC-MEI2025-CONTEXT-ENGINEERING"
+      ],
+      "status": "draft",
+      "title": "Source claim: context engineering is broader than prompt engineering",
+      "type": "evidence",
+      "uncertainty": "The survey is a broad taxonomy; Goni retains its own stricter authority and provenance requirements around context construction."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Source claim: naive repeated experience internalization can degrade capability\n\nRepeated self-learning is not automatically cumulative improvement. Chen et al. report progressive degradation under several existing experience-internalization approaches.\n\nFor Goni, persistent changes should therefore pass replay, independent evaluation, promotion, provenance, and rollback gates rather than being accepted merely because they were derived from prior experience.",
+      "domains": [
+        "research",
+        "learning",
+        "agents"
+      ],
+      "id": "EVID-CONTINUAL-EXPERIENCE-COLLAPSE-01",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/evidence/evid-continual-experience-collapse-01.md",
+      "proposition": "Chen et al. report progressive capability collapse under existing multi-iteration experience-internalization methods and show that stability depends on experience granularity, injection pattern, and internalization regime.",
+      "relations": [
+        {
+          "target": "ADAPTATION-LEVELS-01",
+          "type": "supports"
+        }
+      ],
+      "sources": [
+        "SRC-CHEN2026-CONTINUAL-EXPERIENCE"
+      ],
+      "status": "draft",
+      "title": "Source claim: naive repeated experience internalization can degrade capability",
+      "type": "evidence",
+      "uncertainty": "The reported collapse concerns the studied internalization methods and does not imply that all continual-learning methods degrade."
+    },
+    {
       "aliases": [
         "EVID-COST-01-DAILY-BRIEF-COST"
       ],
@@ -11470,6 +12285,34 @@
       "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
     },
     {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Source claim: instruction privilege matters for prompt-injection robustness\n\nThe Instruction Hierarchy work treats conflicting text according to privilege rather than as undifferentiated prompt content.\n\nFor Goni, this is evidence for preserving trusted policy, user-authorized intent, tool observations, retrieved documents, and arbitrary external text as different trust classes.",
+      "domains": [
+        "research",
+        "safety",
+        "context"
+      ],
+      "id": "EVID-INSTRUCTION-HIERARCHY-01",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/evidence/evid-instruction-hierarchy-01.md",
+      "proposition": "Wallace et al. identify the absence of instruction privilege as a prompt-injection vulnerability and demonstrate a training approach that prioritizes higher-privilege instructions over conflicting lower-privilege text.",
+      "relations": [
+        {
+          "target": "TRUST-INPUT-01",
+          "type": "supports"
+        }
+      ],
+      "sources": [
+        "SRC-WALLACE2024-INSTRUCTION-HIERARCHY"
+      ],
+      "status": "draft",
+      "title": "Source claim: instruction privilege matters for prompt-injection robustness",
+      "type": "evidence",
+      "uncertainty": "Model-level instruction hierarchy improves robustness but does not substitute for deterministic Goni authority and information-flow boundaries."
+    },
+    {
       "aliases": [
         "EVID-LONGCTX-01-READING-STRATEGY-COMPARISON"
       ],
@@ -11551,6 +12394,89 @@
       "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
     },
     {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Source claim: MCP separates AI applications from tools and context resources\n\nThe current MCP specification defines server capabilities such as tools, resources, and prompts while treating transport and negotiated capabilities as separate protocol concerns.\n\nFor Goni, MCP is therefore best modeled as a capability and context interoperability boundary. It does not replace Goni's authority checks, sandboxing, egress policy, receipts, or execution verification.",
+      "domains": [
+        "research",
+        "interoperability",
+        "tools"
+      ],
+      "id": "EVID-MCP-SEMANTICS-01",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/evidence/evid-mcp-semantics-01.md",
+      "proposition": "The Model Context Protocol defines interoperable application semantics for AI clients and servers, including tools, resources, and prompts, rather than being equivalent to a GUI, transport, or ordinary function-call syntax.",
+      "relations": [
+        {
+          "target": "INTEROP-MCP-A2A-01",
+          "type": "supports"
+        }
+      ],
+      "sources": [
+        "SRC-MCP-2026-07-28"
+      ],
+      "status": "draft",
+      "title": "Source claim: MCP separates AI applications from tools and context resources",
+      "type": "evidence",
+      "uncertainty": "MCP evolves through versioned specifications and extensions; Goni should pin any implementation claim to the protocol version actually supported."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Source claim: long-horizon computer use exposes state and verification failures\n\nOSWorld2.0 extends desktop evaluation into workflows requiring hundreds of interactions and sustained constraint tracking.\n\nFor Goni, the important lesson is that long-horizon reliability depends on state preservation, change detection, clarification, verification, and recovery—not only local action competence.",
+      "domains": [
+        "research",
+        "evaluation",
+        "agents"
+      ],
+      "id": "EVID-OSWORLD2-LONG-HORIZON-01",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/evidence/evid-osworld2-long-horizon-01.md",
+      "proposition": "OSWorld2.0 evaluates long-horizon real-world computer-use workflows and reports recurring failures including lost constraints, missed incoming information, guessing instead of asking, skipped verification, and difficulty recovering hidden state.",
+      "relations": [
+        {
+          "target": "TRAJECTORY-EVAL-01",
+          "type": "supports"
+        }
+      ],
+      "sources": [
+        "SRC-YUAN2026-OSWORLD2"
+      ],
+      "status": "draft",
+      "title": "Source claim: long-horizon computer use exposes state and verification failures",
+      "type": "evidence",
+      "uncertainty": "OSWorld2.0 measures computer-use workflows and should inform, not substitute for, Goni-specific delegation benchmarks."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Source claim: ReAct interleaves reasoning and acting\n\nYao et al. study an interleaved reasoning-and-action pattern in which model-generated reasoning can track and revise plans while external actions return new information.\n\nFor Goni, this supports treating reasoning and acting as separable parts of an agent loop. Goni adds kernel-owned authority, persistent state, policy mediation, and receipts around that loop.",
+      "domains": [
+        "research",
+        "agents"
+      ],
+      "id": "EVID-REACT-AGENT-LOOP-01",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/evidence/evid-react-agent-loop-01.md",
+      "proposition": "ReAct demonstrates an agent-loop pattern in which language-model reasoning traces and task-specific actions are interleaved so that reasoning can update plans while actions gather information from external environments.",
+      "relations": [
+        {
+          "target": "AGENT-ONTOLOGY-01",
+          "type": "supports"
+        }
+      ],
+      "sources": [
+        "SRC-YAO2023-REACT"
+      ],
+      "status": "draft",
+      "title": "Source claim: ReAct interleaves reasoning and acting",
+      "type": "evidence",
+      "uncertainty": "ReAct is a historical agent-loop reference and does not by itself define Goni's authority, memory, or runtime contracts."
+    },
+    {
       "aliases": [
         "EVID-ROUTE-01-FRUGAL-SOVEREIGN-ROUTING"
       ],
@@ -11576,6 +12502,34 @@
       "title": "Frugal Sovereign Routing",
       "type": "experiment",
       "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Source claim: safe tool use requires enforceable constraints beyond model safeguards\n\nDoshi et al. distinguish reliability improvements from enforceable safety guarantees and formalize requirements over information flows and tool sequences.\n\nThis supports Goni's separation between a model's proposed action and kernel-owned execution authority.",
+      "domains": [
+        "research",
+        "safety",
+        "tools"
+      ],
+      "id": "EVID-SAFE-TOOL-USE-01",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/evidence/evid-safe-tool-use-01.md",
+      "proposition": "Doshi et al. argue that model-based safeguards cannot by themselves guarantee safe agent tool use and propose formalized, enforceable constraints on data flows and tool sequences.",
+      "relations": [
+        {
+          "target": "TRUST-INPUT-01",
+          "type": "supports"
+        }
+      ],
+      "sources": [
+        "SRC-DOSHI2026-SAFE-TOOL-USE"
+      ],
+      "status": "draft",
+      "title": "Source claim: safe tool use requires enforceable constraints beyond model safeguards",
+      "type": "evidence",
+      "uncertainty": "The paper proposes a safety-engineering process and capability-enhanced MCP framework; Goni should not claim equivalent guarantees without its own implemented and verified enforcement."
     },
     {
       "aliases": [
@@ -11657,6 +12611,173 @@
       "title": "EVID-SEC-03 Trace Replayability Lane",
       "type": "experiment",
       "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Source claim: self-evolving agents can change different system layers\n\nThe survey supports separating adaptation targets instead of treating all persistent improvement as a single self-learning mechanism.\n\nThis aligns with Goni's existing distinction among context or memory updates, workflow and policy changes, adapters, and core-weight changes.",
+      "domains": [
+        "research",
+        "learning",
+        "agents"
+      ],
+      "id": "EVID-SELF-EVOLVING-TAXONOMY-01",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/evidence/evid-self-evolving-taxonomy-01.md",
+      "proposition": "Gao et al. survey self-evolving agents across changes to models, memory, tools, architecture, and other components and organize adaptation by what, when, how, and where evolution occurs.",
+      "relations": [
+        {
+          "target": "ADAPTATION-LEVELS-01",
+          "type": "supports"
+        }
+      ],
+      "sources": [
+        "SRC-GAO2026-SELF-EVOLVING-AGENTS"
+      ],
+      "status": "draft",
+      "title": "Source claim: self-evolving agents can change different system layers",
+      "type": "evidence",
+      "uncertainty": "The survey maps an emerging research field; Goni retains stricter governance and promotion gates for persistent change."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Source claim: SWE-bench uses executable repository outcomes\n\nSWE-bench is a useful reference for Goni's principle that successful generation is not equivalent to successful execution.\n\nWhere deterministic evaluators exist, Goni Lab should prefer them over model self-judgment.",
+      "domains": [
+        "research",
+        "evaluation",
+        "software"
+      ],
+      "id": "EVID-SWEBENCH-EXECUTABLE-VERIFICATION-01",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/evidence/evid-swebench-executable-verification-01.md",
+      "proposition": "SWE-bench evaluates code-changing language-model systems on real repository issues where candidate patches are judged against executable tests and repository behavior.",
+      "relations": [
+        {
+          "target": "TRAJECTORY-EVAL-01",
+          "type": "supports"
+        }
+      ],
+      "sources": [
+        "SRC-JIMENEZ2023-SWEBENCH"
+      ],
+      "status": "draft",
+      "title": "Source claim: SWE-bench uses executable repository outcomes",
+      "type": "evidence",
+      "uncertainty": "Software tests provide unusually objective verification; other delegated domains may require different state-based or human-grounded evaluators."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Source claim: tau-bench measures external state and repeated-run reliability\n\ntau-bench demonstrates two evaluation principles directly relevant to Goni:\n\n- determine success from the resulting environment state rather than asking the agent whether it succeeded;\n- repeat tasks to measure consistency, because one successful trajectory does not establish reliable delegated behavior.",
+      "domains": [
+        "research",
+        "evaluation",
+        "reliability"
+      ],
+      "id": "EVID-TAUBENCH-RELIABILITY-01",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/evidence/evid-taubench-reliability-01.md",
+      "proposition": "tau-bench evaluates agent success by comparing final database state with an annotated goal state and introduces pass^k to measure whether behavior remains successful across repeated trials.",
+      "relations": [
+        {
+          "target": "TRAJECTORY-EVAL-01",
+          "type": "supports"
+        }
+      ],
+      "sources": [
+        "SRC-YAO2024-TAUBENCH"
+      ],
+      "status": "draft",
+      "title": "Source claim: tau-bench measures external state and repeated-run reliability",
+      "type": "evidence",
+      "uncertainty": "pass^k is one reliability metric and should complement, not replace, workflow-specific safety and quality measures."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Source claim: Toolformer studies model-selected API use\n\nSchick et al. show that a language model can learn decisions about when and how to call external APIs.\n\nFor Goni, this is evidence for separating a model's proposed tool choice from the runtime that validates, authorizes, executes, and records the resulting effect.",
+      "domains": [
+        "research",
+        "tools"
+      ],
+      "id": "EVID-TOOLFORMER-TOOL-SELECTION-01",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/evidence/evid-toolformer-tool-selection-01.md",
+      "proposition": "Toolformer studies language models learning when to call external APIs, which API to use, what arguments to pass, and how to incorporate returned results.",
+      "relations": [
+        {
+          "target": "AGENT-ONTOLOGY-01",
+          "type": "supports"
+        }
+      ],
+      "sources": [
+        "SRC-SCHICK2023-TOOLFORMER"
+      ],
+      "status": "draft",
+      "title": "Source claim: Toolformer studies model-selected API use",
+      "type": "evidence",
+      "uncertainty": "Toolformer addresses learned tool-use behavior rather than authorization or enforceable execution policy."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Source claim: ToolSandbox evaluates stateful tool trajectories\n\nToolSandbox moves evaluation beyond single-turn function calling by making intermediate and final state transitions part of the benchmark.\n\nFor Goni, this supports evaluating hidden and implicit state dependencies, insufficient information, and recovery across an interaction trajectory.",
+      "domains": [
+        "research",
+        "evaluation",
+        "tools"
+      ],
+      "id": "EVID-TOOLSANDBOX-STATEFUL-EVAL-01",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/evidence/evid-toolsandbox-stateful-eval-01.md",
+      "proposition": "ToolSandbox evaluates conversational tool use with stateful execution, implicit dependencies between tools, insufficient-information cases, and milestone checks over complete trajectories.",
+      "relations": [
+        {
+          "target": "TRAJECTORY-EVAL-01",
+          "type": "supports"
+        }
+      ],
+      "sources": [
+        "SRC-LU2024-TOOLSANDBOX"
+      ],
+      "status": "draft",
+      "title": "Source claim: ToolSandbox evaluates stateful tool trajectories",
+      "type": "evidence",
+      "uncertainty": "ToolSandbox covers tool-use competence and does not by itself measure Goni-specific receipt, privacy, or authority guarantees."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Source claim: world models can mediate high-cost agent interaction\n\nWorld-model research motivates a distinction between acting in the environment and simulating likely consequences first.\n\nFor Goni, this is relevant to expensive, irreversible, or slow actions, but remains a research lane rather than a mandatory runtime component.",
+      "domains": [
+        "research",
+        "agents",
+        "planning"
+      ],
+      "id": "EVID-WORLD-MODEL-INTERMEDIARY-01",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/evidence/evid-world-model-intermediary-01.md",
+      "proposition": "Yang argues that world models of dynamics, rewards, and task distributions can mediate between agents and high-cost real-world environments by providing predicted consequences and richer learning signals before or instead of direct execution.",
+      "relations": [
+        {
+          "target": "WORLD-MODEL-01",
+          "type": "supports"
+        }
+      ],
+      "sources": [
+        "SRC-YANG2026-WORLD-MODELS"
+      ],
+      "status": "draft",
+      "title": "Source claim: world models can mediate high-cost agent interaction",
+      "type": "evidence",
+      "uncertainty": "The work is a research-position argument rather than evidence that a generic textual world model will improve Goni; any adoption requires task-specific evaluation."
     },
     {
       "aliases": [],
@@ -18083,7 +19204,7 @@
     {
       "aliases": [],
       "artifacts": [],
-      "body": "# Evaluation and benchmark environments\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n## Evaluation and benchmark environments\n\n| Project | Primary source | GoniOS layer mapping | What Goni should learn | What Goni should not import | Confidence |\n| --- | --- | --- | --- | --- | --- |\n| OSWorld | https://os-world.github.io/ | Desktop/computer-use benchmark | Study reproducible multimodal desktop tasks for future LifeBench-style evaluation. | Do not treat OSWorld task success as sufficient for personal-memory delegation quality. | `primary-source verified` |\n| OSWorld repository | https://github.com/xlang-ai/OSWorld | Benchmark harness | Inspect environment construction and task packaging. | Do not import real-user traces into public fixtures. | `primary-source verified` |\n| WebArena | https://github.com/web-arena-x/webarena | Self-hostable web-agent environment | Use realistic reproducible websites for delegated web-action tests. | Do not expose private accounts or real browsing workflows in public tests. | `primary-source verified` |\n| WorkArena | https://github.com/ServiceNow/WorkArena | Enterprise knowledge-work benchmark | Study office-work task decomposition for Action Cards and Daily Briefs. | Do not assume enterprise SaaS tasks represent personal sovereign workflows. | `primary-source verified` |\n| Mind2Web | https://osu-nlp-group.github.io/Mind2Web/ | Web-agent dataset and generalization benchmark | Study task representation and website generalization labels. | Do not import non-synthetic personal workflows into Goni fixtures. | `primary-source verified` |\n| AgentBench | https://openreview.net/forum?id=zAdUB0aCTQ | Multi-environment agent benchmark | Study multi-domain task coverage and agent evaluation reporting. | Do not use broad agent scores as a proxy for Goni memory, receipt, or privacy quality. | `primary-source verified` |",
+      "body": "# Evaluation and benchmark environments\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n## Evaluation and benchmark environments\n\n| Project | Primary source | GoniOS layer mapping | What Goni should learn | What Goni should not import | Confidence |\n| --- | --- | --- | --- | --- | --- |\n| OSWorld | https://os-world.github.io/ | Desktop/computer-use benchmark | Study reproducible multimodal desktop tasks for future LifeBench-style evaluation. | Do not treat OSWorld task success as sufficient for personal-memory delegation quality. | `primary-source verified` |\n| OSWorld repository | https://github.com/xlang-ai/OSWorld | Benchmark harness | Inspect environment construction and task packaging. | Do not import real-user traces into public fixtures. | `primary-source verified` |\n| WebArena | https://github.com/web-arena-x/webarena | Self-hostable web-agent environment | Use realistic reproducible websites for delegated web-action tests. | Do not expose private accounts or real browsing workflows in public tests. | `primary-source verified` |\n| WorkArena | https://github.com/ServiceNow/WorkArena | Enterprise knowledge-work benchmark | Study office-work task decomposition for Action Cards and Daily Briefs. | Do not assume enterprise SaaS tasks represent personal sovereign workflows. | `primary-source verified` |\n| Mind2Web | https://osu-nlp-group.github.io/Mind2Web/ | Web-agent dataset and generalization benchmark | Study task representation and website generalization labels. | Do not import non-synthetic personal workflows into Goni fixtures. | `primary-source verified` |\n| AgentBench | https://openreview.net/forum?id=zAdUB0aCTQ | Multi-environment agent benchmark | Study multi-domain task coverage and agent evaluation reporting. | Do not use broad agent scores as a proxy for Goni memory, receipt, or privacy quality. | `primary-source verified` |\n\n| ToolSandbox | https://arxiv.org/abs/2408.04682 | Stateful tool-use benchmark | Evaluate implicit state dependencies, insufficient-information cases, and trajectory milestones. | Do not treat tool competence as proof of Goni authority or privacy guarantees. | `primary-source verified` |\n| tau-bench | https://arxiv.org/abs/2406.12045 | Tool-agent-user and policy benchmark | Compare final environment state with goal state and measure repeated-run reliability using pass^k-style metrics. | Do not reduce Goni reliability to one aggregate benchmark metric. | `primary-source verified` |\n| SWE-bench | https://arxiv.org/abs/2310.06770 | Executable software-engineering benchmark | Prefer executable postconditions over model self-assessment where deterministic verification exists. | Do not assume code-test verification transfers unchanged to social or ambiguous workflows. | `primary-source verified` |\n| OSWorld2.0 | https://arxiv.org/abs/2606.29537 | Long-horizon computer-use benchmark | Test persistent constraints, hidden-state recovery, changing information, clarification, and verification across hundreds of actions. | Do not equate desktop completion with sovereign delegation quality. | `primary-source verified` |",
       "domains": [
         "research"
       ],
@@ -18099,7 +19220,14 @@
       "path": "knowledge/experiments/goni-experiment-7de7b307cb98-evaluation-and-benchmark-environments.md",
       "proposition": "| Project | Primary source | GoniOS layer mapping | What Goni should learn | What Goni should not import | Confidence | | OSWorld | https://os-world.github.io/ | Desktop/computer-use benchmark | Study reproducible multimodal desktop tasks for future LifeBench-style evaluation.",
       "relations": [],
-      "sources": [],
+      "sources": [
+        "SRC-XIE2024-OSWORLD",
+        "SRC-LIU2023-AGENTBENCH",
+        "SRC-LU2024-TOOLSANDBOX",
+        "SRC-YAO2024-TAUBENCH",
+        "SRC-JIMENEZ2023-SWEBENCH",
+        "SRC-YUAN2026-OSWORLD2"
+      ],
       "status": "draft",
       "title": "Evaluation and benchmark environments",
       "type": "experiment",
@@ -47983,7 +49111,9 @@
       "path": "knowledge/syntheses/goni-synthesis-2f73035842df-2-agent-loop-patterns.md",
       "proposition": "**Shunyu Yao** Why track: ReAct-style reasoning/acting loops and related agentic planning patterns.",
       "relations": [],
-      "sources": [],
+      "sources": [
+        "SRC-YAO2023-REACT"
+      ],
       "status": "draft",
       "title": "2. Agent loop patterns",
       "type": "synthesis",
@@ -48083,7 +49213,9 @@
       "path": "knowledge/syntheses/goni-synthesis-3226b6103b70-3-context-engineering-and-memory-assembly.md",
       "proposition": "**Jerry Liu / LlamaIndex** Why track: retrieval, memory, and context-assembly patterns that work in real systems.",
       "relations": [],
-      "sources": [],
+      "sources": [
+        "SRC-MEI2025-CONTEXT-ENGINEERING"
+      ],
       "status": "draft",
       "title": "3. Context engineering and memory assembly",
       "type": "synthesis",
@@ -52741,7 +53873,10 @@
       "path": "knowledge/syntheses/goni-synthesis-8bbce3886093-d-tool-protocol-and-execution-layer.md",
       "proposition": "Specified design intent: | Project / protocol | Confidence | Goni relevance | | MCP servers / Model Context Protocol | verified | Open protocol for connecting AI apps to tools, data sources, and workflows.",
       "relations": [],
-      "sources": [],
+      "sources": [
+        "SRC-MCP-2026-07-28",
+        "SRC-A2A-1-0"
+      ],
       "status": "draft",
       "title": "D) Tool protocol and execution layer",
       "type": "synthesis",
@@ -56433,7 +57568,11 @@
       "path": "knowledge/syntheses/goni-synthesis-d5a359af7d66-memory-os-and-state.md",
       "proposition": "| Project | Primary source | GoniOS layer mapping | What Goni should learn | What Goni should not import | Confidence | | MemGPT / Letta | https://arxiv.org/abs/2310.08560 | Tabulation, memoization, rolling state, virtual context | Treat context as managed memory with explicit movement between short and long-term stores.",
       "relations": [],
-      "sources": [],
+      "sources": [
+        "SRC-PACKER2023-MEMGPT",
+        "SRC-XU2025-MEMOS",
+        "SRC-HU2026-AGENT-MEMORY-SURVEY"
+      ],
       "status": "draft",
       "title": "Memory OS and state",
       "type": "synthesis",
@@ -59068,6 +60207,100 @@
       "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
     },
     {
+      "aliases": [
+        "interface taxonomy",
+        "access surface model"
+      ],
+      "artifacts": [],
+      "body": "# Access, invocation, trigger, transport, and action planes\n\nGUI, CLI, API, MCP, A2A, cron, sockets, and webhooks answer different architectural questions. Goni separates them into six roles.\n\n## 1. Human interaction plane\n\nWays a person interacts with Goni:\n\n- GUI or web/mobile application,\n- CLI or TUI,\n- conversational REPL,\n- IDE or editor integration,\n- browser or OS extension,\n- voice and multimodal interaction.\n\nThese surfaces describe presentation and human interaction. They do not determine how intelligent or agentic the underlying system is.\n\n## 2. Software invocation plane\n\nWays another program invokes Goni:\n\n- HTTP or RPC API,\n- in-process SDK or library,\n- IPC, local socket, named pipe, or stdin/stdout composition.\n\nAn SDK can invoke the same runtime without a network boundary; an API can expose it remotely or locally.\n\n## 3. Trigger plane\n\nEvents that cause a run or workflow transition:\n\n- direct user request,\n- scheduler or cron,\n- webhook,\n- message queue or event bus,\n- filesystem or file-drop event,\n- operating-system event,\n- another authorized agent task.\n\nTriggering is orthogonal to both UI and intelligence. A background delegated workflow can be highly agentic without an open chat surface.\n\n## 4. Semantic interoperability plane\n\nProtocols that define what interoperating parties mean:\n\n- MCP for tool/resource/context capability exchange,\n- A2A for communication between independent agent systems.\n\nThese semantics may ride on different transports and remain subject to Goni policy.\n\n## 5. Transport plane\n\nMechanisms that carry bytes or messages:\n\n- HTTP,\n- stdio,\n- local sockets,\n- WebSocket,\n- RPC transports,\n- queues.\n\nTransport should not be confused with application semantics. MCP over stdio and MCP over HTTP can express similar application concepts across different process boundaries.\n\n## 6. Action or actuator plane\n\nWays Goni changes or queries an external environment:\n\n- structured APIs,\n- CLI or shell commands,\n- browser automation,\n- GUI/computer use,\n- device or robotic actuators.\n\nThe same label can occur on both sides of the runtime. A human may invoke Goni through a GUI while Goni itself uses a different GUI to operate a legacy application.\n\n## Architectural direction\n\n```text\nhuman interaction ─┐\nsoftware invocation ├──> Goni runtime/kernel ──> action adapters ──> environment\ntriggers ──────────┘          │\n                              ├── MCP ──> tools/resources\n                              └── A2A ──> independent agents\n\ntransport carries the interactions underneath these semantic boundaries.\n```\n\nThis taxonomy keeps access surfaces independent from cognition, authority, and agenticness.",
+      "domains": [
+        "system",
+        "interfaces",
+        "interoperability"
+      ],
+      "id": "INTERFACE-MODEL-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/syntheses/interface-model-01-access-and-invocation-planes.md",
+      "proposition": "Goni classifies GUI, CLI, API, SDK, IPC, events, transports, MCP, A2A, and downstream actuation by architectural role instead of treating them as one flat family of interfaces.",
+      "relations": [
+        {
+          "target": "GONI-THESIS-E1FB8B4F7772",
+          "type": "refines"
+        }
+      ],
+      "sources": [
+        "SRC-MCP-2026-07-28",
+        "SRC-A2A-1-0"
+      ],
+      "status": "draft",
+      "title": "Access, invocation, trigger, transport, and action planes",
+      "type": "synthesis",
+      "uncertainty": "This is a Goni architecture taxonomy assembled from standard systems concepts and the cited interoperability specifications; it is not claimed as a universal academic taxonomy."
+    },
+    {
+      "aliases": [
+        "API CLI GUI selection"
+      ],
+      "artifacts": [],
+      "body": "# Prefer action surfaces with explicit structure and observable state\n\nA common heuristic is:\n\n```text\nstructured API -> CLI -> GUI automation\n```\n\nbut Goni does not treat that sequence as a law.\n\nThe selection criterion is the quality of the action and observation contract:\n\n- Is the action space typed and bounded?\n- Are preconditions explicit?\n- Does the interface expose machine-readable resulting state?\n- Can the operation be retried idempotently?\n- Can failure be distinguished from partial success?\n- Is provenance available?\n- Can the effect be rolled back or compensated?\n- How much perception or grounding uncertainty is introduced?\n\nA well-designed CLI can be superior to a weak API. GUI/computer use can be necessary when no structured interface exists. Pixel-level interaction generally requires additional perception, grounding, and postcondition verification, which Goni should reflect in risk and verification policy.",
+      "domains": [
+        "system",
+        "interfaces",
+        "tools"
+      ],
+      "id": "INTERFACE-SELECTION-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/principles/interface-selection-01-structured-action-surfaces.md",
+      "proposition": "When multiple interfaces can perform the same action, Goni should prefer the interface that minimizes semantic ambiguity and exposes the clearest preconditions, postconditions, and state, rather than applying an absolute API-over-CLI-over-GUI rule.",
+      "relations": [
+        {
+          "target": "TOOL-EFFECT-01",
+          "type": "refines"
+        }
+      ],
+      "sources": [
+        "SRC-XIE2024-OSWORLD"
+      ],
+      "status": "draft",
+      "title": "Prefer action surfaces with explicit structure and observable state",
+      "type": "principle",
+      "uncertainty": "API, CLI, and GUI quality varies by system; this is a risk-sensitive engineering heuristic rather than a universal ordering."
+    },
+    {
+      "aliases": [
+        "MCP versus A2A"
+      ],
+      "artifacts": [],
+      "body": "# MCP and A2A occupy different interoperability roles\n\nGoni uses a simple mental model:\n\n```text\n                    A2A\nGoni agent/runtime <----> independent agent/runtime\n       |\n       | MCP\n       v\ntools / resources / contextual capabilities\n```\n\n**MCP** primarily standardizes how an AI application discovers and interacts with capabilities and contextual resources exposed by servers. The protocol is richer than ordinary function calling because its model includes multiple server primitives and negotiated capabilities.\n\n**A2A** primarily standardizes task-oriented interaction among independently implemented agent systems. It allows an agent to expose capabilities and exchange task progress or artifacts without granting peers access to its internal prompt, memory, or tool graph.\n\nFor Goni, both are adapters outside the authority root. A protocol peer can advertise a capability or return an artifact; the kernel still decides what may be sent, what may be trusted, what actions are authorized, and what receipts or verification are required.",
+      "domains": [
+        "system",
+        "interoperability",
+        "tools",
+        "agents"
+      ],
+      "id": "INTEROP-MCP-A2A-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/syntheses/interop-mcp-a2a-01-protocol-roles.md",
+      "proposition": "Goni treats MCP primarily as a vertical capability and context interoperability boundary and A2A as a horizontal agent-system interoperability boundary; neither protocol grants Goni authority by itself.",
+      "relations": [
+        {
+          "target": "GONI-SYNTHESIS-8BBCE3886093",
+          "type": "refines"
+        }
+      ],
+      "sources": [
+        "SRC-MCP-2026-07-28",
+        "SRC-A2A-1-0"
+      ],
+      "status": "draft",
+      "title": "MCP and A2A occupy different interoperability roles",
+      "type": "synthesis",
+      "uncertainty": "Protocol capabilities evolve; implementation should pin supported versions and avoid treating the vertical/horizontal shorthand as a statement that either protocol can only be used in one topology."
+    },
+    {
       "aliases": [],
       "artifacts": [],
       "body": "# ITCR-01 - Inference-Time Compute Reasoning\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n# ITCR-01 - Inference-Time Compute Reasoning\n﻿---\nid: ITCR-01\ntype: SPEC\nstatus: specified_only\n---\nDOC-ID: ITCR-01\nStatus: Specified only / roadmap\n\nThis spec defines inference-time compute reasoning (ITCR) as a bounded,\ninterrupt-driven reasoning service. ITCR is a compute allocation policy over a\nreasoning procedure, not a model architecture. It trades extra latency/energy\nfor reduced error on multi-step planning, verification, and constraint-heavy\ntasks.",
@@ -59762,6 +60995,36 @@
     },
     {
       "aliases": [
+        "multi-agent evaluation"
+      ],
+      "artifacts": [],
+      "body": "# Compute-normalized single-agent and multi-agent comparison\n\nMulti-agent architecture is a hypothesis to test, not a maturity badge.\n\nFor every Goni Council or multi-agent workflow, compare at least:\n\n```text\nstrong single agent\nvs\ncandidate multi-agent architecture\n```\n\nunder matched or explicitly reported resources.\n\n## Minimum controls\n\nHold constant or report:\n\n- base model family and versions,\n- available tools and permissions,\n- source/context access,\n- total reasoning-token budget,\n- model-call count,\n- wall-clock and latency budget,\n- monetary or energy cost,\n- verification and retry allowance.\n\n## Outcome metrics\n\nMeasure:\n\n- task success,\n- policy violations,\n- evidence quality,\n- disagreement resolution,\n- context loss during handoff,\n- duplicated work,\n- coordination overhead,\n- total compute,\n- latency,\n- reliability across repeated runs.\n\nPromote multi-agent decomposition when the improvement is attributable to genuine structure such as heterogeneous expertise, parallelism, independent evidence, adversarial checking, or authority separation rather than merely additional inference budget.",
+      "domains": [
+        "research",
+        "evaluation",
+        "agents"
+      ],
+      "id": "MULTIAGENT-EVAL-01",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/experiments/multiagent-eval-01-compute-normalized-comparison.md",
+      "proposition": "Goni should justify multi-agent or Council decomposition against a strong single-agent baseline under matched reasoning tokens, model calls, latency or cost budgets, tools, context access, and verification conditions.",
+      "relations": [
+        {
+          "target": "GONI-THESIS-D2E69CC012F4",
+          "type": "tests"
+        }
+      ],
+      "sources": [
+        "SRC-TRAN2026-COMPUTE-NORMALIZED-MULTIAGENT"
+      ],
+      "status": "draft",
+      "title": "Compute-normalized single-agent and multi-agent comparison",
+      "type": "experiment",
+      "uncertainty": "Different tasks may benefit from heterogeneous agents, parallelism, independent evidence, or organizational separation; the experiment is intended to identify when that benefit survives resource normalization."
+    },
+    {
+      "aliases": [
         "NETWORK-GATE-AND-ANONYMITY"
       ],
       "artifacts": [],
@@ -60217,6 +61480,39 @@
       "title": "40 Privacy And Text Confinement",
       "type": "implementation-map",
       "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
+    },
+    {
+      "aliases": [
+        "RAG and context engineering"
+      ],
+      "artifacts": [],
+      "body": "# Retrieval, memory, and context are distinct system functions\n\nRAG is not a stage between an LLM and an agent. It is one way to acquire information for inference.\n\nGoni's context path is conceptually:\n\n```text\nobjective + task state + belief state + relevant memory + retrieved evidence\n  -> selection / reranking / compression / normalization\n  -> bounded model context\n  -> model inference\n```\n\n## Distinctions\n\n**Retrieval / RAG** selects information from external or persistent stores for a current inference.\n\n**Persistent memory** retains governed information across tasks and sessions and therefore needs formation, provenance, revision, conflict handling, expiry or forgetting, and retrieval policies.\n\n**Task state** records what the current workflow has done and what remains.\n\n**Belief state** represents the agent's current epistemic position, including uncertainty and contradictions.\n\n**Model context** is the finite inference-time payload assembled from the preceding objects plus instructions, policies, tool schemas, and recent observations.\n\n## Context engineering\n\nGoni uses context engineering as the broader systems abstraction. The context engine may:\n\n- retrieve or generate candidate information,\n- filter, rerank, compress, normalize, and cite it,\n- allocate a context budget,\n- preserve instruction and provenance boundaries,\n- invalidate stale or superseded material,\n- select relevant memories and task state,\n- construct the smallest sufficient context for the requested reasoning step.\n\nThe goal is to replace conversational archaeology with an explicit compiled context whose contents and provenance can be inspected and reproduced.",
+      "domains": [
+        "system",
+        "research",
+        "context",
+        "memory"
+      ],
+      "id": "RAG-CONTEXT-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/syntheses/rag-context-01-retrieval-memory-and-context.md",
+      "proposition": "Goni treats RAG as one information-retrieval mechanism inside context engineering and distinguishes retrieval, persistent memory, task state, belief state, and the model context compiled for each inference.",
+      "relations": [
+        {
+          "target": "GONI-THESIS-B09E3475FE2C",
+          "type": "refines"
+        }
+      ],
+      "sources": [
+        "SRC-LEWIS2020-RAG",
+        "SRC-MEI2025-CONTEXT-ENGINEERING",
+        "SRC-HU2026-AGENT-MEMORY-SURVEY"
+      ],
+      "status": "draft",
+      "title": "Retrieval, memory, and context are distinct system functions",
+      "type": "synthesis",
+      "uncertainty": "Context-engineering and agent-memory terminology is still evolving; Goni uses these distinctions to constrain system responsibilities rather than to claim a universal taxonomy."
     },
     {
       "aliases": [],
@@ -61684,6 +62980,105 @@
     },
     {
       "aliases": [
+        "epistemic versus causal tools"
+      ],
+      "artifacts": [],
+      "body": "# Separate epistemic access from causal capability\n\nGoni distinguishes two capability families by their primary effect.\n\n**Epistemic capabilities** primarily expand what the system can observe or retrieve: search, document retrieval, metadata reads, database reads, status queries, screenshots, and other observation operations.\n\n**Causal capabilities** can change the external environment: file writes, database mutations, message sending, purchases, publishing, code execution with side effects, account changes, and device control.\n\nThe distinction is risk-relevant rather than cosmetic. Epistemic operations still require privacy, provenance, and prompt-injection controls, but causal operations additionally require effect authorization, postcondition verification, rollback or compensation analysis where feasible, and stronger receipt requirements.\n\nA single integration may expose both classes. Goni therefore classifies the requested operation or capability, not merely the brand or protocol through which it is reached.",
+      "domains": [
+        "system",
+        "tools",
+        "authority"
+      ],
+      "id": "TOOL-EFFECT-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/principles/tool-effect-01-epistemic-vs-causal-capabilities.md",
+      "proposition": "Goni should distinguish capabilities that primarily change what an agent can know from capabilities that can change external state because their authority, risk, rollback, and verification requirements differ.",
+      "relations": [
+        {
+          "target": "GONI-THESIS-F782C616C259",
+          "type": "refines"
+        }
+      ],
+      "sources": [
+        "SRC-YAO2023-REACT",
+        "SRC-SCHICK2023-TOOLFORMER"
+      ],
+      "status": "draft",
+      "title": "Separate epistemic access from causal capability",
+      "type": "principle",
+      "uncertainty": "Some tools both reveal and change state; classification should follow the effectful capability actually requested rather than a permanent label on the integration."
+    },
+    {
+      "aliases": [
+        "trajectory reliability",
+        "long-horizon agent evaluation"
+      ],
+      "artifacts": [],
+      "body": "# Agent trajectory reliability evaluation\n\nGoni Lab should evaluate a delegated system as a **trajectory through changing state**, not only as a sequence of plausible messages.\n\n## Core evaluation dimensions\n\n### 1. External-state success\n\nWhere an objective postcondition exists, success should be computed from the resulting environment:\n\n- expected database state,\n- file or repository state,\n- calendar or communication state,\n- test and compiler results,\n- policy state,\n- receipt and provenance state.\n\nThe generator's own claim of success is not a sufficient evaluator.\n\n### 2. Repeated-run reliability\n\nEach representative task should be repeated under controlled seeds or equivalent stochastic variation. Report:\n\n- single-run success,\n- repeated success using a pass^k-style measure where suitable,\n- failure-mode distribution,\n- variance in tool-call count, latency, and cost,\n- policy and receipt consistency across runs.\n\n### 3. Partial-observability handling\n\nFixtures should include:\n\n- hidden or implicit state,\n- stale memory,\n- contradictory observations,\n- state that changes during execution,\n- insufficient information,\n- information arriving after the task starts.\n\nMeasure whether the agent gathers evidence, updates belief/task state, or escalates appropriately.\n\n### 4. Constraint retention\n\nLong workflows should include persistent constraints that remain relevant hundreds of steps later. Record:\n\n- forgotten constraints,\n- unauthorized shortcuts,\n- context or memory substitution errors,\n- goal drift,\n- silent assumption changes.\n\n### 5. Clarification quality\n\nHuman escalation is successful behavior when information is decision-relevant and unavailable. Measure:\n\n- unnecessary-question rate,\n- missed-clarification rate,\n- whether the question is the smallest decisive one,\n- whether safe progress occurs before asking when possible.\n\n### 6. Verification and recovery\n\nMeasure whether the system:\n\n- checks preconditions,\n- verifies postconditions,\n- detects partial failure,\n- retries idempotently where safe,\n- rolls back or compensates where supported,\n- replans from observed state instead of repeating the same failed action.\n\n## Runtime-monitor shape\n\nA strong trajectory should approximate:\n\n```text\ncheck preconditions\n-> act\n-> observe actual result\n-> verify invariants/postconditions\n-> update task and belief state\n-> continue / replan / escalate / stop\n```\n\nThis experiment family should be applied to Goni's own delegation workflows rather than importing benchmark scores as a proxy for sovereign-operation quality.",
+      "domains": [
+        "research",
+        "evaluation",
+        "agents"
+      ],
+      "id": "TRAJECTORY-EVAL-01",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/experiments/trajectory-eval-01-agent-trajectory-reliability.md",
+      "proposition": "Goni Lab should evaluate delegated agents over complete, repeated state-changing trajectories using external postconditions, hidden-state recovery, constraint retention, clarification behavior, verification, and recovery rather than relying on single-run model judgments.",
+      "relations": [
+        {
+          "target": "GONI-THESIS-D2E69CC012F4",
+          "type": "tests"
+        }
+      ],
+      "sources": [
+        "SRC-LU2024-TOOLSANDBOX",
+        "SRC-YAO2024-TAUBENCH",
+        "SRC-JIMENEZ2023-SWEBENCH",
+        "SRC-YUAN2026-OSWORLD2"
+      ],
+      "status": "draft",
+      "title": "Agent trajectory reliability evaluation",
+      "type": "experiment",
+      "uncertainty": "This is a proposed Goni Lab evaluation family. Scenario fixtures, thresholds, and acceptable reliability levels remain to be implemented and calibrated."
+    },
+    {
+      "aliases": [
+        "instruction data boundary",
+        "trusted instruction boundary"
+      ],
+      "artifacts": [],
+      "body": "# Preserve authority and information trust boundaries\n\nThe model context is not one uniform authority domain.\n\nGoni should preserve at least the following semantic classes:\n\n1. kernel and constitutional policy,\n2. authenticated user mandate and current authorized intent,\n3. approved workflow or work-order constraints,\n4. trusted system observations,\n5. tool outputs and retrieved documents,\n6. arbitrary web, email, document, or third-party content.\n\nA lower-trust class may provide evidence about the world without gaining the right to redefine higher-trust policy or authorize an effect.\n\n## Runtime consequence\n\nPrompt injection should be treated as an information-flow and authority-confusion problem. Model-level defenses can reduce risk, while the kernel must independently enforce capability, egress, policy, and effect boundaries.\n\nThe system therefore asks two separate questions:\n\n- **What does this content tell us?**\n- **What authority, if any, does this content possess?**\n\nOnly the second question can grant permission to act.",
+      "domains": [
+        "system",
+        "safety",
+        "authority",
+        "context"
+      ],
+      "id": "TRUST-INPUT-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/principles/trust-input-01-authority-and-information-boundaries.md",
+      "proposition": "Goni should preserve the provenance and privilege of policy, authorized user intent, tool observations, retrieved material, and external content so that untrusted data cannot acquire execution authority merely by entering model context.",
+      "relations": [
+        {
+          "target": "GONI-THESIS-349EB2E79136",
+          "type": "refines"
+        }
+      ],
+      "sources": [
+        "SRC-WALLACE2024-INSTRUCTION-HIERARCHY",
+        "SRC-DEBENEDETTI2024-AGENTDOJO",
+        "SRC-DOSHI2026-SAFE-TOOL-USE"
+      ],
+      "status": "draft",
+      "title": "Preserve authority and information trust boundaries",
+      "type": "principle",
+      "uncertainty": "Model-level privilege handling remains probabilistic; Goni's stronger claims depend on implemented and tested runtime mediation outside the model."
+    },
+    {
+      "aliases": [
         "VISUAL-INTELLIGENCE-PLANE"
       ],
       "artifacts": [],
@@ -61737,6 +63132,37 @@
       "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
     },
     {
+      "aliases": [
+        "world model",
+        "consequence simulation"
+      ],
+      "artifacts": [],
+      "body": "# Consequence simulation as an optional planning layer\n\nFor high-cost actions, the planner may benefit from evaluating candidate consequences before committing an effect.\n\nA research shape is:\n\n```text\ncurrent belief/task state\n  -> candidate actions\n  -> consequence/world model\n  -> predicted state transitions and uncertainty\n  -> planner comparison\n  -> kernel authorization\n  -> real execution\n  -> actual observation and verification\n```\n\nPotential target domains include:\n\n- destructive filesystem or database operations,\n- expensive purchases or commitments,\n- migrations and deployments,\n- privacy-sensitive disclosure,\n- robotics and embodied actions,\n- long-running scientific or compute jobs.\n\n## Authority boundary\n\nThe world model is advisory cognition. It receives no independent authority.\n\nA predicted safe outcome cannot authorize an action. The kernel still evaluates policy and capabilities, and the post-action monitor verifies the real environment because model predictions may be wrong.\n\n## Promotion criterion\n\nThis layer should be promoted only if controlled Goni Lab experiments show that it reduces consequential errors or interaction cost enough to justify added latency, complexity, and model error risk.",
+      "domains": [
+        "research",
+        "planning",
+        "agents"
+      ],
+      "id": "WORLD-MODEL-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/proposals/world-model-01-consequence-simulation.md",
+      "proposition": "Goni should study optional world-model or consequence-simulation components for expensive or irreversible actions so candidate actions can be evaluated against predicted state transitions before execution without making simulation an authority source.",
+      "relations": [
+        {
+          "target": "AGENT-STATE-01",
+          "type": "refines"
+        }
+      ],
+      "sources": [
+        "SRC-YANG2026-WORLD-MODELS"
+      ],
+      "status": "draft",
+      "title": "Consequence simulation as an optional planning layer",
+      "type": "proposal",
+      "uncertainty": "This is a research proposal. Predicted consequences can be wrong, so simulation must never substitute for kernel policy, actual execution receipts, or postcondition verification."
+    },
+    {
       "aliases": [],
       "artifacts": [],
       "body": "# 52 Zero Copy Mechanics\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n﻿# 52 – Zero-Copy Mechanics\nDOC-ID: ZCO-01\n\nZero-copy operations over Arrow buffers (see `95-theory` for proofs). Outputs mutate booleans/indices; text moves exactly once into an LLM buffer.",
@@ -61764,6 +63190,30 @@
     }
   ],
   "relations": [
+    {
+      "projection": "authored",
+      "source": "ADAPTATION-LEVELS-01",
+      "target": "SYS-03",
+      "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "ADAPTATION-LEVELS-01",
+      "target": "EVID-CONTINUAL-EXPERIENCE-COLLAPSE-01",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "ADAPTATION-LEVELS-01",
+      "target": "EVID-SELF-EVOLVING-TAXONOMY-01",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "ADAPTATION-LEVELS-01",
+      "target": "AGENT-SYSTEMS-MAP-01",
+      "type": "synthesized_by"
+    },
     {
       "projection": "authored",
       "source": "ADJACENT-PROJECTS",
@@ -62011,6 +63461,192 @@
       "type": "synthesizes"
     },
     {
+      "projection": "authored",
+      "source": "AGENT-ONTOLOGY-01",
+      "target": "GONI-THESIS-E1FB8B4F7772",
+      "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "AGENT-ONTOLOGY-01",
+      "target": "EVID-AGENTIC-LLM-TAXONOMY-01",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "AGENT-ONTOLOGY-01",
+      "target": "EVID-REACT-AGENT-LOOP-01",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "AGENT-ONTOLOGY-01",
+      "target": "EVID-TOOLFORMER-TOOL-SELECTION-01",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "AGENT-ONTOLOGY-01",
+      "target": "AGENT-SYSTEMS-MAP-01",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "authored",
+      "source": "AGENT-ONTOLOGY-01",
+      "target": "GONI-SYNTHESIS-2F73035842DF",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "generated",
+      "source": "AGENT-STATE-01",
+      "target": "WORLD-MODEL-01",
+      "type": "refined_by"
+    },
+    {
+      "projection": "authored",
+      "source": "AGENT-STATE-01",
+      "target": "GONI-THESIS-E1FB8B4F7772",
+      "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "AGENT-STATE-01",
+      "target": "EVID-AGENT-MEMORY-DYNAMICS-01",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "AGENT-STATE-01",
+      "target": "EVID-AGENTIC-RL-POMDP-01",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "AGENT-STATE-01",
+      "target": "AGENT-SYSTEMS-MAP-01",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "authored",
+      "source": "AGENT-SYSTEMS-MAP-01",
+      "target": "GONI-SYNTHESIS-F0626F7EFE2C",
+      "type": "refines"
+    },
+    {
+      "projection": "authored",
+      "source": "AGENT-SYSTEMS-MAP-01",
+      "target": "ADAPTATION-LEVELS-01",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "AGENT-SYSTEMS-MAP-01",
+      "target": "AGENT-ONTOLOGY-01",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "AGENT-SYSTEMS-MAP-01",
+      "target": "AGENT-STATE-01",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "AGENT-SYSTEMS-MAP-01",
+      "target": "AGENTICNESS-01",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "AGENT-SYSTEMS-MAP-01",
+      "target": "AUDIT-RUNTIME-01",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "AGENT-SYSTEMS-MAP-01",
+      "target": "INTERFACE-MODEL-01",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "AGENT-SYSTEMS-MAP-01",
+      "target": "INTERFACE-SELECTION-01",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "AGENT-SYSTEMS-MAP-01",
+      "target": "INTEROP-MCP-A2A-01",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "AGENT-SYSTEMS-MAP-01",
+      "target": "MULTIAGENT-EVAL-01",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "AGENT-SYSTEMS-MAP-01",
+      "target": "RAG-CONTEXT-01",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "AGENT-SYSTEMS-MAP-01",
+      "target": "TOOL-EFFECT-01",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "AGENT-SYSTEMS-MAP-01",
+      "target": "TRAJECTORY-EVAL-01",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "AGENT-SYSTEMS-MAP-01",
+      "target": "TRUST-INPUT-01",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "AGENT-SYSTEMS-MAP-01",
+      "target": "WORLD-MODEL-01",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "AGENTICNESS-01",
+      "target": "GONI-THESIS-826C859B5D30",
+      "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "AGENTICNESS-01",
+      "target": "AGENT-SYSTEMS-MAP-01",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "authored",
+      "source": "AUDIT-RUNTIME-01",
+      "target": "GONI-THESIS-E9DC181C1E9A",
+      "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "AUDIT-RUNTIME-01",
+      "target": "EVID-AUDITABLE-AGENTS-01",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "AUDIT-RUNTIME-01",
+      "target": "AGENT-SYSTEMS-MAP-01",
+      "type": "synthesized_by"
+    },
+    {
       "projection": "generated",
       "source": "AXIOMS-01",
       "target": "GONI-EVIDENCE-3B6F68694E5E",
@@ -62053,6 +63689,90 @@
       "type": "supported_by"
     },
     {
+      "projection": "authored",
+      "source": "EVID-A2A-INTEROPERABILITY-01",
+      "target": "INTEROP-MCP-A2A-01",
+      "type": "supports"
+    },
+    {
+      "projection": "authored",
+      "source": "EVID-AGENT-MEMORY-DYNAMICS-01",
+      "target": "AGENT-STATE-01",
+      "type": "supports"
+    },
+    {
+      "projection": "authored",
+      "source": "EVID-AGENT-MEMORY-DYNAMICS-01",
+      "target": "RAG-CONTEXT-01",
+      "type": "supports"
+    },
+    {
+      "projection": "authored",
+      "source": "EVID-AGENTDOJO-UNTRUSTED-DATA-01",
+      "target": "TRUST-INPUT-01",
+      "type": "supports"
+    },
+    {
+      "projection": "authored",
+      "source": "EVID-AGENTIC-LLM-TAXONOMY-01",
+      "target": "AGENT-ONTOLOGY-01",
+      "type": "supports"
+    },
+    {
+      "projection": "authored",
+      "source": "EVID-AGENTIC-RL-POMDP-01",
+      "target": "AGENT-STATE-01",
+      "type": "supports"
+    },
+    {
+      "projection": "authored",
+      "source": "EVID-AUDITABLE-AGENTS-01",
+      "target": "AUDIT-RUNTIME-01",
+      "type": "supports"
+    },
+    {
+      "projection": "authored",
+      "source": "EVID-COMPUTE-NORMALIZED-MULTIAGENT-01",
+      "target": "MULTIAGENT-EVAL-01",
+      "type": "supports"
+    },
+    {
+      "projection": "authored",
+      "source": "EVID-CONTEXT-ENGINEERING-TAXONOMY-01",
+      "target": "RAG-CONTEXT-01",
+      "type": "supports"
+    },
+    {
+      "projection": "authored",
+      "source": "EVID-CONTINUAL-EXPERIENCE-COLLAPSE-01",
+      "target": "ADAPTATION-LEVELS-01",
+      "type": "supports"
+    },
+    {
+      "projection": "authored",
+      "source": "EVID-INSTRUCTION-HIERARCHY-01",
+      "target": "TRUST-INPUT-01",
+      "type": "supports"
+    },
+    {
+      "projection": "authored",
+      "source": "EVID-MCP-SEMANTICS-01",
+      "target": "INTEROP-MCP-A2A-01",
+      "type": "supports"
+    },
+    {
+      "projection": "authored",
+      "source": "EVID-OSWORLD2-LONG-HORIZON-01",
+      "target": "TRAJECTORY-EVAL-01",
+      "type": "supports"
+    },
+    {
+      "projection": "authored",
+      "source": "EVID-REACT-AGENT-LOOP-01",
+      "target": "AGENT-ONTOLOGY-01",
+      "type": "supports"
+    },
+    {
       "projection": "generated",
       "source": "EVID-ROUTE-01",
       "target": "GONI-EVIDENCE-A2893B732EBC",
@@ -62063,6 +63783,48 @@
       "source": "EVID-ROUTE-01",
       "target": "GONI-EVIDENCE-E3F3DC159250",
       "type": "supported_by"
+    },
+    {
+      "projection": "authored",
+      "source": "EVID-SAFE-TOOL-USE-01",
+      "target": "TRUST-INPUT-01",
+      "type": "supports"
+    },
+    {
+      "projection": "authored",
+      "source": "EVID-SELF-EVOLVING-TAXONOMY-01",
+      "target": "ADAPTATION-LEVELS-01",
+      "type": "supports"
+    },
+    {
+      "projection": "authored",
+      "source": "EVID-SWEBENCH-EXECUTABLE-VERIFICATION-01",
+      "target": "TRAJECTORY-EVAL-01",
+      "type": "supports"
+    },
+    {
+      "projection": "authored",
+      "source": "EVID-TAUBENCH-RELIABILITY-01",
+      "target": "TRAJECTORY-EVAL-01",
+      "type": "supports"
+    },
+    {
+      "projection": "authored",
+      "source": "EVID-TOOLFORMER-TOOL-SELECTION-01",
+      "target": "AGENT-ONTOLOGY-01",
+      "type": "supports"
+    },
+    {
+      "projection": "authored",
+      "source": "EVID-TOOLSANDBOX-STATEFUL-EVAL-01",
+      "target": "TRAJECTORY-EVAL-01",
+      "type": "supports"
+    },
+    {
+      "projection": "authored",
+      "source": "EVID-WORLD-MODEL-INTERMEDIARY-01",
+      "target": "WORLD-MODEL-01",
+      "type": "supports"
     },
     {
       "projection": "authored",
@@ -64467,6 +66229,12 @@
     {
       "projection": "generated",
       "source": "GONI-SYNTHESIS-2F73035842DF",
+      "target": "AGENT-ONTOLOGY-01",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-SYNTHESIS-2F73035842DF",
       "target": "GONI-SYNTHESIS-0534045D4E2A",
       "type": "synthesized_by"
     },
@@ -65679,6 +67447,12 @@
     {
       "projection": "generated",
       "source": "GONI-SYNTHESIS-8BBCE3886093",
+      "target": "INTEROP-MCP-A2A-01",
+      "type": "refined_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-SYNTHESIS-8BBCE3886093",
       "target": "ADJACENT-PROJECTS",
       "type": "synthesized_by"
     },
@@ -66866,6 +68640,12 @@
     },
     {
       "projection": "generated",
+      "source": "GONI-SYNTHESIS-F0626F7EFE2C",
+      "target": "AGENT-SYSTEMS-MAP-01",
+      "type": "refined_by"
+    },
+    {
+      "projection": "generated",
       "source": "GONI-SYNTHESIS-F174F75EEF01",
       "target": "GONI-SYNTHESIS-E25D38477C7D",
       "type": "synthesized_by"
@@ -67028,6 +68808,12 @@
     },
     {
       "projection": "generated",
+      "source": "GONI-THESIS-349EB2E79136",
+      "target": "TRUST-INPUT-01",
+      "type": "refined_by"
+    },
+    {
+      "projection": "generated",
       "source": "GONI-THESIS-468CFFD9870E",
       "target": "GONI-SYNTHESIS-0FE689876A05",
       "type": "synthesized_by"
@@ -67036,6 +68822,60 @@
       "projection": "generated",
       "source": "GONI-THESIS-7BFB74017D50",
       "target": "GONI-DECISION-9AF49466170D",
+      "type": "refined_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-THESIS-826C859B5D30",
+      "target": "AGENTICNESS-01",
+      "type": "refined_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-THESIS-B09E3475FE2C",
+      "target": "RAG-CONTEXT-01",
+      "type": "refined_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-THESIS-D2E69CC012F4",
+      "target": "MULTIAGENT-EVAL-01",
+      "type": "tested_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-THESIS-D2E69CC012F4",
+      "target": "TRAJECTORY-EVAL-01",
+      "type": "tested_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-THESIS-E1FB8B4F7772",
+      "target": "AGENT-ONTOLOGY-01",
+      "type": "refined_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-THESIS-E1FB8B4F7772",
+      "target": "AGENT-STATE-01",
+      "type": "refined_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-THESIS-E1FB8B4F7772",
+      "target": "INTERFACE-MODEL-01",
+      "type": "refined_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-THESIS-E9DC181C1E9A",
+      "target": "AUDIT-RUNTIME-01",
+      "type": "refined_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-THESIS-F782C616C259",
+      "target": "TOOL-EFFECT-01",
       "type": "refined_by"
     },
     {
@@ -67145,6 +68985,54 @@
       "source": "GOV-00",
       "target": "GONI-SYNTHESIS-ED003EE7E80E",
       "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "INTERFACE-MODEL-01",
+      "target": "GONI-THESIS-E1FB8B4F7772",
+      "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "INTERFACE-MODEL-01",
+      "target": "AGENT-SYSTEMS-MAP-01",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "authored",
+      "source": "INTERFACE-SELECTION-01",
+      "target": "TOOL-EFFECT-01",
+      "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "INTERFACE-SELECTION-01",
+      "target": "AGENT-SYSTEMS-MAP-01",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "authored",
+      "source": "INTEROP-MCP-A2A-01",
+      "target": "GONI-SYNTHESIS-8BBCE3886093",
+      "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "INTEROP-MCP-A2A-01",
+      "target": "EVID-A2A-INTEROPERABILITY-01",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "INTEROP-MCP-A2A-01",
+      "target": "EVID-MCP-SEMANTICS-01",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "INTEROP-MCP-A2A-01",
+      "target": "AGENT-SYSTEMS-MAP-01",
+      "type": "synthesized_by"
     },
     {
       "projection": "authored",
@@ -67519,6 +69407,24 @@
       "type": "supported_by"
     },
     {
+      "projection": "generated",
+      "source": "MULTIAGENT-EVAL-01",
+      "target": "EVID-COMPUTE-NORMALIZED-MULTIAGENT-01",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "MULTIAGENT-EVAL-01",
+      "target": "AGENT-SYSTEMS-MAP-01",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "authored",
+      "source": "MULTIAGENT-EVAL-01",
+      "target": "GONI-THESIS-D2E69CC012F4",
+      "type": "tests"
+    },
+    {
       "projection": "authored",
       "source": "NONBYPASS-INTEGRATION-METRICS",
       "target": "GONI-SYNTHESIS-05D94504CE5B",
@@ -67787,6 +69693,30 @@
       "source": "PRIV-01",
       "target": "GONI-EVIDENCE-074976FCCFF9",
       "type": "supported_by"
+    },
+    {
+      "projection": "authored",
+      "source": "RAG-CONTEXT-01",
+      "target": "GONI-THESIS-B09E3475FE2C",
+      "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "RAG-CONTEXT-01",
+      "target": "EVID-AGENT-MEMORY-DYNAMICS-01",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "RAG-CONTEXT-01",
+      "target": "EVID-CONTEXT-ENGINEERING-TAXONOMY-01",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "RAG-CONTEXT-01",
+      "target": "AGENT-SYSTEMS-MAP-01",
+      "type": "synthesized_by"
     },
     {
       "projection": "authored",
@@ -68385,6 +70315,12 @@
     {
       "projection": "generated",
       "source": "SYS-03",
+      "target": "ADAPTATION-LEVELS-01",
+      "type": "refined_by"
+    },
+    {
+      "projection": "generated",
+      "source": "SYS-03",
       "target": "GONI-EVIDENCE-23EFDA500D02",
       "type": "supported_by"
     },
@@ -68534,6 +70470,90 @@
     },
     {
       "projection": "generated",
+      "source": "TOOL-EFFECT-01",
+      "target": "INTERFACE-SELECTION-01",
+      "type": "refined_by"
+    },
+    {
+      "projection": "authored",
+      "source": "TOOL-EFFECT-01",
+      "target": "GONI-THESIS-F782C616C259",
+      "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "TOOL-EFFECT-01",
+      "target": "AGENT-SYSTEMS-MAP-01",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "generated",
+      "source": "TRAJECTORY-EVAL-01",
+      "target": "EVID-OSWORLD2-LONG-HORIZON-01",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "TRAJECTORY-EVAL-01",
+      "target": "EVID-SWEBENCH-EXECUTABLE-VERIFICATION-01",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "TRAJECTORY-EVAL-01",
+      "target": "EVID-TAUBENCH-RELIABILITY-01",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "TRAJECTORY-EVAL-01",
+      "target": "EVID-TOOLSANDBOX-STATEFUL-EVAL-01",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "TRAJECTORY-EVAL-01",
+      "target": "AGENT-SYSTEMS-MAP-01",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "authored",
+      "source": "TRAJECTORY-EVAL-01",
+      "target": "GONI-THESIS-D2E69CC012F4",
+      "type": "tests"
+    },
+    {
+      "projection": "authored",
+      "source": "TRUST-INPUT-01",
+      "target": "GONI-THESIS-349EB2E79136",
+      "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "TRUST-INPUT-01",
+      "target": "EVID-AGENTDOJO-UNTRUSTED-DATA-01",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "TRUST-INPUT-01",
+      "target": "EVID-INSTRUCTION-HIERARCHY-01",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "TRUST-INPUT-01",
+      "target": "EVID-SAFE-TOOL-USE-01",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "TRUST-INPUT-01",
+      "target": "AGENT-SYSTEMS-MAP-01",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "generated",
       "source": "VIS-01",
       "target": "GONI-EVIDENCE-120C9708D024",
       "type": "supported_by"
@@ -68567,10 +70587,38 @@
       "source": "VIS-RUNTIME-01",
       "target": "GONI-EVIDENCE-FAA487C54065",
       "type": "supported_by"
+    },
+    {
+      "projection": "authored",
+      "source": "WORLD-MODEL-01",
+      "target": "AGENT-STATE-01",
+      "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "WORLD-MODEL-01",
+      "target": "EVID-WORLD-MODEL-INTERMEDIARY-01",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "WORLD-MODEL-01",
+      "target": "AGENT-SYSTEMS-MAP-01",
+      "type": "synthesized_by"
     }
   ],
   "schema_version": 1,
   "sources": [
+    {
+      "accessed": "2026-09-23",
+      "citation": "https://a2a-protocol.org/latest/specification/",
+      "id": "SRC-A2A-1-0",
+      "kind": "web",
+      "notes": "The Agent2Agent protocol specifies interoperable communication between independent agent systems, including agent discovery or capability description, task-oriented interaction, messages, artifacts, and protocol bindings.",
+      "path": "sources/src-a2a-1-0.yml",
+      "title": "agent2agent-protocol-1-0",
+      "url": "https://a2a-protocol.org/latest/specification/"
+    },
     {
       "citation": "https://www.usenix.org/system/files/nsdi20-paper-agache.pdf",
       "id": "SRC-AGACHE2020-FIRECRACKER",
@@ -68643,6 +70691,16 @@
       "url": "https://www.researchgate.net/publication/2914496_Human-Agent_Teamwork_and_Adjustable_Autonomy_in_Practice"
     },
     {
+      "accessed": "2026-09-23",
+      "citation": "https://arxiv.org/abs/2606.04703",
+      "id": "SRC-CHEN2026-CONTINUAL-EXPERIENCE",
+      "kind": "academic",
+      "notes": "Chen et al. report progressive capability collapse under naive multi-iteration experience internalization and analyze how experience granularity, injection pattern, and training regime affect stability.",
+      "path": "sources/src-chen2026-continual-experience.yml",
+      "title": "chen2026-continual-experience",
+      "url": "https://arxiv.org/abs/2606.04703"
+    },
+    {
       "citation": "https://www.alphaxiv.org/abs/2026.dspark",
       "id": "SRC-CHENG2026-DSPARK",
       "kind": "web",
@@ -68696,6 +70754,16 @@
       "url": "https://arxiv.org/abs/2205.14135"
     },
     {
+      "accessed": "2026-09-23",
+      "citation": "https://arxiv.org/abs/2406.13352",
+      "id": "SRC-DEBENEDETTI2024-AGENTDOJO",
+      "kind": "academic",
+      "notes": "AgentDojo evaluates attacks and defenses for tool-using LLM agents that interact with untrusted data and external tools.",
+      "path": "sources/src-debenedetti2024-agentdojo.yml",
+      "title": "debenedetti2024-agentdojo",
+      "url": "https://arxiv.org/abs/2406.13352"
+    },
+    {
       "accessed": "2026-09-20",
       "citation": "https://arxiv.org/abs/2405.04434",
       "id": "SRC-DEEPSEEK2024-V2",
@@ -68742,6 +70810,16 @@
       "url": "https://www.ijcai.org/proceedings/2023/738"
     },
     {
+      "accessed": "2026-09-23",
+      "citation": "https://arxiv.org/abs/2601.08012",
+      "id": "SRC-DOSHI2026-SAFE-TOOL-USE",
+      "kind": "academic",
+      "notes": "Doshi et al. argue that model-based safeguards improve reliability but cannot guarantee safe tool use, and propose enforceable specifications over information flows and tool sequences.",
+      "path": "sources/src-doshi2026-safe-tool-use.yml",
+      "title": "doshi2026-safe-tool-use",
+      "url": "https://arxiv.org/abs/2601.08012"
+    },
+    {
       "citation": "https://arxiv.org/abs/2403.07718",
       "id": "SRC-DROUIN2024-WORKARENA",
       "kind": "academic",
@@ -68785,6 +70863,16 @@
       "path": "sources/src-gaffinet2025-human-digital-twin.yml",
       "title": "gaffinet2025-human-digital-twin",
       "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4911522"
+    },
+    {
+      "accessed": "2026-09-23",
+      "citation": "https://arxiv.org/abs/2507.21046",
+      "id": "SRC-GAO2026-SELF-EVOLVING-AGENTS",
+      "kind": "academic",
+      "notes": "The survey organizes self-evolving agents by what, when, how, and where adaptation occurs, spanning models, memory, tools, architecture, feedback, and evaluation.",
+      "path": "sources/src-gao2026-self-evolving-agents.yml",
+      "title": "gao2026-self-evolving-agents",
+      "url": "https://arxiv.org/abs/2507.21046"
     },
     {
       "citation": "https://arxiv.org/abs/1803.09010",
@@ -68876,6 +70964,16 @@
       "url": "https://arxiv.org/abs/2507.05257"
     },
     {
+      "accessed": "2026-09-23",
+      "citation": "https://arxiv.org/abs/2512.13564",
+      "id": "SRC-HU2026-AGENT-MEMORY-SURVEY",
+      "kind": "academic",
+      "notes": "The survey distinguishes agent memory from RAG and context engineering and analyzes memory by forms, functions, and dynamics including formation, evolution, and retrieval.",
+      "path": "sources/src-hu2026-agent-memory-survey.yml",
+      "title": "hu2026-agent-memory-survey",
+      "url": "https://arxiv.org/abs/2512.13564"
+    },
+    {
       "citation": "https://in-toto.io/",
       "id": "SRC-IN-TOTO-FRAMEWORK",
       "kind": "web",
@@ -68883,6 +70981,16 @@
       "path": "sources/src-in-toto-framework.yml",
       "title": "in-toto-framework",
       "url": "https://in-toto.io/"
+    },
+    {
+      "accessed": "2026-09-23",
+      "citation": "https://arxiv.org/abs/2310.06770",
+      "id": "SRC-JIMENEZ2023-SWEBENCH",
+      "kind": "academic",
+      "notes": "SWE-bench evaluates whether language-model systems can resolve real GitHub issues by modifying codebases, with success determined by executable repository tests rather than model self-assessment.",
+      "path": "sources/src-jimenez2023-swebench.yml",
+      "title": "jimenez2023-swebench",
+      "url": "https://arxiv.org/abs/2310.06770"
     },
     {
       "citation": "https://arxiv.org/abs/2004.04906",
@@ -68974,6 +71082,26 @@
       "title": "liu2023-lost-middle"
     },
     {
+      "accessed": "2026-09-23",
+      "citation": "https://arxiv.org/abs/2408.04682",
+      "id": "SRC-LU2024-TOOLSANDBOX",
+      "kind": "academic",
+      "notes": "ToolSandbox evaluates stateful conversational tool use with implicit state dependencies, insufficient-information cases, and milestone checks across arbitrary trajectories.",
+      "path": "sources/src-lu2024-toolsandbox.yml",
+      "title": "lu2024-toolsandbox",
+      "url": "https://arxiv.org/abs/2408.04682"
+    },
+    {
+      "accessed": "2026-09-23",
+      "citation": "https://github.com/modelcontextprotocol/modelcontextprotocol/tree/main/docs/specification/2026-07-28",
+      "id": "SRC-MCP-2026-07-28",
+      "kind": "web",
+      "notes": "The Model Context Protocol specification defines interoperable client-server primitives for AI applications, including server-exposed tools, resources, and prompts, with transport and capability negotiation defined separately from application semantics.",
+      "path": "sources/src-mcp-2026-07-28.yml",
+      "title": "model-context-protocol-2026-07-28",
+      "url": "https://github.com/modelcontextprotocol/modelcontextprotocol/tree/main/docs/specification/2026-07-28"
+    },
+    {
       "citation": "https://arxiv.org/abs/2403.16971",
       "id": "SRC-MEI2024-AIOS",
       "kind": "academic",
@@ -68981,6 +71109,16 @@
       "path": "sources/src-mei2024-aios.yml",
       "title": "mei2024-aios",
       "url": "https://arxiv.org/abs/2403.16971"
+    },
+    {
+      "accessed": "2026-09-23",
+      "citation": "https://arxiv.org/abs/2507.13334",
+      "id": "SRC-MEI2025-CONTEXT-ENGINEERING",
+      "kind": "academic",
+      "notes": "The survey defines context engineering beyond prompt design and decomposes it into context retrieval or generation, context processing, and context management, with RAG, memory, tool-integrated reasoning, and multi-agent systems as integrated implementations.",
+      "path": "sources/src-mei2025-context-engineering.yml",
+      "title": "mei2025-context-engineering",
+      "url": "https://arxiv.org/abs/2507.13334"
     },
     {
       "citation": "https://ai.meta.com/sam2/",
@@ -69028,6 +71166,16 @@
       "url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/86ab6927ee4ae9bde4247793c46797c7-Paper-Conference.pdf"
     },
     {
+      "accessed": "2026-09-23",
+      "citation": "https://arxiv.org/abs/2604.05485",
+      "id": "SRC-NIAN2026-AUDITABLE-AGENTS",
+      "kind": "academic",
+      "notes": "Nian et al. define auditability as a prerequisite for agent accountability and identify action recoverability, lifecycle coverage, policy checkability, responsibility attribution, and evidence integrity as five dimensions.",
+      "path": "sources/src-nian2026-auditable-agents.yml",
+      "title": "nian2026-auditable-agents",
+      "url": "https://arxiv.org/abs/2604.05485"
+    },
+    {
       "citation": "https://csrc.nist.gov/glossary/term/reference_monitor",
       "id": "SRC-NIST-REFERENCE-MONITOR-GLOSSARY",
       "kind": "web",
@@ -69062,6 +71210,16 @@
       "path": "sources/src-peng2023-rwkv.yml",
       "title": "peng2023-rwkv",
       "url": "https://arxiv.org/abs/2305.13048"
+    },
+    {
+      "accessed": "2026-09-23",
+      "citation": "https://arxiv.org/abs/2503.23037",
+      "id": "SRC-PLAAT2025-AGENTIC-LLM-SURVEY",
+      "kind": "academic",
+      "notes": "The survey organizes agentic LLM research around reasoning, acting, and interacting, providing a useful taxonomy without equating agenticness with a particular number of agents.",
+      "path": "sources/src-plaat2025-agentic-llm-survey.yml",
+      "title": "plaat2025-agentic-llm-survey",
+      "url": "https://arxiv.org/abs/2503.23037"
     },
     {
       "citation": "https://arxiv.org/abs/2302.10866",
@@ -69154,6 +71312,16 @@
       "url": "https://arxiv.org/abs/2408.00714"
     },
     {
+      "accessed": "2026-09-23",
+      "citation": "https://arxiv.org/abs/2302.04761",
+      "id": "SRC-SCHICK2023-TOOLFORMER",
+      "kind": "academic",
+      "notes": "Toolformer studies language models learning when to call external APIs, which tools to call, what arguments to pass, and how to incorporate tool results.",
+      "path": "sources/src-schick2023-toolformer.yml",
+      "title": "schick2023-toolformer",
+      "url": "https://arxiv.org/abs/2302.04761"
+    },
+    {
       "citation": "https://papers.nips.cc/paper/5656-hidden-technical-debt-in-machine-learning-syst",
       "id": "SRC-SCULLEY2015-HIDDEN-TECH-DEBT",
       "kind": "academic",
@@ -69226,6 +71394,16 @@
       "url": "https://arxiv.org/abs/2602.11865"
     },
     {
+      "accessed": "2026-09-23",
+      "citation": "https://arxiv.org/abs/2604.02460",
+      "id": "SRC-TRAN2026-COMPUTE-NORMALIZED-MULTIAGENT",
+      "kind": "academic",
+      "notes": "Tran and Kiela compare single-agent and multi-agent LLM systems under matched reasoning-token budgets and find that many apparent multi-agent gains are confounded by additional test-time compute and context effects.",
+      "path": "sources/src-tran2026-compute-normalized-multiagent.yml",
+      "title": "tran2026-compute-normalized-multiagent",
+      "url": "https://arxiv.org/abs/2604.02460"
+    },
+    {
       "citation": "Legacy annotated bibliography key [[tworek2026-decoder]]",
       "id": "SRC-TWOREK2026-DECODER",
       "kind": "web",
@@ -69259,6 +71437,16 @@
       "path": "sources/src-w3c2021-trace-context.yml",
       "title": "w3c2021-trace-context",
       "url": "https://www.w3.org/TR/trace-context/"
+    },
+    {
+      "accessed": "2026-09-23",
+      "citation": "https://arxiv.org/abs/2404.13208",
+      "id": "SRC-WALLACE2024-INSTRUCTION-HIERARCHY",
+      "kind": "academic",
+      "notes": "Wallace et al. identify lack of instruction privilege as a core prompt-injection weakness and train models to prioritize privileged instructions over conflicting lower-privilege text.",
+      "path": "sources/src-wallace2024-instruction-hierarchy.yml",
+      "title": "wallace2024-instruction-hierarchy",
+      "url": "https://arxiv.org/abs/2404.13208"
     },
     {
       "citation": "https://arxiv.org/abs/2406.11230",
@@ -69333,6 +71521,46 @@
       "url": "https://arxiv.org/abs/2505.14668"
     },
     {
+      "accessed": "2026-09-23",
+      "citation": "https://arxiv.org/abs/2602.00785",
+      "id": "SRC-YANG2026-WORLD-MODELS",
+      "kind": "academic",
+      "notes": "Yang argues for world models as intermediaries that model dynamics, rewards, and task distributions so agents can learn and plan when real-world action execution is expensive.",
+      "path": "sources/src-yang2026-world-models.yml",
+      "title": "yang2026-world-models",
+      "url": "https://arxiv.org/abs/2602.00785"
+    },
+    {
+      "accessed": "2026-09-23",
+      "citation": "https://arxiv.org/abs/2210.03629",
+      "id": "SRC-YAO2023-REACT",
+      "kind": "academic",
+      "notes": "ReAct interleaves language-model reasoning traces with task-specific actions, making reasoning-and-acting loops an important historical reference for agent architectures.",
+      "path": "sources/src-yao2023-react.yml",
+      "title": "yao2023-react",
+      "url": "https://arxiv.org/abs/2210.03629"
+    },
+    {
+      "accessed": "2026-09-23",
+      "citation": "https://arxiv.org/abs/2406.12045",
+      "id": "SRC-YAO2024-TAUBENCH",
+      "kind": "academic",
+      "notes": "tau-bench evaluates tool-agent-user interaction against domain rules and database goal states and introduces pass^k to measure behavioral reliability across repeated trials.",
+      "path": "sources/src-yao2024-taubench.yml",
+      "title": "yao2024-taubench",
+      "url": "https://arxiv.org/abs/2406.12045"
+    },
+    {
+      "accessed": "2026-09-23",
+      "citation": "https://arxiv.org/abs/2606.29537",
+      "id": "SRC-YUAN2026-OSWORLD2",
+      "kind": "academic",
+      "notes": "OSWorld2.0 evaluates long-horizon real-world computer-use workflows with dynamic environments, hidden-state inference, cross-source reasoning, and hundreds of tool calls, exposing constraint loss, missed updates, guessing instead of asking, and skipped verification.",
+      "path": "sources/src-yuan2026-osworld2.yml",
+      "title": "yuan2026-osworld2",
+      "url": "https://arxiv.org/abs/2606.29537"
+    },
+    {
       "citation": "https://lutpub.lut.fi/bitstream/handle/10024/166844/MastersThesis_Zafar_MuhammadHarisShahid.pdf",
       "id": "SRC-ZAFAR2024-HDT-BUSINESS-REVIEW",
       "kind": "web",
@@ -69368,6 +71596,16 @@
       "path": "sources/src-zhang2025-ace.yml",
       "title": "zhang2025-ace",
       "url": "https://arxiv.org/abs/2510.04618"
+    },
+    {
+      "accessed": "2026-09-23",
+      "citation": "https://arxiv.org/abs/2509.02547",
+      "id": "SRC-ZHANG2026-AGENTIC-RL",
+      "kind": "academic",
+      "notes": "The survey contrasts single-step LLM reinforcement learning with temporally extended, partially observable agentic reinforcement learning and uses a POMDP framing for agent-environment interaction.",
+      "path": "sources/src-zhang2026-agentic-rl.yml",
+      "title": "zhang2026-agentic-rl",
+      "url": "https://arxiv.org/abs/2509.02547"
     },
     {
       "citation": "https://arxiv.org/abs/2307.13854",
