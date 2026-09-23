@@ -4,4 +4,4 @@ kind: academic
 citation: https://arxiv.org/abs/2606.29537
 notes: OSWorld2.0 evaluates long-horizon real-world computer-use workflows with dynamic environments, hidden-state inference, cross-source reasoning, and hundreds of tool calls, exposing constraint loss, missed updates, guessing instead of asking, and skipped verification.
 url: https://arxiv.org/abs/2606.29537
-accessed: 2026-09-23
+accessed: "2026-09-23"
