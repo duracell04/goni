@@ -1,0 +1,6 @@
+id: SRC-GNEITING-RAFTERY2007-SCORING
+title: gneiting-raftery2007-scoring
+kind: academic
+citation: "Gneiting, Tilmann; Raftery, Adrian E. (2007). Strictly Proper Scoring Rules, Prediction, and Estimation. Journal of the American Statistical Association 102(477):359-378."
+url: https://sites.stat.washington.edu/people/raftery/Research/PDF/Gneiting2007jasa.pdf
+notes: "Develops strictly proper scoring rules for probabilistic forecasts and their use in evaluating predictive distributions."
