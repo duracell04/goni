@@ -1,0 +1,7 @@
+id: SRC-MCP-2026-07-28
+title: model-context-protocol-2026-07-28
+kind: web
+citation: https://github.com/modelcontextprotocol/modelcontextprotocol/tree/main/docs/specification/2026-07-28
+notes: The Model Context Protocol specification defines interoperable client-server primitives for AI applications, including server-exposed tools, resources, and prompts, with transport and capability negotiation defined separately from application semantics.
+url: https://github.com/modelcontextprotocol/modelcontextprotocol/tree/main/docs/specification/2026-07-28
+accessed: 2026-09-23
