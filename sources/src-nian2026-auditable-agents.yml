@@ -1,0 +1,7 @@
+id: SRC-NIAN2026-AUDITABLE-AGENTS
+title: nian2026-auditable-agents
+kind: academic
+citation: https://arxiv.org/abs/2604.05485
+notes: Nian et al. define auditability as a prerequisite for agent accountability and identify action recoverability, lifecycle coverage, policy checkability, responsibility attribution, and evidence integrity as five dimensions.
+url: https://arxiv.org/abs/2604.05485
+accessed: 2026-09-23
