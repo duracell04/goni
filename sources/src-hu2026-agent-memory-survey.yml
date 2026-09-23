@@ -1,0 +1,7 @@
+id: SRC-HU2026-AGENT-MEMORY-SURVEY
+title: hu2026-agent-memory-survey
+kind: academic
+citation: https://arxiv.org/abs/2512.13564
+notes: The survey distinguishes agent memory from RAG and context engineering and analyzes memory by forms, functions, and dynamics including formation, evolution, and retrieval.
+url: https://arxiv.org/abs/2512.13564
+accessed: 2026-09-23
