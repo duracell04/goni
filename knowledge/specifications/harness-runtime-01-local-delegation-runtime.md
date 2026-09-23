@@ -30,6 +30,14 @@ relations:
   target: REC-01
 - type: depends_on
   target: SCHED-01
+- type: depends_on
+  target: TOOL-SURFACE-01
+- type: depends_on
+  target: STRUCT-OUT-01
+- type: depends_on
+  target: MODEL-DEPLOY-01
+- type: depends_on
+  target: CRED-BROKER-01
 - type: refines
   target: GONI-PRINCIPLE-GOV-LOOP-01
 sources:

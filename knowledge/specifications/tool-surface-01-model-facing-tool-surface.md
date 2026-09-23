@@ -20,6 +20,8 @@ relations:
   target: GONI-SPEC-F37FC6D98E05
 - type: depends_on
   target: HARNESS-RUNTIME-01
+- type: depends_on
+  target: MODEL-DEPLOY-01
 - type: refines
   target: INTERFACE-SELECTION-01
 sources:
