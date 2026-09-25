@@ -225,12 +225,28 @@
       "node": "VIS-RUNTIME-01"
     },
     {
+      "alias": "anticipated-workorder",
+      "node": "ANTICIPATED-WORKORDER-01"
+    },
+    {
+      "alias": "anticipatory-delegation",
+      "node": "ANTICIPATORY-DELEGATION-01"
+    },
+    {
       "alias": "authority-state-is-not-a-cache",
       "node": "GONI-DECISION-9AF49466170D"
     },
     {
       "alias": "context-compiler",
       "node": "CTX-COMP-01"
+    },
+    {
+      "alias": "escalation-state-transfer",
+      "node": "ESCALATION-HANDOVER-01"
+    },
+    {
+      "alias": "execution-trajectory",
+      "node": "WORKFLOW-LEARNING-01"
     },
     {
       "alias": "governed-skills",
@@ -245,8 +261,20 @@
       "node": "GONI-PRINCIPLE-9062425CD490"
     },
     {
+      "alias": "maximum-authorized-prefix",
+      "node": "AUTHORIZED-PLAN-PREFIX-01"
+    },
+    {
       "alias": "prefix-cache-contract",
       "node": "CACHE-01"
+    },
+    {
+      "alias": "prospective-workorder",
+      "node": "ANTICIPATED-WORKORDER-01"
+    },
+    {
+      "alias": "safe-plan-prefix",
+      "node": "AUTHORIZED-PLAN-PREFIX-01"
     },
     {
       "alias": "semantic-page-fault",
@@ -255,6 +283,22 @@
     {
       "alias": "semantic-working-set-management",
       "node": "GONI-IMAP-66D2DBD94204"
+    },
+    {
+      "alias": "supervisory-voice",
+      "node": "SUPERVISORY-INTERACTION-01"
+    },
+    {
+      "alias": "takeover-package",
+      "node": "ESCALATION-HANDOVER-01"
+    },
+    {
+      "alias": "voice-supervision",
+      "node": "SUPERVISORY-INTERACTION-01"
+    },
+    {
+      "alias": "workflow-template",
+      "node": "WORKFLOW-LEARNING-01"
     }
   ],
   "indexes": {
@@ -415,6 +459,15 @@
       "community": [
         "GONI-PROPOSAL-9D10D978BDC3"
       ],
+      "context": [
+        "ANTICIPATORY-DELEGATION-01",
+        "EVID-PLAN-RECOGNITION-01"
+      ],
+      "control": [
+        "ANTICIPATED-WORKORDER-01",
+        "ANTICIPATORY-DELEGATION-01",
+        "AUTHORIZED-PLAN-PREFIX-01"
+      ],
       "crdt": [
         "CRDT-AUDIT-01",
         "CRDT-DECISIONS-01",
@@ -522,6 +575,24 @@
         "SCHEMA-MVP-01",
         "SPINE-01",
         "ZCO-01"
+      ],
+      "delegation": [
+        "ANTICIPATED-WORKORDER-01",
+        "ANTICIPATORY-DELEGATION-01",
+        "ANTICIPATORY-DELEGATION-EVAL-01",
+        "ANTICIPATORY-DELEGATION-THEORY-01",
+        "AUTHORIZED-PLAN-PREFIX-01",
+        "ESCALATION-HANDOVER-01",
+        "EVID-AGENCY-GOVERNANCE-01",
+        "EVID-BOUNDED-RATIONALITY-01",
+        "EVID-HUMAN-AUTOMATION-01",
+        "EVID-PREDICTIVE-PROCESS-MONITORING-01",
+        "GONI-THESIS-98AE2B9284ED",
+        "SUPERVISORY-INTERACTION-01",
+        "WORKFLOW-LEARNING-01"
+      ],
+      "evaluation": [
+        "ANTICIPATORY-DELEGATION-EVAL-01"
       ],
       "hardware": [
         "ADR-INDEX-HW",
@@ -686,6 +757,13 @@
         "HREQ-01",
         "OS-AND-BASE-IMAGE",
         "POWER-AND-PSU"
+      ],
+      "hci": [
+        "ESCALATION-HANDOVER-01",
+        "EVID-HUMAN-AUTOMATION-01"
+      ],
+      "interaction": [
+        "SUPERVISORY-INTERACTION-01"
       ],
       "kernel": [
         "CACHE-01",
@@ -944,6 +1022,7 @@
         "CTX-COMP-01",
         "CTX-MISS-01",
         "CTX-MISS-EVAL-01",
+        "EVID-ORGANIZATIONAL-ROUTINES-01",
         "EVID-SEC-02",
         "GONI-EXPERIMENT-290E879EE8E2",
         "GONI-EXPERIMENT-4193B6DF2A2A",
@@ -978,7 +1057,8 @@
         "GONI-SYNTHESIS-AE048AF3026D",
         "MEM-RETR-01",
         "MEMORY-ARCHITECTURE",
-        "SKILL-REG-01"
+        "SKILL-REG-01",
+        "WORKFLOW-LEARNING-01"
       ],
       "network": [
         "GONI-IMAP-B21D85F4146E",
@@ -1032,6 +1112,7 @@
         "SPEC-POL-01"
       ],
       "product": [
+        "ANTICIPATORY-DELEGATION-THEORY-01",
         "DOCTRINE-DELEG-01",
         "GONI-OBJECTION-0CC876FB8D27",
         "GONI-PRINCIPLE-197860126029",
@@ -1618,16 +1699,24 @@
         "THREAT-MODEL"
       ],
       "research": [
+        "ANTICIPATORY-DELEGATION-EVAL-01",
+        "ANTICIPATORY-DELEGATION-THEORY-01",
         "CACHE-EVAL-01",
         "CTX-COMP-EVAL-01",
         "CTX-MISS-EVAL-01",
+        "EVID-AGENCY-GOVERNANCE-01",
+        "EVID-BOUNDED-RATIONALITY-01",
         "EVID-DENNING1968-WORKING-SET",
         "EVID-GIM2024-PROMPT-CACHE",
         "EVID-HU2022-LORA",
+        "EVID-HUMAN-AUTOMATION-01",
         "EVID-JIANG2023-LLMLINGUA",
         "EVID-JIANG2024-LONGLLMLINGUA",
         "EVID-LI2021-PREFIX-TUNING",
         "EVID-LI2023-SELECTIVE-CONTEXT",
+        "EVID-ORGANIZATIONAL-ROUTINES-01",
+        "EVID-PLAN-RECOGNITION-01",
+        "EVID-PREDICTIVE-PROCESS-MONITORING-01",
         "EVID-ZHENG2024-SGLANG",
         "GONI-EVIDENCE-0577AE42BDFA",
         "GONI-EVIDENCE-074976FCCFF9",
@@ -1730,6 +1819,7 @@
         "GONI-SYNTHESIS-D3554320FEBD",
         "GONI-SYNTHESIS-D5A359AF7D66",
         "GONI-SYNTHESIS-F0626F7EFE2C",
+        "GONI-THESIS-98AE2B9284ED",
         "REF-GONIOS-NEIGHBOR-01",
         "SKILL-EVAL-01"
       ],
@@ -2104,6 +2194,8 @@
         "AGENT-DEF-01",
         "AGENT-MANIFEST-01",
         "AGENT-STORE-01",
+        "ANTICIPATED-WORKORDER-01",
+        "AUTHORIZED-PLAN-PREFIX-01",
         "BILL-01",
         "BILL-02",
         "BOUND-01",
@@ -2117,6 +2209,7 @@
         "DAT-01",
         "DELEG-01",
         "DELEG-INT-01",
+        "ESCALATION-HANDOVER-01",
         "GONI-DECISION-0A6C9EA70AEE",
         "GONI-DECISION-185DD72D6912",
         "GONI-DECISION-2AC300CCAF72",
@@ -2537,9 +2630,11 @@
         "SPEC-POL-01",
         "SPEC-TXN-01",
         "SS-01",
+        "SUPERVISORY-INTERACTION-01",
         "SYNC-01",
         "TOOL-01",
-        "VIS-01"
+        "VIS-01",
+        "WORKFLOW-LEARNING-01"
       ],
       "system": [
         "CACHE-01",
@@ -2681,7 +2776,12 @@
         "AGENT-MANIFEST-01",
         "AGENT-STORE-01",
         "AI-MEDIA-PROVENANCE",
+        "ANTICIPATED-WORKORDER-01",
+        "ANTICIPATORY-DELEGATION-01",
+        "ANTICIPATORY-DELEGATION-EVAL-01",
+        "ANTICIPATORY-DELEGATION-THEORY-01",
         "API-SURFACE",
+        "AUTHORIZED-PLAN-PREFIX-01",
         "AXIOMS-01",
         "BILL-01",
         "BILL-02",
@@ -2709,7 +2809,9 @@
         "DELEG-INT-01",
         "DOCTRINE-DELEG-01",
         "ENCLOSURE-NOTES",
+        "ESCALATION-HANDOVER-01",
         "EVAL-README-00",
+        "EVID-AGENCY-GOVERNANCE-01",
         "EVID-AUTON-01",
         "EVID-AUTON-02",
         "EVID-AUTON-03",
@@ -2718,6 +2820,7 @@
         "EVID-AUTON-06",
         "EVID-AUTON-07",
         "EVID-AUTON-08",
+        "EVID-BOUNDED-RATIONALITY-01",
         "EVID-BUDGET-01",
         "EVID-BUDGET-02",
         "EVID-COST-01",
@@ -2729,6 +2832,7 @@
         "EVID-HARNESS-01",
         "EVID-HARNESS-02",
         "EVID-HU2022-LORA",
+        "EVID-HUMAN-AUTOMATION-01",
         "EVID-INDEX-00",
         "EVID-JIANG2023-LLMLINGUA",
         "EVID-JIANG2024-LONGLLMLINGUA",
@@ -2737,6 +2841,9 @@
         "EVID-LONGCTX-01",
         "EVID-LONGCTX-02",
         "EVID-LONGCTX-03",
+        "EVID-ORGANIZATIONAL-ROUTINES-01",
+        "EVID-PLAN-RECOGNITION-01",
+        "EVID-PREDICTIVE-PROCESS-MONITORING-01",
         "EVID-ROUTE-01",
         "EVID-SEC-01",
         "EVID-SEC-02",
@@ -4622,6 +4729,7 @@
         "SREQ-01",
         "SS-01",
         "SUB-INDEX-00",
+        "SUPERVISORY-INTERACTION-01",
         "SURF-00",
         "SYNC-01",
         "SYS-00",
@@ -4635,6 +4743,7 @@
         "TOOL-01",
         "VIS-01",
         "VIS-RUNTIME-01",
+        "WORKFLOW-LEARNING-01",
         "ZCO-01"
       ]
     },
@@ -4727,13 +4836,19 @@
         "GONI-DECISION-FEDF62BF576F"
       ],
       "evidence": [
+        "EVID-AGENCY-GOVERNANCE-01",
+        "EVID-BOUNDED-RATIONALITY-01",
         "EVID-DENNING1968-WORKING-SET",
         "EVID-GIM2024-PROMPT-CACHE",
         "EVID-HU2022-LORA",
+        "EVID-HUMAN-AUTOMATION-01",
         "EVID-JIANG2023-LLMLINGUA",
         "EVID-JIANG2024-LONGLLMLINGUA",
         "EVID-LI2021-PREFIX-TUNING",
         "EVID-LI2023-SELECTIVE-CONTEXT",
+        "EVID-ORGANIZATIONAL-ROUTINES-01",
+        "EVID-PLAN-RECOGNITION-01",
+        "EVID-PREDICTIVE-PROCESS-MONITORING-01",
         "EVID-ZHENG2024-SGLANG",
         "GONI-EVIDENCE-0577AE42BDFA",
         "GONI-EVIDENCE-074976FCCFF9",
@@ -4827,6 +4942,7 @@
         "GONI-EVIDENCE-FBA1A33CF61A"
       ],
       "experiment": [
+        "ANTICIPATORY-DELEGATION-EVAL-01",
         "BOM-NOTES",
         "BOM-V1-APU-NODE",
         "BOM-V2-FRAMEWORK-395-128GB",
@@ -5384,6 +5500,7 @@
         "GONI-OBJECTION-EEC5A603DDFE"
       ],
       "principle": [
+        "ANTICIPATORY-DELEGATION-01",
         "AXIOMS-01",
         "DOCTRINE-DELEG-01",
         "GONI-PRINCIPLE-0147896F31C8",
@@ -5608,6 +5725,8 @@
         "AGENT-DEF-01",
         "AGENT-MANIFEST-01",
         "AGENT-STORE-01",
+        "ANTICIPATED-WORKORDER-01",
+        "AUTHORIZED-PLAN-PREFIX-01",
         "BILL-01",
         "BILL-02",
         "BOUND-01",
@@ -5623,6 +5742,7 @@
         "DAT-01",
         "DELEG-01",
         "DELEG-INT-01",
+        "ESCALATION-HANDOVER-01",
         "GONI-SPEC-0010B69A98F0",
         "GONI-SPEC-00702E19937B",
         "GONI-SPEC-009C1109395A",
@@ -6066,12 +6186,15 @@
         "SPEC-TXN-01",
         "SREQ-01",
         "SS-01",
+        "SUPERVISORY-INTERACTION-01",
         "SYNC-01",
         "TOOL-01",
-        "VIS-01"
+        "VIS-01",
+        "WORKFLOW-LEARNING-01"
       ],
       "synthesis": [
         "ADJACENT-PROJECTS",
+        "ANTICIPATORY-DELEGATION-THEORY-01",
         "GONI-AGILITY-RULES",
         "GONI-STORY",
         "GONI-SWOT",
@@ -10510,6 +10633,178 @@
       "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
     },
     {
+      "aliases": [
+        "prospective-workorder",
+        "anticipated-workorder"
+      ],
+      "artifacts": [],
+      "body": "# Prospective and anticipated WorkOrder contract\n\nA WorkOrder may originate in three ways:\n\n- `explicit`: the principal directly requested the work;\n- `triggered`: a pre-existing mandate or rule activated on an observed event;\n- `anticipated`: Goni inferred that the work is probably needed from current\n  state and evidence.\n\nAn anticipated WorkOrder is a hypothesis-bearing pre-execution object. It does\nnot carry additional authority merely because prediction confidence is high.\n\nThe logical WorkOrder must preserve, directly or by stable references:\n\n```yaml\norigin:\n  kind: explicit | triggered | anticipated\n  trigger_refs: []\n  inferred_at: timestamp\n\nanticipation:\n  prediction_confidence: 0.0..1.0\n  prediction_basis:\n    - prior_trajectory\n    - active_objective\n    - procedural_memory\n    - domain_prior\n  objective_hypotheses:\n    - objective_ref: ...\n      confidence: 0.0..1.0\n  workflow_template_ref: optional\n  predicted_next_steps: []\n\nauthority:\n  mandate_ref: optional\n  corridor_ref: optional\n  capability_refs: []\n  authority_basis_ref: optional\n```\n\nWhen multiple materially different objectives remain plausible, the WorkOrder\nmust preserve competing hypotheses until evidence, policy, or principal input\ndiscriminates between them. Prediction confidence and authority state remain\nseparate fields.",
+      "domains": [
+        "specs",
+        "delegation",
+        "control"
+      ],
+      "id": "ANTICIPATED-WORKORDER-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/specifications/anticipated-workorder-01.md",
+      "proposition": "A prospective WorkOrder must identify whether its origin is explicit, triggered, or anticipated; anticipated work must preserve its prediction basis, confidence, competing objective hypotheses when material, and the independent authority basis required before consequential execution.",
+      "relations": [
+        {
+          "note": "Extends the canonical WorkOrder with origin and anticipation provenance.",
+          "target": "GONI-SPEC-F37FC6D98E05",
+          "type": "refines"
+        },
+        {
+          "target": "ANTICIPATORY-DELEGATION-01",
+          "type": "depends_on"
+        }
+      ],
+      "sources": [
+        "SRC-KAUTZ1986-PLAN-RECOGNITION",
+        "SRC-CERAVOLO2024-PREDICTIVE-PROCESS-MONITORING"
+      ],
+      "status": "draft",
+      "title": "Prospective and anticipated WorkOrder contract",
+      "type": "specification",
+      "uncertainty": "Origin fields and hypothesis representation are specified only; calibration thresholds and storage representation require empirical validation."
+    },
+    {
+      "aliases": [
+        "anticipatory-delegation"
+      ],
+      "artifacts": [],
+      "body": "# Anticipatory delegation preserves the authority boundary\n\nGoni may continuously infer what work is likely to be needed next. The inference\nmay use current state, active objectives, similar prior cases, execution\ntrajectories, procedural memory, and domain knowledge.\n\nThe authority invariant is independent:\n\n> Prediction can create a hypothesis and preparation. Prediction alone cannot\n> create permission.\n\nRepeated behavior increases evidence that a future action is likely or preferred.\nIt does not enlarge a mandate, corridor, capability, budget, or other delegated\nauthority.\n\nFor an anticipated task, Goni may perform policy-permitted, reversible\npreparation ahead of an explicit request. Any external or consequential commit\nstill requires authority that exists independently of the prediction.\n\nCanonical formulation:\n\n- predict likely work,\n- preserve competing hypotheses when uncertainty is material,\n- prepare within reversible and policy-permitted boundaries,\n- commit effects only through existing authority,\n- learn from outcomes without silently widening authority.\n\nA compact engineering formulation is: **speculate on cognition; gate side\neffects**.",
+      "domains": [
+        "delegation",
+        "context",
+        "control"
+      ],
+      "id": "ANTICIPATORY-DELEGATION-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/principles/anticipatory-delegation-01.md",
+      "proposition": "Goni may infer and prepare likely future work from observed state, prior trajectories, active objectives, procedural memory, and domain knowledge, while prediction, repetition, and learned confidence never create authority to commit an external or consequential effect.",
+      "relations": [
+        {
+          "note": "Gives predictive routines explicit delegation semantics.",
+          "target": "GONI-THESIS-AF4B6A0B4A2D",
+          "type": "refines"
+        },
+        {
+          "note": "Anticipated work remains subject to the mixed-initiative operator contract.",
+          "target": "GONI-SPEC-DC17EFB4EB31",
+          "type": "depends_on"
+        }
+      ],
+      "sources": [],
+      "status": "draft",
+      "title": "Anticipatory delegation preserves the authority boundary",
+      "type": "principle",
+      "uncertainty": "This is a proposed Goni doctrine synthesized from established work on mixed initiative, plan recognition, process prediction, agency, and human factors; its concrete thresholds require evaluation."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Anticipatory delegation evaluation programme\n\nCompare at least three modes over matched workflows:\n\n- reactive: work begins only after an explicit request,\n- triggered: predeclared rules create work,\n- anticipated: Goni predicts prospective work and prepares within authority.\n\nMinimum measurements:\n\n- next-work precision, recall, calibration, and top-k objective accuracy,\n- useful-preparation rate,\n- wasted-preparation rate and resource cost,\n- interruption count and interruption time,\n- time from relevant event to completed work,\n- principal edit, rejection, undo, and override rates,\n- authority-boundary violation rate,\n- percentage of plans correctly stopped at the first unauthorized commit\n  boundary,\n- workflow-template precision and exception rate,\n- escalation comprehension and takeover time,\n- rollback success,\n- receipt completeness,\n- delegation-cost components where measurable.\n\nHigh-confidence prediction with an unauthorized side effect counts as a failure,\nnot a successful prediction.\n\nThe experiment should separately score epistemic performance (what Goni\npredicted) and authority performance (what Goni was permitted to do).",
+      "domains": [
+        "research",
+        "delegation",
+        "evaluation"
+      ],
+      "id": "ANTICIPATORY-DELEGATION-EVAL-01",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/experiments/anticipatory-delegation-eval-01.md",
+      "proposition": "Evaluate anticipatory delegation by measuring next-work prediction quality, useful preparation, interruption reduction, authority-boundary violations, workflow-template calibration, escalation takeover quality, and total delegation cost against reactive and triggered baselines.",
+      "relations": [
+        {
+          "target": "ANTICIPATORY-DELEGATION-01",
+          "type": "tests"
+        },
+        {
+          "target": "ANTICIPATED-WORKORDER-01",
+          "type": "tests"
+        },
+        {
+          "target": "AUTHORIZED-PLAN-PREFIX-01",
+          "type": "tests"
+        },
+        {
+          "target": "WORKFLOW-LEARNING-01",
+          "type": "tests"
+        },
+        {
+          "target": "ESCALATION-HANDOVER-01",
+          "type": "tests"
+        }
+      ],
+      "sources": [
+        "SRC-CERAVOLO2024-PREDICTIVE-PROCESS-MONITORING",
+        "SRC-LEE2004-TRUST-AUTOMATION",
+        "SRC-BAINBRIDGE1983-IRONIES-AUTOMATION"
+      ],
+      "status": "draft",
+      "title": "Anticipatory delegation evaluation programme",
+      "type": "experiment",
+      "uncertainty": "This is a planned evaluation programme; no result is evidence until a pinned experiment artifact records the protocol, data, and outcome."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Theoretical foundations for anticipatory delegation\n\nGoni's anticipation problem is not adequately described as \"the model learns\nhabits.\" It is a delegation problem under bounded rationality, partial\nobservability, incomplete specification, uncertain future state, and costly\nhuman attention.\n\nSeveral research traditions illuminate different parts of the problem:\n\n1. **Bounded rationality** explains why a principal cannot exhaustively specify\n   or inspect every future decision.\n2. **Principal-agent theory** explains why delegated decision rights require\n   monitoring, bounded authority, accountability, and attention to residual\n   loss. Goni uses this governance analogy without assuming machine agents have\n   human motives.\n3. **Mixed-initiative interaction** addresses when the system or principal\n   should take initiative under uncertainty and interruption cost.\n4. **Plan recognition** motivates preserving multiple plausible objectives\n   instead of prematurely converting observed behavior into one asserted goal.\n5. **Organizational-routine theory** distinguishes generalized routines from\n   individual performances, corresponding to Goni WorkflowTemplates and\n   execution trajectories.\n6. **Predictive process monitoring** provides a process-science model for\n   estimating next events or outcomes from active and historical cases.\n7. **Human-factors research** shows why automation levels should vary by\n   function, why reliance should be calibrated, and why escalation must preserve\n   human takeover capability.\n\nThe resulting Goni doctrine is architectural: predictive cognition may propose\nprospective work, while the kernel independently decides whether any predicted\nstep may become an effect.\n\nA useful delegation-cost research model is:\n\n[\nC_D = C_{specification} + C_{observation} + C_{verification}\n      + C_{interruption} + E[L_{residual}].\n]\n\nThis is a proposed analytical decomposition, not a claim established by any one\nsource. It provides testable categories for evaluating whether anticipation\nreduces total delegation cost while preserving authority and accountability.",
+      "domains": [
+        "research",
+        "delegation",
+        "product"
+      ],
+      "id": "ANTICIPATORY-DELEGATION-THEORY-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/syntheses/anticipatory-delegation-theory-01.md",
+      "proposition": "Anticipatory delegation combines bounded rationality, principal-agent governance, mixed-initiative interaction, plan recognition, organizational routines, predictive process monitoring, and human-factors research to explain how Goni can infer and prepare likely work without conflating prediction with authority.",
+      "relations": [
+        {
+          "target": "ANTICIPATORY-DELEGATION-01",
+          "type": "synthesizes"
+        },
+        {
+          "target": "ANTICIPATED-WORKORDER-01",
+          "type": "synthesizes"
+        },
+        {
+          "target": "AUTHORIZED-PLAN-PREFIX-01",
+          "type": "synthesizes"
+        },
+        {
+          "target": "WORKFLOW-LEARNING-01",
+          "type": "synthesizes"
+        },
+        {
+          "target": "ESCALATION-HANDOVER-01",
+          "type": "synthesizes"
+        }
+      ],
+      "sources": [
+        "SRC-SIMON1955-BOUNDED-RATIONALITY",
+        "SRC-ROSS1973-PRINCIPAL-AGENT",
+        "SRC-JENSEN1976-AGENCY-COSTS",
+        "SRC-EISENHARDT1989-AGENCY-THEORY",
+        "SRC-HOLMSTROM1979-OBSERVABILITY",
+        "SRC-HORVITZ1999-MIXED-INITIATIVE",
+        "SRC-KAUTZ1986-PLAN-RECOGNITION",
+        "SRC-FELDMAN2003-ORGANIZATIONAL-ROUTINES",
+        "SRC-CERAVOLO2024-PREDICTIVE-PROCESS-MONITORING",
+        "SRC-PARASURAMAN2000-LEVELS-AUTOMATION",
+        "SRC-LEE2004-TRUST-AUTOMATION",
+        "SRC-BAINBRIDGE1983-IRONIES-AUTOMATION"
+      ],
+      "status": "draft",
+      "title": "Theoretical foundations for anticipatory delegation",
+      "type": "synthesis",
+      "uncertainty": "This synthesis maps established theories into a proposed Delegation OS architecture; empirical support for Goni-specific mechanisms must come from dedicated evaluations."
+    },
+    {
       "aliases": [],
       "artifacts": [],
       "body": "# Api Surface\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n﻿# 40.10 – API Surface (HTTP & Local Access)\n\nStatus: v0.1 (2025-11-30)  \nScope: Single-node Goni kernel, MVP API only  \nAudience: Client implementers, systems engineers\n\n---",
@@ -10533,6 +10828,42 @@
       "title": "Api Surface",
       "type": "implementation-map",
       "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
+    },
+    {
+      "aliases": [
+        "maximum-authorized-prefix",
+        "safe-plan-prefix"
+      ],
+      "artifacts": [],
+      "body": "# Maximum authorized plan prefix\n\nLet a candidate plan be:\n\n[\n\\pi = (a_1, a_2, \\ldots, a_n).\n]\n\nFor current state (s), let (A_K(s)) denote actions permitted by the kernel's\ncurrent policy, mandate, capabilities, budgets, approval state, and risk\nconstraints.\n\nGoni should select:\n\n[\nk^* = \\max \\{k : \\forall i \\le k, a_i \\in A_K(s)\\}.\n]\n\nThe system may then prepare or execute ((a_1, \\ldots, a_{k^*})) according to\nthe action-specific corridor and stop at the first unresolved commit boundary.\n\nThis rule is function-specific rather than one scalar autonomy level. A corridor\nmay, for example, allow observation, retrieval, analysis, prediction, and draft\npreparation automatically while requiring review for external selection or\naction implementation.\n\nThe boundary decision and its basis must be reconstructable in the WorkOrder and\nreceipt chain.",
+      "domains": [
+        "specs",
+        "delegation",
+        "control"
+      ],
+      "id": "AUTHORIZED-PLAN-PREFIX-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/specifications/authorized-plan-prefix-01.md",
+      "proposition": "For a predicted or planned action sequence, Goni should prepare or execute the longest prefix whose actions are currently authorized and policy-permitted, and stage, defer, ask, or escalate exactly at the first action whose commit boundary exceeds current authority or risk constraints.",
+      "relations": [
+        {
+          "target": "ANTICIPATORY-DELEGATION-01",
+          "type": "depends_on"
+        },
+        {
+          "target": "ANTICIPATED-WORKORDER-01",
+          "type": "depends_on"
+        }
+      ],
+      "sources": [
+        "SRC-PARASURAMAN2000-LEVELS-AUTOMATION",
+        "SRC-HORVITZ1999-MIXED-INITIATIVE"
+      ],
+      "status": "draft",
+      "title": "Maximum authorized plan prefix",
+      "type": "specification",
+      "uncertainty": "The prefix rule is normative design intent; practical authorization predicates, reversibility classes, and preparation costs require conformance tests."
     },
     {
       "aliases": [],
@@ -10794,7 +11125,7 @@
         "CORRECTION-DELTA-COMPILER"
       ],
       "artifacts": [],
-      "body": "# Correction Delta Compiler\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n# Correction Delta Compiler\nDOC-ID: CDC-01\n\nStatus: Specified only / roadmap\n\nThe Correction Delta Compiler (CDC) converts differences between agent outputs\nand principal-approved outputs into scoped, receipted, reviewable updates to\nprocedural memory, delegation policy, skills, harness rules, and regression\ntests.\n\nCDC is not ordinary memory storage. It is an online preference-estimation and\npolicy-updating subsystem. Goni should remember facts, but it should learn taste\nfrom deltas: the difference between what the agent produced and what the\nprincipal corrected, accepted, rejected, sent, repeated, or complained about.",
+      "body": "# Correction Delta Compiler\n\n> Status boundary: this is a draft specification. Present-tense or enforcement\n> language states intended contract behavior, not observed implementation,\n> verification, or non-bypassability.\n\nThe Correction Delta Compiler (CDC) converts differences between agent outputs\nand principal-approved outputs or outcomes into scoped, receipted, reviewable\nupdates to procedural memory, delegation policy proposals, skills, harness\nrules, workflow templates, and regression tests.\n\nGoni should learn from deltas: the difference between what the agent produced\nand what the principal corrected, accepted, rejected, sent, repeated, undid, or\ncomplained about.\n\n`WORKFLOW-LEARNING-01` adds completed execution trajectories as a second\nprocedural-learning evidence lane. Similar trajectories may support a\nWorkflowTemplate candidate, while correction deltas remain especially strong\nevidence about where a generalized routine should change.\n\nLearning and authority remain separate. A learned preference, repeated\nacceptance pattern, or high-confidence WorkflowTemplate may alter prediction or\npreparation behavior within an existing corridor. It MUST NOT silently grant a\nnew capability, widen a mandate, remove an approval requirement, or otherwise\ncreate authority.",
       "domains": [
         "specs"
       ],
@@ -10808,13 +11139,20 @@
         }
       ],
       "path": "knowledge/specifications/cdc-01-correction-delta-compiler.md",
-      "proposition": "DOC-ID: CDC-01 Status: Specified only / roadmap The Correction Delta Compiler (CDC) converts differences between agent outputs and principal-approved outputs into scoped, receipted, reviewable updates to procedural memory, delegation policy, skills, harness rules, and regression tests.",
-      "relations": [],
-      "sources": [],
+      "proposition": "The Correction Delta Compiler converts differences between agent outputs and principal-approved outcomes into scoped, receipted, reviewable learning updates; together with execution-trajectory evidence it may refine procedural expectations and workflow templates while preserving the rule that learning never creates delegated authority.",
+      "relations": [
+        {
+          "target": "ANTICIPATORY-DELEGATION-01",
+          "type": "depends_on"
+        }
+      ],
+      "sources": [
+        "SRC-FELDMAN2003-ORGANIZATIONAL-ROUTINES"
+      ],
       "status": "draft",
       "title": "Correction Delta Compiler",
       "type": "specification",
-      "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
+      "uncertainty": "The original correction-learning design is retained; trajectory clustering and workflow-template promotion remain specified only and require evaluation."
     },
     {
       "aliases": [
@@ -11319,6 +11657,38 @@
       "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
     },
     {
+      "aliases": [
+        "takeover-package",
+        "escalation-state-transfer"
+      ],
+      "artifacts": [],
+      "body": "# Escalation state-transfer contract\n\nEscalation is a transfer of operational control, not merely a notification.\n\nWhen Goni reaches a policy, uncertainty, anomaly, or authority boundary that\nrequires principal intervention, the escalation should provide a compact\nhandover package containing stable references or bounded summaries of:\n\n- the current objective and WorkOrder,\n- the triggering event or observation,\n- the state Goni expected,\n- the observed divergence or exception,\n- actions already prepared or executed,\n- the current external and internal state relevant to the decision,\n- evidence and uncertainty,\n- available options and their material consequences,\n- the exact unresolved decision or authority requirement,\n- rollback or compensation options when applicable.\n\nThe package should preserve situation awareness while minimizing interruption\ncost. It should enable the principal to retake control without reconstructing\nthe workflow from raw logs.",
+      "domains": [
+        "specs",
+        "delegation",
+        "hci"
+      ],
+      "id": "ESCALATION-HANDOVER-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/specifications/escalation-handover-01.md",
+      "proposition": "When Goni escalates an anticipated or delegated workflow to the principal, the escalation should transfer sufficient state for effective takeover, including what happened, what was expected, where reality diverged, actions already taken, current state, evidence, available options, and the unresolved decision.",
+      "relations": [
+        {
+          "target": "ANTICIPATORY-DELEGATION-01",
+          "type": "depends_on"
+        }
+      ],
+      "sources": [
+        "SRC-BAINBRIDGE1983-IRONIES-AUTOMATION",
+        "SRC-LEE2004-TRUST-AUTOMATION"
+      ],
+      "status": "draft",
+      "title": "Escalation state-transfer contract",
+      "type": "specification",
+      "uncertainty": "The minimum sufficient handover payload and presentation format require user testing across task classes and consequence levels."
+    },
+    {
       "aliases": [],
       "artifacts": [],
       "body": "# Eval Lane\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n# Eval Lane\n\nEvaluation artifacts for reliability, security, and reproducibility.",
@@ -11342,6 +11712,36 @@
       "title": "Eval Lane",
       "type": "experiment",
       "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Principal-agent theory motivates bounded delegation and monitoring\n\nRoss formalizes the principal's problem of delegating decision-making to an\nagent. Jensen and Meckling analyze agency costs associated with delegated\ncontrol. Eisenhardt reviews agency theory around information, uncertainty,\nmonitoring, and risk. Holmström studies the role of observability in principal-\nagent arrangements.\n\nGoni's interpretation is narrower than a literal transfer of the theory:\nmachine agents need not possess human interests for delegation to create\nspecification, observability, verification, and residual-loss problems.\n\nThe supported design implication is institutional rather than psychological:\ndelegated machine action benefits from explicit decision rights, monitoring\nartifacts, revocation, and bounded authority.",
+      "domains": [
+        "research",
+        "delegation"
+      ],
+      "id": "EVID-AGENCY-GOVERNANCE-01",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/evidence/evid-agency-governance-01.md",
+      "proposition": "Established principal-agent literature treats delegated control under information asymmetry and imperfect observability as requiring monitoring, incentive or control structures, and attention to residual loss; Goni interprets these as motivation for explicit decision rights, receipts, revocation, and bounded authority without assuming human-like machine motives.",
+      "relations": [
+        {
+          "target": "ANTICIPATORY-DELEGATION-THEORY-01",
+          "type": "supports"
+        }
+      ],
+      "sources": [
+        "SRC-ROSS1973-PRINCIPAL-AGENT",
+        "SRC-JENSEN1976-AGENCY-COSTS",
+        "SRC-EISENHARDT1989-AGENCY-THEORY",
+        "SRC-HOLMSTROM1979-OBSERVABILITY"
+      ],
+      "status": "draft",
+      "title": "Principal-agent theory motivates bounded delegation and monitoring",
+      "type": "evidence",
+      "uncertainty": "Classical agency theory studies human and organizational agents. Its relevance to AI is analogical at the governance level; motivational assumptions do not transfer automatically."
     },
     {
       "aliases": [
@@ -11558,6 +11958,33 @@
       "title": "EVID-AUTON-08 Branch Efficiency Under Fixed Budgets",
       "type": "experiment",
       "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Bounded rationality limits exhaustive principal specification\n\nSimon models decision making under cognitive and informational limits rather\nthan assuming unbounded optimization.\n\nFor Goni, the relevant implication is that a principal cannot be expected to\nwrite a complete specification for every future digital contingency. The\nsystem therefore needs compact mandates, policy-level constraints, selective\nclarification, and escalation at consequential uncertainty rather than constant\nmicromanagement.",
+      "domains": [
+        "research",
+        "delegation"
+      ],
+      "id": "EVID-BOUNDED-RATIONALITY-01",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/evidence/evid-bounded-rationality-01.md",
+      "proposition": "Simon's bounded-rationality account supports the premise that principals cannot exhaustively enumerate or optimize all future contingencies, motivating policy-level delegation and selective escalation rather than requiring complete per-action specification.",
+      "relations": [
+        {
+          "target": "ANTICIPATORY-DELEGATION-THEORY-01",
+          "type": "supports"
+        }
+      ],
+      "sources": [
+        "SRC-SIMON1955-BOUNDED-RATIONALITY"
+      ],
+      "status": "draft",
+      "title": "Bounded rationality limits exhaustive principal specification",
+      "type": "evidence",
+      "uncertainty": "The source is a general decision-theory contribution; its application to personal AI delegation is Goni's interpretation."
     },
     {
       "aliases": [
@@ -11861,6 +12288,40 @@
     {
       "aliases": [],
       "artifacts": [],
+      "body": "# Human-factors research supports function-specific autonomy and calibrated takeover\n\nParasuraman, Sheridan, and Wickens separate automation across information\nacquisition, analysis, decision/action selection, and action implementation.\n\nLee and See frame trust around appropriate reliance under complexity and\nuncertainty. Bainbridge shows that automation can leave humans responsible for\nabnormal conditions while weakening the practice and awareness needed for\neffective takeover.\n\nFor Goni, these findings jointly support granular authority corridors and\nescalations that transfer operational state rather than merely announcing that\nhuman input is required.",
+      "domains": [
+        "research",
+        "hci",
+        "delegation"
+      ],
+      "id": "EVID-HUMAN-AUTOMATION-01",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/evidence/evid-human-automation-01.md",
+      "proposition": "Human-factors research supports separating levels of automation by function, designing for appropriate reliance rather than maximal trust, and preserving operator capability for abnormal situations, motivating Goni's function-specific corridors and structured escalation handovers.",
+      "relations": [
+        {
+          "target": "AUTHORIZED-PLAN-PREFIX-01",
+          "type": "supports"
+        },
+        {
+          "target": "ESCALATION-HANDOVER-01",
+          "type": "supports"
+        }
+      ],
+      "sources": [
+        "SRC-PARASURAMAN2000-LEVELS-AUTOMATION",
+        "SRC-LEE2004-TRUST-AUTOMATION",
+        "SRC-BAINBRIDGE1983-IRONIES-AUTOMATION"
+      ],
+      "status": "draft",
+      "title": "Human-factors research supports function-specific autonomy and calibrated takeover",
+      "type": "evidence",
+      "uncertainty": "These sources study automation and human operators broadly; Goni-specific corridor and handover designs require direct evaluation."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
       "body": "# Evidence Index\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n# Evidence Index\n\n- benchmarks/\n- eval/\n- eval/README.md\n- eval/EVID-SEC-01-prompt-injection.md\n- eval/EVID-SEC-02-memory-poisoning.md\n- eval/EVID-SEC-03-trace-replayability.md\n- eval/EVID-AUTON-01-autonomy-corridors.md\n- eval/EVID-AUTON-02-risk-threshold-calibration.md\n- eval/EVID-AUTON-03-policy-anomaly-ux.md\n- eval/EVID-AUTON-04-offloading-safety-longitudinal.md\n- eval/EVID-AUTON-05-delegation-mode-classification.md\n- eval/EVID-AUTON-06-decisive-question-value.md\n- eval/EVID-AUTON-07-assumption-coverage.md\n- eval/EVID-AUTON-08-branch-efficiency.md\n- eval/EVID-HARNESS-01-harness-change-evaluation.md\n- eval/EVID-HARNESS-02-correction-delta-compiler.md\n- eval/EVID-ROUTE-01-frugal-sovereign-routing.md\n- eval/EVID-LONGCTX-01-reading-strategy-comparison.md\n- eval/EVID-LONGCTX-02-corpus-reading-fidelity.md\n- eval/EVID-LONGCTX-03-recursion-budget-safety.md\n- receipts/\n- validation/\n- validation/EVID-ENF-01-egress-nonbypass.md\n- execution-budget/\n- execution-budget/EVID-BUDGET-01-daily-brief.md\n- execution-budget/EVID-BUDGET-02-inbox-clear.md",
       "domains": [
         "repository"
@@ -12071,6 +12532,91 @@
       "title": "EVID-LONGCTX-03 Recursion-Budget Safety",
       "type": "experiment",
       "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Organizational routines distinguish generalized patterns from performances\n\nFeldman and Pentland distinguish the abstract or ostensive routine from concrete\nperformances of that routine.\n\nGoni maps this distinction to two separate objects: execution trajectories record\nwhat happened in individual cases, while WorkflowTemplates represent generalized\nprocedural hypotheses that may evolve as additional cases are observed.",
+      "domains": [
+        "research",
+        "memory"
+      ],
+      "id": "EVID-ORGANIZATIONAL-ROUTINES-01",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/evidence/evid-organizational-routines-01.md",
+      "proposition": "Feldman and Pentland distinguish the ostensive aspect of an organizational routine from its performative instances, supporting Goni's separation between reusable WorkflowTemplates and concrete execution trajectories.",
+      "relations": [
+        {
+          "target": "WORKFLOW-LEARNING-01",
+          "type": "supports"
+        }
+      ],
+      "sources": [
+        "SRC-FELDMAN2003-ORGANIZATIONAL-ROUTINES"
+      ],
+      "status": "draft",
+      "title": "Organizational routines distinguish generalized patterns from performances",
+      "type": "evidence",
+      "uncertainty": "The mapping from organizational routines to machine procedural memory is analogical and requires empirical validation."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Plan recognition supports competing prospective task hypotheses\n\nGeneralized plan recognition treats observed actions as evidence about possible\nplans. A central implication for Goni is epistemic discipline: observation may\nsupport several plausible objectives at once.\n\nAn anticipated WorkOrder should therefore carry alternative objective\nhypotheses when the distinction could change tools, risk, authority, or\nconsequential effects.",
+      "domains": [
+        "research",
+        "context"
+      ],
+      "id": "EVID-PLAN-RECOGNITION-01",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/evidence/evid-plan-recognition-01.md",
+      "proposition": "Kautz and Allen's generalized plan-recognition framework supports representing observed behavior as evidence over possible plans rather than immediately collapsing observations into one asserted objective.",
+      "relations": [
+        {
+          "target": "ANTICIPATED-WORKORDER-01",
+          "type": "supports"
+        }
+      ],
+      "sources": [
+        "SRC-KAUTZ1986-PLAN-RECOGNITION"
+      ],
+      "status": "draft",
+      "title": "Plan recognition supports competing prospective task hypotheses",
+      "type": "evidence",
+      "uncertainty": "The source predates modern LLM agents and does not prescribe Goni's WorkOrder representation; Goni adopts the competing-hypothesis principle."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Predictive process monitoring supports next-event prediction from traces\n\nPredictive process monitoring extends process mining from retrospective\ndescription toward runtime forecasting of an active case.\n\nFor Goni, this supports treating completed execution trajectories as a dataset\nfor estimating likely next work, while leaving the authority decision to a\nseparate kernel path.",
+      "domains": [
+        "research",
+        "delegation"
+      ],
+      "id": "EVID-PREDICTIVE-PROCESS-MONITORING-01",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/evidence/evid-predictive-process-monitoring-01.md",
+      "proposition": "Predictive process monitoring applies predictive models to running process cases and can forecast next events, outcomes, or remaining time, supporting Goni's proposal to learn next-work expectations from historical execution trajectories.",
+      "relations": [
+        {
+          "target": "WORKFLOW-LEARNING-01",
+          "type": "supports"
+        },
+        {
+          "target": "ANTICIPATED-WORKORDER-01",
+          "type": "supports"
+        }
+      ],
+      "sources": [
+        "SRC-CERAVOLO2024-PREDICTIVE-PROCESS-MONITORING"
+      ],
+      "status": "draft",
+      "title": "Predictive process monitoring supports next-event prediction from traces",
+      "type": "evidence",
+      "uncertainty": "The source surveys business-process settings; Goni must validate whether comparable predictive performance transfers to heterogeneous personal workflows."
     },
     {
       "aliases": [
@@ -29106,7 +29652,7 @@
     {
       "aliases": [],
       "artifacts": [],
-      "body": "# WorkOrders\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n### WorkOrders\n- PK: `work_order_id = row_id`\n- Fields: `request_id: fixed_size_binary[16]`, `interaction_mode: dict<uint8, utf8>`, `goal_summary: utf8`, `done_contract_hash: fixed_size_binary[32]`, `done_contract_summary: utf8`, `input_refs: list<utf8>`, `constraint_summary: utf8`, `assumption_refs: list<utf8>`, `plan_summary: utf8`, `tools: list<utf8>`, `risk_class: dict<uint8, utf8>`, `output_schema_ref?: utf8`, `clarification_decision: dict<uint8, utf8>`, `objective_option_count: uint8`, `created_at: timestamp(ms)`, `policy_hash: fixed_size_binary[32]`, `state_snapshot_id: fixed_size_binary[16]`, `provenance: map<utf8, utf8>`\n- Notes: Canonical storage for pre-execution reconstruction. Raw doctrine text, raw prompts, and unbounded prose do not live here; use summaries, hashes, and references only.",
+      "body": "# WorkOrders\n\n> Status boundary: this is a draft implementation map. It defines the intended\n> canonical shape; it does not claim a shipping table or migration exists.\n\nPK: `work_order_id = row_id`.\n\nCore existing fields remain:\n\n- `request_id`\n- `interaction_mode`\n- `goal_summary`\n- `done_contract_hash`\n- `done_contract_summary`\n- `input_refs`\n- `constraint_summary`\n- `assumption_refs`\n- `plan_summary`\n- `tools`\n- `risk_class`\n- `output_schema_ref`\n- `clarification_decision`\n- `objective_option_count`\n- `created_at`\n- `policy_hash`\n- `state_snapshot_id`\n- `provenance`\n\nAnticipatory delegation adds bounded logical fields:\n\n- `origin_kind: explicit | triggered | anticipated`\n- `trigger_refs: list<ref>`\n- `prediction_confidence?: float32`\n- `prediction_basis?: map<utf8, utf8>`\n- `objective_hypothesis_refs?: list<ref>`\n- `workflow_template_ref?: ref`\n- `predicted_next_step_refs?: list<ref>`\n- `authority_basis?: map<utf8, utf8>`\n- `authorized_prefix_len?: uint16`\n- `commit_boundary_ref?: ref`\n\nRaw prompts, raw doctrine text, unbounded trajectory text, and private source\ncontent do not belong in the WorkOrders row. Use stable references, compact\nsummaries, hashes, and dedicated memory or receipt objects.\n\nThe executable Arrow/schema representation should be updated only when the\nprototype implementation adopts these fields; this map intentionally preserves\nthe current repository's distinction between specified design and pinned\nimplementation evidence.",
       "domains": [
         "data",
         "software"
@@ -29121,13 +29667,22 @@
         }
       ],
       "path": "knowledge/implementation-maps/goni-imap-fdd10904ec6b-workorders.md",
-      "proposition": "PK: work_order_id = row_id Fields: request_id: fixed_size_binary[16], interaction_mode: dict<uint8, utf8>, goal_summary: utf8, done_contract_hash: fixed_size_binary[32], done_contract_summary: utf8, input_refs: list<utf8>, constraint_summary: utf8, assumption_refs: list<utf8>, plan_summary: utf8, tools: list<utf8>, risk_class: dict<uint8, utf8>, output_schema_ref?: utf8, clarification_decision: dict<uint8, utf8>, objective_option_count: uint8, created_at: timestamp(ms), policy_hash: fixed_size_b",
-      "relations": [],
+      "proposition": "WorkOrders remain the canonical pre-execution control-plane record and should preserve explicit, triggered, or anticipated origin, prediction provenance, independent authority basis, authorized-prefix decisions, and bounded references needed for reconstruction.",
+      "relations": [
+        {
+          "target": "ANTICIPATED-WORKORDER-01",
+          "type": "depends_on"
+        },
+        {
+          "target": "AUTHORIZED-PLAN-PREFIX-01",
+          "type": "depends_on"
+        }
+      ],
       "sources": [],
       "status": "draft",
       "title": "WorkOrders",
       "type": "implementation-map",
-      "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
+      "uncertainty": "The logical fields are specified; the executable schema and migrations remain future implementation work."
     },
     {
       "aliases": [],
@@ -38936,7 +39491,7 @@
     {
       "aliases": [],
       "artifacts": [],
-      "body": "# Receipt completeness profile (normative)\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n## Receipt completeness profile (normative)\n- `trace_id` identifies the request/run trace for correlation across spans.\n- `span_id` identifies the exact operation span that emitted the receipt.\n- `decision_basis` captures the basis for policy mediation (for example:\n  `policy_hash`, matching rule IDs, approval references, `intent_summary`, and\n  `plan_summary`).\n- `memory_diff_refs` is a list of state/memory delta IDs caused by the action.\n  Use an empty list when no memory mutation occurred.\n- `memory_read_refs` is a list of memory IDs, chunk IDs, context item IDs, or\n  retrieval result refs read by the action. Use an empty list when no memory\n  was read.\n- `retrieval_basis` records the retrieval mode, index refs, selected context\n  refs, reranker, permission filters, and policy hash when retrieval affected\n  output or execution. It must not store raw retrieved text by default.\n- `bundle_id`, `manifest_hash`, and `eval_receipt_refs` record governed model\n  bundle provenance when a model route depends on an approved bundle.\n- `model_stack_basis` records active base bundle, adapter set, system\n  prompt/policy version, memory or retrieval bundle refs, eval receipt refs,\n  and route policy hash when those choices affected output or tool eligibility.\n- `llm_route` records model-routing decisions when an LLM path is selected.\n  It captures the selected route, local/Council rationale, task\n  classification, models considered and used, redaction requirement, privacy\n  class sent, cost/latency estimate labels, confidence label, and policy\n  decision. It must not store raw prompt or retrieved text.\n- `assurance_level`, `ml_bom_ref`, and `attestation_refs` record the local\n  installation trust state when model bundle governance affects the route.\n- `receipt_tier` records the governance/execution/summary/telemetry tier used\n  for retention and review policy.\n- `parser_basis` records parser identity, source hash, structure kind,\n  confidence flags, chunk refs, and policy filters when parsing affected memory\n  or context.\n- `visual_basis` records source asset hashes and refs, model bundle ID,\n  manifest hash, workflow hash, compact prompt summary, mask refs, control\n  refs, transformation summaries, verification results, output hash, and\n  rollback ref when visual analysis, generation, editing, or memory updates\n  affected the action. It must not store raw private images, raw screenshots,\n  full OCR text, or unbounded prompts by default.\n- `learning_basis` records Correction Delta Compiler outputs when correction\n  deltas affect memory, retrieval, prompt assembly, harness policy, or\n  promotion datasets. It captures detected delta class, proposed rule ref,\n  scope, confidence, evidence and contradiction counts, review status,\n  regression refs, source refs, and policy hash. It must not store raw draft or\n  correction text by default.\n- `adaptation_basis` records governed model adaptation when a model stack,\n  adapter, preference dataset, prompt/policy bundle, or worldview/task lens is\n  changed or promoted. It captures base bundle refs, adapter refs, training or\n  preference dataset refs, training config refs, expected behavior summary,\n  evaluation refs, approval refs, active runtime selection, policy hash, and\n  rollback ref. It must not store raw private prompts, memory text, or training\n  examples by default.\n- `boundary_basis` records Desktop Agent Firewall decisions when observation,\n  extraction, memory, actuation, sandbox, approval, rollback/repair, or remote\n  extraction boundaries affected the action. It captures refs and compact\n  policy decisions, not raw private screen content, OCR text, accessibility\n  dumps, audio transcripts, or unbounded prompts.\n- `robot_basis` records embodied robot decisions when robot observation,\n  extraction, memory, physical actuation, egress, remote supervision, safety\n  envelopes, or verification affected the action. It captures robot refs,\n  adapter refs, mandate refs, environment scope refs, actuation grant refs,\n  sensor basis refs, policy decisions, verification summaries, intervention\n  state, and rollback/repair refs. It must not store raw private maps, raw\n  video, raw audio, full sensor logs, unrestricted telemetry, or unbounded\n  transcripts by default.\n- `interaction_mode` records whether the turn was delegated execution or\n  co-creation.\n- `work_order_id` references the canonical pre-execution Work Order.\n- `done_contract_hash` references the hashed completion contract used for the\n  action.\n- `clarification_decision` records the control-plane branch:\n  `assume | ask_decisive | propose_objectives | block`.\n- `objective_option_count` records how many candidate objectives were surfaced,\n  if any.\n- `delegation.assumptions` lists material assumptions surfaced to the operator\n  or carried forward by policy.\n- `delegation.uncertainty_level` records the confidence band used for the\n  execution decision.\n- `delegation.question_strategy` records whether clarification was skipped,\n  asked decisively, or overridden by the user/policy.\n- `delegation.tool_intent` captures the purpose of the concrete tool action,\n  distinct from the user-level goal.\n- `delegation.delegation_outcome` records whether the action was executed,\n  queued for review, blocked, escalated, or approved.\n- `delegation.undo_strategy_ref` records the rollback/compensation strategy\n  reference when one exists.",
+      "body": "# Receipt completeness profile (normative)\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n## Receipt completeness profile (normative)\n- `trace_id` identifies the request/run trace for correlation across spans.\n- `span_id` identifies the exact operation span that emitted the receipt.\n- `decision_basis` captures the basis for policy mediation (for example:\n  `policy_hash`, matching rule IDs, approval references, `intent_summary`, and\n  `plan_summary`).\n- `memory_diff_refs` is a list of state/memory delta IDs caused by the action.\n  Use an empty list when no memory mutation occurred.\n- `memory_read_refs` is a list of memory IDs, chunk IDs, context item IDs, or\n  retrieval result refs read by the action. Use an empty list when no memory\n  was read.\n- `retrieval_basis` records the retrieval mode, index refs, selected context\n  refs, reranker, permission filters, and policy hash when retrieval affected\n  output or execution. It must not store raw retrieved text by default.\n- `bundle_id`, `manifest_hash`, and `eval_receipt_refs` record governed model\n  bundle provenance when a model route depends on an approved bundle.\n- `model_stack_basis` records active base bundle, adapter set, system\n  prompt/policy version, memory or retrieval bundle refs, eval receipt refs,\n  and route policy hash when those choices affected output or tool eligibility.\n- `llm_route` records model-routing decisions when an LLM path is selected.\n  It captures the selected route, local/Council rationale, task\n  classification, models considered and used, redaction requirement, privacy\n  class sent, cost/latency estimate labels, confidence label, and policy\n  decision. It must not store raw prompt or retrieved text.\n- `assurance_level`, `ml_bom_ref`, and `attestation_refs` record the local\n  installation trust state when model bundle governance affects the route.\n- `receipt_tier` records the governance/execution/summary/telemetry tier used\n  for retention and review policy.\n- `parser_basis` records parser identity, source hash, structure kind,\n  confidence flags, chunk refs, and policy filters when parsing affected memory\n  or context.\n- `visual_basis` records source asset hashes and refs, model bundle ID,\n  manifest hash, workflow hash, compact prompt summary, mask refs, control\n  refs, transformation summaries, verification results, output hash, and\n  rollback ref when visual analysis, generation, editing, or memory updates\n  affected the action. It must not store raw private images, raw screenshots,\n  full OCR text, or unbounded prompts by default.\n- `learning_basis` records Correction Delta Compiler outputs when correction\n  deltas affect memory, retrieval, prompt assembly, harness policy, or\n  promotion datasets. It captures detected delta class, proposed rule ref,\n  scope, confidence, evidence and contradiction counts, review status,\n  regression refs, source refs, and policy hash. It must not store raw draft or\n  correction text by default.\n- `adaptation_basis` records governed model adaptation when a model stack,\n  adapter, preference dataset, prompt/policy bundle, or worldview/task lens is\n  changed or promoted. It captures base bundle refs, adapter refs, training or\n  preference dataset refs, training config refs, expected behavior summary,\n  evaluation refs, approval refs, active runtime selection, policy hash, and\n  rollback ref. It must not store raw private prompts, memory text, or training\n  examples by default.\n- `boundary_basis` records Desktop Agent Firewall decisions when observation,\n  extraction, memory, actuation, sandbox, approval, rollback/repair, or remote\n  extraction boundaries affected the action. It captures refs and compact\n  policy decisions, not raw private screen content, OCR text, accessibility\n  dumps, audio transcripts, or unbounded prompts.\n- `robot_basis` records embodied robot decisions when robot observation,\n  extraction, memory, physical actuation, egress, remote supervision, safety\n  envelopes, or verification affected the action. It captures robot refs,\n  adapter refs, mandate refs, environment scope refs, actuation grant refs,\n  sensor basis refs, policy decisions, verification summaries, intervention\n  state, and rollback/repair refs. It must not store raw private maps, raw\n  video, raw audio, full sensor logs, unrestricted telemetry, or unbounded\n  transcripts by default.\n- `anticipation_basis` records prospective-work provenance when anticipation affected execution or preparation: origin kind, trigger refs, prediction confidence, prediction-basis refs, competing objective refs, workflow-template ref, and predicted-step refs. It must keep prediction confidence distinct from authority state.\n- `authority_prefix_basis` records the authorized-plan-prefix decision: policy and mandate refs, capability refs, permitted prefix length, first unresolved commit boundary, and whether the remaining plan was staged, deferred, blocked, or escalated.\n- `escalation_basis` records structured takeover state when principal intervention is required: expected state, observed divergence, actions already taken, current-state refs, evidence refs, options, unresolved decision, and rollback/compensation refs. It must use bounded summaries and references rather than raw logs by default.\n- `interaction_mode` records whether the turn was delegated execution or\n  co-creation.\n- `work_order_id` references the canonical pre-execution Work Order.\n- `done_contract_hash` references the hashed completion contract used for the\n  action.\n- `clarification_decision` records the control-plane branch:\n  `assume | ask_decisive | propose_objectives | block`.\n- `objective_option_count` records how many candidate objectives were surfaced,\n  if any.\n- `delegation.assumptions` lists material assumptions surfaced to the operator\n  or carried forward by policy.\n- `delegation.uncertainty_level` records the confidence band used for the\n  execution decision.\n- `delegation.question_strategy` records whether clarification was skipped,\n  asked decisively, or overridden by the user/policy.\n- `delegation.tool_intent` captures the purpose of the concrete tool action,\n  distinct from the user-level goal.\n- `delegation.delegation_outcome` records whether the action was executed,\n  queued for review, blocked, escalated, or approved.\n- `delegation.undo_strategy_ref` records the rollback/compensation strategy\n  reference when one exists.",
       "domains": [
         "specs"
       ],
@@ -38951,7 +39506,20 @@
       ],
       "path": "knowledge/specifications/goni-spec-67c20fd1e8a7-receipt-completeness-profile-normative.md",
       "proposition": "trace_id identifies the request/run trace for correlation across spans.",
-      "relations": [],
+      "relations": [
+        {
+          "target": "ANTICIPATED-WORKORDER-01",
+          "type": "depends_on"
+        },
+        {
+          "target": "AUTHORIZED-PLAN-PREFIX-01",
+          "type": "depends_on"
+        },
+        {
+          "target": "ESCALATION-HANDOVER-01",
+          "type": "depends_on"
+        }
+      ],
       "sources": [],
       "status": "draft",
       "title": "Receipt completeness profile (normative)",
@@ -40739,7 +41307,7 @@
     {
       "aliases": [],
       "artifacts": [],
-      "body": "# 2. Core Capabilities\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n## 2. Core Capabilities\n\nAt a minimum, a single Goni node should:\n\n1. Provide an **interactive conversational assistant** with:\n   - natural language chat,\n   - optional voice input and output (when peripherals are available),\n   - memory of context within a session.\n\n2. Support **retrieval-augmented generation (RAG)** over:\n   - local documents and notes,\n   - emails and calendar entries (if connected),\n   - other user-approved data sources.\n\n3. Offer a **coding assistant** behaviour:\n   - explanation of code,\n   - basic code generation,\n   - summarisation of diffs / pull requests,\n   - without requiring external cloud access for most tasks.\n\n4. Perform **lightweight model personalisation**:\n   - training small adapters or similar techniques on user data,\n   - within the compute limits of the device,\n   - without full retraining of large base models.\n\n5. Expose a **network API** suitable for:\n   - integration with local tools (editors, terminals, browsers),\n   - remote access from the user’s other devices (laptop, phone, tablet).\n\n---",
+      "body": "# 2. Core Capabilities\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n## 2. Core Capabilities\n\nAt a minimum, a single Goni node should:\n\n1. Provide an **interactive conversational assistant** with:\n   - natural language chat,\n   - optional voice input and output (when peripherals are available),\n   - voice and chat as governed supervisory channels for corrections and workflow teaching,\n   - memory of context within a session.\n\n2. Support **retrieval-augmented generation (RAG)** over:\n   - local documents and notes,\n   - emails and calendar entries (if connected),\n   - other user-approved data sources.\n\n3. Offer a **coding assistant** behaviour:\n   - explanation of code,\n   - basic code generation,\n   - summarisation of diffs / pull requests,\n   - without requiring external cloud access for most tasks.\n\n4. Perform **lightweight model personalisation**:\n   - training small adapters or similar techniques on user data,\n   - within the compute limits of the device,\n   - without full retraining of large base models.\n\n5. Expose a **network API** suitable for:\n   - integration with local tools (editors, terminals, browsers),\n   - remote access from the user’s other devices (laptop, phone, tablet).\n\n---",
       "domains": [
         "software"
       ],
@@ -40754,7 +41322,12 @@
       ],
       "path": "knowledge/specifications/goni-spec-8bfae04a83c6-2-core-capabilities.md",
       "proposition": "At a minimum, a single Goni node should: Provide an **interactive conversational assistant** with: natural language chat, optional voice input and output (when peripherals are available), memory of context within a session.",
-      "relations": [],
+      "relations": [
+        {
+          "target": "SUPERVISORY-INTERACTION-01",
+          "type": "depends_on"
+        }
+      ],
       "sources": [],
       "status": "draft",
       "title": "2. Core Capabilities",
@@ -43750,7 +44323,7 @@
     {
       "aliases": [],
       "artifacts": [],
-      "body": "# 2.3 Operator contract\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n### 2.3 Operator contract\n\nFor delegable work, the runtime MUST follow this operator contract:\n\n- infer missing structure from policy, prior context, and task class before\n  interrupting the user,\n- classify whether the turn is `delegation` or `co_creation` before tool\n  planning,\n- ask a clarification question only when the answer materially changes risk,\n  corridor, tool choice, or irreversible side effects,\n- surface at most two candidate objectives when the goal itself is genuinely\n  ambiguous,\n- surface assumptions and uncertainty when proceeding without clarification,\n- convert repaired intent into a Work Order, bounded plan, and explicit tool\n  intent before any mutating call.\n\nThis treats delegation as mixed-initiative control under uncertainty rather\nthan as literal prompt completion [[horvitz1999-mixed-initiative]]\n[[tomasev2026-intelligent-delegation]].",
+      "body": "# 2.3 Operator contract\n\n> Status boundary: this is a draft specification. Present-tense or enforcement\n> language states intended contract behavior, not observed implementation,\n> verification, or non-bypassability.\n\nFor delegable work, the runtime should:\n\n- infer missing structure from policy, prior context, task class, and observed\n  state before interrupting the principal,\n- detect when observations plausibly indicate prospective work and represent it\n  as a hypothesis rather than an instruction,\n- preserve competing objective hypotheses when the distinction materially\n  changes risk, corridor, tool choice, or irreversible side effects,\n- classify whether current interaction is delegation or `co_creation` before\n  tool planning,\n- ask a clarification question when the answer materially changes risk,\n  authority, tool choice, or irreversible side effects,\n- surface assumptions and uncertainty when proceeding without clarification,\n- compile explicit, triggered, or anticipated work into a WorkOrder before any\n  consequential mutating call,\n- keep prediction confidence independent from authority state.\n\nThis treats delegation as mixed-initiative control and plan recognition under\nuncertainty rather than literal prompt completion.",
       "domains": [
         "specs"
       ],
@@ -43764,13 +44337,25 @@
         }
       ],
       "path": "knowledge/specifications/goni-spec-dc17efb4eb31-2-3-operator-contract.md",
-      "proposition": "For delegable work, the runtime MUST follow this operator contract: infer missing structure from policy, prior context, and task class before interrupting the user, classify whether the turn is delegation or co_creation before tool planning, ask a clarification question only when the answer materially changes risk, corridor, tool choice, or irreversible side effects,",
-      "relations": [],
-      "sources": [],
+      "proposition": "For delegable work, the runtime should infer missing structure and prospective work from policy, prior context, observed state, task class, and workflow evidence before interrupting the principal, while preserving uncertainty and compiling any consequential execution through an auditable WorkOrder and independent authority check.",
+      "relations": [
+        {
+          "target": "ANTICIPATORY-DELEGATION-01",
+          "type": "depends_on"
+        },
+        {
+          "target": "GONI-SPEC-F37FC6D98E05",
+          "type": "depends_on"
+        }
+      ],
+      "sources": [
+        "SRC-HORVITZ1999-MIXED-INITIATIVE",
+        "SRC-KAUTZ1986-PLAN-RECOGNITION"
+      ],
       "status": "draft",
       "title": "2.3 Operator contract",
       "type": "specification",
-      "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
+      "uncertainty": "The mixed-initiative contract is specified only; prospective-task inference thresholds require evaluation."
     },
     {
       "aliases": [],
@@ -44841,7 +45426,7 @@
     {
       "aliases": [],
       "artifacts": [],
-      "body": "# 2.6 WorkOrder\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n### 2.6 WorkOrder\n\nEvery executable turn MUST compile a `WorkOrder` with:\n\n- `goal`\n- `done_contract`\n- `inputs`\n- `constraints`\n- `assumptions`\n- `plan`\n- `tools`\n- `risk_class`\n- `output_schema`\n- `work_quality_mode`\n\nFor `audit_grade` work, the Work Order MUST additionally carry:\n\n- `evidence_scope`: sources, refs, paths, time windows, artifacts, and explicit\n  exclusions.\n- `search_strategy`: the planned coverage pattern, including branches, repos,\n  PRs/issues, logs, local/remote deltas, or other relevant surfaces.\n- `negative_claim_policy`: how absence-of-evidence claims may be phrased.\n- `claim_strength_target`: the strongest claim the current scope can support.\n- `missing_evidence_plan`: what remains unchecked and what would close the\n  loop.\n- `audit_sticky`: whether audit-grade mode persists across follow-up turns.\n\nThe Work Order is the canonical pre-execution object. Downstream components may\nstore summarized or referenced forms, but the logical object MUST preserve all\nof the fields above.",
+      "body": "# 2.6 WorkOrder\n\n> Status boundary: this is a draft specification. Present-tense or enforcement\n> language states intended contract behavior, not observed implementation,\n> verification, or non-bypassability.\n\nEvery executable or prospectively prepared unit of delegated work MUST compile\na `WorkOrder` with:\n\n- `goal`\n- `done_contract`\n- `inputs`\n- `constraints`\n- `assumptions`\n- `plan`\n- `tools`\n- `risk_class`\n- `output_schema`\n- `work_quality_mode`\n- `origin`\n- `authority`\n\n`origin.kind` distinguishes `explicit`, `triggered`, and `anticipated`.\nThe authority object records the independent basis under which execution may\noccur. Prediction confidence is not an authority field.\n\nFor `anticipated` work, the WorkOrder MUST additionally preserve the\nanticipation provenance defined by `ANTICIPATED-WORKORDER-01`, including\nprediction basis, confidence, workflow-template reference when applicable,\npredicted steps, and competing objective hypotheses when they could materially\nchange risk, tools, or effects.\n\nFor `audit_grade` work, the Work Order MUST additionally carry:\n\n- `evidence_scope`\n- `search_strategy`\n- `negative_claim_policy`\n- `claim_strength_target`\n- `missing_evidence_plan`\n- `audit_sticky`\n\nThe WorkOrder remains the canonical pre-execution object.",
       "domains": [
         "specs"
       ],
@@ -44855,13 +45440,18 @@
         }
       ],
       "path": "knowledge/specifications/goni-spec-f37fc6d98e05-2-6-workorder.md",
-      "proposition": "Every executable turn MUST compile a WorkOrder with: goal done_contract inputs constraints assumptions plan tools risk_class output_schema work_quality_mode For audit_grade work, the Work Order MUST additionally carry: evidence_scope: sources, refs, paths, time windows, artifacts, and explicit exclusions.",
-      "relations": [],
+      "proposition": "Every executable or prospectively prepared unit of delegated work MUST compile a WorkOrder that preserves goal, completion contract, inputs, constraints, assumptions, plan, tools, risk, work quality, origin, and the independent authority basis; anticipated WorkOrders additionally preserve prediction provenance and competing objective hypotheses when material.",
+      "relations": [
+        {
+          "target": "ANTICIPATORY-DELEGATION-01",
+          "type": "depends_on"
+        }
+      ],
       "sources": [],
       "status": "draft",
       "title": "2.6 WorkOrder",
       "type": "specification",
-      "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
+      "uncertainty": "Preserved from the legacy draft and extended with specified-only anticipation fields; storage and calibration remain unimplemented."
     },
     {
       "aliases": [],
@@ -59230,9 +59820,11 @@
     {
       "aliases": [],
       "artifacts": [],
-      "body": "# 15. Academic Contribution\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n## 15. Academic Contribution\n\nGoni's core intellectual contribution is the claim that AI autonomy is\ntreated as an operating-system problem rather than a prompting problem. This\nimplies a sequence of design priorities:\n\n- Permissions before tools.\n- Receipts before trust.\n- Memory before context.\n- Policy before action.\n- Local execution before cloud escalation.\n- Rollback before autonomy.\n- Governance before convenience.\n\nThis contribution is significant because it shifts the center of personal AI\naway from model capability alone and toward institutional infrastructure: the\nrules, memory, evidence, authority boundaries, and accountability structures\nneeded before autonomous assistants can safely act in the real world.\n\nIn this sense, Goni is not competing primarily at the model layer. It is\ncompeting at the trust, memory, and action layer. Model capabilities may\ncommoditize, but user-specific memory, policy infrastructure, local ownership,\nsafe tool mediation, receipt-backed accountability, and workflow adaptation are\nless easily commoditized. That is where the project's category opportunity\nlives.",
+      "body": "# 15. Academic Contribution\n\n> Status boundary: this is a draft thesis. Present-tense language describes\n> proposed architecture, not observed implementation or validated performance.\n\nGoni's core intellectual contribution is the claim that AI autonomy is treated\nas an operating-system and delegation-governance problem rather than merely a\nprompting problem. The same claim extends to anticipation: a model may predict\nwhat the principal will probably need next without thereby acquiring authority\nto make that prediction real.\n\nThis implies a sequence of design priorities:\n\n- permissions before tools,\n- receipts before trust,\n- memory before context,\n- policy before action,\n- prediction before preparation and authority before commit,\n- local execution before cloud escalation,\n- rollback before autonomy,\n- governance before convenience.\n\nThe theoretical problem is broader than model accuracy. A human principal is\nbounded: every future contingency cannot be exhaustively specified, every\ninternal model computation cannot be continuously inspected, and every routine\naction cannot be manually supervised without destroying the value of\ndelegation. The delegated machine is also partially opaque and operates under\nuncertain context.\n\nGoni therefore addresses opacity institutionally rather than requiring complete\ncognitive transparency. Human organizations govern partially observable agents\nthrough mandates, decision rights, reporting, monitoring, budgets, escalation,\nand revocation. Goni translates that governance pattern into computational\nprimitives: WorkOrders, mandates, corridors, capability-scoped effects,\nreceipts, rollback, and explicit revocation.\n\nAnticipatory delegation adds a further separation:\n\n[\nobservation \\rightarrow prediction \\rightarrow prospective\\ work\n]\n\nremains epistemic, while:\n\n[\nauthority \\rightarrow mediated\\ execution \\rightarrow receipt\n]\n\nremains normative and operational.\n\nThis makes the key claim testable. Goni should reduce the principal's\nspecification, verification, and interruption burden while preserving\nunauthorized-effect prevention, reconstructability, calibrated reliance, and\neffective human takeover.\n\nIn this sense, Goni competes primarily at the trust, memory, authority, and\naction layer. Model capabilities may commoditize, while user-specific memory,\npolicy infrastructure, local ownership, workflow adaptation, safe tool\nmediation, and receipt-backed accountability remain the durable system problem.",
       "domains": [
-        "product"
+        "product",
+        "research",
+        "delegation"
       ],
       "id": "GONI-THESIS-98AE2B9284ED",
       "implementation_state": "specified_only",
@@ -59244,13 +59836,27 @@
         }
       ],
       "path": "knowledge/theses/goni-thesis-98ae2b9284ed-15-academic-contribution.md",
-      "proposition": "Goni's core intellectual contribution is the claim that AI autonomy is treated as an operating-system problem rather than a prompting problem.",
-      "relations": [],
-      "sources": [],
+      "proposition": "Goni's core intellectual contribution is to treat AI autonomy and anticipation as an operating-system and delegation-governance problem in which predictive cognition, authority, execution, and accountability remain structurally distinct.",
+      "relations": [
+        {
+          "target": "ANTICIPATORY-DELEGATION-01",
+          "type": "depends_on"
+        },
+        {
+          "target": "ANTICIPATORY-DELEGATION-THEORY-01",
+          "type": "depends_on"
+        }
+      ],
+      "sources": [
+        "SRC-ROSS1973-PRINCIPAL-AGENT",
+        "SRC-SIMON1955-BOUNDED-RATIONALITY",
+        "SRC-HORVITZ1999-MIXED-INITIATIVE",
+        "SRC-LEE2004-TRUST-AUTOMATION"
+      ],
       "status": "draft",
       "title": "15. Academic Contribution",
       "type": "thesis",
-      "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
+      "uncertainty": "The expanded academic positioning is a Goni synthesis over established literatures; the system-specific claims require the planned evaluation programme."
     },
     {
       "aliases": [],
@@ -61869,6 +62475,41 @@
     },
     {
       "aliases": [
+        "voice-supervision",
+        "supervisory-voice"
+      ],
+      "artifacts": [],
+      "body": "# Supervisory interaction and voice teaching\n\nVoice and conversational interfaces are supervisory channels over the same Goni\nauthority model as graphical or API interactions.\n\nThe principal may use natural language to:\n\n- correct a draft or interpretation,\n- identify a repeated workflow,\n- state that a preparation step should happen automatically in comparable cases,\n- narrow or broaden a workflow template,\n- propose a corridor or approval-policy change,\n- revoke or suspend delegated behavior.\n\nThe runtime must distinguish procedural learning from authority modification.\n\nA correction such as \"next time prepare this automatically\" may become a\nprocedural-memory or WorkflowTemplate proposal. A statement that changes\nexternal-action authority must compile into the appropriate explicit policy,\nmandate, corridor, or capability change and follow its normal governance path.\n\nVoice is therefore a low-friction teaching and supervision modality, not an\nauthority bypass.",
+      "domains": [
+        "specs",
+        "interaction",
+        "delegation"
+      ],
+      "id": "SUPERVISORY-INTERACTION-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/specifications/supervisory-interaction-01.md",
+      "proposition": "Natural-language and voice interaction may supervise Goni by correcting outputs, refining workflow expectations, and proposing policy or corridor changes, while spoken or textual corrections are compiled into reviewable procedural or authority proposals rather than silently becoming new authority.",
+      "relations": [
+        {
+          "target": "ANTICIPATORY-DELEGATION-01",
+          "type": "depends_on"
+        },
+        {
+          "target": "CDC-01",
+          "type": "refines"
+        }
+      ],
+      "sources": [
+        "SRC-HORVITZ1999-MIXED-INITIATIVE"
+      ],
+      "status": "draft",
+      "title": "Supervisory interaction and voice teaching",
+      "type": "specification",
+      "uncertainty": "Voice-specific confirmation ergonomics and authentication requirements depend on device, environment, consequence level, and threat model."
+    },
+    {
+      "aliases": [
         "PRODUCT-SURFACES"
       ],
       "artifacts": [],
@@ -62397,6 +63038,42 @@
       "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
     },
     {
+      "aliases": [
+        "execution-trajectory",
+        "workflow-template"
+      ],
+      "artifacts": [],
+      "body": "# Execution trajectories and workflow-template learning\n\nA completed unit of delegated work should yield a bounded trajectory record that\ncan be reconstructed from existing canonical objects and receipts:\n\n[\n\\tau = (trigger, state, objective, actions, tools, approvals, corrections,\nexceptions, outcome).\n]\n\nThe trajectory is an observation of one concrete performance. Repeated similar\ntrajectories may support a reusable `WorkflowTemplate` candidate describing\nthe generalized routine, expected transitions, decision points, exception\nclasses, and relevant contextual predicates.\n\nThe distinction is deliberate:\n\n- **trajectory**: what happened in one case;\n- **workflow template**: a generalized procedural hypothesis about what usually\n  happens across comparable cases.\n\nCorrection deltas remain especially strong learning signals and continue to be\nhandled by the Correction Delta Compiler. Acceptance, rejection, undo,\nexception handling, and successful completion may also inform workflow\nstatistics.\n\nWorkflow-template promotion must be scoped, receipted, reviewable, and\nreversible. Promotion may change procedural memory or prediction confidence; it\ndoes not grant new tools, capabilities, mandates, corridors, budgets, or\nexternal action authority.",
+      "domains": [
+        "specs",
+        "memory",
+        "delegation"
+      ],
+      "id": "WORKFLOW-LEARNING-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/specifications/workflow-learning-01.md",
+      "proposition": "Goni should represent completed delegated work as bounded execution trajectories and may infer reusable workflow-template candidates from repeated similar trajectories, while template learning updates procedural expectations rather than delegated authority.",
+      "relations": [
+        {
+          "target": "ANTICIPATORY-DELEGATION-01",
+          "type": "depends_on"
+        },
+        {
+          "target": "CDC-01",
+          "type": "refines"
+        }
+      ],
+      "sources": [
+        "SRC-FELDMAN2003-ORGANIZATIONAL-ROUTINES",
+        "SRC-CERAVOLO2024-PREDICTIVE-PROCESS-MONITORING"
+      ],
+      "status": "draft",
+      "title": "Execution trajectories and workflow-template learning",
+      "type": "specification",
+      "uncertainty": "Similarity criteria, promotion thresholds, and template representation are research questions and must be calibrated against real or synthetic trajectory corpora."
+    },
+    {
       "aliases": [],
       "artifacts": [],
       "body": "# 52 Zero Copy Mechanics\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n﻿# 52 – Zero-Copy Mechanics\nDOC-ID: ZCO-01\n\nZero-copy operations over Arrow buffers (see `95-theory` for proofs). Outputs mutate booleans/indices; text moves exactly once into an LLM buffer.",
@@ -62672,6 +63349,261 @@
     },
     {
       "projection": "generated",
+      "source": "ANTICIPATED-WORKORDER-01",
+      "target": "AUTHORIZED-PLAN-PREFIX-01",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
+      "source": "ANTICIPATED-WORKORDER-01",
+      "target": "GONI-IMAP-FDD10904EC6B",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
+      "source": "ANTICIPATED-WORKORDER-01",
+      "target": "GONI-SPEC-67C20FD1E8A7",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "authored",
+      "source": "ANTICIPATED-WORKORDER-01",
+      "target": "ANTICIPATORY-DELEGATION-01",
+      "type": "depends_on"
+    },
+    {
+      "note": "Extends the canonical WorkOrder with origin and anticipation provenance.",
+      "projection": "authored",
+      "source": "ANTICIPATED-WORKORDER-01",
+      "target": "GONI-SPEC-F37FC6D98E05",
+      "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "ANTICIPATED-WORKORDER-01",
+      "target": "EVID-PLAN-RECOGNITION-01",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "ANTICIPATED-WORKORDER-01",
+      "target": "EVID-PREDICTIVE-PROCESS-MONITORING-01",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "ANTICIPATED-WORKORDER-01",
+      "target": "ANTICIPATORY-DELEGATION-THEORY-01",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "generated",
+      "source": "ANTICIPATED-WORKORDER-01",
+      "target": "ANTICIPATORY-DELEGATION-EVAL-01",
+      "type": "tested_by"
+    },
+    {
+      "projection": "generated",
+      "source": "ANTICIPATORY-DELEGATION-01",
+      "target": "ANTICIPATED-WORKORDER-01",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
+      "source": "ANTICIPATORY-DELEGATION-01",
+      "target": "AUTHORIZED-PLAN-PREFIX-01",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
+      "source": "ANTICIPATORY-DELEGATION-01",
+      "target": "CDC-01",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
+      "source": "ANTICIPATORY-DELEGATION-01",
+      "target": "ESCALATION-HANDOVER-01",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
+      "source": "ANTICIPATORY-DELEGATION-01",
+      "target": "GONI-SPEC-DC17EFB4EB31",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
+      "source": "ANTICIPATORY-DELEGATION-01",
+      "target": "GONI-SPEC-F37FC6D98E05",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
+      "source": "ANTICIPATORY-DELEGATION-01",
+      "target": "GONI-THESIS-98AE2B9284ED",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
+      "source": "ANTICIPATORY-DELEGATION-01",
+      "target": "SUPERVISORY-INTERACTION-01",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
+      "source": "ANTICIPATORY-DELEGATION-01",
+      "target": "WORKFLOW-LEARNING-01",
+      "type": "depended_on_by"
+    },
+    {
+      "note": "Anticipated work remains subject to the mixed-initiative operator contract.",
+      "projection": "authored",
+      "source": "ANTICIPATORY-DELEGATION-01",
+      "target": "GONI-SPEC-DC17EFB4EB31",
+      "type": "depends_on"
+    },
+    {
+      "note": "Gives predictive routines explicit delegation semantics.",
+      "projection": "authored",
+      "source": "ANTICIPATORY-DELEGATION-01",
+      "target": "GONI-THESIS-AF4B6A0B4A2D",
+      "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "ANTICIPATORY-DELEGATION-01",
+      "target": "ANTICIPATORY-DELEGATION-THEORY-01",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "generated",
+      "source": "ANTICIPATORY-DELEGATION-01",
+      "target": "ANTICIPATORY-DELEGATION-EVAL-01",
+      "type": "tested_by"
+    },
+    {
+      "projection": "authored",
+      "source": "ANTICIPATORY-DELEGATION-EVAL-01",
+      "target": "ANTICIPATED-WORKORDER-01",
+      "type": "tests"
+    },
+    {
+      "projection": "authored",
+      "source": "ANTICIPATORY-DELEGATION-EVAL-01",
+      "target": "ANTICIPATORY-DELEGATION-01",
+      "type": "tests"
+    },
+    {
+      "projection": "authored",
+      "source": "ANTICIPATORY-DELEGATION-EVAL-01",
+      "target": "AUTHORIZED-PLAN-PREFIX-01",
+      "type": "tests"
+    },
+    {
+      "projection": "authored",
+      "source": "ANTICIPATORY-DELEGATION-EVAL-01",
+      "target": "ESCALATION-HANDOVER-01",
+      "type": "tests"
+    },
+    {
+      "projection": "authored",
+      "source": "ANTICIPATORY-DELEGATION-EVAL-01",
+      "target": "WORKFLOW-LEARNING-01",
+      "type": "tests"
+    },
+    {
+      "projection": "generated",
+      "source": "ANTICIPATORY-DELEGATION-THEORY-01",
+      "target": "GONI-THESIS-98AE2B9284ED",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
+      "source": "ANTICIPATORY-DELEGATION-THEORY-01",
+      "target": "EVID-AGENCY-GOVERNANCE-01",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "ANTICIPATORY-DELEGATION-THEORY-01",
+      "target": "EVID-BOUNDED-RATIONALITY-01",
+      "type": "supported_by"
+    },
+    {
+      "projection": "authored",
+      "source": "ANTICIPATORY-DELEGATION-THEORY-01",
+      "target": "ANTICIPATED-WORKORDER-01",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "ANTICIPATORY-DELEGATION-THEORY-01",
+      "target": "ANTICIPATORY-DELEGATION-01",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "ANTICIPATORY-DELEGATION-THEORY-01",
+      "target": "AUTHORIZED-PLAN-PREFIX-01",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "ANTICIPATORY-DELEGATION-THEORY-01",
+      "target": "ESCALATION-HANDOVER-01",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "ANTICIPATORY-DELEGATION-THEORY-01",
+      "target": "WORKFLOW-LEARNING-01",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "generated",
+      "source": "AUTHORIZED-PLAN-PREFIX-01",
+      "target": "GONI-IMAP-FDD10904EC6B",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
+      "source": "AUTHORIZED-PLAN-PREFIX-01",
+      "target": "GONI-SPEC-67C20FD1E8A7",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "authored",
+      "source": "AUTHORIZED-PLAN-PREFIX-01",
+      "target": "ANTICIPATED-WORKORDER-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "AUTHORIZED-PLAN-PREFIX-01",
+      "target": "ANTICIPATORY-DELEGATION-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "generated",
+      "source": "AUTHORIZED-PLAN-PREFIX-01",
+      "target": "EVID-HUMAN-AUTOMATION-01",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "AUTHORIZED-PLAN-PREFIX-01",
+      "target": "ANTICIPATORY-DELEGATION-THEORY-01",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "generated",
+      "source": "AUTHORIZED-PLAN-PREFIX-01",
+      "target": "ANTICIPATORY-DELEGATION-EVAL-01",
+      "type": "tested_by"
+    },
+    {
+      "projection": "generated",
       "source": "AXIOMS-01",
       "target": "GONI-EVIDENCE-3B6F68694E5E",
       "type": "supported_by"
@@ -62705,6 +63637,24 @@
       "source": "CACHE-EVAL-01",
       "target": "CACHE-01",
       "type": "tests"
+    },
+    {
+      "projection": "authored",
+      "source": "CDC-01",
+      "target": "ANTICIPATORY-DELEGATION-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "generated",
+      "source": "CDC-01",
+      "target": "SUPERVISORY-INTERACTION-01",
+      "type": "refined_by"
+    },
+    {
+      "projection": "generated",
+      "source": "CDC-01",
+      "target": "WORKFLOW-LEARNING-01",
+      "type": "refined_by"
     },
     {
       "projection": "generated",
@@ -62851,6 +63801,48 @@
       "type": "supported_by"
     },
     {
+      "projection": "generated",
+      "source": "ESCALATION-HANDOVER-01",
+      "target": "GONI-SPEC-67C20FD1E8A7",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "authored",
+      "source": "ESCALATION-HANDOVER-01",
+      "target": "ANTICIPATORY-DELEGATION-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "generated",
+      "source": "ESCALATION-HANDOVER-01",
+      "target": "EVID-HUMAN-AUTOMATION-01",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "ESCALATION-HANDOVER-01",
+      "target": "ANTICIPATORY-DELEGATION-THEORY-01",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "generated",
+      "source": "ESCALATION-HANDOVER-01",
+      "target": "ANTICIPATORY-DELEGATION-EVAL-01",
+      "type": "tested_by"
+    },
+    {
+      "projection": "authored",
+      "source": "EVID-AGENCY-GOVERNANCE-01",
+      "target": "ANTICIPATORY-DELEGATION-THEORY-01",
+      "type": "supports"
+    },
+    {
+      "projection": "authored",
+      "source": "EVID-BOUNDED-RATIONALITY-01",
+      "target": "ANTICIPATORY-DELEGATION-THEORY-01",
+      "type": "supports"
+    },
+    {
       "projection": "authored",
       "source": "EVID-DENNING1968-WORKING-SET",
       "target": "GONI-DECISION-FEB39440C565",
@@ -62872,6 +63864,18 @@
       "projection": "authored",
       "source": "EVID-HU2022-LORA",
       "target": "GONI-SPEC-9D8A0A7F0F70",
+      "type": "supports"
+    },
+    {
+      "projection": "authored",
+      "source": "EVID-HUMAN-AUTOMATION-01",
+      "target": "AUTHORIZED-PLAN-PREFIX-01",
+      "type": "supports"
+    },
+    {
+      "projection": "authored",
+      "source": "EVID-HUMAN-AUTOMATION-01",
+      "target": "ESCALATION-HANDOVER-01",
       "type": "supports"
     },
     {
@@ -62902,6 +63906,30 @@
       "projection": "authored",
       "source": "EVID-LI2023-SELECTIVE-CONTEXT",
       "target": "GONI-SPEC-A29366F3E2EA",
+      "type": "supports"
+    },
+    {
+      "projection": "authored",
+      "source": "EVID-ORGANIZATIONAL-ROUTINES-01",
+      "target": "WORKFLOW-LEARNING-01",
+      "type": "supports"
+    },
+    {
+      "projection": "authored",
+      "source": "EVID-PLAN-RECOGNITION-01",
+      "target": "ANTICIPATED-WORKORDER-01",
+      "type": "supports"
+    },
+    {
+      "projection": "authored",
+      "source": "EVID-PREDICTIVE-PROCESS-MONITORING-01",
+      "target": "ANTICIPATED-WORKORDER-01",
+      "type": "supports"
+    },
+    {
+      "projection": "authored",
+      "source": "EVID-PREDICTIVE-PROCESS-MONITORING-01",
+      "target": "WORKFLOW-LEARNING-01",
       "type": "supports"
     },
     {
@@ -63793,6 +64821,18 @@
       "type": "supported_by"
     },
     {
+      "projection": "authored",
+      "source": "GONI-IMAP-FDD10904EC6B",
+      "target": "ANTICIPATED-WORKORDER-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-IMAP-FDD10904EC6B",
+      "target": "AUTHORIZED-PLAN-PREFIX-01",
+      "type": "depends_on"
+    },
+    {
       "projection": "generated",
       "source": "GONI-OBJECTION-16A9274BEE9C",
       "target": "RFC-0000-TEMPLATE",
@@ -63943,10 +64983,34 @@
       "type": "refined_by"
     },
     {
+      "projection": "authored",
+      "source": "GONI-SPEC-67C20FD1E8A7",
+      "target": "ANTICIPATED-WORKORDER-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SPEC-67C20FD1E8A7",
+      "target": "AUTHORIZED-PLAN-PREFIX-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SPEC-67C20FD1E8A7",
+      "target": "ESCALATION-HANDOVER-01",
+      "type": "depends_on"
+    },
+    {
       "projection": "generated",
       "source": "GONI-SPEC-75D0D2E5F296",
       "target": "GONI-SYNTHESIS-E3B321C24C67",
       "type": "synthesized_by"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SPEC-8BFAE04A83C6",
+      "target": "SUPERVISORY-INTERACTION-01",
+      "type": "depends_on"
     },
     {
       "projection": "generated",
@@ -63988,6 +65052,42 @@
       "projection": "generated",
       "source": "GONI-SPEC-B49DB23CF412",
       "target": "INF-FRAME-01",
+      "type": "refined_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-SPEC-DC17EFB4EB31",
+      "target": "ANTICIPATORY-DELEGATION-01",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SPEC-DC17EFB4EB31",
+      "target": "ANTICIPATORY-DELEGATION-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SPEC-DC17EFB4EB31",
+      "target": "GONI-SPEC-F37FC6D98E05",
+      "type": "depends_on"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-SPEC-F37FC6D98E05",
+      "target": "GONI-SPEC-DC17EFB4EB31",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SPEC-F37FC6D98E05",
+      "target": "ANTICIPATORY-DELEGATION-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-SPEC-F37FC6D98E05",
+      "target": "ANTICIPATED-WORKORDER-01",
       "type": "refined_by"
     },
     {
@@ -68018,6 +69118,24 @@
     },
     {
       "projection": "authored",
+      "source": "GONI-THESIS-98AE2B9284ED",
+      "target": "ANTICIPATORY-DELEGATION-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-THESIS-98AE2B9284ED",
+      "target": "ANTICIPATORY-DELEGATION-THEORY-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-THESIS-AF4B6A0B4A2D",
+      "target": "ANTICIPATORY-DELEGATION-01",
+      "type": "refined_by"
+    },
+    {
+      "projection": "authored",
       "source": "GONI-WHITEPAPER",
       "target": "GONI-SYNTHESIS-08E40F4E74E3",
       "type": "synthesizes"
@@ -69241,6 +70359,24 @@
       "type": "synthesizes"
     },
     {
+      "projection": "generated",
+      "source": "SUPERVISORY-INTERACTION-01",
+      "target": "GONI-SPEC-8BFAE04A83C6",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "authored",
+      "source": "SUPERVISORY-INTERACTION-01",
+      "target": "ANTICIPATORY-DELEGATION-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "SUPERVISORY-INTERACTION-01",
+      "target": "CDC-01",
+      "type": "refines"
+    },
+    {
       "projection": "authored",
       "source": "SURF-00",
       "target": "GONI-SYNTHESIS-59D0C243100A",
@@ -69635,6 +70771,42 @@
       "source": "VIS-RUNTIME-01",
       "target": "GONI-EVIDENCE-FAA487C54065",
       "type": "supported_by"
+    },
+    {
+      "projection": "authored",
+      "source": "WORKFLOW-LEARNING-01",
+      "target": "ANTICIPATORY-DELEGATION-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "WORKFLOW-LEARNING-01",
+      "target": "CDC-01",
+      "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "WORKFLOW-LEARNING-01",
+      "target": "EVID-ORGANIZATIONAL-ROUTINES-01",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "WORKFLOW-LEARNING-01",
+      "target": "EVID-PREDICTIVE-PROCESS-MONITORING-01",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "WORKFLOW-LEARNING-01",
+      "target": "ANTICIPATORY-DELEGATION-THEORY-01",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "generated",
+      "source": "WORKFLOW-LEARNING-01",
+      "target": "ANTICIPATORY-DELEGATION-EVAL-01",
+      "type": "tested_by"
     }
   ],
   "schema_version": 1,
@@ -69684,6 +70856,16 @@
       "url": "https://arxiv.org/abs/2501.09674"
     },
     {
+      "accessed": "2026-09-26",
+      "citation": "Bainbridge, L. (1983). Ironies of Automation. Automatica, 19(6), 775–779. https://doi.org/10.1016/0005-1098(83)90046-8",
+      "id": "SRC-BAINBRIDGE1983-IRONIES-AUTOMATION",
+      "kind": "academic",
+      "notes": "Shows that automation can leave humans responsible for abnormal conditions while reducing the practice and situation awareness needed for effective takeover. Relevant to Goni escalation and state-transfer design.",
+      "path": "sources/src-bainbridge1983-ironies-automation.yml",
+      "title": "bainbridge1983-ironies-automation",
+      "url": "https://doi.org/10.1016/0005-1098(83)90046-8"
+    },
+    {
       "citation": "https://www.math.columbia.edu/~bayer/papers/Timestamp_BHS93.pdf",
       "id": "SRC-BAYER1993-TIMESTAMP",
       "kind": "academic",
@@ -69709,6 +70891,16 @@
       "path": "sources/src-bradshaw2004-adjustable-autonomy.yml",
       "title": "bradshaw2004-adjustable-autonomy",
       "url": "https://www.researchgate.net/publication/2914496_Human-Agent_Teamwork_and_Adjustable_Autonomy_in_Practice"
+    },
+    {
+      "accessed": "2026-09-26",
+      "citation": "Ceravolo, P., Comuzzi, M., De Weerdt, J., Di Francescomarino, C., & Maggi, F. M. (2024). Predictive process monitoring: concepts, challenges, and future research directions. Process Science, 1, 2. https://doi.org/10.1007/s44311-024-00002-4",
+      "id": "SRC-CERAVOLO2024-PREDICTIVE-PROCESS-MONITORING",
+      "kind": "academic",
+      "notes": "Reviews predictive process monitoring as runtime prediction over active process cases, including prediction of next events, outcomes, and remaining time. Provides process-science grounding for Goni next-work prediction from execution trajectories.",
+      "path": "sources/src-ceravolo2024-predictive-process-monitoring.yml",
+      "title": "ceravolo2024-predictive-process-monitoring",
+      "url": "https://doi.org/10.1007/s44311-024-00002-4"
     },
     {
       "citation": "https://www.alphaxiv.org/abs/2026.dspark",
@@ -69837,6 +71029,16 @@
       "url": "https://eips.ethereum.org/EIPS/eip-2335"
     },
     {
+      "accessed": "2026-09-26",
+      "citation": "Eisenhardt, K. M. (1989). Agency Theory: An Assessment and Review. Academy of Management Review, 14(1), 57–74. https://doi.org/10.5465/amr.1989.4279003",
+      "id": "SRC-EISENHARDT1989-AGENCY-THEORY",
+      "kind": "academic",
+      "notes": "Reviews agency theory around information systems, outcome uncertainty, incentives, and risk. Useful for positioning Goni as a delegation-governance architecture under partial observability and uncertainty.",
+      "path": "sources/src-eisenhardt1989-agency-theory.yml",
+      "title": "eisenhardt1989-agency-theory",
+      "url": "https://doi.org/10.5465/amr.1989.4279003"
+    },
+    {
       "citation": "https://ethereum.github.io/consensus-specs/specs/phase0/validator/",
       "id": "SRC-ETHEREUM-CONSENSUS-VALIDATOR",
       "kind": "web",
@@ -69844,6 +71046,16 @@
       "path": "sources/src-ethereum-consensus-validator.yml",
       "title": "ethereum-consensus-validator",
       "url": "https://ethereum.github.io/consensus-specs/specs/phase0/validator/"
+    },
+    {
+      "accessed": "2026-09-26",
+      "citation": "Feldman, M. S., & Pentland, B. T. (2003). Reconceptualizing Organizational Routines as a Source of Flexibility and Change. Administrative Science Quarterly, 48(1), 94–118. https://doi.org/10.2307/3556620",
+      "id": "SRC-FELDMAN2003-ORGANIZATIONAL-ROUTINES",
+      "kind": "academic",
+      "notes": "Distinguishes ostensive routines from concrete performative instances. Provides an organizational-theory analogue for separating reusable Goni WorkflowTemplates from observed execution trajectories.",
+      "path": "sources/src-feldman2003-organizational-routines.yml",
+      "title": "feldman2003-organizational-routines",
+      "url": "https://doi.org/10.2307/3556620"
     },
     {
       "citation": "https://huggingface.co/papers/2305.05176",
@@ -69944,13 +71156,24 @@
       "url": "https://www.fh-wedel.de/fileadmin/Mitarbeiter/Records/Haegner_2020_-_Robotic_Process_Automation_-_A_Systematic_Literature_Review.pdf"
     },
     {
-      "citation": "https://www.microsoft.com/en-us/research/publication/principles-mixed-initiative-user-interfaces/",
+      "accessed": "2026-09-26",
+      "citation": "Holmström, B. (1979). Moral Hazard and Observability. Bell Journal of Economics, 10(1), 74–91. https://doi.org/10.2307/3003320",
+      "id": "SRC-HOLMSTROM1979-OBSERVABILITY",
+      "kind": "academic",
+      "notes": "Studies how imperfect information and additional observability affect principal-agent contracting. Goni maps the observability problem to reconstructable delegated action rather than complete inspection of model internals.",
+      "path": "sources/src-holmstrom1979-observability.yml",
+      "title": "holmstrom1979-observability",
+      "url": "https://doi.org/10.2307/3003320"
+    },
+    {
+      "accessed": "2026-09-26",
+      "citation": "Horvitz, E. (1999). Principles of Mixed-Initiative User Interfaces. Proceedings of the SIGCHI Conference on Human Factors in Computing Systems (CHI '99), 159–166. https://doi.org/10.1145/302979.303030",
       "id": "SRC-HORVITZ1999-MIXED-INITIATIVE",
-      "kind": "web",
-      "notes": "Mixed-initiative interfaces should decide when to automate vs interrupt the user using uncertainty and utility/cost tradeoffs.",
+      "kind": "academic",
+      "notes": "Grounds allocation of initiative between user and automation under uncertainty, including reasoning about intervention, interruption, and utility/cost tradeoffs.",
       "path": "sources/src-horvitz1999-mixed-initiative.yml",
       "title": "horvitz1999-mixed-initiative",
-      "url": "https://www.microsoft.com/en-us/research/publication/principles-mixed-initiative-user-interfaces/"
+      "url": "https://doi.org/10.1145/302979.303030"
     },
     {
       "citation": "Hu, E. J., Shen, Y., Wallis, P., Allen-Zhu, Z., Li, Y., Wang, S., Wang, L., & Chen, W. (2022). LoRA: Low-Rank Adaptation of Large Language Models. International Conference on Learning Representations.",
@@ -69980,6 +71203,16 @@
       "url": "https://in-toto.io/"
     },
     {
+      "accessed": "2026-09-26",
+      "citation": "Jensen, M. C., & Meckling, W. H. (1976). Theory of the Firm: Managerial Behavior, Agency Costs and Ownership Structure. Journal of Financial Economics, 3(4), 305–360. https://doi.org/10.1016/0304-405X(76)90026-X",
+      "id": "SRC-JENSEN1976-AGENCY-COSTS",
+      "kind": "academic",
+      "notes": "Defines agency costs around delegated control and monitoring. Relevant to Goni's separation of decision rights, monitoring, residual loss, and accountability, with machine-specific differences handled separately.",
+      "path": "sources/src-jensen1976-agency-costs.yml",
+      "title": "jensen1976-agency-costs",
+      "url": "https://doi.org/10.1016/0304-405X(76)90026-X"
+    },
+    {
       "citation": "Jiang, H., Wu, Q., Lin, C.-Y., Yang, Y., & Qiu, L. (2023). LLMLingua: Compressing Prompts for Accelerated Inference of Large Language Models. Proceedings of EMNLP 2023. https://doi.org/10.18653/v1/2023.emnlp-main.825",
       "id": "SRC-JIANG2023-LLMLINGUA",
       "kind": "academic",
@@ -70005,6 +71238,16 @@
       "path": "sources/src-karpukhin2020-dpr.yml",
       "title": "karpukhin2020-dpr",
       "url": "https://arxiv.org/abs/2004.04906"
+    },
+    {
+      "accessed": "2026-09-26",
+      "citation": "Kautz, H. A., & Allen, J. F. (1986). Generalized Plan Recognition. Proceedings of the Fifth National Conference on Artificial Intelligence (AAAI-86), 32–37.",
+      "id": "SRC-KAUTZ1986-PLAN-RECOGNITION",
+      "kind": "academic",
+      "notes": "Develops plan recognition while preserving classes of possible plans instead of prematurely committing to one interpretation. Relevant to Goni's prospective task hypotheses under ambiguous observed behavior.",
+      "path": "sources/src-kautz1986-plan-recognition.yml",
+      "title": "kautz1986-plan-recognition",
+      "url": "https://cdn.aaai.org/AAAI/1986/AAAI86-006.pdf"
     },
     {
       "citation": "https://www.sigops.org/s/conferences/sosp/2009/papers/klein-sosp09.pdf",
@@ -70050,6 +71293,16 @@
       "path": "sources/src-lampson1974-protection.yml",
       "title": "lampson1974-protection",
       "url": "https://dl.acm.org/doi/pdf/10.1145/775265.775268"
+    },
+    {
+      "accessed": "2026-09-26",
+      "citation": "Lee, J. D., & See, K. A. (2004). Trust in Automation: Designing for Appropriate Reliance. Human Factors, 46(1), 50–80. https://doi.org/10.1518/hfes.46.1.50_30392",
+      "id": "SRC-LEE2004-TRUST-AUTOMATION",
+      "kind": "academic",
+      "notes": "Frames trust as a mechanism governing reliance under complexity and uncertainty. Supports Goni's goal of calibrated reliance rather than maximizing user trust.",
+      "path": "sources/src-lee2004-trust-automation.yml",
+      "title": "lee2004-trust-automation",
+      "url": "https://doi.org/10.1518/hfes.46.1.50_30392"
     },
     {
       "citation": "https://arxiv.org/abs/2005.11401",
@@ -70186,6 +71439,16 @@
       "url": "https://arxiv.org/abs/2310.08560"
     },
     {
+      "accessed": "2026-09-26",
+      "citation": "Parasuraman, R., Sheridan, T. B., & Wickens, C. D. (2000). A Model for Types and Levels of Human Interaction with Automation. IEEE Transactions on Systems, Man, and Cybernetics - Part A: Systems and Humans, 30(3), 286–297. https://doi.org/10.1109/3468.844354",
+      "id": "SRC-PARASURAMAN2000-LEVELS-AUTOMATION",
+      "kind": "academic",
+      "notes": "Separates automation of information acquisition, information analysis, decision/action selection, and action implementation. Supports function-specific Goni autonomy corridors rather than one scalar autonomy level.",
+      "path": "sources/src-parasuraman2000-levels-automation.yml",
+      "title": "parasuraman2000-levels-automation",
+      "url": "https://doi.org/10.1109/3468.844354"
+    },
+    {
       "citation": "https://arxiv.org/abs/2305.13048",
       "id": "SRC-PENG2023-RWKV",
       "kind": "academic",
@@ -70238,6 +71501,16 @@
       "path": "sources/src-risko2016-cognitive-offloading.yml",
       "title": "risko2016-cognitive-offloading",
       "url": "https://www.cell.com/trends/cognitive-sciences/fulltext/S1364-6613(16"
+    },
+    {
+      "accessed": "2026-09-26",
+      "citation": "Ross, S. A. (1973). The Economic Theory of Agency: The Principal's Problem. American Economic Review, 63(2), 134–139.",
+      "id": "SRC-ROSS1973-PRINCIPAL-AGENT",
+      "kind": "academic",
+      "notes": "Foundational principal-agent formulation. Goni uses it as historical grounding for delegated decision rights and the principal's monitoring problem, not as a claim that machine agents possess human motives.",
+      "path": "sources/src-ross1973-principal-agent.yml",
+      "title": "ross1973-principal-agent",
+      "url": "https://www.jstor.org/stable/1817064"
     },
     {
       "citation": "https://arxiv.org/abs/2012.00854",
@@ -70310,6 +71583,16 @@
       "path": "sources/src-shneiderman2020-hcai-thci.yml",
       "title": "shneiderman2020-hcai-thci",
       "url": "https://aisel.aisnet.org/thci/vol12/iss3/1/"
+    },
+    {
+      "accessed": "2026-09-26",
+      "citation": "Simon, H. A. (1955). A Behavioral Model of Rational Choice. The Quarterly Journal of Economics, 69(1), 99–118. https://doi.org/10.2307/1884852",
+      "id": "SRC-SIMON1955-BOUNDED-RATIONALITY",
+      "kind": "academic",
+      "notes": "Grounds bounded rationality: principals cannot exhaustively specify, inspect, or optimize every decision. Goni uses this as justification for selective delegation, compressed context, and policy-level governance.",
+      "path": "sources/src-simon1955-bounded-rationality.yml",
+      "title": "simon1955-bounded-rationality",
+      "url": "https://doi.org/10.2307/1884852"
     },
     {
       "citation": "https://slsa.dev/",

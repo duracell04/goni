@@ -1,0 +1,15 @@
+id: SRC-PARASURAMAN2000-LEVELS-AUTOMATION
+title: parasuraman2000-levels-automation
+kind: academic
+citation: >-
+  Parasuraman, R., Sheridan, T. B., & Wickens, C. D. (2000). A Model for Types
+  and Levels of Human Interaction with Automation. IEEE Transactions on
+  Systems, Man, and Cybernetics - Part A: Systems and Humans, 30(3), 286–297.
+  https://doi.org/10.1109/3468.844354
+url: https://doi.org/10.1109/3468.844354
+accessed: '2026-09-26'
+notes: >-
+  Separates automation of information acquisition, information analysis,
+  decision/action selection, and action implementation. Supports
+  function-specific Goni autonomy corridors rather than one scalar autonomy
+  level.

@@ -8,7 +8,9 @@ proposition: 'At a minimum, a single Goni node should: Provide an **interactive 
 domains:
 - software
 aliases: []
-relations: []
+relations:
+- type: depends_on
+  target: SUPERVISORY-INTERACTION-01
 sources: []
 artifacts: []
 uncertainty: Preserved from the legacy draft without status promotion or newly inferred evidence strength.
@@ -29,6 +31,7 @@ At a minimum, a single Goni node should:
 1. Provide an **interactive conversational assistant** with:
    - natural language chat,
    - optional voice input and output (when peripherals are available),
+   - voice and chat as governed supervisory channels for corrections and workflow teaching,
    - memory of context within a session.
 
 2. Support **retrieval-augmented generation (RAG)** over:

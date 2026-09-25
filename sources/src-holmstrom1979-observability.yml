@@ -1,0 +1,13 @@
+id: SRC-HOLMSTROM1979-OBSERVABILITY
+title: holmstrom1979-observability
+kind: academic
+citation: >-
+  Holmström, B. (1979). Moral Hazard and Observability. Bell Journal of
+  Economics, 10(1), 74–91. https://doi.org/10.2307/3003320
+url: https://doi.org/10.2307/3003320
+accessed: '2026-09-26'
+notes: >-
+  Studies how imperfect information and additional observability affect
+  principal-agent contracting. Goni maps the observability problem to
+  reconstructable delegated action rather than complete inspection of model
+  internals.

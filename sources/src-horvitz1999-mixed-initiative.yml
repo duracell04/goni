@@ -1,6 +1,13 @@
 id: SRC-HORVITZ1999-MIXED-INITIATIVE
 title: horvitz1999-mixed-initiative
-kind: web
-citation: https://www.microsoft.com/en-us/research/publication/principles-mixed-initiative-user-interfaces/
-notes: Mixed-initiative interfaces should decide when to automate vs interrupt the user using uncertainty and utility/cost tradeoffs.
-url: https://www.microsoft.com/en-us/research/publication/principles-mixed-initiative-user-interfaces/
+kind: academic
+citation: >-
+  Horvitz, E. (1999). Principles of Mixed-Initiative User Interfaces.
+  Proceedings of the SIGCHI Conference on Human Factors in Computing Systems
+  (CHI '99), 159–166. https://doi.org/10.1145/302979.303030
+url: https://doi.org/10.1145/302979.303030
+accessed: '2026-09-26'
+notes: >-
+  Grounds allocation of initiative between user and automation under
+  uncertainty, including reasoning about intervention, interruption, and
+  utility/cost tradeoffs.

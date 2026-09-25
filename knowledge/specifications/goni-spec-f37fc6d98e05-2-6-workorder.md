@@ -4,14 +4,16 @@ title: 2.6 WorkOrder
 type: specification
 status: draft
 implementation_state: specified_only
-proposition: 'Every executable turn MUST compile a WorkOrder with: goal done_contract inputs constraints assumptions plan tools risk_class output_schema work_quality_mode For audit_grade work, the Work Order MUST additionally carry: evidence_scope: sources, refs, paths, time windows, artifacts, and explicit exclusions.'
+proposition: Every executable or prospectively prepared unit of delegated work MUST compile a WorkOrder that preserves goal, completion contract, inputs, constraints, assumptions, plan, tools, risk, work quality, origin, and the independent authority basis; anticipated WorkOrders additionally preserve prediction provenance and competing objective hypotheses when material.
 domains:
 - specs
 aliases: []
-relations: []
+relations:
+- type: depends_on
+  target: ANTICIPATORY-DELEGATION-01
 sources: []
 artifacts: []
-uncertainty: Preserved from the legacy draft without status promotion or newly inferred evidence strength.
+uncertainty: Preserved from the legacy draft and extended with specified-only anticipation fields; storage and calibration remain unimplemented.
 legacy:
 - path: blueprint/30-specs/delegation-interface.md
   heading: 2.6 WorkOrder
@@ -20,11 +22,12 @@ legacy:
 
 # 2.6 WorkOrder
 
-> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.
+> Status boundary: this is a draft specification. Present-tense or enforcement
+> language states intended contract behavior, not observed implementation,
+> verification, or non-bypassability.
 
-### 2.6 WorkOrder
-
-Every executable turn MUST compile a `WorkOrder` with:
+Every executable or prospectively prepared unit of delegated work MUST compile
+a `WorkOrder` with:
 
 - `goal`
 - `done_contract`
@@ -36,19 +39,26 @@ Every executable turn MUST compile a `WorkOrder` with:
 - `risk_class`
 - `output_schema`
 - `work_quality_mode`
+- `origin`
+- `authority`
+
+`origin.kind` distinguishes `explicit`, `triggered`, and `anticipated`.
+The authority object records the independent basis under which execution may
+occur. Prediction confidence is not an authority field.
+
+For `anticipated` work, the WorkOrder MUST additionally preserve the
+anticipation provenance defined by `ANTICIPATED-WORKORDER-01`, including
+prediction basis, confidence, workflow-template reference when applicable,
+predicted steps, and competing objective hypotheses when they could materially
+change risk, tools, or effects.
 
 For `audit_grade` work, the Work Order MUST additionally carry:
 
-- `evidence_scope`: sources, refs, paths, time windows, artifacts, and explicit
-  exclusions.
-- `search_strategy`: the planned coverage pattern, including branches, repos,
-  PRs/issues, logs, local/remote deltas, or other relevant surfaces.
-- `negative_claim_policy`: how absence-of-evidence claims may be phrased.
-- `claim_strength_target`: the strongest claim the current scope can support.
-- `missing_evidence_plan`: what remains unchecked and what would close the
-  loop.
-- `audit_sticky`: whether audit-grade mode persists across follow-up turns.
+- `evidence_scope`
+- `search_strategy`
+- `negative_claim_policy`
+- `claim_strength_target`
+- `missing_evidence_plan`
+- `audit_sticky`
 
-The Work Order is the canonical pre-execution object. Downstream components may
-store summarized or referenced forms, but the logical object MUST preserve all
-of the fields above.
+The WorkOrder remains the canonical pre-execution object.
