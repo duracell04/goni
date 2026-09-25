@@ -1,0 +1,6 @@
+id: SRC-INAN2023-LLAMA-GUARD
+title: inan2023-llama-guard
+kind: academic
+citation: "Inan, Hakan et al. (2023). Llama Guard: LLM-based Input-Output Safeguard for Human-AI Conversations. arXiv:2312.06674."
+url: https://arxiv.org/abs/2312.06674
+notes: "Introduces an LLM-based safeguard specialized for prompt and response classification under configurable safety taxonomies, illustrating a domain-specific guard/classifier role rather than a general assistant role."

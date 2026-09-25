@@ -1,0 +1,6 @@
+id: SRC-GOOGLE-SHIELDGEMMA-MODEL-CARD
+title: google-shieldgemma-model-card
+kind: web
+citation: "Google. ShieldGemma model card."
+url: https://ai.google.dev/gemma/docs/shieldgemma/model_card
+notes: "Primary model card describing ShieldGemma as safety content-moderation models built on Gemma 2 for four harm categories, with policy-conditioned text classification behavior and reported evaluation guidance."
