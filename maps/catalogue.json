@@ -1,6 +1,10 @@
 {
   "aliases": [
     {
+      "alias": "2026 agent governance landscape",
+      "node": "DELEGATION-NEIGHBOR-MAP-2026-01"
+    },
+    {
       "alias": "ADR-TEMPLATE",
       "node": "ADR-XXXX"
     },
@@ -277,6 +281,10 @@
       "node": "INTERFACE-MODEL-01"
     },
     {
+      "alias": "accountability chain",
+      "node": "DELEG-RESPONSIBILITY-01"
+    },
+    {
       "alias": "agent ontology",
       "node": "AGENT-ONTOLOGY-01"
     },
@@ -301,8 +309,20 @@
       "node": "AUDIT-RUNTIME-01"
     },
     {
+      "alias": "authority attenuation",
+      "node": "DELEG-AUTHORITY-01"
+    },
+    {
+      "alias": "authority confusion",
+      "node": "CONFUSED-DEPUTY-AI-01"
+    },
+    {
       "alias": "authority-state-is-not-a-cache",
       "node": "GONI-DECISION-9AF49466170D"
+    },
+    {
+      "alias": "autonomy vector",
+      "node": "AUTON-VECTOR-01"
     },
     {
       "alias": "belief state",
@@ -315,6 +335,26 @@
     {
       "alias": "credential broker",
       "node": "CRED-BROKER-01"
+    },
+    {
+      "alias": "delegated authority conservation",
+      "node": "DELEG-AUTHORITY-01"
+    },
+    {
+      "alias": "delegation agency costs",
+      "node": "DELEG-AGENCY-01"
+    },
+    {
+      "alias": "delegation grant",
+      "node": "DELEG-MODEL-01"
+    },
+    {
+      "alias": "delegation neighbor map",
+      "node": "DELEGATION-NEIGHBOR-MAP-2026-01"
+    },
+    {
+      "alias": "delegation object",
+      "node": "DELEG-MODEL-01"
     },
     {
       "alias": "delegation runtime state machine",
@@ -333,12 +373,20 @@
       "node": "TOOL-EFFECT-01"
     },
     {
+      "alias": "functional autonomy corridor",
+      "node": "AUTON-VECTOR-01"
+    },
+    {
       "alias": "governed self-evolution",
       "node": "ADAPTATION-LEVELS-01"
     },
     {
       "alias": "grammar-constrained tool generation",
       "node": "STRUCT-OUT-01"
+    },
+    {
+      "alias": "human-to-ai delegation theory",
+      "node": "DELEGATION-THEORY-MAP-01"
     },
     {
       "alias": "instruction data boundary",
@@ -381,8 +429,24 @@
       "node": "AGENT-STATE-01"
     },
     {
+      "alias": "principal-agent lens",
+      "node": "DELEG-AGENCY-01"
+    },
+    {
+      "alias": "replaceable harness boundary",
+      "node": "HARNESS-BOUNDARY-01"
+    },
+    {
+      "alias": "responsibility lineage",
+      "node": "DELEG-RESPONSIBILITY-01"
+    },
+    {
       "alias": "scoped credential grant",
       "node": "CRED-BROKER-01"
+    },
+    {
+      "alias": "semantic confused deputy",
+      "node": "CONFUSED-DEPUTY-AI-01"
     },
     {
       "alias": "semantic page fault",
@@ -399,6 +463,14 @@
     {
       "alias": "smallest sufficient governance",
       "node": "MSC-01"
+    },
+    {
+      "alias": "sovereign delegation academic map",
+      "node": "DELEGATION-THEORY-MAP-01"
+    },
+    {
+      "alias": "sovereign harness boundary",
+      "node": "HARNESS-BOUNDARY-01"
     },
     {
       "alias": "structured output boundary",
@@ -427,6 +499,10 @@
   ],
   "indexes": {
     "by_domain": {
+      "accountability": [
+        "DELEG-RESPONSIBILITY-01",
+        "EVID-DELEGATION-RESPONSIBILITY-01"
+      ],
       "agent": [
         "AGENT-DEF-01",
         "AGENT-MANIFEST-01",
@@ -586,11 +662,13 @@
         "AGENT-SYSTEMS-MAP-01",
         "AGENTICNESS-01",
         "EVID-A2A-INTEROPERABILITY-01",
+        "EVID-AGENT-OPERATING-SYSTEMS-2026-01",
         "EVID-AGENTIC-LLM-TAXONOMY-01",
         "EVID-AGENTIC-RL-POMDP-01",
         "EVID-COMPUTE-NORMALIZED-MULTIAGENT-01",
         "EVID-CONTINUAL-EXPERIENCE-COLLAPSE-01",
         "EVID-OSWORLD2-LONG-HORIZON-01",
+        "EVID-PI-MINIMAL-HARNESS-01",
         "EVID-REACT-AGENT-LOOP-01",
         "EVID-SELF-EVOLVING-TAXONOMY-01",
         "EVID-WORLD-MODEL-INTERMEDIARY-01",
@@ -614,12 +692,18 @@
         "EVID-AUDITABLE-AGENTS-01"
       ],
       "authority": [
+        "CONFUSED-DEPUTY-AI-01",
+        "DELEG-AUTHORITY-01",
+        "DELEG-MODEL-01",
+        "EVID-CONFUSED-DEPUTY-01",
+        "EVID-DELEGATION-SCOPE-ATTENUATION-01",
         "GONI-SYNTHESIS-83E91B709969",
         "GONI-THESIS-18044634B6FC",
         "TOOL-EFFECT-01",
         "TRUST-INPUT-01"
       ],
       "autonomy": [
+        "AUTON-VECTOR-01",
         "MSC-01"
       ],
       "billing": [
@@ -630,6 +714,7 @@
         "GONI-PROPOSAL-9D10D978BDC3"
       ],
       "context": [
+        "CONFUSED-DEPUTY-AI-01",
         "CONV-INGEST-01",
         "CTX-LIFE-01",
         "EVID-CONTEXT-ENGINEERING-TAXONOMY-01",
@@ -749,7 +834,21 @@
         "ZCO-01"
       ],
       "delegation": [
+        "AUTON-VECTOR-01",
+        "CONFUSED-DEPUTY-AI-01",
+        "DELEG-AGENCY-01",
+        "DELEG-AUTHORITY-01",
         "DELEG-INT-01",
+        "DELEG-MODEL-01",
+        "DELEG-RESPONSIBILITY-01",
+        "DELEGATION-NEIGHBOR-MAP-2026-01",
+        "DELEGATION-THEORY-MAP-01",
+        "EVID-AGENCY-COSTS-01",
+        "EVID-AUTOMATION-TYPES-01",
+        "EVID-DELEGATION-OBSERVABILITY-01",
+        "EVID-DELEGATION-RESPONSIBILITY-01",
+        "EVID-DELEGATION-SCOPE-ATTENUATION-01",
+        "HARNESS-BOUNDARY-01",
         "MSC-01"
       ],
       "evaluation": [
@@ -773,6 +872,11 @@
       ],
       "governance": [
         "ADAPTATION-LEVELS-01",
+        "DELEG-AGENCY-01",
+        "DELEG-RESPONSIBILITY-01",
+        "DELEGATION-THEORY-MAP-01",
+        "EVID-AGENCY-COSTS-01",
+        "EVID-DELEGATION-OBSERVABILITY-01",
         "MSC-01"
       ],
       "hardware": [
@@ -942,11 +1046,17 @@
         "SOV-EFF-01"
       ],
       "harness": [
+        "EVID-PI-MINIMAL-HARNESS-01",
+        "HARNESS-BOUNDARY-01",
         "HARNESS-PORT-01",
         "HARNESS-RUNTIME-01",
         "INSTR-REP-01",
         "STRUCT-OUT-01",
         "TOOL-SURFACE-01"
+      ],
+      "hci": [
+        "AUTON-VECTOR-01",
+        "EVID-AUTOMATION-TYPES-01"
       ],
       "inference": [
         "ATTN-LOCAL-01",
@@ -977,6 +1087,7 @@
       "kernel": [
         "CACHE-01",
         "CRED-BROKER-01",
+        "DELEG-AUTHORITY-01",
         "GONI-DECISION-5346D37FC858",
         "GONI-DECISION-9AF49466170D",
         "GONI-EVIDENCE-55CFEAFCBF16",
@@ -1070,6 +1181,7 @@
         "GONI-SYNTHESIS-BD7FD2CC38AF",
         "GONI-SYNTHESIS-CC4921DED1BB",
         "GONI-SYNTHESIS-DF627E719B9D",
+        "HARNESS-BOUNDARY-01",
         "HARNESS-RUNTIME-01",
         "SPEC-ENF-01",
         "SPEC-KERN-01",
@@ -1087,6 +1199,7 @@
       ],
       "market": [
         "AI-MEDIA-PROVENANCE",
+        "DELEGATION-NEIGHBOR-MAP-2026-01",
         "FIRST-PARTY-LLM-CHATS",
         "GONI-DECISION-1A750217A0DF",
         "GONI-EXPERIMENT-5EC52FDC4B47",
@@ -1438,6 +1551,9 @@
       "provenance": [
         "AUDIT-RUNTIME-01",
         "EVID-AUDITABLE-AGENTS-01"
+      ],
+      "receipts": [
+        "DELEG-RESPONSIBILITY-01"
       ],
       "reliability": [
         "EVID-TAUBENCH-RELIABILITY-01"
@@ -1956,21 +2072,35 @@
         "AGENT-STATE-01",
         "AGENT-SYSTEMS-MAP-01",
         "ATTN-LOCAL-01",
+        "DELEG-AGENCY-01",
+        "DELEGATION-NEIGHBOR-MAP-2026-01",
+        "DELEGATION-THEORY-MAP-01",
         "EVID-A2A-INTEROPERABILITY-01",
+        "EVID-AGENCY-COSTS-01",
         "EVID-AGENT-MEMORY-DYNAMICS-01",
+        "EVID-AGENT-OPERATING-SYSTEMS-2026-01",
         "EVID-AGENTDOJO-UNTRUSTED-DATA-01",
         "EVID-AGENTIC-LLM-TAXONOMY-01",
         "EVID-AGENTIC-RL-POMDP-01",
+        "EVID-AGENTKERNEL-2026-01",
         "EVID-AUDITABLE-AGENTS-01",
+        "EVID-AUTOMATION-TYPES-01",
         "EVID-BFCL-TOOL-CALLING-01",
         "EVID-COMPUTE-NORMALIZED-MULTIAGENT-01",
+        "EVID-CONFUSED-DEPUTY-01",
         "EVID-CONTEXT-ENGINEERING-TAXONOMY-01",
         "EVID-CONTINUAL-EXPERIENCE-COLLAPSE-01",
+        "EVID-DELEGATION-OBSERVABILITY-01",
+        "EVID-DELEGATION-RESPONSIBILITY-01",
+        "EVID-DELEGATION-SCOPE-ATTENUATION-01",
         "EVID-INSTRUCTION-HIERARCHY-01",
         "EVID-JSONSCHEMABENCH-01",
         "EVID-MCP-SEMANTICS-01",
+        "EVID-MINISCOPE-01",
         "EVID-NEGATED-PROMPTS-01",
         "EVID-OSWORLD2-LONG-HORIZON-01",
+        "EVID-PI-MINIMAL-HARNESS-01",
+        "EVID-PROGENT-01",
         "EVID-REACT-AGENT-LOOP-01",
         "EVID-SAFE-TOOL-USE-01",
         "EVID-SELF-EVOLVING-TAXONOMY-01",
@@ -2110,7 +2240,13 @@
         "CTX-LIFE-01"
       ],
       "security": [
+        "CONFUSED-DEPUTY-AI-01",
         "CRED-BROKER-01",
+        "DELEG-AUTHORITY-01",
+        "EVID-AGENTKERNEL-2026-01",
+        "EVID-CONFUSED-DEPUTY-01",
+        "EVID-MINISCOPE-01",
+        "EVID-PROGENT-01",
         "GONI-DECISION-9AF49466170D",
         "GONI-PROPOSAL-05B21F15B3C6",
         "GONI-PROPOSAL-7BFF3F4092F3",
@@ -2468,6 +2604,7 @@
         "AGENT-DEF-01",
         "AGENT-MANIFEST-01",
         "AGENT-STORE-01",
+        "AUTON-VECTOR-01",
         "BILL-01",
         "BILL-02",
         "BOUND-01",
@@ -2481,6 +2618,7 @@
         "DAT-01",
         "DELEG-01",
         "DELEG-INT-01",
+        "DELEG-MODEL-01",
         "GONI-DECISION-0A6C9EA70AEE",
         "GONI-DECISION-185DD72D6912",
         "GONI-DECISION-2AC300CCAF72",
@@ -2917,6 +3055,11 @@
         "AGENT-SYSTEMS-MAP-01",
         "AGENTICNESS-01",
         "AUDIT-RUNTIME-01",
+        "DELEG-MODEL-01",
+        "DELEGATION-NEIGHBOR-MAP-2026-01",
+        "DELEGATION-THEORY-MAP-01",
+        "EVID-AGENT-OPERATING-SYSTEMS-2026-01",
+        "EVID-AGENTKERNEL-2026-01",
         "GONI-DECISION-9AF49466170D",
         "GONI-EXPERIMENT-0A1F9BC4014A",
         "GONI-EXPERIMENT-5ADAC18F09F9",
@@ -3018,6 +3161,7 @@
         "GONI-SYNTHESIS-F3DC36FB8C4B",
         "GONI-SYNTHESIS-FF1804B9EA23",
         "GONI-SYNTHESIS-FFFD0BDE80BE",
+        "HARNESS-BOUNDARY-01",
         "HARNESS-RUNTIME-01",
         "INTERFACE-MODEL-01",
         "INTERFACE-SELECTION-01",
@@ -3039,6 +3183,8 @@
         "EVID-AGENTDOJO-UNTRUSTED-DATA-01",
         "EVID-BFCL-TOOL-CALLING-01",
         "EVID-MCP-SEMANTICS-01",
+        "EVID-MINISCOPE-01",
+        "EVID-PROGENT-01",
         "EVID-SAFE-TOOL-USE-01",
         "EVID-TOOLFORMER-TOOL-SELECTION-01",
         "EVID-TOOLSANDBOX-STATEFUL-EVAL-01",
@@ -3088,6 +3234,7 @@
         "API-SURFACE",
         "ATTN-LOCAL-01",
         "AUDIT-RUNTIME-01",
+        "AUTON-VECTOR-01",
         "AXIOMS-01",
         "BILL-01",
         "BILL-02",
@@ -3099,6 +3246,7 @@
         "CDC-01",
         "CGG-01",
         "CI-VALIDATION-01",
+        "CONFUSED-DEPUTY-AI-01",
         "CONV-INGEST-01",
         "CRDT-AUDIT-01",
         "CRDT-DECISIONS-01",
@@ -3111,16 +3259,26 @@
         "DASHBOARD-CONCEPTS",
         "DAT-01",
         "DELEG-01",
+        "DELEG-AGENCY-01",
+        "DELEG-AUTHORITY-01",
         "DELEG-INT-01",
+        "DELEG-MODEL-01",
+        "DELEG-RESPONSIBILITY-01",
+        "DELEGATION-NEIGHBOR-MAP-2026-01",
+        "DELEGATION-THEORY-MAP-01",
         "DOCTRINE-DELEG-01",
         "ENCLOSURE-NOTES",
         "EVAL-README-00",
         "EVID-A2A-INTEROPERABILITY-01",
+        "EVID-AGENCY-COSTS-01",
         "EVID-AGENT-MEMORY-DYNAMICS-01",
+        "EVID-AGENT-OPERATING-SYSTEMS-2026-01",
         "EVID-AGENTDOJO-UNTRUSTED-DATA-01",
         "EVID-AGENTIC-LLM-TAXONOMY-01",
         "EVID-AGENTIC-RL-POMDP-01",
+        "EVID-AGENTKERNEL-2026-01",
         "EVID-AUDITABLE-AGENTS-01",
+        "EVID-AUTOMATION-TYPES-01",
         "EVID-AUTON-01",
         "EVID-AUTON-02",
         "EVID-AUTON-03",
@@ -3133,10 +3291,14 @@
         "EVID-BUDGET-01",
         "EVID-BUDGET-02",
         "EVID-COMPUTE-NORMALIZED-MULTIAGENT-01",
+        "EVID-CONFUSED-DEPUTY-01",
         "EVID-CONTEXT-ENGINEERING-TAXONOMY-01",
         "EVID-CONTINUAL-EXPERIENCE-COLLAPSE-01",
         "EVID-COST-01",
         "EVID-COST-02",
+        "EVID-DELEGATION-OBSERVABILITY-01",
+        "EVID-DELEGATION-RESPONSIBILITY-01",
+        "EVID-DELEGATION-SCOPE-ATTENUATION-01",
         "EVID-DESK-01",
         "EVID-ENF-01",
         "EVID-HARNESS-01",
@@ -3148,8 +3310,11 @@
         "EVID-LONGCTX-02",
         "EVID-LONGCTX-03",
         "EVID-MCP-SEMANTICS-01",
+        "EVID-MINISCOPE-01",
         "EVID-NEGATED-PROMPTS-01",
         "EVID-OSWORLD2-LONG-HORIZON-01",
+        "EVID-PI-MINIMAL-HARNESS-01",
+        "EVID-PROGENT-01",
         "EVID-REACT-AGENT-LOOP-01",
         "EVID-ROUTE-01",
         "EVID-SAFE-TOOL-USE-01",
@@ -4994,6 +5159,7 @@
         "GONI-THESIS-F782C616C259",
         "GONI-WHITEPAPER",
         "GOV-00",
+        "HARNESS-BOUNDARY-01",
         "HARNESS-PORT-01",
         "HARNESS-RUNTIME-01",
         "HREQ-01",
@@ -5184,20 +5350,31 @@
       ],
       "evidence": [
         "EVID-A2A-INTEROPERABILITY-01",
+        "EVID-AGENCY-COSTS-01",
         "EVID-AGENT-MEMORY-DYNAMICS-01",
+        "EVID-AGENT-OPERATING-SYSTEMS-2026-01",
         "EVID-AGENTDOJO-UNTRUSTED-DATA-01",
         "EVID-AGENTIC-LLM-TAXONOMY-01",
         "EVID-AGENTIC-RL-POMDP-01",
+        "EVID-AGENTKERNEL-2026-01",
         "EVID-AUDITABLE-AGENTS-01",
+        "EVID-AUTOMATION-TYPES-01",
         "EVID-BFCL-TOOL-CALLING-01",
         "EVID-COMPUTE-NORMALIZED-MULTIAGENT-01",
+        "EVID-CONFUSED-DEPUTY-01",
         "EVID-CONTEXT-ENGINEERING-TAXONOMY-01",
         "EVID-CONTINUAL-EXPERIENCE-COLLAPSE-01",
+        "EVID-DELEGATION-OBSERVABILITY-01",
+        "EVID-DELEGATION-RESPONSIBILITY-01",
+        "EVID-DELEGATION-SCOPE-ATTENUATION-01",
         "EVID-INSTRUCTION-HIERARCHY-01",
         "EVID-JSONSCHEMABENCH-01",
         "EVID-MCP-SEMANTICS-01",
+        "EVID-MINISCOPE-01",
         "EVID-NEGATED-PROMPTS-01",
         "EVID-OSWORLD2-LONG-HORIZON-01",
+        "EVID-PI-MINIMAL-HARNESS-01",
+        "EVID-PROGENT-01",
         "EVID-REACT-AGENT-LOOP-01",
         "EVID-SAFE-TOOL-USE-01",
         "EVID-SELF-EVOLVING-TAXONOMY-01",
@@ -5868,6 +6045,7 @@
         "AXIOMS-01",
         "CACHE-01",
         "CTX-STATE-01",
+        "DELEG-AUTHORITY-01",
         "DOCTRINE-DELEG-01",
         "GONI-PRINCIPLE-0147896F31C8",
         "GONI-PRINCIPLE-0F5A00F69914",
@@ -5922,6 +6100,7 @@
         "GONI-PRINCIPLE-MODEL-ADAPTER-01",
         "GONI-PRINCIPLE-SYS-CAP-01",
         "GONI-PRINCIPLE-VER-EVID-01",
+        "HARNESS-BOUNDARY-01",
         "INSTR-REP-01",
         "INTERFACE-SELECTION-01",
         "MSC-01",
@@ -6103,6 +6282,7 @@
         "AGENT-DEF-01",
         "AGENT-MANIFEST-01",
         "AGENT-STORE-01",
+        "AUTON-VECTOR-01",
         "BILL-01",
         "BILL-02",
         "BOUND-01",
@@ -6118,6 +6298,7 @@
         "DAT-01",
         "DELEG-01",
         "DELEG-INT-01",
+        "DELEG-MODEL-01",
         "GONI-SPEC-0010B69A98F0",
         "GONI-SPEC-00702E19937B",
         "GONI-SPEC-009C1109395A",
@@ -6578,6 +6759,11 @@
         "AGENT-SYSTEMS-MAP-01",
         "ATTN-LOCAL-01",
         "AUDIT-RUNTIME-01",
+        "CONFUSED-DEPUTY-AI-01",
+        "DELEG-AGENCY-01",
+        "DELEG-RESPONSIBILITY-01",
+        "DELEGATION-NEIGHBOR-MAP-2026-01",
+        "DELEGATION-THEORY-MAP-01",
         "GONI-AGILITY-RULES",
         "GONI-STORY",
         "GONI-SWOT",
@@ -11364,6 +11550,47 @@
       "uncertainty": "This node maps an external auditability taxonomy onto Goni's receipt doctrine; full compliance with each dimension requires workflow-specific evidence and is not claimed by specification alone."
     },
     {
+      "aliases": [
+        "autonomy vector",
+        "functional autonomy corridor"
+      ],
+      "artifacts": [],
+      "body": "# Multidimensional autonomy corridor\n\nA single label such as `manual`, `assist`, or `autonomous` is too coarse for persistent delegated agents.\n\nGoni SHOULD represent an autonomy corridor as a vector over distinct functions:\n\n[\nA=(a_o,a_a,a_d,a_e,a_p,a_s)\n]\n\nwhere:\n\n- (a_o): **observation** — authority to acquire permitted information;\n- (a_a): **analysis** — authority to infer, classify, summarize, and plan;\n- (a_d): **decision selection** — authority to choose among materially different courses of action;\n- (a_e): **execution** — authority to cause external or durable effects;\n- (a_p): **persistence** — authority to create or modify durable memory, policy-relevant state, or recurring behavior;\n- (a_s): **subdelegation** — authority to delegate bounded work or capabilities to another worker.\n\nEach dimension can have its own scope, conditions, budget, approval threshold, and verification requirements.\n\nExample:\n\n[\nA=(high,high,medium,low,low,none)\n]\n\ncould permit autonomous observation and analysis, bounded recommendation selection, approval-gated execution and persistence, and zero subdelegation.\n\nThis model preserves mixed initiative while making the authority surface explicit enough for policy and receipt systems to reason about it.",
+      "domains": [
+        "delegation",
+        "autonomy",
+        "hci",
+        "specs"
+      ],
+      "id": "AUTON-VECTOR-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/specifications/auton-vector-01-multidimensional-autonomy-corridor.md",
+      "proposition": "Autonomy should be represented as function-specific delegated authority across observation, analysis, decision selection, execution, persistence, and subdelegation rather than as one global scalar or mode.",
+      "relations": [
+        {
+          "target": "AGENTICNESS-01",
+          "type": "refines"
+        },
+        {
+          "target": "DELEG-MODEL-01",
+          "type": "depends_on"
+        },
+        {
+          "target": "EVID-AUTOMATION-TYPES-01",
+          "type": "synthesizes"
+        }
+      ],
+      "sources": [
+        "SRC-PARASURAMAN2000-AUTOMATION-LEVELS",
+        "SRC-HORVITZ1999-MIXED-INITIATIVE"
+      ],
+      "status": "draft",
+      "title": "Multidimensional autonomy corridor",
+      "type": "specification",
+      "uncertainty": "The dimensions are a Goni extension of classical automation taxonomies and require task-specific calibration; they are not asserted to be the uniquely correct decomposition."
+    },
+    {
       "aliases": [],
       "artifacts": [],
       "body": "# 10 Axioms And Planes\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n﻿# 10 – Axioms & Planes (Arrow Spine Constitution)\nDOC-ID: AXIOMS-01\n**Version:** v1.0 (2027-04-01)\n**Status:** Normative, CI-enforced",
@@ -11664,6 +11891,48 @@
       "title": "80 – Validation & CI",
       "type": "implementation-map",
       "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
+    },
+    {
+      "aliases": [
+        "semantic confused deputy",
+        "authority confusion"
+      ],
+      "artifacts": [],
+      "body": "# Authority provenance and the confused-deputy pattern\n\nA delegated agent can legitimately possess authority from a principal while simultaneously reading instructions, requests, documents, web pages, tool results, or messages produced by other actors.\n\nThe security question is therefore not only whether content is malicious. It is:\n\n> **Under whose authority would the requested effect occur?**\n\nGoni should preserve two separate provenance channels:\n\n[\ninformation\\ provenance \\neq authority\\ provenance\n]\n\nExternal content can change beliefs about the world. It cannot by itself promote its author into an authority source or widen the active delegation.\n\nThis connects Goni's prompt-injection posture to classical capability security: the kernel authorizes effects according to the valid delegation and current policy state, while model context remains an information environment whose contents carry explicitly classified trust.",
+      "domains": [
+        "security",
+        "authority",
+        "context",
+        "delegation"
+      ],
+      "id": "CONFUSED-DEPUTY-AI-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/syntheses/confused-deputy-ai-01-authority-provenance-and-prompt-injection.md",
+      "proposition": "Prompt injection and untrusted tool or document content can be analyzed partly as authority-confusion failures: data may influence cognition but must not acquire the authority of the principal, policy layer, or capability issuer merely by entering model context.",
+      "relations": [
+        {
+          "target": "EVID-CONFUSED-DEPUTY-01",
+          "type": "synthesizes"
+        },
+        {
+          "target": "TRUST-INPUT-01",
+          "type": "refines"
+        },
+        {
+          "target": "DELEG-AUTHORITY-01",
+          "type": "depends_on"
+        }
+      ],
+      "sources": [
+        "SRC-HARDY1988-CONFUSED-DEPUTY",
+        "SRC-DEBENEDETTI2024-AGENTDOJO",
+        "SRC-DOSHI2026-SAFE-TOOL-USE"
+      ],
+      "status": "draft",
+      "title": "Authority provenance and the confused-deputy pattern",
+      "type": "synthesis",
+      "uncertainty": "Confused-deputy analysis explains one important authority-confusion structure but does not subsume every prompt-injection, data-poisoning, or adversarial-content failure."
     },
     {
       "aliases": [
@@ -12026,6 +12295,82 @@
     },
     {
       "aliases": [
+        "principal-agent lens",
+        "delegation agency costs"
+      ],
+      "artifacts": [],
+      "body": "# Delegation as an agency-cost and observability problem\n\nGoni can be interpreted as infrastructure for reducing the total cost of useful delegated digital agency.\n\nA provider-agnostic cost decomposition is:\n\n[\nC_D=C_{spec}+C_{monitor}+C_{verify}+C_{error}+C_{interrupt}+C_{govern}\n]\n\nwhere:\n\n- (C_{spec}) is the cost of expressing objectives, constraints, and authority;\n- (C_{monitor}) is the cost of observing delegated execution;\n- (C_{verify}) is the cost of establishing whether outcomes satisfy the contract;\n- (C_{error}) is expected residual loss from incorrect or unauthorized behavior;\n- (C_{interrupt}) is the cost of unnecessary principal attention;\n- (C_{govern}) is the operational cost of policy, identity, capability, receipt, and revocation infrastructure.\n\nThis reframes the product objective. Maximum autonomy is not the target. Minimum intervention is not the target. Maximum verification is not the target.\n\nThe target is **useful delegation at the lowest total governance cost compatible with principal sovereignty and consequence-sensitive assurance**.\n\nObservability changes the optimum. When effects are reversible and postconditions are cheaply observable, the system can rationally allow wider execution corridors. When effects are opaque, irreversible, high-consequence, or difficult to verify, the same cognitive capability may justify a narrower authority corridor.",
+      "domains": [
+        "research",
+        "delegation",
+        "governance"
+      ],
+      "id": "DELEG-AGENCY-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/syntheses/deleg-agency-01-principal-agent-costs-and-observability.md",
+      "proposition": "Persistent AI delegation can be analyzed as a principal-delegate governance problem in which specification, monitoring, verification, residual error, interruption, and governance costs must be minimized without assuming that artificial delegates possess the incentive structure of human agents.",
+      "relations": [
+        {
+          "target": "EVID-AGENCY-COSTS-01",
+          "type": "synthesizes"
+        },
+        {
+          "target": "EVID-DELEGATION-OBSERVABILITY-01",
+          "type": "synthesizes"
+        },
+        {
+          "target": "GONI-SYNTHESIS-FFFD0BDE80BE",
+          "type": "refines"
+        }
+      ],
+      "sources": [
+        "SRC-JENSEN1976-AGENCY-COSTS",
+        "SRC-HOLMSTROM1979-OBSERVABILITY"
+      ],
+      "status": "draft",
+      "title": "Delegation as an agency-cost and observability problem",
+      "type": "synthesis",
+      "uncertainty": "Classical principal-agent theory assumes incentive structures that need not apply to artificial delegates. Goni imports the delegation, observability, monitoring, and residual-loss lens rather than a claim of full economic equivalence."
+    },
+    {
+      "aliases": [
+        "authority attenuation",
+        "delegated authority conservation"
+      ],
+      "artifacts": [],
+      "body": "# Authority conservation and attenuation\n\nFor a single valid delegation lineage, Goni should preserve:\n\n[\nA_{downstream}subseteq A_{upstream}subseteq A_{principal}\n]\n\nA downstream agent, subprocess, model, harness, tool, or delegated worker cannot gain broader authority merely because it is more capable, because a workflow decomposes, or because another component exposes additional tools.\n\nAuthority expansion requires a new valid authorization event from an authority source permitted to grant that expansion.\n\nThis principle separates **delegation** from **capability discovery**:\n\n- discovering a tool does not grant permission to use it;\n- retrieving information does not grant authority to act on it;\n- a stronger model does not inherit a wider corridor;\n- delegation to another worker does not silently amplify scope;\n- retries and replanning do not renew expired or revoked authority.\n\nWhere multiple grants compose, the kernel must apply an explicit composition rule and preserve each contributing authority lineage.",
+      "domains": [
+        "delegation",
+        "authority",
+        "security",
+        "kernel"
+      ],
+      "id": "DELEG-AUTHORITY-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/principles/deleg-authority-01-authority-conservation-and-attenuation.md",
+      "proposition": "Delegated authority may remain equal to or narrower than the valid authority inherited from its upstream grant, while any expansion requires a fresh valid authorization path from an authority source permitted to grant it.",
+      "relations": [
+        {
+          "target": "GONI-SYNTHESIS-DF627E719B9D",
+          "type": "refines"
+        },
+        {
+          "target": "DELEG-MODEL-01",
+          "type": "depends_on"
+        }
+      ],
+      "sources": [
+        "SRC-IBRAHIM2026-OVERLAY-GOVERNANCE"
+      ],
+      "status": "draft",
+      "title": "Authority conservation and attenuation",
+      "type": "principle",
+      "uncertainty": "Real systems may combine several independent grants; the subset relation applies per effective authorization derivation and requires an explicit composition rule when multiple principals or grants are involved."
+    },
+    {
+      "aliases": [
         "DELEGATION-INTERFACE"
       ],
       "artifacts": [],
@@ -12073,6 +12418,220 @@
       "title": "DELEG-INT-01 - Delegation Interface",
       "type": "specification",
       "uncertainty": "This specifies target orchestration behavior. Gap-value estimation, model capability profiles, interruption costs, council thresholds, and compiler policies remain uncalibrated and unimplemented unless separately evidenced."
+    },
+    {
+      "aliases": [
+        "delegation object",
+        "delegation grant"
+      ],
+      "artifacts": [],
+      "body": "# Canonical delegation object\n\nGoni treats **delegation** as the root relationship connecting human intent to authorized digital action.\n\nA delegation object SHOULD bind at least:\n\n- **principal**: the authority source;\n- **delegate**: the actor or runtime receiving bounded authority;\n- **objective**: the outcome or task class for which authority is granted;\n- **authority envelope**: permitted operations and resources;\n- **constraints**: invariants, exclusions, policy conditions, and preconditions;\n- **budgets**: bounded calls, time, spend, data, or other scarce resources;\n- **validity**: start, expiry, event conditions, and state assumptions;\n- **observability requirements**: what state must be inspectable before, during, or after execution;\n- **verification requirements**: evidence required to accept consequential results;\n- **revocation**: how the grant can be withdrawn or invalidated;\n- **accountability requirements**: receipt and attribution fields needed to reconstruct the delegation chain.\n\nThe compact abstraction is:\n\n[\nD=(P,G,O,A,C,B,T,V,Q,R)\n]\n\nwhere (P) is principal, (G) delegate, (O) objective, (A) authority, (C) constraints, (B) budgets, (T) temporal/state validity, (V) observability and verification requirements, (Q) revocation semantics, and (R) accountability requirements.\n\n## Invariants\n\n1. **Explicit source** — authority derives from an identifiable principal grant, not from model confidence, context inclusion, tool visibility, or provider capability.\n2. **Purpose binding** — an authority envelope is valid only for the objective and conditions under which it was granted.\n3. **Attenuation** — a delegate may preserve or narrow inherited authority; expansion requires a new valid principal authorization path.\n4. **State validity** — authorization is evaluated against current authoritative state rather than stale planning or cached representations.\n5. **Revocability** — future actions become unauthorized when the governing delegation is revoked, expired, superseded, or otherwise invalidated.\n6. **Reconstructability** — consequential execution remains linkable to the delegation, policy decision, capability, effect, observation, verification, and receipt.\n\nWorkOrders describe bounded work. Capabilities describe executable permissions. Policies define governing rules. Receipts reconstruct consequential execution. The delegation object is the higher-level relationship that gives those objects a principal-owned authority lineage.",
+      "domains": [
+        "delegation",
+        "authority",
+        "system",
+        "specs"
+      ],
+      "id": "DELEG-MODEL-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/specifications/deleg-model-01-canonical-delegation-object.md",
+      "proposition": "A delegated relationship should be represented as an explicit principal-to-delegate grant binding objective, authority, constraints, budgets, validity, observability, verification, revocation, and accountability requirements rather than inferred from model context or tool access.",
+      "relations": [
+        {
+          "target": "GONI-THESIS-826C859B5D30",
+          "type": "refines"
+        },
+        {
+          "target": "DELEG-INT-01",
+          "type": "depends_on"
+        },
+        {
+          "target": "GONI-SPEC-4B9D2670E434",
+          "type": "depends_on"
+        }
+      ],
+      "sources": [
+        "SRC-TOMASEV2026-INTELLIGENT-DELEGATION",
+        "SRC-IBRAHIM2026-OVERLAY-GOVERNANCE"
+      ],
+      "status": "draft",
+      "title": "Canonical delegation object",
+      "type": "specification",
+      "uncertainty": "This defines a provider-agnostic semantic contract. Concrete serialization, signatures, storage, and revocation propagation remain implementation questions governed by lower-level specifications."
+    },
+    {
+      "aliases": [
+        "responsibility lineage",
+        "accountability chain"
+      ],
+      "artifacts": [],
+      "body": "# Responsibility lineage under delegated execution\n\nDelegation separates several concepts that should remain distinct:\n\n- **execution** — which component physically or digitally produced the effect;\n- **attribution** — which model, runtime, tool, identity, or external actor participated;\n- **authorization** — which valid authority path permitted the effect;\n- **answerability** — which human or organizational principal must be able to explain the delegation and its governing conditions;\n- **accountability** — which review, remediation, sanction, or correction process applies;\n- **legal or moral responsibility** — a normative conclusion determined outside the technical architecture.\n\nGoni receipts should preserve the technical lineage required to ask these questions:\n\n[\nPrincipal\n\nightarrow Delegation\n\nightarrow WorkOrder\n\nightarrow Capability\n\nightarrow Delegate\n\nightarrow Authorization\n\nightarrow Effect\n\nightarrow Observation\n\nightarrow Verification\n\nightarrow Receipt\n]\n\nThe receipt establishes reconstructable provenance. It does not automatically decide responsibility.",
+      "domains": [
+        "delegation",
+        "accountability",
+        "receipts",
+        "governance"
+      ],
+      "id": "DELEG-RESPONSIBILITY-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/syntheses/deleg-responsibility-01-responsibility-lineage.md",
+      "proposition": "Goni should distinguish execution, attribution, answerability, accountability, and legal or moral responsibility while preserving enough delegation provenance to reconstruct which principal grant, policy decision, delegate, authorization, effect, and verification path produced a consequential outcome.",
+      "relations": [
+        {
+          "target": "GONI-THESIS-E9DC181C1E9A",
+          "type": "refines"
+        },
+        {
+          "target": "DELEG-MODEL-01",
+          "type": "depends_on"
+        },
+        {
+          "target": "EVID-DELEGATION-RESPONSIBILITY-01",
+          "type": "synthesizes"
+        }
+      ],
+      "sources": [
+        "SRC-KONG2026-DELEGATION-RESPONSIBILITY"
+      ],
+      "status": "draft",
+      "title": "Responsibility lineage under delegated execution",
+      "type": "synthesis",
+      "uncertainty": "Technical provenance can support answerability and audit but does not itself settle moral responsibility, legal liability, organizational accountability, or jurisdiction-specific duties."
+    },
+    {
+      "aliases": [
+        "delegation neighbor map",
+        "2026 agent governance landscape"
+      ],
+      "artifacts": [],
+      "body": "# 2026 delegation and agent-governance neighbor map\n\nThe relevant landscape is no longer separated cleanly into \"agents\" and \"operating systems.\"\n\n| Neighbor class | Representative source | Overlap with Goni | Provider-agnostic implication |\n| --- | --- | --- | --- |\n| Agent operating system | Sharma and Shah 2026 | scheduling, context, memory, capability registry, policy, audit | OS framing alone is not sufficient novelty |\n| Trust-native agent kernel | AgentKernel | identity, perception, memory governance, execution control | kernelized governance is an adjacent research direction |\n| Least-privilege tool control | Progent | deterministic privilege enforcement around tool calls | authority can live outside model reasoning |\n| Least-privilege permission hierarchy | MiniScope | bounded tool permissions | tool visibility and tool authority should remain distinct |\n| Minimal agent harness | Pi | models, tools, sessions, skills, extension surface | harnesses can remain replaceable beneath sovereign control |\n\nGoni's strongest differentiating research target is therefore:\n\n> **persistent sovereign human-to-AI delegation across heterogeneous cognitive and execution substrates.**\n\nThe emphasis is the durable principal relationship: goals, identity, memory governance, authority lineage, revocation, accountability, and continuity should survive changes in model, provider, harness, or tool implementation.",
+      "domains": [
+        "research",
+        "system",
+        "delegation",
+        "market"
+      ],
+      "id": "DELEGATION-NEIGHBOR-MAP-2026-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/syntheses/delegation-neighbor-map-2026-01.md",
+      "proposition": "Goni's closest research neighbors increasingly cover agent operating systems, mandatory trust kernels, least-privilege tool authorization, authenticated delegation, and minimal agent harnesses; Goni should therefore position its contribution around persistent sovereign human-to-AI delegation rather than generic agent-OS governance.",
+      "relations": [
+        {
+          "target": "EVID-AGENT-OPERATING-SYSTEMS-2026-01",
+          "type": "synthesizes"
+        },
+        {
+          "target": "EVID-AGENTKERNEL-2026-01",
+          "type": "synthesizes"
+        },
+        {
+          "target": "EVID-PROGENT-01",
+          "type": "synthesizes"
+        },
+        {
+          "target": "EVID-MINISCOPE-01",
+          "type": "synthesizes"
+        },
+        {
+          "target": "EVID-PI-MINIMAL-HARNESS-01",
+          "type": "synthesizes"
+        },
+        {
+          "target": "GONI-SYNTHESIS-8A2FFAA7A328",
+          "type": "refines"
+        }
+      ],
+      "sources": [
+        "SRC-SHARMA2026-AGENT-OPERATING-SYSTEMS",
+        "SRC-ZOU2026-AGENTKERNEL",
+        "SRC-SHI2025-PROGENT",
+        "SRC-ZHU2025-MINISCOPE",
+        "SRC-PI2026-MINIMAL-AGENT-HARNESS"
+      ],
+      "status": "draft",
+      "title": "2026 delegation and agent-governance neighbor map",
+      "type": "synthesis",
+      "uncertainty": "This map reflects reviewed sources available by 2026-09-26 and should be updated as the field changes. It does not rank systems or assert production maturity."
+    },
+    {
+      "aliases": [
+        "sovereign delegation academic map",
+        "human-to-ai delegation theory"
+      ],
+      "artifacts": [],
+      "body": "# Sovereign human-to-AI delegation theory map\n\nGoni's core research object is not the language model or the agent loop. It is the **persistent delegation relationship between a human principal and heterogeneous digital delegates**.\n\nThe academic progression is:\n\n```text\nstructured model cognition\n        ↓\nagentic reasoning and tool use\n        ↓\ncontext, memory, and runtime engineering\n        ↓\ncapability security and authority provenance\n        ↓\nmixed-initiative human automation\n        ↓\nprincipal-delegate governance and observability\n        ↓\naccountability and reconstructable effects\n        ↓\nsovereign human-to-AI delegation\n```\n\nEach lineage answers a different question:\n\n- **reasoning research** asks how models can reach better conclusions;\n- **agent systems** ask how models can maintain state and act over time;\n- **harness engineering** asks how context, tools, models, and feedback are composed;\n- **capability security** asks what authority software possesses and under which provenance;\n- **mixed initiative** asks which functions should be automated and when humans should intervene;\n- **principal-agent theory** contributes a language for delegation costs, monitoring, observability, and residual loss;\n- **auditability research** asks whether consequential trajectories can later be reconstructed and assessed.\n\nGoni combines these around a single invariant:\n\n[\nAuthority_{effective}subseteq Authority_{validly delegated}subseteq Authority_{principal}\n]\n\nThe principal may delegate wide operational freedom, but capability, model strength, provider choice, harness behavior, or subdelegation cannot silently create new authority.\n\n## System consequence\n\nThe provider-agnostic control path is:\n\n```text\nPrincipal intent\n→ Delegation object\n→ WorkOrder / DoneContract\n→ Context + cognitive harness\n→ Proposed action\n→ Kernel authorization against current authoritative state\n→ Capability-scoped effect\n→ Observation\n→ Verification\n→ Receipt\n→ Governed state update\n```\n\nModels reason. Harnesses coordinate cognition. The delegation runtime compiles and manages the work relationship. The kernel authorizes effects. Tools execute. Receipts preserve evidence.\n\n## Research claim discipline\n\nGoni should avoid claiming novelty for individual mechanisms that now have close neighbors: agent kernels, access-control overlays, least-privilege tool policies, agent operating systems, memory systems, and audit architectures.\n\nThe stronger research question is:\n\n> **How can a human delegate persistent digital agency across heterogeneous probabilistic systems while retaining sovereignty over identity, memory, authority, resources, revocation, and consequences?**\n\nThat is the organizing question for future architecture and empirical evaluation.",
+      "domains": [
+        "research",
+        "delegation",
+        "system",
+        "governance"
+      ],
+      "id": "DELEGATION-THEORY-MAP-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/syntheses/delegation-theory-map-01-sovereign-human-to-ai-delegation.md",
+      "proposition": "Goni integrates reasoning research, agent-system engineering, capability security, mixed-initiative interaction, principal-agent governance, and auditability around one persistent human principal whose delegated authority remains bounded, attenuable, revocable, and reconstructable across replaceable AI substrates.",
+      "relations": [
+        {
+          "target": "DELEG-MODEL-01",
+          "type": "synthesizes"
+        },
+        {
+          "target": "DELEG-AUTHORITY-01",
+          "type": "synthesizes"
+        },
+        {
+          "target": "DELEG-AGENCY-01",
+          "type": "synthesizes"
+        },
+        {
+          "target": "DELEG-RESPONSIBILITY-01",
+          "type": "synthesizes"
+        },
+        {
+          "target": "AUTON-VECTOR-01",
+          "type": "synthesizes"
+        },
+        {
+          "target": "CONFUSED-DEPUTY-AI-01",
+          "type": "synthesizes"
+        },
+        {
+          "target": "HARNESS-BOUNDARY-01",
+          "type": "synthesizes"
+        },
+        {
+          "target": "AGENT-SYSTEMS-MAP-01",
+          "type": "synthesizes"
+        },
+        {
+          "target": "AUDIT-RUNTIME-01",
+          "type": "synthesizes"
+        },
+        {
+          "target": "DELEGATION-NEIGHBOR-MAP-2026-01",
+          "type": "synthesizes"
+        },
+        {
+          "target": "GONI-THESIS-98AE2B9284ED",
+          "type": "refines"
+        }
+      ],
+      "sources": [
+        "SRC-JENSEN1976-AGENCY-COSTS",
+        "SRC-HOLMSTROM1979-OBSERVABILITY",
+        "SRC-HARDY1988-CONFUSED-DEPUTY",
+        "SRC-PARASURAMAN2000-AUTOMATION-LEVELS",
+        "SRC-HORVITZ1999-MIXED-INITIATIVE",
+        "SRC-TOMASEV2026-INTELLIGENT-DELEGATION"
+      ],
+      "status": "draft",
+      "title": "Sovereign human-to-AI delegation theory map",
+      "type": "synthesis",
+      "uncertainty": "This is Goni's current synthesis of several established and emerging traditions, not a claim that the combined framing is unique in every component. Novelty should be tested against current literature and implementations."
     },
     {
       "aliases": [],
@@ -12180,6 +12739,34 @@
     {
       "aliases": [],
       "artifacts": [],
+      "body": "# Delegation creates governance and monitoring costs\n\nClassical agency theory provides a useful structural lens for delegated AI: specification, monitoring, verification, residual error, and governance all consume resources. Goni adopts that cost lens without importing the assumption that artificial delegates possess human preferences or legal personality.",
+      "domains": [
+        "research",
+        "delegation",
+        "governance"
+      ],
+      "id": "EVID-AGENCY-COSTS-01",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/evidence/evid-agency-costs-01.md",
+      "proposition": "Jensen and Meckling formalize agency costs arising when decision authority is delegated and the principal bears monitoring, bonding, and residual-loss costs.",
+      "relations": [
+        {
+          "target": "DELEG-INT-01",
+          "type": "supports"
+        }
+      ],
+      "sources": [
+        "SRC-JENSEN1976-AGENCY-COSTS"
+      ],
+      "status": "draft",
+      "title": "Source claim: delegation creates governance and monitoring costs",
+      "type": "evidence",
+      "uncertainty": "Classical agency theory models human and organizational relationships; Goni uses the cost and control lens without assuming AI systems possess human incentives or legal agency."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
       "body": "# Source claim: agent memory is distinct from RAG and has lifecycle dynamics\n\nHu et al. separate agent memory from retrieval-augmented generation and context engineering, then describe memory through its forms, functions, and evolution over time.\n\nFor Goni, the important consequence is that durable memory, current context, retrieval, task state, and an agent's current beliefs should not be collapsed into one chat-history abstraction.",
       "domains": [
         "research",
@@ -12207,6 +12794,34 @@
       "title": "Source claim: agent memory is distinct from RAG and has lifecycle dynamics",
       "type": "evidence",
       "uncertainty": "The survey's taxonomy is descriptive of a fast-moving research field; Goni's canonical memory classes remain governed by its own data and authority contracts."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Agent operating systems now include governance controls\n\nRecent AOS research extends the agent-OS concept beyond scheduling into trust, capability, and audit controls. Goni therefore should not ground novelty merely in adding policy around an agent runtime.",
+      "domains": [
+        "research",
+        "system",
+        "agents"
+      ],
+      "id": "EVID-AGENT-OPERATING-SYSTEMS-2026-01",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/evidence/evid-agent-operating-systems-2026-01.md",
+      "proposition": "Sharma and Shah define an Agent Operating System architecture spanning scheduling, context and memory management, capability registries, policy and trust enforcement, observability, and auditability.",
+      "relations": [
+        {
+          "target": "GONI-SYNTHESIS-8A2FFAA7A328",
+          "type": "supports"
+        }
+      ],
+      "sources": [
+        "SRC-SHARMA2026-AGENT-OPERATING-SYSTEMS"
+      ],
+      "status": "draft",
+      "title": "Source claim: agent operating systems now include policy, trust, and audit control planes",
+      "type": "evidence",
+      "uncertainty": "This is a 2026 research proposal rather than evidence that one canonical Agent Operating System architecture has emerged."
     },
     {
       "aliases": [],
@@ -12294,6 +12909,34 @@
     {
       "aliases": [],
       "artifacts": [],
+      "body": "# AgentKernel proposes mandatory trust enforcement\n\nAgentKernel is a close academic neighbor to Goni's kernel-owned authority thesis. Its existence narrows generic novelty claims around mandatory governance beneath orchestration frameworks.",
+      "domains": [
+        "research",
+        "security",
+        "system"
+      ],
+      "id": "EVID-AGENTKERNEL-2026-01",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/evidence/evid-agentkernel-2026-01.md",
+      "proposition": "Zou et al. propose a mandatory agentic operating-system substrate for identity, perception, memory governance, and execution control beneath orchestration frameworks and agent runtimes.",
+      "relations": [
+        {
+          "target": "GONI-SYNTHESIS-8A2FFAA7A328",
+          "type": "supports"
+        }
+      ],
+      "sources": [
+        "SRC-ZOU2026-AGENTKERNEL"
+      ],
+      "status": "draft",
+      "title": "Source claim: AgentKernel proposes mandatory trust enforcement beneath agent runtimes",
+      "type": "evidence",
+      "uncertainty": "AgentKernel is a recent research architecture; Goni should compare trust-boundary claims and evaluation evidence without assuming equivalence or production maturity."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
       "body": "# Source claim: agent accountability requires auditability\n\nAuditable Agents treats auditability as the system property that makes post-deployment accountability possible.\n\nThe five dimensions provide an academic vocabulary for evaluating whether Goni receipts and provenance support reconstruction rather than merely recording operational logs.",
       "domains": [
         "research",
@@ -12318,6 +12961,34 @@
       "title": "Source claim: agent accountability requires auditability",
       "type": "evidence",
       "uncertainty": "The paper provides a general auditability framework; Goni receipts must still be validated against concrete workflows and adversarial failure modes."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Automation can differ across functions\n\nA system may automate observation and analysis heavily while keeping consequential decision or execution authority narrow. This supports treating autonomy as a vector of delegated functions rather than a single scalar.",
+      "domains": [
+        "research",
+        "delegation",
+        "hci"
+      ],
+      "id": "EVID-AUTOMATION-TYPES-01",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/evidence/evid-automation-types-01.md",
+      "proposition": "Parasuraman, Sheridan, and Wickens separate automation into information acquisition, information analysis, decision/action selection, and action implementation, with independently variable automation levels for each function.",
+      "relations": [
+        {
+          "target": "AGENTICNESS-01",
+          "type": "supports"
+        }
+      ],
+      "sources": [
+        "SRC-PARASURAMAN2000-AUTOMATION-LEVELS"
+      ],
+      "status": "draft",
+      "title": "Source claim: automation can differ by information, analysis, decision, and action function",
+      "type": "evidence",
+      "uncertainty": "Goni extends this human-automation taxonomy with persistent-memory and subdelegation governance specific to long-lived agent systems."
     },
     {
       "aliases": [
@@ -12652,6 +13323,34 @@
     {
       "aliases": [],
       "artifacts": [],
+      "body": "# Authority confusion can cause a deputy to misuse ambient privilege\n\nThe confused-deputy problem demonstrates that legitimate authority can be exercised for the wrong requester or purpose. Delegated AI therefore needs an explicit binding between request provenance and the authority under which an effect is performed.",
+      "domains": [
+        "research",
+        "security",
+        "authority"
+      ],
+      "id": "EVID-CONFUSED-DEPUTY-01",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/evidence/evid-confused-deputy-01.md",
+      "proposition": "Hardy's confused-deputy analysis shows how a program acting for multiple parties can misuse authority when request provenance and authority provenance are not cleanly bound.",
+      "relations": [
+        {
+          "target": "TRUST-INPUT-01",
+          "type": "supports"
+        }
+      ],
+      "sources": [
+        "SRC-HARDY1988-CONFUSED-DEPUTY"
+      ],
+      "status": "draft",
+      "title": "Source claim: authority confusion can cause a deputy to misuse ambient privilege",
+      "type": "evidence",
+      "uncertainty": "Prompt injection is broader than the original confused-deputy problem; this source supports the authority-confusion analogy rather than equating all prompt injection with confused-deputy failures."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
       "body": "# Source claim: context engineering is broader than prompt engineering\n\nMei et al. treat context engineering as a systems discipline that includes retrieval or generation, processing, and management of the information supplied to models.\n\nFor Goni, this supports making RAG one mechanism inside a broader context pipeline rather than a separate maturity stage above or below an agent.",
       "domains": [
         "research",
@@ -12757,6 +13456,90 @@
       "title": "EVID-COST-02 (Deprecated Alias)",
       "type": "experiment",
       "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Observability changes delegated governance\n\nObservability changes what a principal can verify and therefore how delegation can be bounded. For Goni this supports receipt-backed observation and verification rather than model confidence as the evidence basis for consequential action.",
+      "domains": [
+        "research",
+        "delegation",
+        "governance"
+      ],
+      "id": "EVID-DELEGATION-OBSERVABILITY-01",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/evidence/evid-delegation-observability-01.md",
+      "proposition": "Holmstrom shows that imperfect information and observability materially affect principal-agent contracts and the value of monitoring information.",
+      "relations": [
+        {
+          "target": "DELEG-INT-01",
+          "type": "supports"
+        }
+      ],
+      "sources": [
+        "SRC-HOLMSTROM1979-OBSERVABILITY"
+      ],
+      "status": "draft",
+      "title": "Source claim: observability changes how delegated relationships can be governed",
+      "type": "evidence",
+      "uncertainty": "The original model concerns economic contracts and moral hazard; Goni uses observability as a governance analogue rather than claiming a direct equivalence."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Delegated autonomy does not erase principal answerability\n\nDelegation can separate execution from ultimate answerability. Goni can preserve the trace between principal grant, delegated action, authorization, result, and receipt without claiming that technical provenance determines moral or legal responsibility.",
+      "domains": [
+        "research",
+        "delegation",
+        "accountability"
+      ],
+      "id": "EVID-DELEGATION-RESPONSIBILITY-01",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/evidence/evid-delegation-responsibility-01.md",
+      "proposition": "Kong distinguishes attributability, answerability, and accountability and argues that autonomous execution does not by itself extinguish principal answerability for the prior act and terms of delegation.",
+      "relations": [
+        {
+          "target": "GONI-THESIS-E9DC181C1E9A",
+          "type": "supports"
+        }
+      ],
+      "sources": [
+        "SRC-KONG2026-DELEGATION-RESPONSIBILITY"
+      ],
+      "status": "draft",
+      "title": "Source claim: delegated autonomy does not by itself erase principal answerability",
+      "type": "evidence",
+      "uncertainty": "This is a normative philosophical argument rather than a settled legal rule. Goni uses it to motivate reconstructable responsibility lineage, not to determine legal liability."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Recursive delegation requires explicit scope attenuation\n\nDelegating work downstream should preserve or narrow the authority inherited from the original grant. Recursive delegation is therefore an authority-lineage problem rather than simple task decomposition.",
+      "domains": [
+        "research",
+        "delegation",
+        "authority"
+      ],
+      "id": "EVID-DELEGATION-SCOPE-ATTENUATION-01",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/evidence/evid-delegation-scope-attenuation-01.md",
+      "proposition": "Ibrahim and Li model agentic delegation as a compositional authorization problem requiring explicit delegation semantics, recursive chains, contextual boundaries, and resource-scope attenuation.",
+      "relations": [
+        {
+          "target": "GONI-SYNTHESIS-DF627E719B9D",
+          "type": "supports"
+        }
+      ],
+      "sources": [
+        "SRC-IBRAHIM2026-OVERLAY-GOVERNANCE"
+      ],
+      "status": "draft",
+      "title": "Source claim: recursive delegation requires explicit scope attenuation",
+      "type": "evidence",
+      "uncertainty": "The paper proposes one formal authorization framework; Goni should reuse the attenuation principle without binding its architecture to that specific formalism."
     },
     {
       "aliases": [
@@ -13063,6 +13846,34 @@
     {
       "aliases": [],
       "artifacts": [],
+      "body": "# Least privilege can be represented independently of model reasoning\n\nMiniScope reinforces the provider-agnostic principle that authority can be externally represented and mechanically enforced around tool use.",
+      "domains": [
+        "research",
+        "security",
+        "tools"
+      ],
+      "id": "EVID-MINISCOPE-01",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/evidence/evid-miniscope-01.md",
+      "proposition": "MiniScope reconstructs permission hierarchies over tool calls and uses them to confine tool-calling agents under a least-privilege authorization model.",
+      "relations": [
+        {
+          "target": "GONI-SYNTHESIS-DF627E719B9D",
+          "type": "supports"
+        }
+      ],
+      "sources": [
+        "SRC-ZHU2025-MINISCOPE"
+      ],
+      "status": "draft",
+      "title": "Source claim: least-privilege agent authorization can be derived from tool-call permission structure",
+      "type": "evidence",
+      "uncertainty": "MiniScope's properties apply to its evaluated setup; Goni should import the least-privilege design lesson rather than its implementation assumptions."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
       "body": "# Source claim: evaluated language models degrade on negated prompts\n\nJang, Ye, and Seo compare original and negated prompts across multiple model families and report large performance gaps, including inverse-scaling effects in their evaluated settings.\n\nFor Goni, this is evidence for minimizing unnecessary dependence on negated trajectory instructions and measuring the effect on current local deployment profiles.\n\nThe source does not justify removing explicit prohibitions that define material security, legal, privacy, authority, or scope boundaries.",
       "domains": [
         "research",
@@ -13115,6 +13926,62 @@
       "title": "Source claim: long-horizon computer use exposes state and verification failures",
       "type": "evidence",
       "uncertainty": "OSWorld2.0 measures computer-use workflows and should inform, not substitute for, Goni-specific delegation benchmarks."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Pi is a harness reference rather than an authority root\n\nPi's public architecture places it at the model/tool/session harness layer. For Goni it is useful as a replaceable-substrate example rather than a normative source of principal authority or canonical governance state.",
+      "domains": [
+        "research",
+        "agents",
+        "harness"
+      ],
+      "id": "EVID-PI-MINIMAL-HARNESS-01",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/evidence/evid-pi-minimal-harness-01.md",
+      "proposition": "Pi describes itself as a minimal agent harness with model/provider switching, tools, extensions, skills, session history, RPC, and SDK surfaces while leaving many higher-level workflow and permission features to extensions.",
+      "relations": [
+        {
+          "target": "GONI-IMAP-216164F1995B",
+          "type": "supports"
+        }
+      ],
+      "sources": [
+        "SRC-PI2026-MINIMAL-AGENT-HARNESS"
+      ],
+      "status": "draft",
+      "title": "Source claim: Pi presents itself as a minimal extensible agent harness",
+      "type": "evidence",
+      "uncertainty": "Pi is evolving software rather than an academic standard; this supports layer classification only and does not establish safety or suitability as a Goni dependency."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Tool privileges can be enforced outside the LLM\n\nProgent demonstrates the architectural pattern of a probabilistic agent proposing tool calls while a separate deterministic mechanism decides whether the proposed call is permitted.",
+      "domains": [
+        "research",
+        "security",
+        "tools"
+      ],
+      "id": "EVID-PROGENT-01",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/evidence/evid-progent-01.md",
+      "proposition": "Progent applies programmable least-privilege policies to agent tool calls and enforces those policies deterministically outside the model reasoning loop.",
+      "relations": [
+        {
+          "target": "GONI-SYNTHESIS-DF627E719B9D",
+          "type": "supports"
+        }
+      ],
+      "sources": [
+        "SRC-SHI2025-PROGENT"
+      ],
+      "status": "draft",
+      "title": "Source claim: tool privileges can be enforced deterministically outside the LLM",
+      "type": "evidence",
+      "uncertainty": "Progent's guarantees apply to its own architecture and benchmarks; Goni must independently implement and verify its capability boundary."
     },
     {
       "aliases": [],
@@ -61466,6 +62333,47 @@
     },
     {
       "aliases": [
+        "replaceable harness boundary",
+        "sovereign harness boundary"
+      ],
+      "artifacts": [],
+      "body": "# Replaceable cognition below sovereign control\n\nGoni separates **cognitive substrate** from **sovereign control**.\n\nA provider-agnostic layering is:\n\n```text\nHuman principal\n    ↓\nDelegation contract\n    ↓\nGoni delegation runtime\n    ↓\nGoni authority kernel\n    ↕\nAgent / cognitive harness\n    ↓\nModels, tools, sandboxes, external services\n```\n\nThe harness may assemble context, route models, maintain working state, expose a bounded tool surface, generate proposals, and coordinate cognitive steps. It may be implemented by Goni-native components or by an external framework.\n\nThe harness does not become the source of:\n\n- principal identity;\n- principal goals or values;\n- delegation validity;\n- canonical mandates;\n- policy authority;\n- capability issuance;\n- revocation;\n- canonical receipts;\n- durable authority-bearing memory.\n\nNamed frameworks are therefore implementation candidates or research references rather than constitutional dependencies. Replacing a model, provider, harness, or orchestration framework must not silently change the user's authority model.",
+      "domains": [
+        "system",
+        "harness",
+        "kernel",
+        "delegation"
+      ],
+      "id": "HARNESS-BOUNDARY-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/principles/harness-boundary-01-replaceable-cognition-below-sovereign-control.md",
+      "proposition": "Models, agent harnesses, orchestration frameworks, local runtimes, and provider-specific adapters are replaceable cognitive and execution substrates; principal authority, canonical delegation state, policy, identity, capability issuance, revocation, and receipt truth remain outside those substrates under Goni control.",
+      "relations": [
+        {
+          "target": "GONI-IMAP-216164F1995B",
+          "type": "refines"
+        },
+        {
+          "target": "GONI-PRINCIPLE-80DD85BB01A0",
+          "type": "refines"
+        },
+        {
+          "target": "DELEG-MODEL-01",
+          "type": "depends_on"
+        }
+      ],
+      "sources": [
+        "SRC-PI2026-MINIMAL-AGENT-HARNESS",
+        "SRC-SHARMA2026-AGENT-OPERATING-SYSTEMS"
+      ],
+      "status": "draft",
+      "title": "Replaceable cognition below sovereign control",
+      "type": "principle",
+      "uncertainty": "Concrete adapter interfaces and runtime topology remain implementation choices. The principle constrains ownership of authority and canonical state, not the internal design of any chosen harness."
+    },
+    {
+      "aliases": [
         "semantic portability evaluation"
       ],
       "artifacts": [],
@@ -65293,6 +66201,12 @@
       "type": "refines"
     },
     {
+      "projection": "generated",
+      "source": "AGENT-SYSTEMS-MAP-01",
+      "target": "DELEGATION-THEORY-MAP-01",
+      "type": "synthesized_by"
+    },
+    {
       "projection": "authored",
       "source": "AGENT-SYSTEMS-MAP-01",
       "target": "ADAPTATION-LEVELS-01",
@@ -65377,10 +66291,22 @@
       "type": "synthesizes"
     },
     {
+      "projection": "generated",
+      "source": "AGENTICNESS-01",
+      "target": "AUTON-VECTOR-01",
+      "type": "refined_by"
+    },
+    {
       "projection": "authored",
       "source": "AGENTICNESS-01",
       "target": "GONI-THESIS-826C859B5D30",
       "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "AGENTICNESS-01",
+      "target": "EVID-AUTOMATION-TYPES-01",
+      "type": "supported_by"
     },
     {
       "projection": "generated",
@@ -65456,6 +66382,36 @@
     },
     {
       "projection": "generated",
+      "source": "AUDIT-RUNTIME-01",
+      "target": "DELEGATION-THEORY-MAP-01",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "authored",
+      "source": "AUTON-VECTOR-01",
+      "target": "DELEG-MODEL-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "AUTON-VECTOR-01",
+      "target": "AGENTICNESS-01",
+      "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "AUTON-VECTOR-01",
+      "target": "DELEGATION-THEORY-MAP-01",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "authored",
+      "source": "AUTON-VECTOR-01",
+      "target": "EVID-AUTOMATION-TYPES-01",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "generated",
       "source": "AXIOMS-01",
       "target": "GONI-EVIDENCE-3B6F68694E5E",
       "type": "supported_by"
@@ -65495,6 +66451,30 @@
       "source": "CGG-01",
       "target": "CACHE-01",
       "type": "refined_by"
+    },
+    {
+      "projection": "authored",
+      "source": "CONFUSED-DEPUTY-AI-01",
+      "target": "DELEG-AUTHORITY-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "CONFUSED-DEPUTY-AI-01",
+      "target": "TRUST-INPUT-01",
+      "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "CONFUSED-DEPUTY-AI-01",
+      "target": "DELEGATION-THEORY-MAP-01",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "authored",
+      "source": "CONFUSED-DEPUTY-AI-01",
+      "target": "EVID-CONFUSED-DEPUTY-01",
+      "type": "synthesizes"
     },
     {
       "projection": "authored",
@@ -65653,6 +66633,60 @@
       "type": "supported_by"
     },
     {
+      "projection": "authored",
+      "source": "DELEG-AGENCY-01",
+      "target": "GONI-SYNTHESIS-FFFD0BDE80BE",
+      "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "DELEG-AGENCY-01",
+      "target": "DELEGATION-THEORY-MAP-01",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "authored",
+      "source": "DELEG-AGENCY-01",
+      "target": "EVID-AGENCY-COSTS-01",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "DELEG-AGENCY-01",
+      "target": "EVID-DELEGATION-OBSERVABILITY-01",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "generated",
+      "source": "DELEG-AUTHORITY-01",
+      "target": "CONFUSED-DEPUTY-AI-01",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "authored",
+      "source": "DELEG-AUTHORITY-01",
+      "target": "DELEG-MODEL-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "DELEG-AUTHORITY-01",
+      "target": "GONI-SYNTHESIS-DF627E719B9D",
+      "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "DELEG-AUTHORITY-01",
+      "target": "DELEGATION-THEORY-MAP-01",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "generated",
+      "source": "DELEG-INT-01",
+      "target": "DELEG-MODEL-01",
+      "type": "depended_on_by"
+    },
+    {
       "projection": "generated",
       "source": "DELEG-INT-01",
       "target": "GONI-SPEC-HANDOFF-01",
@@ -65701,8 +66735,200 @@
     {
       "projection": "generated",
       "source": "DELEG-INT-01",
+      "target": "EVID-AGENCY-COSTS-01",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "DELEG-INT-01",
+      "target": "EVID-DELEGATION-OBSERVABILITY-01",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "DELEG-INT-01",
       "target": "HARNESS-PORT-01",
       "type": "tested_by"
+    },
+    {
+      "projection": "generated",
+      "source": "DELEG-MODEL-01",
+      "target": "AUTON-VECTOR-01",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
+      "source": "DELEG-MODEL-01",
+      "target": "DELEG-AUTHORITY-01",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
+      "source": "DELEG-MODEL-01",
+      "target": "DELEG-RESPONSIBILITY-01",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
+      "source": "DELEG-MODEL-01",
+      "target": "HARNESS-BOUNDARY-01",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "authored",
+      "source": "DELEG-MODEL-01",
+      "target": "DELEG-INT-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "DELEG-MODEL-01",
+      "target": "GONI-SPEC-4B9D2670E434",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "DELEG-MODEL-01",
+      "target": "GONI-THESIS-826C859B5D30",
+      "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "DELEG-MODEL-01",
+      "target": "DELEGATION-THEORY-MAP-01",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "authored",
+      "source": "DELEG-RESPONSIBILITY-01",
+      "target": "DELEG-MODEL-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "DELEG-RESPONSIBILITY-01",
+      "target": "GONI-THESIS-E9DC181C1E9A",
+      "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "DELEG-RESPONSIBILITY-01",
+      "target": "DELEGATION-THEORY-MAP-01",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "authored",
+      "source": "DELEG-RESPONSIBILITY-01",
+      "target": "EVID-DELEGATION-RESPONSIBILITY-01",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "DELEGATION-NEIGHBOR-MAP-2026-01",
+      "target": "GONI-SYNTHESIS-8A2FFAA7A328",
+      "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "DELEGATION-NEIGHBOR-MAP-2026-01",
+      "target": "DELEGATION-THEORY-MAP-01",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "authored",
+      "source": "DELEGATION-NEIGHBOR-MAP-2026-01",
+      "target": "EVID-AGENT-OPERATING-SYSTEMS-2026-01",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "DELEGATION-NEIGHBOR-MAP-2026-01",
+      "target": "EVID-AGENTKERNEL-2026-01",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "DELEGATION-NEIGHBOR-MAP-2026-01",
+      "target": "EVID-MINISCOPE-01",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "DELEGATION-NEIGHBOR-MAP-2026-01",
+      "target": "EVID-PI-MINIMAL-HARNESS-01",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "DELEGATION-NEIGHBOR-MAP-2026-01",
+      "target": "EVID-PROGENT-01",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "DELEGATION-THEORY-MAP-01",
+      "target": "GONI-THESIS-98AE2B9284ED",
+      "type": "refines"
+    },
+    {
+      "projection": "authored",
+      "source": "DELEGATION-THEORY-MAP-01",
+      "target": "AGENT-SYSTEMS-MAP-01",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "DELEGATION-THEORY-MAP-01",
+      "target": "AUDIT-RUNTIME-01",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "DELEGATION-THEORY-MAP-01",
+      "target": "AUTON-VECTOR-01",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "DELEGATION-THEORY-MAP-01",
+      "target": "CONFUSED-DEPUTY-AI-01",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "DELEGATION-THEORY-MAP-01",
+      "target": "DELEG-AGENCY-01",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "DELEGATION-THEORY-MAP-01",
+      "target": "DELEG-AUTHORITY-01",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "DELEGATION-THEORY-MAP-01",
+      "target": "DELEG-MODEL-01",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "DELEGATION-THEORY-MAP-01",
+      "target": "DELEG-RESPONSIBILITY-01",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "DELEGATION-THEORY-MAP-01",
+      "target": "DELEGATION-NEIGHBOR-MAP-2026-01",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "DELEGATION-THEORY-MAP-01",
+      "target": "HARNESS-BOUNDARY-01",
+      "type": "synthesizes"
     },
     {
       "projection": "generated",
@@ -65742,6 +66968,18 @@
     },
     {
       "projection": "authored",
+      "source": "EVID-AGENCY-COSTS-01",
+      "target": "DELEG-INT-01",
+      "type": "supports"
+    },
+    {
+      "projection": "generated",
+      "source": "EVID-AGENCY-COSTS-01",
+      "target": "DELEG-AGENCY-01",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "authored",
       "source": "EVID-AGENT-MEMORY-DYNAMICS-01",
       "target": "AGENT-STATE-01",
       "type": "supports"
@@ -65751,6 +66989,18 @@
       "source": "EVID-AGENT-MEMORY-DYNAMICS-01",
       "target": "RAG-CONTEXT-01",
       "type": "supports"
+    },
+    {
+      "projection": "authored",
+      "source": "EVID-AGENT-OPERATING-SYSTEMS-2026-01",
+      "target": "GONI-SYNTHESIS-8A2FFAA7A328",
+      "type": "supports"
+    },
+    {
+      "projection": "generated",
+      "source": "EVID-AGENT-OPERATING-SYSTEMS-2026-01",
+      "target": "DELEGATION-NEIGHBOR-MAP-2026-01",
+      "type": "synthesized_by"
     },
     {
       "projection": "authored",
@@ -65772,9 +67022,33 @@
     },
     {
       "projection": "authored",
+      "source": "EVID-AGENTKERNEL-2026-01",
+      "target": "GONI-SYNTHESIS-8A2FFAA7A328",
+      "type": "supports"
+    },
+    {
+      "projection": "generated",
+      "source": "EVID-AGENTKERNEL-2026-01",
+      "target": "DELEGATION-NEIGHBOR-MAP-2026-01",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "authored",
       "source": "EVID-AUDITABLE-AGENTS-01",
       "target": "AUDIT-RUNTIME-01",
       "type": "supports"
+    },
+    {
+      "projection": "authored",
+      "source": "EVID-AUTOMATION-TYPES-01",
+      "target": "AGENTICNESS-01",
+      "type": "supports"
+    },
+    {
+      "projection": "generated",
+      "source": "EVID-AUTOMATION-TYPES-01",
+      "target": "AUTON-VECTOR-01",
+      "type": "synthesized_by"
     },
     {
       "projection": "authored",
@@ -65796,6 +67070,18 @@
     },
     {
       "projection": "authored",
+      "source": "EVID-CONFUSED-DEPUTY-01",
+      "target": "TRUST-INPUT-01",
+      "type": "supports"
+    },
+    {
+      "projection": "generated",
+      "source": "EVID-CONFUSED-DEPUTY-01",
+      "target": "CONFUSED-DEPUTY-AI-01",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "authored",
       "source": "EVID-CONTEXT-ENGINEERING-TAXONOMY-01",
       "target": "RAG-CONTEXT-01",
       "type": "supports"
@@ -65804,6 +67090,36 @@
       "projection": "authored",
       "source": "EVID-CONTINUAL-EXPERIENCE-COLLAPSE-01",
       "target": "ADAPTATION-LEVELS-01",
+      "type": "supports"
+    },
+    {
+      "projection": "authored",
+      "source": "EVID-DELEGATION-OBSERVABILITY-01",
+      "target": "DELEG-INT-01",
+      "type": "supports"
+    },
+    {
+      "projection": "generated",
+      "source": "EVID-DELEGATION-OBSERVABILITY-01",
+      "target": "DELEG-AGENCY-01",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "authored",
+      "source": "EVID-DELEGATION-RESPONSIBILITY-01",
+      "target": "GONI-THESIS-E9DC181C1E9A",
+      "type": "supports"
+    },
+    {
+      "projection": "generated",
+      "source": "EVID-DELEGATION-RESPONSIBILITY-01",
+      "target": "DELEG-RESPONSIBILITY-01",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "authored",
+      "source": "EVID-DELEGATION-SCOPE-ATTENUATION-01",
+      "target": "GONI-SYNTHESIS-DF627E719B9D",
       "type": "supports"
     },
     {
@@ -65832,6 +67148,18 @@
     },
     {
       "projection": "authored",
+      "source": "EVID-MINISCOPE-01",
+      "target": "GONI-SYNTHESIS-DF627E719B9D",
+      "type": "supports"
+    },
+    {
+      "projection": "generated",
+      "source": "EVID-MINISCOPE-01",
+      "target": "DELEGATION-NEIGHBOR-MAP-2026-01",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "authored",
       "source": "EVID-NEGATED-PROMPTS-01",
       "target": "INSTR-REP-01",
       "type": "supports"
@@ -65841,6 +67169,30 @@
       "source": "EVID-OSWORLD2-LONG-HORIZON-01",
       "target": "TRAJECTORY-EVAL-01",
       "type": "supports"
+    },
+    {
+      "projection": "authored",
+      "source": "EVID-PI-MINIMAL-HARNESS-01",
+      "target": "GONI-IMAP-216164F1995B",
+      "type": "supports"
+    },
+    {
+      "projection": "generated",
+      "source": "EVID-PI-MINIMAL-HARNESS-01",
+      "target": "DELEGATION-NEIGHBOR-MAP-2026-01",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "authored",
+      "source": "EVID-PROGENT-01",
+      "target": "GONI-SYNTHESIS-DF627E719B9D",
+      "type": "supports"
+    },
+    {
+      "projection": "generated",
+      "source": "EVID-PROGENT-01",
+      "target": "DELEGATION-NEIGHBOR-MAP-2026-01",
+      "type": "synthesized_by"
     },
     {
       "projection": "authored",
@@ -66690,6 +68042,18 @@
     },
     {
       "projection": "generated",
+      "source": "GONI-IMAP-216164F1995B",
+      "target": "HARNESS-BOUNDARY-01",
+      "type": "refined_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-IMAP-216164F1995B",
+      "target": "EVID-PI-MINIMAL-HARNESS-01",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
       "source": "GONI-IMAP-32706FDAC206",
       "target": "LSKR-01",
       "type": "synthesized_by"
@@ -66891,6 +68255,12 @@
       "source": "GONI-PRINCIPLE-2A48B2D4DA86",
       "target": "GONI-SYNTHESIS-E25D38477C7D",
       "type": "synthesized_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-PRINCIPLE-80DD85BB01A0",
+      "target": "HARNESS-BOUNDARY-01",
+      "type": "refined_by"
     },
     {
       "projection": "generated",
@@ -67113,6 +68483,12 @@
       "source": "GONI-SPEC-43169414D3A8",
       "target": "GONI-PRINCIPLE-VER-EVID-01",
       "type": "refined_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-SPEC-4B9D2670E434",
+      "target": "DELEG-MODEL-01",
+      "type": "depended_on_by"
     },
     {
       "projection": "generated",
@@ -69955,6 +71331,24 @@
     {
       "projection": "generated",
       "source": "GONI-SYNTHESIS-8A2FFAA7A328",
+      "target": "DELEGATION-NEIGHBOR-MAP-2026-01",
+      "type": "refined_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-SYNTHESIS-8A2FFAA7A328",
+      "target": "EVID-AGENT-OPERATING-SYSTEMS-2026-01",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-SYNTHESIS-8A2FFAA7A328",
+      "target": "EVID-AGENTKERNEL-2026-01",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-SYNTHESIS-8A2FFAA7A328",
       "target": "REF-GONIOS-NEIGHBOR-01",
       "type": "synthesized_by"
     },
@@ -70939,6 +72333,30 @@
     {
       "projection": "generated",
       "source": "GONI-SYNTHESIS-DF627E719B9D",
+      "target": "DELEG-AUTHORITY-01",
+      "type": "refined_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-SYNTHESIS-DF627E719B9D",
+      "target": "EVID-DELEGATION-SCOPE-ATTENUATION-01",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-SYNTHESIS-DF627E719B9D",
+      "target": "EVID-MINISCOPE-01",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-SYNTHESIS-DF627E719B9D",
+      "target": "EVID-PROGENT-01",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-SYNTHESIS-DF627E719B9D",
       "target": "GONI-SYNTHESIS-8A0BE005D5C2",
       "type": "synthesized_by"
     },
@@ -71353,6 +72771,12 @@
     {
       "projection": "generated",
       "source": "GONI-SYNTHESIS-FFFD0BDE80BE",
+      "target": "DELEG-AGENCY-01",
+      "type": "refined_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-SYNTHESIS-FFFD0BDE80BE",
       "target": "SOV-AUDIT-01",
       "type": "synthesized_by"
     },
@@ -71402,6 +72826,18 @@
       "projection": "generated",
       "source": "GONI-THESIS-826C859B5D30",
       "target": "AGENTICNESS-01",
+      "type": "refined_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-THESIS-826C859B5D30",
+      "target": "DELEG-MODEL-01",
+      "type": "refined_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-THESIS-98AE2B9284ED",
+      "target": "DELEGATION-THEORY-MAP-01",
       "type": "refined_by"
     },
     {
@@ -71511,6 +72947,18 @@
       "source": "GONI-THESIS-E9DC181C1E9A",
       "target": "AUDIT-RUNTIME-01",
       "type": "refined_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-THESIS-E9DC181C1E9A",
+      "target": "DELEG-RESPONSIBILITY-01",
+      "type": "refined_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-THESIS-E9DC181C1E9A",
+      "target": "EVID-DELEGATION-RESPONSIBILITY-01",
+      "type": "supported_by"
     },
     {
       "projection": "generated",
@@ -71625,6 +73073,30 @@
       "source": "GOV-00",
       "target": "GONI-SYNTHESIS-ED003EE7E80E",
       "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "HARNESS-BOUNDARY-01",
+      "target": "DELEG-MODEL-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "HARNESS-BOUNDARY-01",
+      "target": "GONI-IMAP-216164F1995B",
+      "type": "refines"
+    },
+    {
+      "projection": "authored",
+      "source": "HARNESS-BOUNDARY-01",
+      "target": "GONI-PRINCIPLE-80DD85BB01A0",
+      "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "HARNESS-BOUNDARY-01",
+      "target": "DELEGATION-THEORY-MAP-01",
+      "type": "synthesized_by"
     },
     {
       "projection": "authored",
@@ -73706,6 +75178,12 @@
       "type": "depended_on_by"
     },
     {
+      "projection": "generated",
+      "source": "TRUST-INPUT-01",
+      "target": "CONFUSED-DEPUTY-AI-01",
+      "type": "refined_by"
+    },
+    {
       "projection": "authored",
       "source": "TRUST-INPUT-01",
       "target": "GONI-THESIS-349EB2E79136",
@@ -73715,6 +75193,12 @@
       "projection": "generated",
       "source": "TRUST-INPUT-01",
       "target": "EVID-AGENTDOJO-UNTRUSTED-DATA-01",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "TRUST-INPUT-01",
+      "target": "EVID-CONFUSED-DEPUTY-01",
       "type": "supported_by"
     },
     {
@@ -74169,6 +75653,26 @@
       "url": "https://www.fh-wedel.de/fileadmin/Mitarbeiter/Records/Haegner_2020_-_Robotic_Process_Automation_-_A_Systematic_Literature_Review.pdf"
     },
     {
+      "accessed": "2026-09-26",
+      "citation": "https://doi.org/10.1145/54289.871709",
+      "id": "SRC-HARDY1988-CONFUSED-DEPUTY",
+      "kind": "academic",
+      "notes": "Classical capability-security account of a deputy misapplying authority because request provenance and authority provenance are not cleanly separated.",
+      "path": "sources/src-hardy1988-confused-deputy.yml",
+      "title": "Hardy 1988 The Confused Deputy",
+      "url": "https://doi.org/10.1145/54289.871709"
+    },
+    {
+      "accessed": "2026-09-26",
+      "citation": "https://doi.org/10.2307/3003320",
+      "id": "SRC-HOLMSTROM1979-OBSERVABILITY",
+      "kind": "academic",
+      "notes": "Classical principal-agent analysis showing that information and observability materially affect how delegated relationships can be governed.",
+      "path": "sources/src-holmstrom1979-observability.yml",
+      "title": "Holmstrom 1979 moral hazard and observability",
+      "url": "https://doi.org/10.2307/3003320"
+    },
+    {
       "citation": "https://www.microsoft.com/en-us/research/publication/principles-mixed-initiative-user-interfaces/",
       "id": "SRC-HORVITZ1999-MIXED-INITIATIVE",
       "kind": "web",
@@ -74197,6 +75701,16 @@
       "url": "https://arxiv.org/abs/2512.13564"
     },
     {
+      "accessed": "2026-09-26",
+      "citation": "https://arxiv.org/abs/2606.03518",
+      "id": "SRC-IBRAHIM2026-OVERLAY-GOVERNANCE",
+      "kind": "academic",
+      "notes": "Formal delegation and authorization work covering recursive delegation, contextual scope, and resource-scope attenuation for agentic systems.",
+      "path": "sources/src-ibrahim2026-overlay-governance.yml",
+      "title": "Ibrahim and Li 2026 compositional authorization for agentic delegation",
+      "url": "https://arxiv.org/abs/2606.03518"
+    },
+    {
       "citation": "https://in-toto.io/",
       "id": "SRC-IN-TOTO-FRAMEWORK",
       "kind": "web",
@@ -74214,6 +75728,16 @@
       "path": "sources/src-jang2022-negated-prompts.yml",
       "title": "Can Large Language Models Truly Understand Prompts? A Case Study with Negated Prompts",
       "url": "https://arxiv.org/abs/2209.12711"
+    },
+    {
+      "accessed": "2026-09-26",
+      "citation": "https://doi.org/10.1016/0304-405X(76)90026-X",
+      "id": "SRC-JENSEN1976-AGENCY-COSTS",
+      "kind": "academic",
+      "notes": "Classical agency-theory foundation defining agency costs and the separation between delegated control and the principal's interests.",
+      "path": "sources/src-jensen1976-agency-costs.yml",
+      "title": "Jensen and Meckling 1976 agency costs",
+      "url": "https://doi.org/10.1016/0304-405X(76)90026-X"
     },
     {
       "accessed": "2026-09-23",
@@ -74261,6 +75785,16 @@
       "path": "sources/src-kleppmann2019-local-first.yml",
       "title": "kleppmann2019-local-first",
       "url": "https://www.inkandswitch.com/essay/local-first/"
+    },
+    {
+      "accessed": "2026-09-26",
+      "citation": "https://doi.org/10.1007/s43681-026-01383-x",
+      "id": "SRC-KONG2026-DELEGATION-RESPONSIBILITY",
+      "kind": "academic",
+      "notes": "Normative analysis distinguishing attributability, answerability, and accountability and arguing that delegation relocates rather than automatically extinguishes principal answerability.",
+      "path": "sources/src-kong2026-delegation-responsibility.yml",
+      "title": "Kong 2026 delegation illusion and principal responsibility",
+      "url": "https://doi.org/10.1007/s43681-026-01383-x"
     },
     {
       "citation": "https://pdos.csail.mit.edu/papers/flume-sosp07.pdf",
@@ -74446,6 +75980,16 @@
       "url": "https://arxiv.org/abs/2310.08560"
     },
     {
+      "accessed": "2026-09-26",
+      "citation": "https://doi.org/10.1109/3468.844354",
+      "id": "SRC-PARASURAMAN2000-AUTOMATION-LEVELS",
+      "kind": "academic",
+      "notes": "Human-automation framework separating information acquisition, information analysis, decision/action selection, and action implementation, each with independently variable automation levels.",
+      "path": "sources/src-parasuraman2000-automation-levels.yml",
+      "title": "Parasuraman Sheridan Wickens 2000 types and levels of automation",
+      "url": "https://doi.org/10.1109/3468.844354"
+    },
+    {
       "accessed": "2026-09-23",
       "citation": "Patil, S. G., Mao, H., Yan, F., Ji, C. C.-J., Suresh, V., Stoica, I., & Gonzalez, J. E. (2025). The Berkeley Function Calling Leaderboard (BFCL): From Tool Use to Agentic Evaluation of Large Language Models. Proceedings of the 42nd International Conference on Machine Learning, PMLR 267, 48371-48392.",
       "id": "SRC-PATIL2025-BFCL",
@@ -74463,6 +76007,16 @@
       "path": "sources/src-peng2023-rwkv.yml",
       "title": "peng2023-rwkv",
       "url": "https://arxiv.org/abs/2305.13048"
+    },
+    {
+      "accessed": "2026-09-26",
+      "citation": "https://pi.dev/",
+      "id": "SRC-PI2026-MINIMAL-AGENT-HARNESS",
+      "kind": "web",
+      "notes": "Pi describes itself as a minimal agent harness with provider/model switching, extensions, skills, session history, RPC, and SDK surfaces; it is useful as a replaceable harness reference rather than an authority root.",
+      "path": "sources/src-pi2026-minimal-agent-harness.yml",
+      "title": "Pi minimal agent harness",
+      "url": "https://pi.dev/"
     },
     {
       "accessed": "2026-09-23",
@@ -74582,6 +76136,26 @@
       "path": "sources/src-sculley2015-hidden-tech-debt.yml",
       "title": "sculley2015-hidden-tech-debt",
       "url": "https://papers.nips.cc/paper/5656-hidden-technical-debt-in-machine-learning-syst"
+    },
+    {
+      "accessed": "2026-09-26",
+      "citation": "https://arxiv.org/abs/2606.01508",
+      "id": "SRC-SHARMA2026-AGENT-OPERATING-SYSTEMS",
+      "kind": "academic",
+      "notes": "Agent-operating-system architecture covering scheduling, context and memory, capability registries, policy and trust enforcement, observability, and auditability.",
+      "path": "sources/src-sharma2026-agent-operating-systems.yml",
+      "title": "Sharma and Shah 2026 Agent Operating Systems",
+      "url": "https://arxiv.org/abs/2606.01508"
+    },
+    {
+      "accessed": "2026-09-26",
+      "citation": "https://arxiv.org/abs/2504.11703",
+      "id": "SRC-SHI2025-PROGENT",
+      "kind": "academic",
+      "notes": "Programmable least-privilege control for LLM-agent tool calls using deterministic policy enforcement around an otherwise unchanged agent.",
+      "path": "sources/src-shi2025-progent.yml",
+      "title": "Shi et al. 2025 Progent",
+      "url": "https://arxiv.org/abs/2504.11703"
     },
     {
       "citation": "https://arxiv.org/abs/2002.04087",
@@ -74868,6 +76442,26 @@
       "path": "sources/src-zhou2023-webarena.yml",
       "title": "zhou2023-webarena",
       "url": "https://arxiv.org/abs/2307.13854"
+    },
+    {
+      "accessed": "2026-09-26",
+      "citation": "https://arxiv.org/abs/2512.11147",
+      "id": "SRC-ZHU2025-MINISCOPE",
+      "kind": "academic",
+      "notes": "Least-privilege authorization framework for tool-calling agents that reconstructs permission hierarchies and enforces bounded permissions outside the model.",
+      "path": "sources/src-zhu2025-miniscope.yml",
+      "title": "Zhu et al. 2025 MiniScope",
+      "url": "https://arxiv.org/abs/2512.11147"
+    },
+    {
+      "accessed": "2026-09-26",
+      "citation": "https://arxiv.org/abs/2609.29647",
+      "id": "SRC-ZOU2026-AGENTKERNEL",
+      "kind": "academic",
+      "notes": "Trust-native agentic operating-system proposal placing identity, input mediation, memory governance, and execution control behind a mandatory enforcement boundary.",
+      "path": "sources/src-zou2026-agentkernel.yml",
+      "title": "Zou et al. 2026 AgentKernel",
+      "url": "https://arxiv.org/abs/2609.29647"
     }
   ]
 }

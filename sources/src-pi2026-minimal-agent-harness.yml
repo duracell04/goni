@@ -1,0 +1,7 @@
+id: SRC-PI2026-MINIMAL-AGENT-HARNESS
+title: Pi minimal agent harness
+kind: web
+citation: https://pi.dev/
+url: https://pi.dev/
+accessed: "2026-09-26"
+notes: Pi describes itself as a minimal agent harness with provider/model switching, extensions, skills, session history, RPC, and SDK surfaces; it is useful as a replaceable harness reference rather than an authority root.

@@ -1,0 +1,7 @@
+id: SRC-SHI2025-PROGENT
+title: Shi et al. 2025 Progent
+kind: academic
+citation: https://arxiv.org/abs/2504.11703
+url: https://arxiv.org/abs/2504.11703
+accessed: "2026-09-26"
+notes: Programmable least-privilege control for LLM-agent tool calls using deterministic policy enforcement around an otherwise unchanged agent.

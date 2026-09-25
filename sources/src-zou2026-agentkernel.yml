@@ -1,0 +1,7 @@
+id: SRC-ZOU2026-AGENTKERNEL
+title: Zou et al. 2026 AgentKernel
+kind: academic
+citation: https://arxiv.org/abs/2609.29647
+url: https://arxiv.org/abs/2609.29647
+accessed: "2026-09-26"
+notes: Trust-native agentic operating-system proposal placing identity, input mediation, memory governance, and execution control behind a mandatory enforcement boundary.
