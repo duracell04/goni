@@ -1,4 +1,5 @@
 name: Context Catalogue Sync
+# Temporary branch-scoped projection helper; remove after catalogue commit.
 
 on:
   push:
