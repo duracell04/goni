@@ -1,0 +1,6 @@
+id: SRC-LIU2026-VLLM-SEMANTIC-ROUTER
+title: liu2026-vllm-semantic-router
+kind: academic
+citation: "Liu, Xunzhuo et al. (2026). vLLM Semantic Router: Signal Driven Decision Routing for Mixture-of-Modality Models. arXiv:2603.04444."
+url: https://arxiv.org/abs/2603.04444
+notes: "Presents a signal-driven routing framework that composes heterogeneous heuristic, authorization, embedding, modality, domain, grounding, privacy, and safety signals into configurable routing decisions across heterogeneous model backends."

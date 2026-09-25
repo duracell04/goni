@@ -1,0 +1,6 @@
+id: SRC-CHEN2026-ROUTING-AGENT-ORCHESTRATION
+title: chen2026-routing-agent-orchestration
+kind: academic
+citation: "Chen, Huamin; Liu, Xunzhuo; He, Bowei; Liu, Xue (2026). From Inference Routing to Agent Orchestration: Declarative Policy Compilation with Cross-Layer Verification. arXiv:2603.27299."
+url: https://arxiv.org/abs/2603.27299
+notes: "Extends a declarative non-Turing-complete routing policy language from per-request model routing to multi-step agent workflows and infrastructure/protocol policy projections including LangGraph/OpenClaw, Kubernetes, MCP, and A2A gates."
