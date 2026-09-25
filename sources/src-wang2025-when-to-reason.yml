@@ -1,0 +1,6 @@
+id: SRC-WANG2025-WHEN-TO-REASON
+title: wang2025-when-to-reason
+kind: academic
+citation: "Wang, Chen et al. (2025). When to Reason: Semantic Router for vLLM. arXiv:2510.08731."
+url: https://arxiv.org/abs/2510.08731
+notes: "Uses a semantic router to classify reasoning requirements and selectively invoke expensive reasoning mode, reporting quality/latency/token trade-offs on evaluated workloads."

@@ -1,0 +1,6 @@
+id: SRC-TOGETHER-TEV1-REPO
+title: together-tev1-repo
+kind: repository
+citation: "togethercomputer/tev1. Open-weight Jev-inspired decision-model experiment on Qwen3.5-4B."
+url: https://github.com/togethercomputer/tev1
+notes: "Repository provides a training/data recipe for a Qwen3.5-4B model specialized to select among predefined answer options. It remains autoregressive/constrained rather than a dedicated non-generative decision architecture."

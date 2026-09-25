@@ -1,0 +1,6 @@
+id: SRC-LAYA-SYSTEM-ONE-REPO
+title: laya-system-one-repo
+kind: repository
+citation: "LeonaDavinci/laya-system-one. Multilingual non-autoregressive typed decision engine."
+url: https://github.com/LeonaDavinci/laya-system-one
+notes: "Project repository describing typed choice, score, and yes/no decisions, multi-question single-forward-pass inference, multilingual checkpoints, and a router. Performance and calibration figures are project-reported and require independent reproduction."

@@ -17,6 +17,8 @@ relations:
   target: LOSS-01
 - type: refines
   target: GONI-PRINCIPLE-HET-INTEL-01
+- type: depends_on
+  target: ROUTE-SIGNAL-01
 sources:
 - SRC-FRUGALGPT2023
 - SRC-ROUTELLM2024
@@ -83,3 +85,19 @@ loss definition, oracle, workload, and evaluation protocol.
 
 Routing evidence can influence cognition and escalation. It cannot itself
 expand mandates, capabilities, or authority.
+
+
+## Typed routing signals
+
+Routing decisions SHOULD consume a versioned RouteSignalSet rather than
+implicitly inferring all control variables inside one opaque model call.
+
+Signal production and route selection remain separate steps. Deterministic
+signals such as context length, budget state, model availability, and policy
+eligibility should be computed deterministically. Semantic signals such as
+domain, difficulty, or likely relevance may be produced by calibrated
+probabilistic mechanisms.
+
+The router consumes the signal set together with the Work Order and canonical
+policy projection, then selects among eligible cognitive mechanisms. Signal
+values can influence route choice but cannot create authority.

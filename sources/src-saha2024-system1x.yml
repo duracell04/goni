@@ -1,0 +1,6 @@
+id: SRC-SAHA2024-SYSTEM1X
+title: saha2024-system1x
+kind: academic
+citation: "Saha, Swarnadeep et al. (2024). System-1.x: Learning to Balance Fast and Slow Planning with Language Models. arXiv:2407.14414."
+url: https://arxiv.org/abs/2407.14414
+notes: "Introduces a controller that decomposes planning problems and routes sub-goals between fast and slow planning modes according to difficulty and a controllable hybridization factor."

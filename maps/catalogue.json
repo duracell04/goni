@@ -13,6 +13,10 @@
       "node": "AGENT-MANIFEST-01"
     },
     {
+      "alias": "AGENT-MODEL-SEPARATION",
+      "node": "AGENT-MODEL-ORTHO-01"
+    },
+    {
       "alias": "AGENT-STORE",
       "node": "AGENT-STORE-01"
     },
@@ -23,6 +27,14 @@
     {
       "alias": "CALIBRATION-CONTRACT",
       "node": "CAL-01"
+    },
+    {
+      "alias": "COGNITIVE-GRAPH",
+      "node": "COG-GRAPH-01"
+    },
+    {
+      "alias": "COGNITIVE-MODEL-ROLES",
+      "node": "MODEL-ROLE-01"
     },
     {
       "alias": "CONTEXT-GRAVITY-GRAPH",
@@ -153,6 +165,10 @@
       "node": "REF-GONIOS-NEIGHBOR-01"
     },
     {
+      "alias": "GOVERNED-COGNITIVE-GRAPH-SYNTHESIS",
+      "node": "GONI-SYNTHESIS-GOVERNED-HETEROGENEOUS-COGNITION-01"
+    },
+    {
       "alias": "ISOLATION-AND-TOOL-SANDBOXES",
       "node": "SANDBOX-01"
     },
@@ -173,6 +189,10 @@
       "node": "NET-01"
     },
     {
+      "alias": "POLICY-COMPILATION",
+      "node": "POLICY-PROJECTION-01"
+    },
+    {
       "alias": "PROBABILISTIC-DECISION-CONTROL-SYNTHESIS",
       "node": "GONI-SYNTHESIS-PROBABILISTIC-DECISION-CONTROL-01"
     },
@@ -187,6 +207,10 @@
     {
       "alias": "RISK-COVERAGE-CONTRACT",
       "node": "SELECTIVE-01"
+    },
+    {
+      "alias": "ROUTING-SIGNAL-CONTRACT",
+      "node": "ROUTE-SIGNAL-01"
     },
     {
       "alias": "SCHEDULER-AND-INTERRUPTS",
@@ -233,6 +257,10 @@
       "node": "SYNC-01"
     },
     {
+      "alias": "THREE-LAYER-CONTEXT-ALLOCATION",
+      "node": "CONTEXT-ALLOC-01"
+    },
+    {
       "alias": "TOOL-CAPABILITY-API",
       "node": "TOOL-01"
     },
@@ -270,17 +298,21 @@
       "agent": [
         "AGENT-DEF-01",
         "AGENT-MANIFEST-01",
+        "AGENT-MODEL-ORTHO-01",
         "AGENT-STORE-01",
+        "COG-GRAPH-01",
         "DAT-01",
         "EVID-DESK-01",
         "GONI-DECISION-410431892DF4",
         "GONI-DECISION-9AF49466170D",
         "GONI-DECISION-D3C113E7804F",
+        "GONI-EVIDENCE-MULTI-AGENT-01",
         "GONI-EXPERIMENT-560F1D86253B",
         "GONI-EXPERIMENT-5F299100AA67",
         "GONI-EXPERIMENT-84B219533791",
         "GONI-EXPERIMENT-B7F7C906E1A9",
         "GONI-EXPERIMENT-BA45148EADE1",
+        "GONI-EXPERIMENT-COG-GRAPH-01",
         "GONI-EXPERIMENT-F1503F76029D",
         "GONI-IMAP-533F26500997",
         "GONI-IMAP-8C1BEA9FE908",
@@ -413,6 +445,7 @@
         "GONI-SYNTHESIS-CC4921DED1BB",
         "GONI-SYNTHESIS-DF627E719B9D",
         "GONI-SYNTHESIS-E2FB2167D274",
+        "GONI-SYNTHESIS-GOVERNED-HETEROGENEOUS-COGNITION-01",
         "GONI-SYNTHESIS-PROBABILISTIC-DECISION-CONTROL-01",
         "SPEC-KERN-01"
       ],
@@ -547,6 +580,7 @@
         "GONI-EVIDENCE-DECISION-THEORY-01",
         "GONI-EVIDENCE-DRIFT-01",
         "GONI-EVIDENCE-SELECTIVE-01",
+        "GONI-EXPERIMENT-COG-GRAPH-01",
         "GONI-EXPERIMENT-DECISION-LAYER-01",
         "GONI-PRINCIPLE-TRAJ-ECON-01",
         "GONI-SYNTHESIS-PROBABILISTIC-DECISION-CONTROL-01",
@@ -812,6 +846,7 @@
         "GONI-SYNTHESIS-CC4921DED1BB",
         "GONI-SYNTHESIS-DF627E719B9D",
         "GONI-SYNTHESIS-PROBABILISTIC-DECISION-CONTROL-01",
+        "POLICY-PROJECTION-01",
         "SPEC-ENF-01",
         "SPEC-KERN-01",
         "SPEC-POL-01",
@@ -825,6 +860,7 @@
         "FIRST-PARTY-LLM-CHATS",
         "GONI-DECISION-1A750217A0DF",
         "GONI-EVIDENCE-JEV-20260923",
+        "GONI-EVIDENCE-OPEN-DECISION-MODELS-20260926",
         "GONI-EXPERIMENT-5EC52FDC4B47",
         "GONI-GLOSSARY-999007EFF178",
         "GONI-OBJECTION-642AC4065922",
@@ -957,6 +993,7 @@
         "GONI-SYNTHESIS-C44C5D0BB095",
         "GONI-SYNTHESIS-DA8AA9ACE2AE",
         "GONI-SYNTHESIS-DECISION-MODEL-LANDSCAPE-20260923",
+        "GONI-SYNTHESIS-DECISION-MODEL-LANDSCAPE-20260926",
         "GONI-SYNTHESIS-EB863E9C14D2",
         "GONI-SYNTHESIS-F50543516194",
         "GONI-SYNTHESIS-FD8D944B035F",
@@ -975,7 +1012,9 @@
       ],
       "memory": [
         "BOUND-01",
+        "CONTEXT-ALLOC-01",
         "EVID-SEC-02",
+        "GONI-EVIDENCE-CONTEXT-COMPRESSION-01",
         "GONI-EXPERIMENT-290E879EE8E2",
         "GONI-EXPERIMENT-4193B6DF2A2A",
         "GONI-EXPERIMENT-811EDB4A82A5",
@@ -1011,21 +1050,37 @@
         "MEMORY-ARCHITECTURE"
       ],
       "models": [
+        "AGENT-MODEL-ORTHO-01",
         "CAL-01",
         "CAL-DRIFT-01",
+        "COG-GRAPH-01",
         "CONFIDENCE-01",
+        "CONTEXT-ALLOC-01",
         "DECISION-MODEL-01",
         "GONI-EVIDENCE-CAL-GUO-01",
+        "GONI-EVIDENCE-CONTEXT-COMPRESSION-01",
         "GONI-EVIDENCE-DRIFT-01",
+        "GONI-EVIDENCE-FAST-SLOW-01",
         "GONI-EVIDENCE-JEV-20260923",
+        "GONI-EVIDENCE-MULTI-AGENT-01",
+        "GONI-EVIDENCE-OPEN-DECISION-MODELS-20260926",
         "GONI-EVIDENCE-SELECTIVE-01",
+        "GONI-EVIDENCE-SEMROUTER-01",
+        "GONI-EVIDENCE-SNAPKV-01",
+        "GONI-EVIDENCE-SPECIALIST-GUARD-01",
         "GONI-EVIDENCE-STRUCTURED-01",
+        "GONI-EXPERIMENT-COG-GRAPH-01",
         "GONI-EXPERIMENT-DECISION-LAYER-01",
         "GONI-PRINCIPLE-HET-INTEL-01",
         "GONI-PRINCIPLE-TRAJ-ECON-01",
         "GONI-PRINCIPLE-VALIDITY-CORRECTNESS-01",
         "GONI-SYNTHESIS-DECISION-MODEL-LANDSCAPE-20260923",
+        "GONI-SYNTHESIS-DECISION-MODEL-LANDSCAPE-20260926",
+        "GONI-SYNTHESIS-GOVERNED-HETEROGENEOUS-COGNITION-01",
         "GONI-SYNTHESIS-PROBABILISTIC-DECISION-CONTROL-01",
+        "MODEL-REG-01",
+        "MODEL-ROLE-01",
+        "ROUTE-SIGNAL-01",
         "SELECTIVE-01"
       ],
       "network": [
@@ -1056,12 +1111,14 @@
         "NET-01"
       ],
       "performance": [
+        "GONI-EVIDENCE-SNAPKV-01",
         "GONI-PRINCIPLE-TRAJ-ECON-01"
       ],
       "policy": [
         "EVID-AUTON-03",
         "GONI-DECISION-5346D37FC858",
         "GONI-EVIDENCE-DECISION-THEORY-01",
+        "GONI-EVIDENCE-POLICY-PROJECTION-01",
         "GONI-EXPERIMENT-223625F5043D",
         "GONI-EXPERIMENT-9ABEBF7FD322",
         "GONI-EXPERIMENT-B68618B9E97A",
@@ -1082,6 +1139,7 @@
         "GONI-SPEC-F23D7DFBD81D",
         "GONI-SPEC-F58CCAA78BFD",
         "LOSS-01",
+        "POLICY-PROJECTION-01",
         "SPEC-POL-01"
       ],
       "product": [
@@ -1746,6 +1804,7 @@
         "GONI-EVIDENCE-CCFEBA63D6EB",
         "GONI-EVIDENCE-CD12704E4116",
         "GONI-EVIDENCE-CD45EB16E816",
+        "GONI-EVIDENCE-CONTEXT-COMPRESSION-01",
         "GONI-EVIDENCE-D75D02C44DFA",
         "GONI-EVIDENCE-D7A6DC40334B",
         "GONI-EVIDENCE-D7AF89CD48E0",
@@ -1764,9 +1823,16 @@
         "GONI-EVIDENCE-F548C655D101",
         "GONI-EVIDENCE-F74B86E725FB",
         "GONI-EVIDENCE-FAA487C54065",
+        "GONI-EVIDENCE-FAST-SLOW-01",
         "GONI-EVIDENCE-FBA1A33CF61A",
         "GONI-EVIDENCE-JEV-20260923",
+        "GONI-EVIDENCE-MULTI-AGENT-01",
+        "GONI-EVIDENCE-OPEN-DECISION-MODELS-20260926",
+        "GONI-EVIDENCE-POLICY-PROJECTION-01",
         "GONI-EVIDENCE-SELECTIVE-01",
+        "GONI-EVIDENCE-SEMROUTER-01",
+        "GONI-EVIDENCE-SNAPKV-01",
+        "GONI-EVIDENCE-SPECIALIST-GUARD-01",
         "GONI-EVIDENCE-STRUCTURED-01",
         "GONI-EXPERIMENT-0A1F9BC4014A",
         "GONI-EXPERIMENT-7DE7B307CB98",
@@ -1779,16 +1845,26 @@
         "GONI-SYNTHESIS-D3554320FEBD",
         "GONI-SYNTHESIS-D5A359AF7D66",
         "GONI-SYNTHESIS-DECISION-MODEL-LANDSCAPE-20260923",
+        "GONI-SYNTHESIS-DECISION-MODEL-LANDSCAPE-20260926",
         "GONI-SYNTHESIS-F0626F7EFE2C",
         "REF-GONIOS-NEIGHBOR-01"
       ],
       "routing": [
+        "GONI-EVIDENCE-FAST-SLOW-01",
+        "GONI-EVIDENCE-POLICY-PROJECTION-01",
+        "GONI-EVIDENCE-SEMROUTER-01",
+        "GONI-EXPERIMENT-COG-GRAPH-01",
         "GONI-EXPERIMENT-DECISION-LAYER-01",
+        "GONI-SYNTHESIS-GOVERNED-HETEROGENEOUS-COGNITION-01",
         "LOSS-01",
+        "MODEL-ROLE-01",
+        "POLICY-PROJECTION-01",
+        "ROUTE-SIGNAL-01",
         "SELECTIVE-01"
       ],
       "security": [
         "GONI-DECISION-9AF49466170D",
+        "GONI-EVIDENCE-SPECIALIST-GUARD-01",
         "GONI-PROPOSAL-05B21F15B3C6",
         "GONI-PROPOSAL-7BFF3F4092F3",
         "GONI-PROPOSAL-86A12AAD0F01",
@@ -1806,6 +1882,7 @@
         "API-SURFACE",
         "AXIOMS-01",
         "CI-VALIDATION-01",
+        "CONTEXT-ALLOC-01",
         "DASHBOARD-CONCEPTS",
         "GONI-DECISION-0532C27DA3CC",
         "GONI-DECISION-1A482B12FFB8",
@@ -2149,7 +2226,9 @@
         "CAL-DRIFT-01",
         "CDC-01",
         "CGG-01",
+        "COG-GRAPH-01",
         "CONFIDENCE-01",
+        "CONTEXT-ALLOC-01",
         "CRDT-AUDIT-01",
         "CRDT-DECISIONS-01",
         "CRDT-NOTES-01",
@@ -2569,9 +2648,12 @@
         "METER-01",
         "METER-02",
         "MODEL-REG-01",
+        "MODEL-ROLE-01",
         "NET-01",
+        "POLICY-PROJECTION-01",
         "REC-01",
         "ROBOT-01",
+        "ROUTE-SIGNAL-01",
         "SANDBOX-01",
         "SCHED-01",
         "SELECTIVE-01",
@@ -2586,6 +2668,8 @@
         "VIS-01"
       ],
       "system": [
+        "AGENT-MODEL-ORTHO-01",
+        "COG-GRAPH-01",
         "DECISION-MODEL-01",
         "GONI-DECISION-9AF49466170D",
         "GONI-EXPERIMENT-0A1F9BC4014A",
@@ -2686,6 +2770,7 @@
         "GONI-SYNTHESIS-F3DC36FB8C4B",
         "GONI-SYNTHESIS-FF1804B9EA23",
         "GONI-SYNTHESIS-FFFD0BDE80BE",
+        "GONI-SYNTHESIS-GOVERNED-HETEROGENEOUS-COGNITION-01",
         "GONI-SYNTHESIS-PROBABILISTIC-DECISION-CONTROL-01",
         "LSKR-01",
         "SOV-AUDIT-01",
@@ -2719,6 +2804,7 @@
         "ADR-XXXX",
         "AGENT-DEF-01",
         "AGENT-MANIFEST-01",
+        "AGENT-MODEL-ORTHO-01",
         "AGENT-STORE-01",
         "AI-MEDIA-PROVENANCE",
         "API-SURFACE",
@@ -2734,7 +2820,9 @@
         "CDC-01",
         "CGG-01",
         "CI-VALIDATION-01",
+        "COG-GRAPH-01",
         "CONFIDENCE-01",
+        "CONTEXT-ALLOC-01",
         "CRDT-AUDIT-01",
         "CRDT-DECISIONS-01",
         "CRDT-NOTES-01",
@@ -2930,6 +3018,7 @@
         "GONI-EVIDENCE-CCFEBA63D6EB",
         "GONI-EVIDENCE-CD12704E4116",
         "GONI-EVIDENCE-CD45EB16E816",
+        "GONI-EVIDENCE-CONTEXT-COMPRESSION-01",
         "GONI-EVIDENCE-D75D02C44DFA",
         "GONI-EVIDENCE-D7A6DC40334B",
         "GONI-EVIDENCE-D7AF89CD48E0",
@@ -2948,9 +3037,16 @@
         "GONI-EVIDENCE-F548C655D101",
         "GONI-EVIDENCE-F74B86E725FB",
         "GONI-EVIDENCE-FAA487C54065",
+        "GONI-EVIDENCE-FAST-SLOW-01",
         "GONI-EVIDENCE-FBA1A33CF61A",
         "GONI-EVIDENCE-JEV-20260923",
+        "GONI-EVIDENCE-MULTI-AGENT-01",
+        "GONI-EVIDENCE-OPEN-DECISION-MODELS-20260926",
+        "GONI-EVIDENCE-POLICY-PROJECTION-01",
         "GONI-EVIDENCE-SELECTIVE-01",
+        "GONI-EVIDENCE-SEMROUTER-01",
+        "GONI-EVIDENCE-SNAPKV-01",
+        "GONI-EVIDENCE-SPECIALIST-GUARD-01",
         "GONI-EVIDENCE-STRUCTURED-01",
         "GONI-EXPERIMENT-0002BABA3DAF",
         "GONI-EXPERIMENT-00E7C79F4A95",
@@ -3039,6 +3135,7 @@
         "GONI-EXPERIMENT-CDA983DB73D3",
         "GONI-EXPERIMENT-CDB256DFF43D",
         "GONI-EXPERIMENT-CF9B85869981",
+        "GONI-EXPERIMENT-COG-GRAPH-01",
         "GONI-EXPERIMENT-D43BE8FE3743",
         "GONI-EXPERIMENT-D6763371BDE8",
         "GONI-EXPERIMENT-D8AFFA4F3813",
@@ -4517,6 +4614,7 @@
         "GONI-SYNTHESIS-DDBEE22569C3",
         "GONI-SYNTHESIS-DE368186E963",
         "GONI-SYNTHESIS-DECISION-MODEL-LANDSCAPE-20260923",
+        "GONI-SYNTHESIS-DECISION-MODEL-LANDSCAPE-20260926",
         "GONI-SYNTHESIS-DEDEB088F913",
         "GONI-SYNTHESIS-DF48E13A9D35",
         "GONI-SYNTHESIS-DF627E719B9D",
@@ -4577,6 +4675,7 @@
         "GONI-SYNTHESIS-FEC452FE3082",
         "GONI-SYNTHESIS-FF1804B9EA23",
         "GONI-SYNTHESIS-FFFD0BDE80BE",
+        "GONI-SYNTHESIS-GOVERNED-HETEROGENEOUS-COGNITION-01",
         "GONI-SYNTHESIS-PROBABILISTIC-DECISION-CONTROL-01",
         "GONI-THESIS-3234CF1EA4B0",
         "GONI-THESIS-32FBF8431A3E",
@@ -4618,6 +4717,7 @@
         "METRICS-01",
         "MODEL-REG-01",
         "MODEL-REGISTRIES",
+        "MODEL-ROLE-01",
         "MODELS-ANTHROPIC",
         "MODELS-MISTRAL",
         "MODELS-OPENAI",
@@ -4631,6 +4731,7 @@
         "PERSONAL-TWIN-AUTONOMY-MAP",
         "PLANE-00",
         "PLANE-01",
+        "POLICY-PROJECTION-01",
         "POWER-AND-PSU",
         "PRICING-MODELS",
         "PRIV-01",
@@ -4642,6 +4743,7 @@
         "REMOTE-LLM-ARCHITECTURE",
         "RFC-0000-TEMPLATE",
         "ROBOT-01",
+        "ROUTE-SIGNAL-01",
         "RUNTIME-00",
         "SANDBOX-00",
         "SANDBOX-01",
@@ -4845,6 +4947,7 @@
         "GONI-EVIDENCE-CCFEBA63D6EB",
         "GONI-EVIDENCE-CD12704E4116",
         "GONI-EVIDENCE-CD45EB16E816",
+        "GONI-EVIDENCE-CONTEXT-COMPRESSION-01",
         "GONI-EVIDENCE-D75D02C44DFA",
         "GONI-EVIDENCE-D7A6DC40334B",
         "GONI-EVIDENCE-D7AF89CD48E0",
@@ -4863,9 +4966,16 @@
         "GONI-EVIDENCE-F548C655D101",
         "GONI-EVIDENCE-F74B86E725FB",
         "GONI-EVIDENCE-FAA487C54065",
+        "GONI-EVIDENCE-FAST-SLOW-01",
         "GONI-EVIDENCE-FBA1A33CF61A",
         "GONI-EVIDENCE-JEV-20260923",
+        "GONI-EVIDENCE-MULTI-AGENT-01",
+        "GONI-EVIDENCE-OPEN-DECISION-MODELS-20260926",
+        "GONI-EVIDENCE-POLICY-PROJECTION-01",
         "GONI-EVIDENCE-SELECTIVE-01",
+        "GONI-EVIDENCE-SEMROUTER-01",
+        "GONI-EVIDENCE-SNAPKV-01",
+        "GONI-EVIDENCE-SPECIALIST-GUARD-01",
         "GONI-EVIDENCE-STRUCTURED-01"
       ],
       "experiment": [
@@ -4983,6 +5093,7 @@
         "GONI-EXPERIMENT-CDA983DB73D3",
         "GONI-EXPERIMENT-CDB256DFF43D",
         "GONI-EXPERIMENT-CF9B85869981",
+        "GONI-EXPERIMENT-COG-GRAPH-01",
         "GONI-EXPERIMENT-D43BE8FE3743",
         "GONI-EXPERIMENT-D6763371BDE8",
         "GONI-EXPERIMENT-D8AFFA4F3813",
@@ -5423,6 +5534,7 @@
         "GONI-OBJECTION-EEC5A603DDFE"
       ],
       "principle": [
+        "AGENT-MODEL-ORTHO-01",
         "AXIOMS-01",
         "DOCTRINE-DELEG-01",
         "GONI-PRINCIPLE-0147896F31C8",
@@ -5658,7 +5770,9 @@
         "CAL-DRIFT-01",
         "CDC-01",
         "CGG-01",
+        "COG-GRAPH-01",
         "CONFIDENCE-01",
+        "CONTEXT-ALLOC-01",
         "CRDT-AUDIT-01",
         "CRDT-NOTES-01",
         "CRDT-PREFS-01",
@@ -6096,9 +6210,12 @@
         "METER-01",
         "METER-02",
         "MODEL-REG-01",
+        "MODEL-ROLE-01",
         "NET-01",
+        "POLICY-PROJECTION-01",
         "REC-01",
         "ROBOT-01",
+        "ROUTE-SIGNAL-01",
         "SANDBOX-01",
         "SCHED-01",
         "SCHEDULER-SPEC",
@@ -6561,6 +6678,7 @@
         "GONI-SYNTHESIS-DDBEE22569C3",
         "GONI-SYNTHESIS-DE368186E963",
         "GONI-SYNTHESIS-DECISION-MODEL-LANDSCAPE-20260923",
+        "GONI-SYNTHESIS-DECISION-MODEL-LANDSCAPE-20260926",
         "GONI-SYNTHESIS-DEDEB088F913",
         "GONI-SYNTHESIS-DF48E13A9D35",
         "GONI-SYNTHESIS-DF627E719B9D",
@@ -6621,6 +6739,7 @@
         "GONI-SYNTHESIS-FEC452FE3082",
         "GONI-SYNTHESIS-FF1804B9EA23",
         "GONI-SYNTHESIS-FFFD0BDE80BE",
+        "GONI-SYNTHESIS-GOVERNED-HETEROGENEOUS-COGNITION-01",
         "GONI-SYNTHESIS-PROBABILISTIC-DECISION-CONTROL-01",
         "GONI-WHITEPAPER",
         "GOV-00",
@@ -10451,7 +10570,7 @@
         "AGENT-DEFINITION"
       ],
       "artifacts": [],
-      "body": "# AGENT-01 - Agent Definition (Goni OS)\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n# AGENT-01 - Agent Definition (Goni OS)\n﻿---\nid: AGENT-DEF-01\ntype: SPEC\nstatus: specified_only\n---\nDOC-ID: AGENT-DEF-01\nStatus: Specified only / roadmap\n\nThis document defines what an agent is in Goni OS and how it interacts with the\nkernel. Agents are userland processes; cognition is a kernel substrate; solver\ncalls are budgeted interrupts.",
+      "body": "# AGENT-01 - Agent Definition (Goni OS)\n\nAn agent is a governed userland process bound to a principal-defined purpose and\nkernel-mediated authority.\n\nIts persistent identity is determined by properties such as:\n\n- agent identity and role;\n- Work Order or delegated objective;\n- state and memory references;\n- mandate and policy scope;\n- tool and capability eligibility;\n- budgets and deadlines;\n- workflow or cognitive-graph state;\n- provenance and receipts.\n\nA model is not the agent. Models, classifiers, decision models, solvers,\nretrievers, verifiers, and other cognitive mechanisms are replaceable resources\nthat the agent may invoke through the harness and router.\n\nChanging the selected model or mechanism does not, by itself, change the\nagent's identity, authority, memory ownership, mandate, or accountability.\n\nAgents are userland processes; cognition is a governed substrate; expensive\nsolver or model calls remain budgeted operations.",
       "domains": [
         "agent",
         "specs"
@@ -10466,13 +10585,13 @@
         }
       ],
       "path": "knowledge/specifications/agent-def-01-agent-01-agent-definition-goni-os.md",
-      "proposition": "﻿--- id: AGENT-DEF-01 type: SPEC status: specified_only DOC-ID: AGENT-DEF-01 Status: Specified only / roadmap This document defines what an agent is in Goni OS and how it interacts with the kernel.",
+      "proposition": "An agent is a persistent governed userland process defined by identity, state, memory, mandate, policy, tools, budgets, and workflow; model or mechanism selection is a replaceable cognitive dependency and does not define agent identity.",
       "relations": [],
       "sources": [],
       "status": "draft",
       "title": "AGENT-01 - Agent Definition (Goni OS)",
       "type": "specification",
-      "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
+      "uncertainty": "This contract defines identity and responsibility boundaries, not a runtime process implementation. Concrete lifecycle and scheduler semantics remain governed elsewhere."
     },
     {
       "aliases": [
@@ -10501,6 +10620,42 @@
       "title": "AGENT-02 - Agent Manifest",
       "type": "specification",
       "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
+    },
+    {
+      "aliases": [
+        "AGENT-MODEL-SEPARATION"
+      ],
+      "artifacts": [],
+      "body": "# Agent–Model Orthogonality\n\nGoni should separate persistent agent identity from the cognitive substrate used\nfor each operation.\n\nAn agent is defined by persistent governed properties such as identity, state,\nmemory, mandate, policy, tools, budgets, and workflow.\n\nFor each operation, a cognitive mechanism may be selected dynamically according\nto task, state, required function, evidence, and constraints.\n\nA coding agent may therefore use deterministic Git inspection, a relevance\nclassifier, a bounded decision model, a small local generative model, a stronger\nremote reasoner, and a verifier while remaining one accountable agent.\n\nChanging the selected model or mechanism does not by itself change the agent's\nidentity, memory ownership, mandate, authority, or accountability.\n\nModel switching must not reset or widen the current Work Order or capability\ncorridor.",
+      "domains": [
+        "agent",
+        "models",
+        "system"
+      ],
+      "id": "AGENT-MODEL-ORTHO-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/principles/agent-model-ortho-01-agent-model-orthogonality.md",
+      "proposition": "Agent identity, state, mandate, tools, policy, and accountability should remain stable across dynamic changes in the model or cognitive mechanism selected for individual operations.",
+      "relations": [
+        {
+          "target": "AGENT-DEF-01",
+          "type": "refines"
+        },
+        {
+          "target": "COG-GRAPH-01",
+          "type": "depends_on"
+        },
+        {
+          "target": "GONI-PRINCIPLE-HET-INTEL-01",
+          "type": "supports"
+        }
+      ],
+      "sources": [],
+      "status": "draft",
+      "title": "Agent–Model Orthogonality",
+      "type": "principle",
+      "uncertainty": "The optimal granularity of agent identity is application-specific. This principle establishes only that model identity is insufficient to define agent identity."
     },
     {
       "aliases": [
@@ -10922,6 +11077,47 @@
     },
     {
       "aliases": [
+        "COGNITIVE-GRAPH"
+      ],
+      "artifacts": [],
+      "body": "# Governed Cognitive Graph\n\n## 1. Purpose\n\nGoni already supports heterogeneous cognition, escalation, verification, and\nkernel-mediated action. The cognitive graph makes the composition of those\nmechanisms explicit.\n\nA cognitive graph is a directed graph:\n\nG = (V, E)\n\nwhere each node v in V is one bounded cognitive operation and each edge e in E\ndeclares an allowed transition condition.\n\nThe graph is not an authority graph. It decides what computation may be\nattempted next. The kernel still decides whether an external effect is\npermitted.\n\n## 2. Cognitive node contract\n\nA cognitive node SHOULD declare at least:\n\n- node_id;\n- role_ref or operation role;\n- input_schema_ref;\n- output_schema_ref;\n- mechanism_selector_ref;\n- context or state references permitted to enter the node;\n- compute, latency, token, energy, or monetary budget where applicable;\n- privacy and egress class;\n- acceptance or abstention rule where probabilistic output is used;\n- verification requirement;\n- retry or iteration budget;\n- receipt/provenance requirements for consequential routing decisions.\n\nA node may be implemented by deterministic code, retrieval, a classifier, a\nbounded decision model, a generative model, a reasoning model, a verifier,\nanother governed agent, or another approved mechanism.\n\n## 3. Typed transitions\n\nEdges SHOULD use finite, explicit transition semantics such as:\n\n- on_success;\n- on_abstain;\n- on_low_confidence;\n- on_verification_failure;\n- on_budget_exhaustion;\n- on_policy_denial;\n- on_timeout;\n- on_external_state_change.\n\nTransition predicates may use deterministic state or probabilistic evidence,\nbut probabilistic evidence MUST remain subject to the applicable calibration\nand consequence-control contracts.\n\n## 4. Composition patterns\n\nThe graph MAY express:\n\n### Sequence\n\nv1 -> v2 -> v3.\n\n### Fan-out\n\nOne node may dispatch independent bounded work to multiple specialist nodes\nsubject to graph and scheduler budgets.\n\n### Fan-in\n\nA verifier or synthesizer may consume outputs from several predecessor nodes\nwhen the input provenance is preserved.\n\n### Bounded repair loop\n\ngenerate -> verify -> repair -> verify\n\nis permitted only with an explicit iteration budget and stop condition.\n\n### Conditional escalation\n\nA cheap mechanism may route to a more expensive mechanism when uncertainty,\nverification failure, consequence, freshness, capability, or expected value\njustifies escalation.\n\n## 5. Graph invariants\n\nThe following invariants apply:\n\n1. Every node and edge has a stable identifier or reproducible definition.\n2. Every graph execution is bound to a Work Order and its budgets.\n3. Cognitive graph transitions cannot enlarge the Work Order mandate.\n4. A downstream node receives only the context, tools, and network eligibility\n   permitted for that node.\n5. A graph cycle requires a finite iteration or resource bound.\n6. External effects still require kernel policy, capability validation, and the\n   normal receipt path.\n7. Graph routing evidence cannot become canonical authority state.\n\nFormally:\n\ndelta cognitive route does not imply delta authority.\n\n## 6. Relationship to ITCR\n\nITCR remains a valid specialized cognitive graph:\n\nlow-power state\n-> cheap proposal\n-> escalation control\n-> reasoner/verifier\n-> governed commit.\n\nCOG-GRAPH-01 generalizes that fixed cascade into a reusable composition\ncontract without replacing the ITCR-specific semantics.\n\n## 7. Receipts and replay\n\nA graph execution SHOULD permit reconstruction of:\n\n- graph/version selected;\n- nodes attempted;\n- mechanisms considered and selected;\n- transition predicates evaluated;\n- confidence/calibration evidence where relevant;\n- verification results;\n- budgets consumed;\n- policy denials or escalations;\n- final output and effect receipts.\n\nThe graph is therefore an inspectable cognitive trajectory rather than hidden\nprompt glue.",
+      "domains": [
+        "agent",
+        "models",
+        "specs",
+        "system"
+      ],
+      "id": "COG-GRAPH-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/specifications/cog-graph-01-governed-cognitive-graph.md",
+      "proposition": "Goni should represent multi-step cognition as a typed, budgeted graph of replaceable cognitive mechanisms whose transitions are explicit and auditable, while authority for external effects remains exclusively kernel-owned.",
+      "relations": [
+        {
+          "target": "GONI-PRINCIPLE-HET-INTEL-01",
+          "type": "refines"
+        },
+        {
+          "target": "GONI-PRINCIPLE-GOV-LOOP-01",
+          "type": "depends_on"
+        },
+        {
+          "target": "DECISION-MODEL-01",
+          "type": "depends_on"
+        },
+        {
+          "target": "GONI-SPEC-FD6CC59ECC08",
+          "type": "refines"
+        }
+      ],
+      "sources": [],
+      "status": "draft",
+      "title": "Governed Cognitive Graph",
+      "type": "specification",
+      "uncertainty": "This specification defines a model- and framework-independent graph contract. Concrete schedulers, graph runtimes, optimization algorithms, and node implementations require separate evidence and implementation work."
+    },
+    {
+      "aliases": [
         "UNCERTAINTY-EVIDENCE"
       ],
       "artifacts": [],
@@ -10956,6 +11152,43 @@
       "title": "Confidence Evidence Provenance",
       "type": "specification",
       "uncertainty": "This is a specified-only logical record. Concrete storage-table promotion and receipt-schema migration should occur only with an implementation slice."
+    },
+    {
+      "aliases": [
+        "THREE-LAYER-CONTEXT-ALLOCATION"
+      ],
+      "artifacts": [],
+      "body": "# Three-Layer Context Resource Allocation\n\nGoni should distinguish three different optimization surfaces that are often\ncollapsed under the term context compression.\n\n## L1 — Source and evidence selection\n\nQuestion:\n\nWhich documents, chunks, memories, facts, or observations should enter the\ncandidate context at all?\n\nExamples include retrieval, graph expansion, reranking, policy filtering, and\nsubmodular context selection.\n\nThe principal failure mode is omission of decisive evidence.\n\nRecovery commonly requires broader retrieval or another source-selection pass.\n\n## L2 — Semantic text compression\n\nQuestion:\n\nGiven selected source material, which textual spans, tokens, statements, or\nstructured facts should be retained, compressed, or omitted before model\nprefill?\n\nThis layer may use extractive retention, query-aware compression, structured\nfact projection, or bounded summarization.\n\nThe principal failure mode is semantic information loss or distortion inside\nmaterial that was correctly selected at L1.\n\nCompression artifacts SHOULD preserve source refs and enough provenance to\nrehydrate original evidence when verification or later reasoning requires it.\n\n## L3 — Model-internal residency\n\nQuestion:\n\nAfter text has entered the model, which KV states or other internal\nrepresentations remain resident, at what fidelity, and for how long?\n\nExamples include paging, token/state eviction, heavy-hitter retention,\narchitecture-specific latent compression, and precision/fidelity allocation.\n\nThe principal failure mode is loss of model-accessible long-range dependencies\ndespite the original text having been supplied.\n\nRecovery depends on runtime capabilities and may require re-prefill or\nrehydration rather than another semantic retrieval pass.\n\n## Separation rule\n\nThe layers are related but non-equivalent:\n\nsource selection != semantic text compression != KV residency.\n\nAn improvement at one layer does not establish an improvement at another.\n\nFor example:\n\n- a smaller KV cache does not prove that source selection improved;\n- a compressed prompt does not prove that removed evidence was irrelevant;\n- broader retrieval does not require retaining every candidate token in model\n  context.\n\n## Evaluation\n\nEach layer SHOULD report layer-appropriate metrics.\n\nL1 may measure candidate recall, citation coverage, retrieval latency, and\ncontext-selection quality.\n\nL2 may measure retained token ratio, answer quality, factual preservation,\nsource-span recoverability, and compression latency.\n\nL3 may measure peak KV memory, bytes moved, TTFT/decode latency, throughput,\nlong-range recall, and re-prefill cost.\n\nCross-layer experiments SHOULD keep the other layers fixed where practical so\nthe source of gains and degradation remains identifiable.\n\n## Authority boundary\n\nAll three layers are cognitive optimizations.\n\nLossy selection, compression, or KV retention MUST NOT become the sole source\nfor mandates, capabilities, revocation, approvals, or other canonical authority\nstate.",
+      "domains": [
+        "memory",
+        "models",
+        "software",
+        "specs"
+      ],
+      "id": "CONTEXT-ALLOC-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/specifications/context-alloc-01-three-layer-context-resource-allocation.md",
+      "proposition": "Goni should evaluate source selection, semantic text compression, and model-internal KV residency as three distinct context-allocation layers with separate objectives, failure modes, evidence, and recovery mechanisms.",
+      "relations": [
+        {
+          "target": "GONI-PRINCIPLE-9062425CD490",
+          "type": "refines"
+        },
+        {
+          "target": "GONI-IMAP-66D2DBD94204",
+          "type": "refines"
+        },
+        {
+          "target": "GONI-SYNTHESIS-227700D474C6",
+          "type": "refines"
+        }
+      ],
+      "sources": [],
+      "status": "draft",
+      "title": "Three-Layer Context Resource Allocation",
+      "type": "specification",
+      "uncertainty": "The boundaries are conceptual and may be fused by a concrete runtime. Evaluation should still attribute gains and losses to the layer where information is discarded or compressed."
     },
     {
       "aliases": [],
@@ -16486,6 +16719,35 @@
     {
       "aliases": [],
       "artifacts": [],
+      "body": "# Prompt-level semantic compression is a distinct layer\n\nSelective Context prunes redundant input context before LLM inference.\nLongLLMLingua uses question-aware prompt compression and reorganization for\nlong-context tasks.\n\nBoth operate after material has already been acquired or selected for possible\nuse and before model-internal KV retention becomes the relevant resource\nproblem.\n\nThis supports CONTEXT-ALLOC-01's middle layer:\n\nselected source material\n-> semantic text retention/compression\n-> model prefill.\n\nThe transfer to Goni is architectural rather than a commitment to either\nalgorithm. L2 compression should be evaluated separately from L1 retrieval and\nL3 KV-cache policies so information-loss causes remain identifiable.",
+      "domains": [
+        "research",
+        "memory",
+        "models"
+      ],
+      "id": "GONI-EVIDENCE-CONTEXT-COMPRESSION-01",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/evidence/goni-evidence-context-compression-01-semantic-text-compression.md",
+      "proposition": "Selective Context and LongLLMLingua provide empirical examples of reducing or reordering textual prompt material after source acquisition, supporting CONTEXT-ALLOC-01's explicit L2 semantic text-compression layer.",
+      "relations": [
+        {
+          "target": "CONTEXT-ALLOC-01",
+          "type": "supports"
+        }
+      ],
+      "sources": [
+        "SRC-LI2023-SELECTIVE-CONTEXT",
+        "SRC-JIANG2024-LONGLLMLINGUA"
+      ],
+      "status": "draft",
+      "title": "Prompt-level semantic compression is distinct from source selection and KV retention",
+      "type": "evidence",
+      "uncertainty": "Reported compression gains and quality trade-offs are task-, model-, compression-ratio-, and benchmark-specific. Compression can omit decisive evidence and must retain provenance/recovery paths where required."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
       "body": "# Source claim: zeldovich2006-histar\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\nKey: [[zeldovich2006-histar]]\nClaim: Presents OS design with explicit information-flow control and small\ntrusted computing base goals.\nRelevance:\n- Maps directly to policy-gated declassification and egress confinement.\nUsed in:\n- `blueprint/20-system/40-agentic-kernel-foundations.md` (IFC)\nSource:\n- https://www.scs.stanford.edu/~nickolai/papers/zeldovich-histar.pdf",
       "domains": [
         "research"
@@ -17062,6 +17324,40 @@
     {
       "aliases": [],
       "artifacts": [],
+      "body": "# Adaptive deliberation has independent research support\n\nSeveral independent research lines separate routine/fast processing from more\nexpensive planning or reasoning.\n\nSystem-1.x uses a controller to allocate planning sub-problems between faster\nand slower modes. Talker-Reasoner separates a fast conversational role from a\nslower planning/reasoning role. When to Reason uses semantic routing to invoke\nreasoning mode only when predicted to be beneficial.\n\nFor Goni, the relevant conclusion is not literal psychological System 1/System\n2 equivalence. It is the engineering pattern:\n\ncheap cognition -> difficulty/uncertainty control -> expensive deliberation.\n\nThat pattern already exists in ITCR and can be represented generally by\nCOG-GRAPH-01.",
+      "domains": [
+        "research",
+        "models",
+        "routing"
+      ],
+      "id": "GONI-EVIDENCE-FAST-SLOW-01",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/evidence/goni-evidence-fast-slow-01-adaptive-deliberation.md",
+      "proposition": "System-1.x, Talker-Reasoner, and When to Reason independently support architectures that separate cheaper fast cognition from slower deliberative reasoning and activate the latter selectively, providing external grounding for Goni's ITCR and cognitive-graph escalation patterns.",
+      "relations": [
+        {
+          "target": "GONI-SPEC-FD6CC59ECC08",
+          "type": "supports"
+        },
+        {
+          "target": "COG-GRAPH-01",
+          "type": "supports"
+        }
+      ],
+      "sources": [
+        "SRC-SAHA2024-SYSTEM1X",
+        "SRC-CHRISTAKOPOULOU2024-TALKER-REASONER",
+        "SRC-WANG2025-WHEN-TO-REASON"
+      ],
+      "status": "draft",
+      "title": "Adaptive routing between cheap and deliberative cognition has independent research support",
+      "type": "evidence",
+      "uncertainty": "The cited systems use different tasks, controllers, models, and definitions of fast/slow cognition. They support selective deliberation as a systems pattern, not one universal escalation threshold."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
       "body": "# Source claim: agentguard2025\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\nKey: [[agentguard2025]]\nClaim: AgentGuard studies runtime verification of AI agents through formal\nevents and monitorable properties.\nRelevance:\n- Informs Goni assurance and belief-state discussions without implying POMDP or\n  MDP implementation.\nUsed in:\n- `blueprint/docs/references/gonios-research-neighbor-map.md`\nSource:\n- https://arxiv.org/abs/2509.23864",
       "domains": [
         "research"
@@ -17128,6 +17424,106 @@
     {
       "aliases": [],
       "artifacts": [],
+      "body": "# Multi-agent work supports graph-style cognition\n\nMixture-of-Agents demonstrates layered composition in which multiple agents\nproduce candidate outputs and subsequent agents consume those outputs.\nAgentVerse studies dynamically composed multi-agent groups across several task\nsettings.\n\nThese works provide evidence that fan-out, specialist roles, and fan-in\nsynthesis can sometimes improve task performance.\n\nGoni adds constraints not established by those results:\n\n- agent identity and model substrate remain separate;\n- graph loops and fan-out remain budgeted;\n- authority cannot emerge from agent consensus;\n- specialist composition must be compared against simpler single-model and\n  fixed-cascade baselines;\n- verification and receipt provenance remain explicit.",
+      "domains": [
+        "research",
+        "agent",
+        "models"
+      ],
+      "id": "GONI-EVIDENCE-MULTI-AGENT-01",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/evidence/goni-evidence-multi-agent-01-layered-specialist-composition.md",
+      "proposition": "Mixture-of-Agents and AgentVerse provide empirical examples of combining multiple LLM agents through layered or dynamically composed collaboration, supporting evaluation of fan-out, specialist, and fan-in patterns inside a governed cognitive graph.",
+      "relations": [
+        {
+          "target": "COG-GRAPH-01",
+          "type": "supports"
+        },
+        {
+          "target": "MODEL-ROLE-01",
+          "type": "supports"
+        }
+      ],
+      "sources": [
+        "SRC-WANG2024-MIXTURE-OF-AGENTS",
+        "SRC-CHEN2023-AGENTVERSE"
+      ],
+      "status": "draft",
+      "title": "Layered and dynamically composed multi-agent systems support graph-style cognition",
+      "type": "evidence",
+      "uncertainty": "Reported gains are benchmark- and architecture-specific. Multi-agent composition can increase cost, latency, correlated error, and integration burden; it is evidence for a candidate graph pattern rather than a default policy."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Open bounded-decision implementations — 2026-09-26\n\nThe open landscape now spans several distinct implementation strategies.\n\nLaya describes a non-autoregressive typed decision engine with choice, score,\nand yes/no outputs and multiple questions evaluated against shared state.\n\nKev publishes Qwen-based research decision models with a dedicated pointer\nreadout, typed questions, probability distributions, calibration evaluation,\nand explicit warnings about out-of-domain use.\n\nTev1 demonstrates another path: specialize a conventional small generative\nmodel to choose among declared answer options while publishing the data and\ntraining recipe.\n\nGLiClass occupies the lighter discriminative end of the spectrum by performing\nzero-shot classification over supplied labels in a single forward pass.\n\nThese projects strengthen the architectural claim that bounded semantic\ninference should be an interface category rather than a Jev-specific feature.\nThey do not establish that one architecture dominates across Goni workloads.",
+      "domains": [
+        "market",
+        "models",
+        "research"
+      ],
+      "id": "GONI-EVIDENCE-OPEN-DECISION-MODELS-20260926",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/evidence/goni-evidence-open-decision-models-20260926.md",
+      "proposition": "By 26 September 2026, open repositories including Laya, Kev, Tev1, and GLiClass provide multiple implementation paths for bounded semantic decisions, supporting Goni's provider-independent DECISION-MODEL-01 abstraction rather than a vendor-specific Jev dependency.",
+      "relations": [
+        {
+          "target": "DECISION-MODEL-01",
+          "type": "supports"
+        },
+        {
+          "target": "GONI-EXPERIMENT-DECISION-LAYER-01",
+          "type": "supports"
+        }
+      ],
+      "sources": [
+        "SRC-LAYA-SYSTEM-ONE-REPO",
+        "SRC-KEV-DECISION-MODEL-REPO",
+        "SRC-TOGETHER-TEV1-REPO",
+        "SRC-GLICLASS-REPO"
+      ],
+      "status": "draft",
+      "title": "Open implementations span dedicated decision models and lightweight bounded classifiers",
+      "type": "evidence",
+      "uncertainty": "These projects differ materially in architecture, training, output semantics, maturity, and evaluation quality. Repository-reported benchmarks are not treated as independently reproduced results."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Declarative routing policy can compile into multiple targets\n\nChen et al. extend a declarative routing DSL from stateless model selection to\nmulti-step agent workflows and infrastructure/protocol controls.\n\nThe reported compiler emits decision structures or artifacts for orchestration\nframeworks, Kubernetes/network controls, MCP, and A2A boundaries from a common\npolicy source.\n\nThis provides external support for the POLICY-PROJECTION-01 design intuition:\ncross-layer policy consistency can be improved by deriving surface-specific\neligibility from one source rather than maintaining unrelated copies.\n\nGoni does not adopt the source system's DSL or treat compiled routing policy as\ncanonical authority. SPEC-POL-01 and kernel capability state remain the\nnormative authority source; projections may only preserve or narrow it.",
+      "domains": [
+        "research",
+        "policy",
+        "routing"
+      ],
+      "id": "GONI-EVIDENCE-POLICY-PROJECTION-01",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/evidence/goni-evidence-policy-projection-01-cross-layer-compilation.md",
+      "proposition": "Chen et al. (2026) describe a declarative routing policy compiled into model-routing, agent-orchestration, infrastructure, MCP, and A2A decision artifacts, supporting Goni's use of one canonical policy source with derived surface-specific projections.",
+      "relations": [
+        {
+          "target": "POLICY-PROJECTION-01",
+          "type": "supports"
+        },
+        {
+          "target": "COG-GRAPH-01",
+          "type": "supports"
+        }
+      ],
+      "sources": [
+        "SRC-CHEN2026-ROUTING-AGENT-ORCHESTRATION"
+      ],
+      "status": "draft",
+      "title": "Declarative routing policy can compile into multiple orchestration and infrastructure targets",
+      "type": "evidence",
+      "uncertainty": "The paper's policy language, compiler guarantees, and deployment targets are specific to that system. Goni's stronger capability and kernel authority model remains independent and requires its own implementation proof."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
       "body": "# Selective prediction exposes a risk-coverage trade-off\n\nGeifman and El-Yaniv study predictive systems with a reject option: the system\nanswers a subset of cases and abstains on the remainder. Performance is\ntherefore characterized jointly by coverage and the risk incurred on accepted\ncases.\n\nFor Goni, the supported abstraction is the general selective-prediction\nproblem. A selector may be implemented by thresholds, learned models, rules, or\nother mechanisms. The cited work does not establish which selector is optimal\nfor Goni workloads.",
       "domains": [
         "research",
@@ -17152,6 +17548,103 @@
       "title": "Selective prediction exposes a risk-coverage trade-off",
       "type": "evidence",
       "uncertainty": "SelectiveNet is one concrete learned approach. Goni adopts the general reject-option and risk-coverage concepts without requiring its architecture or training procedure."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Heterogeneous routing signals can be composed before model selection\n\nThe vLLM Semantic Router architecture extracts heterogeneous request signals\nincluding heuristic features, context length, language, role-based\nauthorization, embeddings, domain classification, grounding, modality,\nprivacy, and safety signals, then composes them into routing decisions.\n\nThis supports the architectural separation in ROUTE-SIGNAL-01:\n\nsignal production -> signal composition -> route selection.\n\nThe transferable insight is the separation of typed signal producers from the\nmodel-selection mechanism, not the adoption of a specific router or provider\nstack.\n\nGoni extends this pattern by keeping authority state kernel-owned and treating\nprobabilistic routing evidence as cognition rather than permission.",
+      "domains": [
+        "research",
+        "models",
+        "routing"
+      ],
+      "id": "GONI-EVIDENCE-SEMROUTER-01",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/evidence/goni-evidence-semrouter-01-composable-routing-signals.md",
+      "proposition": "The vLLM Semantic Router work demonstrates a routing architecture that composes heterogeneous deterministic and neural request signals before selecting among heterogeneous model backends, supporting Goni's separation of signal production from route selection.",
+      "relations": [
+        {
+          "target": "ROUTE-SIGNAL-01",
+          "type": "supports"
+        },
+        {
+          "target": "GONI-IMAP-EB2133E6965D",
+          "type": "supports"
+        }
+      ],
+      "sources": [
+        "SRC-LIU2026-VLLM-SEMANTIC-ROUTER"
+      ],
+      "status": "draft",
+      "title": "Heterogeneous routing signals can be composed before model selection",
+      "type": "evidence",
+      "uncertainty": "The source describes its own production architecture and reported capabilities. It does not establish that the same signal vocabulary, routing algorithms, or deployment model is optimal for Goni."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# SnapKV extends the KV-selection evidence base\n\nSnapKV selects clustered important KV positions per attention head using\nattention behavior observed near the end of the prompt.\n\nFor Goni this provides another L3 model-internal residency candidate to compare\nwith recency, paging, H2O-style heavy-hitter retention, and architecture-specific\nrepresentation compression.\n\nThe important architectural point is that KV selection happens after the prompt\nhas already entered the model. It therefore cannot substitute for source-level\nevidence selection or prompt-level semantic compression.\n\nAs with all lossy cognitive-state optimization, KV selection remains outside\nthe canonical authority path.",
+      "domains": [
+        "research",
+        "models",
+        "performance"
+      ],
+      "id": "GONI-EVIDENCE-SNAPKV-01",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/evidence/goni-evidence-snapkv-01-kv-selection.md",
+      "proposition": "SnapKV reports that prompt-derived attention patterns can be used to select a reduced set of KV positions for later generation, providing an additional L3 KV-residency baseline alongside H2O and paging-based methods.",
+      "relations": [
+        {
+          "target": "CONTEXT-ALLOC-01",
+          "type": "supports"
+        },
+        {
+          "target": "GONI-SYNTHESIS-227700D474C6",
+          "type": "supports"
+        }
+      ],
+      "sources": [
+        "SRC-LI2024-SNAPKV"
+      ],
+      "status": "draft",
+      "title": "SnapKV provides an additional model-internal KV selection strategy",
+      "type": "evidence",
+      "uncertainty": "SnapKV results depend on model, hardware, context distribution, and task. Its reported accuracy and efficiency should not be generalized to all multi-instruction or agent workloads without reproduction."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Specialized guard models demonstrate role-specific allocation\n\nLlama Guard is an instruction-tuned language model specialized for classifying\nprompts and responses against configurable safety-risk taxonomies.\n\nShieldGemma similarly provides model variants specialized for safety-content\nmoderation categories.\n\nThese systems demonstrate that a model need not act as a general conversational\nagent merely because its substrate is generative. The same broad model family\ncan be exposed and evaluated through a narrower specialist role.\n\nFor Goni, this supports the MODEL-ROLE-01 guard role and the wider principle of\nselecting cognition by function.\n\nA guard prediction is still probabilistic cognition. It may inform routing,\nverification, or policy inputs, but it does not itself become kernel policy or\nauthority.",
+      "domains": [
+        "research",
+        "models",
+        "security"
+      ],
+      "id": "GONI-EVIDENCE-SPECIALIST-GUARD-01",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/evidence/goni-evidence-specialist-guard-01.md",
+      "proposition": "Llama Guard and ShieldGemma demonstrate that general language-model substrates can be specialized and evaluated for narrow guard or moderation roles, supporting MODEL-ROLE-01's separation of cognitive role from model identity.",
+      "relations": [
+        {
+          "target": "MODEL-ROLE-01",
+          "type": "supports"
+        },
+        {
+          "target": "GONI-PRINCIPLE-HET-INTEL-01",
+          "type": "supports"
+        }
+      ],
+      "sources": [
+        "SRC-INAN2023-LLAMA-GUARD",
+        "SRC-GOOGLE-SHIELDGEMMA-MODEL-CARD"
+      ],
+      "status": "draft",
+      "title": "Specialized guard models demonstrate role-specific model allocation",
+      "type": "evidence",
+      "uncertainty": "Safety classification is only one specialist role. The cited evaluations do not establish universal guard accuracy, calibration, adversarial robustness, or suitability for Goni policy decisions."
     },
     {
       "aliases": [],
@@ -19372,6 +19865,58 @@
       "title": "Evidence Lane",
       "type": "experiment",
       "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Governed Cognitive Graph Benchmark\n\n## Research question\n\nDoes dynamically composing heterogeneous cognitive mechanisms improve verified\ntask completion enough to justify its additional routing, orchestration,\nverification, and integration cost?\n\n## Compared architectures\n\nAt minimum compare:\n\nA. Monolithic frontier model\n- one strong general model receives the task and available tools.\n\nB. Simple escalation\n- cheaper/default model first;\n- stronger model only when the configured escalation condition fires.\n\nC. Fixed specialist cascade\n- a predetermined chain such as classify -> generate -> verify.\n\nD. Dynamic heterogeneous cognitive graph\n- runtime route selection among deterministic code, retrieval, classifiers,\n  decision models, generators, reasoners, verifiers, and other approved roles.\n\nE. Multi-agent / multi-model graph\n- fan-out to multiple specialist or independent agents/models followed by\n  governed synthesis or verification.\n\n## Matched conditions\n\nThe comparison SHOULD hold constant:\n\n- Work Order and Done Contract;\n- available source material;\n- tool capabilities;\n- policy and authority corridor;\n- network eligibility;\n- final output requirements;\n- task dataset;\n- evaluation oracle or human rubric;\n- retry and maximum wall-clock envelope where practical.\n\nArchitecture-specific compute budgets must be measured rather than hidden.\n\n## Primary outcome\n\nThe primary system metric is verified successful delegated work, not raw model\nbenchmark score.\n\nUseful normalized measures include:\n\nverified task success / monetary cost\n\nverified task success / wall-clock time\n\nverified task success / energy where measurable.\n\n## Cognitive metrics\n\nReport:\n\n- task success and semantic quality;\n- frontier-model invocation rate;\n- graph node count actually executed;\n- trajectory length;\n- escalation rate;\n- false escalation rate;\n- late escalation rate;\n- abstention rate;\n- verification catch rate;\n- verifier false-accept and false-reject rates where labels exist;\n- calibration and risk-coverage for confidence-bearing decisions;\n- repair-loop count and stop reason.\n\n## System metrics\n\nReport:\n\n- p50/p95 end-to-end latency;\n- monetary inference/tool cost;\n- input/output token volume;\n- context reconstruction/compression cost;\n- local energy or thermal proxy where measurable;\n- network/egress volume;\n- privacy-class exposure;\n- human interruption minutes;\n- receipt completeness;\n- policy-denied route attempts;\n- unauthorized-effect incidents, which should remain zero under the kernel\n  boundary.\n\n## Complexity accounting\n\nGraph complexity itself is a cost.\n\nTrack:\n\n- number of mechanism/provider dependencies;\n- configuration surface;\n- policy-projection count;\n- orchestration failures;\n- correlated-error cases;\n- integration/verification overhead.\n\nA dynamic graph is preferred only when its marginal benefit exceeds these costs.\n\n## Agent-model orthogonality check\n\nFor architectures C through E, replay equivalent tasks while changing eligible\nmodel bundles for the same cognitive roles.\n\nThe agent's identity, mandate, memory ownership, tools, and authority should\nremain unchanged when the model substrate changes.\n\n## Falsification\n\nThe cognitive-graph architecture is weakened for a target workload if a simpler\narchitecture achieves equal or better verified task success with lower total\ntrajectory cost, latency, privacy exposure, and operational complexity.\n\nThe experiment therefore allows the result that one strong model is preferable\nfor a given workload.",
+      "domains": [
+        "agent",
+        "evaluation",
+        "models",
+        "routing"
+      ],
+      "id": "GONI-EXPERIMENT-COG-GRAPH-01",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/experiments/goni-experiment-cog-graph-01-governed-cognitive-graph-benchmark.md",
+      "proposition": "Goni should compare monolithic frontier-model execution, simple small-to-large escalation, fixed specialist cascades, dynamic heterogeneous cognitive graphs, and multi-agent/multi-model graphs under matched Work Orders, tools, authority, and evaluation budgets before promoting cognitive-graph complexity.",
+      "relations": [
+        {
+          "target": "COG-GRAPH-01",
+          "type": "tests"
+        },
+        {
+          "target": "AGENT-MODEL-ORTHO-01",
+          "type": "tests"
+        },
+        {
+          "target": "MODEL-ROLE-01",
+          "type": "tests"
+        },
+        {
+          "target": "ROUTE-SIGNAL-01",
+          "type": "tests"
+        },
+        {
+          "target": "POLICY-PROJECTION-01",
+          "type": "tests"
+        },
+        {
+          "target": "GONI-PRINCIPLE-TRAJ-ECON-01",
+          "type": "tests"
+        }
+      ],
+      "sources": [
+        "SRC-LIU2026-VLLM-SEMANTIC-ROUTER",
+        "SRC-WANG2024-MIXTURE-OF-AGENTS",
+        "SRC-CHEN2023-AGENTVERSE",
+        "SRC-WANG2025-WHEN-TO-REASON"
+      ],
+      "status": "draft",
+      "title": "Governed Cognitive Graph Benchmark",
+      "type": "experiment",
+      "uncertainty": "This is a planned matched evaluation. More complex graphs may improve quality on some workloads while losing on latency, cost, correlated error, integration burden, or verification overhead."
     },
     {
       "aliases": [],
@@ -28465,7 +29010,7 @@
     {
       "aliases": [],
       "artifacts": [],
-      "body": "# 3.4 Frugal sovereign model router\n\nGoni's router is local-first and sovereignty-aware. Its objective is broader\nthan model cost and answer quality: route choice may also depend on privacy\nleakage risk, latency, energy/thermal budget, audit burden, data locality,\nexternal dependency cost, consequence class, and the active approval corridor.\n\nThe operating rule is to use the smallest sufficient computation whose evidence\nsupports the required operating point, then escalate when uncertainty,\nconsequence, freshness, capability, or verification requirements justify the\nadditional cost.\n\nA default mechanism ordering may resemble:\n\nrule/cache/memory\n-> deterministic checker or retrieval\n-> task-specific classifier or bounded decision model\n-> local small generative model\n-> local stronger reasoning model\n-> local multi-model verification\n-> policy-permitted remote model/council\n-> principal review\n\nThis ordering is a policy template, not a claim that every task traverses every\nstage or that the same order is optimal universally.\n\nFor a candidate route result r on input x, confidence may be used only when the\nrelevant calibration evidence is in scope under CAL-01. SELECTIVE-01 determines\nwhether the cognitive result is accepted or abstained from at the configured\nrisk-coverage operating point. LOSS-01 determines how the cost of error,\nescalation, delay, and other consequences affects the control decision.\n\nRemote escalation remains subject to network, privacy, and approval policy. Raw\nprivate or sensitive context is not sent merely because a remote route has\nhigher expected model quality.\n\nEach consequential routing decision SHOULD link its receipt to:\n\n- mechanisms considered;\n- mechanism selected;\n- calibration/confidence evidence where used;\n- acceptance or abstention rule;\n- consequence class and applicable loss/control policy;\n- redaction and privacy state;\n- model or tool identities;\n- resulting policy decision.\n\nThe router may still be modeled as a contextual bandit or related online\ndecision problem for suitable workloads. Regret is one evaluation axis among\nseveral. Numeric regret targets are experiment-specific and require an explicit\nloss definition, oracle, workload, and evaluation protocol.\n\nRouting evidence can influence cognition and escalation. It cannot itself\nexpand mandates, capabilities, or authority.",
+      "body": "# 3.4 Frugal sovereign model router\n\nGoni's router is local-first and sovereignty-aware. Its objective is broader\nthan model cost and answer quality: route choice may also depend on privacy\nleakage risk, latency, energy/thermal budget, audit burden, data locality,\nexternal dependency cost, consequence class, and the active approval corridor.\n\nThe operating rule is to use the smallest sufficient computation whose evidence\nsupports the required operating point, then escalate when uncertainty,\nconsequence, freshness, capability, or verification requirements justify the\nadditional cost.\n\nA default mechanism ordering may resemble:\n\nrule/cache/memory\n-> deterministic checker or retrieval\n-> task-specific classifier or bounded decision model\n-> local small generative model\n-> local stronger reasoning model\n-> local multi-model verification\n-> policy-permitted remote model/council\n-> principal review\n\nThis ordering is a policy template, not a claim that every task traverses every\nstage or that the same order is optimal universally.\n\nFor a candidate route result r on input x, confidence may be used only when the\nrelevant calibration evidence is in scope under CAL-01. SELECTIVE-01 determines\nwhether the cognitive result is accepted or abstained from at the configured\nrisk-coverage operating point. LOSS-01 determines how the cost of error,\nescalation, delay, and other consequences affects the control decision.\n\nRemote escalation remains subject to network, privacy, and approval policy. Raw\nprivate or sensitive context is not sent merely because a remote route has\nhigher expected model quality.\n\nEach consequential routing decision SHOULD link its receipt to:\n\n- mechanisms considered;\n- mechanism selected;\n- calibration/confidence evidence where used;\n- acceptance or abstention rule;\n- consequence class and applicable loss/control policy;\n- redaction and privacy state;\n- model or tool identities;\n- resulting policy decision.\n\nThe router may still be modeled as a contextual bandit or related online\ndecision problem for suitable workloads. Regret is one evaluation axis among\nseveral. Numeric regret targets are experiment-specific and require an explicit\nloss definition, oracle, workload, and evaluation protocol.\n\nRouting evidence can influence cognition and escalation. It cannot itself\nexpand mandates, capabilities, or authority.\n\n\n## Typed routing signals\n\nRouting decisions SHOULD consume a versioned RouteSignalSet rather than\nimplicitly inferring all control variables inside one opaque model call.\n\nSignal production and route selection remain separate steps. Deterministic\nsignals such as context length, budget state, model availability, and policy\neligibility should be computed deterministically. Semantic signals such as\ndomain, difficulty, or likely relevance may be produced by calibrated\nprobabilistic mechanisms.\n\nThe router consumes the signal set together with the Work Order and canonical\npolicy projection, then selects among eligible cognitive mechanisms. Signal\nvalues can influence route choice but cannot create authority.",
       "domains": [
         "software"
       ],
@@ -28496,6 +29041,10 @@
         {
           "target": "GONI-PRINCIPLE-HET-INTEL-01",
           "type": "refines"
+        },
+        {
+          "target": "ROUTE-SIGNAL-01",
+          "type": "depends_on"
         }
       ],
       "sources": [
@@ -57607,6 +58156,54 @@
     {
       "aliases": [],
       "artifacts": [],
+      "body": "# Bounded Decision-Model Landscape Snapshot — 2026-09-26\n\nThe category is broader than one hosted product.\n\nCurrent candidates illustrate at least three technical strategies:\n\n1. dedicated bounded decision architectures that directly score declared\n   options or question branches;\n2. conventional small language models specialized to select among constrained\n   options;\n3. lightweight discriminative classifiers that accept runtime label sets.\n\nThe common architectural contract is:\n\nstate\n-> bounded question or label space\n-> typed semantic decision or predictive score\n-> calibration/selective control where justified\n-> deterministic software and kernel policy.\n\nA hosted provider, open checkpoint, task-specific classifier, or constrained\nsmall LLM may occupy this slot if matched evaluation supports it.\n\nThe architecture therefore remains provider-neutral. All candidates should be\nbenchmarked under GONI-EXPERIMENT-DECISION-LAYER-01 rather than promoted from\nbranding, architecture claims, or self-reported benchmark results alone.",
+      "domains": [
+        "market",
+        "models",
+        "research"
+      ],
+      "id": "GONI-SYNTHESIS-DECISION-MODEL-LANDSCAPE-20260926",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/syntheses/goni-synthesis-decision-model-landscape-20260926.md",
+      "proposition": "The bounded semantic decision landscape now includes hosted and open implementations across dedicated non-generative decision models, constrained small language models, and lightweight classifiers, reinforcing a provider-independent interface and matched evaluation requirement.",
+      "relations": [
+        {
+          "target": "GONI-SYNTHESIS-DECISION-MODEL-LANDSCAPE-20260923",
+          "type": "supersedes"
+        },
+        {
+          "target": "GONI-EVIDENCE-JEV-20260923",
+          "type": "synthesizes"
+        },
+        {
+          "target": "GONI-EVIDENCE-OPEN-DECISION-MODELS-20260926",
+          "type": "synthesizes"
+        },
+        {
+          "target": "DECISION-MODEL-01",
+          "type": "synthesizes"
+        },
+        {
+          "target": "GONI-EXPERIMENT-DECISION-LAYER-01",
+          "type": "synthesizes"
+        }
+      ],
+      "sources": [
+        "SRC-TYPESAFE2026-JEV",
+        "SRC-LAYA-SYSTEM-ONE-REPO",
+        "SRC-KEV-DECISION-MODEL-REPO",
+        "SRC-TOGETHER-TEV1-REPO",
+        "SRC-GLICLASS-REPO"
+      ],
+      "status": "draft",
+      "title": "Bounded Decision-Model Landscape Snapshot — 2026-09-26",
+      "type": "synthesis",
+      "uncertainty": "The category remains young and terminology unstable. Architectures and benchmark protocols differ enough that provider claims cannot be compared as if they were one standardized leaderboard."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
       "body": "# What Goni is (fast)\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n## What Goni is (fast)\n\n**User truth**\n\n- Your private operator: always-on, local-first, loyal to your attention.\n- A refinery: raw inputs -> distilled facts -> action cards -> durable memory.\n\n**Technical truth**\n\n- An appliance-grade OS + data spine + governance layer + job framework.\n- Local models by default; explicit, logged escalation to external models.\n\n**The three surfaces**\n\n- **Daily Brief**: compressed priorities and risks.\n- **Action Cards**: binary decisions with context + rationale + receipts.\n- **Vault**: your distilled, searchable memory.\n\n**Core loop**\n\nObserve -> Distill -> Propose/Act -> Attach receipts -> Store memory.\n\n**Why it matters**\n\n- Signal protection, time recovery, governed autonomy, sovereignty.",
       "domains": [
         "repository"
@@ -59210,6 +59807,63 @@
     },
     {
       "aliases": [
+        "GOVERNED-COGNITIVE-GRAPH-SYNTHESIS"
+      ],
+      "artifacts": [],
+      "body": "# Governed Heterogeneous Cognition\n\nPR #19 established the probabilistic decision-control path:\n\nheterogeneous inference\n-> calibrated uncertainty\n-> selective accept or abstain\n-> consequence-sensitive control\n-> canonical authorization\n-> mediated action\n-> verification and receipts\n-> recalibration.\n\nThe cognitive-graph layer answers the next question:\n\nHow should multiple different cognitive mechanisms be composed before an effect\nreaches that authority boundary?\n\n## 1. Work Order to cognitive graph\n\nA Work Order binds objective, constraints, risk, budgets, tools, authority, and\nDone Contract.\n\nThe orchestrator selects or instantiates a governed cognitive graph whose nodes\nperform bounded cognitive operations.\n\nEach node asks for a functional role rather than a provider name.\n\nExamples include:\n\n- deterministic computation;\n- retrieval;\n- classifier;\n- bounded decision model;\n- proposer;\n- generator;\n- reasoner;\n- critic;\n- verifier;\n- guard;\n- compressor;\n- synthesizer;\n- perception.\n\n## 2. Agent identity remains stable\n\nThe agent is the accountable process.\n\nModels are replaceable cognitive substrates.\n\nA coding agent can use a local classifier, a bounded decision model, a small\nlocal generator, a remote frontier reasoner, and a verifier during one\ntrajectory without changing agent identity or authority.\n\nThis preserves continuity of memory, mandate, tools, policy, and receipts while\nallowing cognitive specialization.\n\n## 3. Signals select mechanisms\n\nRouting consumes typed signals produced by deterministic and probabilistic\nmechanisms.\n\nExamples include:\n\ntask/domain\n+ difficulty\n+ calibrated confidence\n+ privacy\n+ consequence\n+ freshness\n+ context need\n+ latency/cost/energy budget\n+ tool need\n+ policy eligibility.\n\nThe router resolves those signals against eligible cognitive roles and approved\nmodel/mechanism bundles.\n\n## 4. Graph composition\n\nThe graph can express:\n\n- sequences;\n- conditional escalation;\n- fan-out to independent or specialist nodes;\n- fan-in to verification or synthesis;\n- bounded generate-verify-repair loops.\n\nComplexity is optional. The smallest graph that satisfies the Done Contract and\nassurance requirements should be preferred.\n\n## 5. Policy remains singular\n\nCanonical kernel policy remains the authority source.\n\nSurface-specific eligibility for model routes, graph nodes, tools, network\negress, MCP, or agent-to-agent communication may be compiled as derived\nprojections bound to the canonical policy hash.\n\nA projection may narrow authority. It cannot expand it.\n\nA graph edge determines what cognition may run next. It does not grant an\nexternal effect.\n\n## 6. Context is allocated at three levels\n\nCognitive resource allocation distinguishes:\n\nL1: source/evidence selection;\nL2: semantic text compression;\nL3: model-internal KV residency.\n\nEach layer discards or compresses different information and therefore requires\ndifferent evidence, recovery mechanisms, and evaluation.\n\n## 7. Complete governed path\n\nThe resulting architecture is:\n\nWork Order\n-> policy projection and route signals\n-> governed cognitive graph\n-> role-based mechanism selection\n-> cognition / verification\n-> calibrated decision control\n-> kernel authorization\n-> mediated tool action\n-> observe and verify result\n-> receipts and canonical state\n-> routing/calibration evidence update.\n\nIn compact form:\n\nModels and algorithms provide cognition.\nThe cognitive graph composes it.\nTyped signals route it.\nCalibration qualifies probabilistic evidence.\nStatistical control accepts or escalates it.\nCanonical policy constrains it.\nThe kernel authorizes effects.\nTools act.\nVerification observes.\nReceipts prove.\nOutcomes improve future routing without rewriting authority.\n\n## 8. Complexity discipline\n\nThe graph is not an argument for maximal orchestration.\n\nEvery additional node, model, agent, provider, loop, and policy projection adds\nlatency, cost, failure modes, and verification burden.\n\nGONI-EXPERIMENT-COG-GRAPH-01 therefore compares the graph against simpler\nalternatives and permits the conclusion that one strong model or a fixed\ncascade is preferable for a particular workload.",
+      "domains": [
+        "agent",
+        "models",
+        "routing",
+        "system"
+      ],
+      "id": "GONI-SYNTHESIS-GOVERNED-HETEROGENEOUS-COGNITION-01",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/syntheses/goni-synthesis-governed-heterogeneous-cognition-01.md",
+      "proposition": "Goni composes heterogeneous cognitive mechanisms through a governed cognitive graph whose nodes request functional roles, whose router consumes typed evidence-bearing signals, whose agent identity remains independent from model substrate, and whose effects remain subject to canonical kernel policy and receipts.",
+      "relations": [
+        {
+          "target": "GONI-SYNTHESIS-PROBABILISTIC-DECISION-CONTROL-01",
+          "type": "synthesizes"
+        },
+        {
+          "target": "COG-GRAPH-01",
+          "type": "synthesizes"
+        },
+        {
+          "target": "AGENT-MODEL-ORTHO-01",
+          "type": "synthesizes"
+        },
+        {
+          "target": "MODEL-ROLE-01",
+          "type": "synthesizes"
+        },
+        {
+          "target": "ROUTE-SIGNAL-01",
+          "type": "synthesizes"
+        },
+        {
+          "target": "POLICY-PROJECTION-01",
+          "type": "synthesizes"
+        },
+        {
+          "target": "CONTEXT-ALLOC-01",
+          "type": "synthesizes"
+        },
+        {
+          "target": "GONI-EXPERIMENT-COG-GRAPH-01",
+          "type": "synthesizes"
+        }
+      ],
+      "sources": [],
+      "status": "draft",
+      "title": "Governed Heterogeneous Cognition",
+      "type": "synthesis",
+      "uncertainty": "This synthesis combines specified contracts and evidence. It does not claim that dynamic heterogeneous graphs outperform simpler architectures until the matched experiment is run."
+    },
+    {
+      "aliases": [
         "PROBABILISTIC-DECISION-CONTROL-SYNTHESIS"
       ],
       "artifacts": [],
@@ -60520,8 +61174,9 @@
         "MODEL-REGISTRY"
       ],
       "artifacts": [],
-      "body": "# Model Bundle Registry Governance\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n# Model Bundle Registry Governance\nDOC-ID: MODEL-REG-01\n\nStatus: Specified only / roadmap\n\nOpen-weight release decentralizes access to model parameters, but not\nnecessarily governance over discovery, metadata, provenance, evaluation,\nlicensing, deployment, or runtime permissions. Goni may discover models through\npublic ecosystems, but approved execution flows through a governed bundle\nregistry. The runtime executes immutable bundle IDs whose provenance, license,\nhashes, task permissions, assurance level, and evaluation receipts are known\nbefore use. For personalized behavior, the execution unit may be a governed\nmodel stack: base bundle plus approved adapters, prompt/policy bundle, and\nmemory or retrieval bundle refs.\n\nScientific framing:\n- Observed fact: widely available model weights can broaden participation and\n  enable local inference, while model openness still depends on documentation,\n  code, data, licenses, and access structure. [[ntia2024-open-model-weights]]\n- Theoretical inference: model hubs are governance infrastructure, not only file\n  storage. They shape discovery, naming, metadata conventions, reputation,\n  access restrictions, and takedown paths.\n- Goni hypothesis: the unit of trust in open AI should shift from the hosted\n  model repository to the locally attested model installation.",
+      "body": "# Model Bundle Registry Governance\n\nApproved execution flows through a governed bundle registry. The runtime uses\nimmutable bundle identifiers whose relevant properties are known before use.\n\nA promoted bundle should record or reference:\n\n- model/checkpoint and artifact hashes;\n- runtime compatibility;\n- license and redistribution constraints;\n- provider or local deployment identity;\n- permitted task classes;\n- supported cognitive roles under MODEL-ROLE-01;\n- evaluation artifacts for each promoted role;\n- latency, cost, memory, energy, and egress profiles where measured;\n- calibration evidence where probabilities influence control;\n- privacy and data-residency constraints;\n- active adapters, prompt/policy bundles, retrieval bundles, and other seams;\n- assurance level and promotion receipts.\n\nFor personalized behavior, the execution unit may be a governed model stack\nconsisting of a base bundle plus approved adapters, prompt/policy bundle, and\nmemory or retrieval references.\n\nRole labels are routing metadata, not authority. Loading a stronger model or a\nmodel with more cognitive roles cannot expand the current Work Order,\ncapability set, or approval corridor.\n\nThe unit of trust is the attested, evidence-linked model installation or remote\nprovider configuration, not an informal model name.",
       "domains": [
+        "models",
         "specs"
       ],
       "id": "MODEL-REG-01",
@@ -60534,13 +61189,13 @@
         }
       ],
       "path": "knowledge/specifications/model-reg-01-model-bundle-registry-governance.md",
-      "proposition": "DOC-ID: MODEL-REG-01 Status: Specified only / roadmap Open-weight release decentralizes access to model parameters, but not necessarily governance over discovery, metadata, provenance, evaluation, licensing, deployment, or runtime permissions.",
+      "proposition": "Approved model execution flows through a governed bundle registry whose immutable bundle records include provenance, licensing, hashes, permitted task classes, cognitive roles, assurance evidence, deployment constraints, and evaluation receipts.",
       "relations": [],
       "sources": [],
       "status": "draft",
       "title": "Model Bundle Registry Governance",
       "type": "specification",
-      "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
+      "uncertainty": "The registry is specified only. Role labels and evaluation profiles do not guarantee performance outside their measured domain."
     },
     {
       "aliases": [],
@@ -60566,6 +61221,42 @@
       "title": "Model Registries - Supplier Note",
       "type": "proposal",
       "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
+    },
+    {
+      "aliases": [
+        "COGNITIVE-MODEL-ROLES"
+      ],
+      "artifacts": [],
+      "body": "# Cognitive Model Role Taxonomy\n\nA cognitive graph should request a required function before selecting a concrete\nmodel bundle.\n\nInitial role vocabulary:\n\n- embedding\n- retriever\n- reranker\n- classifier\n- decision\n- router\n- proposer\n- generator\n- reasoner\n- critic\n- verifier\n- guard\n- compressor\n- synthesizer\n- perception\n\nA model bundle may advertise multiple roles.\n\nRole advertisement is not evidence of competence. For every promoted role, the\nregistry should link to evaluation evidence covering the relevant task classes,\nquality, calibration where applicable, latency, resource use, privacy/egress\nconstraints, and known failure modes.\n\nA graph node requests a role plus constraints. The router resolves an eligible\napproved mechanism using task fit, evidence, and policy.\n\nProvider names and model brands are implementation details rather than\narchitectural roles.",
+      "domains": [
+        "models",
+        "routing",
+        "specs"
+      ],
+      "id": "MODEL-ROLE-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/specifications/model-role-01-cognitive-model-role-taxonomy.md",
+      "proposition": "Model bundles should advertise finite cognitive roles and evaluated task profiles so routing selects mechanisms by required function and evidence rather than by provider or model name.",
+      "relations": [
+        {
+          "target": "MODEL-REG-01",
+          "type": "refines"
+        },
+        {
+          "target": "COG-GRAPH-01",
+          "type": "depends_on"
+        },
+        {
+          "target": "AGENT-MODEL-ORTHO-01",
+          "type": "supports"
+        }
+      ],
+      "sources": [],
+      "status": "draft",
+      "title": "Cognitive Model Role Taxonomy",
+      "type": "specification",
+      "uncertainty": "The initial role vocabulary is deliberately finite and revisable. A model may support several roles, and role quality remains empirical."
     },
     {
       "aliases": [],
@@ -61025,6 +61716,43 @@
       "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
     },
     {
+      "aliases": [
+        "POLICY-COMPILATION"
+      ],
+      "artifacts": [],
+      "body": "# Canonical Policy Projections\n\n## 1. One authority source\n\nSPEC-POL-01 remains the normative source for capabilities, budgets,\ninformation-flow constraints, validity windows, and revocation.\n\nGoni may derive operational projections from that canonical policy for\ndifferent enforcement surfaces, but those projections are subordinate views.\n\nConceptually:\n\ncanonical policy\n-> policy compiler\n-> model eligibility\n-> cognitive-graph eligibility\n-> tool eligibility\n-> network/egress eligibility\n-> MCP eligibility\n-> agent-to-agent eligibility.\n\nA projection cannot create permission absent from the canonical policy.\n\n## 2. Projection record\n\nA derived policy projection SHOULD identify:\n\n- canonical policy hash;\n- projection type;\n- projection version;\n- compiler/version identity;\n- Work Order or scope;\n- creation time;\n- validity or expiry;\n- source policy refs;\n- eligibility rules emitted;\n- any conservative narrowing applied.\n\n## 3. Monotonic authority boundary\n\nProjection semantics SHOULD be authority-monotone:\n\nthe projection may preserve or reduce authority available under canonical policy\nfor its target surface, but it MUST NOT widen it.\n\nFor a canonical permission set P and projection P_i:\n\nP_i is a subset of P\n\nwith respect to the actions and resources representable on that surface.\n\nA projection may also add stricter operational constraints such as provider\nallowlists, context minimization, or lower budgets.\n\n## 4. Staleness and failure\n\nIf a projection cannot be proven to correspond to the active canonical policy,\nor if its canonical policy hash is stale after revocation or policy update, the\naffected surface SHOULD regenerate the projection or fail closed.\n\nCached routing or graph policy must not survive a relevant revocation merely\nbecause cognition still has the old projection in context.\n\n## 5. Separation from routing\n\nThe router consumes eligibility from policy projection together with cognitive\nsignals. It does not infer policy eligibility from semantic confidence.\n\nLikewise, a cognitive graph edge may be disabled by policy projection, but a\ngraph transition cannot enable an action that policy denies.\n\n## 6. Cross-layer consistency\n\nWhere the same canonical rule affects several surfaces, projection provides one\nderivation point rather than multiple manually maintained policy copies.\n\nExamples include:\n\n- a private-data restriction that removes remote model routes and network\n  egress simultaneously;\n- a tool capability restriction that removes both a graph node and the\n  corresponding tool syscall;\n- a budget change that updates eligible model tiers and downstream tool spend\n  limits;\n- a revocation that invalidates agent-to-agent delegation and related graph\n  edges together.\n\nThis reduces policy drift while preserving the kernel as the sole authority\nboundary.",
+      "domains": [
+        "kernel",
+        "policy",
+        "routing",
+        "specs"
+      ],
+      "id": "POLICY-PROJECTION-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/specifications/policy-projection-01-canonical-policy-projections.md",
+      "proposition": "Goni may compile canonical kernel policy into scoped derived eligibility projections for cognitive graphs, model routing, tools, network egress, MCP, and agent-to-agent communication, provided those projections cannot independently grant authority and remain bound to the canonical policy hash.",
+      "relations": [
+        {
+          "target": "SPEC-POL-01",
+          "type": "depends_on"
+        },
+        {
+          "target": "COG-GRAPH-01",
+          "type": "depends_on"
+        },
+        {
+          "target": "ROUTE-SIGNAL-01",
+          "type": "depends_on"
+        }
+      ],
+      "sources": [],
+      "status": "draft",
+      "title": "Canonical Policy Projections",
+      "type": "specification",
+      "uncertainty": "This specification defines projection semantics, not a policy compiler implementation or a claim that every integration surface currently supports compiled enforcement."
+    },
+    {
       "aliases": [],
       "artifacts": [],
       "body": "# Power and PSU (MVP draft)\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n# Power and PSU (MVP draft)\n\nLast refreshed: **2025-12-14**\n\nThis document captures the MVP power assumptions, PSU approach, and what must be validated with measurements.\n\n---",
@@ -61448,6 +62176,42 @@
       "title": "ROBOT-01 - Embodied Robot Control Plane",
       "type": "specification",
       "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
+    },
+    {
+      "aliases": [
+        "ROUTING-SIGNAL-CONTRACT"
+      ],
+      "artifacts": [],
+      "body": "# Typed Cognitive Routing Signals\n\n## 1. Purpose\n\nThe router should not become another semantic black box. Goni therefore\nseparates signal production from route selection.\n\nFor request or graph state x, a routing signal vector may be represented as:\n\nz(x) = [\n  task,\n  domain,\n  difficulty,\n  confidence,\n  privacy,\n  consequence,\n  freshness,\n  context_need,\n  latency_budget,\n  monetary_budget,\n  energy_budget,\n  tool_need,\n  network_eligibility,\n  policy_eligibility\n].\n\nEach field retains its own semantics and provenance.\n\n## 2. Signal classes\n\nDeterministic signals SHOULD be computed directly when possible, including:\n\n- context length and token budget;\n- available hardware/model bundles;\n- monetary and wall-clock budgets;\n- current network state;\n- tool availability;\n- capability and policy eligibility;\n- data classification already present in canonical state.\n\nProbabilistic signals MAY include:\n\n- semantic domain;\n- task difficulty;\n- likely relevance;\n- predicted model sufficiency;\n- semantic risk classification;\n- expected verification difficulty.\n\nProbability-bearing signals that affect consequential routing remain subject to\nCAL-01, CONFIDENCE-01, SELECTIVE-01, and LOSS-01 as applicable.\n\n## 3. Signal provenance\n\nA RouteSignalSet SHOULD record:\n\n- signal name and value;\n- producer identity;\n- deterministic or probabilistic class;\n- source state or evidence refs;\n- timestamp/version;\n- calibration reference where applicable;\n- validity or expiry where relevant.\n\n## 4. Routing contract\n\nThe router maps:\n\nWork Order + RouteSignalSet + eligible cognitive roles + policy projection\n\nto:\n\nselected cognitive mechanism or abstention/escalation.\n\nThe routing policy may be deterministic, learned, hybrid, or contextual-bandit\nbased, but its evidence and operating assumptions must remain inspectable.\n\n## 5. Authority invariant\n\nRouting signals can affect what cognitive mechanism runs next.\n\nThey cannot create capabilities, alter mandates, or bypass policy.\n\nPolicy eligibility is read from canonical or canonically derived authority\nstate; it is not inferred from model confidence.",
+      "domains": [
+        "models",
+        "routing",
+        "specs"
+      ],
+      "id": "ROUTE-SIGNAL-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/specifications/route-signal-01-typed-cognitive-routing-signals.md",
+      "proposition": "Cognitive routing should consume a versioned typed signal set whose fields identify task, difficulty, confidence, privacy, risk, freshness, context, cost, latency, energy, tool, and policy conditions without collapsing their distinct semantics into one opaque score.",
+      "relations": [
+        {
+          "target": "GONI-IMAP-EB2133E6965D",
+          "type": "refines"
+        },
+        {
+          "target": "CONFIDENCE-01",
+          "type": "depends_on"
+        },
+        {
+          "target": "COG-GRAPH-01",
+          "type": "depends_on"
+        }
+      ],
+      "sources": [],
+      "status": "draft",
+      "title": "Typed Cognitive Routing Signals",
+      "type": "specification",
+      "uncertainty": "The signal vocabulary is an interface contract rather than a claim that every route needs every signal or that one universal routing function is optimal."
     },
     {
       "aliases": [],
@@ -62933,6 +63697,48 @@
     },
     {
       "projection": "generated",
+      "source": "AGENT-DEF-01",
+      "target": "AGENT-MODEL-ORTHO-01",
+      "type": "refined_by"
+    },
+    {
+      "projection": "authored",
+      "source": "AGENT-MODEL-ORTHO-01",
+      "target": "COG-GRAPH-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "AGENT-MODEL-ORTHO-01",
+      "target": "AGENT-DEF-01",
+      "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "AGENT-MODEL-ORTHO-01",
+      "target": "MODEL-ROLE-01",
+      "type": "supported_by"
+    },
+    {
+      "projection": "authored",
+      "source": "AGENT-MODEL-ORTHO-01",
+      "target": "GONI-PRINCIPLE-HET-INTEL-01",
+      "type": "supports"
+    },
+    {
+      "projection": "generated",
+      "source": "AGENT-MODEL-ORTHO-01",
+      "target": "GONI-SYNTHESIS-GOVERNED-HETEROGENEOUS-COGNITION-01",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "generated",
+      "source": "AGENT-MODEL-ORTHO-01",
+      "target": "GONI-EXPERIMENT-COG-GRAPH-01",
+      "type": "tested_by"
+    },
+    {
+      "projection": "generated",
       "source": "AXIOMS-01",
       "target": "GONI-EVIDENCE-3B6F68694E5E",
       "type": "supported_by"
@@ -63041,8 +63847,92 @@
     },
     {
       "projection": "generated",
+      "source": "COG-GRAPH-01",
+      "target": "AGENT-MODEL-ORTHO-01",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
+      "source": "COG-GRAPH-01",
+      "target": "MODEL-ROLE-01",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
+      "source": "COG-GRAPH-01",
+      "target": "POLICY-PROJECTION-01",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
+      "source": "COG-GRAPH-01",
+      "target": "ROUTE-SIGNAL-01",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "authored",
+      "source": "COG-GRAPH-01",
+      "target": "DECISION-MODEL-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "COG-GRAPH-01",
+      "target": "GONI-PRINCIPLE-GOV-LOOP-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "COG-GRAPH-01",
+      "target": "GONI-PRINCIPLE-HET-INTEL-01",
+      "type": "refines"
+    },
+    {
+      "projection": "authored",
+      "source": "COG-GRAPH-01",
+      "target": "GONI-SPEC-FD6CC59ECC08",
+      "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "COG-GRAPH-01",
+      "target": "GONI-EVIDENCE-FAST-SLOW-01",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "COG-GRAPH-01",
+      "target": "GONI-EVIDENCE-MULTI-AGENT-01",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "COG-GRAPH-01",
+      "target": "GONI-EVIDENCE-POLICY-PROJECTION-01",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "COG-GRAPH-01",
+      "target": "GONI-SYNTHESIS-GOVERNED-HETEROGENEOUS-COGNITION-01",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "generated",
+      "source": "COG-GRAPH-01",
+      "target": "GONI-EXPERIMENT-COG-GRAPH-01",
+      "type": "tested_by"
+    },
+    {
+      "projection": "generated",
       "source": "CONFIDENCE-01",
       "target": "CAL-DRIFT-01",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
+      "source": "CONFIDENCE-01",
+      "target": "ROUTE-SIGNAL-01",
       "type": "depended_on_by"
     },
     {
@@ -63070,9 +63960,51 @@
       "type": "synthesized_by"
     },
     {
+      "projection": "authored",
+      "source": "CONTEXT-ALLOC-01",
+      "target": "GONI-IMAP-66D2DBD94204",
+      "type": "refines"
+    },
+    {
+      "projection": "authored",
+      "source": "CONTEXT-ALLOC-01",
+      "target": "GONI-PRINCIPLE-9062425CD490",
+      "type": "refines"
+    },
+    {
+      "projection": "authored",
+      "source": "CONTEXT-ALLOC-01",
+      "target": "GONI-SYNTHESIS-227700D474C6",
+      "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "CONTEXT-ALLOC-01",
+      "target": "GONI-EVIDENCE-CONTEXT-COMPRESSION-01",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "CONTEXT-ALLOC-01",
+      "target": "GONI-EVIDENCE-SNAPKV-01",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "CONTEXT-ALLOC-01",
+      "target": "GONI-SYNTHESIS-GOVERNED-HETEROGENEOUS-COGNITION-01",
+      "type": "synthesized_by"
+    },
+    {
       "projection": "generated",
       "source": "DECISION-MODEL-01",
       "target": "CAL-01",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
+      "source": "DECISION-MODEL-01",
+      "target": "COG-GRAPH-01",
       "type": "depended_on_by"
     },
     {
@@ -63108,7 +64040,19 @@
     {
       "projection": "generated",
       "source": "DECISION-MODEL-01",
+      "target": "GONI-EVIDENCE-OPEN-DECISION-MODELS-20260926",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "DECISION-MODEL-01",
       "target": "GONI-SYNTHESIS-DECISION-MODEL-LANDSCAPE-20260923",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "generated",
+      "source": "DECISION-MODEL-01",
+      "target": "GONI-SYNTHESIS-DECISION-MODEL-LANDSCAPE-20260926",
       "type": "synthesized_by"
     },
     {
@@ -63767,6 +64711,12 @@
     },
     {
       "projection": "authored",
+      "source": "GONI-EVIDENCE-CONTEXT-COMPRESSION-01",
+      "target": "CONTEXT-ALLOC-01",
+      "type": "supports"
+    },
+    {
+      "projection": "authored",
       "source": "GONI-EVIDENCE-D75D02C44DFA",
       "target": "GONI-SYNTHESIS-8A0BE005D5C2",
       "type": "supports"
@@ -63887,6 +64837,18 @@
     },
     {
       "projection": "authored",
+      "source": "GONI-EVIDENCE-FAST-SLOW-01",
+      "target": "COG-GRAPH-01",
+      "type": "supports"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-EVIDENCE-FAST-SLOW-01",
+      "target": "GONI-SPEC-FD6CC59ECC08",
+      "type": "supports"
+    },
+    {
+      "projection": "authored",
       "source": "GONI-EVIDENCE-FBA1A33CF61A",
       "target": "REF-GONIOS-NEIGHBOR-01",
       "type": "supports"
@@ -63910,9 +64872,93 @@
       "type": "synthesized_by"
     },
     {
+      "projection": "generated",
+      "source": "GONI-EVIDENCE-JEV-20260923",
+      "target": "GONI-SYNTHESIS-DECISION-MODEL-LANDSCAPE-20260926",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-EVIDENCE-MULTI-AGENT-01",
+      "target": "COG-GRAPH-01",
+      "type": "supports"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-EVIDENCE-MULTI-AGENT-01",
+      "target": "MODEL-ROLE-01",
+      "type": "supports"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-EVIDENCE-OPEN-DECISION-MODELS-20260926",
+      "target": "DECISION-MODEL-01",
+      "type": "supports"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-EVIDENCE-OPEN-DECISION-MODELS-20260926",
+      "target": "GONI-EXPERIMENT-DECISION-LAYER-01",
+      "type": "supports"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-EVIDENCE-OPEN-DECISION-MODELS-20260926",
+      "target": "GONI-SYNTHESIS-DECISION-MODEL-LANDSCAPE-20260926",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-EVIDENCE-POLICY-PROJECTION-01",
+      "target": "COG-GRAPH-01",
+      "type": "supports"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-EVIDENCE-POLICY-PROJECTION-01",
+      "target": "POLICY-PROJECTION-01",
+      "type": "supports"
+    },
+    {
       "projection": "authored",
       "source": "GONI-EVIDENCE-SELECTIVE-01",
       "target": "SELECTIVE-01",
+      "type": "supports"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-EVIDENCE-SEMROUTER-01",
+      "target": "GONI-IMAP-EB2133E6965D",
+      "type": "supports"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-EVIDENCE-SEMROUTER-01",
+      "target": "ROUTE-SIGNAL-01",
+      "type": "supports"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-EVIDENCE-SNAPKV-01",
+      "target": "CONTEXT-ALLOC-01",
+      "type": "supports"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-EVIDENCE-SNAPKV-01",
+      "target": "GONI-SYNTHESIS-227700D474C6",
+      "type": "supports"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-EVIDENCE-SPECIALIST-GUARD-01",
+      "target": "GONI-PRINCIPLE-HET-INTEL-01",
+      "type": "supports"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-EVIDENCE-SPECIALIST-GUARD-01",
+      "target": "MODEL-ROLE-01",
       "type": "supports"
     },
     {
@@ -63971,8 +65017,62 @@
     },
     {
       "projection": "generated",
+      "source": "GONI-EXPERIMENT-COG-GRAPH-01",
+      "target": "GONI-SYNTHESIS-GOVERNED-HETEROGENEOUS-COGNITION-01",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-EXPERIMENT-COG-GRAPH-01",
+      "target": "AGENT-MODEL-ORTHO-01",
+      "type": "tests"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-EXPERIMENT-COG-GRAPH-01",
+      "target": "COG-GRAPH-01",
+      "type": "tests"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-EXPERIMENT-COG-GRAPH-01",
+      "target": "GONI-PRINCIPLE-TRAJ-ECON-01",
+      "type": "tests"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-EXPERIMENT-COG-GRAPH-01",
+      "target": "MODEL-ROLE-01",
+      "type": "tests"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-EXPERIMENT-COG-GRAPH-01",
+      "target": "POLICY-PROJECTION-01",
+      "type": "tests"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-EXPERIMENT-COG-GRAPH-01",
+      "target": "ROUTE-SIGNAL-01",
+      "type": "tests"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-EXPERIMENT-DECISION-LAYER-01",
+      "target": "GONI-EVIDENCE-OPEN-DECISION-MODELS-20260926",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
       "source": "GONI-EXPERIMENT-DECISION-LAYER-01",
       "target": "GONI-SYNTHESIS-DECISION-MODEL-LANDSCAPE-20260923",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-EXPERIMENT-DECISION-LAYER-01",
+      "target": "GONI-SYNTHESIS-DECISION-MODEL-LANDSCAPE-20260926",
       "type": "synthesized_by"
     },
     {
@@ -64078,6 +65178,12 @@
       "type": "depends_on"
     },
     {
+      "projection": "generated",
+      "source": "GONI-IMAP-66D2DBD94204",
+      "target": "CONTEXT-ALLOC-01",
+      "type": "refined_by"
+    },
+    {
       "projection": "authored",
       "source": "GONI-IMAP-66D2DBD94204",
       "target": "GONI-IMAP-086FADF076BA",
@@ -64128,6 +65234,12 @@
     {
       "projection": "authored",
       "source": "GONI-IMAP-EB2133E6965D",
+      "target": "ROUTE-SIGNAL-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-IMAP-EB2133E6965D",
       "target": "SELECTIVE-01",
       "type": "depends_on"
     },
@@ -64152,6 +65264,12 @@
     {
       "projection": "generated",
       "source": "GONI-IMAP-EB2133E6965D",
+      "target": "ROUTE-SIGNAL-01",
+      "type": "refined_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-IMAP-EB2133E6965D",
       "target": "SELECTIVE-01",
       "type": "refined_by"
     },
@@ -64160,6 +65278,12 @@
       "source": "GONI-IMAP-EB2133E6965D",
       "target": "GONI-PRINCIPLE-HET-INTEL-01",
       "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-IMAP-EB2133E6965D",
+      "target": "GONI-EVIDENCE-SEMROUTER-01",
+      "type": "supported_by"
     },
     {
       "projection": "generated",
@@ -64300,6 +65424,12 @@
       "type": "depended_on_by"
     },
     {
+      "projection": "generated",
+      "source": "GONI-PRINCIPLE-9062425CD490",
+      "target": "CONTEXT-ALLOC-01",
+      "type": "refined_by"
+    },
+    {
       "projection": "authored",
       "source": "GONI-PRINCIPLE-9062425CD490",
       "target": "GONI-PRINCIPLE-B40DDEFD1872",
@@ -64342,6 +65472,12 @@
       "type": "refined_by"
     },
     {
+      "projection": "generated",
+      "source": "GONI-PRINCIPLE-GOV-LOOP-01",
+      "target": "COG-GRAPH-01",
+      "type": "depended_on_by"
+    },
+    {
       "projection": "authored",
       "source": "GONI-PRINCIPLE-GOV-LOOP-01",
       "target": "REC-01",
@@ -64370,6 +65506,12 @@
       "source": "GONI-PRINCIPLE-GOV-LOOP-01",
       "target": "GONI-SYNTHESIS-PROBABILISTIC-DECISION-CONTROL-01",
       "type": "synthesized_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-PRINCIPLE-HET-INTEL-01",
+      "target": "COG-GRAPH-01",
+      "type": "refined_by"
     },
     {
       "projection": "generated",
@@ -64410,7 +65552,19 @@
     {
       "projection": "generated",
       "source": "GONI-PRINCIPLE-HET-INTEL-01",
+      "target": "AGENT-MODEL-ORTHO-01",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-PRINCIPLE-HET-INTEL-01",
       "target": "GONI-EVIDENCE-JEV-20260923",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-PRINCIPLE-HET-INTEL-01",
+      "target": "GONI-EVIDENCE-SPECIALIST-GUARD-01",
       "type": "supported_by"
     },
     {
@@ -64462,6 +65616,12 @@
       "type": "synthesized_by"
     },
     {
+      "projection": "generated",
+      "source": "GONI-PRINCIPLE-TRAJ-ECON-01",
+      "target": "GONI-EXPERIMENT-COG-GRAPH-01",
+      "type": "tested_by"
+    },
+    {
       "projection": "authored",
       "source": "GONI-PRINCIPLE-VALIDITY-CORRECTNESS-01",
       "target": "DECISION-MODEL-01",
@@ -64508,6 +65668,18 @@
       "source": "GONI-SPEC-8911D8AA7EE0",
       "target": "SELECTIVE-01",
       "type": "refined_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-SPEC-FD6CC59ECC08",
+      "target": "COG-GRAPH-01",
+      "type": "refined_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-SPEC-FD6CC59ECC08",
+      "target": "GONI-EVIDENCE-FAST-SLOW-01",
+      "type": "supported_by"
     },
     {
       "projection": "authored",
@@ -65808,6 +66980,12 @@
     {
       "projection": "generated",
       "source": "GONI-SYNTHESIS-227700D474C6",
+      "target": "CONTEXT-ALLOC-01",
+      "type": "refined_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-SYNTHESIS-227700D474C6",
       "target": "GONI-EVIDENCE-55CFEAFCBF16",
       "type": "supported_by"
     },
@@ -65815,6 +66993,12 @@
       "projection": "generated",
       "source": "GONI-SYNTHESIS-227700D474C6",
       "target": "GONI-EVIDENCE-6F21B6FCEF3C",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-SYNTHESIS-227700D474C6",
+      "target": "GONI-EVIDENCE-SNAPKV-01",
       "type": "supported_by"
     },
     {
@@ -68080,6 +69264,12 @@
       "type": "synthesized_by"
     },
     {
+      "projection": "generated",
+      "source": "GONI-SYNTHESIS-DECISION-MODEL-LANDSCAPE-20260923",
+      "target": "GONI-SYNTHESIS-DECISION-MODEL-LANDSCAPE-20260926",
+      "type": "superseded_by"
+    },
+    {
       "projection": "authored",
       "source": "GONI-SYNTHESIS-DECISION-MODEL-LANDSCAPE-20260923",
       "target": "DECISION-MODEL-01",
@@ -68094,6 +69284,36 @@
     {
       "projection": "authored",
       "source": "GONI-SYNTHESIS-DECISION-MODEL-LANDSCAPE-20260923",
+      "target": "GONI-EXPERIMENT-DECISION-LAYER-01",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SYNTHESIS-DECISION-MODEL-LANDSCAPE-20260926",
+      "target": "GONI-SYNTHESIS-DECISION-MODEL-LANDSCAPE-20260923",
+      "type": "supersedes"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SYNTHESIS-DECISION-MODEL-LANDSCAPE-20260926",
+      "target": "DECISION-MODEL-01",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SYNTHESIS-DECISION-MODEL-LANDSCAPE-20260926",
+      "target": "GONI-EVIDENCE-JEV-20260923",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SYNTHESIS-DECISION-MODEL-LANDSCAPE-20260926",
+      "target": "GONI-EVIDENCE-OPEN-DECISION-MODELS-20260926",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SYNTHESIS-DECISION-MODEL-LANDSCAPE-20260926",
       "target": "GONI-EXPERIMENT-DECISION-LAYER-01",
       "type": "synthesizes"
     },
@@ -68521,6 +69741,60 @@
       "projection": "generated",
       "source": "GONI-SYNTHESIS-FFFD0BDE80BE",
       "target": "SOV-AUDIT-01",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SYNTHESIS-GOVERNED-HETEROGENEOUS-COGNITION-01",
+      "target": "AGENT-MODEL-ORTHO-01",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SYNTHESIS-GOVERNED-HETEROGENEOUS-COGNITION-01",
+      "target": "COG-GRAPH-01",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SYNTHESIS-GOVERNED-HETEROGENEOUS-COGNITION-01",
+      "target": "CONTEXT-ALLOC-01",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SYNTHESIS-GOVERNED-HETEROGENEOUS-COGNITION-01",
+      "target": "GONI-EXPERIMENT-COG-GRAPH-01",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SYNTHESIS-GOVERNED-HETEROGENEOUS-COGNITION-01",
+      "target": "GONI-SYNTHESIS-PROBABILISTIC-DECISION-CONTROL-01",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SYNTHESIS-GOVERNED-HETEROGENEOUS-COGNITION-01",
+      "target": "MODEL-ROLE-01",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SYNTHESIS-GOVERNED-HETEROGENEOUS-COGNITION-01",
+      "target": "POLICY-PROJECTION-01",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SYNTHESIS-GOVERNED-HETEROGENEOUS-COGNITION-01",
+      "target": "ROUTE-SIGNAL-01",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-SYNTHESIS-PROBABILISTIC-DECISION-CONTROL-01",
+      "target": "GONI-SYNTHESIS-GOVERNED-HETEROGENEOUS-COGNITION-01",
       "type": "synthesized_by"
     },
     {
@@ -69114,6 +70388,12 @@
     {
       "projection": "generated",
       "source": "MODEL-REG-01",
+      "target": "MODEL-ROLE-01",
+      "type": "refined_by"
+    },
+    {
+      "projection": "generated",
+      "source": "MODEL-REG-01",
       "target": "GONI-EVIDENCE-2B6A30AD4862",
       "type": "supported_by"
     },
@@ -69164,6 +70444,48 @@
       "source": "MODEL-REG-01",
       "target": "GONI-EVIDENCE-F46464FBC1EF",
       "type": "supported_by"
+    },
+    {
+      "projection": "authored",
+      "source": "MODEL-ROLE-01",
+      "target": "COG-GRAPH-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "MODEL-ROLE-01",
+      "target": "MODEL-REG-01",
+      "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "MODEL-ROLE-01",
+      "target": "GONI-EVIDENCE-MULTI-AGENT-01",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "MODEL-ROLE-01",
+      "target": "GONI-EVIDENCE-SPECIALIST-GUARD-01",
+      "type": "supported_by"
+    },
+    {
+      "projection": "authored",
+      "source": "MODEL-ROLE-01",
+      "target": "AGENT-MODEL-ORTHO-01",
+      "type": "supports"
+    },
+    {
+      "projection": "generated",
+      "source": "MODEL-ROLE-01",
+      "target": "GONI-SYNTHESIS-GOVERNED-HETEROGENEOUS-COGNITION-01",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "generated",
+      "source": "MODEL-ROLE-01",
+      "target": "GONI-EXPERIMENT-COG-GRAPH-01",
+      "type": "tested_by"
     },
     {
       "projection": "authored",
@@ -69428,6 +70750,42 @@
       "source": "PLANE-00",
       "target": "GONI-SYNTHESIS-E39DF951B842",
       "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "POLICY-PROJECTION-01",
+      "target": "COG-GRAPH-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "POLICY-PROJECTION-01",
+      "target": "ROUTE-SIGNAL-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "POLICY-PROJECTION-01",
+      "target": "SPEC-POL-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "generated",
+      "source": "POLICY-PROJECTION-01",
+      "target": "GONI-EVIDENCE-POLICY-PROJECTION-01",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "POLICY-PROJECTION-01",
+      "target": "GONI-SYNTHESIS-GOVERNED-HETEROGENEOUS-COGNITION-01",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "generated",
+      "source": "POLICY-PROJECTION-01",
+      "target": "GONI-EXPERIMENT-COG-GRAPH-01",
+      "type": "tested_by"
     },
     {
       "projection": "generated",
@@ -69736,6 +71094,54 @@
       "type": "synthesizes"
     },
     {
+      "projection": "generated",
+      "source": "ROUTE-SIGNAL-01",
+      "target": "GONI-IMAP-EB2133E6965D",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
+      "source": "ROUTE-SIGNAL-01",
+      "target": "POLICY-PROJECTION-01",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "authored",
+      "source": "ROUTE-SIGNAL-01",
+      "target": "COG-GRAPH-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "ROUTE-SIGNAL-01",
+      "target": "CONFIDENCE-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "ROUTE-SIGNAL-01",
+      "target": "GONI-IMAP-EB2133E6965D",
+      "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "ROUTE-SIGNAL-01",
+      "target": "GONI-EVIDENCE-SEMROUTER-01",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "ROUTE-SIGNAL-01",
+      "target": "GONI-SYNTHESIS-GOVERNED-HETEROGENEOUS-COGNITION-01",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "generated",
+      "source": "ROUTE-SIGNAL-01",
+      "target": "GONI-EXPERIMENT-COG-GRAPH-01",
+      "type": "tested_by"
+    },
+    {
       "projection": "authored",
       "source": "SANDBOX-00",
       "target": "GONI-SYNTHESIS-377A1F0E4778",
@@ -69890,6 +71296,12 @@
       "source": "SPEC-00",
       "target": "GONI-SYNTHESIS-C63FA3CEB89E",
       "type": "synthesizes"
+    },
+    {
+      "projection": "generated",
+      "source": "SPEC-POL-01",
+      "target": "POLICY-PROJECTION-01",
+      "type": "depended_on_by"
     },
     {
       "projection": "authored",
@@ -70377,6 +71789,24 @@
       "url": "https://www.researchgate.net/publication/2914496_Human-Agent_Teamwork_and_Adjustable_Autonomy_in_Practice"
     },
     {
+      "citation": "Chen, Weize et al. (2023). AgentVerse: Facilitating Multi-Agent Collaboration and Exploring Emergent Behaviors. arXiv:2308.10848.",
+      "id": "SRC-CHEN2023-AGENTVERSE",
+      "kind": "academic",
+      "notes": "Studies dynamically composed groups of LLM agents and reports task improvements over individual-agent baselines on evaluated scenarios while analyzing collaborative behaviors.",
+      "path": "sources/src-chen2023-agentverse.yml",
+      "title": "chen2023-agentverse",
+      "url": "https://arxiv.org/abs/2308.10848"
+    },
+    {
+      "citation": "Chen, Huamin; Liu, Xunzhuo; He, Bowei; Liu, Xue (2026). From Inference Routing to Agent Orchestration: Declarative Policy Compilation with Cross-Layer Verification. arXiv:2603.27299.",
+      "id": "SRC-CHEN2026-ROUTING-AGENT-ORCHESTRATION",
+      "kind": "academic",
+      "notes": "Extends a declarative non-Turing-complete routing policy language from per-request model routing to multi-step agent workflows and infrastructure/protocol policy projections including LangGraph/OpenClaw, Kubernetes, MCP, and A2A gates.",
+      "path": "sources/src-chen2026-routing-agent-orchestration.yml",
+      "title": "chen2026-routing-agent-orchestration",
+      "url": "https://arxiv.org/abs/2603.27299"
+    },
+    {
       "citation": "https://www.alphaxiv.org/abs/2026.dspark",
       "id": "SRC-CHENG2026-DSPARK",
       "kind": "web",
@@ -70384,6 +71814,15 @@
       "path": "sources/src-cheng2026-dspark.yml",
       "title": "cheng2026-dspark",
       "url": "https://www.alphaxiv.org/abs/2026.dspark"
+    },
+    {
+      "citation": "Christakopoulou, Konstantina; Mourad, Shibl; Mataric, Maja (2024). Agents Thinking Fast and Slow: A Talker-Reasoner Architecture. arXiv:2410.08328.",
+      "id": "SRC-CHRISTAKOPOULOU2024-TALKER-REASONER",
+      "kind": "academic",
+      "notes": "Separates a fast conversational Talker from a slower Reasoner responsible for multi-step reasoning, planning, tool use, actions, and state updates.",
+      "path": "sources/src-christakopoulou2024-talker-reasoner.yml",
+      "title": "christakopoulou2024-talker-reasoner",
+      "url": "https://arxiv.org/abs/2410.08328"
     },
     {
       "citation": "https://academic.oup.com/analysis/article-abstract/58/1/7/153111",
@@ -70557,6 +71996,15 @@
       "url": "https://arxiv.org/pdf/1502.04015"
     },
     {
+      "citation": "Knowledgator/GLiClass. Generalist and Lightweight Model for Sequence Classification.",
+      "id": "SRC-GLICLASS-REPO",
+      "kind": "repository",
+      "notes": "Repository describes an efficient zero-shot sequence-classification family that accepts arbitrary labels and performs classification in one forward pass. Project performance claims require independent reproduction.",
+      "path": "sources/src-gliclass-repo.yml",
+      "title": "gliclass-repo",
+      "url": "https://github.com/Knowledgator/GLiClass"
+    },
+    {
       "citation": "Gneiting, Tilmann; Raftery, Adrian E. (2007). Strictly Proper Scoring Rules, Prediction, and Estimation. Journal of the American Statistical Association 102(477):359-378.",
       "id": "SRC-GNEITING-RAFTERY2007-SCORING",
       "kind": "academic",
@@ -70564,6 +72012,15 @@
       "path": "sources/src-gneiting-raftery2007-scoring.yml",
       "title": "gneiting-raftery2007-scoring",
       "url": "https://sites.stat.washington.edu/people/raftery/Research/PDF/Gneiting2007jasa.pdf"
+    },
+    {
+      "citation": "Google. ShieldGemma model card.",
+      "id": "SRC-GOOGLE-SHIELDGEMMA-MODEL-CARD",
+      "kind": "web",
+      "notes": "Primary model card describing ShieldGemma as safety content-moderation models built on Gemma 2 for four harm categories, with policy-conditioned text classification behavior and reported evaluation guidance.",
+      "path": "sources/src-google-shieldgemma-model-card.yml",
+      "title": "google-shieldgemma-model-card",
+      "url": "https://ai.google.dev/gemma/docs/shieldgemma/model_card"
     },
     {
       "citation": "Legacy annotated bibliography key [[greshake2023-indirect-prompt-injection]]",
@@ -70655,6 +72112,24 @@
       "url": "https://in-toto.io/"
     },
     {
+      "citation": "Inan, Hakan et al. (2023). Llama Guard: LLM-based Input-Output Safeguard for Human-AI Conversations. arXiv:2312.06674.",
+      "id": "SRC-INAN2023-LLAMA-GUARD",
+      "kind": "academic",
+      "notes": "Introduces an LLM-based safeguard specialized for prompt and response classification under configurable safety taxonomies, illustrating a domain-specific guard/classifier role rather than a general assistant role.",
+      "path": "sources/src-inan2023-llama-guard.yml",
+      "title": "inan2023-llama-guard",
+      "url": "https://arxiv.org/abs/2312.06674"
+    },
+    {
+      "citation": "Jiang, Huiqiang et al. (2024). LongLLMLingua: Accelerating and Enhancing LLMs in Long Context Scenarios via Prompt Compression. ACL 2024, pages 1658-1677.",
+      "id": "SRC-JIANG2024-LONGLLMLINGUA",
+      "kind": "academic",
+      "notes": "Proposes question-aware coarse-to-fine prompt compression for long-context tasks and reports quality, token, cost, and latency trade-offs across evaluated workloads.",
+      "path": "sources/src-jiang2024-longllmlingua.yml",
+      "title": "jiang2024-longllmlingua",
+      "url": "https://aclanthology.org/2024.acl-long.91/"
+    },
+    {
       "citation": "https://arxiv.org/abs/2004.04906",
       "id": "SRC-KARPUKHIN2020-DPR",
       "kind": "academic",
@@ -70662,6 +72137,15 @@
       "path": "sources/src-karpukhin2020-dpr.yml",
       "title": "karpukhin2020-dpr",
       "url": "https://arxiv.org/abs/2004.04906"
+    },
+    {
+      "citation": "jaredpalmer/kev. Open research decision models with typed choice, yes/no, and score outputs.",
+      "id": "SRC-KEV-DECISION-MODEL-REPO",
+      "kind": "repository",
+      "notes": "Project repository and model cards describe prefill-only decision models with shared state, isolated question branches, probability distributions, calibration metrics, and released Qwen-based checkpoints. Reported benchmark results remain project evidence.",
+      "path": "sources/src-kev-decision-model-repo.yml",
+      "title": "kev-decision-model-repo",
+      "url": "https://github.com/jaredpalmer/kev"
     },
     {
       "citation": "https://www.sigops.org/s/conferences/sosp/2009/papers/klein-sosp09.pdf",
@@ -70719,6 +72203,15 @@
       "url": "https://www.langchain.com/blog/building-a-harness-with-jev"
     },
     {
+      "citation": "LeonaDavinci/laya-system-one. Multilingual non-autoregressive typed decision engine.",
+      "id": "SRC-LAYA-SYSTEM-ONE-REPO",
+      "kind": "repository",
+      "notes": "Project repository describing typed choice, score, and yes/no decisions, multi-question single-forward-pass inference, multilingual checkpoints, and a router. Performance and calibration figures are project-reported and require independent reproduction.",
+      "path": "sources/src-laya-system-one-repo.yml",
+      "title": "laya-system-one-repo",
+      "url": "https://github.com/LeonaDavinci/laya-system-one"
+    },
+    {
       "citation": "https://arxiv.org/abs/2005.11401",
       "id": "SRC-LEWIS2020-RAG",
       "kind": "academic",
@@ -70726,6 +72219,24 @@
       "path": "sources/src-lewis2020-rag.yml",
       "title": "lewis2020-rag",
       "url": "https://arxiv.org/abs/2005.11401"
+    },
+    {
+      "citation": "Li, Yucheng; Dong, Bo; Lin, Chenghua; Guerin, Frank (2023). Compressing Context to Enhance Inference Efficiency of Large Language Models. arXiv:2310.06201.",
+      "id": "SRC-LI2023-SELECTIVE-CONTEXT",
+      "kind": "academic",
+      "notes": "Introduces Selective Context, which identifies and prunes redundant input context to reduce prompt cost, memory, and inference time while evaluating downstream quality.",
+      "path": "sources/src-li2023-selective-context.yml",
+      "title": "li2023-selective-context",
+      "url": "https://arxiv.org/abs/2310.06201"
+    },
+    {
+      "citation": "Li, Yuhong et al. (2024). SnapKV: LLM Knows What You are Looking for Before Generation. arXiv:2404.14469.",
+      "id": "SRC-LI2024-SNAPKV",
+      "kind": "academic",
+      "notes": "Introduces a fine-tuning-free KV-cache compression method that selects clustered important KV positions per attention head using an observation window near the end of the prompt.",
+      "path": "sources/src-li2024-snapkv.yml",
+      "title": "li2024-snapkv",
+      "url": "https://arxiv.org/abs/2404.14469"
     },
     {
       "citation": "https://arxiv.org/abs/2604.25850",
@@ -70752,6 +72263,15 @@
       "notes": "Long-context LMs show positional sensitivity; evidence in the middle is used less reliably than evidence near prompt boundaries.",
       "path": "sources/src-liu2023-lost-middle.yml",
       "title": "liu2023-lost-middle"
+    },
+    {
+      "citation": "Liu, Xunzhuo et al. (2026). vLLM Semantic Router: Signal Driven Decision Routing for Mixture-of-Modality Models. arXiv:2603.04444.",
+      "id": "SRC-LIU2026-VLLM-SEMANTIC-ROUTER",
+      "kind": "academic",
+      "notes": "Presents a signal-driven routing framework that composes heterogeneous heuristic, authorization, embedding, modality, domain, grounding, privacy, and safety signals into configurable routing decisions across heterogeneous model backends.",
+      "path": "sources/src-liu2026-vllm-semantic-router.yml",
+      "title": "liu2026-vllm-semantic-router",
+      "url": "https://arxiv.org/abs/2603.04444"
     },
     {
       "citation": "https://arxiv.org/abs/2403.16971",
@@ -70925,6 +72445,15 @@
       "url": "https://huggingface.co/papers/2403.12031"
     },
     {
+      "citation": "Saha, Swarnadeep et al. (2024). System-1.x: Learning to Balance Fast and Slow Planning with Language Models. arXiv:2407.14414.",
+      "id": "SRC-SAHA2024-SYSTEM1X",
+      "kind": "academic",
+      "notes": "Introduces a controller that decomposes planning problems and routes sub-goals between fast and slow planning modes according to difficulty and a controllable hybridization factor.",
+      "path": "sources/src-saha2024-system1x.yml",
+      "title": "saha2024-system1x",
+      "url": "https://arxiv.org/abs/2407.14414"
+    },
+    {
       "citation": "https://www.cl.cam.ac.uk/teaching/1011/R01/75-protection.pdf",
       "id": "SRC-SALTZER1975-PROTECTION",
       "kind": "web",
@@ -71006,6 +72535,15 @@
       "url": "https://arxiv.org/abs/2307.08621"
     },
     {
+      "citation": "togethercomputer/tev1. Open-weight Jev-inspired decision-model experiment on Qwen3.5-4B.",
+      "id": "SRC-TOGETHER-TEV1-REPO",
+      "kind": "repository",
+      "notes": "Repository provides a training/data recipe for a Qwen3.5-4B model specialized to select among predefined answer options. It remains autoregressive/constrained rather than a dedicated non-generative decision architecture.",
+      "path": "sources/src-together-tev1-repo.yml",
+      "title": "together-tev1-repo",
+      "url": "https://github.com/togethercomputer/tev1"
+    },
+    {
       "citation": "https://arxiv.org/abs/2602.11865",
       "id": "SRC-TOMASEV2026-INTELLIGENT-DELEGATION",
       "kind": "academic",
@@ -71070,6 +72608,15 @@
       "url": "https://www.w3.org/TR/trace-context/"
     },
     {
+      "citation": "Wang, Junlin; Wang, Jue; Athiwaratkun, Ben; Zhang, Ce; Zou, James (2024). Mixture-of-Agents Enhances Large Language Model Capabilities. arXiv:2406.04692.",
+      "id": "SRC-WANG2024-MIXTURE-OF-AGENTS",
+      "kind": "academic",
+      "notes": "Introduces a layered multi-agent architecture in which multiple LLM agents produce outputs and later-layer agents consume previous-layer outputs as auxiliary information.",
+      "path": "sources/src-wang2024-mixture-of-agents.yml",
+      "title": "wang2024-mixture-of-agents",
+      "url": "https://arxiv.org/abs/2406.04692"
+    },
+    {
       "citation": "https://arxiv.org/abs/2406.11230",
       "id": "SRC-WANG2024-MMNEEDLE",
       "kind": "academic",
@@ -71077,6 +72624,15 @@
       "path": "sources/src-wang2024-mmneedle.yml",
       "title": "wang2024-mmneedle",
       "url": "https://arxiv.org/abs/2406.11230"
+    },
+    {
+      "citation": "Wang, Chen et al. (2025). When to Reason: Semantic Router for vLLM. arXiv:2510.08731.",
+      "id": "SRC-WANG2025-WHEN-TO-REASON",
+      "kind": "academic",
+      "notes": "Uses a semantic router to classify reasoning requirements and selectively invoke expensive reasoning mode, reporting quality/latency/token trade-offs on evaluated workloads.",
+      "path": "sources/src-wang2025-when-to-reason.yml",
+      "title": "wang2025-when-to-reason",
+      "url": "https://arxiv.org/abs/2510.08731"
     },
     {
       "citation": "https://www.usenix.org/legacy/event/sec10/tech/full_papers/Watson.pdf",

@@ -1,0 +1,6 @@
+id: SRC-KEV-DECISION-MODEL-REPO
+title: kev-decision-model-repo
+kind: repository
+citation: "jaredpalmer/kev. Open research decision models with typed choice, yes/no, and score outputs."
+url: https://github.com/jaredpalmer/kev
+notes: "Project repository and model cards describe prefill-only decision models with shared state, isolated question branches, probability distributions, calibration metrics, and released Qwen-based checkpoints. Reported benchmark results remain project evidence."

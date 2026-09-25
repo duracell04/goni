@@ -1,0 +1,6 @@
+id: SRC-WANG2024-MIXTURE-OF-AGENTS
+title: wang2024-mixture-of-agents
+kind: academic
+citation: "Wang, Junlin; Wang, Jue; Athiwaratkun, Ben; Zhang, Ce; Zou, James (2024). Mixture-of-Agents Enhances Large Language Model Capabilities. arXiv:2406.04692."
+url: https://arxiv.org/abs/2406.04692
+notes: "Introduces a layered multi-agent architecture in which multiple LLM agents produce outputs and later-layer agents consume previous-layer outputs as auxiliary information."

@@ -1,0 +1,6 @@
+id: SRC-LI2024-SNAPKV
+title: li2024-snapkv
+kind: academic
+citation: "Li, Yuhong et al. (2024). SnapKV: LLM Knows What You are Looking for Before Generation. arXiv:2404.14469."
+url: https://arxiv.org/abs/2404.14469
+notes: "Introduces a fine-tuning-free KV-cache compression method that selects clustered important KV positions per attention head using an observation window near the end of the prompt."

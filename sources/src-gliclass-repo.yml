@@ -1,0 +1,6 @@
+id: SRC-GLICLASS-REPO
+title: gliclass-repo
+kind: repository
+citation: "Knowledgator/GLiClass. Generalist and Lightweight Model for Sequence Classification."
+url: https://github.com/Knowledgator/GLiClass
+notes: "Repository describes an efficient zero-shot sequence-classification family that accepts arbitrary labels and performs classification in one forward pass. Project performance claims require independent reproduction."
