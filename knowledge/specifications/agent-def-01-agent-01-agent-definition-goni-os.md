@@ -10,9 +10,7 @@ domains:
 - specs
 aliases:
 - AGENT-DEFINITION
-relations:
-- type: refined_by
-  target: AGENT-MODEL-ORTHO-01
+relations: []
 sources: []
 artifacts: []
 uncertainty: "This contract defines identity and responsibility boundaries, not a runtime process implementation. Concrete lifecycle and scheduler semantics remain governed elsewhere."

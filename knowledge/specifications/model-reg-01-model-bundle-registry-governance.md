@@ -10,9 +10,7 @@ domains:
 - specs
 aliases:
 - MODEL-REGISTRY
-relations:
-- type: refined_by
-  target: MODEL-ROLE-01
+relations: []
 sources: []
 artifacts: []
 uncertainty: "The registry is specified only. Role labels and evaluation profiles do not guarantee performance outside their measured domain."
