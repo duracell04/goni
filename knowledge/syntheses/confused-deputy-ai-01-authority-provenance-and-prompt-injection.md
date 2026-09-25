@@ -4,7 +4,7 @@ title: Authority provenance and the confused-deputy pattern
 type: synthesis
 status: draft
 implementation_state: specified_only
-proposition: Prompt injection and untrusted tool or document content can be analyzed partly as authority-confusion failures: data may influence cognition but must not acquire the authority of the principal, policy layer, or capability issuer merely by entering model context.
+proposition: "Prompt injection and untrusted tool or document content can be analyzed partly as authority-confusion failures: data may influence cognition but must not acquire the authority of the principal, policy layer, or capability issuer merely by entering model context."
 domains: [security, authority, context, delegation]
 aliases:
 - semantic confused deputy
@@ -36,8 +36,7 @@ The security question is therefore not only whether content is malicious. It is:
 Goni should preserve two separate provenance channels:
 
 [
-information provenance 
-eq authority provenance
+information\ provenance \neq authority\ provenance
 ]
 
 External content can change beliefs about the world. It cannot by itself promote its author into an authority source or widen the active delegation.
