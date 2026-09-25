@@ -4,14 +4,14 @@ title: 3. ContextPack
 type: specification
 status: draft
 implementation_state: specified_only
-proposition: A ContextPack is the compiled context bundle produced by graph traversal, reranking, compression, and policy filtering for one Work Order.
+proposition: A ContextPack is the model-independent compiled semantic context bundle produced for one Work Order from governed evidence, memory, skills, compression policy, visibility constraints, and resource budgets.
 domains:
 - specs
 aliases: []
 relations: []
 sources: []
 artifacts: []
-uncertainty: Preserved from the legacy draft without status promotion or newly inferred evidence strength.
+uncertainty: Preserved from the legacy draft and refined by CTX-COMP-01; no shipping table or API object is claimed.
 legacy:
 - path: blueprint/30-specs/context-gravity-graph.md
   heading: 3. ContextPack
@@ -24,33 +24,46 @@ legacy:
 
 ## 3. ContextPack
 
-A `ContextPack` is the compiled context bundle produced by graph traversal,
-reranking, compression, and policy filtering for one Work Order.
+A `ContextPack` is the model-independent compiled semantic context bundle
+produced for one Work Order. `CTX-COMP-01` governs its construction.
 
-`ContextPack` is specified only in CGG-01. It is not a shipping canonical table
-or API object until a later schema/API revision promotes it. Implementations may
+`ContextPack` remains specified only. It is not a shipping canonical table or
+API object until a later schema/API revision promotes it. Implementations may
 represent it as a replayable artifact, receipt-linked metadata, or derived
 Context Plane state, but they MUST preserve this logical shape:
 
 ```yaml
 context_pack_id:
 work_order_id:
+compiler_version:
+compiler_policy_hash:
+source_snapshot_refs:
 graph_snapshot_id:
 scoring_policy_id:
 decay_policy_id:
 permission_filter_ref:
+skill_fragment_refs:
 token_budget:
 selected_context_items:
 excluded_candidates:
 compression_policy:
 assembly_reason:
+context_pack_hash:
 receipt_ref:
 created_at:
 provenance:
 ```
 
-`selected_context_items` references the material selected for the prompt bundle,
-usually `ContextItems` plus source waypoints. `excluded_candidates` records
-bounded refs and omission reasons for high-salience or high-similarity
-candidates that did not enter the pack. `assembly_reason` is a bounded summary
-or hash/ref pair, not raw free-form rationale text.
+`selected_context_items` references material selected for semantic
+materialization, usually `ContextItems` plus source waypoints.
+`skill_fragment_refs` records the explicit procedural fragments selected under
+SKILL-REG-01. `excluded_candidates` records bounded refs and omission reasons
+for candidates crossing the configured salience, similarity, or audit
+threshold.
+
+`assembly_reason` is a bounded summary or hash/ref pair, not raw free-form
+rationale text.
+
+A ContextPack deliberately excludes model-specific tokenization, chat-template
+encoding, special-token layout, and runtime KV state. Those belong to the
+runtime-serialization layer rather than this semantic contract.
