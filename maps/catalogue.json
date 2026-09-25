@@ -229,8 +229,28 @@
       "node": "GONI-DECISION-9AF49466170D"
     },
     {
+      "alias": "context-compiler",
+      "node": "CTX-COMP-01"
+    },
+    {
+      "alias": "governed-skills",
+      "node": "SKILL-REG-01"
+    },
+    {
+      "alias": "inference-frame",
+      "node": "INF-FRAME-01"
+    },
+    {
       "alias": "large-latent-state-small-active-state",
       "node": "GONI-PRINCIPLE-9062425CD490"
+    },
+    {
+      "alias": "prefix-cache-contract",
+      "node": "CACHE-01"
+    },
+    {
+      "alias": "semantic-page-fault",
+      "node": "CTX-MISS-01"
     },
     {
       "alias": "semantic-working-set-management",
@@ -243,6 +263,7 @@
         "AGENT-DEF-01",
         "AGENT-MANIFEST-01",
         "AGENT-STORE-01",
+        "CTX-MISS-EVAL-01",
         "DAT-01",
         "EVID-DESK-01",
         "GONI-DECISION-410431892DF4",
@@ -384,6 +405,8 @@
         "GONI-SYNTHESIS-CC4921DED1BB",
         "GONI-SYNTHESIS-DF627E719B9D",
         "GONI-SYNTHESIS-E2FB2167D274",
+        "SKILL-EVAL-01",
+        "SKILL-REG-01",
         "SPEC-KERN-01"
       ],
       "billing": [
@@ -666,6 +689,9 @@
         "POWER-AND-PSU"
       ],
       "kernel": [
+        "CACHE-01",
+        "CTX-COMP-01",
+        "CTX-MISS-01",
         "GONI-DECISION-5346D37FC858",
         "GONI-DECISION-9AF49466170D",
         "GONI-EVIDENCE-55CFEAFCBF16",
@@ -916,6 +942,9 @@
       ],
       "memory": [
         "BOUND-01",
+        "CTX-COMP-01",
+        "CTX-MISS-01",
+        "CTX-MISS-EVAL-01",
         "EVID-SEC-02",
         "GONI-EXPERIMENT-290E879EE8E2",
         "GONI-EXPERIMENT-4193B6DF2A2A",
@@ -949,7 +978,8 @@
         "GONI-SYNTHESIS-161FC810382A",
         "GONI-SYNTHESIS-AE048AF3026D",
         "MEM-RETR-01",
-        "MEMORY-ARCHITECTURE"
+        "MEMORY-ARCHITECTURE",
+        "SKILL-REG-01"
       ],
       "network": [
         "GONI-IMAP-B21D85F4146E",
@@ -1589,6 +1619,17 @@
         "THREAT-MODEL"
       ],
       "research": [
+        "CACHE-EVAL-01",
+        "CTX-COMP-EVAL-01",
+        "CTX-MISS-EVAL-01",
+        "EVID-DENNING1968-WORKING-SET",
+        "EVID-GIM2024-PROMPT-CACHE",
+        "EVID-HU2022-LORA",
+        "EVID-JIANG2023-LLMLINGUA",
+        "EVID-JIANG2024-LONGLLMLINGUA",
+        "EVID-LI2021-PREFIX-TUNING",
+        "EVID-LI2023-SELECTIVE-CONTEXT",
+        "EVID-ZHENG2024-SGLANG",
         "GONI-EVIDENCE-0577AE42BDFA",
         "GONI-EVIDENCE-074976FCCFF9",
         "GONI-EVIDENCE-0C67B820C927",
@@ -1690,7 +1731,8 @@
         "GONI-SYNTHESIS-D3554320FEBD",
         "GONI-SYNTHESIS-D5A359AF7D66",
         "GONI-SYNTHESIS-F0626F7EFE2C",
-        "REF-GONIOS-NEIGHBOR-01"
+        "REF-GONIOS-NEIGHBOR-01",
+        "SKILL-EVAL-01"
       ],
       "security": [
         "GONI-DECISION-9AF49466170D",
@@ -1710,8 +1752,21 @@
         "ADR-INDEX-SW",
         "API-SURFACE",
         "AXIOMS-01",
+        "CACHE-01",
+        "CACHE-EVAL-01",
         "CI-VALIDATION-01",
+        "CTX-COMP-01",
+        "CTX-COMP-EVAL-01",
+        "CTX-MISS-01",
+        "CTX-MISS-EVAL-01",
         "DASHBOARD-CONCEPTS",
+        "EVID-GIM2024-PROMPT-CACHE",
+        "EVID-HU2022-LORA",
+        "EVID-JIANG2023-LLMLINGUA",
+        "EVID-JIANG2024-LONGLLMLINGUA",
+        "EVID-LI2021-PREFIX-TUNING",
+        "EVID-LI2023-SELECTIVE-CONTEXT",
+        "EVID-ZHENG2024-SGLANG",
         "GONI-DECISION-0532C27DA3CC",
         "GONI-DECISION-1A482B12FFB8",
         "GONI-DECISION-1D38615A3B48",
@@ -2030,6 +2085,7 @@
         "GONI-SYNTHESIS-018E3523309A",
         "GONI-SYNTHESIS-25E97650859E",
         "GONI-SYNTHESIS-C774DEAACDEE",
+        "INF-FRAME-01",
         "LATENT-PREDICTOR",
         "LLM-RUNTIME",
         "MESH-AND-WIREGUARD",
@@ -2037,6 +2093,8 @@
         "PRIV-01",
         "SCHEMA-DSL-01",
         "SCHEMA-MVP-01",
+        "SKILL-EVAL-01",
+        "SKILL-REG-01",
         "SPINE-01",
         "SREQ-01",
         "SUB-INDEX-00",
@@ -2485,6 +2543,12 @@
         "VIS-01"
       ],
       "system": [
+        "CACHE-01",
+        "CACHE-EVAL-01",
+        "CTX-COMP-01",
+        "CTX-COMP-EVAL-01",
+        "CTX-MISS-01",
+        "EVID-DENNING1968-WORKING-SET",
         "GONI-DECISION-9AF49466170D",
         "GONI-EXPERIMENT-0A1F9BC4014A",
         "GONI-EXPERIMENT-5ADAC18F09F9",
@@ -2581,7 +2645,9 @@
         "GONI-SYNTHESIS-F3DC36FB8C4B",
         "GONI-SYNTHESIS-FF1804B9EA23",
         "GONI-SYNTHESIS-FFFD0BDE80BE",
+        "INF-FRAME-01",
         "LSKR-01",
+        "SKILL-REG-01",
         "SOV-AUDIT-01",
         "SYS-00",
         "SYS-02",
@@ -2623,6 +2689,8 @@
         "BOM-V1-APU-NODE",
         "BOM-V2-FRAMEWORK-395-128GB",
         "BOUND-01",
+        "CACHE-01",
+        "CACHE-EVAL-01",
         "CDC-01",
         "CGG-01",
         "CI-VALIDATION-01",
@@ -2631,6 +2699,10 @@
         "CRDT-NOTES-01",
         "CRDT-PREFS-01",
         "CRDT-TASKS-01",
+        "CTX-COMP-01",
+        "CTX-COMP-EVAL-01",
+        "CTX-MISS-01",
+        "CTX-MISS-EVAL-01",
         "DASHBOARD-CONCEPTS",
         "DAT-01",
         "DELEG-01",
@@ -2650,11 +2722,18 @@
         "EVID-BUDGET-02",
         "EVID-COST-01",
         "EVID-COST-02",
+        "EVID-DENNING1968-WORKING-SET",
         "EVID-DESK-01",
         "EVID-ENF-01",
+        "EVID-GIM2024-PROMPT-CACHE",
         "EVID-HARNESS-01",
         "EVID-HARNESS-02",
+        "EVID-HU2022-LORA",
         "EVID-INDEX-00",
+        "EVID-JIANG2023-LLMLINGUA",
+        "EVID-JIANG2024-LONGLLMLINGUA",
+        "EVID-LI2021-PREFIX-TUNING",
+        "EVID-LI2023-SELECTIVE-CONTEXT",
         "EVID-LONGCTX-01",
         "EVID-LONGCTX-02",
         "EVID-LONGCTX-03",
@@ -2662,6 +2741,7 @@
         "EVID-SEC-01",
         "EVID-SEC-02",
         "EVID-SEC-03",
+        "EVID-ZHENG2024-SGLANG",
         "FIRST-PARTY-LLM-CHATS",
         "FRONT-PANEL-MCU",
         "GONI-AGILITY-RULES",
@@ -4476,6 +4556,7 @@
         "GONI-WHITEPAPER",
         "GOV-00",
         "HREQ-01",
+        "INF-FRAME-01",
         "ITCR-01",
         "JOB-01",
         "LATENT-PREDICTOR",
@@ -4528,6 +4609,8 @@
         "SEC-00",
         "SEC-10",
         "SEC-20",
+        "SKILL-EVAL-01",
+        "SKILL-REG-01",
         "SOV-AUDIT-01",
         "SPEC-00",
         "SPEC-ENF-01",
@@ -4644,6 +4727,14 @@
         "GONI-DECISION-FEDF62BF576F"
       ],
       "evidence": [
+        "EVID-DENNING1968-WORKING-SET",
+        "EVID-GIM2024-PROMPT-CACHE",
+        "EVID-HU2022-LORA",
+        "EVID-JIANG2023-LLMLINGUA",
+        "EVID-JIANG2024-LONGLLMLINGUA",
+        "EVID-LI2021-PREFIX-TUNING",
+        "EVID-LI2023-SELECTIVE-CONTEXT",
+        "EVID-ZHENG2024-SGLANG",
         "GONI-EVIDENCE-0577AE42BDFA",
         "GONI-EVIDENCE-074976FCCFF9",
         "GONI-EVIDENCE-0C67B820C927",
@@ -4739,6 +4830,9 @@
         "BOM-NOTES",
         "BOM-V1-APU-NODE",
         "BOM-V2-FRAMEWORK-395-128GB",
+        "CACHE-EVAL-01",
+        "CTX-COMP-EVAL-01",
+        "CTX-MISS-EVAL-01",
         "EVAL-README-00",
         "EVID-AUTON-01",
         "EVID-AUTON-03",
@@ -4862,7 +4956,8 @@
         "GONI-EXPERIMENT-F2AB32D85916",
         "GONI-EXPERIMENT-F3974392D01F",
         "GONI-EXPERIMENT-F5667C1994A9",
-        "GONI-LAB"
+        "GONI-LAB",
+        "SKILL-EVAL-01"
       ],
       "glossary": [
         "GONI-GLOSSARY-043146DE9D6F",
@@ -5516,12 +5611,15 @@
         "BILL-01",
         "BILL-02",
         "BOUND-01",
+        "CACHE-01",
         "CDC-01",
         "CGG-01",
         "CRDT-AUDIT-01",
         "CRDT-NOTES-01",
         "CRDT-PREFS-01",
         "CRDT-TASKS-01",
+        "CTX-COMP-01",
+        "CTX-MISS-01",
         "DAT-01",
         "DELEG-01",
         "DELEG-INT-01",
@@ -5946,6 +6044,7 @@
         "GONI-SPEC-FF000C878367",
         "GONI-SPEC-FF2D2F8D0491",
         "HREQ-01",
+        "INF-FRAME-01",
         "ITCR-01",
         "JOB-01",
         "LSC-01",
@@ -5959,6 +6058,7 @@
         "SANDBOX-01",
         "SCHED-01",
         "SCHEDULER-SPEC",
+        "SKILL-REG-01",
         "SPEC-ENF-01",
         "SPEC-INDEX-00",
         "SPEC-KERN-01",
@@ -10621,6 +10721,80 @@
     },
     {
       "aliases": [
+        "prefix-cache-contract"
+      ],
+      "artifacts": [],
+      "body": "# Prefix and KV Reuse\n\nGoni treats prompt-prefix reuse and KV-state reuse as execution/runtime\noptimizations beneath semantic context compilation.\n\n[\n\boxed{\n\text{semantic equivalence}\n\notRightarrow\n\text{cache compatibility}\n}\n]\n\n## 1. Compatibility identity\n\nA cache implementation SHOULD derive compatibility from an identity equivalent\nto:\n\n[\nCacheKey =\nH(\nmodel,\nadapter,\ntokenizer,\ntemplate,\nprefix_tokens,\nposition_semantics,\nruntime_layout\n).\n]\n\nThe exact key format is backend-specific, but the compatibility decision MUST\naccount for every state component whose change can make reused attention state\ninvalid.\n\n## 2. Invalidation\n\nReuse MUST be invalidated or revalidated when a material dependency changes,\nincluding:\n\n- model bundle;\n- adapter or learned-prefix stack;\n- tokenizer;\n- chat template;\n- exact reusable prefix token sequence;\n- relevant position semantics;\n- runtime KV representation or layout;\n- stable system/policy prompt bundle when it participates in the prefix;\n- tool-schema prefix when it participates in the reusable state.\n\nA semantic paraphrase is a new token sequence unless the runtime proves an\nequivalent reusable representation by another governed mechanism.\n\n## 3. Four optimization axes\n\nGoni measures four separate axes:\n\n1. **prefix reuse** — avoid recomputing an identical compatible prefix;\n2. **KV residency and paging** — manage where active cache blocks reside;\n3. **sequence-state retention** — decide which prior states survive under\n   constrained cache capacity;\n4. **representation compression** — reduce bytes per surviving state.\n\nAn improvement on one axis MUST NOT be reported as evidence for another.\n\n## 4. Observability\n\nRuntime telemetry SHOULD distinguish:\n\n- logical prompt tokens;\n- fresh prefill tokens;\n- reused prefix tokens;\n- cache-hit and miss reasons;\n- peak KV bytes;\n- cache admission/eviction events;\n- TTFT and decode latency;\n- invalidation reason where a previously reusable prefix becomes ineligible.\n\n## 5. Authority boundary\n\nCached cognition may accelerate classification, drafting, retrieval, or\nplanning. Before any consequential effect, authority MUST resolve against\ncanonical kernel-owned mandates, policy, capability, approval, budget, and\nrevocation state.\n\nCache reuse can reduce computation. It can never widen permission.",
+      "domains": [
+        "software",
+        "system",
+        "kernel"
+      ],
+      "id": "CACHE-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/specifications/cache-01-prefix-and-kv-reuse.md",
+      "proposition": "Prefix and KV reuse is a runtime optimization over exactly compatible inference state; semantic similarity alone does not establish cache compatibility, and cached cognitive state never becomes authoritative policy state.",
+      "relations": [
+        {
+          "target": "INF-FRAME-01",
+          "type": "depends_on"
+        },
+        {
+          "target": "GONI-DECISION-9AF49466170D",
+          "type": "depends_on"
+        },
+        {
+          "target": "GONI-SYNTHESIS-227700D474C6",
+          "type": "refines"
+        }
+      ],
+      "sources": [
+        "SRC-GIM2024-PROMPT-CACHE",
+        "SRC-ZHENG2024-SGLANG",
+        "SRC-KWON2023-VLLM"
+      ],
+      "status": "draft",
+      "title": "Prefix and KV Reuse",
+      "type": "specification",
+      "uncertainty": "Runtime engines expose different reuse semantics and KV layouts. Goni requires backend-specific conformance tests before treating a compatibility key as sufficient for safe reuse."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Prefix and KV Reuse Evaluation\n\n## Cases\n\nExercise exact reuse and deliberate invalidation across changes to:\n\n- model bundle;\n- adapter or learned-prefix stack;\n- tokenizer;\n- chat template;\n- system/policy prefix;\n- tool-schema prefix;\n- exact prefix token sequence;\n- position semantics;\n- runtime KV representation.\n\n## Metrics\n\nReport:\n\n- cache eligibility precision and recall;\n- cache-hit rate;\n- invalidation correctness;\n- logical prompt tokens;\n- fresh prefill tokens;\n- reused prefix tokens;\n- TTFT;\n- decode latency;\n- peak KV memory;\n- deterministic output equivalence where the runtime supports a meaningful\n  matched comparison;\n- authority violations caused by reuse: target zero.\n\nSemantic similarity alone must never count as a successful compatibility test.",
+      "domains": [
+        "research",
+        "software",
+        "system"
+      ],
+      "id": "CACHE-EVAL-01",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/experiments/cache-eval-01-prefix-reuse.md",
+      "proposition": "Evaluate CACHE-01 compatibility and reuse rules by measuring exact cache eligibility, invalidation correctness, fresh prefill reduction, TTFT, KV memory, and output equivalence under deterministic profiles where equivalence is meaningful.",
+      "relations": [
+        {
+          "target": "CACHE-01",
+          "type": "tests"
+        },
+        {
+          "target": "INF-FRAME-01",
+          "type": "tests"
+        }
+      ],
+      "sources": [
+        "SRC-GIM2024-PROMPT-CACHE",
+        "SRC-ZHENG2024-SGLANG",
+        "SRC-KWON2023-VLLM"
+      ],
+      "status": "draft",
+      "title": "Prefix and KV Reuse Evaluation",
+      "type": "experiment",
+      "uncertainty": "Cache behavior is backend-specific. A passing policy for one model, tokenizer, runtime, or KV layout does not establish compatibility for another."
+    },
+    {
+      "aliases": [
         "CORRECTION-DELTA-COMPILER"
       ],
       "artifacts": [],
@@ -10829,6 +11003,171 @@
       "title": "CRDT: tasks",
       "type": "specification",
       "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
+    },
+    {
+      "aliases": [
+        "context-compiler"
+      ],
+      "artifacts": [],
+      "body": "# Authority-Aware Context Compilation\n\nGoni treats model context as a compiled working set rather than as durable\nmemory. The Context Plane remains the canonical plane; the Context Compiler is a\nservice inside that plane, not an additional architectural plane.\n\nThe governing separation is:\n\n[\n\boxed{\n\text{durable state}\n\neq\n\text{compiled semantic context}\n\neq\n\text{runtime KV state}\n}\n]\n\n## 1. Interface\n\nFor Work Order (W_t), governed retrieval candidates (R_t), durable memory\nreferences (M_t), eligible skill fragments (S_t), visibility constraints\n(P_t), resource budget (B_t), and target runtime profile (\nho_t), the\nContext Plane computes:\n\n[\nC_t =\noperatorname{CompileContext}\n(W_t,R_t,M_t,S_t,P_t,B_t,\nho_t).\n]\n\nThe output (C_t) is a `ContextPack`.\n\nInputs may include hashes or stable refs rather than raw content when the\ncompiler can resolve them through governed interfaces.\n\n## 2. Compilation stages\n\nA conforming compiler SHOULD preserve the following logical stages:\n\n1. bind all context work to a Work Order;\n2. ingest governed retrieval candidates;\n3. expand through permitted graph relations where CGG-01 applies;\n4. filter by permission, validity, conflict state, quoteability, source trust,\n   parser confidence, and other visibility rules;\n5. resolve eligible skills and close fragment dependencies under SKILL-REG-01;\n6. score and rerank candidate evidence and procedural material;\n7. reduce redundancy and perform budgeted selection;\n8. choose a permitted compression form for each selected item;\n9. order the selected material deterministically under a named compiler policy;\n10. emit a model-independent `ContextPack` with inclusion, omission,\n    compression, provenance, and receipt metadata.\n\nRetrieval produces candidate material. Retrieval rank does not by itself define\nthe final model context.\n\n## 3. Smallest-sufficient-context objective\n\nThe design objective is not shortest context in isolation. A conceptual\nobjective is:\n\n[\nC_t^* =\nargmin_C\n[\nalpha T(C)\n+\beta L(C)\n+gamma M_{KV}(C)\n+delta E(C)\n+epsilon D(C)\n],\n]\n\nwhere (T) is active-token cost, (L) latency, (M_{KV}) expected runtime\nKV-state cost, (E) compute or energy cost, and (D) task-relevant\ninformation distortion or loss.\n\nThe exact scoring function is not normative. Any promoted implementation MUST\ninstead demonstrate named quality and safety thresholds, including:\n\n[\nP(\text{task success}mid C) ge \tau,\n]\n\nand sufficient coverage of evidence required by the Work Order.\n\nA shorter context that omits decisive evidence is a compiler failure even when\nit reduces cost.\n\n## 4. Authority boundary\n\nModel-visible information never constitutes execution authority.\n\n[\n\boxed{\noperatorname{InformationAvailableToModel}\n\notRightarrow\noperatorname{AuthorityToAct}\n}\n]\n\nCompression, retrieval rank, cache state, skill selection, summaries, inferred\nsalience, and ContextPack contents may influence cognition. Consequential\nexecution MUST resolve mandates, policy, capabilities, approval state, budgets,\nand revocation against canonical kernel-owned authority according to\nGONI-DECISION-9AF49466170D.\n\n## 5. Provenance and replay\n\nA ContextPack MUST identify the compiler version or policy, source snapshots or\nrefs sufficient for reconstruction, selected items, material omissions that\ncross the configured audit threshold, compression choices, skill-fragment refs,\nbudget, and a stable ContextPack hash.\n\nContext compilation may be probabilistic during candidate generation or\nscoring. Audit-grade profiles SHOULD support deterministic ordering and\nreplayable materialization once candidate inputs and named policies are fixed.\n\n## 6. Working-set interpretation\n\nDenning's working-set model supplies an operating-systems precedent for managing\na small active set within a larger addressable state. Prompt-compression\nresearch supplies empirical evidence that indiscriminate context length is not\nthe only useful objective. Goni combines these ideas with governed memory,\nskills, provenance, and authority separation; that combination is a Goni\narchitectural hypothesis requiring system-level evaluation.",
+      "domains": [
+        "memory",
+        "software",
+        "system",
+        "kernel"
+      ],
+      "id": "CTX-COMP-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/specifications/ctx-comp-01-authority-aware-context-compilation.md",
+      "proposition": "The Context Plane compiles a task-specific, provenance-bearing working set from governed evidence, memory, skills, policy-visible state, and runtime budgets while keeping execution authority independent from model-visible context.",
+      "relations": [
+        {
+          "target": "MEM-RETR-01",
+          "type": "depends_on"
+        },
+        {
+          "target": "CGG-01",
+          "type": "depends_on"
+        },
+        {
+          "target": "SKILL-REG-01",
+          "type": "depends_on"
+        },
+        {
+          "target": "GONI-DECISION-9AF49466170D",
+          "type": "depends_on"
+        },
+        {
+          "target": "GONI-SPEC-2F762878317A",
+          "type": "refines"
+        },
+        {
+          "target": "GONI-SPEC-B49DB23CF412",
+          "type": "refines"
+        },
+        {
+          "target": "GONI-PRINCIPLE-9062425CD490",
+          "type": "refines"
+        }
+      ],
+      "sources": [
+        "SRC-DENNING1968-WORKING-SET",
+        "SRC-JIANG2023-LLMLINGUA",
+        "SRC-JIANG2024-LONGLLMLINGUA",
+        "SRC-LI2023-SELECTIVE-CONTEXT"
+      ],
+      "status": "draft",
+      "title": "Authority-Aware Context Compilation",
+      "type": "specification",
+      "uncertainty": "The compiler interface and invariants are specified architecture. The objective weights, fidelity thresholds, selection algorithms, and transferability of published compression results require Goni-specific implementation and matched evaluation."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Context Compilation Evaluation\n\n## Hypothesis\n\nFor at least some Goni workloads, a task-specific compiled working set can\nreduce active tokens and runtime cost while preserving the information required\nfor correct, cited, authority-safe work.\n\n## Baselines\n\nCompare under the same model, runtime, hardware, decoding profile, and task set:\n\n1. full available context within the native model window;\n2. fixed top-K retrieval materialized directly;\n3. existing submodular context selection under a fixed token budget;\n4. CTX-COMP-01 with governed skill resolution, compression, omission tracking,\n   and the same external evidence pool.\n\n## Metrics\n\nReport at minimum:\n\n- task answer or decision quality;\n- decisive-evidence Recall@k;\n- citation/span fidelity;\n- omission rate for decisive evidence;\n- logical prompt tokens;\n- fresh prefill tokens where measurable;\n- TTFT and end-to-end latency;\n- peak KV memory where measurable;\n- compiler latency;\n- compression distortion or reconstruction error;\n- authorization violations attributable to compiled context: target zero.\n\n## Promotion criterion\n\nA compiler policy may be promoted only for a named workload and runtime profile\nwhen it improves one or more resource metrics while remaining inside predefined\nquality, evidence-recall, citation, and authority-safety thresholds.",
+      "domains": [
+        "research",
+        "software",
+        "system"
+      ],
+      "id": "CTX-COMP-EVAL-01",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/experiments/ctx-comp-eval-01-context-compilation.md",
+      "proposition": "Compare full-context, fixed top-K retrieval, existing submodular selection, and CTX-COMP-01 under matched model/runtime conditions to test whether a smaller compiled working set preserves task quality, decisive-evidence recall, citation fidelity, and authority-layer safety while reducing inference cost.",
+      "relations": [
+        {
+          "target": "CTX-COMP-01",
+          "type": "tests"
+        },
+        {
+          "target": "GONI-PRINCIPLE-9062425CD490",
+          "type": "tests"
+        }
+      ],
+      "sources": [
+        "SRC-LIU2023-LOST-MIDDLE",
+        "SRC-JIANG2023-LLMLINGUA",
+        "SRC-JIANG2024-LONGLLMLINGUA",
+        "SRC-LI2023-SELECTIVE-CONTEXT"
+      ],
+      "status": "draft",
+      "title": "Context Compilation Evaluation",
+      "type": "experiment",
+      "uncertainty": "No superiority is assumed. The experiment must report where compilation loses to simpler baselines and must not promote thresholds across workloads or hardware without matched evidence."
+    },
+    {
+      "aliases": [
+        "semantic-page-fault"
+      ],
+      "artifacts": [],
+      "body": "# Bounded Context-Miss Resolution\n\nA compiled working set can be sufficient at invocation time and still prove\ninsufficient during reasoning. Goni provides a typed read-side recovery path\ninstead of treating missing evidence as permission to guess.\n\n[\n\text{insufficient active context}\n\nightarrow\n\text{ContextMiss}\n\nightarrow\n\text{governed retrieval}\n\nightarrow\n\text{recompilation}\n\nightarrow\n\text{resume or stop}.\n]\n\nA ContextMiss is a request for additional cognitive material. It is not a tool\ncapability and does not expand execution authority.\n\n## 1. Logical request\n\nA conforming request MUST preserve:\n\n```yaml\ncontext_miss_id:\nwork_order_id:\ninference_frame_id:\nneed_type:\nquery_or_ref:\nreason_code:\nrequired_fidelity:\nrequired_confidence:\npermission_scope:\ntoken_budget_remaining:\nlatency_budget_remaining:\nrecursion_depth:\ncreated_at:\nprovenance:\n```\n\n## 2. Bounded reason codes\n\nThe request SHOULD use a bounded reason vocabulary. Initial values are:\n\n- `missing_evidence`\n- `missing_exact_wording`\n- `unresolved_entity`\n- `stale_information`\n- `conflicting_evidence`\n- `missing_procedural_rule`\n\nThe request records what additional material is required without requiring raw\nprivate chain-of-thought disclosure.\n\n## 3. Resolution path\n\nA context miss re-enters the normal governed pipeline:\n\n1. validate that the Work Order permits further read-side retrieval;\n2. check recursion, token, latency, privacy, and connector budgets;\n3. issue or refine a governed retrieval request through MEM-RETR-01;\n4. apply ordinary permission, validity, quoteability, trust, and conflict\n   filters;\n5. invoke CTX-COMP-01 to produce a new ContextPack or bounded ContextPack delta;\n6. serialize a new InferenceFrame under INF-FRAME-01;\n7. resume cognition if budgets and policy permit;\n8. emit a receipt for the miss, recovery basis, materialization, and outcome.\n\n## 4. Termination\n\nThe runtime MUST have a finite recursion bound. Resolution terminates when:\n\n- sufficient material is recovered;\n- the remaining budget is insufficient;\n- policy denies the read;\n- the required source is unavailable;\n- confidence remains below the Work Order threshold after the permitted\n  recovery attempts.\n\nWhen recovery terminates without sufficient evidence, the system SHOULD surface\nthe unresolved uncertainty rather than silently filling the gap.\n\n## 5. Authority invariant\n\n[\n\boxed{\n\text{context expansion}\n\notRightarrow\n\text{authority expansion}\n}\n]\n\nA newly retrieved policy description, mandate summary, cached permission hint,\nor capability reference may inform cognition. Consequential execution still\nresolves authority against canonical kernel-owned state at the mediation\nboundary.",
+      "domains": [
+        "memory",
+        "software",
+        "system",
+        "kernel"
+      ],
+      "id": "CTX-MISS-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/specifications/ctx-miss-01-bounded-context-miss-resolution.md",
+      "proposition": "When model cognition identifies an evidence or procedural dependency absent from the active working set, it may issue a typed bounded context-miss request that re-enters governed retrieval and context compilation without expanding execution authority.",
+      "relations": [
+        {
+          "target": "CTX-COMP-01",
+          "type": "depends_on"
+        },
+        {
+          "target": "MEM-RETR-01",
+          "type": "depends_on"
+        },
+        {
+          "target": "INF-FRAME-01",
+          "type": "depends_on"
+        },
+        {
+          "target": "GONI-DECISION-FEB39440C565",
+          "type": "depends_on"
+        }
+      ],
+      "sources": [
+        "SRC-PACKER2023-MEMGPT"
+      ],
+      "status": "draft",
+      "title": "Bounded Context-Miss Resolution",
+      "type": "specification",
+      "uncertainty": "Context-miss detection and recovery quality are unvalidated. The analogy to virtual-memory faults is architectural; Goni requires explicit evaluation of false misses, unnecessary page-ins, recursion, latency, and answer quality."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Context-Miss Recovery Evaluation\n\n## Task construction\n\nCreate cases in which the initial ContextPack intentionally omits one of:\n\n- decisive evidence;\n- exact source wording;\n- an entity-resolution fact;\n- a freshness-critical fact;\n- a conflicting source;\n- a decisive procedural rule.\n\nInclude control cases where the initial context is already sufficient.\n\n## Metrics\n\nReport:\n\n- miss-detection precision and recall;\n- successful recovery rate;\n- unnecessary page-in rate;\n- false confidence after failed recovery;\n- recursion depth;\n- added and evicted tokens;\n- retrieval/tool calls;\n- latency;\n- final task quality;\n- citation fidelity;\n- authority violations: target zero.\n\n## Promotion criterion\n\nA context-miss policy may be promoted only when recovery meaningfully improves\ntask quality or evidence fidelity without unacceptable recursion, latency, false\nmisses, unnecessary retrieval, or authority regressions.",
+      "domains": [
+        "research",
+        "agent",
+        "memory",
+        "software"
+      ],
+      "id": "CTX-MISS-EVAL-01",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/experiments/ctx-miss-eval-01-context-miss-recovery.md",
+      "proposition": "Construct tasks whose decisive evidence or procedural dependency is absent from the initial working set and measure whether CTX-MISS-01 detects, recovers, and recompiles the missing context within bounded recursion and resource budgets.",
+      "relations": [
+        {
+          "target": "CTX-MISS-01",
+          "type": "tests"
+        }
+      ],
+      "sources": [
+        "SRC-PACKER2023-MEMGPT"
+      ],
+      "status": "draft",
+      "title": "Context-Miss Recovery Evaluation",
+      "type": "experiment",
+      "uncertainty": "Detection may trade off false misses against unnecessary page-ins. The experiment must report both and treat unresolved recovery as uncertainty rather than success."
     },
     {
       "aliases": [],
@@ -11337,6 +11676,37 @@
       "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
     },
     {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Source claim: Denning 1968 working-set model\n\nDenning develops the working-set model to distinguish information currently in\nuse by a running process from the larger addressable memory space and to guide\ndynamic management of paged memory.\n\n## Goni relevance\n\nThis supports treating Goni's durable memory and addressable knowledge as larger\nthan the active inference working set. It motivates dynamic admission, eviction,\nand paging policies while leaving the exact LLM-specific policy to empirical\nevaluation.\n\n## Boundary\n\nThe paper does not study transformers, retrieval-augmented generation, prompt\ncompression, or KV caches. Goni's use of the working-set concept is a systems\nanalogy, not a claim that LLM context obeys the same locality distribution.",
+      "domains": [
+        "research",
+        "system"
+      ],
+      "id": "EVID-DENNING1968-WORKING-SET",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/evidence/evid-denning1968-working-set.md",
+      "proposition": "Denning's working-set model treats the subset of information currently in use by a running process as the basis for dynamic memory allocation rather than keeping the entire addressable state resident.",
+      "relations": [
+        {
+          "target": "GONI-PRINCIPLE-9062425CD490",
+          "type": "supports"
+        },
+        {
+          "target": "GONI-DECISION-FEB39440C565",
+          "type": "supports"
+        }
+      ],
+      "sources": [
+        "SRC-DENNING1968-WORKING-SET"
+      ],
+      "status": "draft",
+      "title": "Source claim: Denning 1968 working-set model",
+      "type": "evidence",
+      "uncertainty": "The working-set model is an operating-systems result. Applying it to LLM context management is an architectural analogy that requires Goni-specific measurement rather than a direct empirical result from Denning."
+    },
+    {
       "aliases": [
         "EVID-DESK-01-DESKTOP-AGENT-FIREWALL"
       ],
@@ -11389,6 +11759,32 @@
       "title": "EVID-ENF-01 Egress Non-bypass Validation",
       "type": "experiment",
       "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
+    },
+    {
+      "artifacts": [],
+      "body": "# Source claim: Prompt Cache\n\nPrompt Cache defines reusable prompt modules and precomputes their attention\nstates so recurring text segments can reuse inference work while preserving\npositional correctness.\n\n## Goni relevance\n\nThe result supports treating stable instruction or context modules as\ncache-addressable runtime objects when their exact compatibility conditions are\nsatisfied.\n\n## Boundary\n\nSemantic similarity alone is insufficient evidence of cache compatibility.\nGoni must bind reuse to exact model, tokenizer, template, position, adapter, and\nruntime assumptions.",
+      "domains": [
+        "research",
+        "software"
+      ],
+      "id": "EVID-GIM2024-PROMPT-CACHE",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/evidence/evid-gim2024-prompt-cache.md",
+      "proposition": "Prompt Cache reuses precomputed attention states for explicitly defined recurring prompt modules and reports substantial time-to-first-token reductions without changing model parameters.",
+      "relations": [
+        {
+          "target": "GONI-SYNTHESIS-227700D474C6",
+          "type": "supports"
+        }
+      ],
+      "sources": [
+        "SRC-GIM2024-PROMPT-CACHE"
+      ],
+      "status": "draft",
+      "title": "Source claim: Prompt Cache",
+      "type": "evidence",
+      "uncertainty": "Reported latency gains depend on model, hardware, prompt structure, module reuse, and runtime implementation; they do not establish one universal cache policy for Goni."
     },
     {
       "aliases": [
@@ -11445,6 +11841,32 @@
       "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
     },
     {
+      "artifacts": [],
+      "body": "# Source claim: LoRA\n\nLoRA freezes base-model weights and injects trainable low-rank updates for\ndownstream adaptation.\n\n## Goni relevance\n\nIt provides a concrete learned-adaptation layer between prompt-level procedural\ninstructions and full model-weight replacement.\n\n## Boundary\n\nThe source does not establish when Goni should prefer an adapter over explicit\nskills, retrieval, deterministic code, or kernel enforcement.",
+      "domains": [
+        "research",
+        "software"
+      ],
+      "id": "EVID-HU2022-LORA",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/evidence/evid-hu2022-lora.md",
+      "proposition": "LoRA adapts a frozen pretrained model by learning low-rank parameter updates, reducing the trainable and stored task-specific parameter burden relative to full fine-tuning.",
+      "relations": [
+        {
+          "target": "GONI-SPEC-9D8A0A7F0F70",
+          "type": "supports"
+        }
+      ],
+      "sources": [
+        "SRC-HU2022-LORA"
+      ],
+      "status": "draft",
+      "title": "Source claim: LoRA",
+      "type": "evidence",
+      "uncertainty": "LoRA demonstrates parameter-efficient adaptation, not that a given behavior should be moved from prompts or skills into an adapter; placement remains a Goni governance and evaluation decision."
+    },
+    {
       "aliases": [],
       "artifacts": [],
       "body": "# Evidence Index\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n# Evidence Index\n\n- benchmarks/\n- eval/\n- eval/README.md\n- eval/EVID-SEC-01-prompt-injection.md\n- eval/EVID-SEC-02-memory-poisoning.md\n- eval/EVID-SEC-03-trace-replayability.md\n- eval/EVID-AUTON-01-autonomy-corridors.md\n- eval/EVID-AUTON-02-risk-threshold-calibration.md\n- eval/EVID-AUTON-03-policy-anomaly-ux.md\n- eval/EVID-AUTON-04-offloading-safety-longitudinal.md\n- eval/EVID-AUTON-05-delegation-mode-classification.md\n- eval/EVID-AUTON-06-decisive-question-value.md\n- eval/EVID-AUTON-07-assumption-coverage.md\n- eval/EVID-AUTON-08-branch-efficiency.md\n- eval/EVID-HARNESS-01-harness-change-evaluation.md\n- eval/EVID-HARNESS-02-correction-delta-compiler.md\n- eval/EVID-ROUTE-01-frugal-sovereign-routing.md\n- eval/EVID-LONGCTX-01-reading-strategy-comparison.md\n- eval/EVID-LONGCTX-02-corpus-reading-fidelity.md\n- eval/EVID-LONGCTX-03-recursion-budget-safety.md\n- receipts/\n- validation/\n- validation/EVID-ENF-01-egress-nonbypass.md\n- execution-budget/\n- execution-budget/EVID-BUDGET-01-daily-brief.md\n- execution-budget/EVID-BUDGET-02-inbox-clear.md",
@@ -11468,6 +11890,114 @@
       "title": "Evidence Index",
       "type": "experiment",
       "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
+    },
+    {
+      "artifacts": [],
+      "body": "# Source claim: LLMLingua\n\nLLMLingua uses coarse-to-fine prompt compression with an explicit budget\ncontroller intended to retain task-relevant information under aggressive token\nreduction.\n\n## Goni relevance\n\nThe paper supports treating token budget and compression policy as first-class\ncontext-assembly variables rather than assuming that all retrieved text should\nenter the prompt verbatim.\n\n## Boundary\n\nGoni must separately measure decisive-evidence recall, citation fidelity,\nauthority-layer safety, latency, and compression loss on representative tasks.",
+      "domains": [
+        "research",
+        "software"
+      ],
+      "id": "EVID-JIANG2023-LLMLINGUA",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/evidence/evid-jiang2023-llmlingua.md",
+      "proposition": "LLMLingua introduces budget-controlled prompt compression and reports large prompt reductions with limited performance loss on its evaluated workloads.",
+      "relations": [
+        {
+          "target": "GONI-SPEC-A29366F3E2EA",
+          "type": "supports"
+        }
+      ],
+      "sources": [
+        "SRC-JIANG2023-LLMLINGUA"
+      ],
+      "status": "draft",
+      "title": "Source claim: LLMLingua",
+      "type": "evidence",
+      "uncertainty": "Compression quality is workload- and model-dependent. Reported compression ratios are evidence for evaluation, not production thresholds for Goni."
+    },
+    {
+      "artifacts": [],
+      "body": "# Source claim: LongLLMLingua\n\nLongLLMLingua targets long-context inference where cost, latency, and position\nbias can jointly degrade useful access to key information.\n\n## Goni relevance\n\nIt supports evaluating information density and placement, not context length\nalone, when compiling bounded inference context.\n\n## Boundary\n\nGoni should compare compression against native-window reading, retrieval-only,\nand hybrid strategies instead of assuming one universally superior lane.",
+      "domains": [
+        "research",
+        "software"
+      ],
+      "id": "EVID-JIANG2024-LONGLLMLINGUA",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/evidence/evid-jiang2024-longllmlingua.md",
+      "proposition": "LongLLMLingua reports that task-aware prompt compression can reduce long-context cost and latency while also addressing position-sensitive use of key information on evaluated benchmarks.",
+      "relations": [
+        {
+          "target": "GONI-SPEC-A29366F3E2EA",
+          "type": "supports"
+        },
+        {
+          "target": "GONI-PRINCIPLE-B40DDEFD1872",
+          "type": "supports"
+        }
+      ],
+      "sources": [
+        "SRC-JIANG2024-LONGLLMLINGUA"
+      ],
+      "status": "draft",
+      "title": "Source claim: LongLLMLingua",
+      "type": "evidence",
+      "uncertainty": "Improvements are benchmark-, model-, and compression-policy-specific and do not imply that compression is always preferable to native long-context reading."
+    },
+    {
+      "artifacts": [],
+      "body": "# Source claim: Prefix-Tuning\n\nPrefix-Tuning optimizes continuous task-specific vectors while leaving the base\nlanguage model frozen.\n\n## Goni relevance\n\nThe method provides evidence for a representation continuum between explicit\nnatural-language instructions and deeper learned adaptation.\n\n## Boundary\n\nA learned prefix can condition cognition; it is not an authority primitive and\nmust remain governed by model-bundle provenance and evaluation.",
+      "domains": [
+        "research",
+        "software"
+      ],
+      "id": "EVID-LI2021-PREFIX-TUNING",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/evidence/evid-li2021-prefix-tuning.md",
+      "proposition": "Prefix-Tuning keeps base-model parameters frozen and learns continuous task-specific prefixes that subsequent tokens attend to as virtual tokens.",
+      "relations": [
+        {
+          "target": "GONI-SPEC-9D8A0A7F0F70",
+          "type": "supports"
+        }
+      ],
+      "sources": [
+        "SRC-LI2021-PREFIX-TUNING"
+      ],
+      "status": "draft",
+      "title": "Source claim: Prefix-Tuning",
+      "type": "evidence",
+      "uncertainty": "Learned prefixes remain model-specific learned state and do not replace explicit policy, provenance, or deterministic authority enforcement."
+    },
+    {
+      "artifacts": [],
+      "body": "# Source claim: Selective Context\n\nSelective Context compresses long inputs by pruning information estimated to be\nredundant before model inference.\n\n## Goni relevance\n\nThe result supports evaluating context construction as an information-selection\nproblem rather than treating every available token as equally useful.\n\n## Boundary\n\nRare or low-frequency evidence may still be decisive. Goni therefore needs\ntask-, evidence-, and consequence-sensitive omission controls.",
+      "domains": [
+        "research",
+        "software"
+      ],
+      "id": "EVID-LI2023-SELECTIVE-CONTEXT",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/evidence/evid-li2023-selective-context.md",
+      "proposition": "Selective Context identifies and prunes redundant input material and reports lower inference memory use and latency with relatively small downstream quality loss on evaluated tasks.",
+      "relations": [
+        {
+          "target": "GONI-SPEC-A29366F3E2EA",
+          "type": "supports"
+        }
+      ],
+      "sources": [
+        "SRC-LI2023-SELECTIVE-CONTEXT"
+      ],
+      "status": "draft",
+      "title": "Source claim: Selective Context",
+      "type": "evidence",
+      "uncertainty": "The reported efficiency-quality trade-off is workload-specific and does not establish that low-surprisal or redundant-looking text is safe to discard in high-consequence Goni tasks."
     },
     {
       "aliases": [
@@ -11657,6 +12187,32 @@
       "title": "EVID-SEC-03 Trace Replayability Lane",
       "type": "experiment",
       "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
+    },
+    {
+      "artifacts": [],
+      "body": "# Source claim: SGLang and RadixAttention\n\nSGLang treats KV reuse across structured generation calls as a runtime systems\nproblem and introduces RadixAttention for automatic prefix-aware cache reuse.\n\n## Goni relevance\n\nThe result supports making prefix and KV reuse observable, explicit, and\nruntime-aware rather than treating reuse as an opaque backend optimization.\n\n## Boundary\n\nGoni still needs its own compatibility identity, invalidation rules, provenance,\nand authority separation.",
+      "domains": [
+        "research",
+        "software"
+      ],
+      "id": "EVID-ZHENG2024-SGLANG",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/evidence/evid-zheng2024-sglang.md",
+      "proposition": "SGLang introduces RadixAttention to reuse KV cache across structured language-model program calls and reports throughput improvements on evaluated workloads.",
+      "relations": [
+        {
+          "target": "GONI-SYNTHESIS-227700D474C6",
+          "type": "supports"
+        }
+      ],
+      "sources": [
+        "SRC-ZHENG2024-SGLANG"
+      ],
+      "status": "draft",
+      "title": "Source claim: SGLang and RadixAttention",
+      "type": "evidence",
+      "uncertainty": "Reported throughput gains depend on workload, model, hardware, and runtime configuration and do not establish the cache-key or invalidation contract Goni should adopt."
     },
     {
       "aliases": [],
@@ -13132,7 +13688,7 @@
         "authority-state-is-not-a-cache"
       ],
       "artifacts": [],
-      "body": "# Probabilistic cognition, deterministic authority\n\nGoni may aggressively optimize the representations used for reasoning:\n\n- approximate retrieval;\n- embeddings and ANN indexes;\n- summaries and distilled state;\n- compressed or quantized memory representations;\n- KV-cache paging, retention, or eviction;\n- prefix caches;\n- learned relevance or reuse estimates;\n- sparse model or tool routing.\n\nThose mechanisms are cognitive accelerators. They are not the source of\nauthority.\n\nThe authority path MUST resolve against canonical kernel-owned state for\nmandates, policy, capabilities, approval corridors, budgets, revocation, and\nother facts that determine whether an effect is permitted.\n\nThe governing rule is:\n\n[\n\boxed{\n\text{probabilistic allocation for cognition}\n+\n\text{canonical authority for effects}\n}\n]\n\nA cached or summarized authority-related representation MAY help the system\nprepare a proposal, classify a task, or prioritize work. Before consequential\nexecution, the kernel MUST evaluate the authoritative state required by the\nrelevant policy contract.\n\nThis boundary prevents an efficiency mechanism from silently changing\npermissions. Cache eviction, approximation error, stale summaries, or\ncompression loss may reduce answer quality; they MUST NOT widen authority.\n\nAny future optimization that makes policy, mandate, capability, revocation, or\napproval decisions depend exclusively on lossy state requires an explicit\nreplacement decision and a new safety argument.",
+      "body": "# Probabilistic cognition, deterministic authority\n\nGoni may aggressively optimize the representations used for reasoning:\n\n- approximate retrieval;\n- embeddings and ANN indexes;\n- summaries and distilled state;\n- compressed or quantized memory representations;\n- KV-cache paging, retention, or eviction;\n- prefix caches and exact compatible prefix/KV reuse;\n- learned relevance or reuse estimates;\n- sparse model or tool routing.\n\nThose mechanisms are cognitive accelerators. They are not the source of\nauthority.\n\nThe authority path MUST resolve against canonical kernel-owned state for\nmandates, policy, capabilities, approval corridors, budgets, revocation, and\nother facts that determine whether an effect is permitted.\n\nThe governing rule is:\n\n[\n\boxed{\n\text{probabilistic allocation for cognition}\n+\n\text{canonical authority for effects}\n}\n]\n\nA cached or summarized authority-related representation MAY help the system\nprepare a proposal, classify a task, or prioritize work. Before consequential\nexecution, the kernel MUST evaluate the authoritative state required by the\nrelevant policy contract.\n\nThe same rule applies to `ContextPack`, `InferenceFrame`, prefix caches, and\nKV state. These representations may carry or accelerate information about\nauthority, but they do not become the authoritative source merely because they\nare model-visible or computationally resident.\n\nThis boundary prevents an efficiency mechanism from silently changing\npermissions. Cache eviction, approximation error, stale summaries, compression\nloss, or cache reuse may reduce answer quality or alter cognition; they MUST NOT\nwiden authority.\n\nAny future optimization that makes policy, mandate, capability, revocation, or\napproval decisions depend exclusively on lossy or cached cognitive state\nrequires an explicit replacement decision and a new safety argument.",
       "domains": [
         "agent",
         "kernel",
@@ -13713,7 +14269,7 @@
     {
       "aliases": [],
       "artifacts": [],
-      "body": "# D-017 - Virtual context management + consolidation loop (MemGPT / Generative Agents)\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n## D-017 - Virtual context management + consolidation loop (MemGPT / Generative Agents)\n\n**Formal statement**\n\n- The Memory/Context planes MUST implement **virtual context management** at the kernel level:\n  - Treat the prompt window as RAM and external stores (Arrow spine + vector/graph backends) as Disk.\n  - Expose explicit paging/syscalls (e.g. `MEM_READ`, `MEM_WRITE`, `MEM_SUMMARIZE`, `MEM_FORGET`) to move data across tiers.\n  - Keep LLM engines stateless; all long-lived state flows through the Memory Plane.\n- The Control Plane MUST schedule a recurring **Observation → Reflection → Planning** consolidation loop:\n  - ingest raw events into episodic memory (Observation),\n  - distill reflections/long-term facts (Reflection),\n  - produce plans/jobs/actions using both current state and reflections (Planning).\n- Council/cloud paths see only distilled/approved context unless explicitly allowed by policy.\n\n**Rationale**\n\n- MemGPT (Packer et al., 2023) formalises virtual context management; Goni adopts it as a kernel invariant rather than a prompt-only tool.\n- Generative Agents (Park et al., 2023) shows Observation–Reflection–Planning is necessary for coherent long-horizon behaviour; we bake this into the Control/Memory planes.\n\n**Consequence**\n\n- Kernel APIs must surface paging syscalls to blueprint/tools/agents; backlog item: expose `MEM_*` calls in the extension substrate.\n- Context selection and memory paging are tested as first-class behaviours; prompt-only hacks are non-conformant.\n- Nightly/periodic consolidation jobs become required workloads; they must respect policies and budgets (local-first unless configured otherwise).\n\n---",
+      "body": "# D-017 - Virtual context management + consolidation loop (MemGPT / Generative Agents)\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n## D-017 - Virtual context management + consolidation loop (MemGPT / Generative Agents)\n\n**Formal statement**\n\n- The Memory/Context planes MUST implement **virtual context management** at the kernel level:\n  - Treat the prompt window as RAM and external stores (Arrow spine + vector/graph backends) as Disk.\n  - Expose explicit paging/syscalls (e.g. `MEM_READ`, `MEM_WRITE`, `MEM_SUMMARIZE`, `MEM_FORGET`) to move data across tiers.\n  - Keep LLM engines stateless; all long-lived state flows through the Memory Plane.\n  - Use `CTX-MISS-01` as the bounded inference-time read-side mechanism when cognition discovers a missing evidentiary or procedural dependency after initial compilation.\n- The Control Plane MUST schedule a recurring **Observation → Reflection → Planning** consolidation loop:\n  - ingest raw events into episodic memory (Observation),\n  - distill reflections/long-term facts (Reflection),\n  - produce plans/jobs/actions using both current state and reflections (Planning).\n- Council/cloud paths see only distilled/approved context unless explicitly allowed by policy.\n\n**Rationale**\n\n- MemGPT (Packer et al., 2023) formalises virtual context management; Goni adopts it as a kernel invariant rather than a prompt-only tool.\n- Goni extends the analogy with a typed context-miss path: an active inference may request additional read-side material, but the request remains bounded by the Work Order, visibility policy, recursion limit, token budget, latency budget, and receipt requirements.\n- Generative Agents (Park et al., 2023) motivates Observation–Reflection–Planning for coherent long-horizon behaviour; Goni maps that pattern into governed Control/Memory responsibilities.\n\n**Consequence**\n\n- Kernel APIs must surface paging syscalls to tools/agents; backlog item: expose `MEM_*` calls in the extension substrate.\n- Context selection, memory paging, and context-miss recovery are tested as first-class behaviours; prompt-only hidden state is non-conformant.\n- A context miss may increase available cognitive evidence but may not grant tool or execution authority.\n- Nightly/periodic consolidation jobs become required workloads; they must respect policies and budgets (local-first unless configured otherwise).\n\n---",
       "domains": [
         "software"
       ],
@@ -13729,11 +14285,13 @@
       "path": "knowledge/decisions/goni-decision-feb39440c565-d-017-virtual-context-management-consolidation-loop-memgpt-g.md",
       "proposition": "**Formal statement** The Memory/Context planes MUST implement **virtual context management** at the kernel level: Treat the prompt window as RAM and external stores (Arrow spine + vector/graph backends) as Disk.",
       "relations": [],
-      "sources": [],
+      "sources": [
+        "SRC-PACKER2023-MEMGPT"
+      ],
       "status": "draft",
       "title": "D-017 - Virtual context management + consolidation loop (MemGPT / Generative Agents)",
       "type": "decision",
-      "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
+      "uncertainty": "Preserved from the legacy draft without status promotion; CTX-MISS-01 extends the read-side recovery contract as specified architecture requiring evaluation."
     },
     {
       "aliases": [],
@@ -35966,7 +36524,7 @@
     {
       "aliases": [],
       "artifacts": [],
-      "body": "# 8. Context Assembly Flow\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n## 8. Context Assembly Flow\n\nGraph-influenced context assembly MUST preserve the MEM-RETR-01 pipeline and\nadd graph traversal as a bounded retrieval stage:\n\n1. Bind retrieval to a `WorkOrder`; if no Work Order exists, create one or\n   record why a read-only lookup is allowed without it.\n2. Generate seed candidates from dense, sparse, exact-match, metadata, and\n   policy-bounded lookups.\n3. Expand from seeds through permitted graph edges under configured depth,\n   fanout, token, and latency budgets.\n4. Score candidates with the salience function.\n5. Filter by permission, quoteability, validity, conflict state, source trust,\n   and parser confidence.\n6. Rerank candidates and run existing submodular selection under token budget.\n7. Choose compression forms for selected candidates.\n8. Compile a `ContextPack` for the Work Order.\n9. Materialize only selected evidence into the Context Plane as `ContextItems`\n   or prompt material derived from selected refs.\n10. Cite selected evidence with source waypoints sufficient for audit.\n11. Emit receipts for memory reads, graph retrieval basis, omissions,\n    compression choices, and context materialization when retrieval affects\n    output or execution.\n\nGraph traversal is not a bypass around policy. It is one retrieval signal among\ndense, sparse, exact-match, metadata, and reranking signals.",
+      "body": "# 8. Context Assembly Flow\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n## 8. Context Assembly Flow\n\nGraph-influenced context assembly MUST preserve the MEM-RETR-01 pipeline and\nadd graph traversal as a bounded retrieval stage:\n\n1. Bind retrieval to a `WorkOrder`; if no Work Order exists, create one or\n   record why a read-only lookup is allowed without it.\n2. Generate seed candidates from dense, sparse, exact-match, metadata, and\n   policy-bounded lookups.\n3. Expand from seeds through permitted graph edges under configured depth,\n   fanout, token, and latency budgets.\n4. Score candidates with the salience function.\n5. Filter by permission, quoteability, validity, conflict state, source trust,\n   and parser confidence.\n6. Resolve eligible skill fragments under `SKILL-REG-01`, including required\n   dependency closure.\n7. Rerank candidates and run existing submodular or promoted alternative\n   selection under token budget.\n8. Choose compression forms for selected candidates.\n9. Invoke `CTX-COMP-01` to compile selected evidence, skill fragments,\n   compression choices, visibility constraints, and budgets into a\n   model-independent `ContextPack` for the Work Order.\n10. Materialize only selected evidence and procedural material into the Context\n    Plane as `ContextItems` or prompt material derived from selected refs.\n11. Cite selected evidence with source waypoints sufficient for audit.\n12. Emit receipts for memory reads, graph retrieval basis, skill\n    materialization, omissions, compression choices, and context materialization\n    when those choices affect output or execution.\n\nGraph traversal is not a bypass around policy. It is one retrieval signal among\ndense, sparse, exact-match, metadata, and reranking signals.",
       "domains": [
         "specs"
       ],
@@ -36146,7 +36704,7 @@
     {
       "aliases": [],
       "artifacts": [],
-      "body": "# 3.3 Memory & Cognition\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n### 3.3 Memory & Cognition\n\n- The node should treat **long-term memory as a separate plane** with explicit lifecycle:\n  - working/session context is transient,\n  - episodic history is distilled over time,\n  - semantic facts persist with decay and can be pinned,\n  - procedural knowledge is versioned.\n- The Memory/Context planes must implement **virtual context management** (MemGPT-style):\n  - prompt/context window as RAM, Arrow/vector/graph stores as Disk,\n  - explicit paging/syscalls (`MEM_READ`, `MEM_WRITE`, `MEM_SUMMARIZE`, `MEM_FORGET`) for moving data across tiers,\n  - LLM engines stay stateless; all long-lived state flows through the Memory Plane.\n- The Control Plane must run a **consolidation loop** (Observation → Reflection → Planning):\n  - ingest raw events into episodic memory,\n  - distill reflections/long-term facts periodically (e.g. nightly/weekly),\n  - plan/schedule actions using both current state and reflections.\n- The system must support **local-only long-term memory** by default; cloud/council access is limited to distilled facts or session context unless explicitly allowed.\n- To avoid **cognitive offloading debt**, default UX for learning/creative flows should:\n  - prompt user effort (outline/selection) before full generation,\n  - attribute which parts were AI- vs user-authored,\n  - expose which memories were retrieved and why (traceable recall).\n- **Supported minimum vs reference build:** the software should run on lower-memory hardware (e.g. **64 GB unified**) by tightening context budgets, model sizes, and cache policies while preserving behaviour. However, the **product reference build** for the MVP story is **128 GB unified memory** (see `blueprint/hardware/90-decisions.md` ADR-002).\n\n---",
+      "body": "# 3.3 Memory & Cognition\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n### 3.3 Memory & Cognition\n\n- The node should treat **long-term memory as a separate plane** with explicit lifecycle:\n  - working/session context is transient,\n  - episodic history is distilled over time,\n  - semantic facts persist with decay and can be pinned,\n  - procedural knowledge is versioned.\n- Versioned procedural knowledge that is intended to control repeated task execution is governed through `SKILL-REG-01`. Durable personal procedural memories may reference governed skills, but memory content does not silently become executable instruction.\n- The Memory/Context planes must implement **virtual context management** (MemGPT-style):\n  - prompt/context window as RAM, Arrow/vector/graph stores as Disk,\n  - explicit paging/syscalls (`MEM_READ`, `MEM_WRITE`, `MEM_SUMMARIZE`, `MEM_FORGET`) for moving data across tiers,\n  - LLM engines stay stateless; all long-lived state flows through the Memory Plane.\n- The Control Plane must run a **consolidation loop** (Observation → Reflection → Planning):\n  - ingest raw events into episodic memory,\n  - distill reflections/long-term facts periodically (e.g. nightly/weekly),\n  - plan/schedule actions using both current state and reflections.\n- The system must support **local-only long-term memory** by default; cloud/council access is limited to distilled facts or session context unless explicitly allowed.\n- To avoid **cognitive offloading debt**, default UX for learning/creative flows should:\n  - prompt user effort (outline/selection) before full generation,\n  - attribute which parts were AI- vs user-authored,\n  - expose which memories were retrieved and why (traceable recall).\n- **Supported minimum vs reference build:** the software should run on lower-memory hardware (e.g. **64 GB unified**) by tightening context budgets, model sizes, and cache policies while preserving behaviour. However, the **product reference build** for the MVP story is **128 GB unified memory** (see `blueprint/hardware/90-decisions.md` ADR-002).\n\n---",
       "domains": [
         "software"
       ],
@@ -41078,7 +41636,7 @@
     {
       "aliases": [],
       "artifacts": [],
-      "body": "# 7. Context Compression Policy\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n## 7. Context Compression Policy\n\nContext assembly often finds more relevant material than fits in the prompt\nwindow. A ContextPack MUST record the compression policy used for each selected\nitem when compression affects the prompt bundle.\n\nAllowed compression forms:\n\n| Form | Use |\n| --- | --- |\n| `raw_excerpt` | Source-grounded tasks that need exact wording or citations. |\n| `summary` | General tasks where bounded prose is sufficient. |\n| `latent_summary` | Compact state or derived memory where raw text should not be sent. |\n| `decision_only` | Tasks that need the resulting decision or rule, not the full discussion. |\n| `citation_only` | Tasks that need a waypoint/reference but not content in the model context. |\n\nThe Work Order type, risk class, output shape, permission scope, quoteability,\nand token budget SHOULD drive compression choice. A legal memo may prefer\n`raw_excerpt`; a style-sensitive social draft may prefer `summary` or\n`latent_summary`; a high-risk action may include `citation_only` refs for\naudit while withholding sensitive content from the model.",
+      "body": "# 7. Context Compression Policy\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n## 7. Context Compression Policy\n\nContext assembly often finds more relevant material than fits in the prompt\nwindow. A ContextPack MUST record the compression policy used for each selected\nitem when compression affects the prompt bundle.\n\nAllowed compression forms:\n\n| Form | Use |\n| --- | --- |\n| `raw_excerpt` | Source-grounded tasks that need exact wording, citation spans, or evidentiary fidelity. |\n| `summary` | General tasks where bounded prose is sufficient. |\n| `latent_summary` | Compact state or derived memory where raw text should not be sent. |\n| `decision_only` | Tasks that need the resulting decision or rule rather than the full discussion. |\n| `citation_only` | Tasks that need a waypoint/reference but not content in the model context. |\n\nThe Work Order type, risk class, output shape, permission scope, quoteability,\ntoken budget, and required fidelity SHOULD drive compression choice.\n\nThe governing optimization rule is:\n\n[\n\boxed{\n\text{compress while marginal resource savings exceed expected information loss}\n}\n]\n\nsubject to the Work Order's fidelity threshold. Exact language, decisive\nevidence, legally operative text, contradictory material, and audit-critical\nsource spans may require `raw_excerpt` even when a shorter representation is\navailable.\n\nLLMLingua, LongLLMLingua, and Selective Context provide empirical evidence that\nprompt compression can improve efficiency on evaluated workloads. They do not\nestablish universal compression ratios or justify discarding low-frequency\nevidence. Goni MUST evaluate omission of decisive evidence, citation fidelity,\ntask quality, latency, and resource savings together.\n\nA legal memo may therefore prefer `raw_excerpt`; a style-sensitive social\ndraft may prefer `summary` or `latent_summary`; a high-risk action may carry\n`citation_only` audit refs while withholding sensitive content from the model\nwhen the task can proceed without disclosure.",
       "domains": [
         "specs"
       ],
@@ -41092,13 +41650,17 @@
         }
       ],
       "path": "knowledge/specifications/goni-spec-a29366f3e2ea-7-context-compression-policy.md",
-      "proposition": "Context assembly often finds more relevant material than fits in the prompt window.",
+      "proposition": "Context assembly may compress selected material only while preserving the fidelity required by the Work Order; compression is a budgeted representation choice rather than an objective in itself.",
       "relations": [],
-      "sources": [],
+      "sources": [
+        "SRC-JIANG2023-LLMLINGUA",
+        "SRC-JIANG2024-LONGLLMLINGUA",
+        "SRC-LI2023-SELECTIVE-CONTEXT"
+      ],
       "status": "draft",
       "title": "7. Context Compression Policy",
       "type": "specification",
-      "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
+      "uncertainty": "Published prompt-compression gains are model- and workload-specific; Goni requires matched evaluation before promoting compression thresholds or strategies."
     },
     {
       "aliases": [],
@@ -41715,7 +42277,7 @@
     {
       "aliases": [],
       "artifacts": [],
-      "body": "# 3. ContextPack\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n## 3. ContextPack\n\nA `ContextPack` is the compiled context bundle produced by graph traversal,\nreranking, compression, and policy filtering for one Work Order.\n\n`ContextPack` is specified only in CGG-01. It is not a shipping canonical table\nor API object until a later schema/API revision promotes it. Implementations may\nrepresent it as a replayable artifact, receipt-linked metadata, or derived\nContext Plane state, but they MUST preserve this logical shape:\n\n```yaml\ncontext_pack_id:\nwork_order_id:\ngraph_snapshot_id:\nscoring_policy_id:\ndecay_policy_id:\npermission_filter_ref:\ntoken_budget:\nselected_context_items:\nexcluded_candidates:\ncompression_policy:\nassembly_reason:\nreceipt_ref:\ncreated_at:\nprovenance:\n```\n\n`selected_context_items` references the material selected for the prompt bundle,\nusually `ContextItems` plus source waypoints. `excluded_candidates` records\nbounded refs and omission reasons for high-salience or high-similarity\ncandidates that did not enter the pack. `assembly_reason` is a bounded summary\nor hash/ref pair, not raw free-form rationale text.",
+      "body": "# 3. ContextPack\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n## 3. ContextPack\n\nA `ContextPack` is the model-independent compiled semantic context bundle\nproduced for one Work Order. `CTX-COMP-01` governs its construction.\n\n`ContextPack` remains specified only. It is not a shipping canonical table or\nAPI object until a later schema/API revision promotes it. Implementations may\nrepresent it as a replayable artifact, receipt-linked metadata, or derived\nContext Plane state, but they MUST preserve this logical shape:\n\n```yaml\ncontext_pack_id:\nwork_order_id:\ncompiler_version:\ncompiler_policy_hash:\nsource_snapshot_refs:\ngraph_snapshot_id:\nscoring_policy_id:\ndecay_policy_id:\npermission_filter_ref:\nskill_fragment_refs:\ntoken_budget:\nselected_context_items:\nexcluded_candidates:\ncompression_policy:\nassembly_reason:\ncontext_pack_hash:\nreceipt_ref:\ncreated_at:\nprovenance:\n```\n\n`selected_context_items` references material selected for semantic\nmaterialization, usually `ContextItems` plus source waypoints.\n`skill_fragment_refs` records the explicit procedural fragments selected under\nSKILL-REG-01. `excluded_candidates` records bounded refs and omission reasons\nfor candidates crossing the configured salience, similarity, or audit\nthreshold.\n\n`assembly_reason` is a bounded summary or hash/ref pair, not raw free-form\nrationale text.\n\nA ContextPack deliberately excludes model-specific tokenization, chat-template\nencoding, special-token layout, and runtime KV state. Those belong to the\nruntime-serialization layer rather than this semantic contract.",
       "domains": [
         "specs"
       ],
@@ -41729,13 +42291,13 @@
         }
       ],
       "path": "knowledge/specifications/goni-spec-b49db23cf412-3-contextpack.md",
-      "proposition": "A ContextPack is the compiled context bundle produced by graph traversal, reranking, compression, and policy filtering for one Work Order.",
+      "proposition": "A ContextPack is the model-independent compiled semantic context bundle produced for one Work Order from governed evidence, memory, skills, compression policy, visibility constraints, and resource budgets.",
       "relations": [],
       "sources": [],
       "status": "draft",
       "title": "3. ContextPack",
       "type": "specification",
-      "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
+      "uncertainty": "Preserved from the legacy draft and refined by CTX-COMP-01; no shipping table or API object is claimed."
     },
     {
       "aliases": [],
@@ -44337,7 +44899,7 @@
     {
       "aliases": [],
       "artifacts": [],
-      "body": "# Specs\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n## Specs\n- [Agent definition](/blueprint/30-specs/agent-definition.md) (AGENT-DEF-01)\n- [Agent manifest](/blueprint/30-specs/agent-manifest.md) (AGENT-MANIFEST-01)\n- [Correction Delta Compiler](/blueprint/30-specs/correction-delta-compiler.md) (CDC-01)\n- [Delegation interface](/blueprint/30-specs/delegation-interface.md) (DELEG-INT-01)\n- [Delegation and autonomy](/blueprint/30-specs/delegation-and-autonomy.md) (DELEG-01)\n- [Delegated Agent Treasury](/blueprint/30-specs/delegated-agent-treasury.md) (DAT-01)\n- [Embodied Robot Control Plane](/blueprint/30-specs/embodied-robot-control-plane.md) (ROBOT-01)\n- [Vision, memory, and actuation boundaries](/blueprint/30-specs/vision-memory-actuation-boundaries.md) (BOUND-01)\n- [Agent store governance](/blueprint/30-specs/agents/agent-store.md) (AGENT-STORE-01)\n- [Execution metering and budget units](/blueprint/30-specs/metering/SPEC-METER-01-execution-metering.md) (METER-01)\n- [Receipt metering fields](/blueprint/30-specs/metering/SPEC-METER-02-receipt-metering-fields.md) (METER-02)\n- [Agent Kernel ABI](/blueprint/30-specs/kernel/SPEC-KERN-01-agent-kernel-abi.md) (SPEC-KERN-01)\n- [Transactional Tool Execution](/blueprint/30-specs/kernel/SPEC-TXN-01-transactional-tools.md) (SPEC-TXN-01)\n- [Policy Language (Capabilities + IFC)](/blueprint/30-specs/kernel/SPEC-POL-01-policy-language.md) (SPEC-POL-01)\n- [Non-bypassable Mediation on Linux](/blueprint/30-specs/kernel/SPEC-ENF-01-non-bypassable-mediation.md) (SPEC-ENF-01)\n- [Isolation and tool sandboxes](/blueprint/30-specs/isolation-and-tool-sandboxes.md) (SANDBOX-01)\n- [ITCR](/blueprint/30-specs/itcr.md) (ITCR-01)\n- [Job contract](/blueprint/30-specs/job.md) (JOB-01)\n- [Latent state contract](/blueprint/30-specs/latent-state-contract.md) (LSC-01)\n- [Context Gravity Graph](/blueprint/30-specs/context-gravity-graph.md) (CGG-01)\n- [Governed memory retrieval](/blueprint/30-specs/memory-retrieval.md) (MEM-RETR-01)\n- [Model bundle registry governance](/blueprint/30-specs/model-registry.md) (MODEL-REG-01)\n- [Network gate and anonymity](/blueprint/30-specs/network-gate-and-anonymity.md) (NET-01)\n- [Receipts](/blueprint/30-specs/receipts.md) (REC-01)\n- [Scheduler and interrupts](/blueprint/30-specs/scheduler-and-interrupts.md) (SCHED-01)\n- [Symbolic substrate](/blueprint/30-specs/symbolic-substrate.md) (SS-01)\n- [Sync policies](/blueprint/30-specs/sync-policies.md) (SYNC-01)\n- [Tool capability API](/blueprint/30-specs/tool-capability-api.md) (TOOL-01)\n- [Visual Intelligence Plane](/blueprint/30-specs/visual-intelligence-plane.md) (VIS-01)",
+      "body": "# Specs\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n## Specs\n- [Agent definition](/blueprint/30-specs/agent-definition.md) (AGENT-DEF-01)\n- [Agent manifest](/blueprint/30-specs/agent-manifest.md) (AGENT-MANIFEST-01)\n- [Correction Delta Compiler](/blueprint/30-specs/correction-delta-compiler.md) (CDC-01)\n- [Delegation interface](/blueprint/30-specs/delegation-interface.md) (DELEG-INT-01)\n- [Delegation and autonomy](/blueprint/30-specs/delegation-and-autonomy.md) (DELEG-01)\n- [Delegated Agent Treasury](/blueprint/30-specs/delegated-agent-treasury.md) (DAT-01)\n- [Embodied Robot Control Plane](/blueprint/30-specs/embodied-robot-control-plane.md) (ROBOT-01)\n- [Vision, memory, and actuation boundaries](/blueprint/30-specs/vision-memory-actuation-boundaries.md) (BOUND-01)\n- [Agent store governance](/blueprint/30-specs/agents/agent-store.md) (AGENT-STORE-01)\n- [Execution metering and budget units](/blueprint/30-specs/metering/SPEC-METER-01-execution-metering.md) (METER-01)\n- [Receipt metering fields](/blueprint/30-specs/metering/SPEC-METER-02-receipt-metering-fields.md) (METER-02)\n- [Agent Kernel ABI](/blueprint/30-specs/kernel/SPEC-KERN-01-agent-kernel-abi.md) (SPEC-KERN-01)\n- [Transactional Tool Execution](/blueprint/30-specs/kernel/SPEC-TXN-01-transactional-tools.md) (SPEC-TXN-01)\n- [Policy Language (Capabilities + IFC)](/blueprint/30-specs/kernel/SPEC-POL-01-policy-language.md) (SPEC-POL-01)\n- [Non-bypassable Mediation on Linux](/blueprint/30-specs/kernel/SPEC-ENF-01-non-bypassable-mediation.md) (SPEC-ENF-01)\n- [Isolation and tool sandboxes](/blueprint/30-specs/isolation-and-tool-sandboxes.md) (SANDBOX-01)\n- [ITCR](/blueprint/30-specs/itcr.md) (ITCR-01)\n- [Job contract](/blueprint/30-specs/job.md) (JOB-01)\n- [Latent state contract](/blueprint/30-specs/latent-state-contract.md) (LSC-01)\n- [Context Gravity Graph](/blueprint/30-specs/context-gravity-graph.md) (CGG-01)\n- [Governed memory retrieval](/blueprint/30-specs/memory-retrieval.md) (MEM-RETR-01)\n- [Model bundle registry governance](/blueprint/30-specs/model-registry.md) (MODEL-REG-01)\n- [Network gate and anonymity](/blueprint/30-specs/network-gate-and-anonymity.md) (NET-01)\n- [Receipts](/blueprint/30-specs/receipts.md) (REC-01)\n- [Scheduler and interrupts](/blueprint/30-specs/scheduler-and-interrupts.md) (SCHED-01)\n- [Symbolic substrate](/blueprint/30-specs/symbolic-substrate.md) (SS-01)\n- [Sync policies](/blueprint/30-specs/sync-policies.md) (SYNC-01)\n- [Tool capability API](/blueprint/30-specs/tool-capability-api.md) (TOOL-01)\n- [Visual Intelligence Plane](/blueprint/30-specs/visual-intelligence-plane.md) (VIS-01)\n\n## Added canonical knowledge-graph specifications\n- [Governed Skill Registry](/knowledge/specifications/skill-reg-01-governed-skill-registry.md) (SKILL-REG-01)\n- [Authority-Aware Context Compilation](/knowledge/specifications/ctx-comp-01-authority-aware-context-compilation.md) (CTX-COMP-01)\n- [Model-Specific Inference Frame](/knowledge/specifications/inf-frame-01-model-specific-inference-frame.md) (INF-FRAME-01)\n- [Prefix and KV Reuse](/knowledge/specifications/cache-01-prefix-and-kv-reuse.md) (CACHE-01)\n- [Bounded Context-Miss Resolution](/knowledge/specifications/ctx-miss-01-bounded-context-miss-resolution.md) (CTX-MISS-01)",
       "domains": [
         "specs"
       ],
@@ -47512,7 +48074,7 @@
     {
       "aliases": [],
       "artifacts": [],
-      "body": "# 3.5 Cognitive resource scheduling (KV cache as memory object)\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n### 3.5 Cognitive resource scheduling (KV cache as memory object)\n\nInteractive agent scheduling must include LLM-serving memory realities:\n\n- KV-cache residency and fragmentation affect tail latency;\n- scheduler decisions should include memory residency and bandwidth;\n- admission and eviction policy must be explicit under mixed workloads;\n- representation size and sequence retention are separate optimization axes;\n- irregular sparsity must be evaluated against hardware locality, batching, and\n  kernel overhead.\n\n## Three distinct KV optimization axes\n\nGoni should keep three questions separate.\n\n### 1. Residency and paging\n\nPagedAttention demonstrates that KV memory management and fragmentation can\nmaterially affect serving throughput. This supports treating cache residency as\na first-class scheduler concern rather than an opaque runtime detail.\n[[kwon2023-vllm]]\n\n### 2. Sequence selection\n\nH2O reports heavy-hitter behavior in cumulative attention and proposes retaining\nimportant historical tokens together with recent tokens under a constrained\ncache. For Goni, the transferable research question is whether future utility\nis sufficiently concentrated to justify non-uniform retention.\n[[zhang2023-h2o]]\n\nHeavy-hitter observations MUST NOT be translated into lexical-frequency rules.\nA token identity does not define one reusable KV state; KV vectors remain\ncontext-dependent.\n\nA cache policy may compare signals such as:\n\n- recency;\n- cumulative attention or another observed-use signal;\n- estimated future reuse;\n- semantic or task importance;\n- reconstruction cost;\n- storage and bandwidth cost.\n\nHeavy-hitter retention is a baseline to evaluate, not a universal invariant.\nLong-range dependencies can reactivate previously cold states, so aggressive\nretention policies need recall-oriented candidate mechanisms, protected recent\nstate, or another measured recovery path.\n\n### 3. Representation compression\n\nDeepSeek-V2's Multi-head Latent Attention demonstrates an architecture-specific\nmethod for reducing how many bytes of KV representation must be retained.\n[[deepseek2024-v2]]\n\nThis is complementary to sequence selection:\n\n[\n\text{KV cost}\napprox\n\text{surviving sequence states}\n\times\n\text{representation bytes per state}\n\times\n\text{layer residency}.\n]\n\nA runtime may improve one axis without changing the others. Goni SHOULD measure\nthem separately so a gain from latent representation compression is not\nmistaken for a gain from eviction, and vice versa.\n\n## Variable fidelity as a research direction\n\nWhere runtimes permit multiple precisions or representations, Goni may test\nwhether higher-value states deserve higher-fidelity storage while lower-value\nstates use compressed forms.\n\nA conceptual allocation rule is:\n\n[\nbits_i\npropto\nP(\text{future use}_i)\n\times\nImportance_i.\n]\n\nThis frames KV optimization as a rate-distortion problem: reduce memory and\nbandwidth while bounding degradation in output quality. The formula is a\nresearch scaffold, not a prescribed bit-allocation algorithm.\n\n## Hardware-aware constraint\n\nA theoretically sparse policy can lose in practice if candidate selection,\nrandom memory access, synchronization, decompression, or small irregular\nkernels cost more than the attention work avoided.\n\nTherefore evaluation SHOULD report end-to-end effects on:\n\n- TTFT and decode latency;\n- throughput;\n- bytes moved from accelerator memory;\n- peak KV memory;\n- GPU or accelerator occupancy where observable;\n- energy or thermal proxy;\n- output quality and long-range recall.\n\nBlock-level selection, contiguous layouts, and discrete cache budgets may be\npreferable to finer-grained policies when they preserve batching and predictable\nkernels.\n\n## Goni boundary\n\nKV state is cognitive working state. Approximate retention or compression may\nchange what the model can recall during reasoning, but it MUST NOT become the\nsole source of kernel authority for mandates, capabilities, policy, approval,\nor revocation.\n\nRelated foundations:\n\n- PagedAttention and memory-management analysis in vLLM [[kwon2023-vllm]];\n- H2O heavy-hitter KV-cache retention [[zhang2023-h2o]];\n- DeepSeek-V2 Multi-head Latent Attention [[deepseek2024-v2]].",
+      "body": "# 3.5 Cognitive resource scheduling (KV cache as memory object)\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\nInteractive agent scheduling must include LLM-serving memory realities:\n\n- compatible prefix reuse can reduce repeated prefill work;\n- KV-cache residency and fragmentation affect tail latency;\n- scheduler decisions should include memory residency and bandwidth;\n- admission, retention, and eviction policy must be explicit under mixed workloads;\n- representation size and sequence retention are separate optimization axes;\n- irregular sparsity must be evaluated against hardware locality, batching, and\n  kernel overhead.\n\n## Four distinct optimization axes\n\n### 1. Prefix reuse\n\nPrompt Cache and SGLang/RadixAttention demonstrate that recurring compatible\nprefixes can reuse previously computed attention state and reduce repeated\nprefill work on evaluated workloads.\n\nGoni treats reuse as an exact runtime-compatibility problem under `CACHE-01`,\nnot as semantic similarity. Cache accounting SHOULD distinguish logical prompt\ntokens from fresh prefill tokens.\n\n### 2. Residency and paging\n\nPagedAttention demonstrates that KV memory management and fragmentation can\nmaterially affect serving throughput. This supports treating cache residency as\na first-class scheduler concern rather than an opaque runtime detail.\n[[kwon2023-vllm]]\n\n### 3. Sequence selection\n\nH2O reports heavy-hitter behavior in cumulative attention and proposes retaining\nimportant historical tokens together with recent tokens under a constrained\ncache. For Goni, the transferable research question is whether future utility\nis sufficiently concentrated to justify non-uniform retention.\n[[zhang2023-h2o]]\n\nHeavy-hitter observations MUST NOT be translated into lexical-frequency rules.\nA token identity does not define one reusable KV state; KV vectors remain\ncontext-dependent.\n\nA cache policy may compare signals such as:\n\n- recency;\n- cumulative attention or another observed-use signal;\n- estimated future reuse;\n- semantic or task importance;\n- reconstruction cost;\n- storage and bandwidth cost.\n\nHeavy-hitter retention is a baseline to evaluate, not a universal invariant.\nLong-range dependencies can reactivate previously cold states, so aggressive\nretention policies need recall-oriented candidate mechanisms, protected recent\nstate, or another measured recovery path.\n\n### 4. Representation compression\n\nDeepSeek-V2's Multi-head Latent Attention demonstrates an architecture-specific\nmethod for reducing how many bytes of KV representation must be retained.\n[[deepseek2024-v2]]\n\nThis is complementary to sequence selection:\n\n[\n\text{KV cost}\napprox\n\text{surviving sequence states}\n\times\n\text{representation bytes per state}\n\times\n\text{layer residency}.\n]\n\nA runtime may improve one axis without changing the others. Goni SHOULD measure\nthe axes separately so a gain from prefix reuse, representation compression, or\neviction is attributed to the correct mechanism.\n\n## Variable fidelity as a research direction\n\nWhere runtimes permit multiple precisions or representations, Goni may test\nwhether higher-value states deserve higher-fidelity storage while lower-value\nstates use compressed forms.\n\nA conceptual allocation rule is:\n\n[\nbits_i\npropto\nP(\text{future use}_i)\n\times\nImportance_i.\n]\n\nThis frames KV optimization as a rate-distortion problem: reduce memory and\nbandwidth while bounding degradation in output quality. The formula is a\nresearch scaffold, not a prescribed bit-allocation algorithm.\n\n## Hardware-aware constraint\n\nA theoretically sparse policy can lose in practice if candidate selection,\nrandom memory access, synchronization, decompression, or small irregular\nkernels cost more than the attention work avoided.\n\nTherefore evaluation SHOULD report end-to-end effects on:\n\n- TTFT and decode latency;\n- throughput;\n- fresh prefill and reused-prefix accounting where observable;\n- bytes moved from accelerator memory;\n- peak KV memory;\n- GPU or accelerator occupancy where observable;\n- energy or thermal proxy;\n- output quality and long-range recall.\n\nBlock-level selection, contiguous layouts, and discrete cache budgets may be\npreferable to finer-grained policies when they preserve batching and predictable\nkernels.\n\n## Goni boundary\n\nKV state is cognitive working state. Approximate retention, compression, or\nreuse may change what the model can recall or how cheaply it reasons, but none\nof these mechanisms may become the sole source of kernel authority for\nmandates, capabilities, policy, approval, or revocation.",
       "domains": [
         "agent",
         "kernel",
@@ -47528,7 +48090,7 @@
         }
       ],
       "path": "knowledge/syntheses/goni-synthesis-227700d474c6-3-5-cognitive-resource-scheduling-kv-cache-as-memory-object.md",
-      "proposition": "Interactive agent scheduling must include LLM-serving memory realities: KV cache residency, representation size, fragmentation, bandwidth, admission, and eviction affect tail latency and should be evaluated as explicit scheduling variables under mixed workloads.",
+      "proposition": "Interactive agent scheduling must include LLM-serving memory realities: prefix reuse, KV residency, representation size, fragmentation, bandwidth, admission, retention, and eviction affect latency and should be evaluated as distinct scheduling variables under mixed workloads.",
       "relations": [
         {
           "target": "GONI-PRINCIPLE-9062425CD490",
@@ -47546,12 +48108,14 @@
       "sources": [
         "SRC-KWON2023-VLLM",
         "SRC-ZHANG2023-H2O",
-        "SRC-DEEPSEEK2024-V2"
+        "SRC-DEEPSEEK2024-V2",
+        "SRC-GIM2024-PROMPT-CACHE",
+        "SRC-ZHENG2024-SGLANG"
       ],
       "status": "draft",
       "title": "3.5 Cognitive resource scheduling (KV cache as memory object)",
       "type": "synthesis",
-      "uncertainty": "PagedAttention, heavy-hitter retention, and MLA address different parts of the KV problem. Their reported benefits do not establish one universal Goni cache policy; model, workload, hardware, and backend effects must be measured independently."
+      "uncertainty": "Prefix reuse, PagedAttention, heavy-hitter retention, and MLA address different parts of the inference-memory problem. Their reported benefits do not establish one universal Goni cache policy; model, workload, hardware, and backend effects must be measured independently."
     },
     {
       "aliases": [],
@@ -55890,7 +56454,7 @@
     {
       "aliases": [],
       "artifacts": [],
-      "body": "# 6a) Prompt-budget decomposition\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n### 6a) Prompt-budget decomposition\n- History tokens carried from prior turns.\n- Context tokens selected by retrieval/context assembly.\n- Tool schema tokens added by tool declarations or function signatures.\n- Output tokens produced for the visible answer.\n- Branch count in the assembled prompt/plan.\n- Variant count requested by the user or control plane.\n- Reasoning-token usage only when the active runtime/provider exposes it\n  directly; hidden internal tokens must not be inferred or fabricated.",
+      "body": "# 6a) Prompt-budget decomposition\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n### 6a) Prompt-budget decomposition\n\nReport the logical input and runtime work separately where the backend exposes\nthe measurements:\n\n- history tokens carried from prior turns;\n- context tokens selected by retrieval/context compilation;\n- skill-fragment tokens materialized for the Work Order;\n- system/policy module tokens;\n- tool-schema tokens added by tool declarations or function signatures;\n- **logical prompt tokens** after model-specific serialization;\n- **fresh prefill tokens** actually computed for the request;\n- **reused prefix tokens** served from a compatible cache where measurable;\n- output tokens produced for the visible answer;\n- branch count in the assembled prompt/plan;\n- variant count requested by the user or control plane;\n- reasoning-token usage only when the active runtime/provider exposes it\n  directly; hidden internal tokens must not be inferred or fabricated.\n\nA cache hit changes computational work without making the corresponding semantic\nmaterial disappear from the logical inference frame. Therefore:\n\n[\n\text{logical prompt size}\n\neq\n\text{fresh prefill work}\n]\n\nwhen compatible prefix reuse is active.",
       "domains": [
         "repository"
       ],
@@ -55904,13 +56468,16 @@
         }
       ],
       "path": "knowledge/syntheses/goni-synthesis-cc02d2607b90-6a-prompt-budget-decomposition.md",
-      "proposition": "History tokens carried from prior turns.",
+      "proposition": "Prompt budgeting should distinguish logical input size from the fresh prefill work actually executed when compatible prefix state is reused.",
       "relations": [],
-      "sources": [],
+      "sources": [
+        "SRC-GIM2024-PROMPT-CACHE",
+        "SRC-ZHENG2024-SGLANG"
+      ],
       "status": "draft",
       "title": "6a) Prompt-budget decomposition",
       "type": "synthesis",
-      "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
+      "uncertainty": "Runtime providers expose different cache accounting. Goni should report only measurements available from the active runtime and must not infer hidden cache or reasoning-token behavior."
     },
     {
       "aliases": [],
@@ -56392,7 +56959,7 @@
     {
       "aliases": [],
       "artifacts": [],
-      "body": "# 2. Learning stack and three speeds\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n## 2. Learning stack and three speeds\nGoni does not treat the base model as one mutable blob. It separates learning\ninto a governed stack:\n\n- Layer A: dense constitutional trunk. Stable identity, style, refusal policy,\n  and durable reasoning priors. Slow-moving.\n- Layer B: sparse expert mesh. Domain skill, specialist adapters, and routing-\n  addressable modules. Medium-moving.\n- Layer C: external knowledge plane. Facts, retrieval state, tool receipts, and\n  memories. Fast-moving.\n- Layer D: patch graph. Scoped, reversible deltas that target declared seams.\n- Layer E: compiler or sleep phase. Replay, eval, promote, reject, merge, or\n  roll back candidate changes.\n- Layer F: governance ledger. Provenance, signatures, approvals, and deployable\n  bill of materials.\n\nOperationally, a serious LLM learns in three speeds:\n\n- P0 fast path: fresh facts and retrieval tuning belong in Layer C. They update\n  at inference time and do not imply weight changes.\n- P1 medium path: domain skill belongs in Layer B or Layer D via scoped router\n  changes, expert adapters, tool wrappers, and validators.\n- P2 slow path: trunk changes belong in Layer A only after repeated durable\n  gains survive replay, safety, and latency gates.\n\nThe governing rule is simple: facts default outward, skill patches stay scoped,\nand core weights absorb only rare durable structure.\n\nThis maps to the PAL adaptation ladder:\n\n1. Prompt or policy steering first, because it is cheap, inspectable, and easy\n   to roll back.\n2. Governed memory and retrieval second, because factual and preference context\n   should remain external, citeable, and reversible where possible.\n3. Adapter or preference-dataset generation third, only after repeated evidence,\n   replay evaluation, and promotion review.\n4. Full fine-tuning last and rarely, because it is harder to debug, evaluate,\n   and reverse than prompt, memory, policy, or adapter changes.\n\nThis is the system form of Goni's change-velocity gradient: change velocity is\ninversely proportional to governance centrality. Surface artifacts such as\nprompts, drafts, context assemblies, eval packs, plugins, and candidate models\nmay move quickly. Control-plane policy, memory access classes, default model\npermissions, and capability corridors move slowly. Kernel invariants,\nconstitutional policy, privacy posture, and receipt requirements move only\nthrough strong evidence, review, versioned governance, and rollback plans.",
+      "body": "# 2. Learning stack and three speeds\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n## 2. Learning stack and three speeds\nGoni does not treat the base model as one mutable blob. It separates learning\ninto a governed stack:\n\n- Layer A: dense constitutional trunk. Stable identity, style, refusal policy,\n  and durable reasoning priors. Slow-moving.\n- Layer B: scoped procedural and learned expertise. Governed textual skills,\n  prompt modules, specialist adapters, learned prefixes, and routing-addressable\n  modules. Medium-moving.\n- Layer C: external knowledge plane. Facts, retrieval state, tool receipts, and\n  memories. Fast-moving.\n- Layer D: patch graph. Scoped, reversible deltas that target declared seams.\n- Layer E: compiler or sleep phase. Replay, eval, promote, reject, merge, or\n  roll back candidate changes.\n- Layer F: governance ledger. Provenance, signatures, approvals, and deployable\n  bill of materials.\n\nLayer B contains multiple representation classes. `SKILL-REG-01` governs\nexplicit procedural semantic modules and their selectively materialized\nfragments. `MODEL-REG-01` governs learned prefixes, adapters, checkpoints, and\nmodel bundles. Neither representation class grants execution authority.\n\nOperationally, a serious LLM learns in three speeds:\n\n- P0 fast path: fresh facts and retrieval tuning belong in Layer C. They update\n  at inference time and do not imply weight changes.\n- P1 medium path: domain skill belongs in governed skills, Layer B, or Layer D\n  via scoped procedural modules, router changes, expert adapters, tool wrappers,\n  and validators.\n- P2 slow path: trunk changes belong in Layer A only after repeated durable\n  gains survive replay, safety, and latency gates.\n\nThe governing rule is simple: facts default outward, skill patches stay scoped,\nand core weights absorb only rare durable structure.\n\nThis maps to the PAL adaptation ladder:\n\n1. Prompt, policy, or governed skill steering first, because it is inspectable,\n   versionable, and easy to roll back.\n2. Governed memory and retrieval second, because factual and preference context\n   should remain external, citeable, and reversible where possible.\n3. Learned-prefix, adapter, or preference-dataset generation third, only after\n   repeated evidence, replay evaluation, and promotion review.\n4. Full fine-tuning last and rarely, because it is harder to debug, evaluate,\n   and reverse than prompt, skill, memory, policy, or adapter changes.\n\nThis is the system form of Goni's change-velocity gradient: change velocity is\ninversely proportional to governance centrality. Surface artifacts such as\nprompts, drafts, context assemblies, eval packs, plugins, and candidate models\nmay move quickly. Control-plane policy, memory access classes, default model\npermissions, and capability corridors move slowly. Kernel invariants,\nconstitutional policy, privacy posture, and receipt requirements move only\nthrough strong evidence, review, versioned governance, and rollback plans.",
       "domains": [
         "system"
       ],
@@ -59068,6 +59635,41 @@
       "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
     },
     {
+      "aliases": [
+        "inference-frame"
+      ],
+      "artifacts": [],
+      "body": "# Model-Specific Inference Frame\n\nA `ContextPack` is model-independent semantic state. An `InferenceFrame` is\nthe exact runtime-facing representation produced from that state.\n\n[\n\boxed{\text{ContextPack} \neq \text{token sequence}}\n]\n\nThe serialization boundary is:\n\n[\n\text{ContextPack}\n+\n\text{ModelProfile}\n+\n\text{RuntimeProfile}\n\nightarrow\n\text{InferenceFrame}.\n]\n\n## 1. Logical shape\n\nA conforming representation MUST preserve:\n\n```yaml\ninference_frame_id:\ncontext_pack_id:\nmodel_bundle_id:\nadapter_set_hash:\ntokenizer_hash:\nchat_template_hash:\nsystem_bundle_hash:\ntool_schema_hash:\nordered_segment_refs:\nprefix_module_refs:\nprompt_token_count:\nexpected_output_budget:\nserialization_version:\nserialization_hash:\ncreated_at:\nprovenance:\nreceipt_ref:\n```\n\nThe exact token bytes or IDs may be retained only where the governing privacy,\nstorage, and replay policy permits them. Hashes and stable refs SHOULD be used\nwhen they provide sufficient reconstruction evidence without retaining raw\nprivate text.\n\n## 2. Deterministic serialization\n\nGiven identical semantic inputs, immutable model stack, tokenizer, chat\ntemplate, tool schema, serialization version, and deterministic profile, an\naudit-grade serializer SHOULD produce identical ordered segments and the same\nserialization hash.\n\nModel-specific concerns include:\n\n- tokenizer and special-token conventions;\n- chat-template semantics;\n- system/user/assistant role encoding;\n- tool or function-schema encoding;\n- structured-output constraints;\n- model context-window limits;\n- adapter or learned-prefix stack;\n- runtime-specific position semantics where relevant.\n\n## 3. Model independence of ContextPack\n\nRuntime details MUST NOT be written back into the semantic meaning of the\nContextPack. Multiple models may consume the same ContextPack through distinct\nInferenceFrames, making model/runtime comparison possible without reconstructing\nsemantic context from scratch.\n\n## 4. Provenance\n\nThe receipt path SHOULD allow a reviewer to distinguish:\n\n[\n\text{same semantic evidence}\n]\n\nfrom:\n\n[\n\text{same exact model input}.\n]\n\nA ContextPack hash proves semantic compilation identity under its declared\ncontract. An InferenceFrame serialization hash proves the runtime-facing\nserialization identity under its declared model/runtime stack.",
+      "domains": [
+        "software",
+        "system"
+      ],
+      "id": "INF-FRAME-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/specifications/inf-frame-01-model-specific-inference-frame.md",
+      "proposition": "An InferenceFrame is the deterministic model- and runtime-specific serialization of a ContextPack, model stack, stable instruction modules, and tool declarations into the exact inference input consumed by an LLM runtime.",
+      "relations": [
+        {
+          "target": "CTX-COMP-01",
+          "type": "depends_on"
+        },
+        {
+          "target": "MODEL-REG-01",
+          "type": "depends_on"
+        },
+        {
+          "target": "GONI-SPEC-B49DB23CF412",
+          "type": "refines"
+        }
+      ],
+      "sources": [],
+      "status": "draft",
+      "title": "Model-Specific Inference Frame",
+      "type": "specification",
+      "uncertainty": "The logical frame is specified only. Concrete serialization formats, tokenizer bindings, tool-schema encodings, and runtime adapters require implementation and model-specific conformance tests."
+    },
+    {
       "aliases": [],
       "artifacts": [],
       "body": "# ITCR-01 - Inference-Time Compute Reasoning\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n# ITCR-01 - Inference-Time Compute Reasoning\n﻿---\nid: ITCR-01\ntype: SPEC\nstatus: specified_only\n---\nDOC-ID: ITCR-01\nStatus: Specified only / roadmap\n\nThis spec defines inference-time compute reasoning (ITCR) as a bounded,\ninterrupt-driven reasoning service. ITCR is a compute allocation policy over a\nreasoning procedure, not a model architecture. It trades extra latency/energy\nfor reduced error on multi-step planning, verification, and constraint-heavy\ntasks.",
@@ -59391,7 +59993,7 @@
         "MEMORY-RETRIEVAL"
       ],
       "artifacts": [],
-      "body": "# Governed Memory Retrieval\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n# Governed Memory Retrieval\nDOC-ID: MEM-RETR-01\n\nStatus: Specified only / roadmap\n\nGoni memory is governed **Knowledge & Context Engineering**, not a\nuser-managed folder, tag, or \"remember this\" feature. The user states work\nintent; the kernel classifies, parses, indexes, filters, retrieves, reranks,\nverifies, cites, and receipts memory as system work.\n\nObservation and context extraction do not create memory authority. Screen\nframes, OCR, accessibility trees, summaries, embeddings, audio transcripts, and\nlayout facts may enter durable memory only through a memory grant mediated by\nBOUND-01.\n\nThe term RAG may still appear in compatibility notes, UI labels, and supplier\ncomparisons. In Goni's architecture, the stronger layer name is Knowledge &\nContext Engineering because retrieval is only one stage in an audit-capable\ncontext pipeline.",
+      "body": "# Governed Memory Retrieval\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n# Governed Memory Retrieval\nDOC-ID: MEM-RETR-01\n\nStatus: Specified only / roadmap\n\nGoni memory is governed **Knowledge & Context Engineering**, not a\nuser-managed folder, tag, or \"remember this\" feature. The user states work\nintent; the kernel classifies, parses, indexes, filters, retrieves, reranks,\nverifies, cites, and receipts memory as system work.\n\nObservation and context extraction do not create memory authority. Screen\nframes, OCR, accessibility trees, summaries, embeddings, audio transcripts, and\nlayout facts may enter durable memory only through a memory grant mediated by\nBOUND-01.\n\nThe term RAG may still appear in compatibility notes, UI labels, and supplier\ncomparisons. In Goni's architecture, the stronger layer name is Knowledge &\nContext Engineering because retrieval is only one stage in an audit-capable\ncontext pipeline.\n\n## Retrieval output boundary\n\n`MEM-RETR-01` supplies governed candidate evidence to `CTX-COMP-01`.\nRetrieval rank, graph salience, embedding similarity, or exact-match score does\nnot by itself determine the final model context. The Context Compiler combines\ncandidate evidence with Work Order requirements, eligible procedural material,\nvisibility constraints, compression policy, and resource budgets before\nmaterialization.",
       "domains": [
         "memory",
         "specs"
@@ -59638,7 +60240,7 @@
         "MODEL-REGISTRY"
       ],
       "artifacts": [],
-      "body": "# Model Bundle Registry Governance\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n# Model Bundle Registry Governance\nDOC-ID: MODEL-REG-01\n\nStatus: Specified only / roadmap\n\nOpen-weight release decentralizes access to model parameters, but not\nnecessarily governance over discovery, metadata, provenance, evaluation,\nlicensing, deployment, or runtime permissions. Goni may discover models through\npublic ecosystems, but approved execution flows through a governed bundle\nregistry. The runtime executes immutable bundle IDs whose provenance, license,\nhashes, task permissions, assurance level, and evaluation receipts are known\nbefore use. For personalized behavior, the execution unit may be a governed\nmodel stack: base bundle plus approved adapters, prompt/policy bundle, and\nmemory or retrieval bundle refs.\n\nScientific framing:\n- Observed fact: widely available model weights can broaden participation and\n  enable local inference, while model openness still depends on documentation,\n  code, data, licenses, and access structure. [[ntia2024-open-model-weights]]\n- Theoretical inference: model hubs are governance infrastructure, not only file\n  storage. They shape discovery, naming, metadata conventions, reputation,\n  access restrictions, and takedown paths.\n- Goni hypothesis: the unit of trust in open AI should shift from the hosted\n  model repository to the locally attested model installation.",
+      "body": "# Model Bundle Registry Governance\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n# Model Bundle Registry Governance\nDOC-ID: MODEL-REG-01\n\nStatus: Specified only / roadmap\n\nOpen-weight release decentralizes access to model parameters, but not\nnecessarily governance over discovery, metadata, provenance, evaluation,\nlicensing, deployment, or runtime permissions. Goni may discover models through\npublic ecosystems, but approved execution flows through a governed bundle\nregistry. The runtime executes immutable bundle IDs whose provenance, license,\nhashes, task permissions, assurance level, and evaluation receipts are known\nbefore use. For personalized behavior, the execution unit may be a governed\nmodel stack: base bundle plus approved adapters, learned prefixes, prompt/policy\nbundle, and memory or retrieval bundle refs.\n\nRepresentation ownership is explicit:\n\n- `SKILL-REG-01` governs explicit procedural semantic modules and selectively\n  materialized skill fragments.\n- `MODEL-REG-01` governs checkpoints, learned prefixes, adapters, decoding\n  templates, and model bundles.\n- `TOOL-01` and kernel capability mediation govern execution authority.\n\nA textual skill may require a model or adapter, and a model stack may be\nselected because of a skill requirement, but neither skill selection nor model\nselection grants permission to cause an external effect.\n\nScientific framing:\n- Observed fact: widely available model weights can broaden participation and\n  enable local inference, while model openness still depends on documentation,\n  code, data, licenses, and access structure. [[ntia2024-open-model-weights]]\n- Theoretical inference: model hubs are governance infrastructure, not only file\n  storage. They shape discovery, naming, metadata conventions, reputation,\n  access restrictions, and takedown paths.\n- Goni hypothesis: the unit of trust in open AI should shift from the hosted\n  model repository to the locally attested model installation.",
       "domains": [
         "specs"
       ],
@@ -60864,6 +61466,72 @@
     {
       "aliases": [],
       "artifacts": [],
+      "body": "# Selective Skill Materialization Evaluation\n\n## Baselines\n\nFor matched Work Orders and model/runtime conditions compare:\n\n1. every eligible skill fully materialized;\n2. top-K whole-skill materialization;\n3. fragment-selective materialization with dependency closure.\n\n## Metrics\n\nReport:\n\n- task quality;\n- instruction-following accuracy;\n- verification-step completion;\n- tool-selection correctness;\n- false-negative omission of decisive procedural rules;\n- false-positive irrelevant-fragment load;\n- materialized skill tokens;\n- context-construction latency;\n- end-to-end latency;\n- user-visible error or rework rate.\n\n## Promotion criterion\n\nFragment selection advances only when it reduces materialized instruction cost\nwithout exceeding predefined false-negative, quality, verification, or\ntool-selection thresholds on the named task class.",
+      "domains": [
+        "research",
+        "agent",
+        "software"
+      ],
+      "id": "SKILL-EVAL-01",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/experiments/skill-eval-01-selective-skill-materialization.md",
+      "proposition": "Compare loading all eligible skills, selecting whole skills, and selecting dependency-closed skill fragments to test whether selective materialization reduces instruction load while preserving task quality, verification behavior, and tool-selection correctness.",
+      "relations": [
+        {
+          "target": "SKILL-REG-01",
+          "type": "tests"
+        }
+      ],
+      "sources": [],
+      "status": "draft",
+      "title": "Selective Skill Materialization Evaluation",
+      "type": "experiment",
+      "uncertainty": "Skill routing can fail through false negatives even when average token savings are large. Evaluation must emphasize omitted decisive procedures and verification rules rather than average compression alone."
+    },
+    {
+      "aliases": [
+        "governed-skills"
+      ],
+      "artifacts": [],
+      "body": "# Governed Skill Registry\n\nGoni separates **procedural cognition** from **execution authority**. A skill may\nteach or condition how a model approaches a task, but loading a skill never\ngrants tool, filesystem, network, memory-write, approval, or external-effect\nauthority.\n\nThe governing invariant is:\n\n[\n\boxed{\text{skill availability} \neq \text{authority}}\n]\n\n## 1. Logical Skill object\n\nA conforming representation MUST preserve the following logical fields:\n\n```yaml\nskill_id:\nversion:\ntask_classes:\nscope:\nactivation_conditions:\nfragment_refs:\ndependency_refs:\ntool_requirement_refs:\ncapability_requirement_refs:\nmodel_constraints:\nverification_contract_ref:\neval_refs:\ncontent_hash:\nprovenance:\n```\n\nThe representation may live in canonical rows, content-addressed artifacts, or\nanother governed substrate, but one authoritative version and hash MUST be\nresolvable before materialization.\n\n## 2. Skill fragments\n\nA skill MAY be decomposed into selectively materializable fragments:\n\n```yaml\nfragment_id:\nskill_id:\nrole:\ncontent_ref:\ncontent_hash:\ntoken_estimate:\ndependency_refs:\nactivation_conditions:\nprovenance:\n```\n\nAllowed fragment roles are:\n\n- `principle`\n- `procedure`\n- `example`\n- `tool_contract`\n- `verification`\n- `output_schema`\n\nThe Context Plane SHOULD materialize only fragments justified by the current\nWork Order, model/runtime constraints, dependencies, and available budget.\n\n## 3. Procedural memory boundary\n\nDurable personal procedural memory may describe how the principal prefers work\nto be done. It does not silently become executable instruction. Promotion from\nmemory into a reusable governed skill requires an explicit versioned skill\nobject, provenance, review/evaluation state, and a stable content hash.\n\n## 4. Learned adaptation boundary\n\nTextual skills, learned prefixes, adapters, and model weights are different\nrepresentations of recurring behavior:\n\n[\n\text{explicit skill}\n\nightarrow\n\text{learned prefix}\n\nightarrow\n\text{adapter}\n\nightarrow\n\text{weights}.\n]\n\n`SKILL-REG-01` governs explicit procedural semantic modules.\n`MODEL-REG-01` governs checkpoints, learned prefixes, adapters, and model\nbundles. Moving behavior deeper into learned state requires separate evaluation\nand does not transfer authority.\n\n## 5. Tool boundary\n\nA skill may declare required tools or capabilities, but declarations are\nrequirements, not grants. Kernel mediation resolves actual authority against\ncanonical policy and capability state at execution time.\n\n## 6. Selective materialization\n\nGiven Work Order (W_t), eligible skills (S), and budget (B_t), the\nContext Plane may compute:\n\n[\nS_t^* = operatorname{SelectSkillFragments}(W_t,S,B_t).\n]\n\nThe selection policy SHOULD minimize irrelevant instruction load while\npreserving task quality, verification requirements, provenance, and dependency\nclosure. False-negative omission of a decisive procedural rule is an explicit\nevaluation risk.",
+      "domains": [
+        "agent",
+        "memory",
+        "software",
+        "system"
+      ],
+      "id": "SKILL-REG-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/specifications/skill-reg-01-governed-skill-registry.md",
+      "proposition": "A Goni skill is a versioned, provenance-bearing procedural object whose relevant fragments may be selectively materialized for cognition while execution authority remains independently governed by kernel-owned capabilities and policy.",
+      "relations": [
+        {
+          "target": "GONI-SPEC-33294E0D3306",
+          "type": "refines"
+        },
+        {
+          "target": "GONI-SYNTHESIS-D58A8ED218FD",
+          "type": "refines"
+        },
+        {
+          "target": "MODEL-REG-01",
+          "type": "depends_on"
+        }
+      ],
+      "sources": [
+        "SRC-LI2021-PREFIX-TUNING",
+        "SRC-HU2022-LORA"
+      ],
+      "status": "draft",
+      "title": "Governed Skill Registry",
+      "type": "specification",
+      "uncertainty": "This contract defines a logical skill and fragment model. Concrete schema tables, routing algorithms, scoring thresholds, and adapter boundaries remain specified only until promoted with implementation and evaluation evidence."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
       "body": "# Sovereign Operator Audit Gap Map\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n# Sovereign Operator Audit Gap Map\nDOC-ID: SOV-AUDIT-01\nStatus: Specified only / roadmap\n\nThis note integrates the sovereign-operator audit into the blueprint without\nturning it into a new stack prescription.\n\nCore thesis:\n\n> The stack is not Goni. The governance layer is Goni.\n\nProduct correction:\n\n> The stack makes Goni possible, but delegation is the product.\n\nGoni exists to absorb digital friction. It reduces direct human interaction\nwith computers, the web, online services, documents, people, and tools by\nconverting natural intent into governed digital action.\n\nGoni is a private, local, receipt-backed personal operator. Third-party tools\nmay provide orchestration, inference, retrieval, user interfaces, voice,\nworkflow automation, observability, model gateways, and hardware acceleration.\nThey do not own authority.",
       "domains": [
         "system"
@@ -62017,6 +62685,156 @@
       "type": "supported_by"
     },
     {
+      "projection": "authored",
+      "source": "CACHE-01",
+      "target": "GONI-DECISION-9AF49466170D",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "CACHE-01",
+      "target": "INF-FRAME-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "CACHE-01",
+      "target": "GONI-SYNTHESIS-227700D474C6",
+      "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "CACHE-01",
+      "target": "CACHE-EVAL-01",
+      "type": "tested_by"
+    },
+    {
+      "projection": "authored",
+      "source": "CACHE-EVAL-01",
+      "target": "CACHE-01",
+      "type": "tests"
+    },
+    {
+      "projection": "authored",
+      "source": "CACHE-EVAL-01",
+      "target": "INF-FRAME-01",
+      "type": "tests"
+    },
+    {
+      "projection": "generated",
+      "source": "CGG-01",
+      "target": "CTX-COMP-01",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
+      "source": "CTX-COMP-01",
+      "target": "CTX-MISS-01",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
+      "source": "CTX-COMP-01",
+      "target": "INF-FRAME-01",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "authored",
+      "source": "CTX-COMP-01",
+      "target": "CGG-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "CTX-COMP-01",
+      "target": "GONI-DECISION-9AF49466170D",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "CTX-COMP-01",
+      "target": "MEM-RETR-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "CTX-COMP-01",
+      "target": "SKILL-REG-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "CTX-COMP-01",
+      "target": "GONI-PRINCIPLE-9062425CD490",
+      "type": "refines"
+    },
+    {
+      "projection": "authored",
+      "source": "CTX-COMP-01",
+      "target": "GONI-SPEC-2F762878317A",
+      "type": "refines"
+    },
+    {
+      "projection": "authored",
+      "source": "CTX-COMP-01",
+      "target": "GONI-SPEC-B49DB23CF412",
+      "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "CTX-COMP-01",
+      "target": "CTX-COMP-EVAL-01",
+      "type": "tested_by"
+    },
+    {
+      "projection": "authored",
+      "source": "CTX-COMP-EVAL-01",
+      "target": "CTX-COMP-01",
+      "type": "tests"
+    },
+    {
+      "projection": "authored",
+      "source": "CTX-COMP-EVAL-01",
+      "target": "GONI-PRINCIPLE-9062425CD490",
+      "type": "tests"
+    },
+    {
+      "projection": "authored",
+      "source": "CTX-MISS-01",
+      "target": "CTX-COMP-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "CTX-MISS-01",
+      "target": "GONI-DECISION-FEB39440C565",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "CTX-MISS-01",
+      "target": "INF-FRAME-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "CTX-MISS-01",
+      "target": "MEM-RETR-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "generated",
+      "source": "CTX-MISS-01",
+      "target": "CTX-MISS-EVAL-01",
+      "type": "tested_by"
+    },
+    {
+      "projection": "authored",
+      "source": "CTX-MISS-EVAL-01",
+      "target": "CTX-MISS-01",
+      "type": "tests"
+    },
+    {
       "projection": "generated",
       "source": "DELEG-01",
       "target": "GONI-EVIDENCE-4D46D89DBD78",
@@ -62053,6 +62871,60 @@
       "type": "supported_by"
     },
     {
+      "projection": "authored",
+      "source": "EVID-DENNING1968-WORKING-SET",
+      "target": "GONI-DECISION-FEB39440C565",
+      "type": "supports"
+    },
+    {
+      "projection": "authored",
+      "source": "EVID-DENNING1968-WORKING-SET",
+      "target": "GONI-PRINCIPLE-9062425CD490",
+      "type": "supports"
+    },
+    {
+      "projection": "authored",
+      "source": "EVID-GIM2024-PROMPT-CACHE",
+      "target": "GONI-SYNTHESIS-227700D474C6",
+      "type": "supports"
+    },
+    {
+      "projection": "authored",
+      "source": "EVID-HU2022-LORA",
+      "target": "GONI-SPEC-9D8A0A7F0F70",
+      "type": "supports"
+    },
+    {
+      "projection": "authored",
+      "source": "EVID-JIANG2023-LLMLINGUA",
+      "target": "GONI-SPEC-A29366F3E2EA",
+      "type": "supports"
+    },
+    {
+      "projection": "authored",
+      "source": "EVID-JIANG2024-LONGLLMLINGUA",
+      "target": "GONI-PRINCIPLE-B40DDEFD1872",
+      "type": "supports"
+    },
+    {
+      "projection": "authored",
+      "source": "EVID-JIANG2024-LONGLLMLINGUA",
+      "target": "GONI-SPEC-A29366F3E2EA",
+      "type": "supports"
+    },
+    {
+      "projection": "authored",
+      "source": "EVID-LI2021-PREFIX-TUNING",
+      "target": "GONI-SPEC-9D8A0A7F0F70",
+      "type": "supports"
+    },
+    {
+      "projection": "authored",
+      "source": "EVID-LI2023-SELECTIVE-CONTEXT",
+      "target": "GONI-SPEC-A29366F3E2EA",
+      "type": "supports"
+    },
+    {
       "projection": "generated",
       "source": "EVID-ROUTE-01",
       "target": "GONI-EVIDENCE-A2893B732EBC",
@@ -62063,6 +62935,12 @@
       "source": "EVID-ROUTE-01",
       "target": "GONI-EVIDENCE-E3F3DC159250",
       "type": "supported_by"
+    },
+    {
+      "projection": "authored",
+      "source": "EVID-ZHENG2024-SGLANG",
+      "target": "GONI-SYNTHESIS-227700D474C6",
+      "type": "supports"
     },
     {
       "projection": "authored",
@@ -62089,6 +62967,18 @@
       "type": "synthesized_by"
     },
     {
+      "projection": "generated",
+      "source": "GONI-DECISION-9AF49466170D",
+      "target": "CACHE-01",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-DECISION-9AF49466170D",
+      "target": "CTX-COMP-01",
+      "type": "depended_on_by"
+    },
+    {
       "projection": "authored",
       "source": "GONI-DECISION-9AF49466170D",
       "target": "GONI-PRINCIPLE-9062425CD490",
@@ -62099,6 +62989,18 @@
       "source": "GONI-DECISION-9AF49466170D",
       "target": "GONI-THESIS-7BFB74017D50",
       "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-DECISION-FEB39440C565",
+      "target": "CTX-MISS-01",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-DECISION-FEB39440C565",
+      "target": "EVID-DENNING1968-WORKING-SET",
+      "type": "supported_by"
     },
     {
       "projection": "authored",
@@ -62983,10 +63885,22 @@
       "type": "depended_on_by"
     },
     {
+      "projection": "generated",
+      "source": "GONI-PRINCIPLE-9062425CD490",
+      "target": "CTX-COMP-01",
+      "type": "refined_by"
+    },
+    {
       "projection": "authored",
       "source": "GONI-PRINCIPLE-9062425CD490",
       "target": "GONI-PRINCIPLE-B40DDEFD1872",
       "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-PRINCIPLE-9062425CD490",
+      "target": "EVID-DENNING1968-WORKING-SET",
+      "type": "supported_by"
     },
     {
       "projection": "authored",
@@ -62999,6 +63913,12 @@
       "source": "GONI-PRINCIPLE-9062425CD490",
       "target": "GONI-SYNTHESIS-227700D474C6",
       "type": "supports"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-PRINCIPLE-9062425CD490",
+      "target": "CTX-COMP-EVAL-01",
+      "type": "tested_by"
     },
     {
       "projection": "generated",
@@ -63026,8 +63946,26 @@
     },
     {
       "projection": "generated",
+      "source": "GONI-PRINCIPLE-B40DDEFD1872",
+      "target": "EVID-JIANG2024-LONGLLMLINGUA",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-SPEC-2F762878317A",
+      "target": "CTX-COMP-01",
+      "type": "refined_by"
+    },
+    {
+      "projection": "generated",
       "source": "GONI-SPEC-2F762878317A",
       "target": "GONI-IMAP-66D2DBD94204",
+      "type": "refined_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-SPEC-33294E0D3306",
+      "target": "SKILL-REG-01",
       "type": "refined_by"
     },
     {
@@ -63035,6 +63973,48 @@
       "source": "GONI-SPEC-75D0D2E5F296",
       "target": "GONI-SYNTHESIS-E3B321C24C67",
       "type": "synthesized_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-SPEC-9D8A0A7F0F70",
+      "target": "EVID-HU2022-LORA",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-SPEC-9D8A0A7F0F70",
+      "target": "EVID-LI2021-PREFIX-TUNING",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-SPEC-A29366F3E2EA",
+      "target": "EVID-JIANG2023-LLMLINGUA",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-SPEC-A29366F3E2EA",
+      "target": "EVID-JIANG2024-LONGLLMLINGUA",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-SPEC-A29366F3E2EA",
+      "target": "EVID-LI2023-SELECTIVE-CONTEXT",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-SPEC-B49DB23CF412",
+      "target": "CTX-COMP-01",
+      "type": "refined_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-SPEC-B49DB23CF412",
+      "target": "INF-FRAME-01",
+      "type": "refined_by"
     },
     {
       "projection": "authored",
@@ -64331,6 +65311,24 @@
       "source": "GONI-SYNTHESIS-227700D474C6",
       "target": "GONI-PRINCIPLE-9062425CD490",
       "type": "depends_on"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-SYNTHESIS-227700D474C6",
+      "target": "CACHE-01",
+      "type": "refined_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-SYNTHESIS-227700D474C6",
+      "target": "EVID-GIM2024-PROMPT-CACHE",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-SYNTHESIS-227700D474C6",
+      "target": "EVID-ZHENG2024-SGLANG",
+      "type": "supported_by"
     },
     {
       "projection": "generated",
@@ -66513,6 +67511,12 @@
     {
       "projection": "generated",
       "source": "GONI-SYNTHESIS-D58A8ED218FD",
+      "target": "SKILL-REG-01",
+      "type": "refined_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-SYNTHESIS-D58A8ED218FD",
       "target": "SYS-03",
       "type": "synthesized_by"
     },
@@ -67147,6 +68151,42 @@
       "type": "synthesizes"
     },
     {
+      "projection": "generated",
+      "source": "INF-FRAME-01",
+      "target": "CACHE-01",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
+      "source": "INF-FRAME-01",
+      "target": "CTX-MISS-01",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "authored",
+      "source": "INF-FRAME-01",
+      "target": "CTX-COMP-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "INF-FRAME-01",
+      "target": "MODEL-REG-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "INF-FRAME-01",
+      "target": "GONI-SPEC-B49DB23CF412",
+      "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "INF-FRAME-01",
+      "target": "CACHE-EVAL-01",
+      "type": "tested_by"
+    },
+    {
       "projection": "authored",
       "source": "LLM-COUNCIL",
       "target": "GONI-OBJECTION-998CA377412F",
@@ -67295,6 +68335,18 @@
       "source": "LSKR-01",
       "target": "GONI-SYNTHESIS-E8CAFC25FF02",
       "type": "synthesizes"
+    },
+    {
+      "projection": "generated",
+      "source": "MEM-RETR-01",
+      "target": "CTX-COMP-01",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
+      "source": "MEM-RETR-01",
+      "target": "CTX-MISS-01",
+      "type": "depended_on_by"
     },
     {
       "projection": "generated",
@@ -67463,6 +68515,18 @@
       "source": "METRICS-01",
       "target": "GONI-SYNTHESIS-FC6B81D6EEB3",
       "type": "synthesizes"
+    },
+    {
+      "projection": "generated",
+      "source": "MODEL-REG-01",
+      "target": "INF-FRAME-01",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
+      "source": "MODEL-REG-01",
+      "target": "SKILL-REG-01",
+      "type": "depended_on_by"
     },
     {
       "projection": "generated",
@@ -68093,6 +69157,42 @@
       "source": "SANDBOX-00",
       "target": "GONI-SYNTHESIS-CD2687CE4118",
       "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "SKILL-EVAL-01",
+      "target": "SKILL-REG-01",
+      "type": "tests"
+    },
+    {
+      "projection": "generated",
+      "source": "SKILL-REG-01",
+      "target": "CTX-COMP-01",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "authored",
+      "source": "SKILL-REG-01",
+      "target": "MODEL-REG-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "SKILL-REG-01",
+      "target": "GONI-SPEC-33294E0D3306",
+      "type": "refines"
+    },
+    {
+      "projection": "authored",
+      "source": "SKILL-REG-01",
+      "target": "GONI-SYNTHESIS-D58A8ED218FD",
+      "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "SKILL-REG-01",
+      "target": "SKILL-EVAL-01",
+      "type": "tested_by"
     },
     {
       "projection": "authored",
@@ -68742,6 +69842,15 @@
       "url": "https://www.ijcai.org/proceedings/2023/738"
     },
     {
+      "citation": "Denning, P. J. (1968). The Working Set Model for Program Behavior. Communications of the ACM, 11(5), 323-333. https://doi.org/10.1145/363095.363141",
+      "id": "SRC-DENNING1968-WORKING-SET",
+      "kind": "academic",
+      "notes": "Classical operating-systems working-set model for dynamic management of paged memory.",
+      "path": "sources/src-denning1968-working-set.yml",
+      "title": "Denning 1968 - The Working Set Model for Program Behavior",
+      "url": "https://doi.org/10.1145/363095.363141"
+    },
+    {
       "citation": "https://arxiv.org/abs/2403.07718",
       "id": "SRC-DROUIN2024-WORKARENA",
       "kind": "academic",
@@ -68794,6 +69903,15 @@
       "path": "sources/src-gebru2021-datasheets.yml",
       "title": "gebru2021-datasheets",
       "url": "https://arxiv.org/abs/1803.09010"
+    },
+    {
+      "citation": "Gim, I., Chen, G., Lee, S.-s., Sarda, N., Khandelwal, A., & Zhong, L. (2024). Prompt Cache: Modular Attention Reuse for Low-Latency Inference. Proceedings of Machine Learning and Systems, 6.",
+      "id": "SRC-GIM2024-PROMPT-CACHE",
+      "kind": "academic",
+      "notes": "Reuses precomputed attention states for explicitly defined recurring prompt modules.",
+      "path": "sources/src-gim2024-prompt-cache.yml",
+      "title": "Gim et al. 2024 - Prompt Cache",
+      "url": "https://proceedings.mlsys.org/paper_files/paper/2024/hash/a66caa1703fe34705a4368c3014c1966-Abstract-Conference.html"
     },
     {
       "citation": "https://arxiv.org/pdf/1502.04015",
@@ -68867,6 +69985,15 @@
       "url": "https://www.microsoft.com/en-us/research/publication/principles-mixed-initiative-user-interfaces/"
     },
     {
+      "citation": "Hu, E. J., Shen, Y., Wallis, P., Allen-Zhu, Z., Li, Y., Wang, S., Wang, L., & Chen, W. (2022). LoRA: Low-Rank Adaptation of Large Language Models. International Conference on Learning Representations.",
+      "id": "SRC-HU2022-LORA",
+      "kind": "academic",
+      "notes": "Parameter-efficient adaptation by learning low-rank updates while freezing base-model weights.",
+      "path": "sources/src-hu2022-lora.yml",
+      "title": "Hu et al. 2022 - LoRA",
+      "url": "https://openreview.net/forum?id=nZeVKeeFYf9"
+    },
+    {
       "citation": "https://arxiv.org/abs/2507.05257",
       "id": "SRC-HU2025-MEMORYAGENTBENCH",
       "kind": "academic",
@@ -68883,6 +70010,24 @@
       "path": "sources/src-in-toto-framework.yml",
       "title": "in-toto-framework",
       "url": "https://in-toto.io/"
+    },
+    {
+      "citation": "Jiang, H., Wu, Q., Lin, C.-Y., Yang, Y., & Qiu, L. (2023). LLMLingua: Compressing Prompts for Accelerated Inference of Large Language Models. Proceedings of EMNLP 2023. https://doi.org/10.18653/v1/2023.emnlp-main.825",
+      "id": "SRC-JIANG2023-LLMLINGUA",
+      "kind": "academic",
+      "notes": "Budget-controlled coarse-to-fine prompt compression for reducing inference cost.",
+      "path": "sources/src-jiang2023-llmlingua.yml",
+      "title": "Jiang et al. 2023 - LLMLingua",
+      "url": "https://aclanthology.org/2023.emnlp-main.825/"
+    },
+    {
+      "citation": "Jiang, H., Wu, Q., Luo, X., Li, D., Lin, C.-Y., Yang, Y., & Qiu, L. (2024). LongLLMLingua: Accelerating and Enhancing LLMs in Long Context Scenarios via Prompt Compression. Proceedings of ACL 2024, 1658-1677. https://doi.org/10.18653/v1/2024.acl-long.91",
+      "id": "SRC-JIANG2024-LONGLLMLINGUA",
+      "kind": "academic",
+      "notes": "Long-context prompt compression addressing computational cost, position bias, and key-information density.",
+      "path": "sources/src-jiang2024-longllmlingua.yml",
+      "title": "Jiang et al. 2024 - LongLLMLingua",
+      "url": "https://aclanthology.org/2024.acl-long.91/"
     },
     {
       "citation": "https://arxiv.org/abs/2004.04906",
@@ -68946,6 +70091,24 @@
       "path": "sources/src-lewis2020-rag.yml",
       "title": "lewis2020-rag",
       "url": "https://arxiv.org/abs/2005.11401"
+    },
+    {
+      "citation": "Li, X. L., & Liang, P. (2021). Prefix-Tuning: Optimizing Continuous Prompts for Generation. Proceedings of ACL-IJCNLP 2021, 4582-4597. https://doi.org/10.18653/v1/2021.acl-long.353",
+      "id": "SRC-LI2021-PREFIX-TUNING",
+      "kind": "academic",
+      "notes": "Learns continuous task-specific prefixes while keeping base-model parameters frozen.",
+      "path": "sources/src-li2021-prefix-tuning.yml",
+      "title": "Li and Liang 2021 - Prefix-Tuning",
+      "url": "https://aclanthology.org/2021.acl-long.353/"
+    },
+    {
+      "citation": "Li, Y., Dong, B., Guerin, F., & Lin, C. (2023). Compressing Context to Enhance Inference Efficiency of Large Language Models. Proceedings of EMNLP 2023, 6342-6353. https://doi.org/10.18653/v1/2023.emnlp-main.391",
+      "id": "SRC-LI2023-SELECTIVE-CONTEXT",
+      "kind": "academic",
+      "notes": "Selective Context prunes redundant context to reduce inference memory and latency.",
+      "path": "sources/src-li2023-selective-context.yml",
+      "title": "Li et al. 2023 - Selective Context",
+      "url": "https://aclanthology.org/2023.emnlp-main.391/"
     },
     {
       "citation": "https://arxiv.org/abs/2604.25850",
@@ -69368,6 +70531,15 @@
       "path": "sources/src-zhang2025-ace.yml",
       "title": "zhang2025-ace",
       "url": "https://arxiv.org/abs/2510.04618"
+    },
+    {
+      "citation": "Zheng, L., Yin, L., Xie, Z., Sun, C., Huang, J., Yu, C. H., Cao, S., Kozyrakis, C., Stoica, I., Gonzalez, J. E., Barrett, C., & Sheng, Y. (2024). SGLang: Efficient Execution of Structured Language Model Programs. Advances in Neural Information Processing Systems 37. https://doi.org/10.52202/079017-2000",
+      "id": "SRC-ZHENG2024-SGLANG",
+      "kind": "academic",
+      "notes": "Introduces RadixAttention for KV-cache reuse in structured language-model programs.",
+      "path": "sources/src-zheng2024-sglang.yml",
+      "title": "Zheng et al. 2024 - SGLang",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/724be4472168f31ba1c9ac630f15dec8-Abstract-Conference.html"
     },
     {
       "citation": "https://arxiv.org/abs/2307.13854",
