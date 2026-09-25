@@ -1,0 +1,6 @@
+id: SRC-JIANG2024-LONGLLMLINGUA
+title: jiang2024-longllmlingua
+kind: academic
+citation: "Jiang, Huiqiang et al. (2024). LongLLMLingua: Accelerating and Enhancing LLMs in Long Context Scenarios via Prompt Compression. ACL 2024, pages 1658-1677."
+url: https://aclanthology.org/2024.acl-long.91/
+notes: "Proposes question-aware coarse-to-fine prompt compression for long-context tasks and reports quality, token, cost, and latency trade-offs across evaluated workloads."

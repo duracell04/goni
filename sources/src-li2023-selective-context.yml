@@ -1,0 +1,6 @@
+id: SRC-LI2023-SELECTIVE-CONTEXT
+title: li2023-selective-context
+kind: academic
+citation: "Li, Yucheng; Dong, Bo; Lin, Chenghua; Guerin, Frank (2023). Compressing Context to Enhance Inference Efficiency of Large Language Models. arXiv:2310.06201."
+url: https://arxiv.org/abs/2310.06201
+notes: "Introduces Selective Context, which identifies and prunes redundant input context to reduce prompt cost, memory, and inference time while evaluating downstream quality."
