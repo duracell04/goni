@@ -4,15 +4,18 @@ title: Model Bundle Registry Governance
 type: specification
 status: draft
 implementation_state: specified_only
-proposition: 'DOC-ID: MODEL-REG-01 Status: Specified only / roadmap Open-weight release decentralizes access to model parameters, but not necessarily governance over discovery, metadata, provenance, evaluation, licensing, deployment, or runtime permissions.'
+proposition: "Approved model execution flows through a governed bundle registry whose immutable bundle records include provenance, licensing, hashes, permitted task classes, cognitive roles, assurance evidence, deployment constraints, and evaluation receipts."
 domains:
+- models
 - specs
 aliases:
 - MODEL-REGISTRY
-relations: []
+relations:
+- type: refined_by
+  target: MODEL-ROLE-01
 sources: []
 artifacts: []
-uncertainty: Preserved from the legacy draft without status promotion or newly inferred evidence strength.
+uncertainty: "The registry is specified only. Role labels and evaluation profiles do not guarantee performance outside their measured domain."
 legacy:
 - path: blueprint/30-specs/model-registry.md
   heading: Model Bundle Registry Governance
@@ -21,29 +24,31 @@ legacy:
 
 # Model Bundle Registry Governance
 
-> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.
+Approved execution flows through a governed bundle registry. The runtime uses
+immutable bundle identifiers whose relevant properties are known before use.
 
-# Model Bundle Registry Governance
-DOC-ID: MODEL-REG-01
+A promoted bundle should record or reference:
 
-Status: Specified only / roadmap
+- model/checkpoint and artifact hashes;
+- runtime compatibility;
+- license and redistribution constraints;
+- provider or local deployment identity;
+- permitted task classes;
+- supported cognitive roles under MODEL-ROLE-01;
+- evaluation artifacts for each promoted role;
+- latency, cost, memory, energy, and egress profiles where measured;
+- calibration evidence where probabilities influence control;
+- privacy and data-residency constraints;
+- active adapters, prompt/policy bundles, retrieval bundles, and other seams;
+- assurance level and promotion receipts.
 
-Open-weight release decentralizes access to model parameters, but not
-necessarily governance over discovery, metadata, provenance, evaluation,
-licensing, deployment, or runtime permissions. Goni may discover models through
-public ecosystems, but approved execution flows through a governed bundle
-registry. The runtime executes immutable bundle IDs whose provenance, license,
-hashes, task permissions, assurance level, and evaluation receipts are known
-before use. For personalized behavior, the execution unit may be a governed
-model stack: base bundle plus approved adapters, prompt/policy bundle, and
-memory or retrieval bundle refs.
+For personalized behavior, the execution unit may be a governed model stack
+consisting of a base bundle plus approved adapters, prompt/policy bundle, and
+memory or retrieval references.
 
-Scientific framing:
-- Observed fact: widely available model weights can broaden participation and
-  enable local inference, while model openness still depends on documentation,
-  code, data, licenses, and access structure. [[ntia2024-open-model-weights]]
-- Theoretical inference: model hubs are governance infrastructure, not only file
-  storage. They shape discovery, naming, metadata conventions, reputation,
-  access restrictions, and takedown paths.
-- Goni hypothesis: the unit of trust in open AI should shift from the hosted
-  model repository to the locally attested model installation.
+Role labels are routing metadata, not authority. Loading a stronger model or a
+model with more cognitive roles cannot expand the current Work Order,
+capability set, or approval corridor.
+
+The unit of trust is the attested, evidence-linked model installation or remote
+provider configuration, not an informal model name.
