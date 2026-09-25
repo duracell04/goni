@@ -32,7 +32,7 @@ Goni may aggressively optimize the representations used for reasoning:
 - summaries and distilled state;
 - compressed or quantized memory representations;
 - KV-cache paging, retention, or eviction;
-- prefix caches;
+- prefix caches and exact compatible prefix/KV reuse;
 - learned relevance or reuse estimates;
 - sparse model or tool routing.
 
@@ -58,10 +58,16 @@ prepare a proposal, classify a task, or prioritize work. Before consequential
 execution, the kernel MUST evaluate the authoritative state required by the
 relevant policy contract.
 
+The same rule applies to `ContextPack`, `InferenceFrame`, prefix caches, and
+KV state. These representations may carry or accelerate information about
+authority, but they do not become the authoritative source merely because they
+are model-visible or computationally resident.
+
 This boundary prevents an efficiency mechanism from silently changing
-permissions. Cache eviction, approximation error, stale summaries, or
-compression loss may reduce answer quality; they MUST NOT widen authority.
+permissions. Cache eviction, approximation error, stale summaries, compression
+loss, or cache reuse may reduce answer quality or alter cognition; they MUST NOT
+widen authority.
 
 Any future optimization that makes policy, mandate, capability, revocation, or
-approval decisions depend exclusively on lossy state requires an explicit
-replacement decision and a new safety argument.
+approval decisions depend exclusively on lossy or cached cognitive state
+requires an explicit replacement decision and a new safety argument.
