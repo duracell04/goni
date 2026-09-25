@@ -1,0 +1,6 @@
+id: SRC-CHEN2023-AGENTVERSE
+title: chen2023-agentverse
+kind: academic
+citation: "Chen, Weize et al. (2023). AgentVerse: Facilitating Multi-Agent Collaboration and Exploring Emergent Behaviors. arXiv:2308.10848."
+url: https://arxiv.org/abs/2308.10848
+notes: "Studies dynamically composed groups of LLM agents and reports task improvements over individual-agent baselines on evaluated scenarios while analyzing collaborative behaviors."

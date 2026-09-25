@@ -1,0 +1,6 @@
+id: SRC-CHRISTAKOPOULOU2024-TALKER-REASONER
+title: christakopoulou2024-talker-reasoner
+kind: academic
+citation: "Christakopoulou, Konstantina; Mourad, Shibl; Mataric, Maja (2024). Agents Thinking Fast and Slow: A Talker-Reasoner Architecture. arXiv:2410.08328."
+url: https://arxiv.org/abs/2410.08328
+notes: "Separates a fast conversational Talker from a slower Reasoner responsible for multi-step reasoning, planning, tool use, actions, and state updates."
