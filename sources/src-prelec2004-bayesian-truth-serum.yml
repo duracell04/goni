@@ -1,0 +1,9 @@
+id: SRC-PRELEC2004-BAYESIAN-TRUTH-SERUM
+title: "A Bayesian truth serum for subjective data"
+kind: academic
+citation: >-
+  Prelec, D. (2004). A Bayesian truth serum for subjective data. Science, 306(5695), 462-466. https://doi.org/10.1126/science.1102081
+url: https://pubmed.ncbi.nlm.nih.gov/15486294/
+accessed: "2026-09-16"
+notes: >-
+  Mechanism-design reference for eliciting truthful subjective reports without direct ground truth. Relevant only as a research direction because its assumptions need not hold for LLM agents.

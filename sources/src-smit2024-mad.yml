@@ -1,0 +1,9 @@
+id: SRC-SMIT2024-MAD
+title: "Should we be going MAD? A Look at Multi-Agent Debate Strategies for LLMs"
+kind: academic
+citation: >-
+  Smit, A. P., Grinsztajn, N., Duckworth, P., Barrett, T. D., & Pretorius, A. (2024). Should we be going MAD? A Look at Multi-Agent Debate Strategies for LLMs. Proceedings of ICML 2024, PMLR 235, 45883-45905.
+url: https://proceedings.mlr.press/v235/smit24a.html
+accessed: "2026-09-16"
+notes: >-
+  Finds that evaluated multi-agent debate protocols do not reliably outperform simpler self-consistency or ensembling baselines without careful tuning.

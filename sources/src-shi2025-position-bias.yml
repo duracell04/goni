@@ -1,0 +1,9 @@
+id: SRC-SHI2025-POSITION-BIAS
+title: "Judging the Judges: A Systematic Study of Position Bias in LLM-as-a-Judge"
+kind: academic
+citation: >-
+  Shi, L., Ma, C., Liang, W., Diao, X., Ma, W., & Vosoughi, S. (2025). Judging the Judges: A Systematic Study of Position Bias in LLM-as-a-Judge. IJCNLP-AACL 2025. https://doi.org/10.18653/v1/2025.ijcnlp-long.18
+url: https://aclanthology.org/2025.ijcnlp-long.18/
+accessed: "2026-09-16"
+notes: >-
+  Finds systematic position bias across multiple LLM judges and tasks, motivating randomized ordering and evaluator-bias controls.

@@ -1,0 +1,9 @@
+id: SRC-PANICKSSERY2024-SELF-PREFERENCE
+title: "LLM Evaluators Recognize and Favor Their Own Generations"
+kind: academic
+citation: >-
+  Panickssery, A., Bowman, S. R., & Feng, S. (2024). LLM Evaluators Recognize and Favor Their Own Generations. Advances in Neural Information Processing Systems 37. https://doi.org/10.52202/079017-2197
+url: https://proceedings.neurips.cc/paper_files/paper/2024/hash/7f1f0218e45f5414c79c0679633e47bc-Abstract-Conference.html
+accessed: "2026-09-16"
+notes: >-
+  Reports non-trivial self-recognition by LLM evaluators and evidence that self-recognition contributes to self-preference, limiting the protection offered by nominal anonymity.

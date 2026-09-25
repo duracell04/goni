@@ -41,6 +41,10 @@
       "node": "ROBOT-01"
     },
     {
+      "alias": "EPISTEMIC-DELIBERATION-ARCHITECTURE",
+      "node": "GONI-SYNTHESIS-20260916-EPISTEMIC-DELIBERATION"
+    },
+    {
       "alias": "EVID-AUTON-01-AUTONOMY-CORRIDORS",
       "node": "EVID-AUTON-01"
     },
@@ -199,6 +203,10 @@
     {
       "alias": "SPEC-TXN-01-TRANSACTIONAL-TOOLS",
       "node": "SPEC-TXN-01"
+    },
+    {
+      "alias": "STAGED-EPISTEMIC-DELIBERATION",
+      "node": "GONI-PROPOSAL-20260916-STAGED-EPISTEMIC-DELIBERATION"
     },
     {
       "alias": "SYMBOLIC-SUBSTRATE",
@@ -408,9 +416,16 @@
         "SKILL-REG-01",
         "SPEC-KERN-01"
       ],
+      "audit": [
+        "GONI-PROPOSAL-20260916-STAGED-EPISTEMIC-DELIBERATION"
+      ],
       "billing": [
         "BILL-01",
         "BILL-02"
+      ],
+      "calibration": [
+        "GONI-EVIDENCE-20260916-DIVERSITY-CALIBRATION",
+        "GONI-EVIDENCE-20260916-INCENTIVE-AGGREGATION"
       ],
       "community": [
         "GONI-PROPOSAL-9D10D978BDC3"
@@ -522,6 +537,19 @@
         "SCHEMA-MVP-01",
         "SPINE-01",
         "ZCO-01"
+      ],
+      "epistemics": [
+        "GONI-EVIDENCE-20260916-DIVERSITY-CALIBRATION",
+        "GONI-EVIDENCE-20260916-EVALUATOR-BIAS",
+        "GONI-EVIDENCE-20260916-INCENTIVE-AGGREGATION",
+        "GONI-EVIDENCE-20260916-MAD-CONFORMITY",
+        "GONI-EXPERIMENT-20260916-EPISTEMIC-DELIBERATION",
+        "GONI-PROPOSAL-20260916-STAGED-EPISTEMIC-DELIBERATION",
+        "GONI-SYNTHESIS-20260916-EPISTEMIC-DELIBERATION"
+      ],
+      "evaluation": [
+        "GONI-EVIDENCE-20260916-EVALUATOR-BIAS",
+        "GONI-EXPERIMENT-20260916-EPISTEMIC-DELIBERATION"
       ],
       "hardware": [
         "ADR-INDEX-HW",
@@ -939,6 +967,9 @@
         "PRICING-MODELS",
         "TECH-INTEL-RULES"
       ],
+      "mechanism-design": [
+        "GONI-EVIDENCE-20260916-INCENTIVE-AGGREGATION"
+      ],
       "memory": [
         "BOUND-01",
         "CTX-COMP-01",
@@ -980,6 +1011,14 @@
         "MEMORY-ARCHITECTURE",
         "SKILL-REG-01"
       ],
+      "multi-agent": [
+        "GONI-EVIDENCE-20260916-DIVERSITY-CALIBRATION",
+        "GONI-EVIDENCE-20260916-EVALUATOR-BIAS",
+        "GONI-EVIDENCE-20260916-MAD-CONFORMITY",
+        "GONI-EXPERIMENT-20260916-EPISTEMIC-DELIBERATION",
+        "GONI-PROPOSAL-20260916-STAGED-EPISTEMIC-DELIBERATION",
+        "GONI-SYNTHESIS-20260916-EPISTEMIC-DELIBERATION"
+      ],
       "network": [
         "GONI-IMAP-B21D85F4146E",
         "GONI-OBJECTION-387E7E37F44E",
@@ -1006,6 +1045,10 @@
         "GONI-SPEC-F558CFB6C817",
         "GONI-SPEC-FC72CAAED1BC",
         "NET-01"
+      ],
+      "orchestration": [
+        "GONI-PROPOSAL-20260916-STAGED-EPISTEMIC-DELIBERATION",
+        "GONI-SYNTHESIS-20260916-EPISTEMIC-DELIBERATION"
       ],
       "policy": [
         "EVID-AUTON-03",
@@ -1108,6 +1151,9 @@
         "OS-COMPLETENESS-CHECKLIST",
         "SURF-00",
         "THESIS-SOVEREIGN-DELEG-OS-01"
+      ],
+      "reasoning": [
+        "GONI-EVIDENCE-20260916-MAD-CONFORMITY"
       ],
       "repository": [
         "ADJACENT-PROJECTS",
@@ -1722,6 +1768,7 @@
         "GONI-EXPERIMENT-0A1F9BC4014A",
         "GONI-EXPERIMENT-7DE7B307CB98",
         "GONI-SYNTHESIS-0382450FEF34",
+        "GONI-SYNTHESIS-20260916-EPISTEMIC-DELIBERATION",
         "GONI-SYNTHESIS-3BAF6D1DACDF",
         "GONI-SYNTHESIS-74BA372003F4",
         "GONI-SYNTHESIS-8A2FFAA7A328",
@@ -2835,6 +2882,10 @@
         "GONI-EVIDENCE-17CF482A5C6F",
         "GONI-EVIDENCE-180EEFB60BD6",
         "GONI-EVIDENCE-1D7CACF0460A",
+        "GONI-EVIDENCE-20260916-DIVERSITY-CALIBRATION",
+        "GONI-EVIDENCE-20260916-EVALUATOR-BIAS",
+        "GONI-EVIDENCE-20260916-INCENTIVE-AGGREGATION",
+        "GONI-EVIDENCE-20260916-MAD-CONFORMITY",
         "GONI-EVIDENCE-23EFDA500D02",
         "GONI-EVIDENCE-25F334DB139D",
         "GONI-EVIDENCE-27FEFEB8A964",
@@ -2932,6 +2983,7 @@
         "GONI-EXPERIMENT-1AE48EF895D6",
         "GONI-EXPERIMENT-1F8811AD87C7",
         "GONI-EXPERIMENT-201725CFEA57",
+        "GONI-EXPERIMENT-20260916-EPISTEMIC-DELIBERATION",
         "GONI-EXPERIMENT-223625F5043D",
         "GONI-EXPERIMENT-23092C379EE5",
         "GONI-EXPERIMENT-2740B405E712",
@@ -3473,6 +3525,7 @@
         "GONI-PROPOSAL-1992714F1729",
         "GONI-PROPOSAL-1A96B9250C09",
         "GONI-PROPOSAL-1C3A0FDFD58A",
+        "GONI-PROPOSAL-20260916-STAGED-EPISTEMIC-DELIBERATION",
         "GONI-PROPOSAL-2179212C454F",
         "GONI-PROPOSAL-2420C8FA9766",
         "GONI-PROPOSAL-2A45B1A8D107",
@@ -4102,6 +4155,7 @@
         "GONI-SYNTHESIS-1E3EB9EADED0",
         "GONI-SYNTHESIS-1E8F07EDE1AC",
         "GONI-SYNTHESIS-1F5795397DA1",
+        "GONI-SYNTHESIS-20260916-EPISTEMIC-DELIBERATION",
         "GONI-SYNTHESIS-20D078B8208A",
         "GONI-SYNTHESIS-20D35CE59AA9",
         "GONI-SYNTHESIS-2107459DF3A0",
@@ -4745,6 +4799,10 @@
         "GONI-EVIDENCE-17CF482A5C6F",
         "GONI-EVIDENCE-180EEFB60BD6",
         "GONI-EVIDENCE-1D7CACF0460A",
+        "GONI-EVIDENCE-20260916-DIVERSITY-CALIBRATION",
+        "GONI-EVIDENCE-20260916-EVALUATOR-BIAS",
+        "GONI-EVIDENCE-20260916-INCENTIVE-AGGREGATION",
+        "GONI-EVIDENCE-20260916-MAD-CONFORMITY",
         "GONI-EVIDENCE-23EFDA500D02",
         "GONI-EVIDENCE-25F334DB139D",
         "GONI-EVIDENCE-27FEFEB8A964",
@@ -4874,6 +4932,7 @@
         "GONI-EXPERIMENT-1AE48EF895D6",
         "GONI-EXPERIMENT-1F8811AD87C7",
         "GONI-EXPERIMENT-201725CFEA57",
+        "GONI-EXPERIMENT-20260916-EPISTEMIC-DELIBERATION",
         "GONI-EXPERIMENT-223625F5043D",
         "GONI-EXPERIMENT-23092C379EE5",
         "GONI-EXPERIMENT-2740B405E712",
@@ -5449,6 +5508,7 @@
         "GONI-PROPOSAL-1992714F1729",
         "GONI-PROPOSAL-1A96B9250C09",
         "GONI-PROPOSAL-1C3A0FDFD58A",
+        "GONI-PROPOSAL-20260916-STAGED-EPISTEMIC-DELIBERATION",
         "GONI-PROPOSAL-2179212C454F",
         "GONI-PROPOSAL-2420C8FA9766",
         "GONI-PROPOSAL-2A45B1A8D107",
@@ -6144,6 +6204,7 @@
         "GONI-SYNTHESIS-1E3EB9EADED0",
         "GONI-SYNTHESIS-1E8F07EDE1AC",
         "GONI-SYNTHESIS-1F5795397DA1",
+        "GONI-SYNTHESIS-20260916-EPISTEMIC-DELIBERATION",
         "GONI-SYNTHESIS-20D078B8208A",
         "GONI-SYNTHESIS-20D35CE59AA9",
         "GONI-SYNTHESIS-2107459DF3A0",
@@ -14633,6 +14694,107 @@
     {
       "aliases": [],
       "artifacts": [],
+      "body": "# Diversity and calibrated confidence are distinct from nominal agent count\n\n## Reported observations\n\nZhu et al. (2026) identify diversity of initial viewpoints and explicit calibrated confidence communication as important mechanisms in multi-agent debate. Band et al. (2024) show that long-form language-model confidence is not automatically calibrated and develop a decision-oriented notion of linguistic calibration. In classical collective-decision theory, Ladha (1995) shows that positive correlation among votes weakens the information-pooling advantage associated with majority aggregation.\n\n## Goni interpretation\n\nThe scarce resource in a multi-agent reasoning system is better described as **independent epistemic signal** than as raw agent count.\n\nFor an exchangeable set of $n$ signals with common pairwise correlation $\\rho$, the familiar heuristic\n\n$$\nn_{\\mathrm{eff}} \\approx \\frac{n}{1+(n-1)\\rho}\n$$\n\nillustrates the point: when errors are highly correlated, additional nominal agents can add little independent information. This expression should not be interpreted as a general theorem for arbitrary LLM outputs; it is a diagnostic analogy that motivates empirical measurement of error dependence.\n\nLikewise, a model's stated confidence should not receive direct epistemic weight merely because it is numerically high. Confidence becomes useful only to the extent that it is calibrated for the relevant task, model, domain, and operating regime.\n\n## Implication\n\nGoni should prefer **lineage diversity** over superficial multiplicity: different model families, retrieval paths, tools, data sources, prompts, and verification mechanisms can be more valuable than many replicas sharing the same failure modes.",
+      "domains": [
+        "epistemics",
+        "multi-agent",
+        "calibration"
+      ],
+      "id": "GONI-EVIDENCE-20260916-DIVERSITY-CALIBRATION",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/evidence/goni-evidence-20260916-diversity-calibration.md",
+      "proposition": "Collective reliability depends on the diversity and calibration of information sources; correlated agents and uncalibrated confidence can make nominal multiplicity overstate epistemic evidence.",
+      "relations": [],
+      "sources": [
+        "SRC-ZHU2026-MAD-DIVERSITY",
+        "SRC-BAND2024-LINGUISTIC-CALIBRATION",
+        "SRC-LADHA1995-CORRELATED-VOTES"
+      ],
+      "status": "draft",
+      "title": "Diversity and calibrated confidence are distinct from nominal agent count",
+      "type": "evidence",
+      "uncertainty": "Classical correlated-vote results concern human or abstract juries rather than LLMs directly. The effective-sample-size analogy is therefore a heuristic unless model-error dependence is measured empirically."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# LLM evaluators exhibit self-preference and presentation-order bias\n\n## Reported observations\n\nPanickssery, Bowman, and Feng (2024) report that LLM evaluators can recognize their own generations above chance and that self-recognition is associated with self-preference. Shi et al. (2025) report systematic position bias across pairwise and list-wise LLM-as-a-judge settings.\n\n## Goni interpretation\n\nRemoving explicit author labels is useful but insufficient. A reviewer may still infer model family or authorship from stylistic features, and an evaluator may be influenced by candidate order.\n\nHigh-reliability review should therefore separate **provenance retention** from **provenance visibility**:\n\n- preserve complete authorship and generation provenance in the system record;\n- hide nonessential identity signals from the reviewer during first-pass evaluation;\n- randomize candidate ordering where comparison order is not semantically meaningful;\n- normalize the response schema enough to reduce superficial presentation effects without rewriting away substantive evidence;\n- reveal provenance later when it is itself relevant evidence, for example for calibration histories or model-specific failure modes.\n\nBlinding is therefore an information-control technique, not a guarantee of independence.",
+      "domains": [
+        "epistemics",
+        "evaluation",
+        "multi-agent"
+      ],
+      "id": "GONI-EVIDENCE-20260916-EVALUATOR-BIAS",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/evidence/goni-evidence-20260916-evaluator-bias.md",
+      "proposition": "LLM-based evaluation is itself a fallible inference process and can be biased by self-recognition and candidate presentation order.",
+      "relations": [],
+      "sources": [
+        "SRC-PANICKSSERY2024-SELF-PREFERENCE",
+        "SRC-SHI2025-POSITION-BIAS"
+      ],
+      "status": "draft",
+      "title": "LLM evaluators exhibit self-preference and presentation-order bias",
+      "type": "evidence",
+      "uncertainty": "Bias magnitude depends on model, task, prompt, comparison format, and candidate distribution. Blinding and randomization mitigate specific channels but do not make evaluation unbiased."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Epistemic aggregation benefits from outcome-linked scoring and explicit mechanism assumptions\n\n## Reported foundations\n\nGneiting and Raftery (2007) formalize proper and strictly proper scoring rules for probabilistic forecasts. Such rules are appropriate when the relevant outcome is eventually observed and the system can evaluate whether stated probabilities were calibrated.\n\nPrelec (2004) develops the Bayesian Truth Serum for eliciting truthful subjective information when objective truth is not directly available. Its guarantees depend on assumptions about signal structure and beliefs and should not be transplanted mechanically into an LLM system.\n\nLadha (1995) provides a complementary warning: aggregation benefits decline when individual judgments are correlated.\n\n## Goni interpretation\n\nA multi-agent architecture induces incentives through its prompts, selection rules, reputation updates, and evaluation criteria even when the underlying models do not possess human-like enduring preferences. Rewarding agreement or selection can favor persuasive convergence. Rewarding later-validated correctness, calibrated probability, useful falsification, and accurately detected defects better aligns the evaluation layer with epistemic performance.\n\nWhere objective outcomes exist, Goni can accumulate domain-specific calibration histories using proper scoring rules. Where outcomes do not exist, peer-prediction ideas remain a research direction rather than a default mechanism.",
+      "domains": [
+        "epistemics",
+        "mechanism-design",
+        "calibration"
+      ],
+      "id": "GONI-EVIDENCE-20260916-INCENTIVE-AGGREGATION",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/evidence/goni-evidence-20260916-incentive-aggregation.md",
+      "proposition": "When outcomes become observable, proper scoring rules provide principled incentives for probabilistic honesty; when ground truth is unavailable, peer-prediction mechanisms are possible but rely on stronger assumptions.",
+      "relations": [],
+      "sources": [
+        "SRC-GNEITING2007-PROPER-SCORING",
+        "SRC-PRELEC2004-BAYESIAN-TRUTH-SERUM",
+        "SRC-LADHA1995-CORRELATED-VOTES"
+      ],
+      "status": "draft",
+      "title": "Epistemic aggregation benefits from outcome-linked scoring and explicit mechanism assumptions",
+      "type": "evidence",
+      "uncertainty": "LLMs do not automatically behave like strategic human forecasters with stable utilities or common priors. Mechanism-design results therefore motivate scoring architecture but do not transfer without empirical validation."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Multi-agent debate can amplify persuasion, conformity, and correlated error\n\n## Reported observations\n\nThe contemporary multi-agent debate literature does not support the simple proposition that more interaction monotonically improves epistemic quality.\n\n- Kraidia et al. (2026) report that a strategically persuasive adversarial agent can materially reduce collective accuracy and increase agreement on incorrect answers.\n- Cui et al. (2026) identify conformity-driven error propagation as a failure mode of consensus-oriented debate and propose a consensus-free alternative.\n- Smit et al. (2024) find that evaluated debate protocols do not reliably outperform simpler self-consistency and independent ensembling baselines without careful protocol tuning.\n- Choi et al. (2025) report conformity effects in multi-agent interactions, including influence from numerical majorities and stronger agents.\n- Okawa (2026) develops a physics-inspired model of biased collective consensus and reports that heterogeneity can suppress the transition. This item is a preprint and should be weighted accordingly.\n\n## Goni interpretation\n\nThese findings support treating **inter-agent influence as an epistemic coupling channel**, not as evidence by itself. Interaction can transmit useful criticism, but it can also transmit rhetoric, shared misconceptions, status-like signals, and majority pressure. A high-reliability architecture should therefore control when agents observe one another and should preserve pre-interaction commitments for later comparison.\n\n## Limitations\n\nThe evidence does not establish that all debate is harmful, that independent voting is always superior, or that a fixed number of deliberation rounds is optimal. Protocol effects are task- and model-dependent. The relevant architectural conclusion is narrower: **collective reasoning quality depends on the structure of information flow, not merely on the number of agents or discussion rounds**.",
+      "domains": [
+        "epistemics",
+        "multi-agent",
+        "reasoning"
+      ],
+      "id": "GONI-EVIDENCE-20260916-MAD-CONFORMITY",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/evidence/goni-evidence-20260916-mad-conformity.md",
+      "proposition": "Recent multi-agent LLM studies report that unconstrained interaction can propagate errors, induce conformity, and fail to outperform simpler independent aggregation reliably.",
+      "relations": [],
+      "sources": [
+        "SRC-KRAIDIA2026-ADVERSARIAL-MAD",
+        "SRC-CUI2026-FREE-MAD",
+        "SRC-SMIT2024-MAD",
+        "SRC-CHOI2025-GROUP-CONFORMITY",
+        "SRC-OKAWA2026-BIASED-CONSENSUS"
+      ],
+      "status": "draft",
+      "title": "Multi-agent debate can amplify persuasion, conformity, and correlated error",
+      "type": "evidence",
+      "uncertainty": "The cited studies use different models, tasks, debate protocols, adversarial assumptions, and evaluation regimes. They support a structural risk claim about interaction and conformity, not a universal claim that debate is inferior on every task."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
       "body": "# Source claim: apple2025-illusion-thinking\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\nKey: [[apple2025-illusion-thinking]]\nClaim: Evaluation suggests accuracy can collapse as problem complexity grows,\nwith reasoning effort rising then dropping despite remaining budget.\nRelevance:\n- Motivates complexity guardrails and unstuck primitives in runtime design.\nUsed in:\n- `blueprint/20-system/50-learning-loop.md` (Engineering constraint)",
       "domains": [
         "research"
@@ -17653,6 +17815,38 @@
       "title": "Evidence artifact links",
       "type": "experiment",
       "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Evaluate staged epistemic deliberation against debate and independent baselines\n\n## Research question\n\nAt a matched inference budget, does staged epistemic deliberation improve epistemic performance relative to simpler baselines?\n\n## Baselines\n\nAt minimum:\n\n- single-agent reasoning;\n- self-consistency or repeated independent sampling;\n- independent multi-model ensemble with no discussion;\n- conventional free-form multi-agent debate;\n- consensus-free or anti-conformity debate where available;\n- staged independent commitment, critique, meta-review, verification, and aggregation.\n\n## Experimental factors\n\nVary independently where feasible:\n\n- homogeneous versus heterogeneous model families;\n- shared versus distinct retrieval sources;\n- clean versus persuasive-adversary conditions;\n- reviewer identity visibility versus blinding;\n- randomized versus fixed candidate order;\n- one review layer versus one review plus one meta-review;\n- LLM-only verification versus external deterministic/primary-source verification.\n\n## Metrics\n\nUse task-appropriate outcome metrics together with:\n\n- final-task accuracy or utility;\n- Brier or logarithmic score when probabilistic outcomes are observable;\n- calibration error;\n- false-consensus rate;\n- adversarial robustness;\n- reviewer error-detection precision and recall where labels exist;\n- disagreement retention when evidence remains unresolved;\n- number and diversity of independent evidence lineages;\n- token cost, wall-clock latency, and marginal gain per additional stage.\n\nConditional mutual information is useful as a conceptual criterion for whether a review adds information beyond a solution, but it is generally latent in open-ended tasks. Operational evaluations should therefore use measurable proxies rather than claiming direct mutual-information estimates without an appropriate probabilistic model.\n\n## Falsification condition\n\nThe proposal should be weakened or rejected if, under matched budgets and representative tasks, it fails to outperform substantially simpler independent aggregation or produces reliability gains too small to justify its latency, complexity, and verification cost.",
+      "domains": [
+        "epistemics",
+        "multi-agent",
+        "evaluation"
+      ],
+      "id": "GONI-EXPERIMENT-20260916-EPISTEMIC-DELIBERATION",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/experiments/goni-experiment-20260916-epistemic-deliberation.md",
+      "proposition": "A matched-budget experiment should test whether staged epistemic deliberation improves reliability, calibration, and adversarial robustness relative to free-form debate, independent ensembling, self-consistency, and single-model baselines.",
+      "relations": [
+        {
+          "target": "GONI-PROPOSAL-20260916-STAGED-EPISTEMIC-DELIBERATION",
+          "type": "tests"
+        }
+      ],
+      "sources": [
+        "SRC-KRAIDIA2026-ADVERSARIAL-MAD",
+        "SRC-CUI2026-FREE-MAD",
+        "SRC-SMIT2024-MAD",
+        "SRC-ZHU2026-MAD-DIVERSITY",
+        "SRC-BAND2024-LINGUISTIC-CALIBRATION"
+      ],
+      "status": "draft",
+      "title": "Evaluate staged epistemic deliberation against debate and independent baselines",
+      "type": "experiment",
+      "uncertainty": "No result is claimed. The experiment must control model family, token/latency budget, task composition, retrieval/tool access, and adversarial conditions before comparing protocols."
     },
     {
       "aliases": [],
@@ -31340,6 +31534,59 @@
       "title": "Cross-repo references (policy)",
       "type": "proposal",
       "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
+    },
+    {
+      "aliases": [
+        "STAGED-EPISTEMIC-DELIBERATION"
+      ],
+      "artifacts": [],
+      "body": "# Staged epistemic deliberation for consequential multi-agent reasoning\n\n> Status boundary: this is a design proposal. It does not assert that Goni currently implements or validates the protocol.\n\nThe proposed default for high-consequence multi-agent reasoning is a staged information-flow protocol:\n\n1. **Independent commitment.** Solvers receive the same task contract but cannot inspect one another's outputs. Each commits claims, assumptions, uncertainty, evidence references, and falsification conditions.\n2. **Blinded independent critique.** Reviewers inspect frozen candidate solutions in randomized or otherwise controlled order. They cannot see peer reviews while writing their own.\n3. **Blinded meta-review.** Auditors test whether specific criticisms are logically and evidentially warranted. Auditors do not see one another's judgments before commitment.\n4. **External verification.** Whenever the task admits deterministic or empirical checks, the system moves from model opinion to tests, primary sources, computation, proof checking, execution, or observed outcomes.\n5. **Provenance-aware aggregation.** The synthesizer aggregates claims and evidence lineages rather than treating raw vote count as independent support.\n6. **Dissent preservation.** Material unresolved alternatives remain visible with the evidence or observation that would discriminate among them.\n\nThe architecture intentionally delays coupling. Interaction is introduced only after initial hypotheses are frozen, and each later layer has a distinct epistemic function.\n\nThe proposal does **not** prescribe universal anonymity. Full provenance remains in the system record. Identity and lineage information are selectively hidden from reviewers when they would create evaluation bias, then made available when they are relevant to calibration, conflict-of-interest, or failure-mode analysis.",
+      "domains": [
+        "epistemics",
+        "multi-agent",
+        "orchestration",
+        "audit"
+      ],
+      "id": "GONI-PROPOSAL-20260916-STAGED-EPISTEMIC-DELIBERATION",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/proposals/goni-proposal-20260916-staged-epistemic-deliberation.md",
+      "proposition": "For consequential multi-agent reasoning, Goni should evaluate staged independent commitment, blinded critique, blinded meta-review, external verification, provenance-aware aggregation, and explicit preservation of unresolved dissent instead of treating free-form consensus as the default.",
+      "relations": [
+        {
+          "target": "GONI-EVIDENCE-20260916-MAD-CONFORMITY",
+          "type": "derived_from"
+        },
+        {
+          "target": "GONI-EVIDENCE-20260916-DIVERSITY-CALIBRATION",
+          "type": "derived_from"
+        },
+        {
+          "target": "GONI-EVIDENCE-20260916-EVALUATOR-BIAS",
+          "type": "derived_from"
+        },
+        {
+          "target": "GONI-EVIDENCE-20260916-INCENTIVE-AGGREGATION",
+          "type": "derived_from"
+        },
+        {
+          "note": "Extends audit-grade epistemic discipline to multi-agent reasoning and review.",
+          "target": "GONI-SPEC-70C934F7D55A",
+          "type": "refines"
+        },
+        {
+          "note": "Makes the Pia/provenance layer more precise for multi-agent claims and reviews.",
+          "target": "GONI-SYNTHESIS-312D277D0C2E",
+          "type": "refines"
+        }
+      ],
+      "sources": [
+        "SRC-GONI20260916-EPISTEMIC-DELIBERATION-NOTE"
+      ],
+      "status": "draft",
+      "title": "Staged epistemic deliberation for consequential multi-agent reasoning",
+      "type": "proposal",
+      "uncertainty": "This is a design proposal, not an implemented or validated runtime protocol. The optimal number of agents, review assignments, blinding level, model heterogeneity, stopping rule, and verification budget remain empirical questions."
     },
     {
       "aliases": [],
@@ -47879,6 +48126,69 @@
       "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
     },
     {
+      "aliases": [
+        "EPISTEMIC-DELIBERATION-ARCHITECTURE"
+      ],
+      "artifacts": [],
+      "body": "# Epistemic Deliberation Architecture for Multi-Agent AI\n\n> **Research snapshot:** 2026-09-16  \n> **Scope:** conceptual and architectural synthesis  \n> **Implementation boundary:** this document does not claim that Goni currently implements the proposed protocol.\n\n## Abstract\n\nMulti-agent language-model systems are often motivated by an intuitive analogy to human deliberation: multiple reasoners exchange arguments and thereby converge toward better answers. Current evidence makes that intuition conditional. Interaction can improve error correction, but it can also propagate correlated mistakes, amplify persuasion, induce conformity, and create false confidence through repeated agreement. The central resource is therefore not the nominal number of agents but the quantity and quality of **independent epistemic signal** available to the system.\n\nThis synthesis develops a high-level architecture for reliable multi-agent reasoning in Goni. The proposed design separates solution generation, critique, meta-review, external verification, and aggregation into staged information-flow regimes. It treats claims rather than agents as the principal objects of evaluation; preserves provenance while selectively blinding evaluators; weights independent evidence lineages more heavily than repeated correlated agreement; and terminates recursive model review by grounding verifiable claims in external evidence. The architecture is best understood as **epistemic mechanism design**: the system controls information exposure, role incentives, evaluation procedures, and verification channels so that useful dissent and falsification survive longer than rhetorical consensus.\n\n## 1. Problem formulation: collective reasoning is not automatically collective intelligence\n\nA naive deliberation model assumes that additional interaction tends to reveal errors and improve collective accuracy. Multi-agent LLM research increasingly shows that this implication is not generally valid. Persuasive adversaries can degrade collective accuracy; initially correct agents can move toward incorrect group positions; and debate protocols do not reliably dominate simpler independent ensembling without careful design. At the same time, recent work suggests that initial diversity and calibrated confidence can improve collective reasoning under some protocols.\n\nThe architectural question is therefore not:\n\n> How many agents agree?\n\nIt is:\n\n> How much independent, discriminative evidence about the task survives the interaction protocol?\n\nThis distinction separates **social convergence** from **epistemic convergence**. The former measures agreement. The latter requires that agreement be explained by evidence that genuinely discriminates among competing hypotheses.\n\n## 2. Independence, correlation, and effective epistemic sample size\n\nClassical jury and ensemble arguments depend critically on assumptions about independence or controlled dependence. If several nominally distinct agents share training data, model architecture, retrieval sources, prompts, or failure modes, their errors may be correlated. Five agreeing outputs can therefore represent substantially less than five independent observations.\n\nA useful diagnostic heuristic, under an exchangeable equal-correlation approximation, is\n\n$$\nn_{\\mathrm{eff}} \\approx \\frac{n}{1+(n-1)\\rho},\n$$\n\nwhere $n$ is nominal agent count and $\\rho$ is average pairwise dependence. The expression is not a universal estimator for LLM systems. Its architectural role is to make one point explicit: **multiplicity without independence has diminishing epistemic value**.\n\nFor Goni, diversity should therefore be tracked as a property of evidence lineage, not merely model labels. Relevant axes include:\n\n- model family and training lineage;\n- prompt and reasoning procedure;\n- retrieval source and corpus provenance;\n- toolchain and verifier;\n- data modality;\n- sampling path;\n- domain specialization.\n\nThe architecture should seek sufficient heterogeneity to reduce shared blind spots while retaining enough common structure for outputs to be comparable.\n\n## 3. Delayed coupling as an information-flow control\n\nLet $J_{ij}$ denote the influence available from agent $j$ to agent $i$ during a reasoning phase. Free-form debate permits $J_{ij} \\neq 0$ early, before each agent has committed an independent hypothesis. A staged protocol instead enforces approximately\n\n$$\nJ_{ij}=0\n$$\n\nduring initial generation and only introduces controlled coupling after candidate solutions have been frozen.\n\nThe analogy to statistical-physics interaction models is useful but should remain an analogy. In Ising-like social-dynamics models, strong interaction terms can produce synchronization even when the external evidence fields do not warrant it. Recent preprint work applies a related formalism to LLM debate and reports collective transitions toward biased consensus under sufficiently strong conformity, with heterogeneity moderating the effect.\n\nThe design implication is narrower and more robust than the analogy: **delay exposure to peer reasoning until independent hypotheses exist as immutable comparison points**.\n\n## 4. Conditional information gain as a normative criterion\n\nLet\n\n- $T$ denote the unknown task-relevant truth or state;\n- $S$ a candidate solution;\n- $R$ a review;\n- $A$ a meta-review or audit.\n\nA review is epistemically valuable to the extent that it contributes information about $T$ beyond what was already contained in $S$. In information-theoretic notation, the idealized condition is\n\n$$\nI(T;R\\mid S)>0.\n$$\n\nLikewise, a meta-review adds epistemic value only insofar as\n\n$$\nI(T;A\\mid S,R)>0.\n$$\n\nThese expressions are conceptual criteria, not generally observable quantities in open-ended reasoning. Their purpose is to expose a common failure mode: additional tokens, additional agents, or additional layers of review can increase process volume without increasing information about the underlying state.\n\nA review that merely restates the solution, or an audit that merely endorses a review's style, may have near-zero marginal epistemic value even if it appears sophisticated.\n\n## 5. Blinding, anonymity, and evaluator bias\n\nAnonymity and independence are different properties.\n\nRemoving an author's name can reduce status-like or brand-like effects, but LLM evaluators may still infer authorship or model family from stylistic regularities. LLM-as-a-judge systems can also exhibit order effects. Goni should therefore use **selective blinding** rather than equate anonymity with unbiased evaluation.\n\nA structured candidate schema can reduce superficial variance while preserving substantive content:\n\n1. claim;\n2. evidence;\n3. assumptions;\n4. reasoning summary;\n5. uncertainty;\n6. falsification conditions;\n7. proposed answer or action.\n\nProvenance should remain fully recorded by the system even when temporarily hidden from reviewers. Randomized candidate order, balanced review assignments, and post-hoc bias checks should be treated as evaluation controls rather than guarantees.\n\n## 6. Epistemic mechanism design\n\nThe orchestration protocol induces a game through what it rewards, selects, remembers, and exposes.\n\nA system that rewards consensus implicitly favors outputs that are easy for other agents to endorse. A system that rewards later-validated correctness, calibrated probability, accurate defect detection, useful falsification, and independent evidence acquisition creates a different incentive surface.\n\nWhen objective outcomes eventually materialize, proper scoring rules provide a principled basis for evaluating probabilistic forecasts and calibration. When objective truth is unavailable, peer-prediction mechanisms such as Bayesian Truth Serum are theoretically relevant but depend on assumptions that cannot be presumed for LLM agents.\n\nAccordingly, Goni should distinguish:\n\n- **outcome-scored domains**, where empirical calibration can accumulate over time;\n- **externally verifiable domains**, where tools or primary evidence can close claims;\n- **partially verifiable domains**, where only subsets of claims can be checked;\n- **irreducibly judgmental domains**, where disagreement and uncertainty may need to remain unresolved.\n\n## 7. Staged epistemic deliberation\n\nThe proposed architecture is:\n\n$$\n\\boxed{\\text{Independent commitment}\n\\rightarrow \\text{Blinded critique}\n\\rightarrow \\text{Blinded meta-review}\n\\rightarrow \\text{External verification}\n\\rightarrow \\text{Provenance-aware synthesis}}\n$$\n\n### Stage 1: independent commitment\n\nEach solver receives the task contract and permitted evidence but not other solvers' outputs. It commits its answer, assumptions, evidence, uncertainty, and falsification conditions.\n\n### Stage 2: blinded critique\n\nReviewers inspect frozen solutions under controlled presentation. Reviews are generated independently of one another. The purpose is defect discovery, not consensus formation.\n\n### Stage 3: blinded meta-review\n\nAuditors evaluate whether specific criticisms are valid, material, and adequately supported. They do not observe peer-auditor judgments before commitment.\n\n### Stage 4: external verification\n\nWhere claims admit checks, the system moves from model opinion to reality-facing evidence: executable tests, formal computation, primary sources, retrieval with provenance, proof checking, measurements, or later observed outcomes.\n\nThis stage prevents an infinite regress of\n\n$$\nS \\rightarrow R \\rightarrow A \\rightarrow A^2 \\rightarrow A^3 \\rightarrow \\cdots\n$$\n\nbecause additional model opinion is not treated as the ultimate closure mechanism.\n\n### Stage 5: provenance-aware synthesis\n\nThe final synthesizer receives the frozen evidence graph. It aggregates support by claim and evidence lineage, identifies shared dependencies, distinguishes independent confirmations from correlated repetitions, and preserves unresolved alternatives.\n\n## 8. The claim, not the agent, is the primary epistemic object\n\nA conventional council treats an agent's answer or vote as the unit of aggregation. Goni should instead reason over a graph whose central object is closer to\n\n$$\n\\boxed{\\text{claim}+\\text{provenance}+\\text{evidence}+\\text{criticism}+\\text{audit}+\\text{verification state}}.\n$$\n\nA minimal claim record should be able to represent:\n\n| Field | Function |\n| --- | --- |\n| `claim_id` | stable identity |\n| `content` | proposition under evaluation |\n| `origin` | solver/model/tool provenance |\n| `evidence_refs` | supporting observations or sources |\n| `assumptions` | conditions required for the claim |\n| `falsifiers` | observations that would materially weaken it |\n| `critique_refs` | independent objections |\n| `audit_refs` | evaluations of those objections |\n| `verification_state` | unverified, partially verified, verified within stated scope, contradicted |\n| `confidence` | calibrated value only when meaningful |\n| `lineage` | model, retrieval, tool, source, and dependency ancestry |\n\nThis representation makes it possible for two agents to agree without the system double-counting a shared source, and for a minority claim to remain alive when it has stronger independent evidence than the majority.\n\n## 9. Aggregation without false precision\n\nThe synthesis layer may use a support function over factors such as independent evidence, external verification, calibration history, critique survival, and unresolved counterevidence. Unless the system has an explicit probabilistic model with validated calibration, that support value should **not** be presented as a posterior probability.\n\nThe aim is not to replace naive majority vote with an opaque numerical score. It is to preserve the structure needed for justified aggregation:\n\n- how many independent evidence lineages support the claim;\n- whether evidence is primary, derived, or circular;\n- whether critiques survived independent audit;\n- whether a deterministic or empirical check exists;\n- whether dissent remains materially unresolved;\n- how historically calibrated the contributing models and verifiers are in the relevant domain.\n\n## 10. Failure modes the architecture must preserve as explicit risks\n\nThe staged design reduces several failure channels but does not eliminate them:\n\n1. **correlated priors:** different models can inherit the same misconception;\n2. **retrieval monoculture:** nominally independent agents can consult the same flawed source;\n3. **reviewer monoculture:** critics can share the solver's blind spot;\n4. **self-recognition:** style can leak model identity despite nominal anonymity;\n5. **position and presentation bias:** evaluation can depend on ordering or verbosity;\n6. **verification monoculture:** several tools can share one upstream dataset or implementation;\n7. **independence theatre:** stochastic replicas of one model may appear more diverse than they are;\n8. **recursive reassurance:** additional review layers can create confidence without new evidence;\n9. **over-blinding:** hiding provenance can remove information that is legitimately relevant to reliability;\n10. **compute inflation:** elaborate review graphs can cost more than their marginal epistemic value.\n\nThe stopping rule should therefore be economic as well as epistemic: add another reasoning or verification layer only while its expected marginal information and error reduction justify its latency, cost, and complexity.\n\n## 11. Integration with Goni's existing architecture\n\nThis synthesis fits the existing Goni separation of cognition, governance, and evidence.\n\n- **Context isolation** should enforce stage-specific information barriers so initial solvers, reviewers, and auditors receive only the information their role requires.\n- **The Control Plane** should schedule assignments, freeze commitments, randomize evaluation order, and prevent premature cross-agent coupling.\n- **The Pia / epistemic-control layer** should carry claim provenance, source lineage, contradiction state, confidence, review state, and verification status.\n- **Execution tools** should provide the reality-facing verification mechanisms that terminate recursive model review.\n- **Receipts** should record stage transitions, model/tool identities, evidence references, and the basis for synthesis. Receipts establish reconstructability, not truth.\n- **Audit-grade work rules** should remain the governing discipline for scope declarations, evidence/inference separation, negative claims, and missing-evidence surfacing.\n\nThe proposal therefore adds no new sovereign authority plane. It specifies a reasoning protocol that can run inside Goni's existing governance boundaries.\n\n## 12. Falsifiable research hypotheses\n\nThe architecture should be treated as a research hypothesis rather than accepted by intuition.\n\n### H1: delayed coupling\n\nAt matched compute and token budgets, freezing independent initial hypotheses before cross-agent exposure should reduce conformity-driven error propagation relative to free-form debate.\n\n### H2: lineage diversity\n\nHeterogeneous evidence lineages should provide greater reliability gains than increasing the number of highly correlated replicas once nominal ensemble size passes a modest threshold.\n\n### H3: controlled evaluation\n\nBlinding, order randomization, and structured candidate schemas should reduce self-preference and presentation bias, subject to the countervailing cost of removing useful provenance.\n\n### H4: external closure\n\nAfter one competent critique and meta-review layer, external verification should usually provide greater marginal reliability than further recursive LLM review on claims that are directly verifiable.\n\n### H5: claim-centric aggregation\n\nClaim-level evidence graphs should preserve justified minority positions and unresolved uncertainty better than consensus-only aggregation without reducing performance on clearly decidable cases.\n\nThe accompanying experiment node specifies how these hypotheses should be tested against simpler baselines.\n\n## 13. Research conclusion\n\nThe central design principle is:\n\n> **Independent information before interaction. Claims before agents. Falsification before consensus. Verification before confidence.**\n\nMulti-agent reasoning should not be optimized for making a group agree. It should be optimized for preserving multiple plausible hypotheses long enough for discriminative evidence to act on them.\n\nThe deepest architectural shift is therefore from\n\n$$\n\\text{Who convinced the group?}\n$$\n\nto\n\n$$\n\\text{Which claims survived independent attempts at falsification, and what evidence lineage explains that survival?}\n$$\n\nThat framing is more compatible with Goni's broader doctrine of evidence-calibrated delegation: models may generate and critique hypotheses, but the system should preserve provenance, control information flow, distinguish inference from observation, and close verifiable disputes against the external world wherever possible.",
+      "domains": [
+        "epistemics",
+        "multi-agent",
+        "orchestration",
+        "research"
+      ],
+      "id": "GONI-SYNTHESIS-20260916-EPISTEMIC-DELIBERATION",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/syntheses/goni-synthesis-20260916-epistemic-deliberation.md",
+      "proposition": "For high-reliability multi-agent AI, the primary design objective is to preserve and aggregate independent evidence while controlling social coupling; consensus, agent count, confidence, and recursive review are only useful insofar as they add discriminative information about the underlying task.",
+      "relations": [
+        {
+          "target": "GONI-EVIDENCE-20260916-MAD-CONFORMITY",
+          "type": "synthesizes"
+        },
+        {
+          "target": "GONI-EVIDENCE-20260916-DIVERSITY-CALIBRATION",
+          "type": "synthesizes"
+        },
+        {
+          "target": "GONI-EVIDENCE-20260916-EVALUATOR-BIAS",
+          "type": "synthesizes"
+        },
+        {
+          "target": "GONI-EVIDENCE-20260916-INCENTIVE-AGGREGATION",
+          "type": "synthesizes"
+        },
+        {
+          "target": "GONI-PROPOSAL-20260916-STAGED-EPISTEMIC-DELIBERATION",
+          "type": "synthesizes"
+        },
+        {
+          "target": "GONI-EXPERIMENT-20260916-EPISTEMIC-DELIBERATION",
+          "type": "synthesizes"
+        }
+      ],
+      "sources": [
+        "SRC-GONI20260916-EPISTEMIC-DELIBERATION-NOTE",
+        "SRC-KRAIDIA2026-ADVERSARIAL-MAD",
+        "SRC-CUI2026-FREE-MAD",
+        "SRC-SMIT2024-MAD",
+        "SRC-ZHU2026-MAD-DIVERSITY",
+        "SRC-OKAWA2026-BIASED-CONSENSUS",
+        "SRC-CHOI2025-GROUP-CONFORMITY",
+        "SRC-PANICKSSERY2024-SELF-PREFERENCE",
+        "SRC-SHI2025-POSITION-BIAS",
+        "SRC-BAND2024-LINGUISTIC-CALIBRATION",
+        "SRC-LADHA1995-CORRELATED-VOTES",
+        "SRC-GNEITING2007-PROPER-SCORING",
+        "SRC-PRELEC2004-BAYESIAN-TRUTH-SERUM"
+      ],
+      "status": "draft",
+      "title": "Epistemic Deliberation Architecture for Multi-Agent AI",
+      "type": "synthesis",
+      "uncertainty": "This synthesis combines peer-reviewed results, a recent preprint, classical aggregation theory, and Goni-specific architectural deductions. Several mathematical expressions are explanatory models or heuristics rather than validated quantitative estimators for LLM collectives."
+    },
+    {
       "aliases": [],
       "artifacts": [],
       "body": "# Security constraints\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n## Security constraints\n- No secrets or credentials in repo.\n- No outbound telemetry by default; any outbound access must be explicit and documented.",
@@ -63043,6 +63353,54 @@
       "type": "supports"
     },
     {
+      "projection": "generated",
+      "source": "GONI-EVIDENCE-20260916-DIVERSITY-CALIBRATION",
+      "target": "GONI-PROPOSAL-20260916-STAGED-EPISTEMIC-DELIBERATION",
+      "type": "derives"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-EVIDENCE-20260916-DIVERSITY-CALIBRATION",
+      "target": "GONI-SYNTHESIS-20260916-EPISTEMIC-DELIBERATION",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-EVIDENCE-20260916-EVALUATOR-BIAS",
+      "target": "GONI-PROPOSAL-20260916-STAGED-EPISTEMIC-DELIBERATION",
+      "type": "derives"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-EVIDENCE-20260916-EVALUATOR-BIAS",
+      "target": "GONI-SYNTHESIS-20260916-EPISTEMIC-DELIBERATION",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-EVIDENCE-20260916-INCENTIVE-AGGREGATION",
+      "target": "GONI-PROPOSAL-20260916-STAGED-EPISTEMIC-DELIBERATION",
+      "type": "derives"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-EVIDENCE-20260916-INCENTIVE-AGGREGATION",
+      "target": "GONI-SYNTHESIS-20260916-EPISTEMIC-DELIBERATION",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-EVIDENCE-20260916-MAD-CONFORMITY",
+      "target": "GONI-PROPOSAL-20260916-STAGED-EPISTEMIC-DELIBERATION",
+      "type": "derives"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-EVIDENCE-20260916-MAD-CONFORMITY",
+      "target": "GONI-SYNTHESIS-20260916-EPISTEMIC-DELIBERATION",
+      "type": "synthesized_by"
+    },
+    {
       "projection": "authored",
       "source": "GONI-EVIDENCE-23EFDA500D02",
       "target": "SYS-03",
@@ -63608,6 +63966,18 @@
     },
     {
       "projection": "generated",
+      "source": "GONI-EXPERIMENT-20260916-EPISTEMIC-DELIBERATION",
+      "target": "GONI-SYNTHESIS-20260916-EPISTEMIC-DELIBERATION",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-EXPERIMENT-20260916-EPISTEMIC-DELIBERATION",
+      "target": "GONI-PROPOSAL-20260916-STAGED-EPISTEMIC-DELIBERATION",
+      "type": "tests"
+    },
+    {
+      "projection": "generated",
       "source": "GONI-EXPERIMENT-5ADAC18F09F9",
       "target": "SYS-02",
       "type": "synthesized_by"
@@ -63911,6 +64281,62 @@
       "source": "GONI-PRINCIPLE-9A3BCC1A464F",
       "target": "LSKR-01",
       "type": "synthesized_by"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-PROPOSAL-20260916-STAGED-EPISTEMIC-DELIBERATION",
+      "target": "GONI-EVIDENCE-20260916-DIVERSITY-CALIBRATION",
+      "type": "derived_from"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-PROPOSAL-20260916-STAGED-EPISTEMIC-DELIBERATION",
+      "target": "GONI-EVIDENCE-20260916-EVALUATOR-BIAS",
+      "type": "derived_from"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-PROPOSAL-20260916-STAGED-EPISTEMIC-DELIBERATION",
+      "target": "GONI-EVIDENCE-20260916-INCENTIVE-AGGREGATION",
+      "type": "derived_from"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-PROPOSAL-20260916-STAGED-EPISTEMIC-DELIBERATION",
+      "target": "GONI-EVIDENCE-20260916-MAD-CONFORMITY",
+      "type": "derived_from"
+    },
+    {
+      "note": "Extends audit-grade epistemic discipline to multi-agent reasoning and review.",
+      "projection": "authored",
+      "source": "GONI-PROPOSAL-20260916-STAGED-EPISTEMIC-DELIBERATION",
+      "target": "GONI-SPEC-70C934F7D55A",
+      "type": "refines"
+    },
+    {
+      "note": "Makes the Pia/provenance layer more precise for multi-agent claims and reviews.",
+      "projection": "authored",
+      "source": "GONI-PROPOSAL-20260916-STAGED-EPISTEMIC-DELIBERATION",
+      "target": "GONI-SYNTHESIS-312D277D0C2E",
+      "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-PROPOSAL-20260916-STAGED-EPISTEMIC-DELIBERATION",
+      "target": "GONI-SYNTHESIS-20260916-EPISTEMIC-DELIBERATION",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-PROPOSAL-20260916-STAGED-EPISTEMIC-DELIBERATION",
+      "target": "GONI-EXPERIMENT-20260916-EPISTEMIC-DELIBERATION",
+      "type": "tested_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-SPEC-70C934F7D55A",
+      "target": "GONI-PROPOSAL-20260916-STAGED-EPISTEMIC-DELIBERATION",
+      "type": "refined_by"
     },
     {
       "projection": "generated",
@@ -65233,6 +65659,42 @@
       "type": "synthesized_by"
     },
     {
+      "projection": "authored",
+      "source": "GONI-SYNTHESIS-20260916-EPISTEMIC-DELIBERATION",
+      "target": "GONI-EVIDENCE-20260916-DIVERSITY-CALIBRATION",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SYNTHESIS-20260916-EPISTEMIC-DELIBERATION",
+      "target": "GONI-EVIDENCE-20260916-EVALUATOR-BIAS",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SYNTHESIS-20260916-EPISTEMIC-DELIBERATION",
+      "target": "GONI-EVIDENCE-20260916-INCENTIVE-AGGREGATION",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SYNTHESIS-20260916-EPISTEMIC-DELIBERATION",
+      "target": "GONI-EVIDENCE-20260916-MAD-CONFORMITY",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SYNTHESIS-20260916-EPISTEMIC-DELIBERATION",
+      "target": "GONI-EXPERIMENT-20260916-EPISTEMIC-DELIBERATION",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SYNTHESIS-20260916-EPISTEMIC-DELIBERATION",
+      "target": "GONI-PROPOSAL-20260916-STAGED-EPISTEMIC-DELIBERATION",
+      "type": "synthesizes"
+    },
+    {
       "projection": "generated",
       "source": "GONI-SYNTHESIS-20D078B8208A",
       "target": "GONI-SYNTHESIS-02464E295AA4",
@@ -65453,6 +65915,12 @@
       "source": "GONI-SYNTHESIS-311C29570345",
       "target": "GONI-SYNTHESIS-0534045D4E2A",
       "type": "synthesized_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-SYNTHESIS-312D277D0C2E",
+      "target": "GONI-PROPOSAL-20260916-STAGED-EPISTEMIC-DELIBERATION",
+      "type": "refined_by"
     },
     {
       "projection": "generated",
@@ -69684,6 +70152,16 @@
       "url": "https://arxiv.org/abs/2501.09674"
     },
     {
+      "accessed": "2026-09-16",
+      "citation": "Band, N., Li, X., Ma, T., & Hashimoto, T. (2024). Linguistic Calibration of Long-Form Generations. Proceedings of ICML 2024, PMLR 235, 2732-2778.",
+      "id": "SRC-BAND2024-LINGUISTIC-CALIBRATION",
+      "kind": "academic",
+      "notes": "Shows that ordinary long-form model confidence statements are not automatically calibrated and develops a decision-oriented notion of linguistic calibration.",
+      "path": "sources/src-band2024-linguistic-calibration.yml",
+      "title": "Linguistic Calibration of Long-Form Generations",
+      "url": "https://proceedings.mlr.press/v235/band24a.html"
+    },
+    {
       "citation": "https://www.math.columbia.edu/~bayer/papers/Timestamp_BHS93.pdf",
       "id": "SRC-BAYER1993-TIMESTAMP",
       "kind": "academic",
@@ -69720,6 +70198,16 @@
       "url": "https://www.alphaxiv.org/abs/2026.dspark"
     },
     {
+      "accessed": "2026-09-16",
+      "citation": "Choi, M., Kim, K., Chae, S., & Baek, S. (2025). An Empirical Study of Group Conformity in Multi-Agent Systems. Findings of ACL 2025, 5123-5139. https://doi.org/10.18653/v1/2025.findings-acl.265",
+      "id": "SRC-CHOI2025-GROUP-CONFORMITY",
+      "kind": "academic",
+      "notes": "Reports group-conformity effects in simulated multi-agent discussions, including influence from numerical majorities and stronger agents.",
+      "path": "sources/src-choi2025-group-conformity.yml",
+      "title": "An Empirical Study of Group Conformity in Multi-Agent Systems",
+      "url": "https://aclanthology.org/2025.findings-acl.265/"
+    },
+    {
       "citation": "https://academic.oup.com/analysis/article-abstract/58/1/7/153111",
       "id": "SRC-CLARK1998-EXTENDED-MIND",
       "kind": "web",
@@ -69744,6 +70232,16 @@
       "notes": "Critique argues that some collapse results may be artifacts of evaluation design (token limits, misclassification, or unsatisfiable instances).",
       "path": "sources/src-comment2025-illusion-thinking.yml",
       "title": "comment2025-illusion-thinking"
+    },
+    {
+      "accessed": "2026-09-16",
+      "citation": "Cui, Y., Fu, H., Zhang, H., Wang, L., & Zuo, C. (2026). Free-MAD: Consensus-Free Multi-Agent Debate. Findings of ACL 2026, 31977-31997. https://doi.org/10.18653/v1/2026.findings-acl.1600",
+      "id": "SRC-CUI2026-FREE-MAD",
+      "kind": "academic",
+      "notes": "Reports conformity-driven error propagation and proposes a consensus-free, trajectory-scored debate protocol with an anti-conformity mechanism.",
+      "path": "sources/src-cui2026-free-mad.yml",
+      "title": "Free-MAD: Consensus-Free Multi-Agent Debate",
+      "url": "https://aclanthology.org/2026.findings-acl.1600/"
     },
     {
       "citation": "https://cyclonedx.org/capabilities/mlbom/",
@@ -69891,6 +70389,25 @@
       "url": "https://arxiv.org/pdf/1502.04015"
     },
     {
+      "accessed": "2026-09-16",
+      "citation": "Gneiting, T., & Raftery, A. E. (2007). Strictly Proper Scoring Rules, Prediction, and Estimation. Journal of the American Statistical Association, 102(477), 359-378. https://doi.org/10.1198/016214506000001437",
+      "id": "SRC-GNEITING2007-PROPER-SCORING",
+      "kind": "academic",
+      "notes": "Provides the formal basis for proper and strictly proper scoring rules, relevant when outcomes eventually become observable and probabilistic confidence can be scored.",
+      "path": "sources/src-gneiting2007-proper-scoring.yml",
+      "title": "Strictly Proper Scoring Rules, Prediction, and Estimation",
+      "url": "https://www.tandfonline.com/doi/abs/10.1198/016214506000001437"
+    },
+    {
+      "accessed": "2026-09-16",
+      "citation": "Internal Goni project discussion, 2026-09-16: independent solutions, blinded review, blinded audit of reviews, external verification, provenance-aware aggregation, and preservation of dissent.",
+      "id": "SRC-GONI20260916-EPISTEMIC-DELIBERATION-NOTE",
+      "kind": "internal",
+      "notes": "Internal conceptual input that motivated the synthesis. It is not external evidence and is kept distinct from the academic literature.",
+      "path": "sources/src-goni20260916-epistemic-deliberation-note.yml",
+      "title": "Goni internal design note: staged epistemic deliberation"
+    },
+    {
       "citation": "Legacy annotated bibliography key [[greshake2023-indirect-prompt-injection]]",
       "id": "SRC-GRESHAKE2023-INDIRECT-PROMPT-INJECTION",
       "kind": "web",
@@ -70025,6 +70542,16 @@
       "url": "https://www.inkandswitch.com/essay/local-first/"
     },
     {
+      "accessed": "2026-09-16",
+      "citation": "Kraidia, I., Qaddara, I., Almutairi, A., et al. (2026). When collaboration fails: persuasion driven adversarial influence in multi agent large language model debate. Scientific Reports, 16, 11640. https://doi.org/10.1038/s41598-026-42705-7",
+      "id": "SRC-KRAIDIA2026-ADVERSARIAL-MAD",
+      "kind": "academic",
+      "notes": "Reports that a strategically persuasive adversarial agent can materially reduce multi-agent debate accuracy and increase incorrect consensus. Supports treating rhetorical influence as an epistemic attack surface.",
+      "path": "sources/src-kraidia2026-adversarial-mad.yml",
+      "title": "When collaboration fails: persuasion driven adversarial influence in multi agent large language model debate",
+      "url": "https://www.nature.com/articles/s41598-026-42705-7"
+    },
+    {
       "citation": "https://pdos.csail.mit.edu/papers/flume-sosp07.pdf",
       "id": "SRC-KROHN2007-FLUME",
       "kind": "academic",
@@ -70041,6 +70568,16 @@
       "path": "sources/src-kwon2023-vllm.yml",
       "title": "kwon2023-vllm",
       "url": "https://arxiv.org/pdf/2309.06180"
+    },
+    {
+      "accessed": "2026-09-16",
+      "citation": "Ladha, K. K. (1995). Information pooling through majority-rule voting: Condorcet's jury theorem with correlated votes. Journal of Economic Behavior & Organization, 26(3), 353-372. https://doi.org/10.1016/0167-2681(94)00068-P",
+      "id": "SRC-LADHA1995-CORRELATED-VOTES",
+      "kind": "academic",
+      "notes": "Shows that the information-pooling advantage of majority rule degrades as correlation among votes increases, providing a classical analogue for correlated model errors.",
+      "path": "sources/src-ladha1995-correlated-votes.yml",
+      "title": "Information pooling through majority-rule voting: Condorcet's jury theorem with correlated votes",
+      "url": "https://www.sciencedirect.com/science/article/abs/pii/016726819400068P"
     },
     {
       "citation": "https://dl.acm.org/doi/pdf/10.1145/775265.775268",
@@ -70177,6 +70714,16 @@
       "url": "https://www.ntia.gov/programs-and-initiatives/artificial-intelligence/open-model-weights-report"
     },
     {
+      "accessed": "2026-09-16",
+      "citation": "Okawa, M. (2026). Emergence of Biased Consensus in Multi-Agent LLM Debates. arXiv:2608.02827.",
+      "id": "SRC-OKAWA2026-BIASED-CONSENSUS",
+      "kind": "academic",
+      "notes": "Preprint. Uses physics-inspired social-dynamics models to analyze transitions toward collective biased consensus and reports that agent heterogeneity can suppress the transition.",
+      "path": "sources/src-okawa2026-biased-consensus.yml",
+      "title": "Emergence of Biased Consensus in Multi-Agent LLM Debates",
+      "url": "https://arxiv.org/abs/2608.02827"
+    },
+    {
       "citation": "https://arxiv.org/abs/2310.08560",
       "id": "SRC-PACKER2023-MEMGPT",
       "kind": "academic",
@@ -70184,6 +70731,16 @@
       "path": "sources/src-packer2023-memgpt.yml",
       "title": "packer2023-memgpt",
       "url": "https://arxiv.org/abs/2310.08560"
+    },
+    {
+      "accessed": "2026-09-16",
+      "citation": "Panickssery, A., Bowman, S. R., & Feng, S. (2024). LLM Evaluators Recognize and Favor Their Own Generations. Advances in Neural Information Processing Systems 37. https://doi.org/10.52202/079017-2197",
+      "id": "SRC-PANICKSSERY2024-SELF-PREFERENCE",
+      "kind": "academic",
+      "notes": "Reports non-trivial self-recognition by LLM evaluators and evidence that self-recognition contributes to self-preference, limiting the protection offered by nominal anonymity.",
+      "path": "sources/src-panickssery2024-self-preference.yml",
+      "title": "LLM Evaluators Recognize and Favor Their Own Generations",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/7f1f0218e45f5414c79c0679633e47bc-Abstract-Conference.html"
     },
     {
       "citation": "https://arxiv.org/abs/2305.13048",
@@ -70202,6 +70759,16 @@
       "path": "sources/src-poli2023-hyena.yml",
       "title": "poli2023-hyena",
       "url": "https://arxiv.org/abs/2302.10866"
+    },
+    {
+      "accessed": "2026-09-16",
+      "citation": "Prelec, D. (2004). A Bayesian truth serum for subjective data. Science, 306(5695), 462-466. https://doi.org/10.1126/science.1102081",
+      "id": "SRC-PRELEC2004-BAYESIAN-TRUTH-SERUM",
+      "kind": "academic",
+      "notes": "Mechanism-design reference for eliciting truthful subjective reports without direct ground truth. Relevant only as a research direction because its assumptions need not hold for LLM agents.",
+      "path": "sources/src-prelec2004-bayesian-truth-serum.yml",
+      "title": "A Bayesian truth serum for subjective data",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/15486294/"
     },
     {
       "citation": "https://arxiv.org/abs/2605.10730",
@@ -70294,6 +70861,16 @@
       "url": "https://papers.nips.cc/paper/5656-hidden-technical-debt-in-machine-learning-syst"
     },
     {
+      "accessed": "2026-09-16",
+      "citation": "Shi, L., Ma, C., Liang, W., Diao, X., Ma, W., & Vosoughi, S. (2025). Judging the Judges: A Systematic Study of Position Bias in LLM-as-a-Judge. IJCNLP-AACL 2025. https://doi.org/10.18653/v1/2025.ijcnlp-long.18",
+      "id": "SRC-SHI2025-POSITION-BIAS",
+      "kind": "academic",
+      "notes": "Finds systematic position bias across multiple LLM judges and tasks, motivating randomized ordering and evaluator-bias controls.",
+      "path": "sources/src-shi2025-position-bias.yml",
+      "title": "Judging the Judges: A Systematic Study of Position Bias in LLM-as-a-Judge",
+      "url": "https://aclanthology.org/2025.ijcnlp-long.18/"
+    },
+    {
       "citation": "https://arxiv.org/abs/2002.04087",
       "id": "SRC-SHNEIDERMAN2020-HCAI-IJHCI",
       "kind": "academic",
@@ -70328,6 +70905,16 @@
       "path": "sources/src-smagul2023-rpa-review.yml",
       "title": "smagul2023-rpa-review",
       "url": "https://ceur-ws.org/Vol-3966/W2Paper2.pdf"
+    },
+    {
+      "accessed": "2026-09-16",
+      "citation": "Smit, A. P., Grinsztajn, N., Duckworth, P., Barrett, T. D., & Pretorius, A. (2024). Should we be going MAD? A Look at Multi-Agent Debate Strategies for LLMs. Proceedings of ICML 2024, PMLR 235, 45883-45905.",
+      "id": "SRC-SMIT2024-MAD",
+      "kind": "academic",
+      "notes": "Finds that evaluated multi-agent debate protocols do not reliably outperform simpler self-consistency or ensembling baselines without careful tuning.",
+      "path": "sources/src-smit2024-mad.yml",
+      "title": "Should we be going MAD? A Look at Multi-Agent Debate Strategies for LLMs",
+      "url": "https://proceedings.mlr.press/v235/smit24a.html"
     },
     {
       "citation": "https://spdx.dev/about/overview/",
@@ -70517,6 +71104,16 @@
       "path": "sources/src-zhou2023-webarena.yml",
       "title": "zhou2023-webarena",
       "url": "https://arxiv.org/abs/2307.13854"
+    },
+    {
+      "accessed": "2026-09-16",
+      "citation": "Zhu, X., Zhang, C., Chi, Y., Stafford, T., Collier, N., & Vlachos, A. (2026). Demystifying Multi-Agent Debate: The Role of Confidence and Diversity. Findings of ACL 2026, 33909-33930. https://doi.org/10.18653/v1/2026.findings-acl.1694",
+      "id": "SRC-ZHU2026-MAD-DIVERSITY",
+      "kind": "academic",
+      "notes": "Identifies initial viewpoint diversity and explicit calibrated confidence communication as important mechanisms absent from vanilla homogeneous debate.",
+      "path": "sources/src-zhu2026-mad-diversity.yml",
+      "title": "Demystifying Multi-Agent Debate: The Role of Confidence and Diversity",
+      "url": "https://aclanthology.org/2026.findings-acl.1694/"
     }
   ]
 }
