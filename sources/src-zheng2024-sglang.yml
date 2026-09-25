@@ -1,0 +1,6 @@
+id: SRC-ZHENG2024-SGLANG
+title: Zheng et al. 2024 - SGLang
+kind: academic
+citation: "Zheng, L., Yin, L., Xie, Z., Sun, C., Huang, J., Yu, C. H., Cao, S., Kozyrakis, C., Stoica, I., Gonzalez, J. E., Barrett, C., & Sheng, Y. (2024). SGLang: Efficient Execution of Structured Language Model Programs. Advances in Neural Information Processing Systems 37. https://doi.org/10.52202/079017-2000"
+url: https://proceedings.neurips.cc/paper_files/paper/2024/hash/724be4472168f31ba1c9ac630f15dec8-Abstract-Conference.html
+notes: Introduces RadixAttention for KV-cache reuse in structured language-model programs.

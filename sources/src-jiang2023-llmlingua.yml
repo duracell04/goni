@@ -1,0 +1,6 @@
+id: SRC-JIANG2023-LLMLINGUA
+title: Jiang et al. 2023 - LLMLingua
+kind: academic
+citation: "Jiang, H., Wu, Q., Lin, C.-Y., Yang, Y., & Qiu, L. (2023). LLMLingua: Compressing Prompts for Accelerated Inference of Large Language Models. Proceedings of EMNLP 2023. https://doi.org/10.18653/v1/2023.emnlp-main.825"
+url: https://aclanthology.org/2023.emnlp-main.825/
+notes: Budget-controlled coarse-to-fine prompt compression for reducing inference cost.

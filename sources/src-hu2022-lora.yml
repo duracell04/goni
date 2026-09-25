@@ -1,0 +1,6 @@
+id: SRC-HU2022-LORA
+title: Hu et al. 2022 - LoRA
+kind: academic
+citation: "Hu, E. J., Shen, Y., Wallis, P., Allen-Zhu, Z., Li, Y., Wang, S., Wang, L., & Chen, W. (2022). LoRA: Low-Rank Adaptation of Large Language Models. International Conference on Learning Representations."
+url: https://openreview.net/forum?id=nZeVKeeFYf9
+notes: Parameter-efficient adaptation by learning low-rank updates while freezing base-model weights.

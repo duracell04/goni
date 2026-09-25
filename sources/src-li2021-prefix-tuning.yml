@@ -1,0 +1,6 @@
+id: SRC-LI2021-PREFIX-TUNING
+title: Li and Liang 2021 - Prefix-Tuning
+kind: academic
+citation: "Li, X. L., & Liang, P. (2021). Prefix-Tuning: Optimizing Continuous Prompts for Generation. Proceedings of ACL-IJCNLP 2021, 4582-4597. https://doi.org/10.18653/v1/2021.acl-long.353"
+url: https://aclanthology.org/2021.acl-long.353/
+notes: Learns continuous task-specific prefixes while keeping base-model parameters frozen.
