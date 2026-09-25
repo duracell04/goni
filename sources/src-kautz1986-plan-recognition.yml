@@ -1,0 +1,13 @@
+id: SRC-KAUTZ1986-PLAN-RECOGNITION
+title: kautz1986-plan-recognition
+kind: academic
+citation: >-
+  Kautz, H. A., & Allen, J. F. (1986). Generalized Plan Recognition.
+  Proceedings of the Fifth National Conference on Artificial Intelligence
+  (AAAI-86), 32–37.
+url: https://cdn.aaai.org/AAAI/1986/AAAI86-006.pdf
+accessed: '2026-09-26'
+notes: >-
+  Develops plan recognition while preserving classes of possible plans instead
+  of prematurely committing to one interpretation. Relevant to Goni's
+  prospective task hypotheses under ambiguous observed behavior.

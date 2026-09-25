@@ -1,0 +1,15 @@
+id: SRC-CERAVOLO2024-PREDICTIVE-PROCESS-MONITORING
+title: ceravolo2024-predictive-process-monitoring
+kind: academic
+citation: >-
+  Ceravolo, P., Comuzzi, M., De Weerdt, J., Di Francescomarino, C., & Maggi,
+  F. M. (2024). Predictive process monitoring: concepts, challenges, and future
+  research directions. Process Science, 1, 2.
+  https://doi.org/10.1007/s44311-024-00002-4
+url: https://doi.org/10.1007/s44311-024-00002-4
+accessed: '2026-09-26'
+notes: >-
+  Reviews predictive process monitoring as runtime prediction over active
+  process cases, including prediction of next events, outcomes, and remaining
+  time. Provides process-science grounding for Goni next-work prediction from
+  execution trajectories.
