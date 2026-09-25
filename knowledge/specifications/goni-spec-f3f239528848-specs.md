@@ -4,14 +4,14 @@ title: Specs
 type: specification
 status: draft
 implementation_state: specified_only
-proposition: Agent definition (AGENT-DEF-01) Agent manifest (AGENT-MANIFEST-01) Correction Delta Compiler (CDC-01) Delegation interface (DELEG-INT-01) Delegation and autonomy (DELEG-01) Delegated Agent Treasury (DAT-01) Embodied Robot Control Plane (ROBOT-01) Vision, memory, and actuation boundaries (BOUND-01) Agent store governance (AGENT-STORE-01)
+proposition: Canonical catalogue of Goni normative contracts, including governed skills, authority-aware context compilation, model-specific inference serialization, cache reuse, and bounded context-miss recovery.
 domains:
 - specs
 aliases: []
 relations: []
 sources: []
 artifacts: []
-uncertainty: Preserved from the legacy draft without status promotion or newly inferred evidence strength.
+uncertainty: Preserved from the legacy draft and extended with newly authored specified-only contracts.
 legacy:
 - path: blueprint/30-specs/00-index.md
   heading: Specs
@@ -44,6 +44,11 @@ legacy:
 - [Latent state contract](/blueprint/30-specs/latent-state-contract.md) (LSC-01)
 - [Context Gravity Graph](/blueprint/30-specs/context-gravity-graph.md) (CGG-01)
 - [Governed memory retrieval](/blueprint/30-specs/memory-retrieval.md) (MEM-RETR-01)
+- Authority-Aware Context Compilation (CTX-COMP-01)
+- Governed Skill Registry (SKILL-REG-01)
+- Model-Specific Inference Frame (INF-FRAME-01)
+- Prefix and KV Reuse (CACHE-01)
+- Bounded Context-Miss Resolution (CTX-MISS-01)
 - [Model bundle registry governance](/blueprint/30-specs/model-registry.md) (MODEL-REG-01)
 - [Network gate and anonymity](/blueprint/30-specs/network-gate-and-anonymity.md) (NET-01)
 - [Receipts](/blueprint/30-specs/receipts.md) (REC-01)

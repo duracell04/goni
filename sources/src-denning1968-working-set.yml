@@ -1,0 +1,6 @@
+id: SRC-DENNING1968-WORKING-SET
+title: Denning 1968 - The Working Set Model for Program Behavior
+kind: academic
+citation: "Denning, P. J. (1968). The Working Set Model for Program Behavior. Communications of the ACM, 11(5), 323-333. https://doi.org/10.1145/363095.363141"
+url: https://doi.org/10.1145/363095.363141
+notes: Classical operating-systems working-set model for dynamic management of paged memory.

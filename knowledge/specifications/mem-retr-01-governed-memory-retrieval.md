@@ -43,3 +43,12 @@ The term RAG may still appear in compatibility notes, UI labels, and supplier
 comparisons. In Goni's architecture, the stronger layer name is Knowledge &
 Context Engineering because retrieval is only one stage in an audit-capable
 context pipeline.
+
+## Retrieval output boundary
+
+`MEM-RETR-01` supplies governed candidate evidence to `CTX-COMP-01`.
+Retrieval rank, graph salience, embedding similarity, or exact-match score does
+not by itself determine the final model context. The Context Compiler combines
+candidate evidence with Work Order requirements, eligible procedural material,
+visibility constraints, compression policy, and resource budgets before
+materialization.

@@ -4,7 +4,7 @@ title: 3.5 Cognitive resource scheduling (KV cache as memory object)
 type: synthesis
 status: draft
 implementation_state: specified_only
-proposition: 'Interactive agent scheduling must include LLM-serving memory realities: KV cache residency, representation size, fragmentation, bandwidth, admission, and eviction affect tail latency and should be evaluated as explicit scheduling variables under mixed workloads.'
+proposition: 'Interactive agent scheduling must include LLM-serving memory realities: prefix reuse, KV residency, representation size, fragmentation, bandwidth, admission, retention, and eviction affect latency and should be evaluated as distinct scheduling variables under mixed workloads.'
 domains:
 - agent
 - kernel
@@ -21,8 +21,10 @@ sources:
 - SRC-KWON2023-VLLM
 - SRC-ZHANG2023-H2O
 - SRC-DEEPSEEK2024-V2
+- SRC-GIM2024-PROMPT-CACHE
+- SRC-ZHENG2024-SGLANG
 artifacts: []
-uncertainty: PagedAttention, heavy-hitter retention, and MLA address different parts of the KV problem. Their reported benefits do not establish one universal Goni cache policy; model, workload, hardware, and backend effects must be measured independently.
+uncertainty: Prefix reuse, PagedAttention, heavy-hitter retention, and MLA address different parts of the inference-memory problem. Their reported benefits do not establish one universal Goni cache policy; model, workload, hardware, and backend effects must be measured independently.
 legacy:
 - path: blueprint/20-system/40-agentic-kernel-foundations.md
   heading: 3.5 Cognitive resource scheduling (KV cache as memory object)
@@ -33,29 +35,36 @@ legacy:
 
 > Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.
 
-### 3.5 Cognitive resource scheduling (KV cache as memory object)
-
 Interactive agent scheduling must include LLM-serving memory realities:
 
+- compatible prefix reuse can reduce repeated prefill work;
 - KV-cache residency and fragmentation affect tail latency;
 - scheduler decisions should include memory residency and bandwidth;
-- admission and eviction policy must be explicit under mixed workloads;
+- admission, retention, and eviction policy must be explicit under mixed workloads;
 - representation size and sequence retention are separate optimization axes;
 - irregular sparsity must be evaluated against hardware locality, batching, and
   kernel overhead.
 
-## Three distinct KV optimization axes
+## Four distinct optimization axes
 
-Goni should keep three questions separate.
+### 1. Prefix reuse
 
-### 1. Residency and paging
+Prompt Cache and SGLang/RadixAttention demonstrate that recurring compatible
+prefixes can reuse previously computed attention state and reduce repeated
+prefill work on evaluated workloads.
+
+Goni treats reuse as an exact runtime-compatibility problem under `CACHE-01`,
+not as semantic similarity. Cache accounting SHOULD distinguish logical prompt
+tokens from fresh prefill tokens.
+
+### 2. Residency and paging
 
 PagedAttention demonstrates that KV memory management and fragmentation can
 materially affect serving throughput. This supports treating cache residency as
 a first-class scheduler concern rather than an opaque runtime detail.
 [[kwon2023-vllm]]
 
-### 2. Sequence selection
+### 3. Sequence selection
 
 H2O reports heavy-hitter behavior in cumulative attention and proposes retaining
 important historical tokens together with recent tokens under a constrained
@@ -81,7 +90,7 @@ Long-range dependencies can reactivate previously cold states, so aggressive
 retention policies need recall-oriented candidate mechanisms, protected recent
 state, or another measured recovery path.
 
-### 3. Representation compression
+### 4. Representation compression
 
 DeepSeek-V2's Multi-head Latent Attention demonstrates an architecture-specific
 method for reducing how many bytes of KV representation must be retained.
@@ -100,8 +109,8 @@ approx
 ]
 
 A runtime may improve one axis without changing the others. Goni SHOULD measure
-them separately so a gain from latent representation compression is not
-mistaken for a gain from eviction, and vice versa.
+the axes separately so a gain from prefix reuse, representation compression, or
+eviction is attributed to the correct mechanism.
 
 ## Variable fidelity as a research direction
 
@@ -133,6 +142,7 @@ Therefore evaluation SHOULD report end-to-end effects on:
 
 - TTFT and decode latency;
 - throughput;
+- fresh prefill and reused-prefix accounting where observable;
 - bytes moved from accelerator memory;
 - peak KV memory;
 - GPU or accelerator occupancy where observable;
@@ -145,13 +155,7 @@ kernels.
 
 ## Goni boundary
 
-KV state is cognitive working state. Approximate retention or compression may
-change what the model can recall during reasoning, but it MUST NOT become the
-sole source of kernel authority for mandates, capabilities, policy, approval,
-or revocation.
-
-Related foundations:
-
-- PagedAttention and memory-management analysis in vLLM [[kwon2023-vllm]];
-- H2O heavy-hitter KV-cache retention [[zhang2023-h2o]];
-- DeepSeek-V2 Multi-head Latent Attention [[deepseek2024-v2]].
+KV state is cognitive working state. Approximate retention, compression, or
+reuse may change what the model can recall or how cheaply it reasons, but none
+of these mechanisms may become the sole source of kernel authority for
+mandates, capabilities, policy, approval, or revocation.
