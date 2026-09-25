@@ -1,0 +1,6 @@
+id: SRC-JIANG2024-LONGLLMLINGUA
+title: Jiang et al. 2024 - LongLLMLingua
+kind: academic
+citation: "Jiang, H., Wu, Q., Luo, X., Li, D., Lin, C.-Y., Yang, Y., & Qiu, L. (2024). LongLLMLingua: Accelerating and Enhancing LLMs in Long Context Scenarios via Prompt Compression. Proceedings of ACL 2024, 1658-1677. https://doi.org/10.18653/v1/2024.acl-long.91"
+url: https://aclanthology.org/2024.acl-long.91/
+notes: Long-context prompt compression addressing computational cost, position bias, and key-information density.

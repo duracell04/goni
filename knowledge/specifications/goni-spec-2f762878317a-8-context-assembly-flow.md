@@ -36,15 +36,20 @@ add graph traversal as a bounded retrieval stage:
 4. Score candidates with the salience function.
 5. Filter by permission, quoteability, validity, conflict state, source trust,
    and parser confidence.
-6. Rerank candidates and run existing submodular selection under token budget.
-7. Choose compression forms for selected candidates.
-8. Compile a `ContextPack` for the Work Order.
-9. Materialize only selected evidence into the Context Plane as `ContextItems`
-   or prompt material derived from selected refs.
-10. Cite selected evidence with source waypoints sufficient for audit.
-11. Emit receipts for memory reads, graph retrieval basis, omissions,
-    compression choices, and context materialization when retrieval affects
-    output or execution.
+6. Resolve eligible skill fragments under `SKILL-REG-01`, including required
+   dependency closure.
+7. Rerank candidates and run existing submodular or promoted alternative
+   selection under token budget.
+8. Choose compression forms for selected candidates.
+9. Invoke `CTX-COMP-01` to compile selected evidence, skill fragments,
+   compression choices, visibility constraints, and budgets into a
+   model-independent `ContextPack` for the Work Order.
+10. Materialize only selected evidence and procedural material into the Context
+    Plane as `ContextItems` or prompt material derived from selected refs.
+11. Cite selected evidence with source waypoints sufficient for audit.
+12. Emit receipts for memory reads, graph retrieval basis, skill
+    materialization, omissions, compression choices, and context materialization
+    when those choices affect output or execution.
 
 Graph traversal is not a bypass around policy. It is one retrieval signal among
 dense, sparse, exact-match, metadata, and reranking signals.

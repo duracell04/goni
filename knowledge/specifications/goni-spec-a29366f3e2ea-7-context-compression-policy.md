@@ -4,14 +4,17 @@ title: 7. Context Compression Policy
 type: specification
 status: draft
 implementation_state: specified_only
-proposition: Context assembly often finds more relevant material than fits in the prompt window.
+proposition: Context assembly may compress selected material only while preserving the fidelity required by the Work Order; compression is a budgeted representation choice rather than an objective in itself.
 domains:
 - specs
 aliases: []
 relations: []
-sources: []
+sources:
+- SRC-JIANG2023-LLMLINGUA
+- SRC-JIANG2024-LONGLLMLINGUA
+- SRC-LI2023-SELECTIVE-CONTEXT
 artifacts: []
-uncertainty: Preserved from the legacy draft without status promotion or newly inferred evidence strength.
+uncertainty: Published prompt-compression gains are model- and workload-specific; Goni requires matched evaluation before promoting compression thresholds or strategies.
 legacy:
 - path: blueprint/30-specs/context-gravity-graph.md
   heading: 7. Context Compression Policy
@@ -32,14 +35,35 @@ Allowed compression forms:
 
 | Form | Use |
 | --- | --- |
-| `raw_excerpt` | Source-grounded tasks that need exact wording or citations. |
+| `raw_excerpt` | Source-grounded tasks that need exact wording, citation spans, or evidentiary fidelity. |
 | `summary` | General tasks where bounded prose is sufficient. |
 | `latent_summary` | Compact state or derived memory where raw text should not be sent. |
-| `decision_only` | Tasks that need the resulting decision or rule, not the full discussion. |
+| `decision_only` | Tasks that need the resulting decision or rule rather than the full discussion. |
 | `citation_only` | Tasks that need a waypoint/reference but not content in the model context. |
 
 The Work Order type, risk class, output shape, permission scope, quoteability,
-and token budget SHOULD drive compression choice. A legal memo may prefer
-`raw_excerpt`; a style-sensitive social draft may prefer `summary` or
-`latent_summary`; a high-risk action may include `citation_only` refs for
-audit while withholding sensitive content from the model.
+token budget, and required fidelity SHOULD drive compression choice.
+
+The governing optimization rule is:
+
+[
+oxed{
+	ext{compress while marginal resource savings exceed expected information loss}
+}
+]
+
+subject to the Work Order's fidelity threshold. Exact language, decisive
+evidence, legally operative text, contradictory material, and audit-critical
+source spans may require `raw_excerpt` even when a shorter representation is
+available.
+
+LLMLingua, LongLLMLingua, and Selective Context provide empirical evidence that
+prompt compression can improve efficiency on evaluated workloads. They do not
+establish universal compression ratios or justify discarding low-frequency
+evidence. Goni MUST evaluate omission of decisive evidence, citation fidelity,
+task quality, latency, and resource savings together.
+
+A legal memo may therefore prefer `raw_excerpt`; a style-sensitive social
+draft may prefer `summary` or `latent_summary`; a high-risk action may carry
+`citation_only` audit refs while withholding sensitive content from the model
+when the task can proceed without disclosure.

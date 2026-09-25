@@ -1,0 +1,6 @@
+id: SRC-LI2023-SELECTIVE-CONTEXT
+title: Li et al. 2023 - Selective Context
+kind: academic
+citation: "Li, Y., Dong, B., Guerin, F., & Lin, C. (2023). Compressing Context to Enhance Inference Efficiency of Large Language Models. Proceedings of EMNLP 2023, 6342-6353. https://doi.org/10.18653/v1/2023.emnlp-main.391"
+url: https://aclanthology.org/2023.emnlp-main.391/
+notes: Selective Context prunes redundant context to reduce inference memory and latency.

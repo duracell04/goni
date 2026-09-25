@@ -1,0 +1,6 @@
+id: SRC-GIM2024-PROMPT-CACHE
+title: Gim et al. 2024 - Prompt Cache
+kind: academic
+citation: "Gim, I., Chen, G., Lee, S.-s., Sarda, N., Khandelwal, A., & Zhong, L. (2024). Prompt Cache: Modular Attention Reuse for Low-Latency Inference. Proceedings of Machine Learning and Systems, 6."
+url: https://proceedings.mlsys.org/paper_files/paper/2024/hash/a66caa1703fe34705a4368c3014c1966-Abstract-Conference.html
+notes: Reuses precomputed attention states for explicitly defined recurring prompt modules.

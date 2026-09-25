@@ -52,3 +52,10 @@ legacy:
 - [Sync policies](/blueprint/30-specs/sync-policies.md) (SYNC-01)
 - [Tool capability API](/blueprint/30-specs/tool-capability-api.md) (TOOL-01)
 - [Visual Intelligence Plane](/blueprint/30-specs/visual-intelligence-plane.md) (VIS-01)
+
+## Added canonical knowledge-graph specifications
+- [Governed Skill Registry](/knowledge/specifications/skill-reg-01-governed-skill-registry.md) (SKILL-REG-01)
+- [Authority-Aware Context Compilation](/knowledge/specifications/ctx-comp-01-authority-aware-context-compilation.md) (CTX-COMP-01)
+- [Model-Specific Inference Frame](/knowledge/specifications/inf-frame-01-model-specific-inference-frame.md) (INF-FRAME-01)
+- [Prefix and KV Reuse](/knowledge/specifications/cache-01-prefix-and-kv-reuse.md) (CACHE-01)
+- [Bounded Context-Miss Resolution](/knowledge/specifications/ctx-miss-01-bounded-context-miss-resolution.md) (CTX-MISS-01)
