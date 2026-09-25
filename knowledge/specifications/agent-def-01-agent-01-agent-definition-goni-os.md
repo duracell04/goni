@@ -4,16 +4,18 @@ title: AGENT-01 - Agent Definition (Goni OS)
 type: specification
 status: draft
 implementation_state: specified_only
-proposition: "\uFEFF--- id: AGENT-DEF-01 type: SPEC status: specified_only DOC-ID: AGENT-DEF-01 Status: Specified only / roadmap This document defines what an agent is in Goni OS and how it interacts with the kernel."
+proposition: "An agent is a persistent governed userland process defined by identity, state, memory, mandate, policy, tools, budgets, and workflow; model or mechanism selection is a replaceable cognitive dependency and does not define agent identity."
 domains:
 - agent
 - specs
 aliases:
 - AGENT-DEFINITION
-relations: []
+relations:
+- type: refined_by
+  target: AGENT-MODEL-ORTHO-01
 sources: []
 artifacts: []
-uncertainty: Preserved from the legacy draft without status promotion or newly inferred evidence strength.
+uncertainty: "This contract defines identity and responsibility boundaries, not a runtime process implementation. Concrete lifecycle and scheduler semantics remain governed elsewhere."
 legacy:
 - path: blueprint/30-specs/agent-definition.md
   heading: AGENT-01 - Agent Definition (Goni OS)
@@ -22,17 +24,26 @@ legacy:
 
 # AGENT-01 - Agent Definition (Goni OS)
 
-> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.
+An agent is a governed userland process bound to a principal-defined purpose and
+kernel-mediated authority.
 
-# AGENT-01 - Agent Definition (Goni OS)
-﻿---
-id: AGENT-DEF-01
-type: SPEC
-status: specified_only
----
-DOC-ID: AGENT-DEF-01
-Status: Specified only / roadmap
+Its persistent identity is determined by properties such as:
 
-This document defines what an agent is in Goni OS and how it interacts with the
-kernel. Agents are userland processes; cognition is a kernel substrate; solver
-calls are budgeted interrupts.
+- agent identity and role;
+- Work Order or delegated objective;
+- state and memory references;
+- mandate and policy scope;
+- tool and capability eligibility;
+- budgets and deadlines;
+- workflow or cognitive-graph state;
+- provenance and receipts.
+
+A model is not the agent. Models, classifiers, decision models, solvers,
+retrievers, verifiers, and other cognitive mechanisms are replaceable resources
+that the agent may invoke through the harness and router.
+
+Changing the selected model or mechanism does not, by itself, change the
+agent's identity, authority, memory ownership, mandate, or accountability.
+
+Agents are userland processes; cognition is a governed substrate; expensive
+solver or model calls remain budgeted operations.
