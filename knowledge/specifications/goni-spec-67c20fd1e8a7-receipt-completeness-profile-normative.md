@@ -8,7 +8,13 @@ proposition: trace_id identifies the request/run trace for correlation across sp
 domains:
 - specs
 aliases: []
-relations: []
+relations:
+- type: depends_on
+  target: ANTICIPATED-WORKORDER-01
+- type: depends_on
+  target: AUTHORIZED-PLAN-PREFIX-01
+- type: depends_on
+  target: ESCALATION-HANDOVER-01
 sources: []
 artifacts: []
 uncertainty: Preserved from the legacy draft without status promotion or newly inferred evidence strength.
@@ -85,6 +91,9 @@ legacy:
   state, and rollback/repair refs. It must not store raw private maps, raw
   video, raw audio, full sensor logs, unrestricted telemetry, or unbounded
   transcripts by default.
+- `anticipation_basis` records prospective-work provenance when anticipation affected execution or preparation: origin kind, trigger refs, prediction confidence, prediction-basis refs, competing objective refs, workflow-template ref, and predicted-step refs. It must keep prediction confidence distinct from authority state.
+- `authority_prefix_basis` records the authorized-plan-prefix decision: policy and mandate refs, capability refs, permitted prefix length, first unresolved commit boundary, and whether the remaining plan was staged, deferred, blocked, or escalated.
+- `escalation_basis` records structured takeover state when principal intervention is required: expected state, observed divergence, actions already taken, current-state refs, evidence refs, options, unresolved decision, and rollback/compensation refs. It must use bounded summaries and references rather than raw logs by default.
 - `interaction_mode` records whether the turn was delegated execution or
   co-creation.
 - `work_order_id` references the canonical pre-execution Work Order.
