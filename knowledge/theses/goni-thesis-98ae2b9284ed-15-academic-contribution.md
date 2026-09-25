@@ -4,14 +4,24 @@ title: 15. Academic Contribution
 type: thesis
 status: draft
 implementation_state: specified_only
-proposition: Goni's core intellectual contribution is the claim that AI autonomy is treated as an operating-system problem rather than a prompting problem.
+proposition: Goni's core intellectual contribution is to treat AI autonomy and anticipation as an operating-system and delegation-governance problem in which predictive cognition, authority, execution, and accountability remain structurally distinct.
 domains:
 - product
+- research
+- delegation
 aliases: []
-relations: []
-sources: []
+relations:
+- type: depends_on
+  target: ANTICIPATORY-DELEGATION-01
+- type: depends_on
+  target: ANTICIPATORY-DELEGATION-THEORY-01
+sources:
+- SRC-ROSS1973-PRINCIPAL-AGENT
+- SRC-SIMON1955-BOUNDED-RATIONALITY
+- SRC-HORVITZ1999-MIXED-INITIATIVE
+- SRC-LEE2004-TRUST-AUTOMATION
 artifacts: []
-uncertainty: Preserved from the legacy draft without status promotion or newly inferred evidence strength.
+uncertainty: The expanded academic positioning is a Goni synthesis over established literatures; the system-specific claims require the planned evaluation programme.
 legacy:
 - path: blueprint/10-product/05-sovereign-delegation-os-thesis.md
   heading: 15. Academic Contribution
@@ -20,30 +30,60 @@ legacy:
 
 # 15. Academic Contribution
 
-> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.
+> Status boundary: this is a draft thesis. Present-tense language describes
+> proposed architecture, not observed implementation or validated performance.
 
-## 15. Academic Contribution
+Goni's core intellectual contribution is the claim that AI autonomy is treated
+as an operating-system and delegation-governance problem rather than merely a
+prompting problem. The same claim extends to anticipation: a model may predict
+what the principal will probably need next without thereby acquiring authority
+to make that prediction real.
 
-Goni's core intellectual contribution is the claim that AI autonomy is
-treated as an operating-system problem rather than a prompting problem. This
-implies a sequence of design priorities:
+This implies a sequence of design priorities:
 
-- Permissions before tools.
-- Receipts before trust.
-- Memory before context.
-- Policy before action.
-- Local execution before cloud escalation.
-- Rollback before autonomy.
-- Governance before convenience.
+- permissions before tools,
+- receipts before trust,
+- memory before context,
+- policy before action,
+- prediction before preparation and authority before commit,
+- local execution before cloud escalation,
+- rollback before autonomy,
+- governance before convenience.
 
-This contribution is significant because it shifts the center of personal AI
-away from model capability alone and toward institutional infrastructure: the
-rules, memory, evidence, authority boundaries, and accountability structures
-needed before autonomous assistants can safely act in the real world.
+The theoretical problem is broader than model accuracy. A human principal is
+bounded: every future contingency cannot be exhaustively specified, every
+internal model computation cannot be continuously inspected, and every routine
+action cannot be manually supervised without destroying the value of
+delegation. The delegated machine is also partially opaque and operates under
+uncertain context.
 
-In this sense, Goni is not competing primarily at the model layer. It is
-competing at the trust, memory, and action layer. Model capabilities may
-commoditize, but user-specific memory, policy infrastructure, local ownership,
-safe tool mediation, receipt-backed accountability, and workflow adaptation are
-less easily commoditized. That is where the project's category opportunity
-lives.
+Goni therefore addresses opacity institutionally rather than requiring complete
+cognitive transparency. Human organizations govern partially observable agents
+through mandates, decision rights, reporting, monitoring, budgets, escalation,
+and revocation. Goni translates that governance pattern into computational
+primitives: WorkOrders, mandates, corridors, capability-scoped effects,
+receipts, rollback, and explicit revocation.
+
+Anticipatory delegation adds a further separation:
+
+[
+observation \rightarrow prediction \rightarrow prospective\ work
+]
+
+remains epistemic, while:
+
+[
+authority \rightarrow mediated\ execution \rightarrow receipt
+]
+
+remains normative and operational.
+
+This makes the key claim testable. Goni should reduce the principal's
+specification, verification, and interruption burden while preserving
+unauthorized-effect prevention, reconstructability, calibrated reliance, and
+effective human takeover.
+
+In this sense, Goni competes primarily at the trust, memory, authority, and
+action layer. Model capabilities may commoditize, while user-specific memory,
+policy infrastructure, local ownership, workflow adaptation, safe tool
+mediation, and receipt-backed accountability remain the durable system problem.
