@@ -1,0 +1,7 @@
+id: SRC-ZHU2025-MINISCOPE
+title: Zhu et al. 2025 MiniScope
+kind: academic
+citation: https://arxiv.org/abs/2512.11147
+url: https://arxiv.org/abs/2512.11147
+accessed: "2026-09-26"
+notes: Least-privilege authorization framework for tool-calling agents that reconstructs permission hierarchies and enforces bounded permissions outside the model.

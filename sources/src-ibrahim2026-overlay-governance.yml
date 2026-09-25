@@ -1,0 +1,7 @@
+id: SRC-IBRAHIM2026-OVERLAY-GOVERNANCE
+title: Ibrahim and Li 2026 compositional authorization for agentic delegation
+kind: academic
+citation: https://arxiv.org/abs/2606.03518
+url: https://arxiv.org/abs/2606.03518
+accessed: "2026-09-26"
+notes: Formal delegation and authorization work covering recursive delegation, contextual scope, and resource-scope attenuation for agentic systems.

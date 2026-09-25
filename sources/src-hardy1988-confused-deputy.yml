@@ -1,0 +1,7 @@
+id: SRC-HARDY1988-CONFUSED-DEPUTY
+title: Hardy 1988 The Confused Deputy
+kind: academic
+citation: https://doi.org/10.1145/54289.871709
+url: https://doi.org/10.1145/54289.871709
+accessed: "2026-09-26"
+notes: Classical capability-security account of a deputy misapplying authority because request provenance and authority provenance are not cleanly separated.

@@ -1,0 +1,7 @@
+id: SRC-SHARMA2026-AGENT-OPERATING-SYSTEMS
+title: Sharma and Shah 2026 Agent Operating Systems
+kind: academic
+citation: https://arxiv.org/abs/2606.01508
+url: https://arxiv.org/abs/2606.01508
+accessed: "2026-09-26"
+notes: Agent-operating-system architecture covering scheduling, context and memory, capability registries, policy and trust enforcement, observability, and auditability.
