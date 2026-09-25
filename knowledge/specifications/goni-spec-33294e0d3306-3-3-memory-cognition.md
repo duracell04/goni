@@ -8,9 +8,7 @@ proposition: 'The node should treat **long-term memory as a separate plane** wit
 domains:
 - software
 aliases: []
-relations:
-- type: refined_by
-  target: SKILL-REG-01
+relations: []
 sources: []
 artifacts: []
 uncertainty: Preserved from the legacy draft without status promotion or newly inferred evidence strength.

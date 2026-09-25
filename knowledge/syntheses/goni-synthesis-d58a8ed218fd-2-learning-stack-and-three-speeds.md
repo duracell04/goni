@@ -8,9 +8,7 @@ proposition: Goni does not treat the base model as one mutable blob.
 domains:
 - system
 aliases: []
-relations:
-- type: refined_by
-  target: SKILL-REG-01
+relations: []
 sources: []
 artifacts: []
 uncertainty: Preserved from the legacy draft without status promotion or newly inferred evidence strength.

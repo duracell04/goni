@@ -9,9 +9,7 @@ domains:
 - specs
 aliases:
 - MODEL-REGISTRY
-relations:
-- type: depended_on_by
-  target: SKILL-REG-01
+relations: []
 sources: []
 artifacts: []
 uncertainty: Preserved from the legacy draft without status promotion or newly inferred evidence strength.
