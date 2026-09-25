@@ -9,7 +9,9 @@ domains:
 - specs
 aliases:
 - MODEL-REGISTRY
-relations: []
+relations:
+- type: depended_on_by
+  target: SKILL-REG-01
 sources: []
 artifacts: []
 uncertainty: Preserved from the legacy draft without status promotion or newly inferred evidence strength.
@@ -35,8 +37,20 @@ public ecosystems, but approved execution flows through a governed bundle
 registry. The runtime executes immutable bundle IDs whose provenance, license,
 hashes, task permissions, assurance level, and evaluation receipts are known
 before use. For personalized behavior, the execution unit may be a governed
-model stack: base bundle plus approved adapters, prompt/policy bundle, and
-memory or retrieval bundle refs.
+model stack: base bundle plus approved adapters, learned prefixes, prompt/policy
+bundle, and memory or retrieval bundle refs.
+
+Representation ownership is explicit:
+
+- `SKILL-REG-01` governs explicit procedural semantic modules and selectively
+  materialized skill fragments.
+- `MODEL-REG-01` governs checkpoints, learned prefixes, adapters, decoding
+  templates, and model bundles.
+- `TOOL-01` and kernel capability mediation govern execution authority.
+
+A textual skill may require a model or adapter, and a model stack may be
+selected because of a skill requirement, but neither skill selection nor model
+selection grants permission to cause an external effect.
 
 Scientific framing:
 - Observed fact: widely available model weights can broaden participation and

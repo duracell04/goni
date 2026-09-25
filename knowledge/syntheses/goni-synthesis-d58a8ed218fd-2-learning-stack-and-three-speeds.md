@@ -8,7 +8,9 @@ proposition: Goni does not treat the base model as one mutable blob.
 domains:
 - system
 aliases: []
-relations: []
+relations:
+- type: refined_by
+  target: SKILL-REG-01
 sources: []
 artifacts: []
 uncertainty: Preserved from the legacy draft without status promotion or newly inferred evidence strength.
@@ -28,8 +30,9 @@ into a governed stack:
 
 - Layer A: dense constitutional trunk. Stable identity, style, refusal policy,
   and durable reasoning priors. Slow-moving.
-- Layer B: sparse expert mesh. Domain skill, specialist adapters, and routing-
-  addressable modules. Medium-moving.
+- Layer B: scoped procedural and learned expertise. Governed textual skills,
+  prompt modules, specialist adapters, learned prefixes, and routing-addressable
+  modules. Medium-moving.
 - Layer C: external knowledge plane. Facts, retrieval state, tool receipts, and
   memories. Fast-moving.
 - Layer D: patch graph. Scoped, reversible deltas that target declared seams.
@@ -38,12 +41,18 @@ into a governed stack:
 - Layer F: governance ledger. Provenance, signatures, approvals, and deployable
   bill of materials.
 
+Layer B contains multiple representation classes. `SKILL-REG-01` governs
+explicit procedural semantic modules and their selectively materialized
+fragments. `MODEL-REG-01` governs learned prefixes, adapters, checkpoints, and
+model bundles. Neither representation class grants execution authority.
+
 Operationally, a serious LLM learns in three speeds:
 
 - P0 fast path: fresh facts and retrieval tuning belong in Layer C. They update
   at inference time and do not imply weight changes.
-- P1 medium path: domain skill belongs in Layer B or Layer D via scoped router
-  changes, expert adapters, tool wrappers, and validators.
+- P1 medium path: domain skill belongs in governed skills, Layer B, or Layer D
+  via scoped procedural modules, router changes, expert adapters, tool wrappers,
+  and validators.
 - P2 slow path: trunk changes belong in Layer A only after repeated durable
   gains survive replay, safety, and latency gates.
 
@@ -52,14 +61,14 @@ and core weights absorb only rare durable structure.
 
 This maps to the PAL adaptation ladder:
 
-1. Prompt or policy steering first, because it is cheap, inspectable, and easy
-   to roll back.
+1. Prompt, policy, or governed skill steering first, because it is inspectable,
+   versionable, and easy to roll back.
 2. Governed memory and retrieval second, because factual and preference context
    should remain external, citeable, and reversible where possible.
-3. Adapter or preference-dataset generation third, only after repeated evidence,
-   replay evaluation, and promotion review.
+3. Learned-prefix, adapter, or preference-dataset generation third, only after
+   repeated evidence, replay evaluation, and promotion review.
 4. Full fine-tuning last and rarely, because it is harder to debug, evaluate,
-   and reverse than prompt, memory, policy, or adapter changes.
+   and reverse than prompt, skill, memory, policy, or adapter changes.
 
 This is the system form of Goni's change-velocity gradient: change velocity is
 inversely proportional to governance centrality. Surface artifacts such as

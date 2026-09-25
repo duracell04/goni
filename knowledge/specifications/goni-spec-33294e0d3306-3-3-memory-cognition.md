@@ -8,7 +8,9 @@ proposition: 'The node should treat **long-term memory as a separate plane** wit
 domains:
 - software
 aliases: []
-relations: []
+relations:
+- type: refined_by
+  target: SKILL-REG-01
 sources: []
 artifacts: []
 uncertainty: Preserved from the legacy draft without status promotion or newly inferred evidence strength.
@@ -29,6 +31,7 @@ legacy:
   - episodic history is distilled over time,
   - semantic facts persist with decay and can be pinned,
   - procedural knowledge is versioned.
+- Versioned procedural knowledge that is intended to control repeated task execution is governed through `SKILL-REG-01`. Durable personal procedural memories may reference governed skills, but memory content does not silently become executable instruction.
 - The Memory/Context planes must implement **virtual context management** (MemGPT-style):
   - prompt/context window as RAM, Arrow/vector/graph stores as Disk,
   - explicit paging/syscalls (`MEM_READ`, `MEM_WRITE`, `MEM_SUMMARIZE`, `MEM_FORGET`) for moving data across tiers,
