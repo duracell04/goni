@@ -1,0 +1,6 @@
+id: SRC-PARK2023-GENERATIVE-AGENTS
+title: Park et al. 2023 - Generative Agents
+kind: academic
+citation: "Park, J. S., O'Brien, J. C., Cai, C. J., Morris, M. R., Liang, P., & Bernstein, M. S. (2023). Generative Agents: Interactive Simulacra of Human Behavior. arXiv:2304.03442."
+url: https://arxiv.org/abs/2304.03442
+notes: Uses a memory stream with reflection and planning; ablations report that observation, reflection, and planning each contribute to agent believability in the evaluated simulation.

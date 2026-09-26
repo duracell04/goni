@@ -1,0 +1,6 @@
+id: SRC-HAFNER2023-DREAMERV3
+title: Hafner et al. 2023 - DreamerV3
+kind: academic
+citation: "Hafner, D., Pasukonis, J., Ba, J., & Lillicrap, T. (2023). Mastering Diverse Domains through World Models. arXiv:2301.04104."
+url: https://arxiv.org/abs/2301.04104
+notes: DreamerV3 learns a world model and improves behavior by imagining future scenarios across diverse reinforcement-learning tasks.

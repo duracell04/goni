@@ -1,0 +1,6 @@
+id: SRC-VANDEVEN2020-BRAIN-REPLAY
+title: van de Ven et al. 2020 - Brain-inspired replay
+kind: academic
+citation: "van de Ven, G. M., Siegelmann, H. T., & Tolias, A. S. (2020). Brain-inspired replay for continual learning with artificial neural networks. Nature Communications, 11, 4069. https://doi.org/10.1038/s41467-020-17866-2"
+url: https://www.nature.com/articles/s41467-020-17866-2
+notes: Studies replay of internally generated representations as a continual-learning mechanism and reports improved retention on evaluated benchmarks.
