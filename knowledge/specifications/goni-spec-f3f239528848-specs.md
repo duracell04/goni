@@ -4,7 +4,7 @@ title: Specs
 type: specification
 status: draft
 implementation_state: specified_only
-proposition: Canonical catalogue of Goni normative contracts, including governed skills, authority-aware context compilation, model-specific inference serialization, cache reuse, and bounded context-miss recovery.
+proposition: Canonical catalogue of Goni normative contracts, including governed skills, authority-aware context compilation, model-specific inference serialization, cache reuse, bounded context-miss recovery, and governed offline cognition.
 domains:
 - specs
 aliases: []
@@ -49,6 +49,7 @@ legacy:
 - Model-Specific Inference Frame (INF-FRAME-01)
 - Prefix and KV Reuse (CACHE-01)
 - Bounded Context-Miss Resolution (CTX-MISS-01)
+- Governed Offline Cognition (DREAM-01)
 - [Model bundle registry governance](/blueprint/30-specs/model-registry.md) (MODEL-REG-01)
 - [Network gate and anonymity](/blueprint/30-specs/network-gate-and-anonymity.md) (NET-01)
 - [Receipts](/blueprint/30-specs/receipts.md) (REC-01)

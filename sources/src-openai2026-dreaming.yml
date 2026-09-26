@@ -1,0 +1,7 @@
+id: SRC-OPENAI2026-DREAMING
+title: OpenAI 2026 - Dreaming: Better memory for a more helpful ChatGPT
+kind: web
+citation: "OpenAI. (2026-06-04). Dreaming: Better memory for a more helpful ChatGPT."
+url: https://openai.com/index/chatgpt-memory-dreaming/
+accessed: 2026-09-27
+notes: Describes a production system for background memory synthesis aimed at freshness, continuity, correctness, relevance, and scalability; it is a narrower product use of the term dreaming than DREAM-01.
