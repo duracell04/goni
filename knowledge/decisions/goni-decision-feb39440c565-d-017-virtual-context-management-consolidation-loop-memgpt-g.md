@@ -8,9 +8,7 @@ proposition: '**Formal statement** The Memory/Context planes MUST implement **vi
 domains:
 - software
 aliases: []
-relations:
-- type: refined_by
-  target: GONI-DECISION-6D3A2B71C9E4
+relations: []
 sources:
 - SRC-PACKER2023-MEMGPT
 - SRC-PARK2023-GENERATIVE-AGENTS
