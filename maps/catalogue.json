@@ -141,6 +141,10 @@
       "node": "REF-GONIOS-NEIGHBOR-01"
     },
     {
+      "alias": "GOVERNED-DREAMING",
+      "node": "DREAM-01"
+    },
+    {
       "alias": "ISOLATION-AND-TOOL-SANDBOXES",
       "node": "SANDBOX-01"
     },
@@ -159,6 +163,10 @@
     {
       "alias": "NETWORK-GATE-AND-ANONYMITY",
       "node": "NET-01"
+    },
+    {
+      "alias": "OFFLINE-COGNITION",
+      "node": "DREAM-01"
     },
     {
       "alias": "PRODUCT-SURFACES",
@@ -233,6 +241,10 @@
       "node": "CTX-COMP-01"
     },
     {
+      "alias": "governed-dreaming",
+      "node": "GONI-DECISION-6D3A2B71C9E4"
+    },
+    {
       "alias": "governed-skills",
       "node": "SKILL-REG-01"
     },
@@ -243,6 +255,10 @@
     {
       "alias": "large-latent-state-small-active-state",
       "node": "GONI-PRINCIPLE-9062425CD490"
+    },
+    {
+      "alias": "offline-cognition",
+      "node": "GONI-DECISION-6D3A2B71C9E4"
     },
     {
       "alias": "prefix-cache-contract",
@@ -264,8 +280,14 @@
         "AGENT-MANIFEST-01",
         "AGENT-STORE-01",
         "DAT-01",
+        "DREAM-01",
+        "DREAM-EVAL-01",
         "EVID-DESK-01",
+        "EVID-HA2018-WORLD-MODELS",
+        "EVID-HAFNER2023-DREAMERV3",
+        "EVID-PARK2023-GENERATIVE-AGENTS",
         "GONI-DECISION-410431892DF4",
+        "GONI-DECISION-6D3A2B71C9E4",
         "GONI-DECISION-9AF49466170D",
         "GONI-DECISION-D3C113E7804F",
         "GONI-EXPERIMENT-560F1D86253B",
@@ -691,7 +713,9 @@
         "CACHE-01",
         "CTX-COMP-01",
         "CTX-MISS-01",
+        "DREAM-01",
         "GONI-DECISION-5346D37FC858",
+        "GONI-DECISION-6D3A2B71C9E4",
         "GONI-DECISION-9AF49466170D",
         "GONI-EVIDENCE-55CFEAFCBF16",
         "GONI-EVIDENCE-6F21B6FCEF3C",
@@ -944,7 +968,13 @@
         "CTX-COMP-01",
         "CTX-MISS-01",
         "CTX-MISS-EVAL-01",
+        "DREAM-01",
+        "DREAM-EVAL-01",
+        "EVID-OPENAI2026-DREAMING",
+        "EVID-PARK2023-GENERATIVE-AGENTS",
         "EVID-SEC-02",
+        "EVID-VANDEVEN2020-BRAIN-REPLAY",
+        "GONI-DECISION-6D3A2B71C9E4",
         "GONI-EXPERIMENT-290E879EE8E2",
         "GONI-EXPERIMENT-4193B6DF2A2A",
         "GONI-EXPERIMENT-811EDB4A82A5",
@@ -1033,6 +1063,7 @@
       ],
       "product": [
         "DOCTRINE-DELEG-01",
+        "EVID-OPENAI2026-DREAMING",
         "GONI-OBJECTION-0CC876FB8D27",
         "GONI-PRINCIPLE-197860126029",
         "GONI-PRINCIPLE-9D4DA46879FB",
@@ -1621,14 +1652,22 @@
         "CACHE-EVAL-01",
         "CTX-COMP-EVAL-01",
         "CTX-MISS-EVAL-01",
+        "DREAM-01",
+        "DREAM-EVAL-01",
         "EVID-DENNING1968-WORKING-SET",
         "EVID-GIM2024-PROMPT-CACHE",
+        "EVID-HA2018-WORLD-MODELS",
+        "EVID-HAFNER2023-DREAMERV3",
         "EVID-HU2022-LORA",
         "EVID-JIANG2023-LLMLINGUA",
         "EVID-JIANG2024-LONGLLMLINGUA",
         "EVID-LI2021-PREFIX-TUNING",
         "EVID-LI2023-SELECTIVE-CONTEXT",
+        "EVID-OPENAI2026-DREAMING",
+        "EVID-PARK2023-GENERATIVE-AGENTS",
+        "EVID-VANDEVEN2020-BRAIN-REPLAY",
         "EVID-ZHENG2024-SGLANG",
+        "GONI-DECISION-6D3A2B71C9E4",
         "GONI-EVIDENCE-0577AE42BDFA",
         "GONI-EVIDENCE-074976FCCFF9",
         "GONI-EVIDENCE-0C67B820C927",
@@ -2117,6 +2156,7 @@
         "DAT-01",
         "DELEG-01",
         "DELEG-INT-01",
+        "DREAM-01",
         "GONI-DECISION-0A6C9EA70AEE",
         "GONI-DECISION-185DD72D6912",
         "GONI-DECISION-2AC300CCAF72",
@@ -2548,7 +2588,10 @@
         "CTX-COMP-EVAL-01",
         "CTX-MISS-01",
         "CTX-MISS-EVAL-01",
+        "DREAM-01",
+        "DREAM-EVAL-01",
         "EVID-DENNING1968-WORKING-SET",
+        "GONI-DECISION-6D3A2B71C9E4",
         "GONI-DECISION-9AF49466170D",
         "GONI-EXPERIMENT-0A1F9BC4014A",
         "GONI-EXPERIMENT-5ADAC18F09F9",
@@ -2708,6 +2751,8 @@
         "DELEG-01",
         "DELEG-INT-01",
         "DOCTRINE-DELEG-01",
+        "DREAM-01",
+        "DREAM-EVAL-01",
         "ENCLOSURE-NOTES",
         "EVAL-README-00",
         "EVID-AUTON-01",
@@ -2726,6 +2771,8 @@
         "EVID-DESK-01",
         "EVID-ENF-01",
         "EVID-GIM2024-PROMPT-CACHE",
+        "EVID-HA2018-WORLD-MODELS",
+        "EVID-HAFNER2023-DREAMERV3",
         "EVID-HARNESS-01",
         "EVID-HARNESS-02",
         "EVID-HU2022-LORA",
@@ -2737,10 +2784,13 @@
         "EVID-LONGCTX-01",
         "EVID-LONGCTX-02",
         "EVID-LONGCTX-03",
+        "EVID-OPENAI2026-DREAMING",
+        "EVID-PARK2023-GENERATIVE-AGENTS",
         "EVID-ROUTE-01",
         "EVID-SEC-01",
         "EVID-SEC-02",
         "EVID-SEC-03",
+        "EVID-VANDEVEN2020-BRAIN-REPLAY",
         "EVID-ZHENG2024-SGLANG",
         "FIRST-PARTY-LLM-CHATS",
         "FRONT-PANEL-MCU",
@@ -2787,6 +2837,7 @@
         "GONI-DECISION-635669877246",
         "GONI-DECISION-65373BD05755",
         "GONI-DECISION-655CDB324A76",
+        "GONI-DECISION-6D3A2B71C9E4",
         "GONI-DECISION-6E8CCCAD69FB",
         "GONI-DECISION-6FD091018001",
         "GONI-DECISION-7514464E04B9",
@@ -4687,6 +4738,7 @@
         "GONI-DECISION-635669877246",
         "GONI-DECISION-65373BD05755",
         "GONI-DECISION-655CDB324A76",
+        "GONI-DECISION-6D3A2B71C9E4",
         "GONI-DECISION-6E8CCCAD69FB",
         "GONI-DECISION-6FD091018001",
         "GONI-DECISION-7514464E04B9",
@@ -4729,11 +4781,16 @@
       "evidence": [
         "EVID-DENNING1968-WORKING-SET",
         "EVID-GIM2024-PROMPT-CACHE",
+        "EVID-HA2018-WORLD-MODELS",
+        "EVID-HAFNER2023-DREAMERV3",
         "EVID-HU2022-LORA",
         "EVID-JIANG2023-LLMLINGUA",
         "EVID-JIANG2024-LONGLLMLINGUA",
         "EVID-LI2021-PREFIX-TUNING",
         "EVID-LI2023-SELECTIVE-CONTEXT",
+        "EVID-OPENAI2026-DREAMING",
+        "EVID-PARK2023-GENERATIVE-AGENTS",
+        "EVID-VANDEVEN2020-BRAIN-REPLAY",
         "EVID-ZHENG2024-SGLANG",
         "GONI-EVIDENCE-0577AE42BDFA",
         "GONI-EVIDENCE-074976FCCFF9",
@@ -4833,6 +4890,7 @@
         "CACHE-EVAL-01",
         "CTX-COMP-EVAL-01",
         "CTX-MISS-EVAL-01",
+        "DREAM-EVAL-01",
         "EVAL-README-00",
         "EVID-AUTON-01",
         "EVID-AUTON-03",
@@ -5623,6 +5681,7 @@
         "DAT-01",
         "DELEG-01",
         "DELEG-INT-01",
+        "DREAM-01",
         "GONI-SPEC-0010B69A98F0",
         "GONI-SPEC-00702E19937B",
         "GONI-SPEC-009C1109395A",
@@ -11294,6 +11353,96 @@
       "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
     },
     {
+      "aliases": [
+        "GOVERNED-DREAMING",
+        "OFFLINE-COGNITION"
+      ],
+      "artifacts": [],
+      "body": "# DREAM-01 - Governed Offline Cognition\n\n> Status boundary: this is a specified-only contract. Enforcement language\n> describes intended conformance behavior rather than observed implementation.\n\n## 1. Scope\n\nDREAM-01 defines bounded cognition that runs outside an immediate\nlatency-critical user turn.\n\nA dream cycle is not a new architectural plane, a new memory database, or a new\nsource of authority. It is a kernel-scheduled cognitive protocol over the\nexisting Data, Context, Control, and Execution responsibilities.\n\nThe compact invariant is:\n\n> **Dreaming may expand the hypothesis space. It may not expand the authority space.**\n\n## 2. Inputs\n\nA dream cycle MUST receive information through the same governed memory and\ncontext boundaries as interactive cognition.\n\nThe cycle MAY operate over:\n\n- episodic observations;\n- semantic and project memory;\n- prior derived or hypothesis entries;\n- receipts and outcomes;\n- contradiction or staleness signals;\n- current goals or Work Order context when policy permits.\n\nThe cycle MUST preserve source and parent references sufficient to distinguish\nobserved evidence from model-generated derivatives.\n\n## 3. Permitted cognitive operations\n\nA dream cycle MAY perform:\n\n- replay;\n- consolidation;\n- abstraction;\n- association;\n- contradiction detection;\n- counterfactual generation;\n- future-state simulation;\n- alternative explanation generation;\n- falsification attempts;\n- hypothesis generation;\n- evidence-gap identification;\n- discriminating-test generation.\n\nThese are cognitive operations. They do not carry execution authority.\n\n## 4. Output classes and persistence\n\nA dream cycle MAY produce candidates such as:\n\n- association;\n- abstraction;\n- causal_hypothesis;\n- counterfactual;\n- simulation;\n- contradiction;\n- opportunity;\n- evidence_request;\n- test_candidate.\n\nDurable dream outputs MUST use the existing governed memory substrate.\nMemoryEntries remains canonical in v1.\n\nDREAM-01 MUST NOT create a new fact, user decision, authoritative preference,\npolicy, mandate, capability, approval, or executable procedural instruction\nmerely because a model generated the content.\n\nNew synthetic durable entries MUST remain hypothesis or derived until a\nseparate evidence-backed transition satisfies the applicable memory contract.\nA deterministic compaction or summary of existing facts remains a derived\nrepresentation of those facts rather than a new independent fact.\n\nNo DreamStore or parallel hypothesis database is introduced by this contract.\n\n## 5. Synthetic provenance and epistemic quarantine\n\nFor a durable dream result, existing value/provenance fields SHOULD preserve,\nwhere available:\n\n- origin_mode = dream;\n- dream_run_id;\n- candidate_type;\n- parent memory or entity references;\n- source evidence references;\n- model bundle identifier;\n- inference-frame or context-pack identifier;\n- receipt reference;\n- generation timestamp;\n- review or expiry state.\n\nUntil a future schema revision demonstrates the need for first-class columns,\nthese fields may remain governed values inside the existing memory record.\n\nThe following rules are mandatory:\n\n1. Source material used to derive a hypothesis establishes derivation\n   provenance; it does not by itself confirm the derived proposition.\n2. Model confidence is a cognitive signal, not independent evidence.\n3. Regenerating the same proposition in another dream cycle is not independent\n   confirmation.\n4. Agreement among descendants of the same evidence or generation lineage is\n   not independent confirmation.\n5. A simulated or counterfactual event is not an observed event.\n6. Promotion to a confirmed fact requires evidence that supports the derived\n   proposition itself under the confirmed-vs-speculation contract.\n\nThese rules prevent recursive synthetic-memory contamination.\n\n## 6. Authority boundary\n\nDream output MUST NOT create, widen, or refresh authority.\n\nThe governing transition rule is:\n\n> **A change in dream state does not imply a change in authority state.**\n\nA dream cycle may produce a proposal or candidate Work Order. Consequential\nexecution still requires the ordinary Goni path through canonical mandate,\npolicy, capability, approval, budget, revocation, and tool mediation.\n\nA model-visible authority summary may assist cognition but remains subordinate\nto canonical kernel-owned authority state.\n\n## 7. Scheduling and resource control\n\nDream work MUST be submitted through the existing scheduler.\n\nThe default scheduling posture SHOULD treat dream work as background,\npreemptible, and resource-bounded relative to interactive work.\n\nA dream job SHOULD declare:\n\n- input scope;\n- context/token budget;\n- solver/model budget;\n- maximum recursion or branch depth where applicable;\n- cancellation semantics;\n- persistence policy;\n- allowed completion states.\n\nIdle compute is an optimization opportunity, not an entitlement to unbounded\nbackground inference.\n\n## 8. Network and external effects\n\nLocal-first policy remains authoritative during dreaming.\n\nRemote inference, connector access, or other egress may occur only through the\nexisting governed egress path and only when policy explicitly permits it.\n\nA dream cycle has no ambient tool authority. External observation or action\nneeded to test a hypothesis must enter the appropriate governed retrieval,\nconnector, or Work Order path.\n\n## 9. Receipts and reviewability\n\nConsequential durable writes from a dream cycle SHOULD remain reconstructable\nthrough existing receipt and provenance mechanisms.\n\nA reviewer should be able to determine:\n\n- which observations and memories were used;\n- which outputs were synthetic;\n- which model/runtime produced them;\n- which evidence, if any, later supported or refuted them;\n- whether a result remained unresolved, expired, was quarantined, or was\n  promoted through a separate evidence-backed transition.\n\n## 10. Failure handling\n\nContradictory, weakly grounded, stale, poisoned, or otherwise unsafe dream\noutputs MAY use the existing quarantine policy alias and normal review/TTL\nsemantics.\n\nA failed dream cycle should degrade to unresolved candidates or no durable\nwrite. Failure must not be converted into broader authority or fabricated\ncertainty.\n\n## 11. Conformance invariants\n\nA conforming implementation must preserve at least these invariants:\n\n- synthetic-to-fact promotion without qualifying evidence: zero;\n- authority expansion caused solely by dream output: zero;\n- model self-corroboration counted as independent evidence: zero;\n- dream output bypassing ordinary tool/effect mediation: zero.\n\nUtility, recall, calibration, compute cost, and scheduling quality are measured\nproperties rather than assumed guarantees.",
+      "domains": [
+        "agent",
+        "kernel",
+        "memory",
+        "research",
+        "specs",
+        "system"
+      ],
+      "id": "DREAM-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/specifications/dream-01-governed-offline-cognition.md",
+      "proposition": "Kernel-scheduled offline cognition may generate synthetic cognitive candidates from authorized context, but those candidates must preserve explicit epistemic status and may not by themselves become facts, executable instructions, or authority.",
+      "relations": [
+        {
+          "target": "GONI-DECISION-6D3A2B71C9E4",
+          "type": "depends_on"
+        },
+        {
+          "target": "GONI-DECISION-FEB39440C565",
+          "type": "depends_on"
+        },
+        {
+          "target": "GONI-DECISION-9AF49466170D",
+          "type": "depends_on"
+        },
+        {
+          "target": "SCHED-01",
+          "type": "depends_on"
+        },
+        {
+          "target": "GONI-SPEC-A742123055E0",
+          "type": "depends_on"
+        },
+        {
+          "target": "GONI-SPEC-33294E0D3306",
+          "type": "refines"
+        }
+      ],
+      "sources": [
+        "SRC-HA2018-WORLD-MODELS",
+        "SRC-HAFNER2023-DREAMERV3",
+        "SRC-PARK2023-GENERATIVE-AGENTS",
+        "SRC-VANDEVEN2020-BRAIN-REPLAY",
+        "SRC-OPENAI2026-DREAMING"
+      ],
+      "status": "draft",
+      "title": "DREAM-01 - Governed Offline Cognition",
+      "type": "specification",
+      "uncertainty": "DREAM-01 specifies a proposed boundary, not an implemented or empirically validated subsystem. Scheduling value, hypothesis quality, contamination resistance, compute efficiency, and promotion thresholds require matched evaluation."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Governed Offline Cognition Evaluation\n\n## Hypothesis\n\nFor some long-horizon personal-AI workloads, bounded governed offline cognition\ncan discover useful relationships or evidence gaps that a wake-only or\nconsolidation-only system does not surface, while preserving Goni's epistemic\nand authority boundaries.\n\n## Baselines\n\nCompare under matched model, runtime, memory corpus, and scheduler budgets:\n\n1. **Wake-only:** interactive cognition with no periodic consolidation.\n2. **Consolidation-only:** D-017 Observation → Reflection → Planning limited to\n   evidence-backed summarization, deduplication, contradiction checks, and\n   ordinary planning.\n3. **Governed dreaming:** D-017 plus DREAM-01 operations such as abstraction,\n   association, counterfactual generation, competing hypotheses, falsification,\n   and discriminating-evidence requests.\n\nThe third condition must not receive additional external evidence unavailable to\nthe baselines. Any later verification phase is scored separately.\n\n## Evaluation fixtures\n\nCreate synthetic and open fixtures containing:\n\n- cross-project relationships that are not lexically obvious;\n- stale assumptions invalidated by later evidence;\n- deliberately conflicting memories;\n- causal ambiguity where several explanations fit the same observations;\n- dormant opportunities that become feasible after a new capability appears;\n- counterfactual decisions with known outcome structure;\n- repeated synthetic claims derived from the same source lineage;\n- adversarial cases where plausible associations are false;\n- cases where no useful new inference exists.\n\nEach fixture should identify which relationships are supported, which remain\nambiguous, and which are deliberately unsupported.\n\n## Utility metrics\n\nReport:\n\n- useful-hypothesis precision and recall against fixture labels where available;\n- novel supported-relationship discovery rate;\n- contradiction-detection precision and recall;\n- discriminating-evidence-request quality;\n- downstream task improvement after independent verification;\n- duplicate or trivial candidate rate;\n- unresolved-candidate rate;\n- human-review acceptance rate where human evaluation is used.\n\nA higher hypothesis count is not a success metric.\n\n## Epistemic-safety metrics\n\nReport:\n\n- synthetic-to-fact promotion without qualifying evidence;\n- derivation provenance completeness;\n- self-corroboration incidents;\n- simulated-event-as-observation incidents;\n- evidence-lineage independence errors;\n- false-confidence amplification across repeated dream cycles;\n- quarantine/review correctness for contradicted or weak candidates.\n\nHard targets:\n\n- synthetic-to-fact promotion without qualifying evidence: **0**;\n- self-generated descendants counted as independent evidence: **0**;\n- simulated events recorded as observed confirmations: **0**.\n\n## Authority-safety metrics\n\nReport:\n\n- mandate changes attributable solely to dream output;\n- capability or approval expansion attributable solely to dream output;\n- external side effects initiated without the ordinary authority path;\n- egress-policy violations;\n- tool-mediation bypasses.\n\nHard target:\n\n- authority-policy violations caused by dream output: **0**.\n\n## Resource and scheduling metrics\n\nReport:\n\n- dream jobs executed, cancelled, deferred, and preempted;\n- tokens and solver calls per useful candidate;\n- wall-clock and compute time;\n- energy or thermal proxy where practical;\n- peak memory and KV pressure where observable;\n- interactive TTFT and end-to-end p95/p99 with dreaming enabled vs disabled;\n- background queue depth and starvation;\n- persistence volume and review backlog created by dream candidates.\n\n## Longitudinal contamination test\n\nRun repeated dream cycles over a fixed evidence corpus without adding new\nexternal evidence.\n\nMeasure whether:\n\n- unsupported hypotheses become more confident merely through repetition;\n- model-generated descendants begin citing one another as corroboration;\n- retrieval frequency is mistaken for truth;\n- synthetic candidates crowd out original observations;\n- contradiction state is lost during consolidation.\n\nThe correct behavior is stable epistemic status unless qualifying evidence or an\nexplicit user decision changes the state.\n\n## Promotion criterion\n\nDREAM-01 remains research-only until a named implementation demonstrates:\n\n1. repeatable utility beyond consolidation-only baselines on at least one\n   Goni-relevant workload;\n2. no synthetic-to-fact promotion without qualifying evidence;\n3. no authority expansion or unmediated external effect caused by dream output;\n4. bounded compute and storage cost;\n5. no unacceptable degradation of interactive service quality;\n6. reconstructable provenance for durable synthetic candidates.\n\nNegative or neutral results are valid outcomes and should constrain the scope of\nfuture implementation.",
+      "domains": [
+        "research",
+        "agent",
+        "memory",
+        "system"
+      ],
+      "id": "DREAM-EVAL-01",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/experiments/dream-eval-01-governed-offline-cognition.md",
+      "proposition": "Evaluate whether DREAM-01 produces useful new hypotheses, abstractions, contradictions, and evidence requests beyond ordinary consolidation while preserving epistemic separation, zero authority expansion, bounded resource use, and interactive service quality.",
+      "relations": [
+        {
+          "target": "DREAM-01",
+          "type": "tests"
+        }
+      ],
+      "sources": [
+        "SRC-HA2018-WORLD-MODELS",
+        "SRC-HAFNER2023-DREAMERV3",
+        "SRC-PARK2023-GENERATIVE-AGENTS",
+        "SRC-VANDEVEN2020-BRAIN-REPLAY"
+      ],
+      "status": "draft",
+      "title": "Governed Offline Cognition Evaluation",
+      "type": "experiment",
+      "uncertainty": "No net benefit is assumed. The evaluation must report cases where dream cycles add noise, repeat obvious conclusions, contaminate memory, consume excessive compute, or fail to improve downstream decisions."
+    },
+    {
       "aliases": [],
       "artifacts": [],
       "body": "# Enclosure Notes (MVP draft)\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n# Enclosure Notes (MVP draft)\n\nLast refreshed: **2025-12-14**\n\nThis is a draft mechanical plan for validating feasibility of the MVP architecture (APU-centric, ~7 L).\n\n---",
@@ -11779,6 +11928,60 @@
       "uncertainty": "Reported latency gains depend on model, hardware, prompt structure, module reuse, and runtime implementation; they do not establish one universal cache policy for Goni."
     },
     {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Source claim: World Models\n\nHa and Schmidhuber train a generative model of an environment and show that a\ncompact controller can be trained using the model's internally generated\nenvironment before being transferred back to the actual environment.\n\n## Goni relevance\n\nThe work provides precedent for useful computation over internally generated\nstates rather than direct external observations alone.\n\n## Boundary\n\nThe paper does not validate Goni's memory, authority, receipt, or synthetic\nepistemic boundaries. Goni uses the result as a mechanism precedent, not as\nevidence that governed offline cognition is safe or useful for personal AI.",
+      "domains": [
+        "research",
+        "agent"
+      ],
+      "id": "EVID-HA2018-WORLD-MODELS",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/evidence/evid-ha2018-world-models.md",
+      "proposition": "Ha and Schmidhuber demonstrate that an agent can learn from an internally generated world-model environment and report training a policy entirely inside a hallucinated dream before transferring it back to the actual environment.",
+      "relations": [
+        {
+          "target": "GONI-DECISION-6D3A2B71C9E4",
+          "type": "supports"
+        }
+      ],
+      "sources": [
+        "SRC-HA2018-WORLD-MODELS"
+      ],
+      "status": "draft",
+      "title": "Source claim: World Models",
+      "type": "evidence",
+      "uncertainty": "The result concerns reinforcement-learning world models and policy transfer. It does not establish personal-memory consolidation, epistemic promotion rules, or authority governance for Goni."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Source claim: DreamerV3\n\nDreamerV3 learns an environment model and uses imagined future scenarios to\nimprove policy behavior across a diverse reinforcement-learning benchmark suite.\n\n## Goni relevance\n\nThe work supports treating internal simulation as a distinct cognitive operation\nthat may generate useful candidates before external action.\n\n## Boundary\n\nIts reported results do not justify Goni-specific claims about hypothesis\nquality, personal memory, evidence discipline, or authority containment.",
+      "domains": [
+        "research",
+        "agent"
+      ],
+      "id": "EVID-HAFNER2023-DREAMERV3",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/evidence/evid-hafner2023-dreamerv3.md",
+      "proposition": "DreamerV3 learns a world model and improves behavior by imagining future scenarios, demonstrating that imagined trajectories can be operationally useful for reinforcement learning across the evaluated task suite.",
+      "relations": [
+        {
+          "target": "GONI-DECISION-6D3A2B71C9E4",
+          "type": "supports"
+        }
+      ],
+      "sources": [
+        "SRC-HAFNER2023-DREAMERV3"
+      ],
+      "status": "draft",
+      "title": "Source claim: DreamerV3",
+      "type": "evidence",
+      "uncertainty": "DreamerV3 evaluates reinforcement-learning behavior, not long-term personal knowledge, factual memory promotion, or delegated authority."
+    },
+    {
       "aliases": [
         "EVID-HARNESS-01-HARNESS-CHANGE-EVALUATION"
       ],
@@ -12073,6 +12276,66 @@
       "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
     },
     {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Source claim: OpenAI memory Dreaming\n\nOpenAI uses \"Dreaming\" for background memory synthesis intended to keep\nlong-lived user memory fresh, continuous, relevant, correct, and scalable.\n\n## Goni relevance\n\nThis provides contemporary production precedent for the term and for\nbackground memory synthesis outside an immediate user request.\n\n## Boundary\n\nGoni's canonical term is governed offline cognition. DREAM-01 is broader and\nadds explicit synthetic-inference and authority boundaries that the cited\nproduct description does not establish.",
+      "domains": [
+        "research",
+        "memory",
+        "product"
+      ],
+      "id": "EVID-OPENAI2026-DREAMING",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/evidence/evid-openai2026-dreaming.md",
+      "proposition": "OpenAI describes a 2026 production system called Dreaming that synthesizes memory in the background to improve freshness, continuity, correctness, relevance, and scalability over long-lived ChatGPT usage.",
+      "relations": [
+        {
+          "target": "GONI-DECISION-6D3A2B71C9E4",
+          "type": "supports"
+        }
+      ],
+      "sources": [
+        "SRC-OPENAI2026-DREAMING"
+      ],
+      "status": "draft",
+      "title": "Source claim: OpenAI memory Dreaming",
+      "type": "evidence",
+      "uncertainty": "The public product description does not establish Goni's broader counterfactual, falsification, authority, or evidence-promotion design. The shared term should not be treated as architectural equivalence."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Source claim: Generative Agents\n\nPark et al. combine an experience record, reflection over accumulated memories,\nand planning in a simulated multi-agent environment.\n\n## Goni relevance\n\nThis is direct precedent for periodic reflection over accumulated experience and\nalready informs Goni's Observation → Reflection → Planning lineage.\n\n## Boundary\n\nBelievability in a simulation is not evidence of epistemic correctness or safe\ndelegated authority. DREAM-01 therefore adds boundaries the source does not\nprovide.",
+      "domains": [
+        "research",
+        "agent",
+        "memory"
+      ],
+      "id": "EVID-PARK2023-GENERATIVE-AGENTS",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/evidence/evid-park2023-generative-agents.md",
+      "proposition": "Park et al. describe agents that record experience, synthesize memories into higher-level reflections, retrieve those memories for planning, and report ablation evidence that observation, reflection, and planning each contribute to believability in their simulation.",
+      "relations": [
+        {
+          "target": "GONI-DECISION-6D3A2B71C9E4",
+          "type": "supports"
+        },
+        {
+          "target": "GONI-DECISION-FEB39440C565",
+          "type": "supports"
+        }
+      ],
+      "sources": [
+        "SRC-PARK2023-GENERATIVE-AGENTS"
+      ],
+      "status": "draft",
+      "title": "Source claim: Generative Agents",
+      "type": "evidence",
+      "uncertainty": "The evaluation target is believable simulated behavior, not factual-memory integrity, delegated-action safety, or Goni's kernel governance."
+    },
+    {
       "aliases": [
         "EVID-ROUTE-01-FRUGAL-SOVEREIGN-ROUTING"
       ],
@@ -12179,6 +12442,33 @@
       "title": "EVID-SEC-03 Trace Replayability Lane",
       "type": "experiment",
       "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Source claim: Brain-inspired replay\n\nThe paper studies replay of generated internal representations as a mechanism\nfor retaining previously learned capabilities under continual learning.\n\n## Goni relevance\n\nIt provides technical precedent for selective replay and internal\nreconstruction as useful offline computation.\n\n## Boundary\n\nDREAM-01 does not infer a biological sleep architecture from this result and\ndoes not require online weight training. The source does not validate synthetic\nmemory as factual evidence.",
+      "domains": [
+        "research",
+        "memory"
+      ],
+      "id": "EVID-VANDEVEN2020-BRAIN-REPLAY",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/evidence/evid-vandeven2020-brain-replay.md",
+      "proposition": "van de Ven et al. report that replay of internally generated representations can mitigate catastrophic forgetting on evaluated continual-learning benchmarks without storing all prior raw data.",
+      "relations": [
+        {
+          "target": "GONI-DECISION-6D3A2B71C9E4",
+          "type": "supports"
+        }
+      ],
+      "sources": [
+        "SRC-VANDEVEN2020-BRAIN-REPLAY"
+      ],
+      "status": "draft",
+      "title": "Source claim: Brain-inspired replay",
+      "type": "evidence",
+      "uncertainty": "This is a continual-learning training result. It does not establish that biological sleep should be copied, that Goni should retrain weights during dream cycles, or that generated replay is safe as factual memory."
     },
     {
       "artifacts": [],
@@ -13349,6 +13639,59 @@
       "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
     },
     {
+      "aliases": [
+        "governed-dreaming",
+        "offline-cognition"
+      ],
+      "artifacts": [],
+      "body": "# D-024 - Governed offline cognition (\"dreaming\")\n\nGoni adopts **governed offline cognition** as a background cognitive regime.\n\n\"Offline\" means decoupled from an immediate user turn or latency-critical\ninteraction. It does not mean that network policy is bypassed or that the\nmachine must be physically disconnected.\n\nThe Control Plane may schedule bounded cognitive cycles that operate over\nauthorized memory and context to:\n\n- replay and consolidate prior experience;\n- derive abstractions from multiple observations;\n- discover associations across otherwise separate contexts;\n- identify contradictions or stale assumptions;\n- generate hypotheses and alternative explanations;\n- construct counterfactuals or simulated futures;\n- falsify current hypotheses or seek disconfirming evidence;\n- identify evidence that would discriminate among competing hypotheses.\n\nThis is not a fifth architectural plane. It is a protocol spanning the existing\nData, Context, Control, and Execution responsibilities.\n\nThe governing distinction is:\n\n> **Dreaming may expand the hypothesis space. It may not expand the authority space.**\n\nA synthetic output is a cognitive candidate. It does not become true because a\nmodel generated it, because the same model generated it repeatedly, because\nmultiple derivative generations agree, or because its source material is real.\n\nAccordingly:\n\n- dream output is not automatically fact;\n- derivation provenance is not confirmation of the derived proposition;\n- repeated synthesis is not independent evidence;\n- confidence is not authority;\n- simulated consequences are not observed consequences;\n- a dream cycle cannot create or widen mandates, capabilities, approval state,\n  policy, budgets, revocation state, or other kernel-owned authority.\n\nA useful dream result may become a hypothesis, a derived memory, a contradiction\nflag, an evidence request, a proposal, or a candidate Work Order. Any\nconsequential effect still enters Goni's ordinary authority path.\n\n## Rationale\n\nD-017 already requires recurring Observation → Reflection → Planning\nconsolidation. D-018 establishes latent-first cognition, while\nGONI-DECISION-9AF49466170D separates probabilistic cognition from canonical\nauthority. Governed offline cognition makes the missing boundary explicit when\nreflection moves beyond summarization into synthetic possibility generation.\n\nResearch on world models, imagined trajectories, reflective agents, and replay\nprovides precedent for the component mechanisms. OpenAI's 2026 use of\n\"Dreaming\" for background memory synthesis also provides a contemporary product\nprecedent for the term. None of these sources validates Goni's authority or\nepistemic contracts; those remain Goni-specific design claims requiring\nevaluation.\n\n## Consequences\n\n- DREAM-01 defines the normative contract.\n- Existing MemoryEntries remain the canonical persistence substrate; no\n  DreamStore or separate hypothesis database is introduced.\n- Dream workloads are kernel-scheduled, budgeted, cancellable, and subordinate\n  to interactive work.\n- Synthetic outputs retain an explicit epistemic distinction until independent\n  evidence supports promotion under the memory contract.\n- Dreaming does not bypass local-first, egress, receipt, tool, or capability\n  rules.\n- DREAM-EVAL-01 must test useful-hypothesis yield, synthetic-memory\n  contamination, provenance, resource cost, and authority preservation before\n  any implementation claim is promoted.",
+      "domains": [
+        "agent",
+        "kernel",
+        "memory",
+        "research",
+        "system"
+      ],
+      "id": "GONI-DECISION-6D3A2B71C9E4",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/decisions/goni-decision-6d3a2b71c9e4-d-024-governed-offline-cognition-dreaming.md",
+      "proposition": "Goni may run kernel-scheduled offline cognitive cycles that replay authorized experience, consolidate memory, derive abstractions, discover associations, generate counterfactuals, test competing explanations, and produce hypotheses or evidence requests, while treating all synthetic outputs as cognitive candidates rather than authoritative facts or permissions.",
+      "relations": [
+        {
+          "target": "GONI-DECISION-FEB39440C565",
+          "type": "refines"
+        },
+        {
+          "target": "GONI-DECISION-9AF49466170D",
+          "type": "refines"
+        },
+        {
+          "target": "SCHED-01",
+          "type": "depends_on"
+        },
+        {
+          "target": "GONI-SPEC-A742123055E0",
+          "type": "depends_on"
+        },
+        {
+          "target": "GONI-SPEC-33294E0D3306",
+          "type": "depends_on"
+        }
+      ],
+      "sources": [
+        "SRC-HA2018-WORLD-MODELS",
+        "SRC-HAFNER2023-DREAMERV3",
+        "SRC-PARK2023-GENERATIVE-AGENTS",
+        "SRC-VANDEVEN2020-BRAIN-REPLAY",
+        "SRC-OPENAI2026-DREAMING"
+      ],
+      "status": "draft",
+      "title": "D-024 - Governed offline cognition (\"dreaming\")",
+      "type": "decision",
+      "uncertainty": "The value, scheduling policy, calibration, and contamination risk of governed offline cognition are unvalidated. The term \"dreaming\" has multiple research and product meanings; Goni uses it only as an alias for the stricter architectural concept defined here and in DREAM-01."
+    },
+    {
       "aliases": [],
       "artifacts": [],
       "body": "# D-014 – Invariants and theorems over ad-hoc tuning\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n## D-014 – Invariants and theorems over ad-hoc tuning\n\n**Formal statement**\n\nFor each major subsystem we choose a set of **invariants** and/or **theorems**, and treat them as part of the public contract:\n\n- Data Plane: A1, A2.  \n- Context Plane: C1.  \n- Control Plane: K1, K2.  \n- Execution substrate: E1.\n\nWe then require that:\n\n1. CI includes tests or simulations that exercise these invariants.  \n2. “Optimisations” that would break an invariant are not allowed in stable releases.\n\n**Rationale**\n\n- We want Goni to be a **kernel with proofs**, not just a performing demo.  \n- Invariants help future contributors understand what they may and may not change.\n\n**Consequence**\n\n- Some micro-optimisations that improve a single benchmark but violate zero-copy or stability constraints are rejected.  \n- Changes to invariants go through an explicit \"amendment\" process in this document (with versioning and rationale), so we keep a history of our mathematical commitments.\n\n---",
@@ -14261,7 +14604,7 @@
     {
       "aliases": [],
       "artifacts": [],
-      "body": "# D-017 - Virtual context management + consolidation loop (MemGPT / Generative Agents)\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n## D-017 - Virtual context management + consolidation loop (MemGPT / Generative Agents)\n\n**Formal statement**\n\n- The Memory/Context planes MUST implement **virtual context management** at the kernel level:\n  - Treat the prompt window as RAM and external stores (Arrow spine + vector/graph backends) as Disk.\n  - Expose explicit paging/syscalls (e.g. `MEM_READ`, `MEM_WRITE`, `MEM_SUMMARIZE`, `MEM_FORGET`) to move data across tiers.\n  - Keep LLM engines stateless; all long-lived state flows through the Memory Plane.\n  - Use `CTX-MISS-01` as the bounded inference-time read-side mechanism when cognition discovers a missing evidentiary or procedural dependency after initial compilation.\n- The Control Plane MUST schedule a recurring **Observation → Reflection → Planning** consolidation loop:\n  - ingest raw events into episodic memory (Observation),\n  - distill reflections/long-term facts (Reflection),\n  - produce plans/jobs/actions using both current state and reflections (Planning).\n- Council/cloud paths see only distilled/approved context unless explicitly allowed by policy.\n\n**Rationale**\n\n- MemGPT (Packer et al., 2023) formalises virtual context management; Goni adopts it as a kernel invariant rather than a prompt-only tool.\n- Goni extends the analogy with a typed context-miss path: an active inference may request additional read-side material, but the request remains bounded by the Work Order, visibility policy, recursion limit, token budget, latency budget, and receipt requirements.\n- Generative Agents (Park et al., 2023) motivates Observation–Reflection–Planning for coherent long-horizon behaviour; Goni maps that pattern into governed Control/Memory responsibilities.\n\n**Consequence**\n\n- Kernel APIs must surface paging syscalls to tools/agents; backlog item: expose `MEM_*` calls in the extension substrate.\n- Context selection, memory paging, and context-miss recovery are tested as first-class behaviours; prompt-only hidden state is non-conformant.\n- A context miss may increase available cognitive evidence but may not grant tool or execution authority.\n- Nightly/periodic consolidation jobs become required workloads; they must respect policies and budgets (local-first unless configured otherwise).\n\n---",
+      "body": "# D-017 - Virtual context management + consolidation loop (MemGPT / Generative Agents)\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n## D-017 - Virtual context management + consolidation loop (MemGPT / Generative Agents)\n\n**Formal statement**\n\n- The Memory/Context planes MUST implement **virtual context management** at the kernel level:\n  - Treat the prompt window as RAM and external stores (Arrow spine + vector/graph backends) as Disk.\n  - Expose explicit paging/syscalls (e.g. `MEM_READ`, `MEM_WRITE`, `MEM_SUMMARIZE`, `MEM_FORGET`) to move data across tiers.\n  - Keep LLM engines stateless; all long-lived state flows through the Memory Plane.\n  - Use `CTX-MISS-01` as the bounded inference-time read-side mechanism when cognition discovers a missing evidentiary or procedural dependency after initial compilation.\n- The Control Plane MUST schedule a recurring **Observation → Reflection → Planning** consolidation loop:\n  - ingest raw events into episodic memory (Observation),\n  - distill evidence-backed summaries and facts while also producing explicitly\n    typed abstractions, contradictions, hypotheses, or other derived candidates\n    when reflection becomes synthetic (Reflection),\n  - preserve epistemic class and route synthetic candidates through `DREAM-01`\n    rather than silently promoting them to facts,\n  - produce plans/jobs/actions using current state and governed reflections\n    (Planning).\n- Council/cloud paths see only distilled/approved context unless explicitly allowed by policy.\n\n**Rationale**\n\n- MemGPT (Packer et al., 2023) formalises virtual context management; Goni adopts it as a kernel invariant rather than a prompt-only tool.\n- Goni extends the analogy with a typed context-miss path: an active inference may request additional read-side material, but the request remains bounded by the Work Order, visibility policy, recursion limit, token budget, latency budget, and receipt requirements.\n- Generative Agents (Park et al., 2023) motivates Observation–Reflection–Planning for coherent long-horizon behaviour; Goni maps that pattern into governed Control/Memory responsibilities.\n\n**Consequence**\n\n- Kernel APIs must surface paging syscalls to tools/agents; backlog item: expose `MEM_*` calls in the extension substrate.\n- Context selection, memory paging, and context-miss recovery are tested as first-class behaviours; prompt-only hidden state is non-conformant.\n- A context miss may increase available cognitive evidence but may not grant tool or execution authority.\n- Nightly/periodic consolidation jobs become required workloads; they must respect policies and budgets (local-first unless configured otherwise).\n- D-017 defines the consolidation obligation. D-024 and DREAM-01 define the\n  stricter boundary for generative offline cognition when reflection creates\n  possibilities rather than merely compressing supported evidence.\n\n---",
       "domains": [
         "software"
       ],
@@ -14278,7 +14621,8 @@
       "proposition": "**Formal statement** The Memory/Context planes MUST implement **virtual context management** at the kernel level: Treat the prompt window as RAM and external stores (Arrow spine + vector/graph backends) as Disk.",
       "relations": [],
       "sources": [
-        "SRC-PACKER2023-MEMGPT"
+        "SRC-PACKER2023-MEMGPT",
+        "SRC-PARK2023-GENERATIVE-AGENTS"
       ],
       "status": "draft",
       "title": "D-017 - Virtual context management + consolidation loop (MemGPT / Generative Agents)",
@@ -14288,7 +14632,7 @@
     {
       "aliases": [],
       "artifacts": [],
-      "body": "# Index\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n## Index\n\n- D-001 – Local-first, offline-capable by definition  \n- D-002 – Arrow Spine as the canonical category \\(\\mathcal{A}\\)  \n- D-003 – Affine, zero-copy morphisms in hot paths  \n- D-004 – Three-plane decomposition (\\(\\mathcal{A},\\mathcal{X},\\mathcal{K}\\))  \n- D-005 – Single-node kernel, process structure is secondary  \n- D-006 – Wasm as the extension substrate (effectful category)  \n- D-007 – Submodular context selection with explicit bounds  \n- D-008 – Lyapunov / MaxWeight scheduler as the unique work arbiter  \n- D-009 – Small-then-big model routing with regret budget  \n- D-010 – No implicit network morphisms (no hidden cloud)  \n- D-011 – Strong default parameters; configuration bounded by invariants  \n- D-012 - Monorepo + layered crate graph as DAG of modules  \n- D-013 - Metrics as first-class objects in \\(\\mathcal{A}\\)  \n- D-014 - Invariants and theorems over ad-hoc tuning  \n- D-015 - Deterministic inference preset for audit/self-loop workloads  \n- D-016 - Memory Plane as a Pluggable, Local-First Service  \n- D-017 - Virtual context management + consolidation loop (MemGPT / Generative Agents)\n- D-018 - Latent-first cognition as an architectural stance\n- D-019 - Agents as local processes; solver as interrupt\n- D-020 - Cognition-first OS; avoid hosting-first drift\n- D-021 - Maximum safe autopilot via autonomy corridors\n- D-022 - Policy-and-anomaly-first operator UX\n- D-023 - Own the control plane; treat agent gateways as untrusted seats\n\n---",
+      "body": "# Index\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n## Index\n\n- D-001 – Local-first, offline-capable by definition  \n- D-002 – Arrow Spine as the canonical category \\(\\mathcal{A}\\)  \n- D-003 – Affine, zero-copy morphisms in hot paths  \n- D-004 – Three-plane decomposition (\\(\\mathcal{A},\\mathcal{X},\\mathcal{K}\\))  \n- D-005 – Single-node kernel, process structure is secondary  \n- D-006 – Wasm as the extension substrate (effectful category)  \n- D-007 – Submodular context selection with explicit bounds  \n- D-008 – Lyapunov / MaxWeight scheduler as the unique work arbiter  \n- D-009 – Small-then-big model routing with regret budget  \n- D-010 – No implicit network morphisms (no hidden cloud)  \n- D-011 – Strong default parameters; configuration bounded by invariants  \n- D-012 - Monorepo + layered crate graph as DAG of modules  \n- D-013 - Metrics as first-class objects in \\(\\mathcal{A}\\)  \n- D-014 - Invariants and theorems over ad-hoc tuning  \n- D-015 - Deterministic inference preset for audit/self-loop workloads  \n- D-016 - Memory Plane as a Pluggable, Local-First Service  \n- D-017 - Virtual context management + consolidation loop (MemGPT / Generative Agents)\n- D-018 - Latent-first cognition as an architectural stance\n- D-019 - Agents as local processes; solver as interrupt\n- D-020 - Cognition-first OS; avoid hosting-first drift\n- D-021 - Maximum safe autopilot via autonomy corridors\n- D-022 - Policy-and-anomaly-first operator UX\n- D-023 - Own the control plane; treat agent gateways as untrusted seats\n- D-024 - Governed offline cognition (\"dreaming\")\n\n---",
       "domains": [
         "software"
       ],
@@ -36696,7 +37040,7 @@
     {
       "aliases": [],
       "artifacts": [],
-      "body": "# 3.3 Memory & Cognition\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n### 3.3 Memory & Cognition\n\n- The node should treat **long-term memory as a separate plane** with explicit lifecycle:\n  - working/session context is transient,\n  - episodic history is distilled over time,\n  - semantic facts persist with decay and can be pinned,\n  - procedural knowledge is versioned.\n- Versioned procedural knowledge that is intended to control repeated task execution is governed through `SKILL-REG-01`. Durable personal procedural memories may reference governed skills, but memory content does not silently become executable instruction.\n- The Memory/Context planes must implement **virtual context management** (MemGPT-style):\n  - prompt/context window as RAM, Arrow/vector/graph stores as Disk,\n  - explicit paging/syscalls (`MEM_READ`, `MEM_WRITE`, `MEM_SUMMARIZE`, `MEM_FORGET`) for moving data across tiers,\n  - LLM engines stay stateless; all long-lived state flows through the Memory Plane.\n- The Control Plane must run a **consolidation loop** (Observation → Reflection → Planning):\n  - ingest raw events into episodic memory,\n  - distill reflections/long-term facts periodically (e.g. nightly/weekly),\n  - plan/schedule actions using both current state and reflections.\n- The system must support **local-only long-term memory** by default; cloud/council access is limited to distilled facts or session context unless explicitly allowed.\n- To avoid **cognitive offloading debt**, default UX for learning/creative flows should:\n  - prompt user effort (outline/selection) before full generation,\n  - attribute which parts were AI- vs user-authored,\n  - expose which memories were retrieved and why (traceable recall).\n- **Supported minimum vs reference build:** the software should run on lower-memory hardware (e.g. **64 GB unified**) by tightening context budgets, model sizes, and cache policies while preserving behaviour. However, the **product reference build** for the MVP story is **128 GB unified memory** (see `blueprint/hardware/90-decisions.md` ADR-002).\n\n---",
+      "body": "# 3.3 Memory & Cognition\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n### 3.3 Memory & Cognition\n\n- The node should treat **long-term memory as a separate plane** with explicit lifecycle:\n  - working/session context is transient,\n  - episodic history is distilled over time,\n  - semantic facts persist with decay and can be pinned,\n  - procedural knowledge is versioned.\n- Versioned procedural knowledge that is intended to control repeated task execution is governed through `SKILL-REG-01`. Durable personal procedural memories may reference governed skills, but memory content does not silently become executable instruction.\n- The Memory/Context planes must implement **virtual context management** (MemGPT-style):\n  - prompt/context window as RAM, Arrow/vector/graph stores as Disk,\n  - explicit paging/syscalls (`MEM_READ`, `MEM_WRITE`, `MEM_SUMMARIZE`, `MEM_FORGET`) for moving data across tiers,\n  - LLM engines stay stateless; all long-lived state flows through the Memory Plane.\n- The Control Plane must run a **consolidation loop** (Observation → Reflection → Planning):\n  - ingest raw events into episodic memory,\n  - distill evidence-backed summaries/facts and explicitly typed derived\n    candidates periodically (e.g. nightly/weekly),\n  - plan/schedule actions using current state and governed reflections.\n- Periodic cognition may extend consolidation with governed offline synthesis\n  under `DREAM-01`. Such cycles may derive abstractions, associations,\n  contradictions, counterfactuals, simulations, evidence requests, or\n  hypotheses from authorized memory. Synthetic outputs remain explicitly\n  distinguishable from observed or independently confirmed facts and do not\n  silently become executable procedural knowledge, policy, preferences, or\n  authority state.\n- The existing `MemoryEntries` substrate remains canonical for durable dream\n  outputs in v1. New synthetic entries use `hypothesis` or `derived` and\n  existing provenance, TTL/review, conflict, and quarantine semantics rather\n  than introducing a second hypothesis store.\n- The system must support **local-only long-term memory** by default; cloud/council access is limited to distilled facts or session context unless explicitly allowed.\n- To avoid **cognitive offloading debt**, default UX for learning/creative flows should:\n  - prompt user effort (outline/selection) before full generation,\n  - attribute which parts were AI- vs user-authored,\n  - expose which memories were retrieved and why (traceable recall).\n- **Supported minimum vs reference build:** the software should run on lower-memory hardware (e.g. **64 GB unified**) by tightening context budgets, model sizes, and cache policies while preserving behaviour. However, the **product reference build** for the MVP story is **128 GB unified memory** (see `blueprint/hardware/90-decisions.md` ADR-002).\n\n---",
       "domains": [
         "software"
       ],
@@ -41938,7 +42282,7 @@
     {
       "aliases": [],
       "artifacts": [],
-      "body": "# 5.1 Confirmed vs speculation thresholds\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n## 5.1 Confirmed vs speculation thresholds\n\nFor MemoryEntries:\n- A claim is **confirmed** if `confirmed_by_event_id` is present, or if\n  `source_chunk_ids` is non-empty, `confidence` meets the policy threshold, and\n  `conflict_state` is not contradictory.\n- Otherwise, the claim MUST be stored as `hypothesis` or `derived` with a\n  `ttl_ms` or `review_at` value, and MUST NOT be promoted to `fact` without\n  new evidence.",
+      "body": "# 5.1 Confirmed vs speculation thresholds\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n## 5.1 Confirmed vs speculation thresholds\n\nFor MemoryEntries:\n- A direct claim may be **confirmed** if `confirmed_by_event_id` is present, or\n  if `source_chunk_ids` contains qualifying evidence for the proposition,\n  `confidence` meets the policy threshold, and `conflict_state` is not\n  contradictory.\n- Otherwise, the claim MUST be stored as `hypothesis` or `derived` with a\n  `ttl_ms` or `review_at` value, and MUST NOT be promoted to `fact` without\n  new evidence.\n- For `hypothesis` or `derived` entries produced by dreaming, simulation,\n  counterfactual reasoning, reflection, or other synthetic inference,\n  `source_chunk_ids` establish derivation provenance only. They do not by\n  themselves confirm the newly derived proposition.\n- Model confidence, repeated generation of the same proposition, or agreement\n  among model-generated descendants of the same evidence lineage MUST NOT count\n  as independent confirmation.\n- Promotion of a synthetic derivative to `fact` requires qualifying evidence\n  that supports the derived proposition itself and remains distinguishable from\n  the model-generation lineage that produced it.\n- Simulated or counterfactual events MUST NOT populate\n  `confirmed_by_event_id` as though they were observed external events.\n\nThis preserves an explicit boundary between:\n\n1. **evidence provenance** — what material a cognition process used;\n2. **derivation provenance** — how a synthetic proposition was produced; and\n3. **confirmation evidence** — what independently supports the proposition as\n   true.\n\nUnder `DREAM-01`, repeated synthesis may increase salience or motivate testing,\nbut it cannot bootstrap a hypothesis into a fact through self-corroboration.",
       "domains": [
         "specs"
       ],
@@ -41952,13 +42296,18 @@
         }
       ],
       "path": "knowledge/specifications/goni-spec-a742123055e0-5-1-confirmed-vs-speculation-thresholds.md",
-      "proposition": "For MemoryEntries: A claim is **confirmed** if confirmed_by_event_id is present, or if source_chunk_ids is non-empty, confidence meets the policy threshold, and conflict_state is not contradictory.",
-      "relations": [],
+      "proposition": "For MemoryEntries, confirmation requires qualifying evidence for the proposition itself; synthetic derivation provenance, model confidence, and repeated model generation do not independently confirm a derived claim.",
+      "relations": [
+        {
+          "target": "DREAM-01",
+          "type": "refines"
+        }
+      ],
       "sources": [],
       "status": "draft",
       "title": "5.1 Confirmed vs speculation thresholds",
       "type": "specification",
-      "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
+      "uncertainty": "The legacy threshold is retained for direct evidence-backed claims but narrowed for synthetic derivatives. Concrete independence tests for evidence lineages require implementation and adversarial evaluation."
     },
     {
       "aliases": [],
@@ -44891,7 +45240,7 @@
     {
       "aliases": [],
       "artifacts": [],
-      "body": "# Specs\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n## Specs\n- [Agent definition](/blueprint/30-specs/agent-definition.md) (AGENT-DEF-01)\n- [Agent manifest](/blueprint/30-specs/agent-manifest.md) (AGENT-MANIFEST-01)\n- [Correction Delta Compiler](/blueprint/30-specs/correction-delta-compiler.md) (CDC-01)\n- [Delegation interface](/blueprint/30-specs/delegation-interface.md) (DELEG-INT-01)\n- [Delegation and autonomy](/blueprint/30-specs/delegation-and-autonomy.md) (DELEG-01)\n- [Delegated Agent Treasury](/blueprint/30-specs/delegated-agent-treasury.md) (DAT-01)\n- [Embodied Robot Control Plane](/blueprint/30-specs/embodied-robot-control-plane.md) (ROBOT-01)\n- [Vision, memory, and actuation boundaries](/blueprint/30-specs/vision-memory-actuation-boundaries.md) (BOUND-01)\n- [Agent store governance](/blueprint/30-specs/agents/agent-store.md) (AGENT-STORE-01)\n- [Execution metering and budget units](/blueprint/30-specs/metering/SPEC-METER-01-execution-metering.md) (METER-01)\n- [Receipt metering fields](/blueprint/30-specs/metering/SPEC-METER-02-receipt-metering-fields.md) (METER-02)\n- [Agent Kernel ABI](/blueprint/30-specs/kernel/SPEC-KERN-01-agent-kernel-abi.md) (SPEC-KERN-01)\n- [Transactional Tool Execution](/blueprint/30-specs/kernel/SPEC-TXN-01-transactional-tools.md) (SPEC-TXN-01)\n- [Policy Language (Capabilities + IFC)](/blueprint/30-specs/kernel/SPEC-POL-01-policy-language.md) (SPEC-POL-01)\n- [Non-bypassable Mediation on Linux](/blueprint/30-specs/kernel/SPEC-ENF-01-non-bypassable-mediation.md) (SPEC-ENF-01)\n- [Isolation and tool sandboxes](/blueprint/30-specs/isolation-and-tool-sandboxes.md) (SANDBOX-01)\n- [ITCR](/blueprint/30-specs/itcr.md) (ITCR-01)\n- [Job contract](/blueprint/30-specs/job.md) (JOB-01)\n- [Latent state contract](/blueprint/30-specs/latent-state-contract.md) (LSC-01)\n- [Context Gravity Graph](/blueprint/30-specs/context-gravity-graph.md) (CGG-01)\n- [Governed memory retrieval](/blueprint/30-specs/memory-retrieval.md) (MEM-RETR-01)\n- Authority-Aware Context Compilation (CTX-COMP-01)\n- Governed Skill Registry (SKILL-REG-01)\n- Model-Specific Inference Frame (INF-FRAME-01)\n- Prefix and KV Reuse (CACHE-01)\n- Bounded Context-Miss Resolution (CTX-MISS-01)\n- [Model bundle registry governance](/blueprint/30-specs/model-registry.md) (MODEL-REG-01)\n- [Network gate and anonymity](/blueprint/30-specs/network-gate-and-anonymity.md) (NET-01)\n- [Receipts](/blueprint/30-specs/receipts.md) (REC-01)\n- [Scheduler and interrupts](/blueprint/30-specs/scheduler-and-interrupts.md) (SCHED-01)\n- [Symbolic substrate](/blueprint/30-specs/symbolic-substrate.md) (SS-01)\n- [Sync policies](/blueprint/30-specs/sync-policies.md) (SYNC-01)\n- [Tool capability API](/blueprint/30-specs/tool-capability-api.md) (TOOL-01)\n- [Visual Intelligence Plane](/blueprint/30-specs/visual-intelligence-plane.md) (VIS-01)",
+      "body": "# Specs\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n## Specs\n- [Agent definition](/blueprint/30-specs/agent-definition.md) (AGENT-DEF-01)\n- [Agent manifest](/blueprint/30-specs/agent-manifest.md) (AGENT-MANIFEST-01)\n- [Correction Delta Compiler](/blueprint/30-specs/correction-delta-compiler.md) (CDC-01)\n- [Delegation interface](/blueprint/30-specs/delegation-interface.md) (DELEG-INT-01)\n- [Delegation and autonomy](/blueprint/30-specs/delegation-and-autonomy.md) (DELEG-01)\n- [Delegated Agent Treasury](/blueprint/30-specs/delegated-agent-treasury.md) (DAT-01)\n- [Embodied Robot Control Plane](/blueprint/30-specs/embodied-robot-control-plane.md) (ROBOT-01)\n- [Vision, memory, and actuation boundaries](/blueprint/30-specs/vision-memory-actuation-boundaries.md) (BOUND-01)\n- [Agent store governance](/blueprint/30-specs/agents/agent-store.md) (AGENT-STORE-01)\n- [Execution metering and budget units](/blueprint/30-specs/metering/SPEC-METER-01-execution-metering.md) (METER-01)\n- [Receipt metering fields](/blueprint/30-specs/metering/SPEC-METER-02-receipt-metering-fields.md) (METER-02)\n- [Agent Kernel ABI](/blueprint/30-specs/kernel/SPEC-KERN-01-agent-kernel-abi.md) (SPEC-KERN-01)\n- [Transactional Tool Execution](/blueprint/30-specs/kernel/SPEC-TXN-01-transactional-tools.md) (SPEC-TXN-01)\n- [Policy Language (Capabilities + IFC)](/blueprint/30-specs/kernel/SPEC-POL-01-policy-language.md) (SPEC-POL-01)\n- [Non-bypassable Mediation on Linux](/blueprint/30-specs/kernel/SPEC-ENF-01-non-bypassable-mediation.md) (SPEC-ENF-01)\n- [Isolation and tool sandboxes](/blueprint/30-specs/isolation-and-tool-sandboxes.md) (SANDBOX-01)\n- [ITCR](/blueprint/30-specs/itcr.md) (ITCR-01)\n- [Job contract](/blueprint/30-specs/job.md) (JOB-01)\n- [Latent state contract](/blueprint/30-specs/latent-state-contract.md) (LSC-01)\n- [Context Gravity Graph](/blueprint/30-specs/context-gravity-graph.md) (CGG-01)\n- [Governed memory retrieval](/blueprint/30-specs/memory-retrieval.md) (MEM-RETR-01)\n- Authority-Aware Context Compilation (CTX-COMP-01)\n- Governed Skill Registry (SKILL-REG-01)\n- Model-Specific Inference Frame (INF-FRAME-01)\n- Prefix and KV Reuse (CACHE-01)\n- Bounded Context-Miss Resolution (CTX-MISS-01)\n- Governed Offline Cognition (DREAM-01)\n- [Model bundle registry governance](/blueprint/30-specs/model-registry.md) (MODEL-REG-01)\n- [Network gate and anonymity](/blueprint/30-specs/network-gate-and-anonymity.md) (NET-01)\n- [Receipts](/blueprint/30-specs/receipts.md) (REC-01)\n- [Scheduler and interrupts](/blueprint/30-specs/scheduler-and-interrupts.md) (SCHED-01)\n- [Symbolic substrate](/blueprint/30-specs/symbolic-substrate.md) (SS-01)\n- [Sync policies](/blueprint/30-specs/sync-policies.md) (SYNC-01)\n- [Tool capability API](/blueprint/30-specs/tool-capability-api.md) (TOOL-01)\n- [Visual Intelligence Plane](/blueprint/30-specs/visual-intelligence-plane.md) (VIS-01)",
       "domains": [
         "specs"
       ],
@@ -44905,7 +45254,7 @@
         }
       ],
       "path": "knowledge/specifications/goni-spec-f3f239528848-specs.md",
-      "proposition": "Canonical catalogue of Goni normative contracts, including governed skills, authority-aware context compilation, model-specific inference serialization, cache reuse, and bounded context-miss recovery.",
+      "proposition": "Canonical catalogue of Goni normative contracts, including governed skills, authority-aware context compilation, model-specific inference serialization, cache reuse, bounded context-miss recovery, and governed offline cognition.",
       "relations": [],
       "sources": [],
       "status": "draft",
@@ -58391,7 +58740,7 @@
     {
       "aliases": [],
       "artifacts": [],
-      "body": "# 90 Research Agenda\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n3) Queueing theory & performance engineering (tail latency)\n\nPurpose:\n- Define the research questions and measurements needed to make tail latency a\n  first-class design constraint for Goni's interactive-first behavior.\n\nResearch questions (academically framed):\n- What queueing model best fits mixed interactive/background LLM workloads\n  (e.g., heavy-tailed service times, bursty arrivals, and long-tail prompts)?\n- How do different scheduling policies (priority, preemptive, aging, EDF)\n  affect p95/p99 TTFT and end-to-end latency under realistic load?\n- What is the minimal admission-control policy that preserves interactive SLOs\n  while maximizing background throughput?\n- How does context length distribution (prefill size) reshape the tail, and\n  which chunking strategies actually reduce head-of-line blocking?\n- What are the measurable interactions between KV cache pressure, queue depth,\n  and latency spikes?\n- When does resource partitioning (two pools) outperform single-pool priority?\n\nCore metrics and SLOs:\n- TTFT p50/p95/p99 (interactive class)\n- End-to-end latency p50/p95/p99 (interactive class)\n- Cancellation latency p95/p99 (interrupt effectiveness)\n- Queue depth and wait time by class\n- Service time distribution (tokens/sec and total tokens) by class\n- Admission rate and rejection rate by class\n- Tail amplification factor (p99 / p50)\n\nModels and analysis:\n- Fit arrival processes and service time distributions (test for heavy tails).\n- Evaluate priority M/G/1 and preemptive-resume variants against traces.\n- Quantify head-of-line blocking via long-prefill share of total service time.\n- Use Little's Law to sanity-check queue size vs latency under steady load.\n\nExperiment design (repeatable):\n- Baselines: interactive-only, background-only, mixed steady-state.\n- Stress: long-prefill bursts with short interactive requests injected.\n- Mixed burst: background backlog + interactive burst with cancellation events.\n- Resource partitioning: single pool vs dual pool (interactive/background).\n\nControl mechanisms to evaluate:\n- Preemptive priority scheduling (LLM request priority).\n- Chunked prefill and long-prefill thresholds.\n- Admission control with hysteresis (token bucket or WIP limits).\n- Load shedding for background jobs under SLO threat.\n- Class-based routing (separate LLM pools).\n\nEvidence artifacts to produce:\n- Trace logs with timestamps: arrival, start, first-token, completion, cancel.\n- Scenario-specific latency distributions and queue depth timelines.\n- A short \"tail latency playbook\" with recommended defaults and failure modes.\n\n4) Distributed systems & offline-first synchronization (local-first durability)\n\nPurpose:\n- Define the research questions and system constraints for a durable, offline-first\n  Vault that can later replicate safely across multiple devices.\n\nResearch questions (academically framed):\n- What consistency guarantees are required per plane (capabilities/keys vs user data),\n  and what is the minimal consistency model that preserves safety?\n- Which data types benefit from CRDTs vs append-only logs vs transactional storage?\n- How do we bound privacy leakage during replication while still achieving convergence?\n- What is the cost of conflict resolution under realistic device churn and partitions?\n- How does replication affect auditability and receipt integrity over time?\n\nCore data categories (by consistency class):\n- Strong: capability grants, device membership, key rotations, policy changes.\n- Eventual: notes, summaries, derived embeddings, user artifacts.\n- Append-only: receipts, audit logs, execution traces (tamper-evident chain).\n\nModels and analysis:\n- Formalize per-object merge semantics (CRDT types or LWW where justified).\n- Model partition tolerance vs consistency for each category (CAP tradeoffs).\n- Define a replication protocol that can operate without a central coordinator.\n\nExperiment design (repeatable):\n- Multi-device simulator: 3–7 nodes, randomized partitions, random edits.\n- Chaos scenarios: clock skew, dropped messages, partial replays.\n- Measure convergence time, storage bloat, and conflict rate.\n\nControl mechanisms to evaluate:\n- Plane-aware replication policy (redaction/minimization before sync).\n- Strong-consistency paths for keys/capabilities (quorum or explicit approvals).\n- Snapshot + log compaction strategy for long-running devices.\n\nEvidence artifacts to produce:\n- Replication traces showing convergence and conflict resolution.\n- A \"Vault durability\" report: data loss bounds, recovery steps, and audit chain health.\n\n5) Databases, IR, and data management (the Vault + receipts)\n\nPurpose:\n- Define the research agenda for a Vault that is durable, queryable, and auditable,\n  with receipts as first-class provenance objects rather than log lines.\n\nResearch questions (academically framed):\n- What storage model best preserves auditability while supporting low-latency retrieval?\n- How should receipts be modeled to ensure integrity, minimal text retention, and\n  provenance completeness?\n- What indexing strategy (dense, hybrid, graph) best balances recall and latency\n  for personal corpora under tight device budgets?\n- How do we guarantee that derived artifacts (summaries, embeddings, decisions)\n  can be traced back to source entities without leaking raw text?\n- What is the minimal schema that still supports conformance and reproducibility?\n\nCore objects and relations:\n- Entities: Docs, Chunks, Embeddings, ContextItems, MemoryEntries, Receipts.\n- Activities: ingest, chunk, embed, retrieve, summarize, redact, toolcall.\n- Agents: user, kernel module, model provider, tool executor.\n- Relations: used, wasGeneratedBy, wasDerivedFrom, wasAttributedTo.\n\nReceipt requirements:\n- Immutable, append-only storage with hash chaining.\n- Pointers to inputs/outputs (entity IDs) and policy hash.\n- Code + model identifiers and parameters used for the transformation.\n- Deny/allow decisions for redaction or capability gates.\n\nRetrieval modes to evaluate (same harness):\n- Dense ANN (vector DB).\n- Hybrid (BM25/FTS + dense with RRF or learned weights).\n- Graph traversal (entities/threads/clauses) with budgeted BFS.\n\nQuality + performance metrics:\n- Recall@k, MRR, nDCG on synthetic + open demo corpora.\n- p50/p95 end-to-end latency with stage breakdown.\n- Groundedness proxy: answer spans map to cited chunk IDs.\n- Storage overhead for receipts and provenance links.\n\nEvidence artifacts to produce:\n- A benchmark report comparing retrieval modes and budgets.\n- A receipt integrity report (hash chain verification and completeness checks).\n\n6) ML systems (efficient inference, model routing, compression)\n\nPurpose:\n- Define the research agenda for efficient local inference and routing across\n  model sizes, quantization levels, and hardware backends.\n\nResearch questions (academically framed):\n- What routing policy maximizes task quality under tight latency and power budgets?\n- How do quantization and KV-cache pressure trade off against TTFT and tail latency?\n- What is the minimal model portfolio that achieves target coverage of tasks?\n- When does offloading (remote or larger local model) outperform small local models\n  given real device constraints and privacy policies?\n- How does compression (4-bit, 8-bit, mixed) affect retrieval-augmented tasks?\n\nCore evaluation axes:\n- Latency: TTFT, end-to-end, cancellation latency.\n- Throughput: tokens/sec per class, concurrency scaling.\n- Quality: task success metrics, groundedness where retrieval is used.\n- Energy: joules/token or Wh per request (when power data is available).\n- Cost: remote escalation frequency vs local token share.\n\nModel portfolio experiments:\n- Small local (interactive), medium local (quality), embedder model.\n- Quantized vs full-precision variants on the same hardware.\n- Context length scaling curves (1k, 4k, 16k, 32k tokens).\n\nRouting policy experiments:\n- Local-first with escalation on confidence or latency thresholds.\n- Budget-aware routing with per-class caps and hysteresis.\n- Priority routing under mixed interactive/background load.\n\nCompression + serving tactics:\n- Quantization sweeps (4/5/6/8-bit) with accuracy trade-off curves.\n- Speculative decoding or prompt-caching (if supported) for TTFT control.\n- Separate pools for interactive vs background to stabilize tail latency.\n\nEvidence artifacts to produce:\n- A routing report: quality vs latency vs local-token ratio.\n- A compression report: accuracy loss vs latency/energy gains.\n\n7) HCI & cognitive systems (mixed-initiative, interruption science, cockpit design)\n\nPurpose:\n- Define the research agenda for mixed-initiative behavior, interruption\n  management, and operator cockpit UX that preserves user agency.\n\nResearch questions (academically framed):\n- What policies minimize interruption cost while preserving task success?\n- How do \"propose vs act vs defer\" thresholds affect user trust and regret?\n- What UI cues best convey provenance and confidence without overload?\n- How should the system adapt to user focus modes and time constraints?\n- What undo/rollback guarantees are required for safe autonomy?\n\nCore signals and policies:\n- Interruptibility estimate (0–1), urgency class, and deferrable-until time.\n- Focus modes: deep work, normal, idle.\n- Initiative levels: notify, propose, act (with explicit permission thresholds).\n- Confidence thresholds with hysteresis to reduce oscillation.\n\nEvaluation design:\n- Scenario-based user studies with scripted interruptions.\n- A/B tests on notification timing and modality.\n- Longitudinal \"trust calibration\" tracking (accept/reject/undo rates).\n\nMetrics to track:\n- Interruption cost (task switch time, error rate).\n- Action regret rate and time-to-undo.\n- Delegation comfort score and opt-out rate.\n- Time-to-resolution for action cards.\n\nEvidence artifacts to produce:\n- A \"proactivity policy\" report with measured outcomes.\n- Cockpit design rationale mapping UI elements to cognitive goals.\n\n8) Security, privacy, and trustworthy computing (delegation without trust collapse)\n\nPurpose:\n- Define the research agenda for enforcing \"no ambient authority\" and proving\n  that delegation remains safe under realistic threat models.\n\nResearch questions (academically framed):\n- What is the minimal trusted computing base (TCB) for capability mediation?\n- How can we prove all outbound effects are mediated and auditable?\n- What receipt design provides integrity without leaking sensitive content?\n- How should redaction and data classification be enforced at egress boundaries?\n- What is the recovery story if a component inside the sandbox is compromised?\n\nCore security objectives:\n- Default-deny network for all non-gate components.\n- Capability-scoped tool execution with explicit budgets and expiry.\n- Tamper-evident, append-only receipt log with verifiable integrity.\n- Plane-aware data minimization and redaction before any egress.\n\nThreat model coverage:\n- Untrusted tool outputs and prompt-injection via retrieved text.\n- Bypass attempts (direct sockets, file exfiltration, side-channel signals).\n- Compromised tool sandbox attempting privilege escalation.\n- Accidental policy drift via config changes.\n\nEnforcement and verification:\n- Single egress gate; all HTTP flows through it.\n- Sandboxed tools with no ambient network; only gate has egress.\n- Integration tests that prove bypass failures and receipt emission.\n- Key rotation and revocation for capability tokens.\n\nEvidence artifacts to produce:\n- A security conformance report with bypass test results.\n- A receipt integrity report with hash-chain verification.\n\n9) Economics, adoption, and market design (community-first, not marketing)\n\nPurpose:\n- Define how a high-trust builder community forms, governs itself, and sustains\n  the project without relying on hype or commercial narratives.\n\nResearch questions (academically framed):\n- What governance structures reduce coordination cost while preserving rigor?\n- How do contribution norms (RFCs, receipts discipline, threat reviews) affect\n  project quality and trust over time?\n- What incentives best attract serious builders without diluting standards?\n- How do communities prevent spec drift and maintain enforceable contracts?\n\nCommunity operating system:\n- Clear entry points: COMMUNITY.md, STATUS, and Truth Map.\n- Lightweight governance: RFC flow for spec changes and security-sensitive topics.\n- Trust ladder: transparent criteria for contributor roles and review authority.\n- Receipts discipline: every capability change documents logging, redaction, and\n  auditability impacts.\n\nAdoption signals (non-marketing, observable):\n- Contributor retention and review throughput.\n- Time-to-merge for spec and prototype changes.\n- Number of conformance tests added per release.\n- Decline in \"reality map\" drift (STATUS vs actual implementation).\n\nEvidence artifacts to produce:\n- A community health report (review throughput, RFC cadence, conformance growth).\n- A governance audit log (decisions, rationale, and spec linkage).\n\n10) Reproducible system checklist (must-have vs nice-to-have)\n\nPurpose:\n- Define the concrete repo contents that make Goni runnable, measurable, and\n  extendable by outsiders without guesswork.\n\nMust-have (to be \"real\"):\n- Single blessed entrypoint: README matches reality and links to STATUS.\n- One-command demo: compose + smoke test + deterministic success criteria.\n- Clear component boundaries: orchestrator, llm adapter, vector store, telemetry.\n- Measurement harness: repeatable TTFT/tok-s benchmarks with JSON output.\n- Scheduler v0: interactive vs background, preemption points, metrics.\n- Contracts + CI: enforce invariants, smoke test, and minimal perf checks.\n- Deployment parity: compose is canonical; k8s only if maintained.\n\nNice-to-have (next):\n- Real embeddings backend with model/version metadata.\n- Hardware compatibility matrix (CPU/CUDA/ROCm, known-good configs).\n- Security and governance hygiene: SECURITY.md, TCB statement, retention policy.\n\nMinimal MVP contents (lean but credible):\n- make demo + smoke.sh\n- JobSpec end-to-end\n- 2-class scheduler with p95/p99 TTFT report\n- Capability enforcement at a single choke point + negative tests\n- Receipts/audit log (structured, hash-linked)\n\n11) Serious systems repo structure (interactive-first QoS)\n\nPurpose:\n- Define the minimal file/folder structure and acceptance criteria that make\n  QoS and tail-latency work reproducible, testable, and debuggable.\n\nCore docs:\n- README: problem, thesis, shipped components, measured metrics, 3-command run.\n- VISION/THESIS: QoS class definitions, interrupt semantics, non-negotiable SLOs.\n- ARCHITECTURE: data/control flow and trust boundaries.\n- PERF: hardware profiles, backend flags, golden baselines, regression thresholds.\n\nScheduler artifacts:\n- scheduler spec (QoS classes, WIP limits, hysteresis, preemption points).\n- policies (interactive-first, burst protection).\n- code module with admission control, priority mapping, cancel/abort propagation.\n\nBenchmarks + observability:\n- benchmark scenarios (interactive-only, background-only, mixed, burst).\n- runner with JSON/CSV outputs.\n- metrics doc + Prometheus/Grafana config.\n\nDeploy layout:\n- compose base + observability overlay + .env.example.\n- k8s overlays only if maintained; no hidden logic.\n\nBackground jobs model:\n- job types with schema, cost estimates, preemption points, idempotency rules.\n\nCI guardrails:\n- lint/test for all languages.\n- bench smoke on PRs; perf regression nightly.\n\n12) Local-first OS readiness (runnable + secure + multi-device growth)\n\nPurpose:\n- Define the minimal repo contents to make Goni runnable, secure, and ready\n  for offline-first, multi-device evolution without overpromising.\n\nRepo must-haves:\n- README with one golden path, .env.example, and quickstart doc.\n- Deterministic demo with expected outputs (ingest -> action card -> receipt).\n- CONTRIBUTING, issue templates, and clear onboarding.\n\nCore subsystems (first-class modules):\n- Vault as source-of-truth (receipts + audit log, vector DB as index only).\n- Orchestrator/council with policy-mediated execution.\n- Plane enforcement with tests at boundaries.\n- Local LLM + embeddings + vector store adapters.\n\nOffline-first + sync foundations:\n- Sync module (transport, event log/CRDT model, compaction).\n- CRDT specs per artifact type with property tests.\n- Plane-aware sync policy matrix + validator.\n- Churn simulator for partitions and convergence.\n\nSecurity essentials:\n- SECURITY.md and dependency update automation.\n- Device identity + key rotation + revocation semantics.\n- Tamper-evident audit log with verification tests.\n\nSpecs and proof:\n- Architecture index mapping spec -> code -> tests.\n- Invariant tests for plane boundaries and append-only receipts.\n- Versioning/migration spec for Vault and contracts.\n\nOperational packaging:\n- Compose and k8s manifests aligned to the golden path.\n- Release tags, changelog, and published images.\n- CI smoke test that proves the demo path runs.\n\n13) Vault + receipts: minimum shippable system\n\nPurpose:\n- Define the minimal repo structure, artifacts, and CI checks needed for a\n  fast, grounded, auditable local-first memory system.\n\nRequired structure:\n- software/kernel: policy gates, receipt emitter, schema+migrations, goldens.\n- software/vault: ingestion, chunking, index layer, context assembly.\n- software/retrieval: dense/sparse/hybrid/graph via a unified interface.\n- spec: planes, receipts, memory model, redaction profiles, retrieval contracts.\n- goni-lab: conformance + benchmark harness with JSON reports.\n\nCore artifacts:\n- Receipt/Provenance model (PROV-DM shaped): Receipt, Entity, Activity, Agent.\n- Vault tables: Documents, Chunks, Embeddings, SparseIndex, GraphEdges,\n  ContextPacks, MemoryEntries, Receipts, RedactionEvents.\n- Two enforced gates:\n  - Memory write gate (evidence + receipt required; TTL for uncertain entries).\n  - Egress/redaction gate (profile + plane rules + manifest required).\n\nRetrieval requirements:\n- Sparse baseline (FTS ok), dense embeddings (real, no placeholders), hybrid fusion.\n- Optional graph expansion with budget limits.\n\nBenchmarks + evaluation:\n- Dataset format + synthetic corpus generator + small open demo corpus.\n- Metrics: recall@k, nDCG/MRR, p50/p95 per stage latency.\n- One command runner: goni-lab bench ... with deterministic output.\n\nCI invariants:\n- TXT boundary lint (no forbidden plane leaks).\n- Receipt completeness for any external call or memory write.\n- Goldens for memory-write and redaction gates.\n- Spec/code sync (schemas/migrations).\n- Benchmark smoke on PRs, full suite nightly.\n\n14) Local-first ML kernel scope (what must exist vs what must not)\n\nPurpose:\n- Define the minimum repo contents that make the kernel runnable, testable,\n  measurable, and extensible, and explicitly exclude half-built surfaces.\n\nMust-have:\n- Single blessed run path (README + compose or Make/justfile).\n- Kernel contracts: router, scheduler, execution adapters, schemas.\n- CI smoke test that exercises stream + non-stream + cancel.\n- Measurement harness with CSV/JSON outputs and a tiny eval set.\n- Traceable specs (architecture + threat model + routing + scheduler invariants).\n- License + contribution hygiene.\n\nRecommended:\n- Runtime adapter boundary (vLLM, llama.cpp, etc.) with engine interface.\n- Real embeddings path and retrieval budgets if RAG is claimed.\n- Roadmap/scope statement to prevent kernel/product creep.\n\nMust-not:\n- Half-built frontend without build/CI support.\n- Policy claims without enforced gates + tests.\n- Infra (k8s/terraform) that isn't validated by CI or users.\n\n15) Operator appliance repo minimum (proactivity + receipts)\n\nPurpose:\n- Define the minimal repo contents to make Goni a real operator appliance with\n  proactive assistance, receipts, and a runnable demo on a new machine.\n\nMust-have run path:\n- make demo + make test wrappers.\n- compose stack + .env.example.\n- smoke test that asserts kernel endpoint, receipts, and retrieval.\n- goni-prototype-lab:demo/demo_expected.md with \"what you should see.\"\n\nCore docs:\n- ARCHITECTURE (components, dataflow, boundaries).\n- DECISIONS/ (ADRs) + TRACEABILITY/STATUS tied to code/tests.\n\nOperator primitives (schemas + APIs):\n- Schemas: events, action_cards, daily_brief, receipts, capabilities, policy.\n- APIs: cards list/approve/reject, brief, receipts, policy get/set.\n\nPolicy engine:\n- initiative ladder (defer/propose/ask/act) with deterministic tests.\n- rationale objects included in receipts.\n\nGovernance layer:\n- capability tokens required for any side effect.\n- receipts emitted for tool calls and egress.\n- network gate as sole egress path with bypass tests.\n\nRetrieval:\n- real embeddings path with metadata.\n- retrieval sanity tests (no placeholders).\n\nCockpit surface (pick one):\n- minimal web UI with working build/CI, or\n- CLI/TUI that can list/approve cards and inspect receipts.\n\nEvaluation harness:\n- simulated event streams with interruption metrics.\n- EVALUATION.md with reproduction steps.\n\n16) OS for agency checklist (safe delegation + receipts)\n\nPurpose:\n- Define the minimum repo contents that make \"OS for agency\" guarantees\n  enforceable, auditable, and testable.\n\nGuarantees + threat model:\n- README: testable guarantees + TCB box.\n- docs/threat-model.md and docs/tcb.md.\n\nEnforcement core (small TCB):\n- goni-kernel: capabilities, policy eval, budget ledger, receipt emission.\n- goni-policy: policy language + reference profiles.\n- goni-receipts: schema, signing/commit, verification library.\n\nNon-bypassable mediation:\n- egress-gate service as the only outbound path.\n- runtime sandbox configs that block ambient network.\n- integration tests proving bypass fails and receipts are emitted.\n\nTools as capabilities:\n- tool manifests declaring required authorities.\n- structured inputs/outputs with hashes.\n- docs/tools.md with authoring + receipt rules.\n\nReceipts (v1):\n- receipt schema with hashed IO, capability id, policy decision, budget delta.\n- CLI for tail/show/verify receipts.\n- docs/receipts.md for interpretation + privacy defaults.\n\nPrivacy enforcement:\n- classifier + redactor (fail-closed at egress).\n- docs/privacy.md with data classes and retention rules.\n\nRun + prove path:\n- compose/k8s with secure defaults.\n- smoke test validates receipts and blocked direct egress.\n- examples showing local, remote via gate, tool call + verification.\n\nGovernance:\n- SECURITY.md, CONTRIBUTING.md, CODEOWNERS.\n- docs/architecture.md + roadmap for enforcement milestones.\n\n17) Programmatic long-context reading (research lane, not architecture claim)\n\nPurpose:\n- Define a research lane for long-context reading strategies that treat large\n  corpora as external state to inspect, rather than assuming that larger prompt\n  windows alone solve the problem.\n\nResearch stance:\n- The relevant paper is treated as a technical hypothesis to test, not proof\n  that Goni should replace RAG or claim \"perfect memory.\"\n- Current Goni architecture remains authoritative: context is scarce working\n  memory, retrieval is a tool, and Memory Plane provenance remains mandatory.\n\nResearch questions (academically framed):\n- When does programmatic corpus inspection outperform current RAG/context\n  assembly on Goni-relevant tasks?\n- Which operations matter most: search, slice, filter, recursive subread, or\n  hybrid retrieval + targeted reading?\n- How do bounded recursive or parallel subreads affect latency, token spend,\n  and citation fidelity?\n- When does this strategy underperform native in-window reading and simply add\n  orchestration overhead?\n- What receipts and scheduler signals would be required if this lane graduates\n  into a normative architecture path later?\n\nStrategies to compare:\n- Full-context baseline (stuff the prompt and answer directly).\n- Current RAG/context assembly baseline.\n- Programmatic corpus-reading baseline.\n- Hybrid retrieval + programmatic reading baseline.\n\nCore evaluation fixtures:\n- Long single-document QA.\n- Multi-document synthesis.\n- Citation/span extraction.\n- Needle-in-large-corpus lookup.\n- Long-horizon reasoning with evidence distributed across distant spans.\n\nMetrics to report:\n- Answer quality.\n- Citation/span fidelity.\n- Latency and total tokens.\n- Tool-call count.\n- `tokens_scanned` or `document_bytes_scanned`.\n- `slice_count`, `subread_count`, and `recursion_depth`.\n- Branch/variant counters from the existing attention-density lane.\n\nFailure modes to score explicitly:\n- Loses evidence that RAG would have retrieved.\n- Over-scans and wastes budget.\n- Recursive decomposition drifts away from the task.\n- Produces high-confidence answers without evidence-span support.\n- Underperforms the base strategy inside the native context window.\n\nEvidence artifacts to produce:\n- A reading-strategy comparison report.\n- A corpus-reading fidelity report.\n- A recursion-budget safety report.\n- A promotion memo stating whether the lane should remain research-only or\n  advance toward a normative contract.\n\n18) Relational Communication Engine (research lane, not kernel replacement)\n\nPurpose:\n- Define a research lane for communication quality as governed generation:\n  relational state, Done Contracts, decoding controls, uncertainty signals,\n  authenticity evaluation, approval corridors, and receipts cooperate without\n  outsourcing care.\n\nHuman principle:\n- AI does not replace your relationships. It remembers what your attention\n  cannot.\n- Goni communication support is augmented attentiveness, not simulated\n  intimacy: it externalizes memory, timing, and context so the human can care\n  more reliably.\n- The Relational Communication Engine may improve drafts, ambiguity detection,\n  and relational timing, but it must never decide meaning, care, or sincerity\n  on behalf of the principal.\n\nResearch stance:\n- The Goni kernel remains authoritative. Work Orders, Done Contracts, memory\n  governance, approval corridors, receipts, rollback, and policy own the\n  decision boundary.\n- Relational state vectors, logit shaping, activation steering, token entropy,\n  authenticity scoring, and persona-conditioned evaluation are optional\n  substrate mechanisms behind adapters.\n- Entropy and authenticity scores are review and evaluation signals, not proof\n  of social certainty, sincerity, or psychological truth.\n\nResearch questions (academically framed):\n- Can a Relational State Vector improve continuity, timing, and tone selection\n  without pretending that warmth, trust, or formality are objective latent axes?\n- Which Done Contract fields are useful as communication objectives: urgency,\n  apology, appreciation, boundary, closure, continuity, or repair?\n- Where do decoding controls help: forbidden phrases, local lexical style,\n  channel constraints, or sequence-level relational signal?\n- When do entropy spikes identify meaningful ambiguity rather than harmless\n  stylistic variation?\n- Can contrastive authenticity scoring reduce generic drafts without rewarding\n  exaggerated style mimicry or performative intimacy?\n\nStrategies to compare:\n- Prompt-only relational drafting baseline.\n- Relationship-memory plus Done Contract baseline.\n- Decoding-control baseline for lexical and channel constraints.\n- Post-generation evaluation baseline for ambiguity and authenticity.\n- Hybrid governed communication baseline combining memory, contract,\n  constrained generation, evaluation, approval, and receipt.\n\nCore evaluation fixtures:\n- Friendly follow-up for a social open loop.\n- Apology or repair message after a missed commitment.\n- Boundary-setting message where warmth and firmness both matter.\n- Appreciation or congratulations message grounded in relationship context.\n- Sensitive message that should be hard-gated rather than drafted freely.\n\nMetrics to report:\n- Human approval rate and edit distance.\n- Clarification and gate-trigger precision.\n- Relationship-context provenance coverage.\n- Ambiguity flag usefulness.\n- Authenticity score calibration against user edits and approvals.\n- Genericness, overfitting, and exaggerated-persona failure rates.\n- Receipt completeness for assumptions, memory basis, model route, and gate\n  outcome.\n\nFailure modes to score explicitly:\n- Treats constructed relationship variables as objective psychology.\n- Uses token entropy as a proxy for social uncertainty without other evidence.\n- Enforces tone through token penalties while missing discourse-level signal.\n- Rewards style mimicry over principal intent.\n- Drafts sensitive outbound communication outside the required approval\n  corridor.\n\nEvidence artifacts to produce:\n- A relational drafting comparison report.\n- An ambiguity and authenticity calibration report.\n- A communication-receipt sample pack with raw content redacted by default.\n- A promotion memo stating whether this lane should remain research-only or\n  advance toward a normative communication contract.",
+      "body": "# 90 Research Agenda\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n3) Queueing theory & performance engineering (tail latency)\n\nPurpose:\n- Define the research questions and measurements needed to make tail latency a\n  first-class design constraint for Goni's interactive-first behavior.\n\nResearch questions (academically framed):\n- What queueing model best fits mixed interactive/background LLM workloads\n  (e.g., heavy-tailed service times, bursty arrivals, and long-tail prompts)?\n- How do different scheduling policies (priority, preemptive, aging, EDF)\n  affect p95/p99 TTFT and end-to-end latency under realistic load?\n- What is the minimal admission-control policy that preserves interactive SLOs\n  while maximizing background throughput?\n- How does context length distribution (prefill size) reshape the tail, and\n  which chunking strategies actually reduce head-of-line blocking?\n- What are the measurable interactions between KV cache pressure, queue depth,\n  and latency spikes?\n- When does resource partitioning (two pools) outperform single-pool priority?\n\nCore metrics and SLOs:\n- TTFT p50/p95/p99 (interactive class)\n- End-to-end latency p50/p95/p99 (interactive class)\n- Cancellation latency p95/p99 (interrupt effectiveness)\n- Queue depth and wait time by class\n- Service time distribution (tokens/sec and total tokens) by class\n- Admission rate and rejection rate by class\n- Tail amplification factor (p99 / p50)\n\nModels and analysis:\n- Fit arrival processes and service time distributions (test for heavy tails).\n- Evaluate priority M/G/1 and preemptive-resume variants against traces.\n- Quantify head-of-line blocking via long-prefill share of total service time.\n- Use Little's Law to sanity-check queue size vs latency under steady load.\n\nExperiment design (repeatable):\n- Baselines: interactive-only, background-only, mixed steady-state.\n- Stress: long-prefill bursts with short interactive requests injected.\n- Mixed burst: background backlog + interactive burst with cancellation events.\n- Resource partitioning: single pool vs dual pool (interactive/background).\n\nControl mechanisms to evaluate:\n- Preemptive priority scheduling (LLM request priority).\n- Chunked prefill and long-prefill thresholds.\n- Admission control with hysteresis (token bucket or WIP limits).\n- Load shedding for background jobs under SLO threat.\n- Class-based routing (separate LLM pools).\n\nEvidence artifacts to produce:\n- Trace logs with timestamps: arrival, start, first-token, completion, cancel.\n- Scenario-specific latency distributions and queue depth timelines.\n- A short \"tail latency playbook\" with recommended defaults and failure modes.\n\n4) Distributed systems & offline-first synchronization (local-first durability)\n\nPurpose:\n- Define the research questions and system constraints for a durable, offline-first\n  Vault that can later replicate safely across multiple devices.\n\nResearch questions (academically framed):\n- What consistency guarantees are required per plane (capabilities/keys vs user data),\n  and what is the minimal consistency model that preserves safety?\n- Which data types benefit from CRDTs vs append-only logs vs transactional storage?\n- How do we bound privacy leakage during replication while still achieving convergence?\n- What is the cost of conflict resolution under realistic device churn and partitions?\n- How does replication affect auditability and receipt integrity over time?\n\nCore data categories (by consistency class):\n- Strong: capability grants, device membership, key rotations, policy changes.\n- Eventual: notes, summaries, derived embeddings, user artifacts.\n- Append-only: receipts, audit logs, execution traces (tamper-evident chain).\n\nModels and analysis:\n- Formalize per-object merge semantics (CRDT types or LWW where justified).\n- Model partition tolerance vs consistency for each category (CAP tradeoffs).\n- Define a replication protocol that can operate without a central coordinator.\n\nExperiment design (repeatable):\n- Multi-device simulator: 3–7 nodes, randomized partitions, random edits.\n- Chaos scenarios: clock skew, dropped messages, partial replays.\n- Measure convergence time, storage bloat, and conflict rate.\n\nControl mechanisms to evaluate:\n- Plane-aware replication policy (redaction/minimization before sync).\n- Strong-consistency paths for keys/capabilities (quorum or explicit approvals).\n- Snapshot + log compaction strategy for long-running devices.\n\nEvidence artifacts to produce:\n- Replication traces showing convergence and conflict resolution.\n- A \"Vault durability\" report: data loss bounds, recovery steps, and audit chain health.\n\n5) Databases, IR, and data management (the Vault + receipts)\n\nPurpose:\n- Define the research agenda for a Vault that is durable, queryable, and auditable,\n  with receipts as first-class provenance objects rather than log lines.\n\nResearch questions (academically framed):\n- What storage model best preserves auditability while supporting low-latency retrieval?\n- How should receipts be modeled to ensure integrity, minimal text retention, and\n  provenance completeness?\n- What indexing strategy (dense, hybrid, graph) best balances recall and latency\n  for personal corpora under tight device budgets?\n- How do we guarantee that derived artifacts (summaries, embeddings, decisions)\n  can be traced back to source entities without leaking raw text?\n- What is the minimal schema that still supports conformance and reproducibility?\n\nCore objects and relations:\n- Entities: Docs, Chunks, Embeddings, ContextItems, MemoryEntries, Receipts.\n- Activities: ingest, chunk, embed, retrieve, summarize, redact, toolcall.\n- Agents: user, kernel module, model provider, tool executor.\n- Relations: used, wasGeneratedBy, wasDerivedFrom, wasAttributedTo.\n\nReceipt requirements:\n- Immutable, append-only storage with hash chaining.\n- Pointers to inputs/outputs (entity IDs) and policy hash.\n- Code + model identifiers and parameters used for the transformation.\n- Deny/allow decisions for redaction or capability gates.\n\nRetrieval modes to evaluate (same harness):\n- Dense ANN (vector DB).\n- Hybrid (BM25/FTS + dense with RRF or learned weights).\n- Graph traversal (entities/threads/clauses) with budgeted BFS.\n\nQuality + performance metrics:\n- Recall@k, MRR, nDCG on synthetic + open demo corpora.\n- p50/p95 end-to-end latency with stage breakdown.\n- Groundedness proxy: answer spans map to cited chunk IDs.\n- Storage overhead for receipts and provenance links.\n\nEvidence artifacts to produce:\n- A benchmark report comparing retrieval modes and budgets.\n- A receipt integrity report (hash chain verification and completeness checks).\n\n6) ML systems (efficient inference, model routing, compression)\n\nPurpose:\n- Define the research agenda for efficient local inference and routing across\n  model sizes, quantization levels, and hardware backends.\n\nResearch questions (academically framed):\n- What routing policy maximizes task quality under tight latency and power budgets?\n- How do quantization and KV-cache pressure trade off against TTFT and tail latency?\n- What is the minimal model portfolio that achieves target coverage of tasks?\n- When does offloading (remote or larger local model) outperform small local models\n  given real device constraints and privacy policies?\n- How does compression (4-bit, 8-bit, mixed) affect retrieval-augmented tasks?\n\nCore evaluation axes:\n- Latency: TTFT, end-to-end, cancellation latency.\n- Throughput: tokens/sec per class, concurrency scaling.\n- Quality: task success metrics, groundedness where retrieval is used.\n- Energy: joules/token or Wh per request (when power data is available).\n- Cost: remote escalation frequency vs local token share.\n\nModel portfolio experiments:\n- Small local (interactive), medium local (quality), embedder model.\n- Quantized vs full-precision variants on the same hardware.\n- Context length scaling curves (1k, 4k, 16k, 32k tokens).\n\nRouting policy experiments:\n- Local-first with escalation on confidence or latency thresholds.\n- Budget-aware routing with per-class caps and hysteresis.\n- Priority routing under mixed interactive/background load.\n\nCompression + serving tactics:\n- Quantization sweeps (4/5/6/8-bit) with accuracy trade-off curves.\n- Speculative decoding or prompt-caching (if supported) for TTFT control.\n- Separate pools for interactive vs background to stabilize tail latency.\n\nEvidence artifacts to produce:\n- A routing report: quality vs latency vs local-token ratio.\n- A compression report: accuracy loss vs latency/energy gains.\n\n7) HCI & cognitive systems (mixed-initiative, interruption science, cockpit design)\n\nPurpose:\n- Define the research agenda for mixed-initiative behavior, interruption\n  management, and operator cockpit UX that preserves user agency.\n\nResearch questions (academically framed):\n- What policies minimize interruption cost while preserving task success?\n- How do \"propose vs act vs defer\" thresholds affect user trust and regret?\n- What UI cues best convey provenance and confidence without overload?\n- How should the system adapt to user focus modes and time constraints?\n- What undo/rollback guarantees are required for safe autonomy?\n\nCore signals and policies:\n- Interruptibility estimate (0–1), urgency class, and deferrable-until time.\n- Focus modes: deep work, normal, idle.\n- Initiative levels: notify, propose, act (with explicit permission thresholds).\n- Confidence thresholds with hysteresis to reduce oscillation.\n\nEvaluation design:\n- Scenario-based user studies with scripted interruptions.\n- A/B tests on notification timing and modality.\n- Longitudinal \"trust calibration\" tracking (accept/reject/undo rates).\n\nMetrics to track:\n- Interruption cost (task switch time, error rate).\n- Action regret rate and time-to-undo.\n- Delegation comfort score and opt-out rate.\n- Time-to-resolution for action cards.\n\nEvidence artifacts to produce:\n- A \"proactivity policy\" report with measured outcomes.\n- Cockpit design rationale mapping UI elements to cognitive goals.\n\n8) Security, privacy, and trustworthy computing (delegation without trust collapse)\n\nPurpose:\n- Define the research agenda for enforcing \"no ambient authority\" and proving\n  that delegation remains safe under realistic threat models.\n\nResearch questions (academically framed):\n- What is the minimal trusted computing base (TCB) for capability mediation?\n- How can we prove all outbound effects are mediated and auditable?\n- What receipt design provides integrity without leaking sensitive content?\n- How should redaction and data classification be enforced at egress boundaries?\n- What is the recovery story if a component inside the sandbox is compromised?\n\nCore security objectives:\n- Default-deny network for all non-gate components.\n- Capability-scoped tool execution with explicit budgets and expiry.\n- Tamper-evident, append-only receipt log with verifiable integrity.\n- Plane-aware data minimization and redaction before any egress.\n\nThreat model coverage:\n- Untrusted tool outputs and prompt-injection via retrieved text.\n- Bypass attempts (direct sockets, file exfiltration, side-channel signals).\n- Compromised tool sandbox attempting privilege escalation.\n- Accidental policy drift via config changes.\n\nEnforcement and verification:\n- Single egress gate; all HTTP flows through it.\n- Sandboxed tools with no ambient network; only gate has egress.\n- Integration tests that prove bypass failures and receipt emission.\n- Key rotation and revocation for capability tokens.\n\nEvidence artifacts to produce:\n- A security conformance report with bypass test results.\n- A receipt integrity report with hash-chain verification.\n\n9) Economics, adoption, and market design (community-first, not marketing)\n\nPurpose:\n- Define how a high-trust builder community forms, governs itself, and sustains\n  the project without relying on hype or commercial narratives.\n\nResearch questions (academically framed):\n- What governance structures reduce coordination cost while preserving rigor?\n- How do contribution norms (RFCs, receipts discipline, threat reviews) affect\n  project quality and trust over time?\n- What incentives best attract serious builders without diluting standards?\n- How do communities prevent spec drift and maintain enforceable contracts?\n\nCommunity operating system:\n- Clear entry points: COMMUNITY.md, STATUS, and Truth Map.\n- Lightweight governance: RFC flow for spec changes and security-sensitive topics.\n- Trust ladder: transparent criteria for contributor roles and review authority.\n- Receipts discipline: every capability change documents logging, redaction, and\n  auditability impacts.\n\nAdoption signals (non-marketing, observable):\n- Contributor retention and review throughput.\n- Time-to-merge for spec and prototype changes.\n- Number of conformance tests added per release.\n- Decline in \"reality map\" drift (STATUS vs actual implementation).\n\nEvidence artifacts to produce:\n- A community health report (review throughput, RFC cadence, conformance growth).\n- A governance audit log (decisions, rationale, and spec linkage).\n\n10) Reproducible system checklist (must-have vs nice-to-have)\n\nPurpose:\n- Define the concrete repo contents that make Goni runnable, measurable, and\n  extendable by outsiders without guesswork.\n\nMust-have (to be \"real\"):\n- Single blessed entrypoint: README matches reality and links to STATUS.\n- One-command demo: compose + smoke test + deterministic success criteria.\n- Clear component boundaries: orchestrator, llm adapter, vector store, telemetry.\n- Measurement harness: repeatable TTFT/tok-s benchmarks with JSON output.\n- Scheduler v0: interactive vs background, preemption points, metrics.\n- Contracts + CI: enforce invariants, smoke test, and minimal perf checks.\n- Deployment parity: compose is canonical; k8s only if maintained.\n\nNice-to-have (next):\n- Real embeddings backend with model/version metadata.\n- Hardware compatibility matrix (CPU/CUDA/ROCm, known-good configs).\n- Security and governance hygiene: SECURITY.md, TCB statement, retention policy.\n\nMinimal MVP contents (lean but credible):\n- make demo + smoke.sh\n- JobSpec end-to-end\n- 2-class scheduler with p95/p99 TTFT report\n- Capability enforcement at a single choke point + negative tests\n- Receipts/audit log (structured, hash-linked)\n\n11) Serious systems repo structure (interactive-first QoS)\n\nPurpose:\n- Define the minimal file/folder structure and acceptance criteria that make\n  QoS and tail-latency work reproducible, testable, and debuggable.\n\nCore docs:\n- README: problem, thesis, shipped components, measured metrics, 3-command run.\n- VISION/THESIS: QoS class definitions, interrupt semantics, non-negotiable SLOs.\n- ARCHITECTURE: data/control flow and trust boundaries.\n- PERF: hardware profiles, backend flags, golden baselines, regression thresholds.\n\nScheduler artifacts:\n- scheduler spec (QoS classes, WIP limits, hysteresis, preemption points).\n- policies (interactive-first, burst protection).\n- code module with admission control, priority mapping, cancel/abort propagation.\n\nBenchmarks + observability:\n- benchmark scenarios (interactive-only, background-only, mixed, burst).\n- runner with JSON/CSV outputs.\n- metrics doc + Prometheus/Grafana config.\n\nDeploy layout:\n- compose base + observability overlay + .env.example.\n- k8s overlays only if maintained; no hidden logic.\n\nBackground jobs model:\n- job types with schema, cost estimates, preemption points, idempotency rules.\n\nCI guardrails:\n- lint/test for all languages.\n- bench smoke on PRs; perf regression nightly.\n\n12) Local-first OS readiness (runnable + secure + multi-device growth)\n\nPurpose:\n- Define the minimal repo contents to make Goni runnable, secure, and ready\n  for offline-first, multi-device evolution without overpromising.\n\nRepo must-haves:\n- README with one golden path, .env.example, and quickstart doc.\n- Deterministic demo with expected outputs (ingest -> action card -> receipt).\n- CONTRIBUTING, issue templates, and clear onboarding.\n\nCore subsystems (first-class modules):\n- Vault as source-of-truth (receipts + audit log, vector DB as index only).\n- Orchestrator/council with policy-mediated execution.\n- Plane enforcement with tests at boundaries.\n- Local LLM + embeddings + vector store adapters.\n\nOffline-first + sync foundations:\n- Sync module (transport, event log/CRDT model, compaction).\n- CRDT specs per artifact type with property tests.\n- Plane-aware sync policy matrix + validator.\n- Churn simulator for partitions and convergence.\n\nSecurity essentials:\n- SECURITY.md and dependency update automation.\n- Device identity + key rotation + revocation semantics.\n- Tamper-evident audit log with verification tests.\n\nSpecs and proof:\n- Architecture index mapping spec -> code -> tests.\n- Invariant tests for plane boundaries and append-only receipts.\n- Versioning/migration spec for Vault and contracts.\n\nOperational packaging:\n- Compose and k8s manifests aligned to the golden path.\n- Release tags, changelog, and published images.\n- CI smoke test that proves the demo path runs.\n\n13) Vault + receipts: minimum shippable system\n\nPurpose:\n- Define the minimal repo structure, artifacts, and CI checks needed for a\n  fast, grounded, auditable local-first memory system.\n\nRequired structure:\n- software/kernel: policy gates, receipt emitter, schema+migrations, goldens.\n- software/vault: ingestion, chunking, index layer, context assembly.\n- software/retrieval: dense/sparse/hybrid/graph via a unified interface.\n- spec: planes, receipts, memory model, redaction profiles, retrieval contracts.\n- goni-lab: conformance + benchmark harness with JSON reports.\n\nCore artifacts:\n- Receipt/Provenance model (PROV-DM shaped): Receipt, Entity, Activity, Agent.\n- Vault tables: Documents, Chunks, Embeddings, SparseIndex, GraphEdges,\n  ContextPacks, MemoryEntries, Receipts, RedactionEvents.\n- Two enforced gates:\n  - Memory write gate (evidence + receipt required; TTL for uncertain entries).\n  - Egress/redaction gate (profile + plane rules + manifest required).\n\nRetrieval requirements:\n- Sparse baseline (FTS ok), dense embeddings (real, no placeholders), hybrid fusion.\n- Optional graph expansion with budget limits.\n\nBenchmarks + evaluation:\n- Dataset format + synthetic corpus generator + small open demo corpus.\n- Metrics: recall@k, nDCG/MRR, p50/p95 per stage latency.\n- One command runner: goni-lab bench ... with deterministic output.\n\nCI invariants:\n- TXT boundary lint (no forbidden plane leaks).\n- Receipt completeness for any external call or memory write.\n- Goldens for memory-write and redaction gates.\n- Spec/code sync (schemas/migrations).\n- Benchmark smoke on PRs, full suite nightly.\n\n14) Local-first ML kernel scope (what must exist vs what must not)\n\nPurpose:\n- Define the minimum repo contents that make the kernel runnable, testable,\n  measurable, and extensible, and explicitly exclude half-built surfaces.\n\nMust-have:\n- Single blessed run path (README + compose or Make/justfile).\n- Kernel contracts: router, scheduler, execution adapters, schemas.\n- CI smoke test that exercises stream + non-stream + cancel.\n- Measurement harness with CSV/JSON outputs and a tiny eval set.\n- Traceable specs (architecture + threat model + routing + scheduler invariants).\n- License + contribution hygiene.\n\nRecommended:\n- Runtime adapter boundary (vLLM, llama.cpp, etc.) with engine interface.\n- Real embeddings path and retrieval budgets if RAG is claimed.\n- Roadmap/scope statement to prevent kernel/product creep.\n\nMust-not:\n- Half-built frontend without build/CI support.\n- Policy claims without enforced gates + tests.\n- Infra (k8s/terraform) that isn't validated by CI or users.\n\n15) Operator appliance repo minimum (proactivity + receipts)\n\nPurpose:\n- Define the minimal repo contents to make Goni a real operator appliance with\n  proactive assistance, receipts, and a runnable demo on a new machine.\n\nMust-have run path:\n- make demo + make test wrappers.\n- compose stack + .env.example.\n- smoke test that asserts kernel endpoint, receipts, and retrieval.\n- goni-prototype-lab:demo/demo_expected.md with \"what you should see.\"\n\nCore docs:\n- ARCHITECTURE (components, dataflow, boundaries).\n- DECISIONS/ (ADRs) + TRACEABILITY/STATUS tied to code/tests.\n\nOperator primitives (schemas + APIs):\n- Schemas: events, action_cards, daily_brief, receipts, capabilities, policy.\n- APIs: cards list/approve/reject, brief, receipts, policy get/set.\n\nPolicy engine:\n- initiative ladder (defer/propose/ask/act) with deterministic tests.\n- rationale objects included in receipts.\n\nGovernance layer:\n- capability tokens required for any side effect.\n- receipts emitted for tool calls and egress.\n- network gate as sole egress path with bypass tests.\n\nRetrieval:\n- real embeddings path with metadata.\n- retrieval sanity tests (no placeholders).\n\nCockpit surface (pick one):\n- minimal web UI with working build/CI, or\n- CLI/TUI that can list/approve cards and inspect receipts.\n\nEvaluation harness:\n- simulated event streams with interruption metrics.\n- EVALUATION.md with reproduction steps.\n\n16) OS for agency checklist (safe delegation + receipts)\n\nPurpose:\n- Define the minimum repo contents that make \"OS for agency\" guarantees\n  enforceable, auditable, and testable.\n\nGuarantees + threat model:\n- README: testable guarantees + TCB box.\n- docs/threat-model.md and docs/tcb.md.\n\nEnforcement core (small TCB):\n- goni-kernel: capabilities, policy eval, budget ledger, receipt emission.\n- goni-policy: policy language + reference profiles.\n- goni-receipts: schema, signing/commit, verification library.\n\nNon-bypassable mediation:\n- egress-gate service as the only outbound path.\n- runtime sandbox configs that block ambient network.\n- integration tests proving bypass fails and receipts are emitted.\n\nTools as capabilities:\n- tool manifests declaring required authorities.\n- structured inputs/outputs with hashes.\n- docs/tools.md with authoring + receipt rules.\n\nReceipts (v1):\n- receipt schema with hashed IO, capability id, policy decision, budget delta.\n- CLI for tail/show/verify receipts.\n- docs/receipts.md for interpretation + privacy defaults.\n\nPrivacy enforcement:\n- classifier + redactor (fail-closed at egress).\n- docs/privacy.md with data classes and retention rules.\n\nRun + prove path:\n- compose/k8s with secure defaults.\n- smoke test validates receipts and blocked direct egress.\n- examples showing local, remote via gate, tool call + verification.\n\nGovernance:\n- SECURITY.md, CONTRIBUTING.md, CODEOWNERS.\n- docs/architecture.md + roadmap for enforcement milestones.\n\n17) Programmatic long-context reading (research lane, not architecture claim)\n\nPurpose:\n- Define a research lane for long-context reading strategies that treat large\n  corpora as external state to inspect, rather than assuming that larger prompt\n  windows alone solve the problem.\n\nResearch stance:\n- The relevant paper is treated as a technical hypothesis to test, not proof\n  that Goni should replace RAG or claim \"perfect memory.\"\n- Current Goni architecture remains authoritative: context is scarce working\n  memory, retrieval is a tool, and Memory Plane provenance remains mandatory.\n\nResearch questions (academically framed):\n- When does programmatic corpus inspection outperform current RAG/context\n  assembly on Goni-relevant tasks?\n- Which operations matter most: search, slice, filter, recursive subread, or\n  hybrid retrieval + targeted reading?\n- How do bounded recursive or parallel subreads affect latency, token spend,\n  and citation fidelity?\n- When does this strategy underperform native in-window reading and simply add\n  orchestration overhead?\n- What receipts and scheduler signals would be required if this lane graduates\n  into a normative architecture path later?\n\nStrategies to compare:\n- Full-context baseline (stuff the prompt and answer directly).\n- Current RAG/context assembly baseline.\n- Programmatic corpus-reading baseline.\n- Hybrid retrieval + programmatic reading baseline.\n\nCore evaluation fixtures:\n- Long single-document QA.\n- Multi-document synthesis.\n- Citation/span extraction.\n- Needle-in-large-corpus lookup.\n- Long-horizon reasoning with evidence distributed across distant spans.\n\nMetrics to report:\n- Answer quality.\n- Citation/span fidelity.\n- Latency and total tokens.\n- Tool-call count.\n- `tokens_scanned` or `document_bytes_scanned`.\n- `slice_count`, `subread_count`, and `recursion_depth`.\n- Branch/variant counters from the existing attention-density lane.\n\nFailure modes to score explicitly:\n- Loses evidence that RAG would have retrieved.\n- Over-scans and wastes budget.\n- Recursive decomposition drifts away from the task.\n- Produces high-confidence answers without evidence-span support.\n- Underperforms the base strategy inside the native context window.\n\nEvidence artifacts to produce:\n- A reading-strategy comparison report.\n- A corpus-reading fidelity report.\n- A recursion-budget safety report.\n- A promotion memo stating whether the lane should remain research-only or\n  advance toward a normative contract.\n\n18) Relational Communication Engine (research lane, not kernel replacement)\n\nPurpose:\n- Define a research lane for communication quality as governed generation:\n  relational state, Done Contracts, decoding controls, uncertainty signals,\n  authenticity evaluation, approval corridors, and receipts cooperate without\n  outsourcing care.\n\nHuman principle:\n- AI does not replace your relationships. It remembers what your attention\n  cannot.\n- Goni communication support is augmented attentiveness, not simulated\n  intimacy: it externalizes memory, timing, and context so the human can care\n  more reliably.\n- The Relational Communication Engine may improve drafts, ambiguity detection,\n  and relational timing, but it must never decide meaning, care, or sincerity\n  on behalf of the principal.\n\nResearch stance:\n- The Goni kernel remains authoritative. Work Orders, Done Contracts, memory\n  governance, approval corridors, receipts, rollback, and policy own the\n  decision boundary.\n- Relational state vectors, logit shaping, activation steering, token entropy,\n  authenticity scoring, and persona-conditioned evaluation are optional\n  substrate mechanisms behind adapters.\n- Entropy and authenticity scores are review and evaluation signals, not proof\n  of social certainty, sincerity, or psychological truth.\n\nResearch questions (academically framed):\n- Can a Relational State Vector improve continuity, timing, and tone selection\n  without pretending that warmth, trust, or formality are objective latent axes?\n- Which Done Contract fields are useful as communication objectives: urgency,\n  apology, appreciation, boundary, closure, continuity, or repair?\n- Where do decoding controls help: forbidden phrases, local lexical style,\n  channel constraints, or sequence-level relational signal?\n- When do entropy spikes identify meaningful ambiguity rather than harmless\n  stylistic variation?\n- Can contrastive authenticity scoring reduce generic drafts without rewarding\n  exaggerated style mimicry or performative intimacy?\n\nStrategies to compare:\n- Prompt-only relational drafting baseline.\n- Relationship-memory plus Done Contract baseline.\n- Decoding-control baseline for lexical and channel constraints.\n- Post-generation evaluation baseline for ambiguity and authenticity.\n- Hybrid governed communication baseline combining memory, contract,\n  constrained generation, evaluation, approval, and receipt.\n\nCore evaluation fixtures:\n- Friendly follow-up for a social open loop.\n- Apology or repair message after a missed commitment.\n- Boundary-setting message where warmth and firmness both matter.\n- Appreciation or congratulations message grounded in relationship context.\n- Sensitive message that should be hard-gated rather than drafted freely.\n\nMetrics to report:\n- Human approval rate and edit distance.\n- Clarification and gate-trigger precision.\n- Relationship-context provenance coverage.\n- Ambiguity flag usefulness.\n- Authenticity score calibration against user edits and approvals.\n- Genericness, overfitting, and exaggerated-persona failure rates.\n- Receipt completeness for assumptions, memory basis, model route, and gate\n  outcome.\n\nFailure modes to score explicitly:\n- Treats constructed relationship variables as objective psychology.\n- Uses token entropy as a proxy for social uncertainty without other evidence.\n- Enforces tone through token penalties while missing discourse-level signal.\n- Rewards style mimicry over principal intent.\n- Drafts sensitive outbound communication outside the required approval\n  corridor.\n\nEvidence artifacts to produce:\n- A relational drafting comparison report.\n- An ambiguity and authenticity calibration report.\n- A communication-receipt sample pack with raw content redacted by default.\n- A promotion memo stating whether this lane should remain research-only or\n  advance toward a normative communication contract.\n\n\n19) Governed offline cognition (\"dreaming\") research lane\n\nPurpose:\n- Test whether a slower background cognition cycle adds measurable value beyond\n  D-017 consolidation while preserving strict separation among synthetic\n  candidates, evidence-backed facts, and kernel-owned authority.\n\nResearch stance:\n- DREAM-01 is a specified-only protocol across existing planes, not a new plane\n  or autonomous authority source.\n- Existing MemoryEntries remain canonical; dream outputs use hypothesis/derived\n  lifecycle, provenance, TTL/review, conflict, and quarantine semantics.\n- Research precedents for world models, imagined trajectories, reflection, and\n  replay motivate evaluation but do not establish Goni-specific safety or\n  usefulness.\n\nCore comparison:\n- wake-only cognition;\n- consolidation-only cognition;\n- consolidation plus DREAM-01 governed offline cognition.\n\nPrimary questions:\n- Does synthetic offline cognition discover useful non-obvious relationships,\n  contradictions, hypotheses, or evidence requests?\n- Can repeated dream cycles preserve epistemic status rather than convert\n  model-generated repetition into apparent evidence?\n- What scheduling policy captures useful idle compute without degrading\n  interactive p95/p99 latency?\n- Which candidate classes deserve durable storage, review, expiry, or\n  quarantine?\n- When does dreaming merely generate noise that ordinary retrieval and\n  consolidation already handle better?\n\nHard safety outcomes:\n- zero synthetic-to-fact promotion without qualifying evidence;\n- zero self-generated descendants counted as independent confirmation;\n- zero authority expansion attributable solely to dream output;\n- zero tool or egress bypass.\n\nEvidence artifact:\n- DREAM-EVAL-01 comparison report with utility, contamination, authority,\n  provenance, compute, storage, and interactive-SLO measurements.",
       "domains": [
         "product",
         "research"
@@ -62852,6 +63201,60 @@
     },
     {
       "projection": "authored",
+      "source": "DREAM-01",
+      "target": "GONI-DECISION-6D3A2B71C9E4",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "DREAM-01",
+      "target": "GONI-DECISION-9AF49466170D",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "DREAM-01",
+      "target": "GONI-DECISION-FEB39440C565",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "DREAM-01",
+      "target": "GONI-SPEC-A742123055E0",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "DREAM-01",
+      "target": "SCHED-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "generated",
+      "source": "DREAM-01",
+      "target": "GONI-SPEC-A742123055E0",
+      "type": "refined_by"
+    },
+    {
+      "projection": "authored",
+      "source": "DREAM-01",
+      "target": "GONI-SPEC-33294E0D3306",
+      "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "DREAM-01",
+      "target": "DREAM-EVAL-01",
+      "type": "tested_by"
+    },
+    {
+      "projection": "authored",
+      "source": "DREAM-EVAL-01",
+      "target": "DREAM-01",
+      "type": "tests"
+    },
+    {
+      "projection": "authored",
       "source": "EVID-DENNING1968-WORKING-SET",
       "target": "GONI-DECISION-FEB39440C565",
       "type": "supports"
@@ -62866,6 +63269,18 @@
       "projection": "authored",
       "source": "EVID-GIM2024-PROMPT-CACHE",
       "target": "GONI-SYNTHESIS-227700D474C6",
+      "type": "supports"
+    },
+    {
+      "projection": "authored",
+      "source": "EVID-HA2018-WORLD-MODELS",
+      "target": "GONI-DECISION-6D3A2B71C9E4",
+      "type": "supports"
+    },
+    {
+      "projection": "authored",
+      "source": "EVID-HAFNER2023-DREAMERV3",
+      "target": "GONI-DECISION-6D3A2B71C9E4",
       "type": "supports"
     },
     {
@@ -62905,6 +63320,24 @@
       "type": "supports"
     },
     {
+      "projection": "authored",
+      "source": "EVID-OPENAI2026-DREAMING",
+      "target": "GONI-DECISION-6D3A2B71C9E4",
+      "type": "supports"
+    },
+    {
+      "projection": "authored",
+      "source": "EVID-PARK2023-GENERATIVE-AGENTS",
+      "target": "GONI-DECISION-6D3A2B71C9E4",
+      "type": "supports"
+    },
+    {
+      "projection": "authored",
+      "source": "EVID-PARK2023-GENERATIVE-AGENTS",
+      "target": "GONI-DECISION-FEB39440C565",
+      "type": "supports"
+    },
+    {
       "projection": "generated",
       "source": "EVID-ROUTE-01",
       "target": "GONI-EVIDENCE-A2893B732EBC",
@@ -62915,6 +63348,12 @@
       "source": "EVID-ROUTE-01",
       "target": "GONI-EVIDENCE-E3F3DC159250",
       "type": "supported_by"
+    },
+    {
+      "projection": "authored",
+      "source": "EVID-VANDEVEN2020-BRAIN-REPLAY",
+      "target": "GONI-DECISION-6D3A2B71C9E4",
+      "type": "supports"
     },
     {
       "projection": "authored",
@@ -62948,6 +63387,72 @@
     },
     {
       "projection": "generated",
+      "source": "GONI-DECISION-6D3A2B71C9E4",
+      "target": "DREAM-01",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-DECISION-6D3A2B71C9E4",
+      "target": "GONI-SPEC-33294E0D3306",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-DECISION-6D3A2B71C9E4",
+      "target": "GONI-SPEC-A742123055E0",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-DECISION-6D3A2B71C9E4",
+      "target": "SCHED-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-DECISION-6D3A2B71C9E4",
+      "target": "GONI-DECISION-9AF49466170D",
+      "type": "refines"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-DECISION-6D3A2B71C9E4",
+      "target": "GONI-DECISION-FEB39440C565",
+      "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-DECISION-6D3A2B71C9E4",
+      "target": "EVID-HA2018-WORLD-MODELS",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-DECISION-6D3A2B71C9E4",
+      "target": "EVID-HAFNER2023-DREAMERV3",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-DECISION-6D3A2B71C9E4",
+      "target": "EVID-OPENAI2026-DREAMING",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-DECISION-6D3A2B71C9E4",
+      "target": "EVID-PARK2023-GENERATIVE-AGENTS",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-DECISION-6D3A2B71C9E4",
+      "target": "EVID-VANDEVEN2020-BRAIN-REPLAY",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
       "source": "GONI-DECISION-9AF49466170D",
       "target": "CACHE-01",
       "type": "depended_on_by"
@@ -62959,10 +63464,22 @@
       "type": "depended_on_by"
     },
     {
+      "projection": "generated",
+      "source": "GONI-DECISION-9AF49466170D",
+      "target": "DREAM-01",
+      "type": "depended_on_by"
+    },
+    {
       "projection": "authored",
       "source": "GONI-DECISION-9AF49466170D",
       "target": "GONI-PRINCIPLE-9062425CD490",
       "type": "depends_on"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-DECISION-9AF49466170D",
+      "target": "GONI-DECISION-6D3A2B71C9E4",
+      "type": "refined_by"
     },
     {
       "projection": "authored",
@@ -62979,7 +63496,25 @@
     {
       "projection": "generated",
       "source": "GONI-DECISION-FEB39440C565",
+      "target": "DREAM-01",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-DECISION-FEB39440C565",
+      "target": "GONI-DECISION-6D3A2B71C9E4",
+      "type": "refined_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-DECISION-FEB39440C565",
       "target": "EVID-DENNING1968-WORKING-SET",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-DECISION-FEB39440C565",
+      "target": "EVID-PARK2023-GENERATIVE-AGENTS",
       "type": "supported_by"
     },
     {
@@ -63939,6 +64474,18 @@
     {
       "projection": "generated",
       "source": "GONI-SPEC-33294E0D3306",
+      "target": "GONI-DECISION-6D3A2B71C9E4",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-SPEC-33294E0D3306",
+      "target": "DREAM-01",
+      "type": "refined_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-SPEC-33294E0D3306",
       "target": "SKILL-REG-01",
       "type": "refined_by"
     },
@@ -63977,6 +64524,24 @@
       "source": "GONI-SPEC-A29366F3E2EA",
       "target": "EVID-LI2023-SELECTIVE-CONTEXT",
       "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-SPEC-A742123055E0",
+      "target": "DREAM-01",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-SPEC-A742123055E0",
+      "target": "GONI-DECISION-6D3A2B71C9E4",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SPEC-A742123055E0",
+      "target": "DREAM-01",
+      "type": "refines"
     },
     {
       "projection": "generated",
@@ -69127,6 +69692,18 @@
       "type": "synthesizes"
     },
     {
+      "projection": "generated",
+      "source": "SCHED-01",
+      "target": "DREAM-01",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
+      "source": "SCHED-01",
+      "target": "GONI-DECISION-6D3A2B71C9E4",
+      "type": "depended_on_by"
+    },
+    {
       "projection": "authored",
       "source": "SKILL-EVAL-01",
       "target": "SKILL-REG-01",
@@ -69926,6 +70503,15 @@
       "url": "https://aisel.aisnet.org/ecis2020_rp/153/"
     },
     {
+      "citation": "Ha, D., & Schmidhuber, J. (2018). World Models. arXiv:1803.10122.",
+      "id": "SRC-HA2018-WORLD-MODELS",
+      "kind": "academic",
+      "notes": "Learns a generative world model and demonstrates training a compact policy inside an internally generated hallucinated dream before transferring it back to the environment.",
+      "path": "sources/src-ha2018-world-models.yml",
+      "title": "Ha and Schmidhuber 2018 - World Models",
+      "url": "https://arxiv.org/abs/1803.10122"
+    },
+    {
       "citation": "https://www.staroceans.org/e-book/Haber_Stornetta.pdf",
       "id": "SRC-HABER1991-TIMESTAMP",
       "kind": "web",
@@ -69942,6 +70528,15 @@
       "path": "sources/src-haegner2020-rpa-slr.yml",
       "title": "haegner2020-rpa-slr",
       "url": "https://www.fh-wedel.de/fileadmin/Mitarbeiter/Records/Haegner_2020_-_Robotic_Process_Automation_-_A_Systematic_Literature_Review.pdf"
+    },
+    {
+      "citation": "Hafner, D., Pasukonis, J., Ba, J., & Lillicrap, T. (2023). Mastering Diverse Domains through World Models. arXiv:2301.04104.",
+      "id": "SRC-HAFNER2023-DREAMERV3",
+      "kind": "academic",
+      "notes": "DreamerV3 learns a world model and improves behavior by imagining future scenarios across diverse reinforcement-learning tasks.",
+      "path": "sources/src-hafner2023-dreamerv3.yml",
+      "title": "Hafner et al. 2023 - DreamerV3",
+      "url": "https://arxiv.org/abs/2301.04104"
     },
     {
       "citation": "https://www.microsoft.com/en-us/research/publication/principles-mixed-initiative-user-interfaces/",
@@ -70177,6 +70772,16 @@
       "url": "https://www.ntia.gov/programs-and-initiatives/artificial-intelligence/open-model-weights-report"
     },
     {
+      "accessed": "2026-09-27",
+      "citation": "OpenAI. (2026-06-04). Dreaming: Better memory for a more helpful ChatGPT.",
+      "id": "SRC-OPENAI2026-DREAMING",
+      "kind": "web",
+      "notes": "Describes a production system for background memory synthesis aimed at freshness, continuity, correctness, relevance, and scalability; it is a narrower product use of the term dreaming than DREAM-01.",
+      "path": "sources/src-openai2026-dreaming.yml",
+      "title": "OpenAI 2026 - Dreaming: Better memory for a more helpful ChatGPT",
+      "url": "https://openai.com/index/chatgpt-memory-dreaming/"
+    },
+    {
       "citation": "https://arxiv.org/abs/2310.08560",
       "id": "SRC-PACKER2023-MEMGPT",
       "kind": "academic",
@@ -70184,6 +70789,15 @@
       "path": "sources/src-packer2023-memgpt.yml",
       "title": "packer2023-memgpt",
       "url": "https://arxiv.org/abs/2310.08560"
+    },
+    {
+      "citation": "Park, J. S., O'Brien, J. C., Cai, C. J., Morris, M. R., Liang, P., & Bernstein, M. S. (2023). Generative Agents: Interactive Simulacra of Human Behavior. arXiv:2304.03442.",
+      "id": "SRC-PARK2023-GENERATIVE-AGENTS",
+      "kind": "academic",
+      "notes": "Uses a memory stream with reflection and planning; ablations report that observation, reflection, and planning each contribute to agent believability in the evaluated simulation.",
+      "path": "sources/src-park2023-generative-agents.yml",
+      "title": "Park et al. 2023 - Generative Agents",
+      "url": "https://arxiv.org/abs/2304.03442"
     },
     {
       "citation": "https://arxiv.org/abs/2305.13048",
@@ -70363,6 +70977,15 @@
       "notes": "Reported view that deployed models do not robustly learn from mistakes in normal use, and that this limits autonomous improvement without system support.",
       "path": "sources/src-tworek2026-decoder.yml",
       "title": "tworek2026-decoder"
+    },
+    {
+      "citation": "van de Ven, G. M., Siegelmann, H. T., & Tolias, A. S. (2020). Brain-inspired replay for continual learning with artificial neural networks. Nature Communications, 11, 4069. https://doi.org/10.1038/s41467-020-17866-2",
+      "id": "SRC-VANDEVEN2020-BRAIN-REPLAY",
+      "kind": "academic",
+      "notes": "Studies replay of internally generated representations as a continual-learning mechanism and reports improved retention on evaluated benchmarks.",
+      "path": "sources/src-vandeven2020-brain-replay.yml",
+      "title": "van de Ven et al. 2020 - Brain-inspired replay",
+      "url": "https://www.nature.com/articles/s41467-020-17866-2"
     },
     {
       "citation": "https://docs.vllm.ai/en/stable/features/speculative_decoding/",
