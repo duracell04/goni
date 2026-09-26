@@ -36,8 +36,20 @@ legacy:
   - LLM engines stay stateless; all long-lived state flows through the Memory Plane.
 - The Control Plane must run a **consolidation loop** (Observation → Reflection → Planning):
   - ingest raw events into episodic memory,
-  - distill reflections/long-term facts periodically (e.g. nightly/weekly),
-  - plan/schedule actions using both current state and reflections.
+  - distill evidence-backed summaries/facts and explicitly typed derived
+    candidates periodically (e.g. nightly/weekly),
+  - plan/schedule actions using current state and governed reflections.
+- Periodic cognition may extend consolidation with governed offline synthesis
+  under `DREAM-01`. Such cycles may derive abstractions, associations,
+  contradictions, counterfactuals, simulations, evidence requests, or
+  hypotheses from authorized memory. Synthetic outputs remain explicitly
+  distinguishable from observed or independently confirmed facts and do not
+  silently become executable procedural knowledge, policy, preferences, or
+  authority state.
+- The existing `MemoryEntries` substrate remains canonical for durable dream
+  outputs in v1. New synthetic entries use `hypothesis` or `derived` and
+  existing provenance, TTL/review, conflict, and quarantine semantics rather
+  than introducing a second hypothesis store.
 - The system must support **local-only long-term memory** by default; cloud/council access is limited to distilled facts or session context unless explicitly allowed.
 - To avoid **cognitive offloading debt**, default UX for learning/creative flows should:
   - prompt user effort (outline/selection) before full generation,

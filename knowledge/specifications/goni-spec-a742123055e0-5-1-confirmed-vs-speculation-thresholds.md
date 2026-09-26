@@ -4,14 +4,16 @@ title: 5.1 Confirmed vs speculation thresholds
 type: specification
 status: draft
 implementation_state: specified_only
-proposition: 'For MemoryEntries: A claim is **confirmed** if confirmed_by_event_id is present, or if source_chunk_ids is non-empty, confidence meets the policy threshold, and conflict_state is not contradictory.'
+proposition: 'For MemoryEntries, confirmation requires qualifying evidence for the proposition itself; synthetic derivation provenance, model confidence, and repeated model generation do not independently confirm a derived claim.'
 domains:
 - specs
 aliases: []
-relations: []
+relations:
+- type: refines
+  target: DREAM-01
 sources: []
 artifacts: []
-uncertainty: Preserved from the legacy draft without status promotion or newly inferred evidence strength.
+uncertainty: The legacy threshold is retained for direct evidence-backed claims but narrowed for synthetic derivatives. Concrete independence tests for evidence lineages require implementation and adversarial evaluation.
 legacy:
 - path: blueprint/30-specs/symbolic-substrate.md
   heading: 5.1 Confirmed vs speculation thresholds
@@ -25,9 +27,32 @@ legacy:
 ## 5.1 Confirmed vs speculation thresholds
 
 For MemoryEntries:
-- A claim is **confirmed** if `confirmed_by_event_id` is present, or if
-  `source_chunk_ids` is non-empty, `confidence` meets the policy threshold, and
-  `conflict_state` is not contradictory.
+- A direct claim may be **confirmed** if `confirmed_by_event_id` is present, or
+  if `source_chunk_ids` contains qualifying evidence for the proposition,
+  `confidence` meets the policy threshold, and `conflict_state` is not
+  contradictory.
 - Otherwise, the claim MUST be stored as `hypothesis` or `derived` with a
   `ttl_ms` or `review_at` value, and MUST NOT be promoted to `fact` without
   new evidence.
+- For `hypothesis` or `derived` entries produced by dreaming, simulation,
+  counterfactual reasoning, reflection, or other synthetic inference,
+  `source_chunk_ids` establish derivation provenance only. They do not by
+  themselves confirm the newly derived proposition.
+- Model confidence, repeated generation of the same proposition, or agreement
+  among model-generated descendants of the same evidence lineage MUST NOT count
+  as independent confirmation.
+- Promotion of a synthetic derivative to `fact` requires qualifying evidence
+  that supports the derived proposition itself and remains distinguishable from
+  the model-generation lineage that produced it.
+- Simulated or counterfactual events MUST NOT populate
+  `confirmed_by_event_id` as though they were observed external events.
+
+This preserves an explicit boundary between:
+
+1. **evidence provenance** — what material a cognition process used;
+2. **derivation provenance** — how a synthetic proposition was produced; and
+3. **confirmation evidence** — what independently supports the proposition as
+   true.
+
+Under `DREAM-01`, repeated synthesis may increase salience or motivate testing,
+but it cannot bootstrap a hypothesis into a fact through self-corroboration.
