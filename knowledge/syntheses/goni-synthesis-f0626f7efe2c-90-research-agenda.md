@@ -678,3 +678,47 @@ Evidence artifacts to produce:
 - A communication-receipt sample pack with raw content redacted by default.
 - A promotion memo stating whether this lane should remain research-only or
   advance toward a normative communication contract.
+
+
+19) Governed offline cognition ("dreaming") research lane
+
+Purpose:
+- Test whether a slower background cognition cycle adds measurable value beyond
+  D-017 consolidation while preserving strict separation among synthetic
+  candidates, evidence-backed facts, and kernel-owned authority.
+
+Research stance:
+- DREAM-01 is a specified-only protocol across existing planes, not a new plane
+  or autonomous authority source.
+- Existing MemoryEntries remain canonical; dream outputs use hypothesis/derived
+  lifecycle, provenance, TTL/review, conflict, and quarantine semantics.
+- Research precedents for world models, imagined trajectories, reflection, and
+  replay motivate evaluation but do not establish Goni-specific safety or
+  usefulness.
+
+Core comparison:
+- wake-only cognition;
+- consolidation-only cognition;
+- consolidation plus DREAM-01 governed offline cognition.
+
+Primary questions:
+- Does synthetic offline cognition discover useful non-obvious relationships,
+  contradictions, hypotheses, or evidence requests?
+- Can repeated dream cycles preserve epistemic status rather than convert
+  model-generated repetition into apparent evidence?
+- What scheduling policy captures useful idle compute without degrading
+  interactive p95/p99 latency?
+- Which candidate classes deserve durable storage, review, expiry, or
+  quarantine?
+- When does dreaming merely generate noise that ordinary retrieval and
+  consolidation already handle better?
+
+Hard safety outcomes:
+- zero synthetic-to-fact promotion without qualifying evidence;
+- zero self-generated descendants counted as independent confirmation;
+- zero authority expansion attributable solely to dream output;
+- zero tool or egress bypass.
+
+Evidence artifact:
+- DREAM-EVAL-01 comparison report with utility, contamination, authority,
+  provenance, compute, storage, and interactive-SLO measurements.
