@@ -8,9 +8,12 @@ proposition: '**Formal statement** The Memory/Context planes MUST implement **vi
 domains:
 - software
 aliases: []
-relations: []
+relations:
+- type: refined_by
+  target: GONI-DECISION-6D3A2B71C9E4
 sources:
 - SRC-PACKER2023-MEMGPT
+- SRC-PARK2023-GENERATIVE-AGENTS
 artifacts: []
 uncertainty: Preserved from the legacy draft without status promotion; CTX-MISS-01 extends the read-side recovery contract as specified architecture requiring evaluation.
 legacy:
@@ -34,8 +37,13 @@ legacy:
   - Use `CTX-MISS-01` as the bounded inference-time read-side mechanism when cognition discovers a missing evidentiary or procedural dependency after initial compilation.
 - The Control Plane MUST schedule a recurring **Observation → Reflection → Planning** consolidation loop:
   - ingest raw events into episodic memory (Observation),
-  - distill reflections/long-term facts (Reflection),
-  - produce plans/jobs/actions using both current state and reflections (Planning).
+  - distill evidence-backed summaries and facts while also producing explicitly
+    typed abstractions, contradictions, hypotheses, or other derived candidates
+    when reflection becomes synthetic (Reflection),
+  - preserve epistemic class and route synthetic candidates through `DREAM-01`
+    rather than silently promoting them to facts,
+  - produce plans/jobs/actions using current state and governed reflections
+    (Planning).
 - Council/cloud paths see only distilled/approved context unless explicitly allowed by policy.
 
 **Rationale**
@@ -50,5 +58,8 @@ legacy:
 - Context selection, memory paging, and context-miss recovery are tested as first-class behaviours; prompt-only hidden state is non-conformant.
 - A context miss may increase available cognitive evidence but may not grant tool or execution authority.
 - Nightly/periodic consolidation jobs become required workloads; they must respect policies and budgets (local-first unless configured otherwise).
+- D-017 defines the consolidation obligation. D-024 and DREAM-01 define the
+  stricter boundary for generative offline cognition when reflection creates
+  possibilities rather than merely compressing supported evidence.
 
 ---
