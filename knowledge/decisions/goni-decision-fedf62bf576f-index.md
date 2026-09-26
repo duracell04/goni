@@ -47,5 +47,6 @@ legacy:
 - D-021 - Maximum safe autopilot via autonomy corridors
 - D-022 - Policy-and-anomaly-first operator UX
 - D-023 - Own the control plane; treat agent gateways as untrusted seats
+- D-024 - Governed offline cognition ("dreaming")
 
 ---

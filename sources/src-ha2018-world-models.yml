@@ -1,0 +1,6 @@
+id: SRC-HA2018-WORLD-MODELS
+title: Ha and Schmidhuber 2018 - World Models
+kind: academic
+citation: "Ha, D., & Schmidhuber, J. (2018). World Models. arXiv:1803.10122."
+url: https://arxiv.org/abs/1803.10122
+notes: Learns a generative world model and demonstrates training a compact policy inside an internally generated hallucinated dream before transferring it back to the environment.
