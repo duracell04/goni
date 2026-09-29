@@ -4,14 +4,16 @@ title: 4.4 Audit-grade work rules
 type: specification
 status: draft
 implementation_state: specified_only
-proposition: 'For audit_grade work, the runtime MUST follow these epistemic rules: **Absence-of-evidence rule:** absence of evidence in scope S is not evidence of absence outside scope S.'
+proposition: 'For audit_grade work, the runtime MUST apply EPISTATE-01 and preserve scope, evidence, inference, missing evidence, and negative-claim burden; absence of evidence in scope S is not evidence of absence outside scope S.'
 domains:
 - specs
 aliases: []
-relations: []
+relations:
+- type: depends_on
+  target: EPISTATE-01
 sources: []
 artifacts: []
-uncertainty: Preserved from the legacy draft without status promotion or newly inferred evidence strength.
+uncertainty: The epistemic rules are specified architecture. Coverage thresholds and domain-specific negative-claim burdens require evaluation.
 legacy:
 - path: blueprint/30-specs/delegation-interface.md
   heading: 4.4 Audit-grade work rules
@@ -20,11 +22,13 @@ legacy:
 
 # 4.4 Audit-grade work rules
 
-> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.
+> Status boundary: this is a specified-only contract. Enforcement language
+> describes intended conformance behavior rather than observed implementation.
 
 ### 4.4 Audit-grade work rules
 
-For `audit_grade` work, the runtime MUST follow these epistemic rules:
+For `audit_grade` work, the runtime MUST apply EPISTATE-01 and follow these
+additional epistemic rules:
 
 - **Absence-of-evidence rule:** absence of evidence in scope `S` is not evidence
   of absence outside scope `S`.
@@ -32,6 +36,9 @@ For `audit_grade` work, the runtime MUST follow these epistemic rules:
   scope before strong conclusions are made.
 - **Evidence before inference:** observed artifacts and derived conclusions must
   remain separable in receipts and user-facing summaries.
+- **Null and missing-state discipline:** null, omitted, unavailable, or unchecked
+  fields remain unknown or unspecified unless separate evidence supports a
+  stronger proposition.
 - **Negative-claim burden:** negative claims require stronger coverage than
   positive claims.
 - **Missing-evidence surfacing:** if the scope is incomplete, the runtime must
@@ -39,3 +46,7 @@ For `audit_grade` work, the runtime MUST follow these epistemic rules:
 - **Sticky audit mode:** audit-grade mode persists for follow-up turns in the
   same task/session unless explicitly reset or a clear unrelated task boundary
   is detected and surfaced.
+
+Audit-grade work may use richer evidence-strength labels, but it must not
+collapse observed, inferred, hypothesized, verified, and certified state where
+that distinction affects the conclusion.
