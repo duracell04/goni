@@ -1,0 +1,65 @@
+name: Temporary catalogue regeneration
+
+on:
+  push:
+    branches:
+      - kg/completion-certification
+
+permissions:
+  contents: write
+
+jobs:
+  regenerate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: tooling/requirements.txt
+      - name: Install deterministic tooling
+        run: python -m pip install -r tooling/requirements.txt
+      - name: Build catalogue
+        run: python tooling/build_catalogue.py --edition-sha "$GITHUB_SHA"
+      - name: Commit deterministic projection
+        shell: bash
+        run: |
+          set -euo pipefail
+          git add maps/catalogue.json
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          cat > /tmp/msg <<'EOF'
+          kg(map): regenerate completion certification projection
+
+          Intent:
+          Regenerate the deterministic catalogue from the canonical completion-certification branch nodes.
+
+          Rationale:
+          maps/catalogue.json is a generated machine projection. Running the repository-owned generator preserves byte-level determinism without hand-authoring generated state.
+
+          Status:
+          specified-only
+
+          Contracts:
+          - COMPLETE-01
+          - EPISTATE-01
+          - DIAG-01
+          - REC-01
+
+          Files:
+          - maps/catalogue.json
+
+          Evidence:
+          - python tooling/build_catalogue.py --edition-sha <branch-head-sha>
+
+          Unresolved:
+          - Strict pull-request validation must confirm projection determinism and history validity
+          EOF
+          git commit -F /tmp/msg
+          git push
