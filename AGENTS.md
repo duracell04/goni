@@ -25,7 +25,7 @@ python tooling/build_catalogue.py --edition-sha <full-git-sha>
 python tooling/validate.py --strict --baseline pre-knowledge-graph-2026-08-03
 ```
 
-The deterministic catalogue must be byte-identical on repeated builds from the same tree.
+The deterministic catalogue must be byte-identical on repeated builds from the same tree. `maps/catalogue.json` and `maps/edition.json` are generated validation/build artifacts and must remain untracked; canonical knowledge lives under `knowledge/`.
 
 ## Git completion contract
 

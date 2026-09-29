@@ -218,8 +218,8 @@ def main() -> int:
     generated = catalogue(repo)
     expected = (json.dumps(generated, indent=2, sort_keys=True, ensure_ascii=False) + "\n").encode("utf-8")
     catalogue_path = repo / "maps" / "catalogue.json"
-    if not catalogue_path.is_file() or catalogue_path.read_bytes() != expected:
-        errors.append("maps/catalogue.json is absent or differs from deterministic projection")
+    if catalogue_path.is_file() and catalogue_path.read_bytes() != expected:
+        errors.append("maps/catalogue.json differs from deterministic projection")
 
     if args.strict and not args.skip_commits:
         validation_head = git(repo, "rev-parse", args.head).strip()
