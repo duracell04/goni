@@ -1,19 +1,21 @@
 name: Temporary catalogue regeneration
 
 on:
-  push:
+  pull_request:
     branches:
-      - kg/completion-certification
+      - main
 
 permissions:
   contents: write
 
 jobs:
   regenerate:
+    if: github.event.pull_request.head.ref == 'kg/completion-certification'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
+          ref: ${{ github.event.pull_request.head.ref }}
           fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
@@ -23,7 +25,7 @@ jobs:
       - name: Install deterministic tooling
         run: python -m pip install -r tooling/requirements.txt
       - name: Build catalogue
-        run: python tooling/build_catalogue.py --edition-sha "$GITHUB_SHA"
+        run: python tooling/build_catalogue.py --edition-sha "${{ github.event.pull_request.head.sha }}"
       - name: Commit deterministic projection
         shell: bash
         run: |
@@ -62,4 +64,4 @@ jobs:
           - Strict pull-request validation must confirm projection determinism and history validity
           EOF
           git commit -F /tmp/msg
-          git push
+          git push origin HEAD:${{ github.event.pull_request.head.ref }}
