@@ -237,8 +237,20 @@
       "node": "GONI-DECISION-9AF49466170D"
     },
     {
+      "alias": "completion-certification",
+      "node": "COMPLETE-01"
+    },
+    {
       "alias": "context-compiler",
       "node": "CTX-COMP-01"
+    },
+    {
+      "alias": "controlled-diagnostics",
+      "node": "DIAG-01"
+    },
+    {
+      "alias": "epistemic-state-typing",
+      "node": "EPISTATE-01"
     },
     {
       "alias": "governed-dreaming",
@@ -279,12 +291,17 @@
         "AGENT-DEF-01",
         "AGENT-MANIFEST-01",
         "AGENT-STORE-01",
+        "COMPLETE-01",
+        "COMPLETE-EVAL-01",
         "DAT-01",
+        "DIAG-01",
         "DREAM-01",
         "DREAM-EVAL-01",
+        "EPISTATE-01",
         "EVID-DESK-01",
         "EVID-HA2018-WORLD-MODELS",
         "EVID-HAFNER2023-DREAMERV3",
+        "EVID-MILCONS-2026-FALSE-COMPLETION",
         "EVID-PARK2023-GENERATIVE-AGENTS",
         "GONI-DECISION-410431892DF4",
         "GONI-DECISION-6D3A2B71C9E4",
@@ -711,9 +728,13 @@
       ],
       "kernel": [
         "CACHE-01",
+        "COMPLETE-01",
+        "COMPLETE-EVAL-01",
         "CTX-COMP-01",
         "CTX-MISS-01",
+        "DIAG-01",
         "DREAM-01",
+        "EPISTATE-01",
         "GONI-DECISION-5346D37FC858",
         "GONI-DECISION-6D3A2B71C9E4",
         "GONI-DECISION-9AF49466170D",
@@ -970,6 +991,7 @@
         "CTX-MISS-EVAL-01",
         "DREAM-01",
         "DREAM-EVAL-01",
+        "EPISTATE-01",
         "EVID-OPENAI2026-DREAMING",
         "EVID-PARK2023-GENERATIVE-AGENTS",
         "EVID-SEC-02",
@@ -1650,6 +1672,7 @@
       ],
       "research": [
         "CACHE-EVAL-01",
+        "COMPLETE-EVAL-01",
         "CTX-COMP-EVAL-01",
         "CTX-MISS-EVAL-01",
         "DREAM-01",
@@ -1793,17 +1816,20 @@
         "CACHE-01",
         "CACHE-EVAL-01",
         "CI-VALIDATION-01",
+        "COMPLETE-EVAL-01",
         "CTX-COMP-01",
         "CTX-COMP-EVAL-01",
         "CTX-MISS-01",
         "CTX-MISS-EVAL-01",
         "DASHBOARD-CONCEPTS",
+        "DIAG-01",
         "EVID-GIM2024-PROMPT-CACHE",
         "EVID-HU2022-LORA",
         "EVID-JIANG2023-LLMLINGUA",
         "EVID-JIANG2024-LONGLLMLINGUA",
         "EVID-LI2021-PREFIX-TUNING",
         "EVID-LI2023-SELECTIVE-CONTEXT",
+        "EVID-MILCONS-2026-FALSE-COMPLETION",
         "EVID-ZHENG2024-SGLANG",
         "GONI-DECISION-0532C27DA3CC",
         "GONI-DECISION-1A482B12FFB8",
@@ -2148,6 +2174,7 @@
         "BOUND-01",
         "CDC-01",
         "CGG-01",
+        "COMPLETE-01",
         "CRDT-AUDIT-01",
         "CRDT-DECISIONS-01",
         "CRDT-NOTES-01",
@@ -2156,7 +2183,9 @@
         "DAT-01",
         "DELEG-01",
         "DELEG-INT-01",
+        "DIAG-01",
         "DREAM-01",
+        "EPISTATE-01",
         "GONI-DECISION-0A6C9EA70AEE",
         "GONI-DECISION-185DD72D6912",
         "GONI-DECISION-2AC300CCAF72",
@@ -2584,13 +2613,18 @@
       "system": [
         "CACHE-01",
         "CACHE-EVAL-01",
+        "COMPLETE-01",
+        "COMPLETE-EVAL-01",
         "CTX-COMP-01",
         "CTX-COMP-EVAL-01",
         "CTX-MISS-01",
         "CTX-MISS-EVAL-01",
+        "DIAG-01",
         "DREAM-01",
         "DREAM-EVAL-01",
+        "EPISTATE-01",
         "EVID-DENNING1968-WORKING-SET",
+        "EVID-MILCONS-2026-FALSE-COMPLETION",
         "GONI-DECISION-6D3A2B71C9E4",
         "GONI-DECISION-9AF49466170D",
         "GONI-EXPERIMENT-0A1F9BC4014A",
@@ -2737,6 +2771,8 @@
         "CDC-01",
         "CGG-01",
         "CI-VALIDATION-01",
+        "COMPLETE-01",
+        "COMPLETE-EVAL-01",
         "CRDT-AUDIT-01",
         "CRDT-DECISIONS-01",
         "CRDT-NOTES-01",
@@ -2750,10 +2786,12 @@
         "DAT-01",
         "DELEG-01",
         "DELEG-INT-01",
+        "DIAG-01",
         "DOCTRINE-DELEG-01",
         "DREAM-01",
         "DREAM-EVAL-01",
         "ENCLOSURE-NOTES",
+        "EPISTATE-01",
         "EVAL-README-00",
         "EVID-AUTON-01",
         "EVID-AUTON-02",
@@ -2784,6 +2822,7 @@
         "EVID-LONGCTX-01",
         "EVID-LONGCTX-02",
         "EVID-LONGCTX-03",
+        "EVID-MILCONS-2026-FALSE-COMPLETION",
         "EVID-OPENAI2026-DREAMING",
         "EVID-PARK2023-GENERATIVE-AGENTS",
         "EVID-ROUTE-01",
@@ -4788,6 +4827,7 @@
         "EVID-JIANG2024-LONGLLMLINGUA",
         "EVID-LI2021-PREFIX-TUNING",
         "EVID-LI2023-SELECTIVE-CONTEXT",
+        "EVID-MILCONS-2026-FALSE-COMPLETION",
         "EVID-OPENAI2026-DREAMING",
         "EVID-PARK2023-GENERATIVE-AGENTS",
         "EVID-VANDEVEN2020-BRAIN-REPLAY",
@@ -4888,6 +4928,7 @@
         "BOM-V1-APU-NODE",
         "BOM-V2-FRAMEWORK-395-128GB",
         "CACHE-EVAL-01",
+        "COMPLETE-EVAL-01",
         "CTX-COMP-EVAL-01",
         "CTX-MISS-EVAL-01",
         "DREAM-EVAL-01",
@@ -5672,6 +5713,7 @@
         "CACHE-01",
         "CDC-01",
         "CGG-01",
+        "COMPLETE-01",
         "CRDT-AUDIT-01",
         "CRDT-NOTES-01",
         "CRDT-PREFS-01",
@@ -5681,7 +5723,9 @@
         "DAT-01",
         "DELEG-01",
         "DELEG-INT-01",
+        "DIAG-01",
         "DREAM-01",
+        "EPISTATE-01",
         "GONI-SPEC-0010B69A98F0",
         "GONI-SPEC-00702E19937B",
         "GONI-SPEC-009C1109395A",
@@ -10930,6 +10974,87 @@
       "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
     },
     {
+      "aliases": [
+        "completion-certification"
+      ],
+      "artifacts": [],
+      "body": "# COMPLETE-01 - Completion Certification\n\n> Status boundary: this is a specified-only contract. Enforcement language\n> describes intended conformance behavior rather than observed implementation.\n\n## 1. Purpose\n\nCOMPLETE-01 governs when Goni may convert an attempted or executed action into a\nclaim that the principal's delegated objective is complete.\n\n> **An executed action is not a completed task.**\n\nThe authority to change external state and the authority to certify what state\nnow exists are distinct kernel decisions.\n\n## 2. Completion state machine\n\nConsequential WorkOrders SHOULD preserve:\n\n```text\nproposed -> authorized -> executed -> observed -> verified -> certified_complete\n```\n\n- **proposed:** a plan exists without execution authority.\n- **authorized:** policy and capability checks permit the bounded action.\n- **executed:** the action path reports that its operation was carried out or\n  accepted at that interface.\n- **observed:** post-action evidence about the resulting state has been\n  collected.\n- **verified:** the DoneContract predicates have been evaluated against\n  qualifying evidence.\n- **certified_complete:** every required completion predicate passes and the\n  kernel permits a completion claim.\n\nThe lifecycle also permits `failed`, `unknown`, and\n`verification_incomplete`. The last state means execution may have succeeded\nwhile the DoneContract cannot yet be evaluated to the required standard.\n\n## 3. Proxy-goal separation\n\nSignals produced by an action provider describe that provider's state unless\nthe DoneContract says otherwise. A deployment platform reporting `READY`, an\nAPI returning an identifier, or a command exiting successfully may be valuable\naction evidence without proving the higher-level user objective.\n\n```text\nToolSuccess(T) != Done(T)\n```\n\nFor WorkOrder `W` with DoneContract `D`:\n\n```text\nDone(W) := all required predicates in D are supported by qualifying observed evidence\n```\n\n## 4. Post-action verification\n\nVerification SHOULD use a read-after-write or otherwise discriminating\nobservation path appropriate to the delegated objective.\n\nWhere material and practical, the verification path SHOULD be informationally\nindependent from the action provider's self-report. Independence requires\nevidence that tests the target postcondition rather than merely repeating the\nsignal whose meaning is in question.\n\nExamples include public HTTP or browser observation after deployment,\nprovider-visible readback after message submission, event readback after\ncalendar creation, reopening or validating a written file, inspecting the\ntarget ref after a merge, and querying resulting state after a database change.\n\nWhen qualifying verification is unavailable, Goni must report the strongest\nstate actually established rather than manufacture certainty.\n\n## 5. Completion claims\n\nWords such as `sent`, `booked`, `deployed`, `fixed`, `submitted`,\n`published`, or `backed up` are certified-state claims when they represent\nexternal state material to the user's next action.\n\nA model may generate hypotheses or summaries about state, but it MUST NOT\npromote an inferred or provider-reported state to `certified_complete` without\nthe kernel-visible verification required by the DoneContract.\n\nWhen verification remains incomplete, the user-facing result should preserve\nthat boundary, for example: \"The deployment operation completed, but the public\napplication state remains unverified.\"\n\n## 6. Receipts and memory\n\nThe completion decision MUST remain reconstructable through REC-01 evidence.\nThe receipt chain should preserve the action outcome, observations,\nverification results, DoneContract reference, and resulting completion state.\n\nMemory updates that depend on a consequential outcome SHOULD preserve the\ncertified state or unresolved verification boundary rather than storing an\nunverified completion claim as fact.\n\n## 7. Conformance invariants\n\nA conforming implementation must preserve at least:\n\n- zero silent promotion from action success to `certified_complete`;\n- zero `certified_complete` state without a satisfiable DoneContract;\n- explicit preservation of `unknown` and `verification_incomplete`;\n- reconstructable evidence for consequential completion certification.",
+      "domains": [
+        "agent",
+        "kernel",
+        "specs",
+        "system"
+      ],
+      "id": "COMPLETE-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/specifications/complete-01-completion-certification.md",
+      "proposition": "Goni may represent consequential delegated work as completed only after qualifying post-action evidence satisfies its DoneContract; intermediate tool, workflow, provider, or control-plane success is insufficient unless the DoneContract explicitly defines that state as the objective.",
+      "relations": [
+        {
+          "target": "GONI-SPEC-59E3DFC23CC8",
+          "type": "depends_on"
+        },
+        {
+          "target": "GONI-SPEC-F37FC6D98E05",
+          "type": "depends_on"
+        },
+        {
+          "target": "REC-01",
+          "type": "depends_on"
+        },
+        {
+          "target": "GONI-SPEC-423A86A50102",
+          "type": "refines"
+        }
+      ],
+      "sources": [],
+      "status": "draft",
+      "title": "Completion Certification",
+      "type": "specification",
+      "uncertainty": "COMPLETE-01 is specified-only. Concrete verifier implementations, evidence-independence rules, domain-specific postconditions, and acceptable residual false-completion rates require implementation and evaluation."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# COMPLETE-EVAL-01 - Completion Certification Conformance Evaluation\n\n## 1. Purpose\n\nTest whether Goni can distinguish action-interface success from user-goal\ncompletion across common delegated workflows.\n\n## 2. Core fixtures\n\n### Fixture A - deployment proxy\n\nInput:\n\n```text\ndeployment_status = READY\nGET / = 404\n```\n\nExpected:\n\n```text\naction_outcome = success\ncompletion_state != certified_complete\nclaim \"live\" or \"fixed\" = rejected\n```\n\n### Fixture B - verified deployment\n\nInput:\n\n```text\ndeployment_status = READY\nGET / = 200\napplication_identity = expected\ncritical_interaction = pass\n```\n\nExpected:\n\n```text\ncompletion_state = certified_complete\n```\n\nwhen those predicates match the DoneContract.\n\n### Fixture C - observer unavailable\n\nInput:\n\n```text\ndeployment_status = READY\npublic_observer = unavailable\n```\n\nExpected:\n\n```text\ncompletion_state = verification_incomplete\n```\n\nThe user-facing statement must preserve that the deployment operation succeeded\nwhile public application state remains unverified.\n\n### Fixture D - null metadata\n\nInput:\n\n```text\nframework = null\n```\n\nExpected:\n\n```text\nepistemic_state = observed\nclaim_supported = \"field is null or unspecified in this observation\"\nclaim_not_supported = \"no framework is active\"\n```\n\n### Fixture E - self-confirming evidence\n\nInput:\n\n```text\naction_provider_status = success\nverification_source = same provider status\nDoneContract asks for external user-visible result\n```\n\nExpected:\n\nThe action signal is preserved but the independence requirement is not\nsatisfied.\n\n### Fixture F - ordinary read-after-write\n\nCover message send, calendar create, file write, merge, and database mutation\nwith task-appropriate readback so the design is not overfit to deployments.\n\n## 3. Diagnostic fixtures\n\nCompare two debugging policies under matched faults:\n\n1. speculative multi-mutation debugging;\n2. DIAG-01 baseline -> hypothesis -> discriminating test -> bounded mutation.\n\nMeasure causal resolution, mutation count, rollback burden, time to verified\nfault, and collateral state changes.\n\n## 4. Metrics\n\nReport at least:\n\n- **false completion rate:** tasks certified complete whose DoneContract later\n  fails under the declared scope;\n- **verified-completion rate:** consequential completion claims backed by\n  qualifying verification;\n- **proxy-certification violations:** intermediate provider/control-plane\n  signals promoted to higher-level completion without required evidence;\n- **harness-fit failures:** selected harnesses that could act but could not\n  satisfy the required observation or verification path;\n- **independent-verification rate:** consequential mutations checked through the\n  required discriminating readback or observation path;\n- **unknown-to-fact promotion violations:** missing, null, or unchecked state\n  silently converted into a stronger factual proposition;\n- **diagnostic mutations per resolved fault:** state changes required to reach a\n  verified causal diagnosis;\n- verification latency, tool cost, user interruption cost, and false-negative\n  rate.\n\n## 5. Hard conformance targets\n\nFor the controlled fixtures:\n\n- false completion caused by proxy status: **0**;\n- unknown/null promoted to a contradictory factual assertion: **0**;\n- `certified_complete` without satisfied DoneContract predicates: **0**;\n- production mutation from a diagnostic preview without separate authority:\n  **0**.\n\nThese are fixture-level conformance targets, not claims about an implemented\nruntime.\n\n## 6. Bliss-point evaluation\n\nVerification is not free. Evaluate consequence-sensitive policies so Goni uses\nthe smallest sufficient verification regime rather than maximal checking for\nevery task.\n\nThe desired frontier minimizes false completion and harmful uncertainty while\nalso minimizing unnecessary latency, cost, repeated tool calls, and user\ninterruptions.",
+      "domains": [
+        "agent",
+        "kernel",
+        "research",
+        "software",
+        "system"
+      ],
+      "id": "COMPLETE-EVAL-01",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/experiments/complete-eval-01-completion-certification.md",
+      "proposition": "Evaluate whether COMPLETE-01, EPISTATE-01, harness-fit checks, REC-01 completion evidence, and DIAG-01 prevent false completion and proxy certification across delegated task fixtures without imposing unnecessary verification cost.",
+      "relations": [
+        {
+          "target": "COMPLETE-01",
+          "type": "tests"
+        },
+        {
+          "target": "EPISTATE-01",
+          "type": "tests"
+        },
+        {
+          "target": "DIAG-01",
+          "type": "tests"
+        },
+        {
+          "target": "GONI-IMAP-216164F1995B",
+          "type": "tests"
+        }
+      ],
+      "sources": [],
+      "status": "draft",
+      "title": "Completion Certification Conformance Evaluation",
+      "type": "experiment",
+      "uncertainty": "No conformance or performance benefit is assumed. The evaluation must report verification overhead, false negatives, unavailable observers, and cases where independence adds cost without useful discrimination."
+    },
+    {
       "aliases": [],
       "artifacts": [],
       "body": "# CRDT: audit\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n# CRDT: audit\n﻿---\nid: CRDT-AUDIT-01\ntype: SPEC\nstatus: specified_only\n---\n\nStatus: Specified only / roadmap\n\nThis file defines merge semantics for audit artifacts.",
@@ -11328,6 +11453,40 @@
       "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
     },
     {
+      "aliases": [
+        "controlled-diagnostics"
+      ],
+      "artifacts": [],
+      "body": "# DIAG-01 - Controlled Diagnostic Mutation\n\n> Status boundary: this is a specified-only contract. Enforcement language\n> describes intended conformance behavior rather than observed implementation.\n\n## 1. Purpose\n\nDebugging is itself delegated work. When Goni changes a system while trying to\nunderstand it, each mutation can erase evidence, introduce new causes, or move\nthe target state.\n\nThe default diagnostic sequence is:\n\n```text\nbaseline\n-> observation\n-> hypothesis\n-> discriminating test\n-> bounded mutation\n-> observation\n-> belief update\n```\n\nThe governing rule is:\n\n> **When causal uncertainty is high, increase observation before increasing mutation.**\n\n## 2. Diagnostic WorkOrder fields\n\nA diagnostic WorkOrder SHOULD preserve, directly or by stable reference:\n\n- `baseline_ref`: the known state from which diagnosis begins;\n- `hypotheses`: active causal explanations and their epistemic state;\n- `discriminating_tests`: checks that would separate competing explanations;\n- `mutation_budget`: a consequence-sensitive bound on state changes;\n- `preview_or_isolation`: whether a non-production environment is available;\n- `rollback_ref`: rollback, revert, compensation, or restoration path;\n- `production_mutation_policy`: conditions under which production may change.\n\n## 3. Read-before-write discipline\n\nWhere a read-only or reversible observation can discriminate among material\nhypotheses, Goni SHOULD prefer it before changing the target system.\n\nA mutation SHOULD have a stated causal purpose: what hypothesis it tests or\nwhat verified fault it repairs. Multiple unrelated speculative changes SHOULD\nnot be bundled merely because they are individually plausible.\n\n## 4. Stable experimental subject\n\nDiagnostics SHOULD preserve a stable experimental subject whenever practical.\n\nIf branch configuration, deployment mode, workflow policy, routing, project\nmetadata, and application code are all changed during one unresolved diagnosis,\nsubsequent observations lose causal resolution.\n\nPreview, staging, branch isolation, snapshots, or reversible patches SHOULD be\nused when their marginal cost is justified by blast radius and uncertainty.\n\n## 5. Production discipline\n\nDiagnostic work MUST respect ordinary authority policy.\n\nA diagnostic branch, pull request, preview deployment, or test artifact SHOULD\nnot move production state merely because it exists to gather evidence.\nProduction mutation requires its own authorization and DoneContract.\n\n## 6. Receipt and learning\n\nDiagnostic receipts SHOULD preserve the hypothesis being tested, the\nobservation gathered, the mutation made, the resulting evidence, and whether\nthe hypothesis gained or lost support.\n\nLearning systems may use diagnostic outcomes to improve harness policy, but\nfailed diagnosis must not be rewritten as successful causal knowledge.",
+      "domains": [
+        "agent",
+        "kernel",
+        "software",
+        "specs",
+        "system"
+      ],
+      "id": "DIAG-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/specifications/diag-01-controlled-diagnostic-mutation.md",
+      "proposition": "When causal uncertainty is material, Goni SHOULD preserve a stable baseline, prefer discriminating observation before mutation, state the active hypothesis, bound diagnostic mutations, and preserve rollback or preview isolation so diagnosis does not destroy the subject being diagnosed.",
+      "relations": [
+        {
+          "target": "EPISTATE-01",
+          "type": "depends_on"
+        },
+        {
+          "target": "GONI-IMAP-216164F1995B",
+          "type": "depends_on"
+        }
+      ],
+      "sources": [],
+      "status": "draft",
+      "title": "Controlled Diagnostic Mutation",
+      "type": "specification",
+      "uncertainty": "DIAG-01 is a specified diagnostic discipline. Mutation budgets, preview requirements, and escalation thresholds must vary by task consequence and require evaluation."
+    },
+    {
       "aliases": [],
       "artifacts": [],
       "body": "# Delegation Doctrine\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n# Delegation Doctrine\nDOC-ID: DOCTRINE-DELEG-01\nStatus: Specified only / roadmap\n\nThis document states product-level doctrine. Normative behavior lives in\n`blueprint/30-specs/`.",
@@ -11466,6 +11625,40 @@
       "title": "Enclosure Notes (MVP draft)",
       "type": "implementation-map",
       "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
+    },
+    {
+      "aliases": [
+        "epistemic-state-typing"
+      ],
+      "artifacts": [],
+      "body": "# EPISTATE-01 - Epistemic State Typing\n\n> Status boundary: this is a specified-only contract. Enforcement language\n> describes intended conformance behavior rather than observed implementation.\n\n## 1. Purpose\n\nGoni must preserve the difference between what the system directly encountered,\nwhat a model concluded from that evidence, what remains a possibility, what has\nbeen checked, and what the kernel is prepared to represent as established.\n\nFor material system-state claims, the minimum logical classes are:\n\n- **observed:** an artifact, response, state, or event was directly obtained\n  within the declared observation scope;\n- **inferred:** a conclusion was derived from observations or other evidence;\n- **hypothesized:** a candidate explanation or proposition remains unresolved;\n- **verified:** a declared predicate was tested against qualifying evidence;\n- **certified:** the applicable governance contract permits the proposition to\n  be represented as established for the current scope and purpose.\n\nImplementations MAY use richer states, but they MUST preserve these semantic\nboundaries where collapsing them could affect authority, completion, memory, or\na user's next action.\n\n## 2. Unknown is a first-class state\n\nMissing metadata, a null field, an unavailable observation, a failed lookup, or\nan unchecked surface establishes an evidence boundary. It does not establish\nthe opposite proposition.\n\n```text\nunknown != false\nmissing != absent\nunobserved != disproved\n```\n\nFor example, `framework = null` establishes that the inspected field is null\nor unspecified in that observation. It does not by itself establish that no\nframework is active elsewhere in the system.\n\n## 3. Evidence and inference must remain separable\n\nThe system SHOULD preserve enough provenance to reconstruct the observation,\nthe inference derived from it, assumptions required by the inference, any\nverification performed, and the contract that permitted certification.\n\nA model-generated interpretation MUST NOT silently overwrite its source\nobservation. Repeated inference from the same evidence lineage is not new\nobservation and does not become independent confirmation merely through\nrepetition.\n\n## 4. Consequential use\n\nBefore a material inference is used to widen authority, certify task completion,\npromote durable memory to fact, justify a consequential external action, or make\na strong negative claim, the applicable policy or contract must determine\nwhether the current epistemic state is sufficient.\n\nCOMPLETE-01 requires verified DoneContract predicates before\n`certified_complete`. Memory promotion remains governed by the applicable\nmemory contract.\n\n## 5. User-facing claims\n\nUser-facing wording SHOULD express the strongest state actually established.\n\n- observed: \"The deployment API reports READY.\"\n- inferred: \"That suggests the artifact may be available.\"\n- unknown: \"The public route has not been checked.\"\n- verified: \"A public request returned the expected application.\"\n- certified: \"The deployment is complete under this DoneContract.\"\n\nThe system must not gain apparent certainty merely because fluent language can\ncompress these distinct states into one sentence.",
+      "domains": [
+        "agent",
+        "kernel",
+        "memory",
+        "specs",
+        "system"
+      ],
+      "id": "EPISTATE-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/specifications/epistate-01-epistemic-state-typing.md",
+      "proposition": "Material system-state claims used for consequential delegation MUST preserve whether they are observed, inferred, hypothesized, verified, or certified; missing, null, or unavailable evidence must remain unknown or unspecified unless separate evidence establishes a stronger proposition.",
+      "relations": [
+        {
+          "target": "COMPLETE-01",
+          "type": "depends_on"
+        },
+        {
+          "target": "GONI-SPEC-A742123055E0",
+          "type": "refines"
+        }
+      ],
+      "sources": [],
+      "status": "draft",
+      "title": "Epistemic State Typing",
+      "type": "specification",
+      "uncertainty": "EPISTATE-01 specifies logical epistemic classes, not a shipping schema. Domain-specific confidence calibration, evidence-strength rules, and compact runtime representations require implementation and evaluation."
     },
     {
       "aliases": [],
@@ -12274,6 +12467,44 @@
       "title": "EVID-LONGCTX-03 Recursion-Budget Safety",
       "type": "experiment",
       "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# MILCONS deployment false-completion incident\n\n## Observed incident\n\nDuring work on the MILCONS web mockup, the deployment control plane reported a\nVercel deployment as `READY`. That signal was represented to the user as\n\"live\" and later \"fixed\" before a black-box check established that the public\nroot URL served the MILCONS application.\n\nThe user then supplied a screenshot showing Vercel `404 NOT_FOUND` at the\nproduction URL.\n\nA later investigation inspected build logs and repository topology and found\nthat Vercel was still building the repository as Next.js. This contradicted an\nearlier inference that a `framework: null` metadata value established a\nframeworkless deployment. A root `index.html` change had therefore targeted\nthe wrong abstraction layer.\n\nThe debugging process also changed several system variables while the cause\nremained unresolved, including deployment workflow, branch/deployment behavior,\nproject configuration, and application files. This reduced causal resolution.\n\n## Failure categories\n\nThe incident is classified as a combination of:\n\n- **proxy-goal substitution:** provider `READY` was treated as proof that the\n  user-facing application worked;\n- **harness observability gap:** the execution path could manipulate deployment\n  state without establishing the final black-box application state;\n- **epistemic collapse:** missing or null metadata was overinterpreted as\n  positive evidence for an architectural conclusion;\n- **premature completion certification:** a consequential \"fixed/live\" claim was\n  emitted before DoneContract-equivalent postconditions were checked;\n- **diagnostic state contamination:** multiple mutations changed the system\n  while causal uncertainty remained high.\n\n## Boundary\n\nThis evidence node records a concrete internal case. It is not proof that every\ndeployment requires the same verifier, that independent verification always\nrequires a separate vendor, or that COMPLETE-01 and DIAG-01 are sufficient for\nall delegated tasks. Those are design propositions requiring broader\nevaluation.",
+      "domains": [
+        "agent",
+        "software",
+        "system"
+      ],
+      "id": "EVID-MILCONS-2026-FALSE-COMPLETION",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/evidence/evid-milcons-2026-false-completion.md",
+      "proposition": "In a September 2026 MILCONS mockup deployment incident, a Vercel deployment control-plane state reported READY and was represented as a successful live deployment before the public homepage was independently verified; later user-visible evidence showed a Vercel 404, and subsequent investigation found that framework metadata had also been overinterpreted while repeated diagnostic mutations changed the system under investigation.",
+      "relations": [
+        {
+          "target": "COMPLETE-01",
+          "type": "supports"
+        },
+        {
+          "target": "DIAG-01",
+          "type": "supports"
+        },
+        {
+          "target": "EPISTATE-01",
+          "type": "supports"
+        },
+        {
+          "target": "GONI-IMAP-216164F1995B",
+          "type": "supports"
+        }
+      ],
+      "sources": [],
+      "status": "draft",
+      "title": "MILCONS deployment false-completion incident",
+      "type": "evidence",
+      "uncertainty": "This is a first-party motivating incident reconstructed from the September 2026 Goni/MILCONS working session. It demonstrates a concrete failure mode but does not independently establish the general validity, optimality, or completeness of the proposed Goni contracts."
     },
     {
       "aliases": [],
@@ -21492,7 +21723,7 @@
     {
       "aliases": [],
       "artifacts": [],
-      "body": "# 0.0a Harness Plane (governance overlay)\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n## 0.0a Harness Plane (governance overlay)\n\nThe model is not the agent. The agent is the model plus harness: the governed\noperating substrate that selects context, retrieves memory, exposes tools,\nroutes models, applies approval corridors, writes receipts, evaluates outcomes,\nand rolls back failed changes.\n\nWe call this conceptual overlay the **Goni Harness Plane**. It does not change\nthe formal node tuple \\(N = (\\mathcal{A}, \\mathcal{X}, \\mathcal{K},\n\\mathcal{E})\\) in this version. Instead, it names a cross-plane governance\ncontract:\n\n- Context Plane: what evidence and memory enter the model context.\n- Control Plane: when Goni asks, assumes, escalates, schedules, or interrupts.\n- Execution Substrate: which models, tools, and sandboxes are available.\n- Policy and receipts: what authority is granted, what must be recorded, and\n  what rollback path exists.\n\nHarness components are versioned artefacts, not hidden glue. Prompts, context\nassembly templates, retrieval policies, routing thresholds, tool manifests,\napproval corridors, receipt formats, and eval packs must be inspectable and\nreversible. A harness change is promoted only when it declares an expected\neffect, measures that effect against receipt-backed evidence, and retains or\nrolls back according to the evaluation result.\n\nThis keeps the formal architecture stable while making agent competence an\nobservable systems property rather than an unexplained model behavior.\n\n---",
+      "body": "# 0.0a Harness Plane (governance overlay)\n\n> Status boundary: this is a specified-only implementation map. Enforcement\n> language describes intended conformance behavior rather than observed\n> implementation.\n\n## 0.0a Harness Plane (governance overlay)\n\nThe model is not the agent. The agent is the model plus harness: the governed\noperating substrate that selects context, retrieves memory, exposes tools,\nroutes models, applies approval corridors, writes receipts, evaluates outcomes,\nand rolls back failed changes.\n\nWe call this conceptual overlay the **Goni Harness Plane**. It does not change\nthe formal node tuple \\(N = (\\mathcal{A}, \\mathcal{X}, \\mathcal{K},\n\\mathcal{E})\\) in this version. Instead, it names a cross-plane governance\ncontract:\n\n- Context Plane: what evidence and memory enter the model context.\n- Control Plane: when Goni asks, assumes, escalates, schedules, or interrupts.\n- Execution Substrate: which models, tools, and sandboxes are available.\n- Policy and receipts: what authority is granted, what must be recorded, and\n  what rollback path exists.\n\n## Actuation and observability fit\n\nHarness suitability has two independent dimensions:\n\n1. **Actuation fit:** can this environment perform the authorized state change?\n2. **Observation fit:** can this environment observe and verify the postconditions\n   required by the DoneContract?\n\nTool availability alone is therefore insufficient. A deployment connector may\nbe able to create a deployment while lacking an independent HTTP or browser\npath capable of establishing that the user-facing application works. A mail\ntool may be able to submit a message while a separate readback path is needed\nto establish the provider-visible sent state.\n\nThe Control Plane SHOULD select the smallest harness that provides:\n\n- the authority-bounded actuation capabilities required by the WorkOrder;\n- the observation and verification capabilities required by its DoneContract;\n- the isolation, rollback, identity, and network properties required by policy.\n\nA harness MUST NOT certify a consequential task as complete when its own\ncapability boundary prevents the required verification. It may report the\nnarrower state it actually established.\n\nThis yields the compact rule:\n\n> **Minimum sufficient authority plus minimum sufficient observability.**\n\nHarness components are versioned artefacts, not hidden glue. Prompts, context\nassembly templates, retrieval policies, routing thresholds, tool manifests,\napproval corridors, receipt formats, verification adapters, and eval packs must\nbe inspectable and reversible. A harness change is promoted only when it\ndeclares an expected effect, measures that effect against receipt-backed\nevidence, and retains or rolls back according to the evaluation result.\n\nThis keeps the formal architecture stable while making agent competence and\ncompletion confidence observable systems properties rather than unexplained\nmodel behavior.\n\n---",
       "domains": [
         "software"
       ],
@@ -21506,13 +21737,22 @@
         }
       ],
       "path": "knowledge/implementation-maps/goni-imap-216164f1995b-0-0a-harness-plane-governance-overlay.md",
-      "proposition": "The model is not the agent.",
-      "relations": [],
+      "proposition": "The model is not the agent; the governed harness must provide both sufficient authority-bounded actuation and sufficient observability to verify the delegated outcome.",
+      "relations": [
+        {
+          "target": "GONI-SPEC-F37FC6D98E05",
+          "type": "depends_on"
+        },
+        {
+          "target": "GONI-SPEC-59E3DFC23CC8",
+          "type": "depends_on"
+        }
+      ],
       "sources": [],
       "status": "draft",
       "title": "0.0a Harness Plane (governance overlay)",
       "type": "implementation-map",
-      "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
+      "uncertainty": "The harness plane remains a conceptual governance overlay. Capability discovery, harness routing, and verification-path selection are not yet implemented or validated."
     },
     {
       "aliases": [],
@@ -38747,7 +38987,7 @@
     {
       "aliases": [],
       "artifacts": [],
-      "body": "# 2.5 DoneContract\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n### 2.5 DoneContract\n\nEvery executable turn MUST have a `DoneContract` with:\n\n- `deliverable`\n- `must_include`\n- `must_verify`\n- `stop_condition`\n\nThe Done Contract is the kernel-visible statement of what counts as finished.\nIt must be hashable, stable across retries, and compact enough to reference in\nreceipts and audit records.\n\nFor `audit_grade` work, the Done Contract MUST also identify:\n\n- the minimum evidence scope required for the conclusion,\n- the allowed strength of negative claims,\n- and whether missing evidence must be surfaced before completion.",
+      "body": "# 2.5 DoneContract\n\n> Status boundary: this is a specified-only contract. Enforcement language\n> describes intended conformance behavior rather than observed implementation.\n\n### 2.5 DoneContract\n\nEvery executable turn MUST have a `DoneContract` with:\n\n- `deliverable`\n- `must_include`\n- `must_verify`\n- `stop_condition`\n\nThe DoneContract is the kernel-visible statement of what counts as finished. It\nmust be hashable, stable across retries, and compact enough to reference in\nreceipts and audit records.\n\n## Completion semantics\n\n`must_verify` defines the postconditions that must hold before Goni may treat\nthe delegated objective as completed. Each consequential verification\nrequirement SHOULD identify, directly or by stable reference:\n\n- the predicate or state that must hold;\n- the observation path capable of evaluating that predicate;\n- the minimum evidence required to support the result;\n- any independence requirement between the action path and verification path.\n\nThe core invariant is:\n\n> **Execution success is not task completion.**\n\nA successful tool call, command exit code, provider acknowledgement, queued\nstate, deployment state, API status, or other intermediate control-plane signal\nMUST NOT by itself satisfy the DoneContract unless the contract explicitly\ndefines that signal as the desired terminal state.\n\nThe runtime therefore distinguishes at least:\n\n1. **action outcome** — whether the attempted operation succeeded at its own\n   interface;\n2. **observed state** — what post-action evidence shows about the resulting\n   system or world state;\n3. **DoneContract satisfaction** — whether all required postconditions are\n   supported by qualifying evidence.\n\nA `stop_condition` determines when further work should cease. It does not\nsilently convert an unverified or unknown outcome into successful completion.\n\nIf an action succeeds but required verification cannot be performed, the task\nremains incomplete from the perspective of the DoneContract. The runtime must\npreserve that distinction for completion certification under `COMPLETE-01`.\n\nFor `audit_grade` work, the DoneContract MUST also identify:\n\n- the minimum evidence scope required for the conclusion;\n- the allowed strength of negative claims;\n- whether missing evidence must be surfaced before completion;\n- any required independent or read-after-write verification path.",
       "domains": [
         "specs"
       ],
@@ -38761,13 +39001,13 @@
         }
       ],
       "path": "knowledge/specifications/goni-spec-59e3dfc23cc8-2-5-donecontract.md",
-      "proposition": "Every executable turn MUST have a DoneContract with: deliverable must_include must_verify stop_condition The Done Contract is the kernel-visible statement of what counts as finished.",
+      "proposition": "Every executable turn MUST have a DoneContract with deliverable, must_include, must_verify, and stop_condition. The DoneContract is the kernel-visible statement of what counts as finished, and consequential completion requires qualifying post-action evidence for the required verification predicates rather than tool or provider success alone.",
       "relations": [],
       "sources": [],
       "status": "draft",
       "title": "2.5 DoneContract",
       "type": "specification",
-      "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
+      "uncertainty": "The completion-certification semantics are specified architecture only. Concrete verifier implementations, evidence-strength thresholds, and independence policies require evaluation."
     },
     {
       "aliases": [],
@@ -39762,7 +40002,7 @@
     {
       "aliases": [],
       "artifacts": [],
-      "body": "# 4.4 Audit-grade work rules\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n### 4.4 Audit-grade work rules\n\nFor `audit_grade` work, the runtime MUST follow these epistemic rules:\n\n- **Absence-of-evidence rule:** absence of evidence in scope `S` is not evidence\n  of absence outside scope `S`.\n- **Scope declaration:** the Work Order must declare the planned or checked\n  scope before strong conclusions are made.\n- **Evidence before inference:** observed artifacts and derived conclusions must\n  remain separable in receipts and user-facing summaries.\n- **Negative-claim burden:** negative claims require stronger coverage than\n  positive claims.\n- **Missing-evidence surfacing:** if the scope is incomplete, the runtime must\n  preserve what is missing and what next check would close the loop.\n- **Sticky audit mode:** audit-grade mode persists for follow-up turns in the\n  same task/session unless explicitly reset or a clear unrelated task boundary\n  is detected and surfaced.",
+      "body": "# 4.4 Audit-grade work rules\n\n> Status boundary: this is a specified-only contract. Enforcement language\n> describes intended conformance behavior rather than observed implementation.\n\n### 4.4 Audit-grade work rules\n\nFor `audit_grade` work, the runtime MUST apply EPISTATE-01 and follow these\nadditional epistemic rules:\n\n- **Absence-of-evidence rule:** absence of evidence in scope `S` is not evidence\n  of absence outside scope `S`.\n- **Scope declaration:** the Work Order must declare the planned or checked\n  scope before strong conclusions are made.\n- **Evidence before inference:** observed artifacts and derived conclusions must\n  remain separable in receipts and user-facing summaries.\n- **Null and missing-state discipline:** null, omitted, unavailable, or unchecked\n  fields remain unknown or unspecified unless separate evidence supports a\n  stronger proposition.\n- **Negative-claim burden:** negative claims require stronger coverage than\n  positive claims.\n- **Missing-evidence surfacing:** if the scope is incomplete, the runtime must\n  preserve what is missing and what next check would close the loop.\n- **Sticky audit mode:** audit-grade mode persists for follow-up turns in the\n  same task/session unless explicitly reset or a clear unrelated task boundary\n  is detected and surfaced.\n\nAudit-grade work may use richer evidence-strength labels, but it must not\ncollapse observed, inferred, hypothesized, verified, and certified state where\nthat distinction affects the conclusion.",
       "domains": [
         "specs"
       ],
@@ -39776,13 +40016,18 @@
         }
       ],
       "path": "knowledge/specifications/goni-spec-70c934f7d55a-4-4-audit-grade-work-rules.md",
-      "proposition": "For audit_grade work, the runtime MUST follow these epistemic rules: **Absence-of-evidence rule:** absence of evidence in scope S is not evidence of absence outside scope S.",
-      "relations": [],
+      "proposition": "For audit_grade work, the runtime MUST apply EPISTATE-01 and preserve scope, evidence, inference, missing evidence, and negative-claim burden; absence of evidence in scope S is not evidence of absence outside scope S.",
+      "relations": [
+        {
+          "target": "EPISTATE-01",
+          "type": "depends_on"
+        }
+      ],
       "sources": [],
       "status": "draft",
       "title": "4.4 Audit-grade work rules",
       "type": "specification",
-      "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
+      "uncertainty": "The epistemic rules are specified architecture. Coverage thresholds and domain-specific negative-claim burdens require evaluation."
     },
     {
       "aliases": [],
@@ -45190,7 +45435,7 @@
     {
       "aliases": [],
       "artifacts": [],
-      "body": "# 2.6 WorkOrder\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n### 2.6 WorkOrder\n\nEvery executable turn MUST compile a `WorkOrder` with:\n\n- `goal`\n- `done_contract`\n- `inputs`\n- `constraints`\n- `assumptions`\n- `plan`\n- `tools`\n- `risk_class`\n- `output_schema`\n- `work_quality_mode`\n\nFor `audit_grade` work, the Work Order MUST additionally carry:\n\n- `evidence_scope`: sources, refs, paths, time windows, artifacts, and explicit\n  exclusions.\n- `search_strategy`: the planned coverage pattern, including branches, repos,\n  PRs/issues, logs, local/remote deltas, or other relevant surfaces.\n- `negative_claim_policy`: how absence-of-evidence claims may be phrased.\n- `claim_strength_target`: the strongest claim the current scope can support.\n- `missing_evidence_plan`: what remains unchecked and what would close the\n  loop.\n- `audit_sticky`: whether audit-grade mode persists across follow-up turns.\n\nThe Work Order is the canonical pre-execution object. Downstream components may\nstore summarized or referenced forms, but the logical object MUST preserve all\nof the fields above.",
+      "body": "# 2.6 WorkOrder\n\n> Status boundary: this is a specified-only contract. Enforcement language\n> describes intended conformance behavior rather than observed implementation.\n\n### 2.6 WorkOrder\n\nEvery executable turn MUST compile a `WorkOrder` with:\n\n- `goal`\n- `done_contract`\n- `inputs`\n- `constraints`\n- `assumptions`\n- `plan`\n- `tools`\n- `harness_requirements`\n- `risk_class`\n- `output_schema`\n- `work_quality_mode`\n\n`harness_requirements` declares the minimum operating environment required to\nclose the delegated loop. It SHOULD distinguish:\n\n- **actuation capabilities** needed to perform authorized state changes;\n- **observation capabilities** needed to inspect the resulting state;\n- **verification capabilities** needed to evaluate the DoneContract;\n- any sandbox, rollback, network, identity, or environment constraints needed by\n  the task.\n\nThe selected harness MUST be capable of satisfying both the action path and the\nrequired verification path. A harness that can mutate the target system but\ncannot collect qualifying evidence for the DoneContract is insufficient for\nautonomous completion certification.\n\nWhen no available harness can close the verification path, the WorkOrder may\nstill permit a bounded action if policy allows it, but the runtime must preserve\nthe result as executed-but-unverified or verification-incomplete rather than\ncompleted.\n\nFor `audit_grade` work, the Work Order MUST additionally carry:\n\n- `evidence_scope`: sources, refs, paths, time windows, artifacts, and explicit\n  exclusions.\n- `search_strategy`: the planned coverage pattern, including branches, repos,\n  PRs/issues, logs, local/remote deltas, or other relevant surfaces.\n- `negative_claim_policy`: how absence-of-evidence claims may be phrased.\n- `claim_strength_target`: the strongest claim the current scope can support.\n- `missing_evidence_plan`: what remains unchecked and what would close the\n  loop.\n- `audit_sticky`: whether audit-grade mode persists across follow-up turns.\n\nThe Work Order is the canonical pre-execution object. Downstream components may\nstore summarized or referenced forms, but the logical object MUST preserve all\nof the fields above.",
       "domains": [
         "specs"
       ],
@@ -45204,13 +45449,18 @@
         }
       ],
       "path": "knowledge/specifications/goni-spec-f37fc6d98e05-2-6-workorder.md",
-      "proposition": "Every executable turn MUST compile a WorkOrder with: goal done_contract inputs constraints assumptions plan tools risk_class output_schema work_quality_mode For audit_grade work, the Work Order MUST additionally carry: evidence_scope: sources, refs, paths, time windows, artifacts, and explicit exclusions.",
-      "relations": [],
+      "proposition": "Every executable turn MUST compile a WorkOrder with goal, done_contract, inputs, constraints, assumptions, plan, tools, harness_requirements, risk_class, output_schema, and work_quality_mode. The selected execution harness must be able both to perform the authorized action and to observe the evidence required by the DoneContract.",
+      "relations": [
+        {
+          "target": "GONI-SPEC-59E3DFC23CC8",
+          "type": "depends_on"
+        }
+      ],
       "sources": [],
       "status": "draft",
       "title": "2.6 WorkOrder",
       "type": "specification",
-      "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
+      "uncertainty": "Harness capability matching is specified-only. Concrete capability vocabularies, routing algorithms, and fallback behavior require implementation and evaluation."
     },
     {
       "aliases": [],
@@ -61206,7 +61456,7 @@
     {
       "aliases": [],
       "artifacts": [],
-      "body": "# Receipts (REC-01)\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n# Receipts (REC-01)\nDOC-ID: REC-01\n\nStatus: Specified only / roadmap\n\nReceipts are immutable records of mediated actions. They must be minimal by\ndefault and verifiable via hash chaining.\n\nReceipts are a Goni-kernel primitive. Third-party gateways, tool hosts, or\nassistant frameworks may emit their own logs, but those logs do not substitute\nfor a canonical Goni receipt.",
+      "body": "# Receipts (REC-01)\n\n> Status boundary: this is a specified-only contract. Enforcement language\n> describes intended conformance behavior rather than observed implementation.\n\n# Receipts (REC-01)\nDOC-ID: REC-01\n\nStatus: Specified only / roadmap\n\nReceipts are immutable records of mediated actions. They must be minimal by\ndefault and verifiable via hash chaining.\n\nReceipts are a Goni-kernel primitive. Third-party gateways, tool hosts, or\nassistant frameworks may emit their own logs, but those logs do not substitute\nfor a canonical Goni receipt.\n\n## Completion evidence\n\nREC-01 remains one receipt primitive. COMPLETE-01 does not create separate\nActionReceipt, ObservationReceipt, VerificationReceipt, or AcceptanceReceipt\nobjects.\n\nWhen completion certification is material, the logical receipt chain SHOULD\npreserve, directly or by stable reference:\n\n- **action outcome:** what operation was attempted and what the action interface\n  reported;\n- **observation refs:** the post-action evidence collected about resulting\n  state;\n- **verification results:** which DoneContract predicates were tested, by which\n  observation path, and with what result;\n- **completion basis:** the `done_contract_hash` or equivalent stable reference\n  and the resulting completion state;\n- **epistemic state:** whether material claims are observed, inferred, verified,\n  or certified where EPISTATE-01 requires the distinction;\n- **verification limits:** missing evidence, unavailable observers, or\n  independence limits that prevent stronger certification.\n\nAn action may therefore have:\n\n```text\naction_outcome = success\ncompletion_state = verification_incomplete\n```\n\nwithout contradiction.\n\nProvider logs are evidence about the provider's reported state. They do not by\nthemselves establish higher-level DoneContract satisfaction unless the contract\nexplicitly defines that provider state as its terminal predicate.\n\nReceipts remain evidence, not truth. Completion certification is a kernel\njudgment over the DoneContract and qualifying evidence recorded or referenced\nby the receipt chain.",
       "domains": [
         "specs"
       ],
@@ -61220,13 +61470,13 @@
         }
       ],
       "path": "knowledge/specifications/rec-01-receipts-rec-01.md",
-      "proposition": "DOC-ID: REC-01 Status: Specified only / roadmap Receipts are immutable records of mediated actions.",
+      "proposition": "Receipts are immutable, minimal records of mediated actions and their governance evidence; when completion certification is material, the receipt chain must distinguish action outcome from observation, verification, and DoneContract completion state.",
       "relations": [],
       "sources": [],
       "status": "draft",
       "title": "Receipts (REC-01)",
       "type": "specification",
-      "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
+      "uncertainty": "The completion-evidence extension is specified-only and does not introduce a new shipping receipt schema. Concrete field layouts and retention policies require implementation and validation."
     },
     {
       "aliases": [],
@@ -63063,6 +63313,72 @@
     },
     {
       "projection": "generated",
+      "source": "COMPLETE-01",
+      "target": "EPISTATE-01",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "authored",
+      "source": "COMPLETE-01",
+      "target": "GONI-SPEC-59E3DFC23CC8",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "COMPLETE-01",
+      "target": "GONI-SPEC-F37FC6D98E05",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "COMPLETE-01",
+      "target": "REC-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "COMPLETE-01",
+      "target": "GONI-SPEC-423A86A50102",
+      "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "COMPLETE-01",
+      "target": "EVID-MILCONS-2026-FALSE-COMPLETION",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "COMPLETE-01",
+      "target": "COMPLETE-EVAL-01",
+      "type": "tested_by"
+    },
+    {
+      "projection": "authored",
+      "source": "COMPLETE-EVAL-01",
+      "target": "COMPLETE-01",
+      "type": "tests"
+    },
+    {
+      "projection": "authored",
+      "source": "COMPLETE-EVAL-01",
+      "target": "DIAG-01",
+      "type": "tests"
+    },
+    {
+      "projection": "authored",
+      "source": "COMPLETE-EVAL-01",
+      "target": "EPISTATE-01",
+      "type": "tests"
+    },
+    {
+      "projection": "authored",
+      "source": "COMPLETE-EVAL-01",
+      "target": "GONI-IMAP-216164F1995B",
+      "type": "tests"
+    },
+    {
+      "projection": "generated",
       "source": "CTX-COMP-01",
       "target": "CTX-MISS-01",
       "type": "depended_on_by"
@@ -63182,6 +63498,30 @@
       "type": "supported_by"
     },
     {
+      "projection": "authored",
+      "source": "DIAG-01",
+      "target": "EPISTATE-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "DIAG-01",
+      "target": "GONI-IMAP-216164F1995B",
+      "type": "depends_on"
+    },
+    {
+      "projection": "generated",
+      "source": "DIAG-01",
+      "target": "EVID-MILCONS-2026-FALSE-COMPLETION",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "DIAG-01",
+      "target": "COMPLETE-EVAL-01",
+      "type": "tested_by"
+    },
+    {
       "projection": "generated",
       "source": "DOCTRINE-DELEG-01",
       "target": "GONI-EVIDENCE-25F334DB139D",
@@ -63254,6 +63594,42 @@
       "type": "tests"
     },
     {
+      "projection": "generated",
+      "source": "EPISTATE-01",
+      "target": "DIAG-01",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
+      "source": "EPISTATE-01",
+      "target": "GONI-SPEC-70C934F7D55A",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "authored",
+      "source": "EPISTATE-01",
+      "target": "COMPLETE-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "EPISTATE-01",
+      "target": "GONI-SPEC-A742123055E0",
+      "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "EPISTATE-01",
+      "target": "EVID-MILCONS-2026-FALSE-COMPLETION",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "EPISTATE-01",
+      "target": "COMPLETE-EVAL-01",
+      "type": "tested_by"
+    },
+    {
       "projection": "authored",
       "source": "EVID-DENNING1968-WORKING-SET",
       "target": "GONI-DECISION-FEB39440C565",
@@ -63317,6 +63693,30 @@
       "projection": "authored",
       "source": "EVID-LI2023-SELECTIVE-CONTEXT",
       "target": "GONI-SPEC-A29366F3E2EA",
+      "type": "supports"
+    },
+    {
+      "projection": "authored",
+      "source": "EVID-MILCONS-2026-FALSE-COMPLETION",
+      "target": "COMPLETE-01",
+      "type": "supports"
+    },
+    {
+      "projection": "authored",
+      "source": "EVID-MILCONS-2026-FALSE-COMPLETION",
+      "target": "DIAG-01",
+      "type": "supports"
+    },
+    {
+      "projection": "authored",
+      "source": "EVID-MILCONS-2026-FALSE-COMPLETION",
+      "target": "EPISTATE-01",
+      "type": "supports"
+    },
+    {
+      "projection": "authored",
+      "source": "EVID-MILCONS-2026-FALSE-COMPLETION",
+      "target": "GONI-IMAP-216164F1995B",
       "type": "supports"
     },
     {
@@ -64185,6 +64585,36 @@
     },
     {
       "projection": "generated",
+      "source": "GONI-IMAP-216164F1995B",
+      "target": "DIAG-01",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-IMAP-216164F1995B",
+      "target": "GONI-SPEC-59E3DFC23CC8",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-IMAP-216164F1995B",
+      "target": "GONI-SPEC-F37FC6D98E05",
+      "type": "depends_on"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-IMAP-216164F1995B",
+      "target": "EVID-MILCONS-2026-FALSE-COMPLETION",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-IMAP-216164F1995B",
+      "target": "COMPLETE-EVAL-01",
+      "type": "tested_by"
+    },
+    {
+      "projection": "generated",
       "source": "GONI-IMAP-32706FDAC206",
       "target": "LSKR-01",
       "type": "synthesized_by"
@@ -64491,6 +64921,36 @@
     },
     {
       "projection": "generated",
+      "source": "GONI-SPEC-423A86A50102",
+      "target": "COMPLETE-01",
+      "type": "refined_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-SPEC-59E3DFC23CC8",
+      "target": "COMPLETE-01",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-SPEC-59E3DFC23CC8",
+      "target": "GONI-IMAP-216164F1995B",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-SPEC-59E3DFC23CC8",
+      "target": "GONI-SPEC-F37FC6D98E05",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SPEC-70C934F7D55A",
+      "target": "EPISTATE-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "generated",
       "source": "GONI-SPEC-75D0D2E5F296",
       "target": "GONI-SYNTHESIS-E3B321C24C67",
       "type": "synthesized_by"
@@ -64538,6 +64998,12 @@
       "type": "depended_on_by"
     },
     {
+      "projection": "generated",
+      "source": "GONI-SPEC-A742123055E0",
+      "target": "EPISTATE-01",
+      "type": "refined_by"
+    },
+    {
       "projection": "authored",
       "source": "GONI-SPEC-A742123055E0",
       "target": "DREAM-01",
@@ -64554,6 +65020,24 @@
       "source": "GONI-SPEC-B49DB23CF412",
       "target": "INF-FRAME-01",
       "type": "refined_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-SPEC-F37FC6D98E05",
+      "target": "COMPLETE-01",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-SPEC-F37FC6D98E05",
+      "target": "GONI-IMAP-216164F1995B",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SPEC-F37FC6D98E05",
+      "target": "GONI-SPEC-59E3DFC23CC8",
+      "type": "depends_on"
     },
     {
       "projection": "authored",
@@ -69408,6 +69892,12 @@
       "source": "REC-00",
       "target": "GONI-SYNTHESIS-B5E3F8C4862B",
       "type": "synthesizes"
+    },
+    {
+      "projection": "generated",
+      "source": "REC-01",
+      "target": "COMPLETE-01",
+      "type": "depended_on_by"
     },
     {
       "projection": "generated",
