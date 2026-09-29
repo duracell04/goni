@@ -1,3 +1,7 @@
 __pycache__/
 *.py[cod]
 .pytest_cache/
+
+# Deterministic generated knowledge-graph projections
+/maps/catalogue.json
+/maps/edition.json

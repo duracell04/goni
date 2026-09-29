@@ -5,7 +5,7 @@ GONI is a blueprint and architectural plan for a local-first Delegation OS. It i
 ## Start here
 
 - `knowledge/` contains the canonical atomic nodes and explanatory syntheses.
-- `maps/catalogue.json` is the deterministic machine projection.
+- `maps/catalogue.json` and `maps/edition.json` are deterministic generated projections. They are build artifacts, not canonical source, and are intentionally not versioned.
 - `EDITORIAL_POLICY.md` defines status, evidence, uncertainty, and provenance boundaries.
 - `ontology/relations.yml` defines the controlled relation vocabulary.
 - `migration/ledger.json` accounts for every file in the pre-migration repository.
@@ -22,3 +22,5 @@ Runnable experiments remain separate in [goni-prototype-lab](https://github.com/
 python tooling/build_catalogue.py --edition-sha <full-git-sha>
 python tooling/validate.py --strict --baseline pre-knowledge-graph-2026-08-03
 ```
+
+The build step materializes `maps/catalogue.json` and `maps/edition.json` locally. Repeated builds from the same tree and edition SHA must be byte-identical; generated projection files should not be staged or committed.
