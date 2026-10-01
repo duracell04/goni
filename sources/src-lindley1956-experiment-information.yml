@@ -1,0 +1,6 @@
+id: SRC-LINDLEY1956-EXPERIMENT-INFORMATION
+title: Lindley 1956 - On a Measure of the Information Provided by an Experiment
+kind: academic
+citation: "Lindley, D. V. (1956). On a Measure of the Information Provided by an Experiment. The Annals of Mathematical Statistics, 27(4), 986-1005. https://doi.org/10.1214/aoms/1177728069"
+url: https://doi.org/10.1214/aoms/1177728069
+notes: Classical Bayesian experimental-design foundation for measuring the expected information supplied by an experiment relative to prior uncertainty; relevant to discriminating-query selection as a conceptual precedent, not evidence that a GONI controller is calibrated or effective.

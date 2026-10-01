@@ -1,0 +1,6 @@
+id: SRC-GAO2023-RARR
+title: Gao et al. 2023 - RARR
+kind: academic
+citation: "Gao, L., Dai, Z., Pasupat, P., Chen, A., Chaganty, A. T., Fan, Y., Zhao, V., Lao, N., Lee, H., Juan, D.-C., & Guu, K. (2023). RARR: Researching and Revising What Language Models Say, Using Language Models. Proceedings of ACL 2023, 16477-16508. https://doi.org/10.18653/v1/2023.acl-long.910"
+url: https://aclanthology.org/2023.acl-long.910/
+notes: Separates initial generation from research and evidence-backed revision to improve attribution; relevant to generator-verifier separation and post-generation evidence acquisition.
