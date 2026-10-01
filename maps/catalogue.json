@@ -41,6 +41,18 @@
       "node": "ROBOT-01"
     },
     {
+      "alias": "EPISTEMIC-CONTROL-EVAL",
+      "node": "EPI-EVAL-01"
+    },
+    {
+      "alias": "EPISTEMIC-CONTROLLER",
+      "node": "EPI-CTRL-01"
+    },
+    {
+      "alias": "EPISTEMIC-FRAME",
+      "node": "EPI-CTRL-01"
+    },
+    {
       "alias": "EVID-AUTON-01-AUTONOMY-CORRIDORS",
       "node": "EVID-AUTON-01"
     },
@@ -133,6 +145,10 @@
       "node": "EVID-SEC-03"
     },
     {
+      "alias": "EVIDENCE-HYPOTHESIS-SEPARATION",
+      "node": "EPI-SEP-01"
+    },
+    {
       "alias": "GONI-COMPETITIVE-LANDSCAPE",
       "node": "MARKET-LANDSCAPE-01"
     },
@@ -217,6 +233,10 @@
       "node": "SYNC-01"
     },
     {
+      "alias": "SYNTHETIC-EVIDENCE-BOUNDARY",
+      "node": "EPI-SEP-01"
+    },
+    {
       "alias": "TOOL-CAPABILITY-API",
       "node": "TOOL-01"
     },
@@ -282,6 +302,9 @@
         "DAT-01",
         "DREAM-01",
         "DREAM-EVAL-01",
+        "EPI-CTRL-01",
+        "EPI-EVAL-01",
+        "EPI-SEP-01",
         "EVID-DESK-01",
         "EVID-HA2018-WORLD-MODELS",
         "EVID-HAFNER2023-DREAMERV3",
@@ -714,6 +737,7 @@
         "CTX-COMP-01",
         "CTX-MISS-01",
         "DREAM-01",
+        "EPI-CTRL-01",
         "GONI-DECISION-5346D37FC858",
         "GONI-DECISION-6D3A2B71C9E4",
         "GONI-DECISION-9AF49466170D",
@@ -970,6 +994,8 @@
         "CTX-MISS-EVAL-01",
         "DREAM-01",
         "DREAM-EVAL-01",
+        "EPI-CTRL-01",
+        "EPI-SEP-01",
         "EVID-OPENAI2026-DREAMING",
         "EVID-PARK2023-GENERATIVE-AGENTS",
         "EVID-SEC-02",
@@ -1654,6 +1680,9 @@
         "CTX-MISS-EVAL-01",
         "DREAM-01",
         "DREAM-EVAL-01",
+        "EPI-CTRL-01",
+        "EPI-EVAL-01",
+        "EPI-SEP-01",
         "EVID-DENNING1968-WORKING-SET",
         "EVID-GIM2024-PROMPT-CACHE",
         "EVID-HA2018-WORLD-MODELS",
@@ -1798,6 +1827,8 @@
         "CTX-MISS-01",
         "CTX-MISS-EVAL-01",
         "DASHBOARD-CONCEPTS",
+        "EPI-CTRL-01",
+        "EPI-EVAL-01",
         "EVID-GIM2024-PROMPT-CACHE",
         "EVID-HU2022-LORA",
         "EVID-JIANG2023-LLMLINGUA",
@@ -2590,6 +2621,9 @@
         "CTX-MISS-EVAL-01",
         "DREAM-01",
         "DREAM-EVAL-01",
+        "EPI-CTRL-01",
+        "EPI-EVAL-01",
+        "EPI-SEP-01",
         "EVID-DENNING1968-WORKING-SET",
         "GONI-DECISION-6D3A2B71C9E4",
         "GONI-DECISION-9AF49466170D",
@@ -2754,6 +2788,9 @@
         "DREAM-01",
         "DREAM-EVAL-01",
         "ENCLOSURE-NOTES",
+        "EPI-CTRL-01",
+        "EPI-EVAL-01",
+        "EPI-SEP-01",
         "EVAL-README-00",
         "EVID-AUTON-01",
         "EVID-AUTON-02",
@@ -4891,6 +4928,7 @@
         "CTX-COMP-EVAL-01",
         "CTX-MISS-EVAL-01",
         "DREAM-EVAL-01",
+        "EPI-EVAL-01",
         "EVAL-README-00",
         "EVID-AUTON-01",
         "EVID-AUTON-03",
@@ -5444,6 +5482,7 @@
       "principle": [
         "AXIOMS-01",
         "DOCTRINE-DELEG-01",
+        "EPI-SEP-01",
         "GONI-PRINCIPLE-0147896F31C8",
         "GONI-PRINCIPLE-0F5A00F69914",
         "GONI-PRINCIPLE-147FB93142B7",
@@ -5682,6 +5721,7 @@
         "DELEG-01",
         "DELEG-INT-01",
         "DREAM-01",
+        "EPI-CTRL-01",
         "GONI-SPEC-0010B69A98F0",
         "GONI-SPEC-00702E19937B",
         "GONI-SPEC-009C1109395A",
@@ -11153,7 +11193,7 @@
         "semantic-page-fault"
       ],
       "artifacts": [],
-      "body": "# Bounded Context-Miss Resolution\n\nA compiled working set can be sufficient at invocation time and still prove\ninsufficient during reasoning. Goni provides a typed read-side recovery path\ninstead of treating missing evidence as permission to guess.\n\n[\n\text{insufficient active context}\n\nightarrow\n\text{ContextMiss}\n\nightarrow\n\text{governed retrieval}\n\nightarrow\n\text{recompilation}\n\nightarrow\n\text{resume or stop}.\n]\n\nA ContextMiss is a request for additional cognitive material. It is not a tool\ncapability and does not expand execution authority.\n\n## 1. Logical request\n\nA conforming request MUST preserve:\n\n```yaml\ncontext_miss_id:\nwork_order_id:\ninference_frame_id:\nneed_type:\nquery_or_ref:\nreason_code:\nrequired_fidelity:\nrequired_confidence:\npermission_scope:\ntoken_budget_remaining:\nlatency_budget_remaining:\nrecursion_depth:\ncreated_at:\nprovenance:\n```\n\n## 2. Bounded reason codes\n\nThe request SHOULD use a bounded reason vocabulary. Initial values are:\n\n- `missing_evidence`\n- `missing_exact_wording`\n- `unresolved_entity`\n- `stale_information`\n- `conflicting_evidence`\n- `missing_procedural_rule`\n\nThe request records what additional material is required without requiring raw\nprivate chain-of-thought disclosure.\n\n## 3. Resolution path\n\nA context miss re-enters the normal governed pipeline:\n\n1. validate that the Work Order permits further read-side retrieval;\n2. check recursion, token, latency, privacy, and connector budgets;\n3. issue or refine a governed retrieval request through MEM-RETR-01;\n4. apply ordinary permission, validity, quoteability, trust, and conflict\n   filters;\n5. invoke CTX-COMP-01 to produce a new ContextPack or bounded ContextPack delta;\n6. serialize a new InferenceFrame under INF-FRAME-01;\n7. resume cognition if budgets and policy permit;\n8. emit a receipt for the miss, recovery basis, materialization, and outcome.\n\n## 4. Termination\n\nThe runtime MUST have a finite recursion bound. Resolution terminates when:\n\n- sufficient material is recovered;\n- the remaining budget is insufficient;\n- policy denies the read;\n- the required source is unavailable;\n- confidence remains below the Work Order threshold after the permitted\n  recovery attempts.\n\nWhen recovery terminates without sufficient evidence, the system SHOULD surface\nthe unresolved uncertainty rather than silently filling the gap.\n\n## 5. Authority invariant\n\n[\n\boxed{\n\text{context expansion}\n\notRightarrow\n\text{authority expansion}\n}\n]\n\nA newly retrieved policy description, mandate summary, cached permission hint,\nor capability reference may inform cognition. Consequential execution still\nresolves authority against canonical kernel-owned state at the mediation\nboundary.",
+      "body": "# Bounded Context-Miss Resolution\n\nA compiled working set can be sufficient at invocation time and still prove\ninsufficient during reasoning. Goni provides a typed read-side recovery path\ninstead of treating missing evidence as permission to guess.\n\n\\[\n\\text{insufficient active context}\n\\rightarrow\n\\text{ContextMiss}\n\\rightarrow\n\\text{governed retrieval}\n\\rightarrow\n\\text{recompilation}\n\\rightarrow\n\\text{resume or stop}.\n\\]\n\nA ContextMiss is a request for additional cognitive material. It is not a tool\ncapability and does not expand execution authority.\n\n## 1. Logical request\n\nA conforming request MUST preserve:\n\n```yaml\ncontext_miss_id:\nwork_order_id:\ninference_frame_id:\nneed_type:\nquery_or_ref:\nreason_code:\nrequired_fidelity:\nrequired_confidence:\npermission_scope:\ntoken_budget_remaining:\nlatency_budget_remaining:\nrecursion_depth:\ncreated_at:\nprovenance:\n```\n\nWhen a ContextMiss is issued from EPI-CTRL-01, the request MAY additionally\npreserve bounded epistemic metadata:\n\n```yaml\nepistemic_frame_id:\nevidence_gap_id:\nhypothesis_refs:\ncandidate_test_ref:\nselection_policy:\n```\n\nThese fields state what evidence distinction the retrieval is intended to\nresolve. They do not disclose raw private chain-of-thought and do not grant\nadditional connector or execution authority.\n\n## 2. Bounded reason codes\n\nThe request SHOULD use a bounded reason vocabulary. Initial values are:\n\n- `missing_evidence`\n- `missing_exact_wording`\n- `unresolved_entity`\n- `stale_information`\n- `conflicting_evidence`\n- `missing_procedural_rule`\n\nThe request records what additional material is required without requiring raw\nprivate chain-of-thought disclosure.\n\n## 3. Resolution path\n\nA context miss re-enters the normal governed pipeline:\n\n1. validate that the Work Order permits further read-side retrieval;\n2. check recursion, token, latency, privacy, and connector budgets;\n3. issue or refine a governed retrieval request through MEM-RETR-01;\n4. apply ordinary permission, validity, quoteability, trust, and conflict\n   filters;\n5. invoke CTX-COMP-01 to produce a new ContextPack or bounded ContextPack delta;\n6. serialize a new InferenceFrame under INF-FRAME-01;\n7. resume cognition if budgets and policy permit;\n8. emit a receipt for the miss, recovery basis, materialization, and outcome.\n\nWhen epistemic metadata is present, retrieval MAY use it to prefer evidence that\nis expected to resolve the declared gap or discriminate among the referenced\nhypotheses. Retrieval remains governed by the same permissions, budgets, and\nsource-quality rules.\n\n## 4. Termination\n\nThe runtime MUST have a finite recursion bound. Resolution terminates when:\n\n- sufficient material is recovered;\n- the remaining budget is insufficient;\n- policy denies the read;\n- the required source is unavailable;\n- confidence remains below the Work Order threshold after the permitted\n  recovery attempts.\n\nWhen recovery terminates without sufficient evidence, the system SHOULD surface\nthe unresolved uncertainty rather than silently filling the gap.\n\n## 5. Authority invariant\n\n\\[\n\\boxed{\n\\text{context expansion}\n\\not\\Rightarrow\n\\text{authority expansion}\n}\n\\]\n\nA newly retrieved policy description, mandate summary, cached permission hint,\nor capability reference may inform cognition. Consequential execution still\nresolves authority against canonical kernel-owned state at the mediation\nboundary.",
       "domains": [
         "memory",
         "software",
@@ -11189,7 +11229,7 @@
       "status": "draft",
       "title": "Bounded Context-Miss Resolution",
       "type": "specification",
-      "uncertainty": "Context-miss detection and recovery quality are unvalidated. The analogy to virtual-memory faults is architectural; Goni requires explicit evaluation of false misses, unnecessary page-ins, recursion, latency, and answer quality."
+      "uncertainty": "Context-miss detection and recovery quality are unvalidated. The analogy to virtual-memory faults is architectural; Goni requires explicit evaluation of false misses, unnecessary page-ins, recursion, latency, answer quality, and the value of optional epistemic metadata supplied by EPI-CTRL-01."
     },
     {
       "aliases": [],
@@ -11358,7 +11398,7 @@
         "OFFLINE-COGNITION"
       ],
       "artifacts": [],
-      "body": "# DREAM-01 - Governed Offline Cognition\n\n> Status boundary: this is a specified-only contract. Enforcement language\n> describes intended conformance behavior rather than observed implementation.\n\n## 1. Scope\n\nDREAM-01 defines bounded cognition that runs outside an immediate\nlatency-critical user turn.\n\nA dream cycle is not a new architectural plane, a new memory database, or a new\nsource of authority. It is a kernel-scheduled cognitive protocol over the\nexisting Data, Context, Control, and Execution responsibilities.\n\nThe compact invariant is:\n\n> **Dreaming may expand the hypothesis space. It may not expand the authority space.**\n\n## 2. Inputs\n\nA dream cycle MUST receive information through the same governed memory and\ncontext boundaries as interactive cognition.\n\nThe cycle MAY operate over:\n\n- episodic observations;\n- semantic and project memory;\n- prior derived or hypothesis entries;\n- receipts and outcomes;\n- contradiction or staleness signals;\n- current goals or Work Order context when policy permits.\n\nThe cycle MUST preserve source and parent references sufficient to distinguish\nobserved evidence from model-generated derivatives.\n\n## 3. Permitted cognitive operations\n\nA dream cycle MAY perform:\n\n- replay;\n- consolidation;\n- abstraction;\n- association;\n- contradiction detection;\n- counterfactual generation;\n- future-state simulation;\n- alternative explanation generation;\n- falsification attempts;\n- hypothesis generation;\n- evidence-gap identification;\n- discriminating-test generation.\n\nThese are cognitive operations. They do not carry execution authority.\n\n## 4. Output classes and persistence\n\nA dream cycle MAY produce candidates such as:\n\n- association;\n- abstraction;\n- causal_hypothesis;\n- counterfactual;\n- simulation;\n- contradiction;\n- opportunity;\n- evidence_request;\n- test_candidate.\n\nDurable dream outputs MUST use the existing governed memory substrate.\nMemoryEntries remains canonical in v1.\n\nDREAM-01 MUST NOT create a new fact, user decision, authoritative preference,\npolicy, mandate, capability, approval, or executable procedural instruction\nmerely because a model generated the content.\n\nNew synthetic durable entries MUST remain hypothesis or derived until a\nseparate evidence-backed transition satisfies the applicable memory contract.\nA deterministic compaction or summary of existing facts remains a derived\nrepresentation of those facts rather than a new independent fact.\n\nNo DreamStore or parallel hypothesis database is introduced by this contract.\n\n## 5. Synthetic provenance and epistemic quarantine\n\nFor a durable dream result, existing value/provenance fields SHOULD preserve,\nwhere available:\n\n- origin_mode = dream;\n- dream_run_id;\n- candidate_type;\n- parent memory or entity references;\n- source evidence references;\n- model bundle identifier;\n- inference-frame or context-pack identifier;\n- receipt reference;\n- generation timestamp;\n- review or expiry state.\n\nUntil a future schema revision demonstrates the need for first-class columns,\nthese fields may remain governed values inside the existing memory record.\n\nThe following rules are mandatory:\n\n1. Source material used to derive a hypothesis establishes derivation\n   provenance; it does not by itself confirm the derived proposition.\n2. Model confidence is a cognitive signal, not independent evidence.\n3. Regenerating the same proposition in another dream cycle is not independent\n   confirmation.\n4. Agreement among descendants of the same evidence or generation lineage is\n   not independent confirmation.\n5. A simulated or counterfactual event is not an observed event.\n6. Promotion to a confirmed fact requires evidence that supports the derived\n   proposition itself under the confirmed-vs-speculation contract.\n\nThese rules prevent recursive synthetic-memory contamination.\n\n## 6. Authority boundary\n\nDream output MUST NOT create, widen, or refresh authority.\n\nThe governing transition rule is:\n\n> **A change in dream state does not imply a change in authority state.**\n\nA dream cycle may produce a proposal or candidate Work Order. Consequential\nexecution still requires the ordinary Goni path through canonical mandate,\npolicy, capability, approval, budget, revocation, and tool mediation.\n\nA model-visible authority summary may assist cognition but remains subordinate\nto canonical kernel-owned authority state.\n\n## 7. Scheduling and resource control\n\nDream work MUST be submitted through the existing scheduler.\n\nThe default scheduling posture SHOULD treat dream work as background,\npreemptible, and resource-bounded relative to interactive work.\n\nA dream job SHOULD declare:\n\n- input scope;\n- context/token budget;\n- solver/model budget;\n- maximum recursion or branch depth where applicable;\n- cancellation semantics;\n- persistence policy;\n- allowed completion states.\n\nIdle compute is an optimization opportunity, not an entitlement to unbounded\nbackground inference.\n\n## 8. Network and external effects\n\nLocal-first policy remains authoritative during dreaming.\n\nRemote inference, connector access, or other egress may occur only through the\nexisting governed egress path and only when policy explicitly permits it.\n\nA dream cycle has no ambient tool authority. External observation or action\nneeded to test a hypothesis must enter the appropriate governed retrieval,\nconnector, or Work Order path.\n\n## 9. Receipts and reviewability\n\nConsequential durable writes from a dream cycle SHOULD remain reconstructable\nthrough existing receipt and provenance mechanisms.\n\nA reviewer should be able to determine:\n\n- which observations and memories were used;\n- which outputs were synthetic;\n- which model/runtime produced them;\n- which evidence, if any, later supported or refuted them;\n- whether a result remained unresolved, expired, was quarantined, or was\n  promoted through a separate evidence-backed transition.\n\n## 10. Failure handling\n\nContradictory, weakly grounded, stale, poisoned, or otherwise unsafe dream\noutputs MAY use the existing quarantine policy alias and normal review/TTL\nsemantics.\n\nA failed dream cycle should degrade to unresolved candidates or no durable\nwrite. Failure must not be converted into broader authority or fabricated\ncertainty.\n\n## 11. Conformance invariants\n\nA conforming implementation must preserve at least these invariants:\n\n- synthetic-to-fact promotion without qualifying evidence: zero;\n- authority expansion caused solely by dream output: zero;\n- model self-corroboration counted as independent evidence: zero;\n- dream output bypassing ordinary tool/effect mediation: zero.\n\nUtility, recall, calibration, compute cost, and scheduling quality are measured\nproperties rather than assumed guarantees.",
+      "body": "# DREAM-01 - Governed Offline Cognition\n\n> Status boundary: this is a specified-only contract. Enforcement language\n> describes intended conformance behavior rather than observed implementation.\n\n## 1. Scope\n\nDREAM-01 defines bounded cognition that runs outside an immediate\nlatency-critical user turn.\n\nA dream cycle is not a new architectural plane, a new memory database, or a new\nsource of authority. It is a kernel-scheduled cognitive protocol over the\nexisting Data, Context, Control, and Execution responsibilities.\n\nThe compact invariant is:\n\n> **Dreaming may expand the hypothesis space. It may not expand the authority space.**\n\n## 2. Inputs\n\nA dream cycle MUST receive information through the same governed memory and\ncontext boundaries as interactive cognition.\n\nThe cycle MAY operate over:\n\n- episodic observations;\n- semantic and project memory;\n- prior derived or hypothesis entries;\n- receipts and outcomes;\n- contradiction or staleness signals;\n- current goals or Work Order context when policy permits.\n\nThe cycle MUST preserve source and parent references sufficient to distinguish\nobserved evidence from model-generated derivatives.\n\n## 3. Permitted cognitive operations\n\nA dream cycle MAY perform:\n\n- replay;\n- consolidation;\n- abstraction;\n- association;\n- contradiction detection;\n- counterfactual generation;\n- future-state simulation;\n- alternative explanation generation;\n- falsification attempts;\n- hypothesis generation;\n- evidence-gap identification;\n- discriminating-test generation.\n\nThese are cognitive operations. They do not carry execution authority.\n\n## 4. Output classes and persistence\n\nA dream cycle MAY produce candidates such as:\n\n- association;\n- abstraction;\n- causal_hypothesis;\n- counterfactual;\n- simulation;\n- contradiction;\n- opportunity;\n- evidence_request;\n- test_candidate.\n\nDurable dream outputs MUST use the existing governed memory substrate.\nMemoryEntries remains canonical in v1.\n\nDREAM-01 MUST NOT create a new fact, user decision, authoritative preference,\npolicy, mandate, capability, approval, or executable procedural instruction\nmerely because a model generated the content.\n\nNew synthetic durable entries MUST remain hypothesis or derived until a\nseparate evidence-backed transition satisfies the applicable memory contract.\nA deterministic compaction or summary of existing facts remains a derived\nrepresentation of those facts rather than a new independent fact.\n\nNo DreamStore or parallel hypothesis database is introduced by this contract.\n\n## 5. Synthetic provenance and epistemic quarantine\n\nFor a durable dream result, existing value/provenance fields SHOULD preserve,\nwhere available:\n\n- origin_mode = dream;\n- dream_run_id;\n- candidate_type;\n- parent memory or entity references;\n- source evidence references;\n- model bundle identifier;\n- inference-frame or context-pack identifier;\n- receipt reference;\n- generation timestamp;\n- review or expiry state.\n\nUntil a future schema revision demonstrates the need for first-class columns,\nthese fields may remain governed values inside the existing memory record.\n\nDREAM-01 applies the general evidence-hypothesis separation invariant in\nEPI-SEP-01. Dream-specific rules additionally require:\n\n1. A simulated or counterfactual event is not an observed event.\n2. Promotion to a confirmed fact requires evidence that supports the derived\n   proposition itself under the confirmed-vs-speculation contract.\n\nThese rules prevent recursive synthetic-memory contamination.\n\n## 6. Authority boundary\n\nDream output MUST NOT create, widen, or refresh authority.\n\nThe governing transition rule is:\n\n> **A change in dream state does not imply a change in authority state.**\n\nA dream cycle may produce a proposal or candidate Work Order. Consequential\nexecution still requires the ordinary Goni path through canonical mandate,\npolicy, capability, approval, budget, revocation, and tool mediation.\n\nA model-visible authority summary may assist cognition but remains subordinate\nto canonical kernel-owned authority state.\n\n## 7. Scheduling and resource control\n\nDream work MUST be submitted through the existing scheduler.\n\nThe default scheduling posture SHOULD treat dream work as background,\npreemptible, and resource-bounded relative to interactive work.\n\nA dream job SHOULD declare:\n\n- input scope;\n- context/token budget;\n- solver/model budget;\n- maximum recursion or branch depth where applicable;\n- cancellation semantics;\n- persistence policy;\n- allowed completion states.\n\nIdle compute is an optimization opportunity, not an entitlement to unbounded\nbackground inference.\n\n## 8. Network and external effects\n\nLocal-first policy remains authoritative during dreaming.\n\nRemote inference, connector access, or other egress may occur only through the\nexisting governed egress path and only when policy explicitly permits it.\n\nA dream cycle has no ambient tool authority. External observation or action\nneeded to test a hypothesis must enter the appropriate governed retrieval,\nconnector, or Work Order path.\n\n## 9. Receipts and reviewability\n\nConsequential durable writes from a dream cycle SHOULD remain reconstructable\nthrough existing receipt and provenance mechanisms.\n\nA reviewer should be able to determine:\n\n- which observations and memories were used;\n- which outputs were synthetic;\n- which model/runtime produced them;\n- which evidence, if any, later supported or refuted them;\n- whether a result remained unresolved, expired, was quarantined, or was\n  promoted through a separate evidence-backed transition.\n\n## 10. Failure handling\n\nContradictory, weakly grounded, stale, poisoned, or otherwise unsafe dream\noutputs MAY use the existing quarantine policy alias and normal review/TTL\nsemantics.\n\nA failed dream cycle should degrade to unresolved candidates or no durable\nwrite. Failure must not be converted into broader authority or fabricated\ncertainty.\n\n## 11. Conformance invariants\n\nA conforming implementation must preserve at least these invariants:\n\n- synthetic-to-fact promotion without qualifying evidence: zero;\n- authority expansion caused solely by dream output: zero;\n- model self-corroboration counted as independent evidence: zero;\n- dream output bypassing ordinary tool/effect mediation: zero.\n\nUtility, recall, calibration, compute cost, and scheduling quality are measured\nproperties rather than assumed guarantees.",
       "domains": [
         "agent",
         "kernel",
@@ -11391,6 +11431,10 @@
         },
         {
           "target": "GONI-SPEC-A742123055E0",
+          "type": "depends_on"
+        },
+        {
+          "target": "EPI-SEP-01",
           "type": "depends_on"
         },
         {
@@ -11466,6 +11510,141 @@
       "title": "Enclosure Notes (MVP draft)",
       "type": "implementation-map",
       "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
+    },
+    {
+      "aliases": [
+        "EPISTEMIC-CONTROLLER",
+        "EPISTEMIC-FRAME"
+      ],
+      "artifacts": [],
+      "body": "# Governed Epistemic Control\n\n> Status boundary: this is a specified-only architectural contract. Normative\n> language describes intended conformance behavior rather than observed\n> implementation, verification, calibration, or non-bypassability.\n\n## 1. Scope\n\nEPI-CTRL-01 governs evidence-sensitive cognition in which a Work Order may\nrequire the system to distinguish between plausible explanations, acquire\nadditional evidence, resolve contradictions, or decide that available evidence\nis insufficient.\n\nIt does not create a new architectural plane, a new durable memory database, or\na new source of authority.\n\nThe compact control loop is:\n\n> **Observe -> Hypothesize -> Discriminate -> Retrieve -> Update -> Commit / Continue / Surface uncertainty**\n\nThe controller coordinates existing Context and Control Plane responsibilities.\nDurable state remains governed by existing MemoryEntries and source-of-truth\ncontracts.\n\n## 2. EpistemicFrame\n\nFor a Work Order at step \\(t\\), the transient epistemic state may be represented\nconceptually as:\n\n\\[\n\\mathcal{E}_t =\n(\\mathcal{H}_t, \\mathcal{D}_t, \\mathcal{L}_t, \\mathcal{C}_t, \\mathcal{Q}_t, B_t),\n\\]\n\nwhere:\n\n- \\(\\mathcal{H}_t\\) is the set of active candidate hypotheses;\n- \\(\\mathcal{D}_t\\) is the evidence set available to the Work Order;\n- \\(\\mathcal{L}_t\\) is evidence and derivation lineage;\n- \\(\\mathcal{C}_t\\) is the set of unresolved contradictions;\n- \\(\\mathcal{Q}_t\\) is the set of unresolved evidence questions or candidate tests;\n- \\(B_t\\) is the remaining bounded research and reasoning budget.\n\nA logical `EpistemicFrame` SHOULD preserve, where applicable:\n\n```yaml\nepistemic_frame_id:\nwork_order_id:\ncontext_pack_id:\ninference_frame_id:\nhypotheses:\n  - hypothesis_id:\n    proposition:\n    claim_strength:\n    parent_hypothesis_refs:\n    supporting_evidence_refs:\n    contradicting_evidence_refs:\n    evidence_lineage_refs:\n    unresolved_requirements:\ncontradictions: []\nevidence_gaps: []\ncandidate_tests: []\nresearch_budget:\nselection_policy:\nstop_state:\ncreated_at:\nprovenance:\nreceipt_ref:\n```\n\nThe frame records externally reviewable epistemic state. It MUST NOT require raw\nprivate chain-of-thought disclosure.\n\n## 3. Persistence boundary\n\n`EpistemicFrame` is a transient Work-Order-bound control representation, not a\nparallel canonical memory store.\n\nIf an unresolved proposition becomes durable, it MUST use the existing\nMemoryEntries lifecycle and remain `hypothesis` or `derived` unless the\napplicable evidence-backed promotion contract is satisfied.\n\nThe controller MUST NOT create an `EpistemicStore`, `HypothesisStore`, or other\nparallel source of truth merely to preserve reasoning state.\n\n## 4. Hypothesis set\n\nFor evidence-sensitive work, cognition MAY maintain multiple candidate\nhypotheses rather than collapsing immediately onto the first plausible\ninterpretation.\n\nA conforming profile SHOULD preserve:\n\n- at least one explicit leading hypothesis when a conclusion is being evaluated;\n- materially plausible alternatives when available;\n- evidence that supports or contradicts each active hypothesis;\n- unresolved requirements that would materially affect commitment;\n- parent or derivation references for generated alternatives.\n\nThe number of hypotheses is resource-bounded. More branches are not inherently\nbetter.\n\n## 5. Evidence and lineage\n\nEPI-SEP-01 applies in full.\n\nFor proposition \\(h\\), let \\(E(h)\\) be presented supporting evidence and let\n\\(r(e)\\) identify an independent provenance root or evidence-lineage class.\n\nThe controller distinguishes:\n\n\\[\nN_{raw}(h)=|E(h)|\n\\]\n\nfrom:\n\n\\[\nN_{ind}(h)=|\\{r(e): e\\in E(h)\\}|.\n\\]\n\nAgreement among multiple artifacts MUST NOT be treated as independent\ncorroboration when they materially descend from the same evidence lineage.\n\nThe concrete lineage function \\(r(e)\\) is implementation-dependent and MAY\nremain unresolved when independence cannot be established reliably.\n\n## 6. Support revision\n\nThe default contract reuses GONI's existing `ClaimStrength` vocabulary:\n\n`proved | supported | unknown | disproved`.\n\nA conceptual update is:\n\n\\[\nS_{t+1}(h) =\n\\operatorname{Update}\n(S_t(h), e_{t+1}, L(e_{t+1}), C_t),\n\\]\n\nwhere support revision accounts for the new evidence, its lineage, and\ncontradictions.\n\nThe exact update function is non-normative.\n\nA probabilistic profile MAY use Bayesian or other calibrated updates, for\nexample:\n\n\\[\nP(h\\mid e) \\propto P(e\\mid h)P(h),\n\\]\n\nonly when the probabilities, likelihood model, and calibration are supported by\nnamed evaluation evidence. Model-generated numerical confidence MUST NOT be\nsilently treated as a calibrated posterior.\n\n## 7. Discriminating evidence acquisition\n\nA context miss identifies missing material. EPI-CTRL-01 adds the stronger\nresearch question: which permitted observation, retrieval, or clarification\nwould most efficiently distinguish the active hypotheses or satisfy the\nWork Order's evidence requirements?\n\nFor a calibrated probabilistic profile, a conceptual expected-information-gain\nobjective is:\n\n\\[\n\\operatorname{EIG}(q)\n=\nH(\\mathcal{H}_t)\n-\n\\mathbb{E}_{a\\sim p(a\\mid q)}\n[H(\\mathcal{H}_{t+1}\\mid a)].\n\\]\n\nA cost-aware conceptual policy is:\n\n\\[\nq_t^*\n=\n\\arg\\max_q\n[\n\\operatorname{EIG}(q)\n-\n\\lambda_c C(q)\n-\n\\lambda_l L(q)\n-\n\\lambda_e E(q)\n-\n\\lambda_p R(q)\n],\n\\]\n\nwhere the penalty terms may represent compute or monetary cost, latency,\nenergy/resource cost, and privacy or external-dependency risk.\n\nThese equations define a design objective, not a required estimator. An\nimplementation MAY use heuristics, ordinal discriminative value, calibrated\nmodels, or other policies if evaluation demonstrates acceptable quality and\ncost.\n\n## 8. Decision-aware value of information\n\nWhen the Work Order exists to support a consequential decision rather than to\nmaximize descriptive certainty, the controller MAY use a value-of-information\nobjective.\n\nConceptually:\n\n\\[\n\\operatorname{VOI}(q)\n=\n\\mathbb{E}_{a}\n[\n\\max_d EU(d\\mid \\mathcal{E}_t,a)\n]\n-\n\\max_d EU(d\\mid \\mathcal{E}_t)\n-\nC(q).\n\\]\n\nThe controller SHOULD prefer additional inquiry when its expected decision\nbenefit justifies its full acquisition cost under policy and budget.\n\nNo implementation may claim calibrated expected utility or VOI without named\nevaluation evidence.\n\n## 9. ContextMiss integration\n\nWhen an evidence gap requires additional material, EPI-CTRL-01 MUST re-enter\nordinary governed retrieval through CTX-MISS-01 rather than granting the model\nambient search or connector authority.\n\nThe epistemic controller may supply bounded metadata such as:\n\n- active hypothesis references;\n- the evidence gap being resolved;\n- the candidate test or discriminating purpose;\n- the query-selection policy;\n- remaining epistemic budget.\n\nRetrieval output returns as candidate evidence through MEM-RETR-01 and\nCTX-COMP-01 before cognition resumes.\n\n## 10. Stopping and commitment\n\nEPI-CTRL-01 reuses the Work Order's existing DoneContract rather than defining a\nsecond completion contract.\n\nLet \\(D_t\\) denote satisfaction of the relevant DoneContract, let \\(S_t(h)\\)\ndenote the support state for the leading hypothesis, and let\n\\(\\mathcal{C}^{critical}_t\\) denote unresolved contradictions that the Work\nOrder requires to be resolved.\n\nA conceptual commitment condition is:\n\n\\[\n\\operatorname{Commit}(h^*)\n\\iff\nD_t\n\\land\nS_t(h^*) \\succeq \\tau_W\n\\land\n\\mathcal{C}^{critical}_t = \\varnothing.\n\\]\n\nFurther inquiry is conceptually justified while:\n\n\\[\n\\neg D_t\n\\land\nB_t > 0\n\\land\n\\max_q \\operatorname{Value}(q) > 0.\n\\]\n\n`Value(q)` may be a validated information-gain, decision-value, or bounded\nheuristic policy.\n\nThe controller terminates with one of three logical states:\n\n- `commit` — the DoneContract permits the supported conclusion;\n- `continue` — additional permitted inquiry has sufficient expected value;\n- `surface_uncertainty` — the conclusion remains unresolved and further inquiry\n  is unavailable, disallowed, exhausted, or not worth its full cost.\n\nThe system MUST NOT convert budget exhaustion or retrieval failure into\nfabricated certainty.\n\n## 11. Authority boundary\n\nEpistemic confidence does not create execution authority.\n\n\\[\n\\boxed{\n\\operatorname{EpistemicSupport}\n\\not\\Rightarrow\n\\operatorname{AuthorityToAct}\n}\n\\]\n\nAny consequential action after epistemic commitment still requires the ordinary\nGONI path through mandate, policy, capability, approval, budgets, revocation,\ntool mediation, and receipts.\n\n## 12. Resource and recursion limits\n\nThe controller MUST be bounded by the applicable Work Order, ITCR, scheduler,\nprivacy, connector, token, latency, compute, energy, and monetary budgets.\n\nThe system MUST define finite branch, retrieval, or recursion limits for\nprofiles that perform iterative inquiry.\n\nA higher hypothesis count, larger retrieval volume, or longer reasoning trace is\nnot a success metric by itself.\n\n## 13. Reviewability\n\nFor audit-grade work, receipts SHOULD make it possible to reconstruct:\n\n- which hypotheses were materially active;\n- which evidence supported or contradicted them;\n- which evidence items shared a lineage where known;\n- which evidence gap triggered additional retrieval;\n- why the controller continued, stopped, or surfaced uncertainty;\n- which DoneContract threshold permitted commitment;\n- which budgets constrained the research path.\n\nReviewability does not require storage of private chain-of-thought.\n\n## 14. Conformance invariants\n\nA conforming implementation must preserve at least:\n\n- synthetic cognition counted as independent evidence: zero;\n- authority expansion caused solely by epistemic support: zero;\n- unbounded epistemic recursion: zero;\n- unresolved critical contradictions silently omitted in audit-grade commitment:\n  zero;\n- budget exhaustion silently converted to certainty: zero.\n\nUtility, calibration, query quality, latency, cost, energy, and abstention\nquality are measured properties rather than assumed guarantees.",
+      "domains": [
+        "agent",
+        "kernel",
+        "memory",
+        "research",
+        "software",
+        "system"
+      ],
+      "id": "EPI-CTRL-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/specifications/epi-ctrl-01-governed-epistemic-control.md",
+      "proposition": "For evidence-sensitive Work Orders, GONI may maintain a bounded transient epistemic state over competing hypotheses, evidence, evidence lineage, contradictions, and unresolved evidence needs, and use that state to govern further retrieval, support revision, and the decision to continue, commit, or surface unresolved uncertainty.",
+      "relations": [
+        {
+          "target": "EPI-SEP-01",
+          "type": "depends_on"
+        },
+        {
+          "target": "MEM-RETR-01",
+          "type": "depends_on"
+        },
+        {
+          "target": "CTX-COMP-01",
+          "type": "depends_on"
+        },
+        {
+          "target": "CTX-MISS-01",
+          "type": "depends_on"
+        },
+        {
+          "target": "ITCR-01",
+          "type": "depends_on"
+        },
+        {
+          "target": "GONI-SPEC-59E3DFC23CC8",
+          "type": "depends_on"
+        },
+        {
+          "target": "GONI-SPEC-914D01705CED",
+          "type": "depends_on"
+        },
+        {
+          "target": "GONI-SPEC-A742123055E0",
+          "type": "depends_on"
+        }
+      ],
+      "sources": [
+        "SRC-LINDLEY1956-EXPERIMENT-INFORMATION",
+        "SRC-SETTLES2009-ACTIVE-LEARNING",
+        "SRC-JIANG2023-FLARE",
+        "SRC-ASAI2024-SELF-RAG",
+        "SRC-GAO2023-RARR"
+      ],
+      "status": "draft",
+      "title": "Governed Epistemic Control",
+      "type": "specification",
+      "uncertainty": "This contract specifies a proposed epistemic-control protocol, not an implemented or calibrated truth engine. Hypothesis quality, evidence-lineage inference, probability calibration, query-value estimation, stopping thresholds, latency, cost, and downstream utility require matched GONI evaluation."
+    },
+    {
+      "aliases": [
+        "EPISTEMIC-CONTROL-EVAL"
+      ],
+      "artifacts": [],
+      "body": "# Governed Epistemic Control Evaluation\n\n## Hypothesis\n\nUnder matched model, retrieval, token, latency, tool, and connector budgets,\nexplicit epistemic-state tracking with competing hypotheses, lineage-aware\nevidence, discriminating retrieval, and explicit stopping criteria reduces\nunsupported or premature commitments relative to ordinary model-directed\nretrieval without imposing unacceptable total-system cost.\n\nThis is a falsifiable research hypothesis, not an architectural guarantee.\n\n## Baselines\n\nCompare at minimum:\n\n1. **Single-pass grounded generation:** compile the initial context, permit the\n   baseline retrieval path, and answer without an explicit EpistemicFrame.\n2. **Model-directed iterative retrieval:** permit the model to request further\n   retrieval or context misses under the same overall budget, without explicit\n   hypothesis, lineage, or discriminating-query state.\n3. **Governed epistemic control:** EPI-CTRL-01 with explicit hypotheses,\n   support/contradiction references, evidence gaps, bounded discriminating\n   retrieval, and commit/continue/uncertainty termination.\n\nWhere practical, add ablations for:\n\n- hypothesis tracking without lineage awareness;\n- lineage awareness without discriminating query selection;\n- epistemic state with heuristic query selection;\n- calibrated information-value selection where a valid estimator exists.\n\n## Evaluation fixtures\n\nConstruct synthetic, open, or replayable fixtures containing:\n\n- an early plausible but incorrect hypothesis;\n- two or more explanations consistent with the initial observations;\n- a decisive item absent from the initial working set;\n- many superficially independent sources that share one underlying source;\n- genuinely independent corroborating sources;\n- contradictory sources with different provenance or authority;\n- stale evidence superseded by later evidence;\n- evidence gaps that cannot be resolved within the permitted budget;\n- cases where additional retrieval has negligible decision value;\n- cases where no strong conclusion is justified;\n- prompt or context patterns likely to induce confirmation-seeking queries.\n\nFixtures SHOULD label which evidence is decisive, which items share a lineage,\nwhich hypotheses remain viable at each stage, and when abstention is the\nappropriate outcome.\n\n## Outcome metrics\n\nReport:\n\n- final conclusion accuracy where ground truth is available;\n- unsupported-commit rate;\n- premature-commit rate;\n- correct uncertainty or abstention rate;\n- contradiction-resolution rate;\n- decisive-evidence recovery rate;\n- alternative-hypothesis recall;\n- wrong-leading-hypothesis rejection rate.\n\nA higher number of hypotheses or retrieval calls is not itself a positive\noutcome.\n\n## Evidence-lineage metrics\n\nReport:\n\n- evidence-lineage independence errors;\n- duplicate-source amplification;\n- synthetic self-corroboration incidents;\n- false independence assignments;\n- missed independent corroboration;\n- cases where raw source count materially diverges from effective independent\n  support.\n\nHard target for any profile presented as audit-grade:\n\n- model-generated descendants counted as independent confirmation: **0**.\n\n## Query-quality metrics\n\nReport:\n\n- useful evidence recovered per retrieval;\n- decisive evidence recovered per retrieval;\n- irrelevant retrieval rate;\n- repeated or redundant query rate;\n- discriminating-query success rate;\n- retrievals that change the support ordering among active hypotheses;\n- information-value estimator calibration where a probabilistic estimator is\n  evaluated.\n\nFor heuristic profiles, report the named heuristic rather than retroactively\ninterpreting heuristic scores as calibrated expected information gain.\n\n## Stopping metrics\n\nReport:\n\n- correct commit rate;\n- correct continue-search rate;\n- correct uncertainty-surfacing rate;\n- unnecessary continuation rate;\n- premature stopping rate;\n- budget-exhaustion-to-certainty incidents;\n- research stopping regret where a counterfactual continuation can be scored.\n\nHard target:\n\n- budget exhaustion silently converted into certainty: **0**.\n\n## Cost and service metrics\n\nReport:\n\n- input and output tokens;\n- retrieval and connector calls;\n- solver/model calls;\n- latency and wall-clock time;\n- monetary cost where applicable;\n- compute time and energy/thermal proxy where practical;\n- peak memory or KV pressure where observable;\n- user interruptions or clarification requests;\n- receipt and state volume.\n\nThe epistemic-control condition must be evaluated on total-system cost rather\nthan answer quality alone.\n\n## Adversarial hypothesis-locking test\n\nCreate cases in which an initially plausible hypothesis can generate highly\nsupportive but poorly discriminating searches.\n\nMeasure whether each condition:\n\n1. generates or preserves a competing explanation;\n2. issues a query capable of falsifying or distinguishing the leading\n   hypothesis;\n3. changes support when contrary evidence is recovered;\n4. avoids treating repeated retrieval from the same lineage as independent\n   confirmation;\n5. reaches the appropriate commit or uncertainty state.\n\nThis lane directly tests whether retrieval volume becomes confirmation rather\nthan verification.\n\n## Promotion criterion\n\nEPI-CTRL-01 remains specified-only until a named implementation demonstrates,\non at least one GONI-relevant evidence-sensitive workload:\n\n1. lower unsupported or premature commitment than the strongest matched\n   baseline;\n2. no synthetic self-corroboration counted as independent evidence in the\n   audit-grade profile;\n3. bounded branch, retrieval, and recursion behavior;\n4. acceptable latency, compute, and acquisition cost;\n5. calibrated or explicitly non-calibrated query-value semantics;\n6. reconstructable commit, continue, and uncertainty decisions.\n\nNegative or neutral results are valid outcomes and SHOULD narrow, simplify, or\nreject the proposed mechanism rather than being hidden by architectural\nnarrative.",
+      "domains": [
+        "agent",
+        "research",
+        "software",
+        "system"
+      ],
+      "id": "EPI-EVAL-01",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/experiments/epi-eval-01-governed-epistemic-control.md",
+      "proposition": "Evaluate whether explicit transient epistemic-state tracking with competing hypotheses, lineage-aware evidence, discriminating retrieval, and explicit stopping criteria reduces unsupported or premature commitments relative to ordinary model-directed retrieval under matched model and resource budgets.",
+      "relations": [
+        {
+          "target": "EPI-CTRL-01",
+          "type": "tests"
+        }
+      ],
+      "sources": [
+        "SRC-LINDLEY1956-EXPERIMENT-INFORMATION",
+        "SRC-SETTLES2009-ACTIVE-LEARNING",
+        "SRC-JIANG2023-FLARE",
+        "SRC-ASAI2024-SELF-RAG",
+        "SRC-GAO2023-RARR"
+      ],
+      "status": "draft",
+      "title": "Governed Epistemic Control Evaluation",
+      "type": "experiment",
+      "uncertainty": "No net benefit is assumed. Explicit epistemic control may add latency, token cost, unnecessary branching, brittle heuristics, false source-independence judgments, or over-abstention. The evaluation must report neutral and negative results."
+    },
+    {
+      "aliases": [
+        "EVIDENCE-HYPOTHESIS-SEPARATION",
+        "SYNTHETIC-EVIDENCE-BOUNDARY"
+      ],
+      "artifacts": [],
+      "body": "# Evidence-Hypothesis Separation\n\nGONI distinguishes the material used to generate a proposition from evidence that independently supports the proposition as true.\n\nThe compact invariant is:\n\n> **Synthetic cognition may guide inquiry. It may not bootstrap itself into independent evidence.**\n\nThis applies across interactive reasoning, retrieval-augmented generation, offline cognition, reflection, simulation, model councils, summaries, critiques, and other model-mediated derivations.\n\n## 1. Epistemic classes\n\nA conforming reasoning path MUST preserve the distinction between:\n\n1. **observation or external evidence** — material attributable to an observed event, external source, measurement, user decision, or other qualifying evidence channel;\n2. **derivation provenance** — the source material, model/runtime, context, transforms, and parent artifacts used to generate a synthetic proposition;\n3. **synthetic cognition** — hypotheses, summaries, critiques, simulations, counterfactuals, confidence signals, or other model-generated derivatives;\n4. **confirmation evidence** — qualifying evidence that supports or contradicts the proposition itself independently of the derivation that generated it.\n\nDerivation provenance explains where a hypothesis came from. It does not by itself confirm the hypothesis.\n\n## 2. Independence invariant\n\nFor a proposition \\(h\\), let \\(E(h)\\) be the set of evidence items presented as support and let \\(r(e)\\) identify the independent provenance root or evidence-lineage class of item \\(e\\).\n\nThe conceptual distinction is:\n\n\\[\nN_{raw}(h)=|E(h)|\n\\]\n\nversus\n\n\\[\nN_{ind}(h)=|\\{r(e): e\\in E(h)\\}|.\n\\]\n\nA larger \\(N_{raw}\\) MUST NOT be interpreted as stronger independent corroboration when the additional items descend from the same underlying evidence lineage.\n\nThe concrete function \\(r(e)\\) is implementation-dependent. This principle does not claim that source independence can always be inferred reliably from metadata alone.\n\n## 3. Synthetic self-corroboration\n\nThe following MUST NOT count as independent confirmation merely because they recur:\n\n- repeated generation of the same proposition;\n- agreement among outputs derived from the same source material;\n- a model critique that restates or endorses an earlier model hypothesis;\n- summaries or revisions that descend from the same evidence lineage;\n- multiple agents or models whose apparent agreement is conditioned on materially identical evidence;\n- simulated or counterfactual outcomes.\n\nModel confidence is a cognitive signal. It is not independent evidence.\n\n## 4. Operational consequence\n\nSynthetic cognition MAY:\n\n- create or reprioritize hypotheses;\n- identify contradictions;\n- identify evidence gaps;\n- propose discriminating tests or retrieval requests;\n- change salience or research priority;\n- motivate a user-visible uncertainty statement.\n\nIt MUST NOT silently promote a proposition to confirmed fact, authoritative preference, policy, mandate, or executable instruction.\n\nDurable promotion remains governed by the applicable MemoryEntries, confirmation, policy, and authority contracts.",
+      "domains": [
+        "agent",
+        "memory",
+        "research",
+        "system"
+      ],
+      "id": "EPI-SEP-01",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/principles/epi-sep-01-evidence-hypothesis-separation.md",
+      "proposition": "Model-generated hypotheses, inferences, critiques, repetitions, simulations, and confidence signals may guide further cognition but do not constitute independent evidence for the propositions they generate.",
+      "relations": [
+        {
+          "target": "DREAM-01",
+          "type": "supports"
+        },
+        {
+          "target": "GONI-SPEC-A742123055E0",
+          "type": "supports"
+        }
+      ],
+      "sources": [],
+      "status": "draft",
+      "title": "Evidence-Hypothesis Separation",
+      "type": "principle",
+      "uncertainty": "This principle defines an epistemic boundary rather than an implementation mechanism. Concrete tests for evidence-lineage independence, source dependence, calibration, and promotion thresholds require implementation and adversarial evaluation."
     },
     {
       "aliases": [],
@@ -63070,6 +63249,12 @@
     {
       "projection": "generated",
       "source": "CTX-COMP-01",
+      "target": "EPI-CTRL-01",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
+      "source": "CTX-COMP-01",
       "target": "INF-FRAME-01",
       "type": "depended_on_by"
     },
@@ -63126,6 +63311,12 @@
       "source": "CTX-COMP-EVAL-01",
       "target": "CTX-COMP-01",
       "type": "tests"
+    },
+    {
+      "projection": "generated",
+      "source": "CTX-MISS-01",
+      "target": "EPI-CTRL-01",
+      "type": "depended_on_by"
     },
     {
       "projection": "authored",
@@ -63202,6 +63393,12 @@
     {
       "projection": "authored",
       "source": "DREAM-01",
+      "target": "EPI-SEP-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "DREAM-01",
       "target": "GONI-DECISION-6D3A2B71C9E4",
       "type": "depends_on"
     },
@@ -63244,6 +63441,12 @@
     {
       "projection": "generated",
       "source": "DREAM-01",
+      "target": "EPI-SEP-01",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "DREAM-01",
       "target": "DREAM-EVAL-01",
       "type": "tested_by"
     },
@@ -63252,6 +63455,90 @@
       "source": "DREAM-EVAL-01",
       "target": "DREAM-01",
       "type": "tests"
+    },
+    {
+      "projection": "authored",
+      "source": "EPI-CTRL-01",
+      "target": "CTX-COMP-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "EPI-CTRL-01",
+      "target": "CTX-MISS-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "EPI-CTRL-01",
+      "target": "EPI-SEP-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "EPI-CTRL-01",
+      "target": "GONI-SPEC-59E3DFC23CC8",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "EPI-CTRL-01",
+      "target": "GONI-SPEC-914D01705CED",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "EPI-CTRL-01",
+      "target": "GONI-SPEC-A742123055E0",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "EPI-CTRL-01",
+      "target": "ITCR-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "EPI-CTRL-01",
+      "target": "MEM-RETR-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "generated",
+      "source": "EPI-CTRL-01",
+      "target": "EPI-EVAL-01",
+      "type": "tested_by"
+    },
+    {
+      "projection": "authored",
+      "source": "EPI-EVAL-01",
+      "target": "EPI-CTRL-01",
+      "type": "tests"
+    },
+    {
+      "projection": "generated",
+      "source": "EPI-SEP-01",
+      "target": "DREAM-01",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
+      "source": "EPI-SEP-01",
+      "target": "EPI-CTRL-01",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "authored",
+      "source": "EPI-SEP-01",
+      "target": "DREAM-01",
+      "type": "supports"
+    },
+    {
+      "projection": "authored",
+      "source": "EPI-SEP-01",
+      "target": "GONI-SPEC-A742123055E0",
+      "type": "supports"
     },
     {
       "projection": "authored",
@@ -64491,9 +64778,21 @@
     },
     {
       "projection": "generated",
+      "source": "GONI-SPEC-59E3DFC23CC8",
+      "target": "EPI-CTRL-01",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
       "source": "GONI-SPEC-75D0D2E5F296",
       "target": "GONI-SYNTHESIS-E3B321C24C67",
       "type": "synthesized_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-SPEC-914D01705CED",
+      "target": "EPI-CTRL-01",
+      "type": "depended_on_by"
     },
     {
       "projection": "generated",
@@ -64534,6 +64833,12 @@
     {
       "projection": "generated",
       "source": "GONI-SPEC-A742123055E0",
+      "target": "EPI-CTRL-01",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-SPEC-A742123055E0",
       "target": "GONI-DECISION-6D3A2B71C9E4",
       "type": "depended_on_by"
     },
@@ -64542,6 +64847,12 @@
       "source": "GONI-SPEC-A742123055E0",
       "target": "DREAM-01",
       "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-SPEC-A742123055E0",
+      "target": "EPI-SEP-01",
+      "type": "supported_by"
     },
     {
       "projection": "generated",
@@ -68720,6 +69031,12 @@
       "type": "refines"
     },
     {
+      "projection": "generated",
+      "source": "ITCR-01",
+      "target": "EPI-CTRL-01",
+      "type": "depended_on_by"
+    },
+    {
       "projection": "authored",
       "source": "LLM-COUNCIL",
       "target": "GONI-OBJECTION-998CA377412F",
@@ -68879,6 +69196,12 @@
       "projection": "generated",
       "source": "MEM-RETR-01",
       "target": "CTX-MISS-01",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
+      "source": "MEM-RETR-01",
+      "target": "EPI-CTRL-01",
       "type": "depended_on_by"
     },
     {
@@ -70252,6 +70575,15 @@
       "title": "apple2025-illusion-thinking"
     },
     {
+      "citation": "Asai, A., Wu, Z., Wang, Y., Sil, A., & Hajishirzi, H. (2024). Self-RAG: Learning to Retrieve, Generate, and Critique through Self-Reflection. International Conference on Learning Representations (ICLR 2024).",
+      "id": "SRC-ASAI2024-SELF-RAG",
+      "kind": "academic",
+      "notes": "Shows an adaptive retrieve-generate-critique architecture using learned reflection signals; relevant to retrieval gating and critique precedents, not proof of GONI's proposed epistemic controller.",
+      "path": "sources/src-asai2024-self-rag.yml",
+      "title": "Asai et al. 2024 - Self-RAG",
+      "url": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/25f7be9694d7b32d5cc670927b8091e1-Abstract-Conference.html"
+    },
+    {
       "citation": "https://arxiv.org/abs/2501.09674",
       "id": "SRC-AUTHENTICATED-DELEGATION-2025",
       "kind": "academic",
@@ -70441,6 +70773,15 @@
       "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4911522"
     },
     {
+      "citation": "Gao, L., Dai, Z., Pasupat, P., Chen, A., Chaganty, A. T., Fan, Y., Zhao, V., Lao, N., Lee, H., Juan, D.-C., & Guu, K. (2023). RARR: Researching and Revising What Language Models Say, Using Language Models. Proceedings of ACL 2023, 16477-16508. https://doi.org/10.18653/v1/2023.acl-long.910",
+      "id": "SRC-GAO2023-RARR",
+      "kind": "academic",
+      "notes": "Separates initial generation from research and evidence-backed revision to improve attribution; relevant to generator-verifier separation and post-generation evidence acquisition.",
+      "path": "sources/src-gao2023-rarr.yml",
+      "title": "Gao et al. 2023 - RARR",
+      "url": "https://aclanthology.org/2023.acl-long.910/"
+    },
+    {
       "citation": "https://arxiv.org/abs/1803.09010",
       "id": "SRC-GEBRU2021-DATASHEETS",
       "kind": "academic",
@@ -70575,6 +70916,15 @@
       "url": "https://in-toto.io/"
     },
     {
+      "citation": "Jiang, Z., Xu, F., Gao, L., Sun, Z., Liu, Q., Dwivedi-Yu, J., Yang, Y., Callan, J., & Neubig, G. (2023). Active Retrieval Augmented Generation. Proceedings of EMNLP 2023, 7969-7992. https://doi.org/10.18653/v1/2023.emnlp-main.495",
+      "id": "SRC-JIANG2023-FLARE",
+      "kind": "academic",
+      "notes": "Demonstrates retrieval triggered during generation rather than only before generation; supports adaptive retrieval as a research precedent while leaving GONI-specific epistemic-control benefits to matched evaluation.",
+      "path": "sources/src-jiang2023-flare.yml",
+      "title": "Jiang et al. 2023 - Active Retrieval Augmented Generation",
+      "url": "https://aclanthology.org/2023.emnlp-main.495/"
+    },
+    {
       "citation": "Jiang, H., Wu, Q., Lin, C.-Y., Yang, Y., & Qiu, L. (2023). LLMLingua: Compressing Prompts for Accelerated Inference of Large Language Models. Proceedings of EMNLP 2023. https://doi.org/10.18653/v1/2023.emnlp-main.825",
       "id": "SRC-JIANG2023-LLMLINGUA",
       "kind": "academic",
@@ -70681,6 +71031,15 @@
       "path": "sources/src-lin2026-agentic-harness-engineering.yml",
       "title": "lin2026-agentic-harness-engineering",
       "url": "https://arxiv.org/abs/2604.25850"
+    },
+    {
+      "citation": "Lindley, D. V. (1956). On a Measure of the Information Provided by an Experiment. The Annals of Mathematical Statistics, 27(4), 986-1005. https://doi.org/10.1214/aoms/1177728069",
+      "id": "SRC-LINDLEY1956-EXPERIMENT-INFORMATION",
+      "kind": "academic",
+      "notes": "Classical Bayesian experimental-design foundation for measuring the expected information supplied by an experiment relative to prior uncertainty; relevant to discriminating-query selection as a conceptual precedent, not evidence that a GONI controller is calibrated or effective.",
+      "path": "sources/src-lindley1956-experiment-information.yml",
+      "title": "Lindley 1956 - On a Measure of the Information Provided by an Experiment",
+      "url": "https://doi.org/10.1214/aoms/1177728069"
     },
     {
       "citation": "https://openreview.net/forum?id=zAdUB0aCTQ",
@@ -70906,6 +71265,15 @@
       "path": "sources/src-sculley2015-hidden-tech-debt.yml",
       "title": "sculley2015-hidden-tech-debt",
       "url": "https://papers.nips.cc/paper/5656-hidden-technical-debt-in-machine-learning-syst"
+    },
+    {
+      "citation": "Settles, B. (2009). Active Learning Literature Survey. Computer Sciences Technical Report 1648, University of Wisconsin-Madison.",
+      "id": "SRC-SETTLES2009-ACTIVE-LEARNING",
+      "kind": "academic",
+      "notes": "Surveys active-learning settings in which a learner strategically selects queries or examples to obtain informative labels under acquisition cost; relevant as precedent for active information acquisition and query-policy evaluation.",
+      "path": "sources/src-settles2009-active-learning.yml",
+      "title": "Settles 2009 - Active Learning Literature Survey",
+      "url": "https://minds.wisconsin.edu/handle/1793/60660"
     },
     {
       "citation": "https://arxiv.org/abs/2002.04087",
