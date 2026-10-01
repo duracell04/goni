@@ -26,6 +26,8 @@ relations:
   target: SCHED-01
 - type: depends_on
   target: GONI-SPEC-A742123055E0
+- type: depends_on
+  target: EPI-SEP-01
 - type: refines
   target: GONI-SPEC-33294E0D3306
 sources:
@@ -140,17 +142,11 @@ where available:
 Until a future schema revision demonstrates the need for first-class columns,
 these fields may remain governed values inside the existing memory record.
 
-The following rules are mandatory:
+DREAM-01 applies the general evidence-hypothesis separation invariant in
+EPI-SEP-01. Dream-specific rules additionally require:
 
-1. Source material used to derive a hypothesis establishes derivation
-   provenance; it does not by itself confirm the derived proposition.
-2. Model confidence is a cognitive signal, not independent evidence.
-3. Regenerating the same proposition in another dream cycle is not independent
-   confirmation.
-4. Agreement among descendants of the same evidence or generation lineage is
-   not independent confirmation.
-5. A simulated or counterfactual event is not an observed event.
-6. Promotion to a confirmed fact requires evidence that supports the derived
+1. A simulated or counterfactual event is not an observed event.
+2. Promotion to a confirmed fact requires evidence that supports the derived
    proposition itself under the confirmed-vs-speculation contract.
 
 These rules prevent recursive synthetic-memory contamination.
