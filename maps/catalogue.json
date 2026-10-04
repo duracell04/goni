@@ -237,6 +237,18 @@
       "node": "GONI-DECISION-9AF49466170D"
     },
     {
+      "alias": "computation-contract",
+      "node": "COMP-01"
+    },
+    {
+      "alias": "computation-evidence-policy",
+      "node": "EVID-01"
+    },
+    {
+      "alias": "compute-execution-contract",
+      "node": "EXEC-01"
+    },
+    {
       "alias": "context-compiler",
       "node": "CTX-COMP-01"
     },
@@ -265,12 +277,36 @@
       "node": "CACHE-01"
     },
     {
+      "alias": "provider-substitutability",
+      "node": "GONI-PRINCIPLE-QUALIFIED-PROVIDER-SUBSTITUTABILITY"
+    },
+    {
+      "alias": "result-receipt",
+      "node": "RESULT-01"
+    },
+    {
+      "alias": "semantic-neutrality",
+      "node": "GONI-PRINCIPLE-COMPUTE-SEMANTIC-NEUTRALITY"
+    },
+    {
       "alias": "semantic-page-fault",
       "node": "CTX-MISS-01"
     },
     {
       "alias": "semantic-working-set-management",
       "node": "GONI-IMAP-66D2DBD94204"
+    },
+    {
+      "alias": "validity-availability-canonicality",
+      "node": "DIST-01"
+    },
+    {
+      "alias": "verification-boundaries",
+      "node": "GONI-PRINCIPLE-VERIFICATION-BOUNDARIES"
+    },
+    {
+      "alias": "verified-compute-substrate",
+      "node": "GONI-SYNTHESIS-VERIFIED-COMPUTE-SUBSTRATE"
     }
   ],
   "indexes": {
@@ -437,6 +473,20 @@
       "community": [
         "GONI-PROPOSAL-9D10D978BDC3"
       ],
+      "compute": [
+        "COMP-01",
+        "DIST-01",
+        "EVID-01",
+        "EXEC-01",
+        "GONI-DECISION-0532C27DA3CC",
+        "GONI-DECISION-62ACE8B32A6F",
+        "GONI-PRINCIPLE-COMPUTE-SEMANTIC-NEUTRALITY",
+        "GONI-PRINCIPLE-QUALIFIED-PROVIDER-SUBSTITUTABILITY",
+        "GONI-PRINCIPLE-VERIFICATION-BOUNDARIES",
+        "GONI-SPEC-A221A420C8C4",
+        "GONI-SYNTHESIS-VERIFIED-COMPUTE-SUBSTRATE",
+        "RESULT-01"
+      ],
       "crdt": [
         "CRDT-AUDIT-01",
         "CRDT-DECISIONS-01",
@@ -544,6 +594,10 @@
         "SCHEMA-MVP-01",
         "SPINE-01",
         "ZCO-01"
+      ],
+      "distributed": [
+        "DIST-01",
+        "GONI-IMAP-ED288DB4EAF5"
       ],
       "hardware": [
         "ADR-INDEX-HW",
@@ -711,9 +765,12 @@
       ],
       "kernel": [
         "CACHE-01",
+        "COMP-01",
         "CTX-COMP-01",
         "CTX-MISS-01",
+        "DIST-01",
         "DREAM-01",
+        "EXEC-01",
         "GONI-DECISION-5346D37FC858",
         "GONI-DECISION-6D3A2B71C9E4",
         "GONI-DECISION-9AF49466170D",
@@ -738,6 +795,8 @@
         "GONI-PRINCIPLE-8C0DB401EE76",
         "GONI-PRINCIPLE-9062425CD490",
         "GONI-PRINCIPLE-9249B8613105",
+        "GONI-PRINCIPLE-COMPUTE-SEMANTIC-NEUTRALITY",
+        "GONI-PRINCIPLE-VERIFICATION-BOUNDARIES",
         "GONI-SPEC-06EEDDD84AB3",
         "GONI-SPEC-0C02110BCFDB",
         "GONI-SPEC-14AA0EDAFDD4",
@@ -807,6 +866,7 @@
         "GONI-SYNTHESIS-BD7FD2CC38AF",
         "GONI-SYNTHESIS-CC4921DED1BB",
         "GONI-SYNTHESIS-DF627E719B9D",
+        "GONI-SYNTHESIS-VERIFIED-COMPUTE-SUBSTRATE",
         "SPEC-ENF-01",
         "SPEC-KERN-01",
         "SPEC-POL-01",
@@ -821,6 +881,7 @@
         "GONI-OBJECTION-642AC4065922",
         "GONI-OBJECTION-AC7C3912DD17",
         "GONI-OBJECTION-D765A0BC3636",
+        "GONI-PRINCIPLE-QUALIFIED-PROVIDER-SUBSTITUTABILITY",
         "GONI-PROPOSAL-095C86A56DD4",
         "GONI-PROPOSAL-09EB7E4D771F",
         "GONI-PROPOSAL-13EF94DB559D",
@@ -1010,6 +1071,9 @@
         "MEMORY-ARCHITECTURE",
         "SKILL-REG-01"
       ],
+      "metering": [
+        "GONI-SPEC-A221A420C8C4"
+      ],
       "network": [
         "GONI-IMAP-B21D85F4146E",
         "GONI-OBJECTION-387E7E37F44E",
@@ -1139,6 +1203,13 @@
         "OS-COMPLETENESS-CHECKLIST",
         "SURF-00",
         "THESIS-SOVEREIGN-DELEG-OS-01"
+      ],
+      "provenance": [
+        "GONI-SPEC-104305990009"
+      ],
+      "receipts": [
+        "GONI-SYNTHESIS-VERIFIED-COMPUTE-SUBSTRATE",
+        "RESULT-01"
       ],
       "repository": [
         "ADJACENT-PROJECTS",
@@ -1772,8 +1843,16 @@
         "REF-GONIOS-NEIGHBOR-01",
         "SKILL-EVAL-01"
       ],
+      "scheduler": [
+        "GONI-DECISION-0532C27DA3CC",
+        "GONI-PRINCIPLE-COMPUTE-SEMANTIC-NEUTRALITY",
+        "GONI-PRINCIPLE-QUALIFIED-PROVIDER-SUBSTITUTABILITY",
+        "GONI-SYNTHESIS-VERIFIED-COMPUTE-SUBSTRATE"
+      ],
       "security": [
+        "EVID-01",
         "GONI-DECISION-9AF49466170D",
+        "GONI-PRINCIPLE-VERIFICATION-BOUNDARIES",
         "GONI-PROPOSAL-05B21F15B3C6",
         "GONI-PROPOSAL-7BFF3F4092F3",
         "GONI-PROPOSAL-86A12AAD0F01",
@@ -2148,6 +2227,7 @@
         "BOUND-01",
         "CDC-01",
         "CGG-01",
+        "COMP-01",
         "CRDT-AUDIT-01",
         "CRDT-DECISIONS-01",
         "CRDT-NOTES-01",
@@ -2157,6 +2237,8 @@
         "DELEG-01",
         "DELEG-INT-01",
         "DREAM-01",
+        "EVID-01",
+        "EXEC-01",
         "GONI-DECISION-0A6C9EA70AEE",
         "GONI-DECISION-185DD72D6912",
         "GONI-DECISION-2AC300CCAF72",
@@ -2568,6 +2650,7 @@
         "MODEL-REG-01",
         "NET-01",
         "REC-01",
+        "RESULT-01",
         "ROBOT-01",
         "SANDBOX-01",
         "SCHED-01",
@@ -2737,6 +2820,7 @@
         "CDC-01",
         "CGG-01",
         "CI-VALIDATION-01",
+        "COMP-01",
         "CRDT-AUDIT-01",
         "CRDT-DECISIONS-01",
         "CRDT-NOTES-01",
@@ -2750,11 +2834,13 @@
         "DAT-01",
         "DELEG-01",
         "DELEG-INT-01",
+        "DIST-01",
         "DOCTRINE-DELEG-01",
         "DREAM-01",
         "DREAM-EVAL-01",
         "ENCLOSURE-NOTES",
         "EVAL-README-00",
+        "EVID-01",
         "EVID-AUTON-01",
         "EVID-AUTON-02",
         "EVID-AUTON-03",
@@ -2792,6 +2878,7 @@
         "EVID-SEC-03",
         "EVID-VANDEVEN2020-BRAIN-REPLAY",
         "EVID-ZHENG2024-SGLANG",
+        "EXEC-01",
         "FIRST-PARTY-LLM-CHATS",
         "FRONT-PANEL-MCU",
         "GONI-AGILITY-RULES",
@@ -3504,6 +3591,7 @@
         "GONI-PRINCIPLE-AD7B77937ECA",
         "GONI-PRINCIPLE-AF21F6040FDC",
         "GONI-PRINCIPLE-B40DDEFD1872",
+        "GONI-PRINCIPLE-COMPUTE-SEMANTIC-NEUTRALITY",
         "GONI-PRINCIPLE-D0161AB0CE1A",
         "GONI-PRINCIPLE-D03F6E9577A1",
         "GONI-PRINCIPLE-DB6A897B24AE",
@@ -3512,6 +3600,8 @@
         "GONI-PRINCIPLE-F53185B15CF9",
         "GONI-PRINCIPLE-FCA3E2C7A10C",
         "GONI-PRINCIPLE-FD9D88AD1223",
+        "GONI-PRINCIPLE-QUALIFIED-PROVIDER-SUBSTITUTABILITY",
+        "GONI-PRINCIPLE-VERIFICATION-BOUNDARIES",
         "GONI-PROPOSAL-05B21F15B3C6",
         "GONI-PROPOSAL-095C86A56DD4",
         "GONI-PROPOSAL-09EB7E4D771F",
@@ -4585,6 +4675,7 @@
         "GONI-SYNTHESIS-FEC452FE3082",
         "GONI-SYNTHESIS-FF1804B9EA23",
         "GONI-SYNTHESIS-FFFD0BDE80BE",
+        "GONI-SYNTHESIS-VERIFIED-COMPUTE-SUBSTRATE",
         "GONI-THESIS-3234CF1EA4B0",
         "GONI-THESIS-32FBF8431A3E",
         "GONI-THESIS-349EB2E79136",
@@ -4647,6 +4738,7 @@
         "REF-GONIOS-NEIGHBOR-01",
         "RELATED-PROJECTS",
         "REMOTE-LLM-ARCHITECTURE",
+        "RESULT-01",
         "RFC-0000-TEMPLATE",
         "ROBOT-01",
         "RUNTIME-00",
@@ -5443,6 +5535,7 @@
       ],
       "principle": [
         "AXIOMS-01",
+        "DIST-01",
         "DOCTRINE-DELEG-01",
         "GONI-PRINCIPLE-0147896F31C8",
         "GONI-PRINCIPLE-0F5A00F69914",
@@ -5483,6 +5576,7 @@
         "GONI-PRINCIPLE-AD7B77937ECA",
         "GONI-PRINCIPLE-AF21F6040FDC",
         "GONI-PRINCIPLE-B40DDEFD1872",
+        "GONI-PRINCIPLE-COMPUTE-SEMANTIC-NEUTRALITY",
         "GONI-PRINCIPLE-D0161AB0CE1A",
         "GONI-PRINCIPLE-D03F6E9577A1",
         "GONI-PRINCIPLE-DB6A897B24AE",
@@ -5490,7 +5584,9 @@
         "GONI-PRINCIPLE-E216CB231421",
         "GONI-PRINCIPLE-F53185B15CF9",
         "GONI-PRINCIPLE-FCA3E2C7A10C",
-        "GONI-PRINCIPLE-FD9D88AD1223"
+        "GONI-PRINCIPLE-FD9D88AD1223",
+        "GONI-PRINCIPLE-QUALIFIED-PROVIDER-SUBSTITUTABILITY",
+        "GONI-PRINCIPLE-VERIFICATION-BOUNDARIES"
       ],
       "proposal": [
         "AI-MEDIA-PROVENANCE",
@@ -5672,6 +5768,7 @@
         "CACHE-01",
         "CDC-01",
         "CGG-01",
+        "COMP-01",
         "CRDT-AUDIT-01",
         "CRDT-NOTES-01",
         "CRDT-PREFS-01",
@@ -5682,6 +5779,8 @@
         "DELEG-01",
         "DELEG-INT-01",
         "DREAM-01",
+        "EVID-01",
+        "EXEC-01",
         "GONI-SPEC-0010B69A98F0",
         "GONI-SPEC-00702E19937B",
         "GONI-SPEC-009C1109395A",
@@ -6113,6 +6212,7 @@
         "MODEL-REG-01",
         "NET-01",
         "REC-01",
+        "RESULT-01",
         "ROBOT-01",
         "SANDBOX-01",
         "SCHED-01",
@@ -6635,6 +6735,7 @@
         "GONI-SYNTHESIS-FEC452FE3082",
         "GONI-SYNTHESIS-FF1804B9EA23",
         "GONI-SYNTHESIS-FFFD0BDE80BE",
+        "GONI-SYNTHESIS-VERIFIED-COMPUTE-SUBSTRATE",
         "GONI-WHITEPAPER",
         "GOV-00",
         "LLM-COUNCIL",
@@ -10930,6 +11031,46 @@
       "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
     },
     {
+      "aliases": [
+        "computation-contract"
+      ],
+      "artifacts": [],
+      "body": "# Computation Specification\n\nA GONI Work Order or scheduler-visible Job may contain zero, one, or multiple computation specifications. The computation specification is below the delegation layer: it describes what computational result is acceptable, not whether the user has authorized the surrounding task.\n\nA canonical model is:\n\n[\nCSpec = (M, P, \\Phi, I, S, \\rho, \\Sigma, B, A)\n]\n\nwhere:\n\n- `M` is the execution mode;\n- `P` is an approved executable program or program identity when program execution is required;\n- `\\Phi` is an acceptance relation when satisfying a relation is sufficient;\n- `I` binds input data or input commitments;\n- `S` binds the starting state or state reference;\n- `\\rho` defines the randomness policy;\n- `\\Sigma` defines execution semantics;\n- `B` defines resource and placement bounds relevant to acceptable execution;\n- `A` defines the output and state-transition acceptance relation.\n\n## Execution modes\n\nTwo modes are explicitly different:\n\n1. `program_execution`: execute an approved program under the declared semantics.\n2. `relation_satisfaction`: return a result that satisfies an approved relation, allowing alternative implementations when policy permits.\n\nThe second mode permits optimization or provider-specific algorithms without pretending that the same physical instruction trace was executed.\n\n## Randomness policy\n\nA random seed is one possible input to `\\rho`; it is not, by itself, a complete reproducibility contract. The specification may also bind:\n\n- RNG family and version;\n- seed source or externally committed randomness;\n- randomness-consumption rules where material;\n- software and backend versions;\n- declared reproducibility scope.\n\nWhere unbiased randomness matters, the policy must define who can choose or influence the randomness and at what point it becomes committed.\n\n## Execution semantics\n\n`\\Sigma` may bind:\n\n- precision and numeric formats;\n- deterministic or tolerance-based semantics;\n- allowed kernels or backend classes;\n- compiler/runtime references;\n- hardware profile constraints;\n- comparison norm and tolerance when approximate equality is acceptable.\n\nA tolerance must define what is compared, against which reference, and at what stage of the computation.\n\n## Computation identity\n\nA computation identity may be derived from a canonical encoding of the specification:\n\n[\ncomputation\\_id = H(encode(CSpec))\n]\n\nThe binding mechanism must state its privacy properties. A plain hash can identify content but does not automatically hide low-entropy private input.\n\nThe computation identity is intentionally independent of payment, provider, and per-request settlement terms. Those belong to EXEC-01.",
+      "domains": [
+        "compute",
+        "kernel",
+        "specs"
+      ],
+      "id": "COMP-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/specifications/comp-01-computation-specification.md",
+      "proposition": "An authorized computation should be represented by a canonical computation specification that binds the program or relation, inputs, starting state, randomness policy, execution semantics, resource bounds, and acceptance relation independently of settlement terms.",
+      "relations": [
+        {
+          "note": "JOB-01 remains the scheduler-visible delegation job; COMP-01 defines the computation carried by a job.",
+          "target": "JOB-01",
+          "type": "refines"
+        },
+        {
+          "target": "GONI-PRINCIPLE-COMPUTE-SEMANTIC-NEUTRALITY",
+          "type": "depends_on"
+        },
+        {
+          "target": "GONI-DECISION-62ACE8B32A6F",
+          "type": "depends_on"
+        }
+      ],
+      "sources": [
+        "SRC-MLIR-OFFICIAL",
+        "SRC-PYTORCH-DETERMINISM"
+      ],
+      "status": "draft",
+      "title": "Computation Specification",
+      "type": "specification",
+      "uncertainty": "Canonical serialization, commitment primitives, and the exact boundary between executable-program mode and relation-satisfaction mode remain to be specified."
+    },
+    {
       "aliases": [],
       "artifacts": [],
       "body": "# CRDT: audit\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n# CRDT: audit\n﻿---\nid: CRDT-AUDIT-01\ntype: SPEC\nstatus: specified_only\n---\n\nStatus: Specified only / roadmap\n\nThis file defines merge semantics for audit artifacts.",
@@ -11328,6 +11469,41 @@
       "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
     },
     {
+      "aliases": [
+        "validity-availability-canonicality"
+      ],
+      "artifacts": [],
+      "body": "# Validity, availability, and canonicality are distinct\n\nFor a local single-authority GONI node, the kernel can ordinarily decide which state is authoritative.\n\nFor distributed execution, three questions must remain separate.\n\n## Validity\n\nDoes the proposed transition satisfy the accepted computation and policy relation?\n\nA proof, replay, or other evidence mechanism may establish this under its declared assumptions.\n\n## Availability\n\nCan authorized participants obtain the output, state delta, or other data required to use, reconstruct, audit, or continue from the transition?\n\nA commitment to data does not itself deliver the data.\n\n## Canonicality\n\nWhen multiple individually valid transitions or histories compete, which one is authoritative for subsequent work?\n\nCanonicality is a coordination property. It may be supplied by a single sovereign kernel, a replicated protocol, an external ledger, a consensus mechanism, or another explicit authority model.\n\nThe distinction can be summarized as:\n\n[\nvalid \\neq available \\neq canonical\n]\n\nGONI should introduce consensus or blockchain machinery only when the deployment actually requires distributed agreement over canonical state.",
+      "domains": [
+        "distributed",
+        "compute",
+        "kernel"
+      ],
+      "id": "DIST-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/principles/dist-01-validity-availability-canonicality.md",
+      "proposition": "In distributed execution, evidence that a state transition is valid does not by itself make the resulting data available or the transition canonical; GONI should model validity, availability, and canonicality as separate properties whenever authority spans multiple nodes or competing histories.",
+      "relations": [
+        {
+          "target": "EVID-01",
+          "type": "depends_on"
+        },
+        {
+          "target": "GONI-IMAP-ED288DB4EAF5",
+          "type": "refines"
+        }
+      ],
+      "sources": [
+        "SRC-ETHEREUM-CONSENSUS-VALIDATOR",
+        "SRC-ETHEREUM-DATA-AVAILABILITY"
+      ],
+      "status": "draft",
+      "title": "Validity, availability, and canonicality are distinct distributed-state properties",
+      "type": "principle",
+      "uncertainty": "This principle is future-facing for distributed GONI deployments; the local-first MVP can rely on a single kernel authority and does not require blockchain consensus."
+    },
+    {
       "aliases": [],
       "artifacts": [],
       "body": "# Delegation Doctrine\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n# Delegation Doctrine\nDOC-ID: DOCTRINE-DELEG-01\nStatus: Specified only / roadmap\n\nThis document states product-level doctrine. Normative behavior lives in\n`blueprint/30-specs/`.",
@@ -11491,6 +11667,46 @@
       "title": "Eval Lane",
       "type": "experiment",
       "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
+    },
+    {
+      "aliases": [
+        "computation-evidence-policy"
+      ],
+      "artifacts": [],
+      "body": "# Computation Evidence Contract\n\nA generic evidence field is not enough to state what has been established.\n\nThe execution contract should reference an evidence policy:\n\n[\nEvidencePolicy =\n(claim, mechanism, verifier, assumptions, freshness, privacy, composition)\n]\n\n## Evidence mechanisms\n\nThe vocabulary may include:\n\n- `cryptographic_proof`;\n- `hardware_attestation`;\n- `deterministic_replay`;\n- `independent_reexecution`;\n- `optimistic_challenge`;\n- `trusted_provider_attestation`;\n- `authenticated_telemetry`.\n\nThese mechanisms are typed rather than ranked on one universal security scale.\n\nA hardware attestation and a zero-knowledge proof do not provide the same guarantee. Two agreeing workers do not necessarily constitute independent evidence. A signed provider receipt does not prove that the provider's program was correct. A hash binds data identity under stated assumptions but is not itself execution evidence.\n\n## Required policy fields\n\nA policy should define:\n\n- `claim_type`: exactly what proposition is being checked;\n- `mechanism`: the evidence class;\n- `verifier_ref`: approved verifier, measurement root, or trust anchor;\n- `bound_artifacts`: program, input, state, output, and environment identities relevant to the claim;\n- `assumptions`: accepted cryptographic, hardware, provider, or challenge assumptions;\n- `freshness`: whether old evidence is reusable and which nonce, epoch, or timestamp constraints apply;\n- `privacy`: what the evidence hides from which party;\n- `composition`: how this evidence may be combined with evidence from other execution boundaries.\n\n## Privacy boundary\n\nZero knowledge concerns what a proof reveals to its verifier. It does not, by itself, guarantee that an outsourced worker never observed the private input. Confidential execution therefore remains a separate placement and trust requirement unless the evidence mechanism explicitly covers it.",
+      "domains": [
+        "compute",
+        "security",
+        "specs"
+      ],
+      "id": "EVID-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/specifications/evid-01-computation-evidence-contract.md",
+      "proposition": "Each execution contract should declare a typed evidence policy that defines the claim to establish, the accepted evidence mechanism, verifier, assumptions, freshness requirements, privacy properties, and composition rules.",
+      "relations": [
+        {
+          "target": "EXEC-01",
+          "type": "depends_on"
+        },
+        {
+          "target": "GONI-PRINCIPLE-VERIFICATION-BOUNDARIES",
+          "type": "depends_on"
+        },
+        {
+          "target": "REC-01",
+          "type": "refines"
+        }
+      ],
+      "sources": [
+        "SRC-RISC0-ZKVM",
+        "SRC-SP1-SECURITY",
+        "SRC-BOUNDLESS-PROOF-LIFECYCLE"
+      ],
+      "status": "draft",
+      "title": "Computation Evidence Contract",
+      "type": "specification",
+      "uncertainty": "The initial implementation may support only a subset of evidence types; cryptographic proof, hardware attestation, deterministic replay, and provider attestations carry different assumptions and should remain distinguishable."
     },
     {
       "aliases": [
@@ -12497,6 +12713,43 @@
       "uncertainty": "Reported throughput gains depend on workload, model, hardware, and runtime configuration and do not establish the cache-key or invalidation contract Goni should adopt."
     },
     {
+      "aliases": [
+        "compute-execution-contract"
+      ],
+      "artifacts": [],
+      "body": "# Execution Contract\n\nThe computation identity and the agreement to perform or deliver that computation are different objects.\n\nA conceptual execution contract is:\n\n[\nX = (\ncontract\\_id,\ncomputation\\_id,\nrequester,\nauthorization,\nevidence\\_policy,\nprivacy\\_policy,\ndelivery\\_terms,\ndeadline,\nbudget\\_or\\_price,\nsettlement\\_rule,\nnonce,\nidempotency\n)\n]\n\nThe contract is the GONI-facing agreement under which an authorized requester asks a local engine, remote provider, or future compute market to deliver an acceptable result.\n\n## Identity separation\n\n`computation_id` answers:\n\n> What computational relation or approved program execution is being requested?\n\n`contract_id` answers:\n\n> Under which authority, assurance, delivery, and economic terms is this particular request being made?\n\nThe same accepted result may be reusable across multiple contracts when policy permits. Reuse of a computational result must not imply reuse of a payment authorization.\n\n## Authority and replay control\n\nThe execution contract should bind, directly or by reference:\n\n- the requester or mandate authority;\n- the relevant capability/policy decision;\n- expiry or deadline;\n- a unique nonce or request identity;\n- settlement idempotency;\n- allowed provider or trust classes where applicable.\n\nThese fields connect the compute substrate to GONI's existing delegation kernel rather than creating a parallel authority system.\n\n## Acceptance boundary\n\nSuccessful computational verification is only one possible completion condition. Contract acceptance may additionally require:\n\n- the expected starting state to remain admissible;\n- required output data to be delivered or made accessible;\n- the requested privacy and evidence policy to be satisfied;\n- external side effects to return their own authenticated completion evidence;\n- settlement to remain authorized and unsettled.\n\nPayment remains a policy attached to accepted work, not an intrinsic property of computation.",
+      "domains": [
+        "compute",
+        "kernel",
+        "specs"
+      ],
+      "id": "EXEC-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/specifications/exec-01-execution-contract.md",
+      "proposition": "GONI should bind each procurement or delegated execution request to a distinct execution contract that references a computation identity and separately defines authority, evidence, privacy, delivery, deadline, budget or price, settlement, and replay-control terms.",
+      "relations": [
+        {
+          "target": "COMP-01",
+          "type": "depends_on"
+        },
+        {
+          "note": "The kernel job descriptor can reference one or more execution contracts without losing its governance fields.",
+          "target": "GONI-SPEC-D89F04D1E90A",
+          "type": "refines"
+        },
+        {
+          "target": "GONI-SPEC-841BF8F599B9",
+          "type": "depends_on"
+        }
+      ],
+      "sources": [],
+      "status": "draft",
+      "title": "Execution Contract",
+      "type": "specification",
+      "uncertainty": "The concrete signature format, offer/acceptance protocol, provider discovery mechanism, and settlement rail remain unspecified."
+    },
+    {
       "aliases": [],
       "artifacts": [],
       "body": "# First-party LLM Chats - Supplier / Ecosystem Card\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n# First-party LLM Chats - Supplier / Ecosystem Card\n\nSnapshot date: 2026-05-13",
@@ -12637,9 +12890,11 @@
     {
       "aliases": [],
       "artifacts": [],
-      "body": "# D-008 – Lyapunov / MaxWeight scheduler as the unique work arbiter\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n## D-008 – Lyapunov / MaxWeight scheduler as the unique work arbiter\n\n**Formal statement**\n\nAll work units (LLM calls, embeddings, indexing, compaction) are represented as jobs in the queueing network \\(\\mathcal{K}\\). No component is allowed to maintain a “hidden” unbounded queue outside \\(\\mathcal{K}\\).\n\nScheduling decisions are made exclusively by Policy K1 (MaxWeight) over classes 1–3.\n\n**Rationale**\n\n- Allows use of queueing theory to prove stability (Theorem 3.1).  \n- Prevents “queueing inside the queue” anti-patterns that make latencies opaque.\n\n**Consequence**\n\n- Libraries like LLM engines or indexers must expose backpressure / job API so that their work can be scheduled centrally.  \n- Introducing a new class of long-running task requires updating \\(\\mathcal{K}\\) and its invariants, not spinning up an ad-hoc thread pool.\n\n---",
+      "body": "# D-008 – Lyapunov / MaxWeight scheduler as the unique work arbiter\n\n> Status boundary: this remains a specified-only scheduling architecture. No claim is made that the full multi-resource or evidence-aware scheduler is implemented.\n\n## Formal statement\n\nAll work units, including model calls, embeddings, indexing, compaction, tool-support computation, and future external compute contracts, are represented as jobs in the queueing network `K`. No component should maintain a hidden unbounded work queue outside the kernel's scheduling boundary.\n\nFor compute-bearing jobs, the scheduler should consume the relevant COMP-01, EXEC-01, and EVID-01 metadata and jointly select:\n\n1. placement;\n2. execution path;\n3. evidence path.\n\nThe scheduler remains subordinate to kernel authority. A cheaper or faster placement is not eligible when it violates capability, privacy, sovereignty, evidence, or policy constraints.\n\n## Cost model\n\nCandidate routes should be compared using an explicit total-cost model rather than execution time alone:\n\n[\nC_{total} =\nC_{execution}\n+ C_{evidence}\n+ C_{verification}\n+ C_{transfer/storage}\n+ C_{coordination/settlement}\n+ E[C_{failure}]\n]\n\nLatency, energy, privacy exposure, or other objectives may be optimized separately where they are not reducible to a common monetary unit.\n\nThe scheduler should model locality and communication costs. A faster accelerator can lose end-to-end if moving model state, input data, intermediate tensors, or proof artifacts dominates the saved compute time.\n\n## Pre-execution versus post-execution facts\n\nThe scheduler can reason before execution about whether an evidence path is feasible and what it is expected to cost. It cannot generally assume `Verify(result) = true` before the result and evidence exist. Verification is an acceptance step after evidence production.\n\n## Consequences\n\n- Runtime engines and indexers expose backpressure and capability information.\n- Compute providers advertise capabilities rather than application identities.\n- Job descriptors can reference computation and evidence contracts without replacing delegation-level policy.\n- Adding a long-running work class requires updating `K` and its invariants rather than creating an ad-hoc queue.",
       "domains": [
-        "software"
+        "software",
+        "compute",
+        "scheduler"
       ],
       "id": "GONI-DECISION-0532C27DA3CC",
       "implementation_state": "specified_only",
@@ -12651,13 +12906,29 @@
         }
       ],
       "path": "knowledge/decisions/goni-decision-0532c27da3cc-d-008-lyapunov-maxweight-scheduler-as-the-unique-work-arbite.md",
-      "proposition": "**Formal statement** All work units (LLM calls, embeddings, indexing, compaction) are represented as jobs in the queueing network \\(\\mathcal{K}\\).",
-      "relations": [],
-      "sources": [],
+      "proposition": "All schedulable work enters the kernel queueing network, while compute-bearing jobs expose enough contract metadata for the scheduler to jointly choose placement, execution path, and acceptable evidence path without bypassing GONI authority.",
+      "relations": [
+        {
+          "target": "COMP-01",
+          "type": "depends_on"
+        },
+        {
+          "target": "EXEC-01",
+          "type": "depends_on"
+        },
+        {
+          "target": "EVID-01",
+          "type": "depends_on"
+        }
+      ],
+      "sources": [
+        "SRC-RAY-SCHEDULING-LOCALITY",
+        "SRC-ROOFLINE-CACM"
+      ],
       "status": "draft",
       "title": "D-008 – Lyapunov / MaxWeight scheduler as the unique work arbiter",
       "type": "decision",
-      "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
+      "uncertainty": "The exact MaxWeight objective, queue classes, estimator calibration, and multi-node scheduling policy require experiment-backed tuning."
     },
     {
       "aliases": [],
@@ -13541,9 +13812,10 @@
     {
       "aliases": [],
       "artifacts": [],
-      "body": "# D-015 - Deterministic inference preset for audit/self-loop workloads\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n## D-015 - Deterministic inference preset for audit/self-loop workloads\n\n**Formal statement**\n\nThe Execution plane exposes a deterministic preset. For any request marked deterministic:\n\n- temperature = 0 and fixed seed (if supported by backend),  \n- batch size = 1 with no continuous/dynamic batching,  \n- single worker/thread (or CPU-only fallback) and TF32 disabled on NVIDIA,  \n- deterministic backend flag enabled (e.g. vLLM `--enable-deterministic-inference`),  \n- blueprint/hardware/driver hashes recorded with the run.\n\n**Rationale**\n\n- Self-loop/agent chains have positive Lyapunov exponents; tiny numeric noise can flip tokens and diverge trajectories.  \n- Regulated or audited runs must be reproducible even at the cost of throughput.\n\n**Consequence**\n\n- Engines must provide a slower deterministic profile rather than silently ignoring the request.  \n- CI includes a self-loop drift check (bitwise-stable tokens across two runs) under the deterministic preset.  \n- Fast defaults may use batched/GPU paths, but the audit preset remains available and documented.\n\n---",
+      "body": "# D-015 - Deterministic inference preset for audit/self-loop workloads\n\n> Status boundary: this remains a specified-only design. Backend reproducibility must be measured and documented before stronger claims are made.\n\n## Formal statement\n\nThe Execution plane exposes a deterministic preset as a declared `execution_semantics` profile. A request marked deterministic binds the reproducibility scope and, where supported:\n\n- temperature = 0 for decoding paths where sampling is unnecessary;\n- fixed or externally committed RNG state when randomness is part of the computation;\n- batch size = 1 with continuous or dynamic batching disabled where batching can alter results;\n- constrained worker/thread behavior where concurrency changes operation order;\n- deterministic backend algorithms where available;\n- numerical modes relevant to reproducibility, including TF32 policy where applicable;\n- model, runtime, compiler, driver, and material hardware-profile hashes or versions.\n\nA seed alone is not treated as a sufficient reproducibility guarantee. The contract states the environment and semantic scope within which repeatability is expected.\n\n## Rationale\n\nSelf-loop and agent chains can amplify small numerical or token-level differences. Audited runs may therefore value reproducibility more highly than maximum throughput. PyTorch's deterministic-algorithm controls also illustrate the narrower guarantee: deterministic operation selection is useful, while full application reproducibility depends on additional environment and execution conditions.\n\n## Consequences\n\n- Engines should expose a slower deterministic profile rather than silently weakening a deterministic request.\n- CI should test the declared reproducibility property for supported profiles.\n- Fast defaults may use batched or accelerator-specific paths while the audit profile remains separately addressable.\n- Approximate or cross-platform profiles should declare their comparison relation and tolerance rather than being described as bitwise deterministic.",
       "domains": [
-        "software"
+        "software",
+        "compute"
       ],
       "id": "GONI-DECISION-62ACE8B32A6F",
       "implementation_state": "specified_only",
@@ -13555,13 +13827,21 @@
         }
       ],
       "path": "knowledge/decisions/goni-decision-62ace8b32a6f-d-015-deterministic-inference-preset-for-audit-self-loop-wor.md",
-      "proposition": "**Formal statement** The Execution plane exposes a deterministic preset.",
-      "relations": [],
-      "sources": [],
+      "proposition": "The Execution plane exposes a deterministic preset as one explicitly scoped execution-semantics profile rather than treating a seed alone as a reproducibility guarantee.",
+      "relations": [
+        {
+          "note": "D-015 is a concrete deterministic profile within the broader COMP-01 execution-semantics contract.",
+          "target": "COMP-01",
+          "type": "refines"
+        }
+      ],
+      "sources": [
+        "SRC-PYTORCH-DETERMINISM"
+      ],
       "status": "draft",
       "title": "D-015 - Deterministic inference preset for audit/self-loop workloads",
       "type": "decision",
-      "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
+      "uncertainty": "Backend-specific reproducibility guarantees vary by hardware, driver, runtime, and operation; exact supported profiles require implementation evidence."
     },
     {
       "aliases": [],
@@ -28919,10 +29199,11 @@
     {
       "aliases": [],
       "artifacts": [],
-      "body": "# Kernel-Blockchain Security Mapping\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n# Kernel-Blockchain Security Mapping\nStatus: Specified only / roadmap\n\nThis document maps Goni's agentic-kernel primitives to blockchain-facing roles\nusing systems and security terminology.\n\nThis is an analytical framing document, not a normative protocol spec.",
+      "body": "# Kernel-Blockchain Security Mapping\n\n> Status boundary: this is a specified-only analytical framing, not a claim that GONI uses or requires a blockchain.\n\nA blockchain-facing layer may provide some combination of:\n\n- shared ordering;\n- canonical state selection;\n- public or consortium commitments;\n- payment and settlement;\n- dispute or challenge mechanisms;\n- Sybil-resistance or validator-selection rules;\n- data-availability mechanisms.\n\nThe computation substrate may separately provide a result and typed evidence that an accepted relation was satisfied.\n\nThese roles must not be collapsed.\n\n[\nblockchain-facing\\ coordination\n\\neq\ncomputation\\ validity\n]\n\nA valid computation proof does not decide which of two competing valid histories becomes canonical. Conversely, consensus over a history does not prove that arbitrary off-chain computation was correct unless the consensus protocol explicitly incorporates the relevant verification rule.\n\nFor the local-first GONI MVP, the sovereign kernel remains the canonical authority. Distributed consensus is introduced only where the deployment requires multiple mutually distrustful parties to agree on shared state.",
       "domains": [
         "kernel",
-        "system"
+        "system",
+        "distributed"
       ],
       "id": "GONI-IMAP-ED288DB4EAF5",
       "implementation_state": "specified_only",
@@ -28934,13 +29215,25 @@
         }
       ],
       "path": "knowledge/implementation-maps/goni-imap-ed288db4eaf5-kernel-blockchain-security-mapping.md",
-      "proposition": "Status: Specified only / roadmap This document maps Goni's agentic-kernel primitives to blockchain-facing roles using systems and security terminology.",
-      "relations": [],
-      "sources": [],
+      "proposition": "Blockchain-facing mechanisms can supply external ordering, shared canonicality, data commitments, or settlement for GONI deployments, while computation validity, data availability, and authority remain separately specified contracts.",
+      "relations": [
+        {
+          "target": "DIST-01",
+          "type": "depends_on"
+        },
+        {
+          "target": "EXEC-01",
+          "type": "depends_on"
+        }
+      ],
+      "sources": [
+        "SRC-ETHEREUM-CONSENSUS-VALIDATOR",
+        "SRC-ETHEREUM-DATA-AVAILABILITY"
+      ],
       "status": "draft",
       "title": "Kernel-Blockchain Security Mapping",
       "type": "implementation-map",
-      "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
+      "uncertainty": "This is an analytical mapping, not a normative blockchain protocol or an MVP dependency."
     },
     {
       "aliases": [],
@@ -31183,6 +31476,41 @@
       "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
     },
     {
+      "aliases": [
+        "semantic-neutrality"
+      ],
+      "artifacts": [],
+      "body": "# Application-neutral execution with preserved semantics\n\nGONI should distinguish two different classification problems.\n\n## Governance semantics\n\nThe kernel still needs to know what an operation means in the delegated system. Existing categories such as `action`, `tool`, and `model` remain useful because authority, privacy, approval, rollback, and receipt requirements depend on them.\n\n## Execution semantics\n\nThe execution substrate should classify the actual computational work independently of the application that requested it. Candidate classes include:\n\n- scalar and control-flow work;\n- tensor and matrix work;\n- vector work;\n- hash and bitwise work;\n- finite-field or proof-oriented arithmetic;\n- memory and storage movement;\n- network transfer.\n\nA matrix multiplication does not become a different low-level operation because it originated in an LLM rather than a scientific simulation. Likewise, a hash operation does not need a different execution identity because it originated in a blockchain-facing workflow.\n\nApplication neutrality does not imply semantic neutrality in the correctness sense. The runtime must preserve every property that affects acceptable results, authority, security, privacy, resource placement, and cost.\n\nThe intended boundary is therefore:\n\n> application-neutral execution planning, with semantics-preserving governance and acceptance contracts.",
+      "domains": [
+        "compute",
+        "kernel",
+        "scheduler"
+      ],
+      "id": "GONI-PRINCIPLE-COMPUTE-SEMANTIC-NEUTRALITY",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/principles/goni-principle-compute-semantic-neutrality.md",
+      "proposition": "GONI should separate application-level meaning from execution-level operation semantics so identical computational operations can share one execution substrate without discarding correctness, authority, privacy, or acceptance semantics.",
+      "relations": [
+        {
+          "note": "The existing action/tool/model taxonomy remains a governance taxonomy while execution planning gains a lower-level operation taxonomy.",
+          "target": "GONI-SPEC-3C0787853B81",
+          "type": "refines"
+        },
+        {
+          "target": "GONI-SPEC-C2C63462FEAE",
+          "type": "depends_on"
+        }
+      ],
+      "sources": [
+        "SRC-MLIR-OFFICIAL"
+      ],
+      "status": "draft",
+      "title": "Application-neutral execution with preserved semantics",
+      "type": "principle",
+      "uncertainty": "This is a specified architectural principle. The concrete execution IR, operation taxonomy, and lowering stack remain open design choices."
+    },
+    {
       "aliases": [],
       "artifacts": [],
       "body": "# 1. Planes (partitioning)\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n## 1. Planes (partitioning)\n\n| Plane | Symbol | Lifetime | Sensitivity | Storage | Primary Keys |\n|-------|--------|----------|-------------|---------|--------------|\n| Knowledge | 𝒜 | Permanent | High (raw text) | Parquet + Lance v2 | `doc_id`, `chunk_id`, `embedding_id` |\n| Context | 𝒳 | ≤ 24 h | High (live prompts) | Memory + optional spill to encrypted tmp | `request_id`, `context_id` |\n| Control | 𝒦 | Permanent | Low (metadata only) | WAL + Parquet | `request_id`, `task_id` |\n| Execution | ℰ | Permanent | Low (aggregates) | Parquet (append-only) | `span_id`, `call_id` |",
@@ -31384,6 +31712,79 @@
       "title": "10. Safety Invariants",
       "type": "principle",
       "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
+    },
+    {
+      "aliases": [
+        "provider-substitutability"
+      ],
+      "artifacts": [],
+      "body": "# Standardized contracts enable qualified provider substitutability\n\nA common interface standardizes procurement and acceptance. It does not make every computation or every provider interchangeable.\n\nTwo providers are substitutable for an execution contract only if each can satisfy the relevant:\n\n- computation semantics;\n- required capability set;\n- memory and data-locality constraints;\n- privacy policy;\n- evidence policy;\n- deadline or latency objective;\n- trust or sovereignty boundary;\n- budget or accepted price.\n\nThe useful economic abstraction is therefore a service class of qualified providers rather than a single universal unit of fungible compute.\n\nThis principle keeps the GONI scheduler free to choose among local engines, remote providers, and future specialized hardware without erasing differences that materially affect correctness or total cost.",
+      "domains": [
+        "compute",
+        "scheduler",
+        "market"
+      ],
+      "id": "GONI-PRINCIPLE-QUALIFIED-PROVIDER-SUBSTITUTABILITY",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/principles/goni-principle-qualified-provider-substitutability.md",
+      "proposition": "A common computation contract can make providers substitutable only within service classes that satisfy the same semantic, capability, privacy, evidence, deadline, locality, and budget constraints; computation is not treated as globally fungible.",
+      "relations": [
+        {
+          "target": "COMP-01",
+          "type": "depends_on"
+        },
+        {
+          "target": "EXEC-01",
+          "type": "depends_on"
+        },
+        {
+          "target": "GONI-DECISION-0532C27DA3CC",
+          "type": "refines"
+        }
+      ],
+      "sources": [
+        "SRC-RAY-SCHEDULING-LOCALITY"
+      ],
+      "status": "draft",
+      "title": "Standardized contracts enable qualified provider substitutability",
+      "type": "principle",
+      "uncertainty": "Provider discovery, pricing, reputation, and market-clearing mechanisms remain outside the current GONI MVP."
+    },
+    {
+      "aliases": [
+        "verification-boundaries"
+      ],
+      "artifacts": [],
+      "body": "# Verification does not cross execution boundaries automatically\n\nA proof or replay of one layer does not automatically authenticate computation delegated beyond that layer.\n\nExamples include:\n\n- source program to compiler or lowering pipeline;\n- intermediate representation to target executable;\n- CPU host to GPU or NPU accelerator;\n- local scheduler to remote compute node;\n- model runtime to side-effectful external tool.\n\nIf a CPU program receives a tensor produced by an accelerator, proving only the host program's control flow is insufficient unless the accepted claim also constrains the tensor's relation to the accelerator inputs or the accelerator result is trusted through an explicitly accepted mechanism.\n\nLikewise, proving execution of an approved binary does not independently establish semantic equivalence between that binary and an unverified source program.\n\nFor each boundary, GONI should identify:\n\n1. the artifact or claim being bound;\n2. the component that is trusted;\n3. the evidence mechanism;\n4. the verifier or trust anchor;\n5. the residual assumptions;\n6. the failure and downgrade behavior.\n\nThe system may choose trust, replay, attestation, cryptographic proof, independent re-execution, or another mechanism. The architectural requirement is that the boundary remain explicit.",
+      "domains": [
+        "compute",
+        "security",
+        "kernel"
+      ],
+      "id": "GONI-PRINCIPLE-VERIFICATION-BOUNDARIES",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/principles/goni-principle-verification-boundaries.md",
+      "proposition": "Evidence that one execution layer behaved correctly does not automatically establish correctness of delegated work performed outside that layer; compiler, accelerator, remote-node, and external-tool boundaries require explicit trust or verification semantics.",
+      "relations": [
+        {
+          "target": "COMP-01",
+          "type": "depends_on"
+        },
+        {
+          "target": "EVID-01",
+          "type": "supports"
+        }
+      ],
+      "sources": [
+        "SRC-RISC0-ZKVM",
+        "SRC-SP1-SECURITY"
+      ],
+      "status": "draft",
+      "title": "Verification does not cross execution boundaries automatically",
+      "type": "principle",
+      "uncertainty": "Concrete proof composition, compiler-validation, accelerator-checking, and remote attestation mechanisms remain workload- and backend-specific."
     },
     {
       "aliases": [],
@@ -35673,9 +36074,10 @@
     {
       "aliases": [],
       "artifacts": [],
-      "body": "# 6. Provenance format (minimal)\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n## 6. Provenance format (minimal)\n\n`provenance` is a structured object that includes:\n\n- `source`: origin (observer, encoder, tool, agent).\n- `timestamp`: event time (UTC).\n- `inputs`: references to upstream record IDs.\n- `permissions`: policy tags in effect.",
+      "body": "# 6. Provenance format (minimal)\n\n`provenance` is a structured object that can include:\n\n- `source`: origin such as observer, encoder, tool, agent, connector, or external provider;\n- `content_hash`: identity of the observed or derived content where appropriate;\n- `observed_at`: when GONI observed the item;\n- `valid_at`: the external time or state for which the item claims relevance;\n- `expires_at` or `freshness_policy`: when the item requires refresh;\n- `inputs`: references to upstream records;\n- `permissions`: policy tags in effect;\n- `authenticity_evidence_refs`: signatures, authenticated connector receipts, attestations, or other evidence where available;\n- `trust_domain`: the authority or boundary within which the provenance claim is accepted.\n\n## Semantic boundary\n\nProvenance answers where a datum came from and how it was derived.\n\nIt does not automatically establish that:\n\n- the originating source was truthful;\n- the source was authorized;\n- the data was fresh enough for the current decision;\n- the external event described by the data actually occurred.\n\nThose properties require separate evidence, connector guarantees, or policy assumptions. A timestamp alone is not a freshness guarantee, and a content hash alone is not an authenticity guarantee.",
       "domains": [
-        "specs"
+        "specs",
+        "provenance"
       ],
       "id": "GONI-SPEC-104305990009",
       "implementation_state": "specified_only",
@@ -35687,13 +36089,20 @@
         }
       ],
       "path": "knowledge/specifications/goni-spec-104305990009-6-provenance-format-minimal.md",
-      "proposition": "provenance is a structured object that includes: source: origin (observer, encoder, tool, agent).",
-      "relations": [],
-      "sources": [],
+      "proposition": "Provenance records origin and derivation, while authenticity and freshness claims require explicit evidence and validity intervals rather than being inferred from a source label or timestamp.",
+      "relations": [
+        {
+          "target": "RESULT-01",
+          "type": "refines"
+        }
+      ],
+      "sources": [
+        "SRC-W3C2013-PROV"
+      ],
       "status": "draft",
       "title": "6. Provenance format (minimal)",
       "type": "specification",
-      "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
+      "uncertainty": "Source-specific authenticity mechanisms and freshness windows depend on connector, data class, and task semantics."
     },
     {
       "aliases": [],
@@ -41947,9 +42356,11 @@
     {
       "aliases": [],
       "artifacts": [],
-      "body": "# 2. Metering dimensions (normative)\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n## 2. Metering dimensions (normative)\nFor each execution, the runtime MUST capture where applicable:\n- `tokens_in`, `tokens_out`\n- `latency_ms`\n- `tool_calls`\n- `bytes_egress`\n- `ram_peak_bytes`",
+      "body": "# 2. Metering dimensions (normative)\n\nFor each execution, the runtime should capture applicable counters while keeping different claim types explicit.\n\n## Logical metering\n\nExamples:\n\n- `tokens_in`, `tokens_out`;\n- logical operation or workload units;\n- input/output bytes;\n- proof-system workload units where defined;\n- tool-call count.\n\n## Physical metering\n\nExamples:\n\n- wall-clock latency;\n- accelerator or CPU occupancy time;\n- peak memory;\n- bytes transferred;\n- measured energy where a supported counter exists;\n- bandwidth or storage utilization where material.\n\n## Economic metering\n\nExamples:\n\n- quoted or reserved amount;\n- accepted execution price;\n- verification cost;\n- transfer/storage cost;\n- settlement amount.\n\n## Meter assurance\n\nEvery consequential meter may declare how it was obtained:\n\n- `self_reported`;\n- `runtime_measured`;\n- `host_attested`;\n- `externally_metered`;\n- another explicitly defined mechanism.\n\n## Non-equivalence rules\n\nA proof that a result satisfies a computation relation does not by itself prove how many joules, seconds, or accelerator-hours a physical provider consumed.\n\nLikewise, authenticated telemetry about physical resource use does not by itself prove computational correctness.\n\nA result or proof may be reusable. Therefore:\n\n[\nvalid\\ result \\neq proof\\ of\\ fresh\\ physical\\ expenditure\n]\n\nWhen a protocol specifically requires fresh work, freshness must be an explicit evidence claim with its own nonce, challenge, timing, or trusted-meter semantics.\n\nWhere the objective is delivery of an acceptable result, GONI should prefer result-based acceptance and allow permitted caching or reuse rather than rewarding unnecessary physical expenditure.",
       "domains": [
-        "specs"
+        "specs",
+        "compute",
+        "metering"
       ],
       "id": "GONI-SPEC-A221A420C8C4",
       "implementation_state": "specified_only",
@@ -41961,13 +42372,22 @@
         }
       ],
       "path": "knowledge/specifications/goni-spec-a221a420c8c4-2-metering-dimensions-normative.md",
-      "proposition": "For each execution, the runtime MUST capture where applicable: tokens_in, tokens_out latency_ms tool_calls bytes_egress ram_peak_bytes",
-      "relations": [],
+      "proposition": "GONI should separate logical, physical, economic, and assurance dimensions of execution metering so result correctness, resource consumption, and payment claims are not conflated.",
+      "relations": [
+        {
+          "target": "METER-01",
+          "type": "refines"
+        },
+        {
+          "target": "EVID-01",
+          "type": "depends_on"
+        }
+      ],
       "sources": [],
       "status": "draft",
       "title": "2. Metering dimensions (normative)",
       "type": "specification",
-      "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
+      "uncertainty": "Hardware energy counters, provider telemetry, and cost attribution vary by platform; individual fields require capability discovery and confidence labels."
     },
     {
       "aliases": [],
@@ -59352,6 +59772,63 @@
       "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
     },
     {
+      "aliases": [
+        "verified-compute-substrate"
+      ],
+      "artifacts": [],
+      "body": "# Verified Compute Substrate\n\nGONI remains a sovereign Delegation OS. The verified compute substrate is a lower layer inside the Execution Plane, not a replacement for the authority kernel.\n\nThe architectural flow is:\n\n[\nMandate\n\\rightarrow Work\\ Order\n\\rightarrow Kernel\\ Authority\n\\rightarrow Computation\\ Specification\n\\rightarrow Execution\\ Contract\n\\rightarrow Placement+Evidence\\ Planning\n\\rightarrow Execution\n\\rightarrow Evidence\n\\rightarrow Result\\ Receipt\n\\rightarrow State/Effect\n]\n\nSettlement is attached where economically relevant; it is not intrinsic to computation.\n\n## Layer boundary\n\nThe kernel answers:\n\n> May this work be performed, with these data, powers, constraints, and external effects?\n\nThe compute substrate answers:\n\n> Given that authority, what computation is acceptable, where can it execute, what evidence must accompany it, and what result can the kernel accept?\n\nThis preserves GONI's existing doctrine:\n\n> Models reason. The kernel authorizes. Tools act. Receipts prove what was authorized and observed.\n\nThe stronger compute formulation refines the last clause: receipts carry typed evidence and provenance; they do not magically turn every claim into cryptographic proof.\n\n## Common contract, heterogeneous execution\n\nThe substrate should expose one contract family across heterogeneous CPU, GPU, NPU, proof-oriented, remote, or future specialized resources. It remains physically specialized and locality-aware.\n\nThe scheduler chooses among qualified routes using execution cost, evidence cost, verification cost, transfer/storage cost, expected failure cost, latency, energy, privacy, and sovereignty constraints.\n\n## Research claim\n\nThe potentially valuable contribution is not that individual primitives are novel. Heterogeneous compilation, verifiable computation, distributed scheduling, provenance, and settlement all have prior art.\n\nThe GONI-specific research question is whether these can be composed beneath a sovereign delegation kernel so that:\n\n1. application meaning remains governed;\n2. computation becomes addressable through a common contract;\n3. execution and assurance are planned jointly;\n4. results carry typed evidence and canonical receipts;\n5. provider substitution is possible within explicit service classes;\n6. the full system improves end-to-end cost or assurance for meaningful workloads.\n\nThe next proof should be empirical: one contract interface, several computational profiles, multiple execution/evidence paths, and measured end-to-end tradeoffs.",
+      "domains": [
+        "compute",
+        "kernel",
+        "scheduler",
+        "receipts"
+      ],
+      "id": "GONI-SYNTHESIS-VERIFIED-COMPUTE-SUBSTRATE",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/syntheses/verified-compute-substrate.md",
+      "proposition": "GONI can extend its Execution Plane with a policy-defined, evidence-carrying compute substrate that preserves delegation authority while making heterogeneous computation addressable through common contracts.",
+      "relations": [
+        {
+          "target": "GONI-PRINCIPLE-COMPUTE-SEMANTIC-NEUTRALITY",
+          "type": "synthesizes"
+        },
+        {
+          "target": "COMP-01",
+          "type": "synthesizes"
+        },
+        {
+          "target": "EXEC-01",
+          "type": "synthesizes"
+        },
+        {
+          "target": "GONI-PRINCIPLE-VERIFICATION-BOUNDARIES",
+          "type": "synthesizes"
+        },
+        {
+          "target": "EVID-01",
+          "type": "synthesizes"
+        },
+        {
+          "target": "RESULT-01",
+          "type": "synthesizes"
+        },
+        {
+          "target": "GONI-PRINCIPLE-QUALIFIED-PROVIDER-SUBSTITUTABILITY",
+          "type": "synthesizes"
+        },
+        {
+          "target": "DIST-01",
+          "type": "synthesizes"
+        }
+      ],
+      "sources": [],
+      "status": "draft",
+      "title": "Verified Compute Substrate",
+      "type": "synthesis",
+      "uncertainty": "This synthesis describes a research and architecture direction. It does not establish implementation, scalability, proof economics, or a global compute market."
+    },
+    {
       "aliases": [],
       "artifacts": [],
       "body": "# 9. Local-First Computing and Network Governance\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n## 9. Local-First Computing and Network Governance\n\nGoni's local-first thesis is not simply that models run on local\nhardware. Local-first means that core functions are intended to be computable\nusing local state and local compute; network access is capability-scoped;\nexternal calls are optional, transparent, budgeted, and receipt-linked; and\nremote model usage passes through an explicit network gate in the target\narchitecture.\n\nThis is important because \"local AI\" can become marketing if network behavior\nremains implicit. A serious sovereign AI system treats network egress as an\neffect requiring governance. Private memory is not intended to leak to cloud\nservices by accident. Remote inference does not occur merely because a model router\nfound it convenient. The network gate is therefore a core authority boundary,\nnot an implementation detail.\n\nThe simplest early version of this principle is strict: default-deny egress as\nthe design intent, one mediated egress API, explicit policy modes, and receipts\nfor outbound calls. More complex modes can emerge later, but the first proof\nneeds to show that local-first behavior is testable rather than aspirational. The\nnetwork gate design is specified in\n[network-gate-and-anonymity.md](/blueprint/30-specs/network-gate-and-anonymity.md).",
@@ -61446,6 +61923,48 @@
       "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
     },
     {
+      "aliases": [
+        "result-receipt"
+      ],
+      "artifacts": [],
+      "body": "# Computation Result Receipt\n\nGONI should reuse its canonical receipt architecture rather than create a parallel compute-market log.\n\nA computation result receipt should carry or reference:\n\n- `contract_id`;\n- `computation_id`;\n- `provider_or_executor_ref`;\n- `output_ref` or output commitment;\n- `starting_state_ref`;\n- `resulting_state_ref` or state-delta reference;\n- `evidence_policy_ref`;\n- `evidence_refs`;\n- `metering_refs`;\n- `delivery_status`;\n- `acceptance_decision`;\n- `settlement_ref` when economic settlement applies.\n\nThe receipt records which claim was accepted under which contract. It does not turn all referenced evidence into the same assurance type.\n\n## Acceptance is broader than proof verification\n\nA valid proof or attestation may be necessary without being sufficient for contract completion. Acceptance can additionally require:\n\n- the referenced starting state to remain admissible;\n- required output data to be delivered or available;\n- the requested privacy constraints to have been met;\n- external side effects to return their own authenticated completion evidence;\n- the payment authorization to remain valid and unsettled.\n\nThe existing GONI receipt remains the governance record. RESULT-01 adds computation-specific bindings to that record.",
+      "domains": [
+        "compute",
+        "receipts",
+        "specs"
+      ],
+      "id": "RESULT-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/specifications/result-01-computation-result-receipt.md",
+      "proposition": "Accepted computation results should extend GONI's canonical receipt system with bindings to the execution contract, computation identity, output and state references, evidence, metering, delivery status, and acceptance decision.",
+      "relations": [
+        {
+          "target": "EXEC-01",
+          "type": "depends_on"
+        },
+        {
+          "target": "EVID-01",
+          "type": "depends_on"
+        },
+        {
+          "target": "REC-01",
+          "type": "refines"
+        },
+        {
+          "target": "GONI-SPEC-67C20FD1E8A7",
+          "type": "refines"
+        }
+      ],
+      "sources": [
+        "SRC-BOUNDLESS-PROOF-LIFECYCLE"
+      ],
+      "status": "draft",
+      "title": "Computation Result Receipt",
+      "type": "specification",
+      "uncertainty": "Exact receipt schema fields and storage references remain to be added to a machine-readable schema before implementation."
+    },
+    {
       "aliases": [],
       "artifacts": [],
       "body": "# RFC Template\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n# RFC Template\n\nTitle: RFC-0000: <short title>\nStatus: draft",
@@ -63063,6 +63582,61 @@
     },
     {
       "projection": "generated",
+      "source": "COMP-01",
+      "target": "EXEC-01",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
+      "source": "COMP-01",
+      "target": "GONI-DECISION-0532C27DA3CC",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
+      "source": "COMP-01",
+      "target": "GONI-PRINCIPLE-QUALIFIED-PROVIDER-SUBSTITUTABILITY",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
+      "source": "COMP-01",
+      "target": "GONI-PRINCIPLE-VERIFICATION-BOUNDARIES",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "authored",
+      "source": "COMP-01",
+      "target": "GONI-DECISION-62ACE8B32A6F",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "COMP-01",
+      "target": "GONI-PRINCIPLE-COMPUTE-SEMANTIC-NEUTRALITY",
+      "type": "depends_on"
+    },
+    {
+      "projection": "generated",
+      "source": "COMP-01",
+      "target": "GONI-DECISION-62ACE8B32A6F",
+      "type": "refined_by"
+    },
+    {
+      "note": "JOB-01 remains the scheduler-visible delegation job; COMP-01 defines the computation carried by a job.",
+      "projection": "authored",
+      "source": "COMP-01",
+      "target": "JOB-01",
+      "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "COMP-01",
+      "target": "GONI-SYNTHESIS-VERIFIED-COMPUTE-SUBSTRATE",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "generated",
       "source": "CTX-COMP-01",
       "target": "CTX-MISS-01",
       "type": "depended_on_by"
@@ -63183,6 +63757,30 @@
     },
     {
       "projection": "generated",
+      "source": "DIST-01",
+      "target": "GONI-IMAP-ED288DB4EAF5",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "authored",
+      "source": "DIST-01",
+      "target": "EVID-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "DIST-01",
+      "target": "GONI-IMAP-ED288DB4EAF5",
+      "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "DIST-01",
+      "target": "GONI-SYNTHESIS-VERIFIED-COMPUTE-SUBSTRATE",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "generated",
       "source": "DOCTRINE-DELEG-01",
       "target": "GONI-EVIDENCE-25F334DB139D",
       "type": "supported_by"
@@ -63252,6 +63850,60 @@
       "source": "DREAM-EVAL-01",
       "target": "DREAM-01",
       "type": "tests"
+    },
+    {
+      "projection": "generated",
+      "source": "EVID-01",
+      "target": "DIST-01",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
+      "source": "EVID-01",
+      "target": "GONI-DECISION-0532C27DA3CC",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
+      "source": "EVID-01",
+      "target": "GONI-SPEC-A221A420C8C4",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
+      "source": "EVID-01",
+      "target": "RESULT-01",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "authored",
+      "source": "EVID-01",
+      "target": "EXEC-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "EVID-01",
+      "target": "GONI-PRINCIPLE-VERIFICATION-BOUNDARIES",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "EVID-01",
+      "target": "REC-01",
+      "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "EVID-01",
+      "target": "GONI-PRINCIPLE-VERIFICATION-BOUNDARIES",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "EVID-01",
+      "target": "GONI-SYNTHESIS-VERIFIED-COMPUTE-SUBSTRATE",
+      "type": "synthesized_by"
     },
     {
       "projection": "authored",
@@ -63362,6 +64014,61 @@
       "type": "supports"
     },
     {
+      "projection": "generated",
+      "source": "EXEC-01",
+      "target": "EVID-01",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
+      "source": "EXEC-01",
+      "target": "GONI-DECISION-0532C27DA3CC",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
+      "source": "EXEC-01",
+      "target": "GONI-IMAP-ED288DB4EAF5",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
+      "source": "EXEC-01",
+      "target": "GONI-PRINCIPLE-QUALIFIED-PROVIDER-SUBSTITUTABILITY",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
+      "source": "EXEC-01",
+      "target": "RESULT-01",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "authored",
+      "source": "EXEC-01",
+      "target": "COMP-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "EXEC-01",
+      "target": "GONI-SPEC-841BF8F599B9",
+      "type": "depends_on"
+    },
+    {
+      "note": "The kernel job descriptor can reference one or more execution contracts without losing its governance fields.",
+      "projection": "authored",
+      "source": "EXEC-01",
+      "target": "GONI-SPEC-D89F04D1E90A",
+      "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "EXEC-01",
+      "target": "GONI-SYNTHESIS-VERIFIED-COMPUTE-SUBSTRATE",
+      "type": "synthesized_by"
+    },
+    {
       "projection": "authored",
       "source": "GONI-AGILITY-RULES",
       "target": "GONI-SYNTHESIS-1025792B19DF",
@@ -63380,10 +64087,47 @@
       "type": "synthesizes"
     },
     {
+      "projection": "authored",
+      "source": "GONI-DECISION-0532C27DA3CC",
+      "target": "COMP-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-DECISION-0532C27DA3CC",
+      "target": "EVID-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-DECISION-0532C27DA3CC",
+      "target": "EXEC-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-DECISION-0532C27DA3CC",
+      "target": "GONI-PRINCIPLE-QUALIFIED-PROVIDER-SUBSTITUTABILITY",
+      "type": "refined_by"
+    },
+    {
       "projection": "generated",
       "source": "GONI-DECISION-05A8056FB235",
       "target": "GONI-SYNTHESIS-15FDDF75571E",
       "type": "synthesized_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-DECISION-62ACE8B32A6F",
+      "target": "COMP-01",
+      "type": "depended_on_by"
+    },
+    {
+      "note": "D-015 is a concrete deterministic profile within the broader COMP-01 execution-semantics contract.",
+      "projection": "authored",
+      "source": "GONI-DECISION-62ACE8B32A6F",
+      "target": "COMP-01",
+      "type": "refines"
     },
     {
       "projection": "generated",
@@ -64274,6 +65018,24 @@
       "type": "supported_by"
     },
     {
+      "projection": "authored",
+      "source": "GONI-IMAP-ED288DB4EAF5",
+      "target": "DIST-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-IMAP-ED288DB4EAF5",
+      "target": "EXEC-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-IMAP-ED288DB4EAF5",
+      "target": "DIST-01",
+      "type": "refined_by"
+    },
+    {
       "projection": "generated",
       "source": "GONI-IMAP-ED288DB4EAF5",
       "target": "GONI-EVIDENCE-13C362D5AB70",
@@ -64461,6 +65223,85 @@
     },
     {
       "projection": "generated",
+      "source": "GONI-PRINCIPLE-COMPUTE-SEMANTIC-NEUTRALITY",
+      "target": "COMP-01",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-PRINCIPLE-COMPUTE-SEMANTIC-NEUTRALITY",
+      "target": "GONI-SPEC-C2C63462FEAE",
+      "type": "depends_on"
+    },
+    {
+      "note": "The existing action/tool/model taxonomy remains a governance taxonomy while execution planning gains a lower-level operation taxonomy.",
+      "projection": "authored",
+      "source": "GONI-PRINCIPLE-COMPUTE-SEMANTIC-NEUTRALITY",
+      "target": "GONI-SPEC-3C0787853B81",
+      "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-PRINCIPLE-COMPUTE-SEMANTIC-NEUTRALITY",
+      "target": "GONI-SYNTHESIS-VERIFIED-COMPUTE-SUBSTRATE",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-PRINCIPLE-QUALIFIED-PROVIDER-SUBSTITUTABILITY",
+      "target": "COMP-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-PRINCIPLE-QUALIFIED-PROVIDER-SUBSTITUTABILITY",
+      "target": "EXEC-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-PRINCIPLE-QUALIFIED-PROVIDER-SUBSTITUTABILITY",
+      "target": "GONI-DECISION-0532C27DA3CC",
+      "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-PRINCIPLE-QUALIFIED-PROVIDER-SUBSTITUTABILITY",
+      "target": "GONI-SYNTHESIS-VERIFIED-COMPUTE-SUBSTRATE",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-PRINCIPLE-VERIFICATION-BOUNDARIES",
+      "target": "EVID-01",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-PRINCIPLE-VERIFICATION-BOUNDARIES",
+      "target": "COMP-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-PRINCIPLE-VERIFICATION-BOUNDARIES",
+      "target": "EVID-01",
+      "type": "supports"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-PRINCIPLE-VERIFICATION-BOUNDARIES",
+      "target": "GONI-SYNTHESIS-VERIFIED-COMPUTE-SUBSTRATE",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SPEC-104305990009",
+      "target": "RESULT-01",
+      "type": "refines"
+    },
+    {
+      "projection": "generated",
       "source": "GONI-SPEC-2F762878317A",
       "target": "CTX-COMP-01",
       "type": "refined_by"
@@ -64491,9 +65332,27 @@
     },
     {
       "projection": "generated",
+      "source": "GONI-SPEC-3C0787853B81",
+      "target": "GONI-PRINCIPLE-COMPUTE-SEMANTIC-NEUTRALITY",
+      "type": "refined_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-SPEC-67C20FD1E8A7",
+      "target": "RESULT-01",
+      "type": "refined_by"
+    },
+    {
+      "projection": "generated",
       "source": "GONI-SPEC-75D0D2E5F296",
       "target": "GONI-SYNTHESIS-E3B321C24C67",
       "type": "synthesized_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-SPEC-841BF8F599B9",
+      "target": "EXEC-01",
+      "type": "depended_on_by"
     },
     {
       "projection": "generated",
@@ -64506,6 +65365,18 @@
       "source": "GONI-SPEC-9D8A0A7F0F70",
       "target": "EVID-LI2021-PREFIX-TUNING",
       "type": "supported_by"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SPEC-A221A420C8C4",
+      "target": "EVID-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SPEC-A221A420C8C4",
+      "target": "METER-01",
+      "type": "refines"
     },
     {
       "projection": "generated",
@@ -64553,6 +65424,18 @@
       "projection": "generated",
       "source": "GONI-SPEC-B49DB23CF412",
       "target": "INF-FRAME-01",
+      "type": "refined_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-SPEC-C2C63462FEAE",
+      "target": "GONI-PRINCIPLE-COMPUTE-SEMANTIC-NEUTRALITY",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-SPEC-D89F04D1E90A",
+      "target": "EXEC-01",
       "type": "refined_by"
     },
     {
@@ -68570,6 +69453,54 @@
       "type": "synthesized_by"
     },
     {
+      "projection": "authored",
+      "source": "GONI-SYNTHESIS-VERIFIED-COMPUTE-SUBSTRATE",
+      "target": "COMP-01",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SYNTHESIS-VERIFIED-COMPUTE-SUBSTRATE",
+      "target": "DIST-01",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SYNTHESIS-VERIFIED-COMPUTE-SUBSTRATE",
+      "target": "EVID-01",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SYNTHESIS-VERIFIED-COMPUTE-SUBSTRATE",
+      "target": "EXEC-01",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SYNTHESIS-VERIFIED-COMPUTE-SUBSTRATE",
+      "target": "GONI-PRINCIPLE-COMPUTE-SEMANTIC-NEUTRALITY",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SYNTHESIS-VERIFIED-COMPUTE-SUBSTRATE",
+      "target": "GONI-PRINCIPLE-QUALIFIED-PROVIDER-SUBSTITUTABILITY",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SYNTHESIS-VERIFIED-COMPUTE-SUBSTRATE",
+      "target": "GONI-PRINCIPLE-VERIFICATION-BOUNDARIES",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SYNTHESIS-VERIFIED-COMPUTE-SUBSTRATE",
+      "target": "RESULT-01",
+      "type": "synthesizes"
+    },
+    {
       "projection": "generated",
       "source": "GONI-THESIS-468CFFD9870E",
       "target": "GONI-SYNTHESIS-0FE689876A05",
@@ -68718,6 +69649,12 @@
       "source": "INF-FRAME-01",
       "target": "GONI-SPEC-B49DB23CF412",
       "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "JOB-01",
+      "target": "COMP-01",
+      "type": "refined_by"
     },
     {
       "projection": "authored",
@@ -68928,6 +69865,12 @@
       "source": "MEMORY-ARCHITECTURE",
       "target": "GONI-SYNTHESIS-AE048AF3026D",
       "type": "synthesizes"
+    },
+    {
+      "projection": "generated",
+      "source": "METER-01",
+      "target": "GONI-SPEC-A221A420C8C4",
+      "type": "refined_by"
     },
     {
       "projection": "authored",
@@ -69411,6 +70354,18 @@
     },
     {
       "projection": "generated",
+      "source": "REC-01",
+      "target": "EVID-01",
+      "type": "refined_by"
+    },
+    {
+      "projection": "generated",
+      "source": "REC-01",
+      "target": "RESULT-01",
+      "type": "refined_by"
+    },
+    {
+      "projection": "generated",
       "source": "REF-GONIOS-NEIGHBOR-01",
       "target": "GONI-EVIDENCE-180EEFB60BD6",
       "type": "supported_by"
@@ -69654,6 +70609,42 @@
       "source": "REMOTE-LLM-ARCHITECTURE",
       "target": "GONI-SYNTHESIS-E329A28EADBF",
       "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "RESULT-01",
+      "target": "EVID-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "RESULT-01",
+      "target": "EXEC-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "generated",
+      "source": "RESULT-01",
+      "target": "GONI-SPEC-104305990009",
+      "type": "refined_by"
+    },
+    {
+      "projection": "authored",
+      "source": "RESULT-01",
+      "target": "GONI-SPEC-67C20FD1E8A7",
+      "type": "refines"
+    },
+    {
+      "projection": "authored",
+      "source": "RESULT-01",
+      "target": "REC-01",
+      "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "RESULT-01",
+      "target": "GONI-SYNTHESIS-VERIFIED-COMPUTE-SUBSTRATE",
+      "type": "synthesized_by"
     },
     {
       "projection": "authored",
@@ -70279,6 +71270,16 @@
       "url": "https://github.com/black-forest-labs/flux"
     },
     {
+      "accessed": "2026-10-04",
+      "citation": "https://docs.boundless.network/developers/proof-lifecycle",
+      "id": "SRC-BOUNDLESS-PROOF-LIFECYCLE",
+      "kind": "web",
+      "notes": "Official Boundless documentation describing proof requests, provider participation, fulfillment, verification, and payment across a proving market lifecycle.",
+      "path": "sources/src-boundless-proof-lifecycle.yml",
+      "title": "Boundless proof lifecycle",
+      "url": "https://docs.boundless.network/developers/proof-lifecycle"
+    },
+    {
       "citation": "https://www.researchgate.net/publication/2914496_Human-Agent_Teamwork_and_Adjustable_Autonomy_in_Practice",
       "id": "SRC-BRADSHAW2004-ADJUSTABLE-AUTONOMY",
       "kind": "web",
@@ -70421,6 +71422,16 @@
       "path": "sources/src-ethereum-consensus-validator.yml",
       "title": "ethereum-consensus-validator",
       "url": "https://ethereum.github.io/consensus-specs/specs/phase0/validator/"
+    },
+    {
+      "accessed": "2026-10-04",
+      "citation": "https://ethereum.org/en/developers/docs/data-availability/",
+      "id": "SRC-ETHEREUM-DATA-AVAILABILITY",
+      "kind": "web",
+      "notes": "Ethereum developer documentation distinguishing availability of state-transition data from validity of computation and explaining why data must remain retrievable for independent reconstruction.",
+      "path": "sources/src-ethereum-data-availability.yml",
+      "title": "Ethereum data availability documentation",
+      "url": "https://ethereum.org/en/developers/docs/data-availability/"
     },
     {
       "citation": "https://huggingface.co/papers/2305.05176",
@@ -70736,6 +71747,16 @@
       "url": "https://arxiv.org/abs/1810.03993"
     },
     {
+      "accessed": "2026-10-04",
+      "citation": "https://mlir.llvm.org/",
+      "id": "SRC-MLIR-OFFICIAL",
+      "kind": "web",
+      "notes": "Official MLIR documentation describing reusable multi-level compiler infrastructure for heterogeneous hardware and lowering from higher-level representations toward target-specific code.",
+      "path": "sources/src-mlir-official.yml",
+      "title": "MLIR - Multi-Level Intermediate Representation",
+      "url": "https://mlir.llvm.org/"
+    },
+    {
       "citation": "https://datatracker.ietf.org/doc/draft-nelson-agent-delegation-receipts/",
       "id": "SRC-NELSON2026-DELEGATION-RECEIPTS",
       "kind": "web",
@@ -70818,6 +71839,16 @@
       "url": "https://arxiv.org/abs/2302.10866"
     },
     {
+      "accessed": "2026-10-04",
+      "citation": "https://docs.pytorch.org/docs/main/generated/torch.use_deterministic_algorithms.html",
+      "id": "SRC-PYTORCH-DETERMINISM",
+      "kind": "web",
+      "notes": "Documents deterministic-algorithm controls and explicitly notes that deterministic-algorithm mode alone is insufficient to guarantee full application reproducibility.",
+      "path": "sources/src-pytorch-determinism.yml",
+      "title": "PyTorch deterministic algorithms documentation",
+      "url": "https://docs.pytorch.org/docs/main/generated/torch.use_deterministic_algorithms.html"
+    },
+    {
       "citation": "https://arxiv.org/abs/2605.10730",
       "id": "SRC-QWEN-IMAGE-2-2026",
       "kind": "academic",
@@ -70825,6 +71856,16 @@
       "path": "sources/src-qwen-image-2-2026.yml",
       "title": "qwen-image-2-2026",
       "url": "https://arxiv.org/abs/2605.10730"
+    },
+    {
+      "accessed": "2026-10-04",
+      "citation": "https://docs.ray.io/en/latest/ray-core/scheduling/",
+      "id": "SRC-RAY-SCHEDULING-LOCALITY",
+      "kind": "web",
+      "notes": "Official Ray documentation describing resource-aware scheduling and locality considerations for distributed tasks and objects.",
+      "path": "sources/src-ray-scheduling-locality.yml",
+      "title": "Ray scheduling and data locality",
+      "url": "https://docs.ray.io/en/latest/ray-core/scheduling/"
     },
     {
       "citation": "https://arxiv.org/abs/1908.10084",
@@ -70845,6 +71886,16 @@
       "url": "https://www.ietf.org/rfc/rfc3161.txt"
     },
     {
+      "accessed": "2026-10-04",
+      "citation": "https://dev.risczero.com/api/zkvm/",
+      "id": "SRC-RISC0-ZKVM",
+      "kind": "web",
+      "notes": "Official RISC Zero documentation for general verifiable computation over a RISC-V virtual machine and receipt-based verification.",
+      "path": "sources/src-risc0-zkvm.yml",
+      "title": "RISC Zero zkVM documentation",
+      "url": "https://dev.risczero.com/api/zkvm/"
+    },
+    {
       "citation": "https://www.cell.com/trends/cognitive-sciences/fulltext/S1364-6613(16",
       "id": "SRC-RISKO2016-COGNITIVE-OFFLOADING",
       "kind": "web",
@@ -70852,6 +71903,16 @@
       "path": "sources/src-risko2016-cognitive-offloading.yml",
       "title": "risko2016-cognitive-offloading",
       "url": "https://www.cell.com/trends/cognitive-sciences/fulltext/S1364-6613(16"
+    },
+    {
+      "accessed": "2026-10-04",
+      "citation": "Williams, Waterman, and Patterson, Communications of the ACM, 2009.",
+      "id": "SRC-ROOFLINE-CACM",
+      "kind": "academic",
+      "notes": "Foundational Roofline model relating attainable performance to operational intensity and memory bandwidth.",
+      "path": "sources/src-roofline-cacm.yml",
+      "title": "Roofline - An Insightful Visual Performance Model for Multicore Architectures",
+      "url": "https://cacm.acm.org/research/roofline-an-insightful-visual-performance-model-for-multicore-architectures/"
     },
     {
       "citation": "https://arxiv.org/abs/2012.00854",
@@ -70942,6 +72003,16 @@
       "path": "sources/src-smagul2023-rpa-review.yml",
       "title": "smagul2023-rpa-review",
       "url": "https://ceur-ws.org/Vol-3966/W2Paper2.pdf"
+    },
+    {
+      "accessed": "2026-10-04",
+      "citation": "https://docs.succinct.xyz/docs/sp1/security/security-model",
+      "id": "SRC-SP1-SECURITY",
+      "kind": "web",
+      "notes": "Official SP1 security-model documentation distinguishing proof-system guarantees from correctness of the guest program and surrounding assumptions.",
+      "path": "sources/src-sp1-security.yml",
+      "title": "SP1 security model",
+      "url": "https://docs.succinct.xyz/docs/sp1/security/security-model"
     },
     {
       "citation": "https://spdx.dev/about/overview/",
