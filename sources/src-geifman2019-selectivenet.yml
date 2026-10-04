@@ -1,0 +1,6 @@
+id: SRC-GEIFMAN2019-SELECTIVENET
+title: geifman2019-selectivenet
+kind: academic
+citation: "Geifman, Yonatan; El-Yaniv, Ran (2019). SelectiveNet: A Deep Neural Network with an Integrated Reject Option. Proceedings of the 36th International Conference on Machine Learning, PMLR 97:2151-2159."
+url: https://proceedings.mlr.press/v97/geifman19a.html
+notes: "Formalizes selective prediction with an explicit reject option and evaluates the risk-coverage trade-off."
