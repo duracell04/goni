@@ -17,8 +17,6 @@ relations:
   target: EXEC-01
 - type: depends_on
   target: EVID-01
-- type: refined_by
-  target: GONI-PRINCIPLE-QUALIFIED-PROVIDER-SUBSTITUTABILITY
 sources:
 - SRC-RAY-SCHEDULING-LOCALITY
 - SRC-ROOFLINE-CACM
