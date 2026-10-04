@@ -679,6 +679,7 @@
         "CAL-DRIFT-01",
         "COMPUTE-EVAL-01",
         "CONFIDENCE-01",
+        "COOP-LEARNING-RISK-01",
         "EXPORT-EVAL-01",
         "GONI-EVIDENCE-CAL-GUO-01",
         "GONI-EVIDENCE-CAL-SCORING-01",
@@ -689,6 +690,7 @@
         "GONI-PRINCIPLE-TRAJ-ECON-01",
         "GONI-SYNTHESIS-PROBABILISTIC-DECISION-CONTROL-01",
         "LOSS-01",
+        "NET-LEARN-EVAL-01",
         "PLACEMENT-EVAL-01",
         "SELECTIVE-01",
         "SIM-BUDGET-01",
@@ -977,7 +979,10 @@
         "SPEC-TXN-01"
       ],
       "learning": [
-        "CAL-DRIFT-01"
+        "CAL-DRIFT-01",
+        "COOP-LEARNING-RISK-01",
+        "NET-LEARN-01",
+        "NET-LEARN-EVAL-01"
       ],
       "market": [
         "AI-MEDIA-PROVENANCE",
@@ -1231,7 +1236,8 @@
         "GONI-SPEC-F558CFB6C817",
         "GONI-SPEC-FC72CAAED1BC",
         "NET-01",
-        "NET-COMP-01"
+        "NET-COMP-01",
+        "NET-LEARN-01"
       ],
       "performance": [
         "GONI-PRINCIPLE-TRAJ-ECON-01"
@@ -1268,7 +1274,8 @@
       "privacy": [
         "COOP-PRIVACY-01",
         "EXPORT-EVAL-01",
-        "NET-COMP-01"
+        "NET-COMP-01",
+        "NET-LEARN-01"
       ],
       "product": [
         "DOCTRINE-DELEG-01",
@@ -3012,6 +3019,7 @@
         "COMP-REG-01",
         "COMPUTE-EVAL-01",
         "CONFIDENCE-01",
+        "COOP-LEARNING-RISK-01",
         "COOP-PRIVACY-01",
         "CRDT-AUDIT-01",
         "CRDT-DECISIONS-01",
@@ -4936,6 +4944,8 @@
         "MODELS-OPENAI",
         "NET-01",
         "NET-COMP-01",
+        "NET-LEARN-01",
+        "NET-LEARN-EVAL-01",
         "NONBYPASS-INTEGRATION-METRICS",
         "OLLAMA-CLOUD",
         "OS-AND-BASE-IMAGE",
@@ -5341,6 +5351,7 @@
         "GONI-EXPERIMENT-F3974392D01F",
         "GONI-EXPERIMENT-F5667C1994A9",
         "GONI-LAB",
+        "NET-LEARN-EVAL-01",
         "PLACEMENT-EVAL-01",
         "SKILL-EVAL-01",
         "WORLD-EVAL-01"
@@ -5743,6 +5754,7 @@
         "ZCO-01"
       ],
       "objection": [
+        "COOP-LEARNING-RISK-01",
         "COOP-PRIVACY-01",
         "EVID-AUTON-02",
         "GONI-OBJECTION-0CC876FB8D27",
@@ -6463,6 +6475,7 @@
         "MODEL-REG-01",
         "NET-01",
         "NET-COMP-01",
+        "NET-LEARN-01",
         "REC-01",
         "RESULT-01",
         "ROBOT-01",
@@ -7045,8 +7058,10 @@
       ]
     },
     "contested": [
+      "COOP-LEARNING-RISK-01",
       "COOP-PRIVACY-01",
       "NET-COMP-01",
+      "NET-LEARN-01",
       "SIM-BUDGET-01",
       "WORLD-01",
       "WORLD-MODEL-RISK-01"
@@ -11537,6 +11552,33 @@
       "title": "Confidence Evidence Provenance",
       "type": "specification",
       "uncertainty": "This is a specified-only logical record. Concrete storage-table promotion and receipt-schema migration should occur only with an implementation slice."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Aggregated evidence can amplify shared errors\n\n> Status boundary: this is a specified-only blueprint contract or planned evaluation.\n\nMany contributions can descend from the same observation or model generation,\nand a provider can submit persuasive records that omit failures. Privacy-limited\nexports can make independence or representativeness difficult to establish.\n\nNET-LEARN-01 addresses this objection through explicit unknown lineage,\ncontradictions, deduplication, poisoning assumptions and held-out candidate\nevaluation. Local-only learning is a permitted alternative when external evidence\nquality or confidentiality is insufficient. An aggregation rule's robustness\nremains a measured property within a named threat model.",
+      "domains": [
+        "learning",
+        "evaluation"
+      ],
+      "id": "COOP-LEARNING-RISK-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/objections/coop-learning-risk-01-correlated-and-poisoned-evidence.md",
+      "proposition": "Collective learning can amplify correlated, selectively reported, or malicious contributions when their lineage, scope, and evaluation limits are unresolved.",
+      "relations": [
+        {
+          "target": "NET-LEARN-01",
+          "type": "objects_to"
+        }
+      ],
+      "sources": [
+        "SRC-GONI20261004-COOPERATIVE-COMPUTE"
+      ],
+      "status": "draft",
+      "title": "Aggregated evidence can amplify shared errors",
+      "type": "objection",
+      "uncertainty": "Contribution independence, selection bias, and robustness under adversarial participation require an implemented aggregation policy and matched testing."
     },
     {
       "aliases": [],
@@ -62670,6 +62712,85 @@
     {
       "aliases": [],
       "artifacts": [],
+      "body": "# Collective evidence learning\n\n> Status boundary: this is a specified-only blueprint contract or planned evaluation.\n\n## Evidence export\n\n\\[\nExperience_i\\rightarrow Evidence_i\\rightarrow Aggregate\n\\rightarrow CandidatePatch\\rightarrow Eval\\rightarrow OwnerAdoption.\n\\]\n\nExperience remains owner-governed. A conforming contributor MUST derive a\npurpose-scoped evidence record through NET-COMP-01's export boundary before\nsharing it. The record identifies its claim, observation or derivation class,\nscope, method, implementation/model revision where relevant, evidence lineage,\nuncertainty, and permitted use/disclosure. Receipt access follows REC-01's\nowner-facing privacy boundary. Synthetic hypotheses retain their epistemic class.\n\n## Aggregation\n\nA conforming aggregation policy MUST state its accepted evidence classes,\nprovenance/lineage assumptions, deduplication, contribution weighting,\ncontradiction handling, poisoning threat model, and privacy assumptions.\nRepeated observations with a shared material origin retain their dependency;\nunresolved independence is recorded as unknown. Quantity or agreement alone\ndoes not establish corroboration or permission. EPI-SEP-01 governs evidence versus\nhypothesis separation and EPI-CTRL-01 supplies lineage-aware support handling.\n\n## Candidate and adoption boundary\n\nA candidate patch references a target and base revision, proposed change,\nsupporting/challenging evidence, limitations, and an evaluation plan. It may\npropose a harness, retrieval, model/adaptor, or workflow change within existing\nadaptation contracts. It enters the existing review, regression, rollout and\nrollback mechanisms for that target.\n\nBefore adoption, a conforming principal MUST assess compatibility with current\nstate and policy, evaluate the candidate against a named baseline and required\nregressions, and record the authority and scoped result. An unreviewed or failed\ncandidate remains a proposal or is rejected. Each owner controls adoption and\nrevocation. Network participation supplies neither installation authority nor\nan automatic change to canonical memory, mandates, permissions, or base weights.\n\nBlueprint-node changes use this repository's editorial/governance and commit\ncontracts. Planned evaluations remain experiments; observed results receive\nseparate evidence records with their full implementation and test boundaries.",
+      "domains": [
+        "learning",
+        "network",
+        "privacy"
+      ],
+      "id": "NET-LEARN-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/specifications/net-learn-01-collective-evidence-learning.md",
+      "proposition": "GONI nodes may contribute policy-approved, provenance-bearing evidence to generate evaluated candidate improvements whose adoption remains locally authorized and reviewable.",
+      "relations": [
+        {
+          "target": "NET-COMP-01",
+          "type": "depends_on"
+        },
+        {
+          "target": "EPI-SEP-01",
+          "type": "depends_on"
+        },
+        {
+          "target": "EPI-CTRL-01",
+          "type": "depends_on"
+        },
+        {
+          "target": "GONI-SPEC-C237E3663D04",
+          "type": "depends_on"
+        },
+        {
+          "target": "GONI-SPEC-7254B180A7F4",
+          "type": "refines"
+        },
+        {
+          "target": "GONI-SPEC-C4655EDC9751",
+          "type": "refines"
+        }
+      ],
+      "sources": [
+        "SRC-GONI20261004-COOPERATIVE-COMPUTE"
+      ],
+      "status": "draft",
+      "title": "Collective evidence learning",
+      "type": "specification",
+      "uncertainty": "Evidence schemas, independence estimation, poisoning resistance, privacy composition, candidate efficacy, and contribution incentives remain unvalidated."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Collective evidence adoption evaluation\n\n> Status boundary: this is a specified-only blueprint contract or planned evaluation.\n\nCompare local-only improvement with cooperative evidence using identical\ncandidate-generation and total-resource budgets. Include shared provenance roots,\nduplicate reports, contradictory scopes, fabricated/poisoned contributions,\nselective success reporting, synthetic evidence, and privacy-sensitive exports.\n\nEvaluate candidate patches on held-out tasks and owner-specific regression cases.\nMeasure decision utility, failure/regression rate, lineage handling, poisoning\nsensitivity, disclosure, and unauthorized adoption. Include changed base revisions,\nrevoked adoption authority, rejected candidates, and rollback cases. Record\ncontribution permissions, anonymized/authorized lineage, aggregation policy,\ntarget/base revision, full implementation/model/test revisions, and acceptance\nreceipts. Set improvement and regression thresholds before execution; require\nzero unauthorized disclosures/adoptions in the named tested boundary. The plan\ncreates no empirical improvement or robustness claim.",
+      "domains": [
+        "learning",
+        "evaluation"
+      ],
+      "id": "NET-LEARN-EVAL-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/experiments/net-learn-eval-01-collective-evidence-adoption.md",
+      "proposition": "A matched evaluation should test whether shared evidence produces useful candidate improvements while preserving privacy, evidence independence, regression boundaries, and owner-controlled adoption.",
+      "relations": [
+        {
+          "target": "NET-LEARN-01",
+          "type": "tests"
+        },
+        {
+          "target": "COOP-LEARNING-RISK-01",
+          "type": "tests"
+        }
+      ],
+      "sources": [
+        "SRC-GONI20261004-COOPERATIVE-COMPUTE"
+      ],
+      "status": "draft",
+      "title": "Collective evidence adoption evaluation",
+      "type": "experiment",
+      "uncertainty": "Datasets, contribution threat models, export profiles, aggregation methods, and held-out acceptance thresholds require a pinned experiment implementation."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
       "body": "# Non-bypass integration tests\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n# Non-bypass integration tests\n\nThese tests are placeholders for egress and capability bypass checks.\n\nThis README also defines the latency and safety metrics we expect to report from\nnon-bypass integration runs that stream tokens, call tools, and emit receipts.",
       "domains": [
         "repository"
@@ -64561,7 +64682,7 @@
     {
       "aliases": [],
       "artifacts": [],
-      "body": "# Learning Loop (System-Managed Adaptation)\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n# Learning Loop (System-Managed Adaptation)\nDOC-ID: SYS-03\nStatus: Specified only / roadmap\nMaturity: Draft\n\nThis document defines how Goni improves over time without assuming online\nweight updates. The system manages adaptation explicitly, with safety gates and\nauditability.",
+      "body": "# Learning Loop (System-Managed Adaptation)\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n# Learning Loop (System-Managed Adaptation)\nDOC-ID: SYS-03\nStatus: Specified only / roadmap\nMaturity: Draft\n\nThis document defines how Goni improves over time without assuming online\nweight updates. The system manages adaptation explicitly, with safety gates and\nauditability.\n\n## Cooperative and predictive refinements\n\n[NET-LEARN-01](../specifications/net-learn-01-collective-evidence-learning.md) extends governed adaptation through shareable evidence and locally reviewed candidate improvements. [WORLD-01](../specifications/world-01-bounded-predictive-world-model.md) supplies bounded predictive cognition. Both reuse existing memory, authority, and evaluation responsibilities.",
       "domains": [
         "system"
       ],
@@ -64619,6 +64740,14 @@
         },
         {
           "target": "GONI-SYNTHESIS-EFB06EC28777",
+          "type": "synthesizes"
+        },
+        {
+          "target": "NET-LEARN-01",
+          "type": "synthesizes"
+        },
+        {
+          "target": "WORLD-01",
           "type": "synthesizes"
         }
       ],
@@ -65563,6 +65692,18 @@
     },
     {
       "projection": "authored",
+      "source": "COOP-LEARNING-RISK-01",
+      "target": "NET-LEARN-01",
+      "type": "objects_to"
+    },
+    {
+      "projection": "generated",
+      "source": "COOP-LEARNING-RISK-01",
+      "target": "NET-LEARN-EVAL-01",
+      "type": "tested_by"
+    },
+    {
+      "projection": "authored",
       "source": "COOP-PRIVACY-01",
       "target": "NET-COMP-01",
       "type": "objects_to"
@@ -65924,6 +66065,12 @@
     {
       "projection": "generated",
       "source": "EPI-CTRL-01",
+      "target": "NET-LEARN-01",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
+      "source": "EPI-CTRL-01",
       "target": "SIM-BUDGET-01",
       "type": "depended_on_by"
     },
@@ -66003,6 +66150,12 @@
       "projection": "generated",
       "source": "EPI-SEP-01",
       "target": "EPI-CTRL-01",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
+      "source": "EPI-SEP-01",
+      "target": "NET-LEARN-01",
       "type": "depended_on_by"
     },
     {
@@ -67960,6 +68113,12 @@
     },
     {
       "projection": "generated",
+      "source": "GONI-SPEC-7254B180A7F4",
+      "target": "NET-LEARN-01",
+      "type": "refined_by"
+    },
+    {
+      "projection": "generated",
       "source": "GONI-SPEC-75D0D2E5F296",
       "target": "GONI-SYNTHESIS-E3B321C24C67",
       "type": "synthesized_by"
@@ -68086,9 +68245,21 @@
     },
     {
       "projection": "generated",
+      "source": "GONI-SPEC-C237E3663D04",
+      "target": "NET-LEARN-01",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
       "source": "GONI-SPEC-C2C63462FEAE",
       "target": "GONI-PRINCIPLE-COMPUTE-SEMANTIC-NEUTRALITY",
       "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-SPEC-C4655EDC9751",
+      "target": "NET-LEARN-01",
+      "type": "refined_by"
     },
     {
       "projection": "generated",
@@ -72993,6 +73164,12 @@
       "type": "depended_on_by"
     },
     {
+      "projection": "generated",
+      "source": "NET-COMP-01",
+      "target": "NET-LEARN-01",
+      "type": "depended_on_by"
+    },
+    {
       "projection": "authored",
       "source": "NET-COMP-01",
       "target": "D-025",
@@ -73045,6 +73222,72 @@
       "source": "NET-COMP-01",
       "target": "EXPORT-EVAL-01",
       "type": "tested_by"
+    },
+    {
+      "projection": "authored",
+      "source": "NET-LEARN-01",
+      "target": "EPI-CTRL-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "NET-LEARN-01",
+      "target": "EPI-SEP-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "NET-LEARN-01",
+      "target": "GONI-SPEC-C237E3663D04",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "NET-LEARN-01",
+      "target": "NET-COMP-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "generated",
+      "source": "NET-LEARN-01",
+      "target": "COOP-LEARNING-RISK-01",
+      "type": "objected_to_by"
+    },
+    {
+      "projection": "authored",
+      "source": "NET-LEARN-01",
+      "target": "GONI-SPEC-7254B180A7F4",
+      "type": "refines"
+    },
+    {
+      "projection": "authored",
+      "source": "NET-LEARN-01",
+      "target": "GONI-SPEC-C4655EDC9751",
+      "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "NET-LEARN-01",
+      "target": "SYS-03",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "generated",
+      "source": "NET-LEARN-01",
+      "target": "NET-LEARN-EVAL-01",
+      "type": "tested_by"
+    },
+    {
+      "projection": "authored",
+      "source": "NET-LEARN-EVAL-01",
+      "target": "COOP-LEARNING-RISK-01",
+      "type": "tests"
+    },
+    {
+      "projection": "authored",
+      "source": "NET-LEARN-EVAL-01",
+      "target": "NET-LEARN-01",
+      "type": "tests"
     },
     {
       "projection": "authored",
@@ -74272,6 +74515,18 @@
     },
     {
       "projection": "authored",
+      "source": "SYS-03",
+      "target": "NET-LEARN-01",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "SYS-03",
+      "target": "WORLD-01",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
       "source": "SYS-04",
       "target": "GONI-IMAP-3297C8C9E391",
       "type": "synthesizes"
@@ -74401,6 +74656,12 @@
       "source": "WORLD-01",
       "target": "DREAM-01",
       "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "WORLD-01",
+      "target": "SYS-03",
+      "type": "synthesized_by"
     },
     {
       "projection": "generated",

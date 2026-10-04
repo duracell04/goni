@@ -4,7 +4,8 @@ title: Learning Loop (System-Managed Adaptation)
 type: synthesis
 status: draft
 implementation_state: specified_only
-proposition: 'DOC-ID: SYS-03 Status: Specified only / roadmap Maturity: Draft This document defines how Goni improves over time without assuming online weight updates.'
+proposition: 'DOC-ID: SYS-03 Status: Specified only / roadmap Maturity: Draft This
+  document defines how Goni improves over time without assuming online weight updates.'
 domains:
 - system
 aliases: []
@@ -31,9 +32,14 @@ relations:
   target: GONI-SYNTHESIS-902896DA677F
 - type: synthesizes
   target: GONI-SYNTHESIS-EFB06EC28777
+- type: synthesizes
+  target: NET-LEARN-01
+- type: synthesizes
+  target: WORLD-01
 sources: []
 artifacts: []
-uncertainty: Preserved from the legacy draft without status promotion or newly inferred evidence strength.
+uncertainty: Preserved from the legacy draft without status promotion or newly inferred
+  evidence strength.
 legacy:
 - path: blueprint/20-system/50-learning-loop.md
   heading: Learning Loop (System-Managed Adaptation)
@@ -52,3 +58,7 @@ Maturity: Draft
 This document defines how Goni improves over time without assuming online
 weight updates. The system manages adaptation explicitly, with safety gates and
 auditability.
+
+## Cooperative and predictive refinements
+
+[NET-LEARN-01](../specifications/net-learn-01-collective-evidence-learning.md) extends governed adaptation through shareable evidence and locally reviewed candidate improvements. [WORLD-01](../specifications/world-01-bounded-predictive-world-model.md) supplies bounded predictive cognition. Both reuse existing memory, authority, and evaluation responsibilities.
