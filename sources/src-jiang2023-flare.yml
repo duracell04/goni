@@ -1,0 +1,6 @@
+id: SRC-JIANG2023-FLARE
+title: Jiang et al. 2023 - Active Retrieval Augmented Generation
+kind: academic
+citation: "Jiang, Z., Xu, F., Gao, L., Sun, Z., Liu, Q., Dwivedi-Yu, J., Yang, Y., Callan, J., & Neubig, G. (2023). Active Retrieval Augmented Generation. Proceedings of EMNLP 2023, 7969-7992. https://doi.org/10.18653/v1/2023.emnlp-main.495"
+url: https://aclanthology.org/2023.emnlp-main.495/
+notes: Demonstrates retrieval triggered during generation rather than only before generation; supports adaptive retrieval as a research precedent while leaving GONI-specific epistemic-control benefits to matched evaluation.

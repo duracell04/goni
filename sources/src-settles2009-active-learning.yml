@@ -1,0 +1,6 @@
+id: SRC-SETTLES2009-ACTIVE-LEARNING
+title: Settles 2009 - Active Learning Literature Survey
+kind: academic
+citation: "Settles, B. (2009). Active Learning Literature Survey. Computer Sciences Technical Report 1648, University of Wisconsin-Madison."
+url: https://minds.wisconsin.edu/handle/1793/60660
+notes: Surveys active-learning settings in which a learner strategically selects queries or examples to obtain informative labels under acquisition cost; relevant as precedent for active information acquisition and query-policy evaluation.
