@@ -3,5 +3,5 @@ title: Ethereum data availability documentation
 kind: web
 citation: https://ethereum.org/en/developers/docs/data-availability/
 url: https://ethereum.org/en/developers/docs/data-availability/
-accessed: 2026-10-04
+accessed: "2026-10-04"
 notes: Ethereum developer documentation distinguishing availability of state-transition data from validity of computation and explaining why data must remain retrievable for independent reconstruction.
