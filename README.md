@@ -4,6 +4,8 @@ GONI is a blueprint and architectural plan for a local-first Delegation OS. It i
 
 ## Start here
 
+Read the [sovereign cooperative architecture](knowledge/syntheses/sovereign-cooperative-architecture.md) for the five responsibilities and twenty-point contract map. GONI keeps identity, memory and authority sovereign; computation and evidence may scale cooperatively.
+
 - `knowledge/` contains the canonical atomic nodes and explanatory syntheses.
 - `maps/catalogue.json` is the deterministic machine projection.
 - `EDITORIAL_POLICY.md` defines status, evidence, uncertainty, and provenance boundaries.

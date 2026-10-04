@@ -523,6 +523,9 @@
         "SKILL-REG-01",
         "SPEC-KERN-01"
       ],
+      "architecture": [
+        "GONI-SYNTHESIS-SOVEREIGN-COOPERATIVE-ARCHITECTURE"
+      ],
       "assurance": [
         "GONI-EVIDENCE-STRUCTURED-01",
         "GONI-PRINCIPLE-VALIDITY-CORRECTNESS-01"
@@ -535,6 +538,7 @@
         "BILL-02"
       ],
       "cognition": [
+        "GONI-SYNTHESIS-SOVEREIGN-COOPERATIVE-ARCHITECTURE",
         "SIM-BUDGET-01",
         "WORLD-01",
         "WORLD-EVAL-01",
@@ -557,6 +561,7 @@
         "GONI-PRINCIPLE-QUALIFIED-PROVIDER-SUBSTITUTABILITY",
         "GONI-PRINCIPLE-VERIFICATION-BOUNDARIES",
         "GONI-SPEC-A221A420C8C4",
+        "GONI-SYNTHESIS-SOVEREIGN-COOPERATIVE-ARCHITECTURE",
         "GONI-SYNTHESIS-VERIFIED-COMPUTE-SUBSTRATE",
         "HCOMP-01",
         "NET-COMP-01",
@@ -981,6 +986,7 @@
       "learning": [
         "CAL-DRIFT-01",
         "COOP-LEARNING-RISK-01",
+        "GONI-SYNTHESIS-SOVEREIGN-COOPERATIVE-ARCHITECTURE",
         "NET-LEARN-01",
         "NET-LEARN-EVAL-01"
       ],
@@ -2392,7 +2398,8 @@
         "ZCO-01"
       ],
       "sovereignty": [
-        "D-025"
+        "D-025",
+        "GONI-SYNTHESIS-SOVEREIGN-COOPERATIVE-ARCHITECTURE"
       ],
       "specs": [
         "AGENT-DEF-01",
@@ -4896,6 +4903,7 @@
         "GONI-SYNTHESIS-FFFD0BDE80BE",
         "GONI-SYNTHESIS-HARDWARE-COMPUTE-DEPENDENCIES",
         "GONI-SYNTHESIS-PROBABILISTIC-DECISION-CONTROL-01",
+        "GONI-SYNTHESIS-SOVEREIGN-COOPERATIVE-ARCHITECTURE",
         "GONI-SYNTHESIS-VERIFIED-COMPUTE-SUBSTRATE",
         "GONI-THESIS-3234CF1EA4B0",
         "GONI-THESIS-32FBF8431A3E",
@@ -7006,6 +7014,7 @@
         "GONI-SYNTHESIS-FFFD0BDE80BE",
         "GONI-SYNTHESIS-HARDWARE-COMPUTE-DEPENDENCIES",
         "GONI-SYNTHESIS-PROBABILISTIC-DECISION-CONTROL-01",
+        "GONI-SYNTHESIS-SOVEREIGN-COOPERATIVE-ARCHITECTURE",
         "GONI-SYNTHESIS-VERIFIED-COMPUTE-SUBSTRATE",
         "GONI-WHITEPAPER",
         "GOV-00",
@@ -61140,6 +61149,100 @@
       "uncertainty": "This synthesis introduces no implementation claim. Thresholds, calibrated operating regions, loss functions, and preferred mechanisms remain empirical and consequence-specific."
     },
     {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Sovereign cooperative architecture — five responsibilities\n\n> Status boundary: this is a specified-only blueprint contract or planned evaluation.\n\nThe governing thesis is [D-025](../decisions/D-025-sovereign-cooperative-compute.md):\n\n> GONI keeps identity, memory and authority sovereign; computation and evidence\n> may scale cooperatively.\n\nThis synthesis is a reading guide. The linked atomic nodes own the contracts and\nformal definitions. These five responsibilities span the existing Data, Context,\nControl, and Execution planes; they introduce neither five replacement planes\nnor five independent authority or persistence systems.\n\n## Five responsibilities\n\n| Responsibility | Canonical homes | Architectural role |\n|---|---|---|\n| Sovereignty and disclosure | D-025, NET-01, NET-COMP-01 | Principal-owned state, owner-mesh enrollment, recipient-scoped exports and disclosure policy. |\n| Computation and evidence | JOB-01, COMP-01, EXEC-01, EVID-01, RESULT-01, DIST-01 | Scheduler-visible work, computation identity, execution terms, typed assurance, receipts and acceptance. |\n| Cognition and deliberation | WORLD-01, DREAM-01, EPI-CTRL-01, LOSS-01, SIM-BUDGET-01 | Bounded beliefs, predictive dynamics, consequence-sensitive decisions and marginal simulation value. |\n| Placement and hardware | SCHED-01, COMP-REG-01, HCOMP-01 | Capability-qualified eligible routes and full-system cost across physically specialized resources. |\n| Cooperative improvement | NET-LEARN-01, SYS-03 | Shareable evidence, lineage-aware aggregation, evaluated candidates and locally authorized adoption. |\n\n## Twenty-point navigation map\n\nThe numbering preserves the 4 October proposal. Each row identifies its\nauthoritative home; conceptual notation is defined or qualified there.\n\n| Point | Meaning | Home |\n|---|---|---|\n| 1 | Sovereign node, cooperative computation | [D-025](../decisions/D-025-sovereign-cooperative-compute.md) |\n| 2 | Universal compute envelope beneath scheduler-visible work | [UCT-01 composition](verified-compute-substrate.md#universal-compute-transition-uct-01), [COMP-01](../specifications/comp-01-computation-specification.md) |\n| 3 | Execution returns output, proposed state, metering and evidence | [UCT-01](verified-compute-substrate.md#universal-compute-transition-uct-01), [EXEC-01](../specifications/exec-01-execution-contract.md), [RESULT-01](../specifications/result-01-computation-result-receipt.md) |\n| 4 | Computation identity and separately bound execution terms | [COMP-01](../specifications/comp-01-computation-specification.md), [EXEC-01](../specifications/exec-01-execution-contract.md) |\n| 5 | Exact, approximate, and stochastic execution semantics | [COMP-01](../specifications/comp-01-computation-specification.md#execution-semantics) |\n| 6 | Evidence mechanisms with scoped claims and assumptions | [EVID-01](../specifications/evid-01-computation-evidence-contract.md) |\n| 7 | Task-scoped belief representation | [WORLD-01](../specifications/world-01-bounded-predictive-world-model.md) |\n| 8 | Predictive dynamics and observation likelihood | [WORLD-01](../specifications/world-01-bounded-predictive-world-model.md) |\n| 9 | Decision value within permitted actions | [WORLD-01](../specifications/world-01-bounded-predictive-world-model.md#planning-integration), [LOSS-01](../specifications/loss-01-consequence-sensitive-decision-control.md) |\n| 10 | Marginal value of additional bounded simulation | [SIM-BUDGET-01](../specifications/sim-budget-01-decision-aware-simulation-allocation.md) |\n| 11 | Capability requirements and eligibility | [COMP-REG-01](../specifications/comp-reg-01-compute-capability-registry.md) |\n| 12 | Full-system placement objective | [COMP-REG-01](../specifications/comp-reg-01-compute-capability-registry.md#eligibility-and-placement) |\n| 13 | Scoped operation/resource/trust/evidence advertisements | [COMP-REG-01](../specifications/comp-reg-01-compute-capability-registry.md#capability-description) |\n| 14 | Owner mesh and independent-provider authority domains | [NET-COMP-01](../specifications/net-comp-01-cooperative-compute-export.md#trust-domains) |\n| 15 | Recipient- and purpose-scoped export compilation | [NET-COMP-01](../specifications/net-comp-01-cooperative-compute-export.md#export-contract) |\n| 16 | Threat-model-scoped disclosure/leakage boundary | [NET-COMP-01](../specifications/net-comp-01-cooperative-compute-export.md#leakage-claim), [NET-01](../specifications/net-01-net-01-network-gate-and-anonymity.md) |\n| 17 | Canonical computation result receipts | [RESULT-01](../specifications/result-01-computation-result-receipt.md), [REC-01](../specifications/rec-01-receipts-rec-01.md) |\n| 18 | Compute, evidence verification, canonicality, and settlement | [DIST-01](../principles/dist-01-validity-availability-canonicality.md), [EXEC-01](../specifications/exec-01-execution-contract.md) |\n| 19 | Cooperative evidence to evaluated candidate improvements | [NET-LEARN-01](../specifications/net-learn-01-collective-evidence-learning.md) |\n| 20 | Semantic universality, physical specialization and dependencies | [HCOMP-01](../principles/hcomp-01-semantic-universality-physical-specialization.md), [hardware dependencies](hardware-compute-dependencies.md) |\n\n## Composition and authority\n\nAuthorized private context supports bounded cognition. A candidate Work Order\nenters the existing kernel authority path before execution terms or placement\nare accepted. The scheduler selects a contract-qualified local, owner-mesh, or\ncooperative route. Returned output, proposed state, metering and evidence pass\ntheir separate acceptance checks and canonical receipts. Current kernel\nauthority determines state/effect adoption; settlement applies only under its\nexplicit authorized execution terms.\n\n```mermaid\nflowchart TD\n  Private[\"Owner-governed memory and authority\"] --> Cognition[\"Bounded cognition and simulation\"]\n  Cognition --> Kernel[\"Work Order and kernel authorization\"]\n  Kernel --> Contract[\"Compute and execution contracts\"]\n  Contract --> Scheduler[\"Capability scheduler\"]\n  Scheduler --> Local[\"Local\"]\n  Scheduler --> Mesh[\"Owner mesh\"]\n  Scheduler --> Cooperative[\"Cooperative provider\"]\n  Local --> Evidence[\"Typed evidence and result receipts\"]\n  Mesh --> Evidence\n  Cooperative --> Evidence\n  Evidence --> Accept[\"Kernel state and effect acceptance\"]\n  Accept --> Private\n  Evidence --> Settlement[\"Authorized optional settlement\"]\n  Evidence --> Export[\"Permitted learning evidence\"]\n  Export --> Candidate[\"Aggregate and evaluate candidate\"]\n  Candidate --> Review[\"Owner adoption review\"]\n  Review --> Private\n```\n\nCPU/GPU/NPU are current hardware-profile subjects. Crypto/proof/FPGA/remote/QPU\npossibilities remain qualified profile extensions under HCOMP-01 and COMP-REG-01.\nThe existing MVP scope is retained.\n\n## Objections and evaluation path\n\nRead [COOP-PRIVACY-01](../objections/coop-privacy-01-export-composition-risk.md),\n[WORLD-MODEL-RISK-01](../objections/world-model-risk-01-model-relative-certainty.md),\nand [COOP-LEARNING-RISK-01](../objections/coop-learning-risk-01-correlated-and-poisoned-evidence.md)\nalongside the corresponding contracts.\n\nThe five planned evaluations are [EXPORT-EVAL-01](../experiments/export-eval-01-sovereign-export-boundaries.md),\n[COMPUTE-EVAL-01](../experiments/compute-eval-01-universal-transition-conformance.md),\n[WORLD-EVAL-01](../experiments/world-eval-01-predictive-deliberation.md),\n[PLACEMENT-EVAL-01](../experiments/placement-eval-01-capability-qualified-placement.md),\nand [NET-LEARN-EVAL-01](../experiments/net-learn-eval-01-collective-evidence-adoption.md).\nEvaluations accompany each implementation stage. Experimental code remains in\nthe existing experimental repositories; outcome evidence is introduced only\nafter scoped runs and full implementation/test revisions are available.\n\nAll nodes remain draft. This synthesis asserts neither runtime implementation,\ncalibrated world models, confidential outsourced execution, nor a validated\ncooperative compute market.",
+      "domains": [
+        "architecture",
+        "sovereignty",
+        "compute",
+        "cognition",
+        "learning"
+      ],
+      "id": "GONI-SYNTHESIS-SOVEREIGN-COOPERATIVE-ARCHITECTURE",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/syntheses/sovereign-cooperative-architecture.md",
+      "proposition": "Five linked responsibilities explain how sovereign GONI authority composes predictive cognition, universal computation, capability placement, and collective evidence improvement within the existing architectural planes.",
+      "relations": [
+        {
+          "target": "D-025",
+          "type": "synthesizes"
+        },
+        {
+          "target": "NET-COMP-01",
+          "type": "synthesizes"
+        },
+        {
+          "target": "JOB-01",
+          "type": "synthesizes"
+        },
+        {
+          "target": "COMP-01",
+          "type": "synthesizes"
+        },
+        {
+          "target": "EXEC-01",
+          "type": "synthesizes"
+        },
+        {
+          "target": "EVID-01",
+          "type": "synthesizes"
+        },
+        {
+          "target": "RESULT-01",
+          "type": "synthesizes"
+        },
+        {
+          "target": "DIST-01",
+          "type": "synthesizes"
+        },
+        {
+          "target": "WORLD-01",
+          "type": "synthesizes"
+        },
+        {
+          "target": "DREAM-01",
+          "type": "synthesizes"
+        },
+        {
+          "target": "EPI-CTRL-01",
+          "type": "synthesizes"
+        },
+        {
+          "target": "LOSS-01",
+          "type": "synthesizes"
+        },
+        {
+          "target": "SIM-BUDGET-01",
+          "type": "synthesizes"
+        },
+        {
+          "target": "COMP-REG-01",
+          "type": "synthesizes"
+        },
+        {
+          "target": "HCOMP-01",
+          "type": "synthesizes"
+        },
+        {
+          "target": "NET-LEARN-01",
+          "type": "synthesizes"
+        },
+        {
+          "target": "SYS-03",
+          "type": "synthesizes"
+        }
+      ],
+      "sources": [
+        "SRC-GONI20261004-COOPERATIVE-COMPUTE"
+      ],
+      "status": "draft",
+      "title": "Sovereign cooperative architecture — five responsibilities",
+      "type": "synthesis",
+      "uncertainty": "The composition remains an architectural proposal; its confidentiality, decision utility, placement economics, and collective learning benefit need scoped experiments."
+    },
+    {
       "aliases": [
         "verified-compute-substrate",
         "UCT-01"
@@ -65567,6 +65670,12 @@
     {
       "projection": "generated",
       "source": "COMP-01",
+      "target": "GONI-SYNTHESIS-SOVEREIGN-COOPERATIVE-ARCHITECTURE",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "generated",
+      "source": "COMP-01",
       "target": "GONI-SYNTHESIS-VERIFIED-COMPUTE-SUBSTRATE",
       "type": "synthesized_by"
     },
@@ -65622,6 +65731,12 @@
       "projection": "generated",
       "source": "COMP-REG-01",
       "target": "GONI-SYNTHESIS-HARDWARE-COMPUTE-DEPENDENCIES",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "generated",
+      "source": "COMP-REG-01",
+      "target": "GONI-SYNTHESIS-SOVEREIGN-COOPERATIVE-ARCHITECTURE",
       "type": "synthesized_by"
     },
     {
@@ -65855,6 +65970,12 @@
     {
       "projection": "generated",
       "source": "D-025",
+      "target": "GONI-SYNTHESIS-SOVEREIGN-COOPERATIVE-ARCHITECTURE",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "generated",
+      "source": "D-025",
       "target": "EXPORT-EVAL-01",
       "type": "tested_by"
     },
@@ -65947,6 +66068,12 @@
       "source": "DIST-01",
       "target": "GONI-IMAP-ED288DB4EAF5",
       "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "DIST-01",
+      "target": "GONI-SYNTHESIS-SOVEREIGN-COOPERATIVE-ARCHITECTURE",
+      "type": "synthesized_by"
     },
     {
       "projection": "generated",
@@ -66053,6 +66180,12 @@
     {
       "projection": "generated",
       "source": "DREAM-01",
+      "target": "GONI-SYNTHESIS-SOVEREIGN-COOPERATIVE-ARCHITECTURE",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "generated",
+      "source": "DREAM-01",
       "target": "DREAM-EVAL-01",
       "type": "tested_by"
     },
@@ -66127,6 +66260,12 @@
       "source": "EPI-CTRL-01",
       "target": "MEM-RETR-01",
       "type": "depends_on"
+    },
+    {
+      "projection": "generated",
+      "source": "EPI-CTRL-01",
+      "target": "GONI-SYNTHESIS-SOVEREIGN-COOPERATIVE-ARCHITECTURE",
+      "type": "synthesized_by"
     },
     {
       "projection": "generated",
@@ -66235,6 +66374,12 @@
       "source": "EVID-01",
       "target": "GONI-PRINCIPLE-VERIFICATION-BOUNDARIES",
       "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "EVID-01",
+      "target": "GONI-SYNTHESIS-SOVEREIGN-COOPERATIVE-ARCHITECTURE",
+      "type": "synthesized_by"
     },
     {
       "projection": "generated",
@@ -66416,6 +66561,12 @@
       "source": "EXEC-01",
       "target": "GONI-SPEC-D89F04D1E90A",
       "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "EXEC-01",
+      "target": "GONI-SYNTHESIS-SOVEREIGN-COOPERATIVE-ARCHITECTURE",
+      "type": "synthesized_by"
     },
     {
       "projection": "generated",
@@ -72403,6 +72554,108 @@
     },
     {
       "projection": "authored",
+      "source": "GONI-SYNTHESIS-SOVEREIGN-COOPERATIVE-ARCHITECTURE",
+      "target": "COMP-01",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SYNTHESIS-SOVEREIGN-COOPERATIVE-ARCHITECTURE",
+      "target": "COMP-REG-01",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SYNTHESIS-SOVEREIGN-COOPERATIVE-ARCHITECTURE",
+      "target": "D-025",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SYNTHESIS-SOVEREIGN-COOPERATIVE-ARCHITECTURE",
+      "target": "DIST-01",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SYNTHESIS-SOVEREIGN-COOPERATIVE-ARCHITECTURE",
+      "target": "DREAM-01",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SYNTHESIS-SOVEREIGN-COOPERATIVE-ARCHITECTURE",
+      "target": "EPI-CTRL-01",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SYNTHESIS-SOVEREIGN-COOPERATIVE-ARCHITECTURE",
+      "target": "EVID-01",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SYNTHESIS-SOVEREIGN-COOPERATIVE-ARCHITECTURE",
+      "target": "EXEC-01",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SYNTHESIS-SOVEREIGN-COOPERATIVE-ARCHITECTURE",
+      "target": "HCOMP-01",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SYNTHESIS-SOVEREIGN-COOPERATIVE-ARCHITECTURE",
+      "target": "JOB-01",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SYNTHESIS-SOVEREIGN-COOPERATIVE-ARCHITECTURE",
+      "target": "LOSS-01",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SYNTHESIS-SOVEREIGN-COOPERATIVE-ARCHITECTURE",
+      "target": "NET-COMP-01",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SYNTHESIS-SOVEREIGN-COOPERATIVE-ARCHITECTURE",
+      "target": "NET-LEARN-01",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SYNTHESIS-SOVEREIGN-COOPERATIVE-ARCHITECTURE",
+      "target": "RESULT-01",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SYNTHESIS-SOVEREIGN-COOPERATIVE-ARCHITECTURE",
+      "target": "SIM-BUDGET-01",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SYNTHESIS-SOVEREIGN-COOPERATIVE-ARCHITECTURE",
+      "target": "SYS-03",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SYNTHESIS-SOVEREIGN-COOPERATIVE-ARCHITECTURE",
+      "target": "WORLD-01",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
       "source": "GONI-SYNTHESIS-VERIFIED-COMPUTE-SUBSTRATE",
       "target": "COMP-01",
       "type": "synthesizes"
@@ -72614,6 +72867,12 @@
     {
       "projection": "generated",
       "source": "HCOMP-01",
+      "target": "GONI-SYNTHESIS-SOVEREIGN-COOPERATIVE-ARCHITECTURE",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "generated",
+      "source": "HCOMP-01",
       "target": "PLACEMENT-EVAL-01",
       "type": "tested_by"
     },
@@ -72658,6 +72917,12 @@
       "source": "JOB-01",
       "target": "COMP-01",
       "type": "refined_by"
+    },
+    {
+      "projection": "generated",
+      "source": "JOB-01",
+      "target": "GONI-SYNTHESIS-SOVEREIGN-COOPERATIVE-ARCHITECTURE",
+      "type": "synthesized_by"
     },
     {
       "projection": "authored",
@@ -72807,6 +73072,12 @@
       "projection": "generated",
       "source": "LOSS-01",
       "target": "GONI-SYNTHESIS-PROBABILISTIC-DECISION-CONTROL-01",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "generated",
+      "source": "LOSS-01",
+      "target": "GONI-SYNTHESIS-SOVEREIGN-COOPERATIVE-ARCHITECTURE",
       "type": "synthesized_by"
     },
     {
@@ -73220,6 +73491,12 @@
     {
       "projection": "generated",
       "source": "NET-COMP-01",
+      "target": "GONI-SYNTHESIS-SOVEREIGN-COOPERATIVE-ARCHITECTURE",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "generated",
+      "source": "NET-COMP-01",
       "target": "EXPORT-EVAL-01",
       "type": "tested_by"
     },
@@ -73264,6 +73541,12 @@
       "source": "NET-LEARN-01",
       "target": "GONI-SPEC-C4655EDC9751",
       "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "NET-LEARN-01",
+      "target": "GONI-SYNTHESIS-SOVEREIGN-COOPERATIVE-ARCHITECTURE",
+      "type": "synthesized_by"
     },
     {
       "projection": "generated",
@@ -73904,6 +74187,12 @@
     {
       "projection": "generated",
       "source": "RESULT-01",
+      "target": "GONI-SYNTHESIS-SOVEREIGN-COOPERATIVE-ARCHITECTURE",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "generated",
+      "source": "RESULT-01",
       "target": "GONI-SYNTHESIS-VERIFIED-COMPUTE-SUBSTRATE",
       "type": "synthesized_by"
     },
@@ -74074,6 +74363,12 @@
       "source": "SIM-BUDGET-01",
       "target": "SCHED-01",
       "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "SIM-BUDGET-01",
+      "target": "GONI-SYNTHESIS-SOVEREIGN-COOPERATIVE-ARCHITECTURE",
+      "type": "synthesized_by"
     },
     {
       "projection": "generated",
@@ -74448,6 +74743,12 @@
       "type": "supported_by"
     },
     {
+      "projection": "generated",
+      "source": "SYS-03",
+      "target": "GONI-SYNTHESIS-SOVEREIGN-COOPERATIVE-ARCHITECTURE",
+      "type": "synthesized_by"
+    },
+    {
       "projection": "authored",
       "source": "SYS-03",
       "target": "GONI-SYNTHESIS-0FEC67AFFE7C",
@@ -74656,6 +74957,12 @@
       "source": "WORLD-01",
       "target": "DREAM-01",
       "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "WORLD-01",
+      "target": "GONI-SYNTHESIS-SOVEREIGN-COOPERATIVE-ARCHITECTURE",
+      "type": "synthesized_by"
     },
     {
       "projection": "generated",
