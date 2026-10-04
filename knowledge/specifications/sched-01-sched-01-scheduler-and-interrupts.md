@@ -4,7 +4,9 @@ title: SCHED-01 - Scheduler and Interrupts
 type: specification
 status: draft
 implementation_state: specified_only
-proposition: "\uFEFF--- id: SCHED-01 type: SPEC status: specified_only DOC-ID: SCHED-01 Status: Specified only / roadmap This spec defines when and how the kernel escalates work from continuous, low-power cognition to expensive solver/LLM interrupts."
+proposition: "\uFEFF--- id: SCHED-01 type: SPEC status: specified_only DOC-ID: SCHED-01\
+  \ Status: Specified only / roadmap This spec defines when and how the kernel escalates\
+  \ work from continuous, low-power cognition to expensive solver/LLM interrupts."
 domains:
 - specs
 aliases:
@@ -12,7 +14,8 @@ aliases:
 relations: []
 sources: []
 artifacts: []
-uncertainty: Preserved from the legacy draft without status promotion or newly inferred evidence strength.
+uncertainty: Preserved from the legacy draft without status promotion or newly inferred
+  evidence strength.
 legacy:
 - path: blueprint/30-specs/scheduler-and-interrupts.md
   heading: SCHED-01 - Scheduler and Interrupts
@@ -34,3 +37,7 @@ Status: Specified only / roadmap
 
 This spec defines when and how the kernel escalates work from continuous,
 low-power cognition to expensive solver/LLM interrupts.
+
+## Compute placement and simulation refinements
+
+[COMP-REG-01](comp-reg-01-compute-capability-registry.md) supplies capability-driven eligible placements under the existing scheduler. [SIM-BUDGET-01](sim-budget-01-decision-aware-simulation-allocation.md) supplies bounded marginal simulation-value signals; the scheduler remains the resource arbiter.

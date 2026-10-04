@@ -545,6 +545,7 @@
       ],
       "compute": [
         "COMP-01",
+        "COMP-REG-01",
         "COMPUTE-EVAL-01",
         "D-025",
         "DIST-01",
@@ -557,6 +558,7 @@
         "GONI-PRINCIPLE-VERIFICATION-BOUNDARIES",
         "GONI-SPEC-A221A420C8C4",
         "GONI-SYNTHESIS-VERIFIED-COMPUTE-SUBSTRATE",
+        "HCOMP-01",
         "NET-COMP-01",
         "RESULT-01"
       ],
@@ -687,6 +689,7 @@
         "GONI-PRINCIPLE-TRAJ-ECON-01",
         "GONI-SYNTHESIS-PROBABILISTIC-DECISION-CONTROL-01",
         "LOSS-01",
+        "PLACEMENT-EVAL-01",
         "SELECTIVE-01",
         "SIM-BUDGET-01",
         "WORLD-EVAL-01",
@@ -697,6 +700,7 @@
         "BOM-NOTES",
         "BOM-V1-APU-NODE",
         "BOM-V2-FRAMEWORK-395-128GB",
+        "COMP-REG-01",
         "ENCLOSURE-NOTES",
         "FRONT-PANEL-MCU",
         "GONI-DECISION-048BDF1585D6",
@@ -852,8 +856,11 @@
         "GONI-SYNTHESIS-2D1554CB2646",
         "GONI-SYNTHESIS-3DD064A0217F",
         "GONI-SYNTHESIS-A5E56B434FF9",
+        "GONI-SYNTHESIS-HARDWARE-COMPUTE-DEPENDENCIES",
+        "HCOMP-01",
         "HREQ-01",
         "OS-AND-BASE-IMAGE",
+        "PLACEMENT-EVAL-01",
         "POWER-AND-PSU"
       ],
       "kernel": [
@@ -1998,10 +2005,12 @@
         "SELECTIVE-01"
       ],
       "scheduler": [
+        "COMP-REG-01",
         "GONI-DECISION-0532C27DA3CC",
         "GONI-PRINCIPLE-COMPUTE-SEMANTIC-NEUTRALITY",
         "GONI-PRINCIPLE-QUALIFIED-PROVIDER-SUBSTITUTABILITY",
         "GONI-SYNTHESIS-VERIFIED-COMPUTE-SUBSTRATE",
+        "PLACEMENT-EVAL-01",
         "SIM-BUDGET-01"
       ],
       "security": [
@@ -2830,6 +2839,9 @@
         "TOOL-01",
         "VIS-01"
       ],
+      "supply-chain": [
+        "GONI-SYNTHESIS-HARDWARE-COMPUTE-DEPENDENCIES"
+      ],
       "system": [
         "CACHE-01",
         "CACHE-EVAL-01",
@@ -2997,6 +3009,7 @@
         "CGG-01",
         "CI-VALIDATION-01",
         "COMP-01",
+        "COMP-REG-01",
         "COMPUTE-EVAL-01",
         "CONFIDENCE-01",
         "COOP-PRIVACY-01",
@@ -4873,6 +4886,7 @@
         "GONI-SYNTHESIS-FEC452FE3082",
         "GONI-SYNTHESIS-FF1804B9EA23",
         "GONI-SYNTHESIS-FFFD0BDE80BE",
+        "GONI-SYNTHESIS-HARDWARE-COMPUTE-DEPENDENCIES",
         "GONI-SYNTHESIS-PROBABILISTIC-DECISION-CONTROL-01",
         "GONI-SYNTHESIS-VERIFIED-COMPUTE-SUBSTRATE",
         "GONI-THESIS-3234CF1EA4B0",
@@ -4896,6 +4910,7 @@
         "GONI-THESIS-F782C616C259",
         "GONI-WHITEPAPER",
         "GOV-00",
+        "HCOMP-01",
         "HREQ-01",
         "INF-FRAME-01",
         "ITCR-01",
@@ -4928,6 +4943,7 @@
         "PAY-PER-EXECUTION",
         "PERSONAL-AI-SECRETARY-LANDSCAPE",
         "PERSONAL-TWIN-AUTONOMY-MAP",
+        "PLACEMENT-EVAL-01",
         "PLANE-00",
         "PLANE-01",
         "POWER-AND-PSU",
@@ -5325,6 +5341,7 @@
         "GONI-EXPERIMENT-F3974392D01F",
         "GONI-EXPERIMENT-F5667C1994A9",
         "GONI-LAB",
+        "PLACEMENT-EVAL-01",
         "SKILL-EVAL-01",
         "WORLD-EVAL-01"
       ],
@@ -5812,7 +5829,8 @@
         "GONI-PRINCIPLE-QUALIFIED-PROVIDER-SUBSTITUTABILITY",
         "GONI-PRINCIPLE-TRAJ-ECON-01",
         "GONI-PRINCIPLE-VALIDITY-CORRECTNESS-01",
-        "GONI-PRINCIPLE-VERIFICATION-BOUNDARIES"
+        "GONI-PRINCIPLE-VERIFICATION-BOUNDARIES",
+        "HCOMP-01"
       ],
       "proposal": [
         "AI-MEDIA-PROVENANCE",
@@ -5997,6 +6015,7 @@
         "CDC-01",
         "CGG-01",
         "COMP-01",
+        "COMP-REG-01",
         "CONFIDENCE-01",
         "CRDT-AUDIT-01",
         "CRDT-NOTES-01",
@@ -6972,6 +6991,7 @@
         "GONI-SYNTHESIS-FEC452FE3082",
         "GONI-SYNTHESIS-FF1804B9EA23",
         "GONI-SYNTHESIS-FFFD0BDE80BE",
+        "GONI-SYNTHESIS-HARDWARE-COMPUTE-DEPENDENCIES",
         "GONI-SYNTHESIS-PROBABILISTIC-DECISION-CONTROL-01",
         "GONI-SYNTHESIS-VERIFIED-COMPUTE-SUBSTRATE",
         "GONI-WHITEPAPER",
@@ -11387,6 +11407,56 @@
       "title": "Computation Specification",
       "type": "specification",
       "uncertainty": "Canonical serialization, commitment primitives, and the exact boundary between executable-program mode and relation-satisfaction mode remain to be specified."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Compute capability registry contract\n\n> Status boundary: this is a specified-only blueprint contract or planned evaluation.\n\n## Capability description\n\nThe registry is a logical scheduler-facing view over existing discovery and\ntelemetry. An implementation may use an in-process collection for the local MVP;\nthe contract does not prescribe a discovery service or database.\n\n\\[\nH_i=(Ops,Memory,BW,Latency,Energy,Trust,Proof).\n\\]\n\nEach term is a scoped descriptor: supported operations/shapes and numerical\nprofiles; available memory; observed or estimated bandwidth/latency/energy;\ntrust-domain and evidence references; and available proof/evidence mechanisms.\nTrust denotes named assumptions rather than a universal scalar. Capability and\nresource estimates state their source, validity interval, measurement/advertisement\nstatus, uncertainty, and material runtime/driver/hardware versions.\n\n## Eligibility and placement\n\n\\[\n\\mathcal H_J=\\{H:Cap(H)\\models Req(J)\\land PolicyAllows(J,H)\\},\n\\]\n\\[\nH^*=\\arg\\min_{H\\in\\mathcal H_J}\n(\\alpha L+\\beta Cost+\\gamma Energy+\\delta V+\\eta PrivacyRisk).\n\\]\n\n\\(\\models\\) includes set membership for operations and comparisons for numeric\ncapacity, deadlines, and bounds. The accepted semantics, trust class, privacy\npolicy, evidence path, and current authority are eligibility conditions. The\nweighted objective compares eligible routes; residual permitted privacy risk is\ndistinct from violation of a hard disclosure constraint.\n\nThe scheduler's named objective profile MUST define units, normalization,\nweights, and the meaning of \\(V\\) (evidence production/verification burden).\nExecution, evidence, verification, transfer/storage, coordination/settlement,\nexpected failure and retry costs are included where material. Terms are counted\nonce, and measured post-execution costs remain distinct from pre-execution estimates.\n\n## Conformance and updates\n\nA conforming scheduler MUST compare requirements with fresh, sufficiently assured\ncapabilities, including dynamic memory pressure and thermal/resource headroom.\nAn unsupported profile, unresolved required property, or unavailable eligible\nbackend returns the job's ordinary deferred, rejected, or unresolved outcome.\nBackend failure and capability changes trigger bounded re-evaluation through the\nexisting job lifecycle. A provider's advertised evidence mechanism is checked\nagainst EVID-01 at result acceptance.\n\nBrand names and application labels may be descriptive metadata; eligibility is\ndefined by capabilities and contracts. A future specialized or quantum backend\nis eligible only after its operation, stochastic/numerical acceptance semantics,\nand evidence profile are explicitly defined and supported.",
+      "domains": [
+        "compute",
+        "scheduler",
+        "hardware"
+      ],
+      "id": "COMP-REG-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/specifications/comp-reg-01-compute-capability-registry.md",
+      "proposition": "Scheduler-visible compute capabilities describe supported operations and semantic/evidence profiles with resource bounds, locality, provenance, freshness, and assurance, permitting placement only among policy-eligible resources.",
+      "relations": [
+        {
+          "target": "SCHED-01",
+          "type": "refines"
+        },
+        {
+          "target": "COMP-01",
+          "type": "depends_on"
+        },
+        {
+          "target": "EXEC-01",
+          "type": "depends_on"
+        },
+        {
+          "target": "EVID-01",
+          "type": "depends_on"
+        },
+        {
+          "target": "NET-COMP-01",
+          "type": "depends_on"
+        },
+        {
+          "target": "GONI-IMAP-FBBFE14FE1A3",
+          "type": "refines"
+        }
+      ],
+      "sources": [
+        "SRC-GONI20261004-COOPERATIVE-COMPUTE",
+        "SRC-RAY-SCHEDULING-LOCALITY",
+        "SRC-ROOFLINE-CACM"
+      ],
+      "status": "draft",
+      "title": "Compute capability registry contract",
+      "type": "specification",
+      "uncertainty": "Capability encoding, confidence/freshness policies, objective weights, provider discovery, and counter availability remain profile-specific design questions."
     },
     {
       "aliases": [],
@@ -28296,7 +28366,7 @@
     {
       "aliases": [],
       "artifacts": [],
-      "body": "# 25 - Hardware Layers and Supplier Map (2025–2026)\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n# 25 - Hardware Layers and Supplier Map (2025–2026)\n\nLast refreshed: **2026-01-03**\n\nThis note captures the **mental model for Goni hardware**, plus an opinionated supplier map with **availability reality** and **backend readiness** notes so hardware choices stay aligned with what the software can actually run today.\n\n---",
+      "body": "# 25 - Hardware Layers and Supplier Map (2025–2026)\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n# 25 - Hardware Layers and Supplier Map (2025–2026)\n\nLast refreshed: **2026-01-03**\n\nThis note captures the **mental model for Goni hardware**, plus an opinionated supplier map with **availability reality** and **backend readiness** notes so hardware choices stay aligned with what the software can actually run today.\n\n---\n\n## Compute dependency reading guide\n\n[Physical dependencies of cooperative compute](../syntheses/hardware-compute-dependencies.md) connects this dated supplier map to contract-qualified backend readiness. Supplier facts here retain their recorded refresh date.",
       "domains": [
         "hardware"
       ],
@@ -30631,7 +30701,7 @@
     {
       "aliases": [],
       "artifacts": [],
-      "body": "# 1. Telemetry and capability discovery (base image contract)\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n## 1. Telemetry and capability discovery (base image contract)\n\nThe base image MUST expose, or provide a documented fallback for:\n\n- thermal sensors and throttling events,\n- memory pressure and swap statistics,\n- storage writes and health signals,\n- GPU/NPU capability query (supported shapes, quantization, graph cache status),\n- optional bandwidth estimates or perf counters where available.\n\nOS policies MUST support:\n\n- background compaction/indexing only on AC power and with thermal headroom,\n- pausing background work during solver bursts,\n- pinning shared memory regions for hot state.\n\nCross-layer links:\n- scheduling behavior: `blueprint/software/10-requirements.md`\n- routing and shape constraints: `blueprint/software/30-components/llm-runtime.md`",
+      "body": "# 1. Telemetry and capability discovery (base image contract)\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n## 1. Telemetry and capability discovery (base image contract)\n\nThe base image MUST expose, or provide a documented fallback for:\n\n- thermal sensors and throttling events,\n- memory pressure and swap statistics,\n- storage writes and health signals,\n- GPU/NPU capability query (supported shapes, quantization, graph cache status),\n- optional bandwidth estimates or perf counters where available.\n\nOS policies MUST support:\n\n- background compaction/indexing only on AC power and with thermal headroom,\n- pausing background work during solver bursts,\n- pinning shared memory regions for hot state.\n\nCross-layer links:\n- scheduling behavior: `blueprint/software/10-requirements.md`\n- routing and shape constraints: `blueprint/software/30-components/llm-runtime.md`\n\n## Scheduler-facing refinement\n\n[COMP-REG-01](../specifications/comp-reg-01-compute-capability-registry.md) describes the scheduler-facing capability view over these existing discovery and telemetry mechanisms. [HCOMP-01](../principles/hcomp-01-semantic-universality-physical-specialization.md) connects that view to heterogeneous execution.",
       "domains": [
         "hardware"
       ],
@@ -60915,6 +60985,45 @@
       "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
     },
     {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Physical dependencies of cooperative compute\n\n> Status boundary: this is a specified-only blueprint contract or planned evaluation.\n\nThis reading guide links [HCOMP-01](../principles/hcomp-01-semantic-universality-physical-specialization.md),\n[COMP-REG-01](../specifications/comp-reg-01-compute-capability-registry.md), the\n[existing hardware requirements](../specifications/goni-spec-5819106486b4-3-1-compute-capability.md),\nand the [dated supplier map](../implementation-maps/goni-imap-c4d26460e574-25-hardware-layers-and-supplier-map-2025-2026.md).\n\n## Dependency model\n\nThe proposal's EDA → Wafer → FabTools → Foundry → Packaging/HBM → System shorthand\nis interpreted as a dependency graph, rather than a single production sequence:\n\n```mermaid\nflowchart TD\n  EDA[\"EDA and IP\"] --> Design[\"Chip design\"]\n  Design --> Fab[\"Foundry fabrication\"]\n  Materials[\"Wafers and materials\"] --> Fab\n  Tools[\"Fabrication tools\"] --> Fab\n  Fab --> Package[\"Packaging and integration\"]\n  Memory[\"Memory and HBM\"] --> Package\n  Package --> System[\"Compute system\"]\n  Memory --> System\n  Power[\"Power and cooling\"] --> System\n  System --> Runtime[\"Supported runtime profile\"]\n```\n\nThis is an explanatory dependency model. It makes no new supplier, availability,\nor market-share claims. Vendor facts remain dated and sourced in implementation\nmaps. A chip's existence, a purchasable system, a supported runtime, and a measured\nGONI workload are separate readiness milestones.\n\nThe memory/interconnect → useful compute shorthand describes a workload\nconstraint, not a universal causal ordering. COMP-REG-01 and the existing\ntelemetry contract provide the placement-facing descriptions; empirical\nperformance and evidence costs belong to scoped evaluation results.",
+      "domains": [
+        "hardware",
+        "supply-chain"
+      ],
+      "id": "GONI-SYNTHESIS-HARDWARE-COMPUTE-DEPENDENCIES",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/syntheses/hardware-compute-dependencies.md",
+      "proposition": "Heterogeneous compute placement connects to a branching hardware dependency model and the existing dated supplier map through measured backend readiness.",
+      "relations": [
+        {
+          "target": "HCOMP-01",
+          "type": "synthesizes"
+        },
+        {
+          "target": "COMP-REG-01",
+          "type": "synthesizes"
+        },
+        {
+          "target": "GONI-IMAP-C4D26460E574",
+          "type": "synthesizes"
+        },
+        {
+          "target": "GONI-IMAP-FBBFE14FE1A3",
+          "type": "synthesizes"
+        }
+      ],
+      "sources": [
+        "SRC-GONI20261004-COOPERATIVE-COMPUTE"
+      ],
+      "status": "draft",
+      "title": "Physical dependencies of cooperative compute",
+      "type": "synthesis",
+      "uncertainty": "The dependency diagram is a conceptual synthesis; actual supplier dependencies and backend readiness require dated source and measurement records."
+    },
+    {
       "aliases": [
         "PROBABILISTIC-DECISION-CONTROL-SYNTHESIS"
       ],
@@ -61644,6 +61753,43 @@
       "title": "Governance Hub",
       "type": "synthesis",
       "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Semantic universality and physical specialization\n\n> Status boundary: this is a specified-only blueprint contract or planned evaluation.\n\n\\[\n\\boxed{Semantic\\ universality+Physical\\ specialization}\n\\]\n\nCommon computation semantics enable qualified substitution; execution remains\nhardware-specific. Memory capacity, bandwidth, interconnect/transfer cost,\nthermal headroom, backend support and evidence cost constrain useful capacity.\nOperation count or nominal accelerator throughput alone is insufficient for an\nend-to-end placement decision.\n\nHCOMP-01 refines application-neutral compute semantics. Current local CPU/GPU/NPU\nand APU-centric MVP requirements retain their existing scope. Additional crypto,\nproof, FPGA, remote, or quantum profiles are research/extension possibilities\nwhose eligibility is established through COMP-REG-01 and the compute contracts.\nThe principle creates no new MVP device, minimum capacity, vendor selection,\nperformance promise, or quantum requirement.",
+      "domains": [
+        "hardware",
+        "compute"
+      ],
+      "id": "HCOMP-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/principles/hcomp-01-semantic-universality-physical-specialization.md",
+      "proposition": "A common accepted-computation contract may route to physically specialized backends according to semantics, locality, memory, interconnect, evidence cost, and measured suitability.",
+      "relations": [
+        {
+          "target": "GONI-PRINCIPLE-COMPUTE-SEMANTIC-NEUTRALITY",
+          "type": "refines"
+        },
+        {
+          "target": "COMP-REG-01",
+          "type": "depends_on"
+        },
+        {
+          "target": "GONI-SPEC-5819106486B4",
+          "type": "depends_on"
+        }
+      ],
+      "sources": [
+        "SRC-GONI20261004-COOPERATIVE-COMPUTE",
+        "SRC-MLIR-OFFICIAL",
+        "SRC-ROOFLINE-CACM"
+      ],
+      "status": "draft",
+      "title": "Semantic universality and physical specialization",
+      "type": "principle",
+      "uncertainty": "Which specialized routes improve end-to-end performance and assurance requires workload-specific implementation and measurement."
     },
     {
       "aliases": [],
@@ -62806,6 +62952,38 @@
     {
       "aliases": [],
       "artifacts": [],
+      "body": "# Capability-qualified placement evaluation\n\n> Status boundary: this is a specified-only blueprint contract or planned evaluation.\n\nCompare local, owner-mesh, and authorized cooperative routes for the same named\ncomputation/evidence profile. Vary memory capacity, data/model locality,\nbandwidth, thermal headroom, stale/false capability advertisements, unavailable\nproof backends, failures, deadlines, and disclosure constraints.\n\nMeasure eligibility decisions, objective estimates versus actual total costs,\ntransfer/evidence overhead, latency, energy where measured, retries, and result\nacceptance. Keep unsupported counters explicitly unknown. Record objective units\nand weights, capability observations, runtime/full implementation revisions,\nhardware configurations, and execution/evidence receipts. Compare against a named\nexecution-time-only baseline and a permitted-local baseline. Set statistical\nand utility thresholds before execution; the conformance target is zero placement\noutside declared hard constraints within the tested boundary.",
+      "domains": [
+        "evaluation",
+        "scheduler",
+        "hardware"
+      ],
+      "id": "PLACEMENT-EVAL-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/experiments/placement-eval-01-capability-qualified-placement.md",
+      "proposition": "A matched evaluation should compare capability-qualified routes using complete execution, evidence, transfer, failure, latency, and energy costs under identical hard constraints.",
+      "relations": [
+        {
+          "target": "COMP-REG-01",
+          "type": "tests"
+        },
+        {
+          "target": "HCOMP-01",
+          "type": "tests"
+        }
+      ],
+      "sources": [
+        "SRC-GONI20261004-COOPERATIVE-COMPUTE"
+      ],
+      "status": "draft",
+      "title": "Capability-qualified placement evaluation",
+      "type": "experiment",
+      "uncertainty": "Supported platforms, cost instrumentation, workload suite, and comparison thresholds remain to be selected."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
       "body": "# Planes\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n﻿# Planes Hub\nDOC-ID: PLANE-00\nStatus: Specified only / roadmap\n\nThis hub connects the plane model to the rest of the blueprint.",
       "domains": [
         "repository"
@@ -63437,7 +63615,7 @@
         "SCHEDULER-AND-INTERRUPTS"
       ],
       "artifacts": [],
-      "body": "# SCHED-01 - Scheduler and Interrupts\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n# SCHED-01 - Scheduler and Interrupts\n﻿---\nid: SCHED-01\ntype: SPEC\nstatus: specified_only\n---\nDOC-ID: SCHED-01\nStatus: Specified only / roadmap\n\nThis spec defines when and how the kernel escalates work from continuous,\nlow-power cognition to expensive solver/LLM interrupts.",
+      "body": "# SCHED-01 - Scheduler and Interrupts\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n# SCHED-01 - Scheduler and Interrupts\n﻿---\nid: SCHED-01\ntype: SPEC\nstatus: specified_only\n---\nDOC-ID: SCHED-01\nStatus: Specified only / roadmap\n\nThis spec defines when and how the kernel escalates work from continuous,\nlow-power cognition to expensive solver/LLM interrupts.\n\n## Compute placement and simulation refinements\n\n[COMP-REG-01](comp-reg-01-compute-capability-registry.md) supplies capability-driven eligible placements under the existing scheduler. [SIM-BUDGET-01](sim-budget-01-decision-aware-simulation-allocation.md) supplies bounded marginal simulation-value signals; the scheduler remains the resource arbiter.",
       "domains": [
         "specs"
       ],
@@ -65199,6 +65377,12 @@
     {
       "projection": "generated",
       "source": "COMP-01",
+      "target": "COMP-REG-01",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
+      "source": "COMP-01",
       "target": "EXEC-01",
       "type": "depended_on_by"
     },
@@ -65261,6 +65445,60 @@
       "projection": "generated",
       "source": "COMP-01",
       "target": "COMPUTE-EVAL-01",
+      "type": "tested_by"
+    },
+    {
+      "projection": "generated",
+      "source": "COMP-REG-01",
+      "target": "HCOMP-01",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "authored",
+      "source": "COMP-REG-01",
+      "target": "COMP-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "COMP-REG-01",
+      "target": "EVID-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "COMP-REG-01",
+      "target": "EXEC-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "COMP-REG-01",
+      "target": "NET-COMP-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "COMP-REG-01",
+      "target": "GONI-IMAP-FBBFE14FE1A3",
+      "type": "refines"
+    },
+    {
+      "projection": "authored",
+      "source": "COMP-REG-01",
+      "target": "SCHED-01",
+      "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "COMP-REG-01",
+      "target": "GONI-SYNTHESIS-HARDWARE-COMPUTE-DEPENDENCIES",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "generated",
+      "source": "COMP-REG-01",
+      "target": "PLACEMENT-EVAL-01",
       "type": "tested_by"
     },
     {
@@ -65788,6 +66026,12 @@
     {
       "projection": "generated",
       "source": "EVID-01",
+      "target": "COMP-REG-01",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
+      "source": "EVID-01",
       "target": "DIST-01",
       "type": "depended_on_by"
     },
@@ -65958,6 +66202,12 @@
       "source": "EVID-ZHENG2024-SGLANG",
       "target": "GONI-SYNTHESIS-227700D474C6",
       "type": "supports"
+    },
+    {
+      "projection": "generated",
+      "source": "EXEC-01",
+      "target": "COMP-REG-01",
+      "type": "depended_on_by"
     },
     {
       "projection": "generated",
@@ -67139,6 +67389,12 @@
     },
     {
       "projection": "generated",
+      "source": "GONI-IMAP-C4D26460E574",
+      "target": "GONI-SYNTHESIS-HARDWARE-COMPUTE-DEPENDENCIES",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "generated",
       "source": "GONI-IMAP-E2D8A099B27A",
       "target": "GONI-IMAP-66D2DBD94204",
       "type": "refined_by"
@@ -67274,6 +67530,18 @@
       "source": "GONI-IMAP-ED288DB4EAF5",
       "target": "GONI-EVIDENCE-F548C655D101",
       "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-IMAP-FBBFE14FE1A3",
+      "target": "COMP-REG-01",
+      "type": "refined_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-IMAP-FBBFE14FE1A3",
+      "target": "GONI-SYNTHESIS-HARDWARE-COMPUTE-DEPENDENCIES",
+      "type": "synthesized_by"
     },
     {
       "projection": "generated",
@@ -67418,6 +67686,12 @@
       "source": "GONI-PRINCIPLE-COMPUTE-SEMANTIC-NEUTRALITY",
       "target": "GONI-SPEC-C2C63462FEAE",
       "type": "depends_on"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-PRINCIPLE-COMPUTE-SEMANTIC-NEUTRALITY",
+      "target": "HCOMP-01",
+      "type": "refined_by"
     },
     {
       "note": "The existing action/tool/model taxonomy remains a governance taxonomy while execution planning gains a lower-level operation taxonomy.",
@@ -67665,6 +67939,12 @@
       "source": "GONI-SPEC-3C0787853B81",
       "target": "GONI-PRINCIPLE-COMPUTE-SEMANTIC-NEUTRALITY",
       "type": "refined_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-SPEC-5819106486B4",
+      "target": "HCOMP-01",
+      "type": "depended_on_by"
     },
     {
       "projection": "generated",
@@ -71856,6 +72136,30 @@
     },
     {
       "projection": "authored",
+      "source": "GONI-SYNTHESIS-HARDWARE-COMPUTE-DEPENDENCIES",
+      "target": "COMP-REG-01",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SYNTHESIS-HARDWARE-COMPUTE-DEPENDENCIES",
+      "target": "GONI-IMAP-C4D26460E574",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SYNTHESIS-HARDWARE-COMPUTE-DEPENDENCIES",
+      "target": "GONI-IMAP-FBBFE14FE1A3",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SYNTHESIS-HARDWARE-COMPUTE-DEPENDENCIES",
+      "target": "HCOMP-01",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
       "source": "GONI-SYNTHESIS-PROBABILISTIC-DECISION-CONTROL-01",
       "target": "CAL-01",
       "type": "synthesizes"
@@ -72111,6 +72415,36 @@
       "source": "GOV-00",
       "target": "GONI-SYNTHESIS-ED003EE7E80E",
       "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "HCOMP-01",
+      "target": "COMP-REG-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "HCOMP-01",
+      "target": "GONI-SPEC-5819106486B4",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "HCOMP-01",
+      "target": "GONI-PRINCIPLE-COMPUTE-SEMANTIC-NEUTRALITY",
+      "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "HCOMP-01",
+      "target": "GONI-SYNTHESIS-HARDWARE-COMPUTE-DEPENDENCIES",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "generated",
+      "source": "HCOMP-01",
+      "target": "PLACEMENT-EVAL-01",
+      "type": "tested_by"
     },
     {
       "projection": "generated",
@@ -72653,6 +72987,12 @@
       "type": "depended_on_by"
     },
     {
+      "projection": "generated",
+      "source": "NET-COMP-01",
+      "target": "COMP-REG-01",
+      "type": "depended_on_by"
+    },
+    {
       "projection": "authored",
       "source": "NET-COMP-01",
       "target": "D-025",
@@ -72939,6 +73279,18 @@
       "source": "PERSONAL-TWIN-AUTONOMY-MAP",
       "target": "GONI-SYNTHESIS-B579778B2419",
       "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "PLACEMENT-EVAL-01",
+      "target": "COMP-REG-01",
+      "type": "tests"
+    },
+    {
+      "projection": "authored",
+      "source": "PLACEMENT-EVAL-01",
+      "target": "HCOMP-01",
+      "type": "tests"
     },
     {
       "projection": "authored",
@@ -73365,6 +73717,12 @@
       "source": "SCHED-01",
       "target": "GONI-DECISION-6D3A2B71C9E4",
       "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
+      "source": "SCHED-01",
+      "target": "COMP-REG-01",
+      "type": "refined_by"
     },
     {
       "projection": "generated",
