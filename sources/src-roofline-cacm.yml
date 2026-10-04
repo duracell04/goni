@@ -1,0 +1,7 @@
+id: SRC-ROOFLINE-CACM
+title: Roofline - An Insightful Visual Performance Model for Multicore Architectures
+kind: academic
+citation: Williams, Waterman, and Patterson, Communications of the ACM, 2009.
+url: https://cacm.acm.org/research/roofline-an-insightful-visual-performance-model-for-multicore-architectures/
+accessed: 2026-10-04
+notes: Foundational Roofline model relating attainable performance to operational intensity and memory bandwidth.

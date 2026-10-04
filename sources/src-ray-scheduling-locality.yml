@@ -1,0 +1,7 @@
+id: SRC-RAY-SCHEDULING-LOCALITY
+title: Ray scheduling and data locality
+kind: web
+citation: https://docs.ray.io/en/latest/ray-core/scheduling/
+url: https://docs.ray.io/en/latest/ray-core/scheduling/
+accessed: 2026-10-04
+notes: Official Ray documentation describing resource-aware scheduling and locality considerations for distributed tasks and objects.
