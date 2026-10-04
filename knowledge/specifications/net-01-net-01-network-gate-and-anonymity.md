@@ -4,7 +4,8 @@ title: NET-01 - Network Gate and Anonymity
 type: specification
 status: draft
 implementation_state: specified_only
-proposition: 'DOC-ID: NET-01 Status: Specified only / roadmap Conformance: TBD (goni-lab harness) This spec defines network egress control for Goni OS.'
+proposition: 'DOC-ID: NET-01 Status: Specified only / roadmap Conformance: TBD (goni-lab
+  harness) This spec defines network egress control for Goni OS.'
 domains:
 - network
 - specs
@@ -13,7 +14,8 @@ aliases:
 relations: []
 sources: []
 artifacts: []
-uncertainty: Preserved from the legacy draft without status promotion or newly inferred evidence strength.
+uncertainty: Preserved from the legacy draft without status promotion or newly inferred
+  evidence strength.
 legacy:
 - path: blueprint/30-specs/network-gate-and-anonymity.md
   heading: NET-01 - Network Gate and Anonymity
@@ -33,3 +35,7 @@ This spec defines network egress control for Goni OS. Networking is treated as
 a capability-scoped syscall mediated by a reference monitor (Network Gate).
 It formalizes two policy bundles ("Sovereign Mode" and "Anonymous Mode"),
 adversary models, audit receipts, and failure modes.
+
+## Cooperative compute refinement
+
+[NET-COMP-01](net-comp-01-cooperative-compute-export.md) specifies the recipient-scoped compute-export boundary over this existing Network Gate. Local and owner-mesh placement remain distinct from cooperation across independent authority domains.
