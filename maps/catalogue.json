@@ -265,6 +265,10 @@
       "node": "TOOL-01"
     },
     {
+      "alias": "UCT-01",
+      "node": "GONI-SYNTHESIS-VERIFIED-COMPUTE-SUBSTRATE"
+    },
+    {
       "alias": "UNCERTAINTY-EVIDENCE",
       "node": "CONFIDENCE-01"
     },
@@ -535,6 +539,7 @@
       ],
       "compute": [
         "COMP-01",
+        "COMPUTE-EVAL-01",
         "DIST-01",
         "EVID-01",
         "EXEC-01",
@@ -662,6 +667,7 @@
       "evaluation": [
         "CAL-01",
         "CAL-DRIFT-01",
+        "COMPUTE-EVAL-01",
         "CONFIDENCE-01",
         "GONI-EVIDENCE-CAL-GUO-01",
         "GONI-EVIDENCE-CAL-SCORING-01",
@@ -2963,6 +2969,7 @@
         "CGG-01",
         "CI-VALIDATION-01",
         "COMP-01",
+        "COMPUTE-EVAL-01",
         "CONFIDENCE-01",
         "CRDT-AUDIT-01",
         "CRDT-DECISIONS-01",
@@ -5150,6 +5157,7 @@
         "BOM-V1-APU-NODE",
         "BOM-V2-FRAMEWORK-395-128GB",
         "CACHE-EVAL-01",
+        "COMPUTE-EVAL-01",
         "CTX-COMP-EVAL-01",
         "CTX-MISS-EVAL-01",
         "DREAM-EVAL-01",
@@ -11329,6 +11337,49 @@
       "title": "Computation Specification",
       "type": "specification",
       "uncertainty": "Canonical serialization, commitment primitives, and the exact boundary between executable-program mode and relation-satisfaction mode remain to be specified."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Universal transition conformance evaluation\n\n> Status boundary: this is a specified-only blueprint contract or planned evaluation.\n\n## Question and comparison\n\nCompare a local baseline with local, owner-mesh, and permitted remote execution of\nthe same named computation specification. Run exact, tolerance-based, and\nstochastic profiles only where an implementation declares support.\n\n## Planned cases\n\n- Exact program execution: valid result, changed input/program/starting state,\n  and a reused computation under a fresh execution contract.\n- Approximate execution: named comparison norm, reference and tolerance; values\n  immediately inside and outside the declared acceptance boundary.\n- Stochastic execution: a named sampling/randomness contract and statistically\n  defined acceptance test, distinguished from bitwise replay.\n- Evidence: substituted verifier or evidence policy, correlated replicas,\n  stale attestation, unsupported evidence mechanisms, and meter claims outside\n  the proof's scope.\n- Completion: missing output data, cancellation, stale starting state, revoked\n  authority, and replayed settlement authorization.\n\n## Measurements and artifacts\n\nRecord program/runtime and full implementation commit, execution identity,\nevidence type and assumptions, accept/reject outcome, false acceptance/rejection,\nlatency, evidence cost, verification cost, transfer cost, and meter assurance.\nProduce scope-pinned receipts and case results. A conforming boundary should\nreject each deliberately invalid claim under the selected profile. These are\nplanned cases; successful execution will require separate evidence records.",
+      "domains": [
+        "compute",
+        "evaluation"
+      ],
+      "id": "COMPUTE-EVAL-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/experiments/compute-eval-01-universal-transition-conformance.md",
+      "proposition": "A matched evaluation should test whether the composed computation, execution, evidence, and receipt contracts preserve their declared acceptance boundaries across execution profiles.",
+      "relations": [
+        {
+          "target": "COMP-01",
+          "type": "tests"
+        },
+        {
+          "target": "EXEC-01",
+          "type": "tests"
+        },
+        {
+          "target": "EVID-01",
+          "type": "tests"
+        },
+        {
+          "target": "RESULT-01",
+          "type": "tests"
+        },
+        {
+          "target": "DIST-01",
+          "type": "tests"
+        }
+      ],
+      "sources": [
+        "SRC-GONI20261004-COOPERATIVE-COMPUTE"
+      ],
+      "status": "draft",
+      "title": "Universal transition conformance evaluation",
+      "type": "experiment",
+      "uncertainty": "Supported backend and evidence profiles, fixtures, and acceptance thresholds require a pinned experiment implementation."
     },
     {
       "aliases": [
@@ -60791,10 +60842,11 @@
     },
     {
       "aliases": [
-        "verified-compute-substrate"
+        "verified-compute-substrate",
+        "UCT-01"
       ],
       "artifacts": [],
-      "body": "# Verified Compute Substrate\n\nGONI remains a sovereign Delegation OS. The verified compute substrate is a lower layer inside the Execution Plane, not a replacement for the authority kernel.\n\nThe architectural flow is:\n\n[\nMandate\n\\rightarrow Work\\ Order\n\\rightarrow Kernel\\ Authority\n\\rightarrow Computation\\ Specification\n\\rightarrow Execution\\ Contract\n\\rightarrow Placement+Evidence\\ Planning\n\\rightarrow Execution\n\\rightarrow Evidence\n\\rightarrow Result\\ Receipt\n\\rightarrow State/Effect\n]\n\nSettlement is attached where economically relevant; it is not intrinsic to computation.\n\n## Layer boundary\n\nThe kernel answers:\n\n> May this work be performed, with these data, powers, constraints, and external effects?\n\nThe compute substrate answers:\n\n> Given that authority, what computation is acceptable, where can it execute, what evidence must accompany it, and what result can the kernel accept?\n\nThis preserves GONI's existing doctrine:\n\n> Models reason. The kernel authorizes. Tools act. Receipts prove what was authorized and observed.\n\nThe stronger compute formulation refines the last clause: receipts carry typed evidence and provenance; they do not magically turn every claim into cryptographic proof.\n\n## Common contract, heterogeneous execution\n\nThe substrate should expose one contract family across heterogeneous CPU, GPU, NPU, proof-oriented, remote, or future specialized resources. It remains physically specialized and locality-aware.\n\nThe scheduler chooses among qualified routes using execution cost, evidence cost, verification cost, transfer/storage cost, expected failure cost, latency, energy, privacy, and sovereignty constraints.\n\n## Research claim\n\nThe potentially valuable contribution is not that individual primitives are novel. Heterogeneous compilation, verifiable computation, distributed scheduling, provenance, and settlement all have prior art.\n\nThe GONI-specific research question is whether these can be composed beneath a sovereign delegation kernel so that:\n\n1. application meaning remains governed;\n2. computation becomes addressable through a common contract;\n3. execution and assurance are planned jointly;\n4. results carry typed evidence and canonical receipts;\n5. provider substitution is possible within explicit service classes;\n6. the full system improves end-to-end cost or assurance for meaningful workloads.\n\nThe next proof should be empirical: one contract interface, several computational profiles, multiple execution/evidence paths, and measured end-to-end tradeoffs.",
+      "body": "# Verified Compute Substrate\n\nGONI remains a sovereign Delegation OS. The verified compute substrate is a lower layer inside the Execution Plane, not a replacement for the authority kernel.\n\nThe architectural flow is:\n\n[\nMandate\n\\rightarrow Work\\ Order\n\\rightarrow Kernel\\ Authority\n\\rightarrow Computation\\ Specification\n\\rightarrow Execution\\ Contract\n\\rightarrow Placement+Evidence\\ Planning\n\\rightarrow Execution\n\\rightarrow Evidence\n\\rightarrow Result\\ Receipt\n\\rightarrow State/Effect\n]\n\nSettlement is attached where economically relevant; it is not intrinsic to computation.\n\n## Layer boundary\n\nThe kernel answers:\n\n> May this work be performed, with these data, powers, constraints, and external effects?\n\nThe compute substrate answers:\n\n> Given that authority, what computation is acceptable, where can it execute, what evidence must accompany it, and what result can the kernel accept?\n\nThis preserves GONI's existing doctrine:\n\n> Models reason. The kernel authorizes. Tools act. Receipts prove what was authorized and observed.\n\nThe stronger compute formulation refines the last clause: receipts carry typed evidence and provenance; they do not magically turn every claim into cryptographic proof.\n\n## Common contract, heterogeneous execution\n\nThe substrate should expose one contract family across heterogeneous CPU, GPU, NPU, proof-oriented, remote, or future specialized resources. It remains physically specialized and locality-aware.\n\nThe scheduler chooses among qualified routes using execution cost, evidence cost, verification cost, transfer/storage cost, expected failure cost, latency, energy, privacy, and sovereignty constraints.\n\n## Research claim\n\nThe potentially valuable contribution is not that individual primitives are novel. Heterogeneous compilation, verifiable computation, distributed scheduling, provenance, and settlement all have prior art.\n\nThe GONI-specific research question is whether these can be composed beneath a sovereign delegation kernel so that:\n\n1. application meaning remains governed;\n2. computation becomes addressable through a common contract;\n3. execution and assurance are planned jointly;\n4. results carry typed evidence and canonical receipts;\n5. provider substitution is possible within explicit service classes;\n6. the full system improves end-to-end cost or assurance for meaningful workloads.\n\nThe next proof should be empirical: one contract interface, several computational profiles, multiple execution/evidence paths, and measured end-to-end tradeoffs.\n\n\n## Universal Compute Transition (UCT-01)\n\nUCT-01 names the composition of the existing compute contracts. In the proposed\nprogram-execution profile, a compact explanatory envelope is:\n\n\\[\nJ=(P,I,S,\\rho,\\Sigma,B,\\Pi,R),\\qquad\nExec(J,H)\\rightarrow(O,S',m,\\pi).\n\\]\n\nThis notation summarizes the contracts below; it is not a second JobSpec or a\ncomplete serialized execution descriptor. JOB-01 remains scheduler-visible work,\nand one job can reference several computations. Relation-satisfaction mode is\ndefined separately in COMP-01.\n\n| Envelope term | Authoritative home |\n|---|---|\n| Program, inputs, starting state, randomness, numerical semantics, computational bounds | [COMP-01](../specifications/comp-01-computation-specification.md) |\n| Request identity, authority, delivery, deadline, request budget, privacy, settlement | [EXEC-01](../specifications/exec-01-execution-contract.md) |\n| Required evidence policy, verifier, assumptions, and claim scope | [EVID-01](../specifications/evid-01-computation-evidence-contract.md) |\n| Proposed output/state, meter references, delivery and acceptance decisions | [RESULT-01](../specifications/result-01-computation-result-receipt.md) |\n\nHere \\(\\pi\\) denotes typed attached evidence; a cryptographic proof is one supported\ndesign class. Meter assurance is distinct from result correctness. \\(S'\\) denotes\na proposed computational state transition; kernel acceptance determines its\nauthoritative use. Execution lifecycle, failure, and cancellation remain governed\nby the job and execution contracts.\n\nThe illustrative commitment \\(C_J=Commit(P,I,S,\\rho,\\Sigma)\\) identifies only the\nlisted computational core. COMP-01 binds its full accepted specification and\nEXEC-01 separately binds per-request terms. The commitment mechanism's binding\nand hiding properties are explicit design questions.",
       "domains": [
         "compute",
         "kernel",
@@ -64839,6 +64891,42 @@
     },
     {
       "projection": "generated",
+      "source": "COMP-01",
+      "target": "COMPUTE-EVAL-01",
+      "type": "tested_by"
+    },
+    {
+      "projection": "authored",
+      "source": "COMPUTE-EVAL-01",
+      "target": "COMP-01",
+      "type": "tests"
+    },
+    {
+      "projection": "authored",
+      "source": "COMPUTE-EVAL-01",
+      "target": "DIST-01",
+      "type": "tests"
+    },
+    {
+      "projection": "authored",
+      "source": "COMPUTE-EVAL-01",
+      "target": "EVID-01",
+      "type": "tests"
+    },
+    {
+      "projection": "authored",
+      "source": "COMPUTE-EVAL-01",
+      "target": "EXEC-01",
+      "type": "tests"
+    },
+    {
+      "projection": "authored",
+      "source": "COMPUTE-EVAL-01",
+      "target": "RESULT-01",
+      "type": "tests"
+    },
+    {
+      "projection": "generated",
       "source": "CONFIDENCE-01",
       "target": "CAL-DRIFT-01",
       "type": "depended_on_by"
@@ -65079,6 +65167,12 @@
     },
     {
       "projection": "generated",
+      "source": "DIST-01",
+      "target": "COMPUTE-EVAL-01",
+      "type": "tested_by"
+    },
+    {
+      "projection": "generated",
       "source": "DOCTRINE-DELEG-01",
       "target": "GONI-PRINCIPLE-GOV-LOOP-01",
       "type": "refined_by"
@@ -65306,6 +65400,12 @@
       "type": "synthesized_by"
     },
     {
+      "projection": "generated",
+      "source": "EVID-01",
+      "target": "COMPUTE-EVAL-01",
+      "type": "tested_by"
+    },
+    {
       "projection": "authored",
       "source": "EVID-DENNING1968-WORKING-SET",
       "target": "GONI-DECISION-FEB39440C565",
@@ -65467,6 +65567,12 @@
       "source": "EXEC-01",
       "target": "GONI-SYNTHESIS-VERIFIED-COMPUTE-SUBSTRATE",
       "type": "synthesized_by"
+    },
+    {
+      "projection": "generated",
+      "source": "EXEC-01",
+      "target": "COMPUTE-EVAL-01",
+      "type": "tested_by"
     },
     {
       "projection": "authored",
@@ -72629,6 +72735,12 @@
       "type": "synthesized_by"
     },
     {
+      "projection": "generated",
+      "source": "RESULT-01",
+      "target": "COMPUTE-EVAL-01",
+      "type": "tested_by"
+    },
+    {
       "projection": "authored",
       "source": "RFC-0000-TEMPLATE",
       "target": "GONI-OBJECTION-16A9274BEE9C",
@@ -73579,6 +73691,15 @@
       "path": "sources/src-gneiting-raftery2007-scoring.yml",
       "title": "gneiting-raftery2007-scoring",
       "url": "https://sites.stat.washington.edu/people/raftery/Research/PDF/Gneiting2007jasa.pdf"
+    },
+    {
+      "accessed": "2026-10-04",
+      "citation": "Enrique Georg Zbinden, GONI project discussion, 2026-10-04: twenty proposed architectural points grouped into five responsibilities.",
+      "id": "SRC-GONI20261004-COOPERATIVE-COMPUTE",
+      "kind": "internal",
+      "notes": "Design provenance for sovereignty, universal computation, predictive cognition, capability placement, and cooperative evidence learning. This proposal is not implementation or evaluation evidence.",
+      "path": "sources/src-goni20261004-cooperative-compute.yml",
+      "title": "GONI sovereign cooperative compute proposal, 4 October 2026"
     },
     {
       "citation": "Legacy annotated bibliography key [[greshake2023-indirect-prompt-injection]]",

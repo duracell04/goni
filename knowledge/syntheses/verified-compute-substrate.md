@@ -4,7 +4,9 @@ title: Verified Compute Substrate
 type: synthesis
 status: draft
 implementation_state: specified_only
-proposition: GONI can extend its Execution Plane with a policy-defined, evidence-carrying compute substrate that preserves delegation authority while making heterogeneous computation addressable through common contracts.
+proposition: GONI can extend its Execution Plane with a policy-defined, evidence-carrying
+  compute substrate that preserves delegation authority while making heterogeneous
+  computation addressable through common contracts.
 domains:
 - compute
 - kernel
@@ -12,6 +14,7 @@ domains:
 - receipts
 aliases:
 - verified-compute-substrate
+- UCT-01
 relations:
 - type: synthesizes
   target: GONI-PRINCIPLE-COMPUTE-SEMANTIC-NEUTRALITY
@@ -31,7 +34,9 @@ relations:
   target: DIST-01
 sources: []
 artifacts: []
-uncertainty: This synthesis describes a research and architecture direction. It does not establish implementation, scalability, proof economics, or a global compute market.
+uncertainty: This synthesis describes a research and architecture direction. It does
+  not establish implementation, scalability, proof economics, or a global compute
+  market.
 legacy: []
 ---
 
@@ -92,3 +97,37 @@ The GONI-specific research question is whether these can be composed beneath a s
 6. the full system improves end-to-end cost or assurance for meaningful workloads.
 
 The next proof should be empirical: one contract interface, several computational profiles, multiple execution/evidence paths, and measured end-to-end tradeoffs.
+
+
+## Universal Compute Transition (UCT-01)
+
+UCT-01 names the composition of the existing compute contracts. In the proposed
+program-execution profile, a compact explanatory envelope is:
+
+\[
+J=(P,I,S,\rho,\Sigma,B,\Pi,R),\qquad
+Exec(J,H)\rightarrow(O,S',m,\pi).
+\]
+
+This notation summarizes the contracts below; it is not a second JobSpec or a
+complete serialized execution descriptor. JOB-01 remains scheduler-visible work,
+and one job can reference several computations. Relation-satisfaction mode is
+defined separately in COMP-01.
+
+| Envelope term | Authoritative home |
+|---|---|
+| Program, inputs, starting state, randomness, numerical semantics, computational bounds | [COMP-01](../specifications/comp-01-computation-specification.md) |
+| Request identity, authority, delivery, deadline, request budget, privacy, settlement | [EXEC-01](../specifications/exec-01-execution-contract.md) |
+| Required evidence policy, verifier, assumptions, and claim scope | [EVID-01](../specifications/evid-01-computation-evidence-contract.md) |
+| Proposed output/state, meter references, delivery and acceptance decisions | [RESULT-01](../specifications/result-01-computation-result-receipt.md) |
+
+Here \(\pi\) denotes typed attached evidence; a cryptographic proof is one supported
+design class. Meter assurance is distinct from result correctness. \(S'\) denotes
+a proposed computational state transition; kernel acceptance determines its
+authoritative use. Execution lifecycle, failure, and cancellation remain governed
+by the job and execution contracts.
+
+The illustrative commitment \(C_J=Commit(P,I,S,\rho,\Sigma)\) identifies only the
+listed computational core. COMP-01 binds its full accepted specification and
+EXEC-01 separately binds per-request terms. The commitment mechanism's binding
+and hiding properties are explicit design questions.
