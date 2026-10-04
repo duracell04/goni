@@ -1,0 +1,9 @@
+id: SRC-CASSANDRA-POMDP-TUTORIAL
+title: "Anthony R. Cassandra \u2014 Background on POMDPs"
+kind: web
+citation: 'Anthony R. Cassandra, POMDP tutorial: Background on POMDPs.'
+url: https://pomdp.org/tutorial/pomdp-background.html
+accessed: '2026-10-04'
+notes: Explains belief state, action-observation history, transition probabilities,
+  and observation likelihood. It supplies a conceptual model, not validation of GONI
+  posteriors.
