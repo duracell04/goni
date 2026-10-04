@@ -4,14 +4,18 @@ title: 25 - Hardware Layers and Supplier Map (2025–2026)
 type: implementation-map
 status: draft
 implementation_state: specified_only
-proposition: 'Last refreshed: **2026-01-03** This note captures the **mental model for Goni hardware**, plus an opinionated supplier map with **availability reality** and **backend readiness** notes so hardware choices stay aligned with what the software can actually run today.'
+proposition: 'Last refreshed: **2026-01-03** This note captures the **mental model
+  for Goni hardware**, plus an opinionated supplier map with **availability reality**
+  and **backend readiness** notes so hardware choices stay aligned with what the software
+  can actually run today.'
 domains:
 - hardware
 aliases: []
 relations: []
 sources: []
 artifacts: []
-uncertainty: Preserved from the legacy draft without status promotion or newly inferred evidence strength.
+uncertainty: Preserved from the legacy draft without status promotion or newly inferred
+  evidence strength.
 legacy:
 - path: blueprint/hardware/25-hardware-layers-and-supplier-map.md
   heading: 25 - Hardware Layers and Supplier Map (2025–2026)
@@ -29,3 +33,7 @@ Last refreshed: **2026-01-03**
 This note captures the **mental model for Goni hardware**, plus an opinionated supplier map with **availability reality** and **backend readiness** notes so hardware choices stay aligned with what the software can actually run today.
 
 ---
+
+## Compute dependency reading guide
+
+[Physical dependencies of cooperative compute](../syntheses/hardware-compute-dependencies.md) connects this dated supplier map to contract-qualified backend readiness. Supplier facts here retain their recorded refresh date.

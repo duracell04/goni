@@ -4,14 +4,18 @@ title: 1. Telemetry and capability discovery (base image contract)
 type: implementation-map
 status: draft
 implementation_state: specified_only
-proposition: 'The base image MUST expose, or provide a documented fallback for: thermal sensors and throttling events, memory pressure and swap statistics, storage writes and health signals, GPU/NPU capability query (supported shapes, quantization, graph cache status), optional bandwidth estimates or perf counters where available.'
+proposition: 'The base image MUST expose, or provide a documented fallback for: thermal
+  sensors and throttling events, memory pressure and swap statistics, storage writes
+  and health signals, GPU/NPU capability query (supported shapes, quantization, graph
+  cache status), optional bandwidth estimates or perf counters where available.'
 domains:
 - hardware
 aliases: []
 relations: []
 sources: []
 artifacts: []
-uncertainty: Preserved from the legacy draft without status promotion or newly inferred evidence strength.
+uncertainty: Preserved from the legacy draft without status promotion or newly inferred
+  evidence strength.
 legacy:
 - path: blueprint/hardware/os-and-base-image.md
   heading: 1. Telemetry and capability discovery (base image contract)
@@ -41,3 +45,7 @@ OS policies MUST support:
 Cross-layer links:
 - scheduling behavior: `blueprint/software/10-requirements.md`
 - routing and shape constraints: `blueprint/software/30-components/llm-runtime.md`
+
+## Scheduler-facing refinement
+
+[COMP-REG-01](../specifications/comp-reg-01-compute-capability-registry.md) describes the scheduler-facing capability view over these existing discovery and telemetry mechanisms. [HCOMP-01](../principles/hcomp-01-semantic-universality-physical-specialization.md) connects that view to heterogeneous execution.
