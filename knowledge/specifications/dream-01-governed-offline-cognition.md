@@ -4,7 +4,9 @@ title: DREAM-01 - Governed Offline Cognition
 type: specification
 status: draft
 implementation_state: specified_only
-proposition: Kernel-scheduled offline cognition may generate synthetic cognitive candidates from authorized context, but those candidates must preserve explicit epistemic status and may not by themselves become facts, executable instructions, or authority.
+proposition: Kernel-scheduled offline cognition may generate synthetic cognitive candidates
+  from authorized context, but those candidates must preserve explicit epistemic status
+  and may not by themselves become facts, executable instructions, or authority.
 domains:
 - agent
 - kernel
@@ -37,7 +39,9 @@ sources:
 - SRC-VANDEVEN2020-BRAIN-REPLAY
 - SRC-OPENAI2026-DREAMING
 artifacts: []
-uncertainty: DREAM-01 specifies a proposed boundary, not an implemented or empirically validated subsystem. Scheduling value, hypothesis quality, contamination resistance, compute efficiency, and promotion thresholds require matched evaluation.
+uncertainty: DREAM-01 specifies a proposed boundary, not an implemented or empirically
+  validated subsystem. Scheduling value, hypothesis quality, contamination resistance,
+  compute efficiency, and promotion thresholds require matched evaluation.
 legacy: []
 ---
 
@@ -232,3 +236,7 @@ A conforming implementation must preserve at least these invariants:
 
 Utility, recall, calibration, compute cost, and scheduling quality are measured
 properties rather than assumed guarantees.
+
+## Predictive cognition refinements
+
+[WORLD-01](world-01-bounded-predictive-world-model.md) makes task-scoped predictive state and observation/action history explicit. [SIM-BUDGET-01](sim-budget-01-decision-aware-simulation-allocation.md) adds marginal decision-value allocation within this contract and existing epistemic/scheduler bounds.

@@ -534,6 +534,12 @@
         "BILL-01",
         "BILL-02"
       ],
+      "cognition": [
+        "SIM-BUDGET-01",
+        "WORLD-01",
+        "WORLD-EVAL-01",
+        "WORLD-MODEL-RISK-01"
+      ],
       "community": [
         "GONI-PROPOSAL-9D10D978BDC3"
       ],
@@ -681,7 +687,10 @@
         "GONI-PRINCIPLE-TRAJ-ECON-01",
         "GONI-SYNTHESIS-PROBABILISTIC-DECISION-CONTROL-01",
         "LOSS-01",
-        "SELECTIVE-01"
+        "SELECTIVE-01",
+        "SIM-BUDGET-01",
+        "WORLD-EVAL-01",
+        "WORLD-MODEL-RISK-01"
       ],
       "hardware": [
         "ADR-INDEX-HW",
@@ -1164,7 +1173,8 @@
         "GONI-SYNTHESIS-AE048AF3026D",
         "MEM-RETR-01",
         "MEMORY-ARCHITECTURE",
-        "SKILL-REG-01"
+        "SKILL-REG-01",
+        "WORLD-01"
       ],
       "metering": [
         "GONI-SPEC-A221A420C8C4"
@@ -1218,6 +1228,9 @@
       ],
       "performance": [
         "GONI-PRINCIPLE-TRAJ-ECON-01"
+      ],
+      "planning": [
+        "WORLD-01"
       ],
       "policy": [
         "EVID-AUTON-03",
@@ -1988,7 +2001,8 @@
         "GONI-DECISION-0532C27DA3CC",
         "GONI-PRINCIPLE-COMPUTE-SEMANTIC-NEUTRALITY",
         "GONI-PRINCIPLE-QUALIFIED-PROVIDER-SUBSTITUTABILITY",
-        "GONI-SYNTHESIS-VERIFIED-COMPUTE-SUBSTRATE"
+        "GONI-SYNTHESIS-VERIFIED-COMPUTE-SUBSTRATE",
+        "SIM-BUDGET-01"
       ],
       "security": [
         "EVID-01",
@@ -4940,6 +4954,7 @@
         "SEC-10",
         "SEC-20",
         "SELECTIVE-01",
+        "SIM-BUDGET-01",
         "SKILL-EVAL-01",
         "SKILL-REG-01",
         "SOV-AUDIT-01",
@@ -4966,6 +4981,9 @@
         "TOOL-01",
         "VIS-01",
         "VIS-RUNTIME-01",
+        "WORLD-01",
+        "WORLD-EVAL-01",
+        "WORLD-MODEL-RISK-01",
         "ZCO-01"
       ]
     },
@@ -5307,7 +5325,8 @@
         "GONI-EXPERIMENT-F3974392D01F",
         "GONI-EXPERIMENT-F5667C1994A9",
         "GONI-LAB",
-        "SKILL-EVAL-01"
+        "SKILL-EVAL-01",
+        "WORLD-EVAL-01"
       ],
       "glossary": [
         "GONI-GLOSSARY-043146DE9D6F",
@@ -5732,7 +5751,8 @@
         "GONI-OBJECTION-BD867F03E1CC",
         "GONI-OBJECTION-D6A214F75206",
         "GONI-OBJECTION-D765A0BC3636",
-        "GONI-OBJECTION-EEC5A603DDFE"
+        "GONI-OBJECTION-EEC5A603DDFE",
+        "WORLD-MODEL-RISK-01"
       ],
       "principle": [
         "AXIOMS-01",
@@ -6431,6 +6451,7 @@
         "SCHED-01",
         "SCHEDULER-SPEC",
         "SELECTIVE-01",
+        "SIM-BUDGET-01",
         "SKILL-REG-01",
         "SPEC-ENF-01",
         "SPEC-INDEX-00",
@@ -6441,7 +6462,8 @@
         "SS-01",
         "SYNC-01",
         "TOOL-01",
-        "VIS-01"
+        "VIS-01",
+        "WORLD-01"
       ],
       "synthesis": [
         "ADJACENT-PROJECTS",
@@ -7004,7 +7026,10 @@
     },
     "contested": [
       "COOP-PRIVACY-01",
-      "NET-COMP-01"
+      "NET-COMP-01",
+      "SIM-BUDGET-01",
+      "WORLD-01",
+      "WORLD-MODEL-RISK-01"
     ]
   },
   "legacy_routes": [
@@ -12006,7 +12031,7 @@
         "OFFLINE-COGNITION"
       ],
       "artifacts": [],
-      "body": "# DREAM-01 - Governed Offline Cognition\n\n> Status boundary: this is a specified-only contract. Enforcement language\n> describes intended conformance behavior rather than observed implementation.\n\n## 1. Scope\n\nDREAM-01 defines bounded cognition that runs outside an immediate\nlatency-critical user turn.\n\nA dream cycle is not a new architectural plane, a new memory database, or a new\nsource of authority. It is a kernel-scheduled cognitive protocol over the\nexisting Data, Context, Control, and Execution responsibilities.\n\nThe compact invariant is:\n\n> **Dreaming may expand the hypothesis space. It may not expand the authority space.**\n\n## 2. Inputs\n\nA dream cycle MUST receive information through the same governed memory and\ncontext boundaries as interactive cognition.\n\nThe cycle MAY operate over:\n\n- episodic observations;\n- semantic and project memory;\n- prior derived or hypothesis entries;\n- receipts and outcomes;\n- contradiction or staleness signals;\n- current goals or Work Order context when policy permits.\n\nThe cycle MUST preserve source and parent references sufficient to distinguish\nobserved evidence from model-generated derivatives.\n\n## 3. Permitted cognitive operations\n\nA dream cycle MAY perform:\n\n- replay;\n- consolidation;\n- abstraction;\n- association;\n- contradiction detection;\n- counterfactual generation;\n- future-state simulation;\n- alternative explanation generation;\n- falsification attempts;\n- hypothesis generation;\n- evidence-gap identification;\n- discriminating-test generation.\n\nThese are cognitive operations. They do not carry execution authority.\n\n## 4. Output classes and persistence\n\nA dream cycle MAY produce candidates such as:\n\n- association;\n- abstraction;\n- causal_hypothesis;\n- counterfactual;\n- simulation;\n- contradiction;\n- opportunity;\n- evidence_request;\n- test_candidate.\n\nDurable dream outputs MUST use the existing governed memory substrate.\nMemoryEntries remains canonical in v1.\n\nDREAM-01 MUST NOT create a new fact, user decision, authoritative preference,\npolicy, mandate, capability, approval, or executable procedural instruction\nmerely because a model generated the content.\n\nNew synthetic durable entries MUST remain hypothesis or derived until a\nseparate evidence-backed transition satisfies the applicable memory contract.\nA deterministic compaction or summary of existing facts remains a derived\nrepresentation of those facts rather than a new independent fact.\n\nNo DreamStore or parallel hypothesis database is introduced by this contract.\n\n## 5. Synthetic provenance and epistemic quarantine\n\nFor a durable dream result, existing value/provenance fields SHOULD preserve,\nwhere available:\n\n- origin_mode = dream;\n- dream_run_id;\n- candidate_type;\n- parent memory or entity references;\n- source evidence references;\n- model bundle identifier;\n- inference-frame or context-pack identifier;\n- receipt reference;\n- generation timestamp;\n- review or expiry state.\n\nUntil a future schema revision demonstrates the need for first-class columns,\nthese fields may remain governed values inside the existing memory record.\n\nDREAM-01 applies the general evidence-hypothesis separation invariant in\nEPI-SEP-01. Dream-specific rules additionally require:\n\n1. A simulated or counterfactual event is not an observed event.\n2. Promotion to a confirmed fact requires evidence that supports the derived\n   proposition itself under the confirmed-vs-speculation contract.\n\nThese rules prevent recursive synthetic-memory contamination.\n\n## 6. Authority boundary\n\nDream output MUST NOT create, widen, or refresh authority.\n\nThe governing transition rule is:\n\n> **A change in dream state does not imply a change in authority state.**\n\nA dream cycle may produce a proposal or candidate Work Order. Consequential\nexecution still requires the ordinary Goni path through canonical mandate,\npolicy, capability, approval, budget, revocation, and tool mediation.\n\nA model-visible authority summary may assist cognition but remains subordinate\nto canonical kernel-owned authority state.\n\n## 7. Scheduling and resource control\n\nDream work MUST be submitted through the existing scheduler.\n\nThe default scheduling posture SHOULD treat dream work as background,\npreemptible, and resource-bounded relative to interactive work.\n\nA dream job SHOULD declare:\n\n- input scope;\n- context/token budget;\n- solver/model budget;\n- maximum recursion or branch depth where applicable;\n- cancellation semantics;\n- persistence policy;\n- allowed completion states.\n\nIdle compute is an optimization opportunity, not an entitlement to unbounded\nbackground inference.\n\n## 8. Network and external effects\n\nLocal-first policy remains authoritative during dreaming.\n\nRemote inference, connector access, or other egress may occur only through the\nexisting governed egress path and only when policy explicitly permits it.\n\nA dream cycle has no ambient tool authority. External observation or action\nneeded to test a hypothesis must enter the appropriate governed retrieval,\nconnector, or Work Order path.\n\n## 9. Receipts and reviewability\n\nConsequential durable writes from a dream cycle SHOULD remain reconstructable\nthrough existing receipt and provenance mechanisms.\n\nA reviewer should be able to determine:\n\n- which observations and memories were used;\n- which outputs were synthetic;\n- which model/runtime produced them;\n- which evidence, if any, later supported or refuted them;\n- whether a result remained unresolved, expired, was quarantined, or was\n  promoted through a separate evidence-backed transition.\n\n## 10. Failure handling\n\nContradictory, weakly grounded, stale, poisoned, or otherwise unsafe dream\noutputs MAY use the existing quarantine policy alias and normal review/TTL\nsemantics.\n\nA failed dream cycle should degrade to unresolved candidates or no durable\nwrite. Failure must not be converted into broader authority or fabricated\ncertainty.\n\n## 11. Conformance invariants\n\nA conforming implementation must preserve at least these invariants:\n\n- synthetic-to-fact promotion without qualifying evidence: zero;\n- authority expansion caused solely by dream output: zero;\n- model self-corroboration counted as independent evidence: zero;\n- dream output bypassing ordinary tool/effect mediation: zero.\n\nUtility, recall, calibration, compute cost, and scheduling quality are measured\nproperties rather than assumed guarantees.",
+      "body": "# DREAM-01 - Governed Offline Cognition\n\n> Status boundary: this is a specified-only contract. Enforcement language\n> describes intended conformance behavior rather than observed implementation.\n\n## 1. Scope\n\nDREAM-01 defines bounded cognition that runs outside an immediate\nlatency-critical user turn.\n\nA dream cycle is not a new architectural plane, a new memory database, or a new\nsource of authority. It is a kernel-scheduled cognitive protocol over the\nexisting Data, Context, Control, and Execution responsibilities.\n\nThe compact invariant is:\n\n> **Dreaming may expand the hypothesis space. It may not expand the authority space.**\n\n## 2. Inputs\n\nA dream cycle MUST receive information through the same governed memory and\ncontext boundaries as interactive cognition.\n\nThe cycle MAY operate over:\n\n- episodic observations;\n- semantic and project memory;\n- prior derived or hypothesis entries;\n- receipts and outcomes;\n- contradiction or staleness signals;\n- current goals or Work Order context when policy permits.\n\nThe cycle MUST preserve source and parent references sufficient to distinguish\nobserved evidence from model-generated derivatives.\n\n## 3. Permitted cognitive operations\n\nA dream cycle MAY perform:\n\n- replay;\n- consolidation;\n- abstraction;\n- association;\n- contradiction detection;\n- counterfactual generation;\n- future-state simulation;\n- alternative explanation generation;\n- falsification attempts;\n- hypothesis generation;\n- evidence-gap identification;\n- discriminating-test generation.\n\nThese are cognitive operations. They do not carry execution authority.\n\n## 4. Output classes and persistence\n\nA dream cycle MAY produce candidates such as:\n\n- association;\n- abstraction;\n- causal_hypothesis;\n- counterfactual;\n- simulation;\n- contradiction;\n- opportunity;\n- evidence_request;\n- test_candidate.\n\nDurable dream outputs MUST use the existing governed memory substrate.\nMemoryEntries remains canonical in v1.\n\nDREAM-01 MUST NOT create a new fact, user decision, authoritative preference,\npolicy, mandate, capability, approval, or executable procedural instruction\nmerely because a model generated the content.\n\nNew synthetic durable entries MUST remain hypothesis or derived until a\nseparate evidence-backed transition satisfies the applicable memory contract.\nA deterministic compaction or summary of existing facts remains a derived\nrepresentation of those facts rather than a new independent fact.\n\nNo DreamStore or parallel hypothesis database is introduced by this contract.\n\n## 5. Synthetic provenance and epistemic quarantine\n\nFor a durable dream result, existing value/provenance fields SHOULD preserve,\nwhere available:\n\n- origin_mode = dream;\n- dream_run_id;\n- candidate_type;\n- parent memory or entity references;\n- source evidence references;\n- model bundle identifier;\n- inference-frame or context-pack identifier;\n- receipt reference;\n- generation timestamp;\n- review or expiry state.\n\nUntil a future schema revision demonstrates the need for first-class columns,\nthese fields may remain governed values inside the existing memory record.\n\nDREAM-01 applies the general evidence-hypothesis separation invariant in\nEPI-SEP-01. Dream-specific rules additionally require:\n\n1. A simulated or counterfactual event is not an observed event.\n2. Promotion to a confirmed fact requires evidence that supports the derived\n   proposition itself under the confirmed-vs-speculation contract.\n\nThese rules prevent recursive synthetic-memory contamination.\n\n## 6. Authority boundary\n\nDream output MUST NOT create, widen, or refresh authority.\n\nThe governing transition rule is:\n\n> **A change in dream state does not imply a change in authority state.**\n\nA dream cycle may produce a proposal or candidate Work Order. Consequential\nexecution still requires the ordinary Goni path through canonical mandate,\npolicy, capability, approval, budget, revocation, and tool mediation.\n\nA model-visible authority summary may assist cognition but remains subordinate\nto canonical kernel-owned authority state.\n\n## 7. Scheduling and resource control\n\nDream work MUST be submitted through the existing scheduler.\n\nThe default scheduling posture SHOULD treat dream work as background,\npreemptible, and resource-bounded relative to interactive work.\n\nA dream job SHOULD declare:\n\n- input scope;\n- context/token budget;\n- solver/model budget;\n- maximum recursion or branch depth where applicable;\n- cancellation semantics;\n- persistence policy;\n- allowed completion states.\n\nIdle compute is an optimization opportunity, not an entitlement to unbounded\nbackground inference.\n\n## 8. Network and external effects\n\nLocal-first policy remains authoritative during dreaming.\n\nRemote inference, connector access, or other egress may occur only through the\nexisting governed egress path and only when policy explicitly permits it.\n\nA dream cycle has no ambient tool authority. External observation or action\nneeded to test a hypothesis must enter the appropriate governed retrieval,\nconnector, or Work Order path.\n\n## 9. Receipts and reviewability\n\nConsequential durable writes from a dream cycle SHOULD remain reconstructable\nthrough existing receipt and provenance mechanisms.\n\nA reviewer should be able to determine:\n\n- which observations and memories were used;\n- which outputs were synthetic;\n- which model/runtime produced them;\n- which evidence, if any, later supported or refuted them;\n- whether a result remained unresolved, expired, was quarantined, or was\n  promoted through a separate evidence-backed transition.\n\n## 10. Failure handling\n\nContradictory, weakly grounded, stale, poisoned, or otherwise unsafe dream\noutputs MAY use the existing quarantine policy alias and normal review/TTL\nsemantics.\n\nA failed dream cycle should degrade to unresolved candidates or no durable\nwrite. Failure must not be converted into broader authority or fabricated\ncertainty.\n\n## 11. Conformance invariants\n\nA conforming implementation must preserve at least these invariants:\n\n- synthetic-to-fact promotion without qualifying evidence: zero;\n- authority expansion caused solely by dream output: zero;\n- model self-corroboration counted as independent evidence: zero;\n- dream output bypassing ordinary tool/effect mediation: zero.\n\nUtility, recall, calibration, compute cost, and scheduling quality are measured\nproperties rather than assumed guarantees.\n\n## Predictive cognition refinements\n\n[WORLD-01](world-01-bounded-predictive-world-model.md) makes task-scoped predictive state and observation/action history explicit. [SIM-BUDGET-01](sim-budget-01-decision-aware-simulation-allocation.md) adds marginal decision-value allocation within this contract and existing epistemic/scheduler bounds.",
       "domains": [
         "agent",
         "kernel",
@@ -63653,6 +63678,54 @@
     {
       "aliases": [],
       "artifacts": [],
+      "body": "# Decision-aware simulation allocation\n\n> Status boundary: this is a specified-only blueprint contract or planned evaluation.\n\n## Marginal value\n\nThis contract refines simulation-specific allocation within the existing\nepistemic controller, DREAM-01, and scheduler; it reuses their budgets and\ncompletion/stopping lifecycle.\n\nFor an eligible additional simulation \\(c\\), the conceptual net value is:\n\n\\[\nVOC(c\\mid b_t)=\\mathbb E[\\max_{a\\in A_{allowed}} Q(a,b'_t)]\n-\\max_{a\\in A_{allowed}}Q(a,b_t)-Cost_{total}(c).\n\\]\n\n\\(Q\\) is the named decision-value profile supplied through WORLD-01/LOSS-01.\nThe baseline is the best decision with currently available evidence. The\nmarginal cost includes inference, evidence, verification, transfer, latency,\nenergy, and opportunity cost where relevant, with each contribution counted\nonce. \\(b'_t\\) is the updated cognitive representation after the simulation.\n\n\\[\nExecute(c)\\iff Eligible(c)\\land\\widehat{VOC}(c)>0.\n\\]\n\nEligibility includes current authority, remaining resources, finite branch and\nhorizon limits, deadline feasibility, and the existing DoneContract. The\nscheduler retains final resource arbitration.\n\n## Estimation and termination\n\nA conforming profile MUST name its estimator, uncertainty/heuristic status, cost\nunits, and fallback when value is unresolved. Bounded heuristics may substitute\nfor calibrated expected value when identified and evaluated as such. Probability\nand utility calibration claims follow EPI-CTRL-01.\n\nThe controller may deepen a trajectory, compare an alternative action, or stop\nwhen further eligible simulation has insufficient value. Repeated descendants\nof the same evidence/generation lineage retain their shared origin. Simulated\ntrajectories support model-relative comparisons; independent observations are\nrequired to confirm external events. Exhausted budgets use the existing\nunresolved-uncertainty or completion state.",
+      "domains": [
+        "cognition",
+        "scheduler",
+        "evaluation"
+      ],
+      "id": "SIM-BUDGET-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/specifications/sim-budget-01-decision-aware-simulation-allocation.md",
+      "proposition": "Additional simulation is eligible when its estimated decision benefit exceeds its full marginal cost within the existing permission, resource, deadline, and stopping constraints.",
+      "relations": [
+        {
+          "target": "DREAM-01",
+          "type": "refines"
+        },
+        {
+          "target": "SCHED-01",
+          "type": "refines"
+        },
+        {
+          "target": "WORLD-01",
+          "type": "depends_on"
+        },
+        {
+          "target": "EPI-CTRL-01",
+          "type": "depends_on"
+        },
+        {
+          "target": "LOSS-01",
+          "type": "depends_on"
+        },
+        {
+          "target": "METER-01",
+          "type": "depends_on"
+        }
+      ],
+      "sources": [
+        "SRC-GONI20261004-COOPERATIVE-COMPUTE"
+      ],
+      "status": "draft",
+      "title": "Decision-aware simulation allocation",
+      "type": "specification",
+      "uncertainty": "Value-of-computation estimates, cost accounting, stopping thresholds, and scheduling utility require matched empirical evaluation."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
       "body": "# Selective Skill Materialization Evaluation\n\n## Conditions\n\nCompare:\n\n1. all eligible skills fully materialized;\n2. routed top-K skills fully materialized;\n3. routed skill fragments with dependency closure under SKILL-REG-01.\n\nUse matched Work Orders, model stack, tools, authority, evidence, and output\ncontracts.\n\n## Metrics\n\nReport:\n\n- skill and fragment tokens materialized;\n- routing precision and recall;\n- decisive-procedure omission rate;\n- verification-contract coverage;\n- tool-selection accuracy;\n- task quality;\n- instruction-conflict rate;\n- latency and fresh prefill cost;\n- unnecessary skill load;\n- authority-policy violations.\n\nThe test corpus SHOULD include tasks where a rarely used verification fragment\nis decisive, so frequency alone cannot appear successful by dropping low-rate\nbut high-consequence instructions.\n\n## Promotion criterion\n\nFragment-selective materialization advances only when token or latency savings\nremain inside task-quality, procedural-recall, and authority-safety thresholds\nfor a named workload.",
       "domains": [
         "research",
@@ -64594,6 +64667,120 @@
     {
       "aliases": [],
       "artifacts": [],
+      "body": "# Bounded predictive world model\n\n> Status boundary: this is a specified-only blueprint contract or planned evaluation.\n\n## Scope and state\n\nThe world model is a task-scoped cognitive representation over existing governed\ncontext and MemoryEntries. It represents only variables relevant to the current\ndecision and a bounded forecast horizon. Durable hypotheses and derivatives use\nthe existing memory lifecycle; transient belief state uses EPI-CTRL-01's frame.\n\nLet \\(X_t\\) be latent world/user/actor state, \\(o_t\\) an observation, \\(a_t\\) a\nperformed action, and \\(\\mathcal M\\) a named model with prior, transition and\nobservation likelihood. A calibrated probabilistic profile is conceptually:\n\n\\[\nb_t=\\Pr(X_t\\mid o_{0:t},a_{0:t-1},\\mathcal M),\\qquad\nT_{\\mathcal M}=\\Pr(X_{t+1}\\mid X_t,a_t,e_t).\n\\]\n\nHere \\(e_t\\) denotes exogenous influences rather than received evidence.\nThe observation model is \\(\\Pr(o_{t+1}\\mid X_{t+1},a_t,\\mathcal M)\\).\nThe computational starting state \\(S\\) in COMP-01 is separate from latent\n\\(X_t\\): exact execution of a forecast does not establish that the forecast is\naccurate or that its inputs describe reality.\n\n## Representation and update contract\n\nA conforming profile MUST declare the represented variables, scope, model\nrevision, prior/support assumptions, observation provenance, action history,\nforecast horizon, and update policy. It MUST distinguish observed evidence,\nderived hypotheses, model estimates, and simulated/counterfactual trajectories.\nSource changes, contradictions, staleness and model mismatch remain visible to\nthe ordinary epistemic controller.\n\nDefault profiles may use finite competing hypotheses and EPI-CTRL-01 support\nlabels. A profile presenting numerical probabilities as calibrated posteriors\nMUST cite evaluation evidence for its model and operating scope. An approximate\nbelief state MUST name its approximation and limitations. A model-generated\nconfidence number is identified as an estimate until that condition is met.\n\n## Planning integration\n\nWORLD-01 supplies bounded predictions to LOSS-01's decision rule. Conceptually,\nwithin the kernel-permitted action set:\n\n\\[\na^*=\\arg\\max_{a\\in A_{allowed}}\n[\\mathbb E_{b_t}(U(a))-\\lambda Risk(a)-\\mu Compute(a)\n-\\nu Irreversibility(a)].\n\\]\n\nThis is an explanatory utility profile of consequence-sensitive decision control.\nThe profile states its time horizon, utility/penalty units and weights, and\naccounts for each cost once. Canonical permission constraints determine\n\\(A_{allowed}\\). Predictive user or actor models inform hypotheses; current\nmandates and preferences continue to come from governed authority/memory.\n\nDREAM-01 provides offline trajectory generation. SIM-BUDGET-01 governs the\nadditional simulation allocation question. Forecast results return as candidate\nevidence or hypotheses through the existing epistemic and memory boundaries.",
+      "domains": [
+        "cognition",
+        "planning",
+        "memory"
+      ],
+      "id": "WORLD-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/specifications/world-01-bounded-predictive-world-model.md",
+      "proposition": "GONI may maintain a bounded, task-scoped predictive representation of uncertain world, user, and actor state, preserving observation lineage, model assumptions, and the epistemic distinction of simulated trajectories.",
+      "relations": [
+        {
+          "target": "DREAM-01",
+          "type": "refines"
+        },
+        {
+          "target": "EPI-CTRL-01",
+          "type": "depends_on"
+        },
+        {
+          "target": "EPI-SEP-01",
+          "type": "depends_on"
+        },
+        {
+          "target": "LOSS-01",
+          "type": "depends_on"
+        },
+        {
+          "target": "COMP-01",
+          "type": "depends_on"
+        }
+      ],
+      "sources": [
+        "SRC-GONI20261004-COOPERATIVE-COMPUTE",
+        "SRC-CASSANDRA-POMDP-TUTORIAL",
+        "SRC-HA2018-WORLD-MODELS",
+        "SRC-HAFNER2023-DREAMERV3"
+      ],
+      "status": "draft",
+      "title": "Bounded predictive world model",
+      "type": "specification",
+      "uncertainty": "State variables, model validity, calibration, approximation, and forecast utility require domain- and horizon-specific evaluation."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Predictive deliberation evaluation\n\n> Status boundary: this is a specified-only blueprint contract or planned evaluation.\n\nCompare direct decisions, fixed-depth simulation, and adaptive simulation on the\nsame partially observed tasks, authorized actions, models, and total budgets.\nInclude misleading observations, exogenous changes, actor-model errors,\ncorrelated generated trajectories, stale evidence, and deadline/resource exhaustion.\n\nMeasure outcome utility/loss, reversibility exposure, inference/evidence costs,\nlatency, calibration where probabilities are claimed, abstention, and marginal\nvalue-estimator error. Track simulated-to-observed promotions and authority\nexpansion as boundary failures. Record scenario seeds or stochastic test design,\nimplementation/model revisions, estimator settings, held-out outcomes, and\nevidence lineage. Demonstrate decision benefit on held-out tasks against a named\nbaseline; acceptable effect size and uncertainty intervals must be set before\nrunning. Planned cases are separate from future outcome evidence.",
+      "domains": [
+        "cognition",
+        "evaluation"
+      ],
+      "id": "WORLD-EVAL-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/experiments/world-eval-01-predictive-deliberation.md",
+      "proposition": "A matched evaluation should measure whether bounded world modelling and adaptive simulation improve decisions at fixed resource budgets while preserving epistemic and authority boundaries.",
+      "relations": [
+        {
+          "target": "WORLD-01",
+          "type": "tests"
+        },
+        {
+          "target": "SIM-BUDGET-01",
+          "type": "tests"
+        },
+        {
+          "target": "WORLD-MODEL-RISK-01",
+          "type": "tests"
+        }
+      ],
+      "sources": [
+        "SRC-GONI20261004-COOPERATIVE-COMPUTE"
+      ],
+      "status": "draft",
+      "title": "Predictive deliberation evaluation",
+      "type": "experiment",
+      "uncertainty": "Task suite, effect-size thresholds, probability calibration scope, and cost-normalized baselines remain to be selected."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# A precise forecast can remain a poor model of reality\n\n> Status boundary: this is a specified-only blueprint contract or planned evaluation.\n\nWORLD-01's belief formalism can create unwarranted precision if an implementation\nassigns arbitrary numerical confidences or treats imagined trajectories as\nindependent observations. A rich actor model can also consume more resources or\nprivate context than a decision needs.\n\nFinite task scopes, explicit approximation/calibration status, provenance, model\nchecks and matched outcome evaluation address this objection. Bounded qualitative\nhypotheses are a permitted alternative when a calibrated posterior is unavailable.\nPredictive accuracy and decision utility require separately scoped measurements.",
+      "domains": [
+        "cognition",
+        "evaluation"
+      ],
+      "id": "WORLD-MODEL-RISK-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/objections/world-model-risk-01-model-relative-certainty.md",
+      "proposition": "Exact execution and internally coherent probabilities leave decision quality unresolved when the world model, prior, observations, or utility assumptions are misspecified.",
+      "relations": [
+        {
+          "target": "WORLD-01",
+          "type": "objects_to"
+        },
+        {
+          "target": "SIM-BUDGET-01",
+          "type": "objects_to"
+        }
+      ],
+      "sources": [
+        "SRC-GONI20261004-COOPERATIVE-COMPUTE",
+        "SRC-CASSANDRA-POMDP-TUTORIAL"
+      ],
+      "status": "draft",
+      "title": "A precise forecast can remain a poor model of reality",
+      "type": "objection",
+      "uncertainty": "The magnitude of model error, calibration drift, and planning benefit is task-specific and unmeasured for GONI."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
       "body": "# 52 Zero Copy Mechanics\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n﻿# 52 – Zero-Copy Mechanics\nDOC-ID: ZCO-01\n\nZero-copy operations over Arrow buffers (see `95-theory` for proofs). Outputs mutate booleans/indices; text moves exactly once into an LLM buffer.",
       "domains": [
         "data",
@@ -65034,6 +65221,12 @@
       "type": "depended_on_by"
     },
     {
+      "projection": "generated",
+      "source": "COMP-01",
+      "target": "WORLD-01",
+      "type": "depended_on_by"
+    },
+    {
       "projection": "authored",
       "source": "COMP-01",
       "target": "GONI-DECISION-62ACE8B32A6F",
@@ -65455,6 +65648,18 @@
       "type": "refined_by"
     },
     {
+      "projection": "generated",
+      "source": "DREAM-01",
+      "target": "SIM-BUDGET-01",
+      "type": "refined_by"
+    },
+    {
+      "projection": "generated",
+      "source": "DREAM-01",
+      "target": "WORLD-01",
+      "type": "refined_by"
+    },
+    {
       "projection": "authored",
       "source": "DREAM-01",
       "target": "GONI-SPEC-33294E0D3306",
@@ -65477,6 +65682,18 @@
       "source": "DREAM-EVAL-01",
       "target": "DREAM-01",
       "type": "tests"
+    },
+    {
+      "projection": "generated",
+      "source": "EPI-CTRL-01",
+      "target": "SIM-BUDGET-01",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
+      "source": "EPI-CTRL-01",
+      "target": "WORLD-01",
+      "type": "depended_on_by"
     },
     {
       "projection": "authored",
@@ -65548,6 +65765,12 @@
       "projection": "generated",
       "source": "EPI-SEP-01",
       "target": "EPI-CTRL-01",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
+      "source": "EPI-SEP-01",
+      "target": "WORLD-01",
       "type": "depended_on_by"
     },
     {
@@ -72034,6 +72257,18 @@
       "type": "depended_on_by"
     },
     {
+      "projection": "generated",
+      "source": "LOSS-01",
+      "target": "SIM-BUDGET-01",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
+      "source": "LOSS-01",
+      "target": "WORLD-01",
+      "type": "depended_on_by"
+    },
+    {
       "projection": "authored",
       "source": "LOSS-01",
       "target": "CAL-01",
@@ -72200,6 +72435,12 @@
       "source": "MEMORY-ARCHITECTURE",
       "target": "GONI-SYNTHESIS-AE048AF3026D",
       "type": "synthesizes"
+    },
+    {
+      "projection": "generated",
+      "source": "METER-01",
+      "target": "SIM-BUDGET-01",
+      "type": "depended_on_by"
     },
     {
       "projection": "generated",
@@ -73127,6 +73368,12 @@
     },
     {
       "projection": "generated",
+      "source": "SCHED-01",
+      "target": "SIM-BUDGET-01",
+      "type": "refined_by"
+    },
+    {
+      "projection": "generated",
       "source": "SELECTIVE-01",
       "target": "CONFIDENCE-01",
       "type": "depended_on_by"
@@ -73183,6 +73430,54 @@
       "projection": "generated",
       "source": "SELECTIVE-01",
       "target": "GONI-EXPERIMENT-DECISION-LAYER-01",
+      "type": "tested_by"
+    },
+    {
+      "projection": "authored",
+      "source": "SIM-BUDGET-01",
+      "target": "EPI-CTRL-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "SIM-BUDGET-01",
+      "target": "LOSS-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "SIM-BUDGET-01",
+      "target": "METER-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "SIM-BUDGET-01",
+      "target": "WORLD-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "generated",
+      "source": "SIM-BUDGET-01",
+      "target": "WORLD-MODEL-RISK-01",
+      "type": "objected_to_by"
+    },
+    {
+      "projection": "authored",
+      "source": "SIM-BUDGET-01",
+      "target": "DREAM-01",
+      "type": "refines"
+    },
+    {
+      "projection": "authored",
+      "source": "SIM-BUDGET-01",
+      "target": "SCHED-01",
+      "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "SIM-BUDGET-01",
+      "target": "WORLD-EVAL-01",
       "type": "tested_by"
     },
     {
@@ -73706,6 +74001,90 @@
       "source": "VIS-RUNTIME-01",
       "target": "GONI-EVIDENCE-FAA487C54065",
       "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "WORLD-01",
+      "target": "SIM-BUDGET-01",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "authored",
+      "source": "WORLD-01",
+      "target": "COMP-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "WORLD-01",
+      "target": "EPI-CTRL-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "WORLD-01",
+      "target": "EPI-SEP-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "WORLD-01",
+      "target": "LOSS-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "generated",
+      "source": "WORLD-01",
+      "target": "WORLD-MODEL-RISK-01",
+      "type": "objected_to_by"
+    },
+    {
+      "projection": "authored",
+      "source": "WORLD-01",
+      "target": "DREAM-01",
+      "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "WORLD-01",
+      "target": "WORLD-EVAL-01",
+      "type": "tested_by"
+    },
+    {
+      "projection": "authored",
+      "source": "WORLD-EVAL-01",
+      "target": "SIM-BUDGET-01",
+      "type": "tests"
+    },
+    {
+      "projection": "authored",
+      "source": "WORLD-EVAL-01",
+      "target": "WORLD-01",
+      "type": "tests"
+    },
+    {
+      "projection": "authored",
+      "source": "WORLD-EVAL-01",
+      "target": "WORLD-MODEL-RISK-01",
+      "type": "tests"
+    },
+    {
+      "projection": "authored",
+      "source": "WORLD-MODEL-RISK-01",
+      "target": "SIM-BUDGET-01",
+      "type": "objects_to"
+    },
+    {
+      "projection": "authored",
+      "source": "WORLD-MODEL-RISK-01",
+      "target": "WORLD-01",
+      "type": "objects_to"
+    },
+    {
+      "projection": "generated",
+      "source": "WORLD-MODEL-RISK-01",
+      "target": "WORLD-EVAL-01",
+      "type": "tested_by"
     }
   ],
   "schema_version": 1,
@@ -73808,6 +74187,16 @@
       "path": "sources/src-bradshaw2004-adjustable-autonomy.yml",
       "title": "bradshaw2004-adjustable-autonomy",
       "url": "https://www.researchgate.net/publication/2914496_Human-Agent_Teamwork_and_Adjustable_Autonomy_in_Practice"
+    },
+    {
+      "accessed": "2026-10-04",
+      "citation": "Anthony R. Cassandra, POMDP tutorial: Background on POMDPs.",
+      "id": "SRC-CASSANDRA-POMDP-TUTORIAL",
+      "kind": "web",
+      "notes": "Explains belief state, action-observation history, transition probabilities, and observation likelihood. It supplies a conceptual model, not validation of GONI posteriors.",
+      "path": "sources/src-cassandra-pomdp-tutorial.yml",
+      "title": "Anthony R. Cassandra — Background on POMDPs",
+      "url": "https://pomdp.org/tutorial/pomdp-background.html"
     },
     {
       "citation": "https://www.alphaxiv.org/abs/2026.dspark",
