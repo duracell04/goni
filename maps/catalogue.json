@@ -540,6 +540,7 @@
       "compute": [
         "COMP-01",
         "COMPUTE-EVAL-01",
+        "D-025",
         "DIST-01",
         "EVID-01",
         "EXEC-01",
@@ -550,6 +551,7 @@
         "GONI-PRINCIPLE-VERIFICATION-BOUNDARIES",
         "GONI-SPEC-A221A420C8C4",
         "GONI-SYNTHESIS-VERIFIED-COMPUTE-SUBSTRATE",
+        "NET-COMP-01",
         "RESULT-01"
       ],
       "crdt": [
@@ -669,6 +671,7 @@
         "CAL-DRIFT-01",
         "COMPUTE-EVAL-01",
         "CONFIDENCE-01",
+        "EXPORT-EVAL-01",
         "GONI-EVIDENCE-CAL-GUO-01",
         "GONI-EVIDENCE-CAL-SCORING-01",
         "GONI-EVIDENCE-DECISION-THEORY-01",
@@ -849,6 +852,7 @@
         "COMP-01",
         "CTX-COMP-01",
         "CTX-MISS-01",
+        "D-025",
         "DIST-01",
         "DREAM-01",
         "EPI-CTRL-01",
@@ -1184,6 +1188,7 @@
         "SELECTIVE-01"
       ],
       "network": [
+        "COOP-PRIVACY-01",
         "GONI-IMAP-B21D85F4146E",
         "GONI-OBJECTION-387E7E37F44E",
         "GONI-PRINCIPLE-E216CB231421",
@@ -1208,7 +1213,8 @@
         "GONI-SPEC-EE5DB5BEFADE",
         "GONI-SPEC-F558CFB6C817",
         "GONI-SPEC-FC72CAAED1BC",
-        "NET-01"
+        "NET-01",
+        "NET-COMP-01"
       ],
       "performance": [
         "GONI-PRINCIPLE-TRAJ-ECON-01"
@@ -1238,6 +1244,11 @@
         "GONI-SPEC-F58CCAA78BFD",
         "LOSS-01",
         "SPEC-POL-01"
+      ],
+      "privacy": [
+        "COOP-PRIVACY-01",
+        "EXPORT-EVAL-01",
+        "NET-COMP-01"
       ],
       "product": [
         "DOCTRINE-DELEG-01",
@@ -2350,6 +2361,9 @@
         "VIS-RUNTIME-01",
         "ZCO-01"
       ],
+      "sovereignty": [
+        "D-025"
+      ],
       "specs": [
         "AGENT-DEF-01",
         "AGENT-MANIFEST-01",
@@ -2971,6 +2985,7 @@
         "COMP-01",
         "COMPUTE-EVAL-01",
         "CONFIDENCE-01",
+        "COOP-PRIVACY-01",
         "CRDT-AUDIT-01",
         "CRDT-DECISIONS-01",
         "CRDT-NOTES-01",
@@ -2980,6 +2995,7 @@
         "CTX-COMP-EVAL-01",
         "CTX-MISS-01",
         "CTX-MISS-EVAL-01",
+        "D-025",
         "DASHBOARD-CONCEPTS",
         "DAT-01",
         "DECISION-MODEL-01",
@@ -3033,6 +3049,7 @@
         "EVID-VANDEVEN2020-BRAIN-REPLAY",
         "EVID-ZHENG2024-SGLANG",
         "EXEC-01",
+        "EXPORT-EVAL-01",
         "FIRST-PARTY-LLM-CHATS",
         "FRONT-PANEL-MCU",
         "GONI-AGILITY-RULES",
@@ -4889,6 +4906,7 @@
         "MODELS-MISTRAL",
         "MODELS-OPENAI",
         "NET-01",
+        "NET-COMP-01",
         "NONBYPASS-INTEGRATION-METRICS",
         "OLLAMA-CLOUD",
         "OS-AND-BASE-IMAGE",
@@ -4958,6 +4976,7 @@
         "ADR-INDEX-SW",
         "ADR-XXXX",
         "CRDT-DECISIONS-01",
+        "D-025",
         "GONI-DECISION-018F661C4EFA",
         "GONI-DECISION-048BDF1585D6",
         "GONI-DECISION-0532C27DA3CC",
@@ -5186,6 +5205,7 @@
         "EVID-SEC-01",
         "EVID-SEC-02",
         "EVID-SEC-03",
+        "EXPORT-EVAL-01",
         "GONI-EXPERIMENT-0002BABA3DAF",
         "GONI-EXPERIMENT-00E7C79F4A95",
         "GONI-EXPERIMENT-04D89CD2474E",
@@ -5687,6 +5707,7 @@
         "ZCO-01"
       ],
       "objection": [
+        "COOP-PRIVACY-01",
         "EVID-AUTON-02",
         "GONI-OBJECTION-0CC876FB8D27",
         "GONI-OBJECTION-16A9274BEE9C",
@@ -6402,6 +6423,7 @@
         "METER-02",
         "MODEL-REG-01",
         "NET-01",
+        "NET-COMP-01",
         "REC-01",
         "RESULT-01",
         "ROBOT-01",
@@ -6980,7 +7002,10 @@
         "THESIS-SOVEREIGN-DELEG-OS-01"
       ]
     },
-    "contested": []
+    "contested": [
+      "COOP-PRIVACY-01",
+      "NET-COMP-01"
+    ]
   },
   "legacy_routes": [
     {
@@ -11421,6 +11446,33 @@
     {
       "aliases": [],
       "artifacts": [],
+      "body": "# Compute exports can reveal information through composition\n\n> Status boundary: this is a specified-only blueprint contract or planned evaluation.\n\nThis objection challenges a general privacy guarantee based only on a sanitized\njob payload. A worker may observe its input; a verifier may observe the public\nstatement; an operator may observe timing and size; repeated individually\npermitted jobs may reveal more together. Shared evidence may also disclose a\npersonal context indirectly.\n\nNET-COMP-01 responds by requiring explicit observer scopes and composition\nassumptions. Whether a particular profile meets its disclosure bound remains an\nexperiment question. Local execution is a permitted alternative for a job whose\nremote confidentiality requirements remain unresolved.",
+      "domains": [
+        "privacy",
+        "network"
+      ],
+      "id": "COOP-PRIVACY-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/objections/coop-privacy-01-export-composition-risk.md",
+      "proposition": "Payload minimization alone leaves confidentiality unresolved when outputs, commitments, timing, receipts, or repeated requests permit inference about private state.",
+      "relations": [
+        {
+          "target": "NET-COMP-01",
+          "type": "objects_to"
+        }
+      ],
+      "sources": [
+        "SRC-GONI20261004-COOPERATIVE-COMPUTE"
+      ],
+      "status": "draft",
+      "title": "Compute exports can reveal information through composition",
+      "type": "objection",
+      "uncertainty": "This is a design objection; the exploitability of each channel depends on a selected implementation and adversary."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
       "body": "# CRDT: audit\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n# CRDT: audit\n﻿---\nid: CRDT-AUDIT-01\ntype: SPEC\nstatus: specified_only\n---\n\nStatus: Specified only / roadmap\n\nThis file defines merge semantics for audit artifacts.",
       "domains": [
         "crdt",
@@ -11708,6 +11760,42 @@
       "title": "Context-Miss Recovery Evaluation",
       "type": "experiment",
       "uncertainty": "Miss detection may fail silently or over-trigger. Evaluation must include both omitted-decisive-evidence cases and cases where the initial ContextPack is already sufficient."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# D-025 — Sovereign cooperative compute\n\n> Status boundary: this is a specified-only blueprint contract or planned evaluation.\n\n## Decision\n\nGONI is sovereign locally and may cooperate computationally. The local kernel\nretains the principal's identity, canonical private memory, policy, mandate,\ncapability, revocation, and state-acceptance authority.\n\n\\[\nG_i=(Private_i,Capabilities_i),\\qquad\nDisclosure_i\\subseteq AuthorizedExports_i.\n\\]\n\nThe export set is defined by the principal's canonical policy for a specific\nrecipient, purpose, trust domain, and validity interval. Private state remains\nowner-governed wherever an authorized protected copy is processed.\n\n## Rationale and alternatives\n\nCapability cooperation can extend capacity while preserving the existing\ndelegation kernel. Local-only execution remains a complete permitted profile;\nan owner mesh and independent cooperative providers are additional profiles\nsubject to the same authority boundary.\n\nThe original proposal's \\(Private_i\\not\\subset Network\\) is retained as derivation\ncontext: it expresses withholding some private state, but does not establish a\nper-export confidentiality boundary. The authorized-disclosure relation above\nstates the intended operational restriction more precisely.\n\n## Consequences\n\nNET-COMP-01 owns compute-export conformance. Existing NET-01 owns governed egress.\nComputation verification and kernel acceptance retain separate responsibilities.\nCooperative participants receive the bounded execution terms and exported data\nauthorized for their role. Membership, capacity, or submitted evidence grants\nonly the powers recorded in canonical authority state.",
+      "domains": [
+        "sovereignty",
+        "compute",
+        "kernel"
+      ],
+      "id": "D-025",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/decisions/D-025-sovereign-cooperative-compute.md",
+      "proposition": "GONI keeps identity, memory, and authority under the principal while permitting policy-bounded cooperation in computation and shareable evidence.",
+      "relations": [
+        {
+          "target": "NET-01",
+          "type": "depends_on"
+        },
+        {
+          "target": "SS-01",
+          "type": "depends_on"
+        },
+        {
+          "target": "GONI-DECISION-E5B906550794",
+          "type": "refines"
+        }
+      ],
+      "sources": [
+        "SRC-GONI20261004-COOPERATIVE-COMPUTE"
+      ],
+      "status": "draft",
+      "title": "D-025 — Sovereign cooperative compute",
+      "type": "decision",
+      "uncertainty": "The disclosure boundary and protected-execution profiles require implementation and adversarial evaluation; sovereignty is a specified contract."
     },
     {
       "aliases": [],
@@ -13271,6 +13359,41 @@
       "title": "Execution Contract",
       "type": "specification",
       "uncertainty": "The concrete signature format, offer/acceptance protocol, provider discovery mechanism, and settlement rail remain unspecified."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Sovereign export boundary evaluation\n\n> Status boundary: this is a specified-only blueprint contract or planned evaluation.\n\nCompare local-only, enrolled owner-mesh, and independent-provider profiles under\nidentical authorized tasks. Name each observer and its allowed view before the\nrun. Exercise forbidden private fields, low-entropy commitments, output leakage,\nreceipt/telemetry disclosure, repeated-query composition, unenrolled peers,\nrecipient substitution, expired/revoked authority, and stale returned state.\n\nMeasure allowed and disallowed disclosures, violations of declared observer\nviews, cumulative leakage where a defined metric exists, and unauthorized state\nacceptance. Record policy/runtime/full implementation revisions and redacted\nreceipts sufficient to reproduce the boundary check. The conformance target is\nzero unauthorized disclosures or commits within the declared test boundary;\nunmeasured side channels remain explicit limitations. Planned tests establish\nneither an implementation nor a general confidentiality guarantee.",
+      "domains": [
+        "evaluation",
+        "privacy"
+      ],
+      "id": "EXPORT-EVAL-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/experiments/export-eval-01-sovereign-export-boundaries.md",
+      "proposition": "An adversarial evaluation should test whether each declared compute-export profile confines recipient views and state changes to current principal authorization.",
+      "relations": [
+        {
+          "target": "D-025",
+          "type": "tests"
+        },
+        {
+          "target": "NET-COMP-01",
+          "type": "tests"
+        },
+        {
+          "target": "COOP-PRIVACY-01",
+          "type": "tests"
+        }
+      ],
+      "sources": [
+        "SRC-GONI20261004-COOPERATIVE-COMPUTE"
+      ],
+      "status": "draft",
+      "title": "Sovereign export boundary evaluation",
+      "type": "experiment",
+      "uncertainty": "Observer models, leakage measures, and adversarial fixtures must be selected and pinned before execution."
     },
     {
       "aliases": [],
@@ -42349,7 +42472,7 @@
     {
       "aliases": [],
       "artifacts": [],
-      "body": "# 4.2 Mesh / Multi-Node Operation\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n### 4.2 Mesh / Multi-Node Operation\n\n- Goni must be designed as a **first-class cluster node**:\n  - It should be straightforward to run multiple devices on the same network and treat them as a **single logical AI cluster**.\n- No special external hardware beyond standard networking equipment should be required for a small mesh (2â€“4 nodes).\n- Latency-sensitive workloads should work well when the user interacts with **any one** of the nodes in the mesh.\n\n---",
+      "body": "# 4.2 Mesh / Multi-Node Operation\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n### 4.2 Mesh / Multi-Node Operation\n\n- Goni must be designed as a **first-class cluster node**:\n  - It should be straightforward to run multiple devices on the same network and treat them as a **single logical AI cluster**.\n- No special external hardware beyond standard networking equipment should be required for a small mesh (2â€“4 nodes).\n- Latency-sensitive workloads should work well when the user interacts with **any one** of the nodes in the mesh.\n\n---\n\n## Authority-domain scope\n\nThis owner-mesh requirement is refined by [NET-COMP-01](net-comp-01-cooperative-compute-export.md), which distinguishes owner enrollment from independent compute-provider participation. The domains may share physical networking while retaining separate authority and disclosure scopes.",
       "domains": [
         "hardware"
       ],
@@ -62298,7 +62421,7 @@
         "NETWORK-GATE-AND-ANONYMITY"
       ],
       "artifacts": [],
-      "body": "# NET-01 - Network Gate and Anonymity\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n# NET-01 - Network Gate and Anonymity\nDOC-ID: NET-01\nStatus: Specified only / roadmap\nConformance: TBD (goni-lab harness)\n\nThis spec defines network egress control for Goni OS. Networking is treated as\na capability-scoped syscall mediated by a reference monitor (Network Gate).\nIt formalizes two policy bundles (\"Sovereign Mode\" and \"Anonymous Mode\"),\nadversary models, audit receipts, and failure modes.",
+      "body": "# NET-01 - Network Gate and Anonymity\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n# NET-01 - Network Gate and Anonymity\nDOC-ID: NET-01\nStatus: Specified only / roadmap\nConformance: TBD (goni-lab harness)\n\nThis spec defines network egress control for Goni OS. Networking is treated as\na capability-scoped syscall mediated by a reference monitor (Network Gate).\nIt formalizes two policy bundles (\"Sovereign Mode\" and \"Anonymous Mode\"),\nadversary models, audit receipts, and failure modes.\n\n## Cooperative compute refinement\n\n[NET-COMP-01](net-comp-01-cooperative-compute-export.md) specifies the recipient-scoped compute-export boundary over this existing Network Gate. Local and owner-mesh placement remain distinct from cooperation across independent authority domains.",
       "domains": [
         "network",
         "specs"
@@ -62320,6 +62443,58 @@
       "title": "NET-01 - Network Gate and Anonymity",
       "type": "specification",
       "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Cooperative compute export\n\n> Status boundary: this is a specified-only blueprint contract or planned evaluation.\n\n## Trust domains\n\nOwnerMesh and CooperativeNetwork are distinct authority domains even when they\nshare a transport or physical host. Device ownership and explicit enrollment\ndetermine owner-mesh membership. A peer or provider's network reachability is\nseparate from its granted powers. Owner-mesh enrollment and cooperative requests\nuse the existing principal, capability, revocation, and egress mechanisms.\n\n## Export contract\n\n\\[\nJ_{net}=ExportPolicy(J_{private},recipient,purpose,policy),\\qquad\nDisclosure(J_{net})\\subseteq AuthorizedExports(policy).\n\\]\n\nFor each request a conforming export compiler MUST resolve the input scope,\nrecipient/trust class, authority and expiry, computational specification,\nexecution contract, permitted output/evidence disclosures, and resource bounds.\nIt MUST emit the least disclosure required by the permitted execution profile,\nincluding any authorized protected representation. Unknown or unsatisfied export\nrequirements terminate that route; the scheduler may select a permitted local\nroute or surface the unresolved constraint.\n\nPayloads, prompts, model/adaptor state, references, commitments, receipts,\ntelemetry, and observable metadata are included in export review. A protected\ninput profile states what the worker, verifier, operator, and other peers can\nobserve. Hash commitments to low-entropy inputs need a separately specified\nhiding mechanism when the disclosure policy requires confidentiality.\n\n## Leakage claim\n\n\\[\nLeakage_{\\mathcal A,\\mathcal M}(J_{net},history)\\le L_{policy}.\n\\]\n\nThis is a scoped conformance objective. A profile claiming the bound MUST name\nthe adversary \\(\\mathcal A\\), observable view, leakage measure \\(\\mathcal M\\), units,\ncomposition rule across requests, and assumptions. Where a numeric measure is\nunavailable, the profile MUST state explicit permitted disclosures and unresolved\nleakage rather than substituting an invented bound. ExportPolicy is a deterministic\npolicy boundary; semantic redaction alone supplies candidate transformations.\n\n## Return path\n\nReturned outputs and evidence enter EXEC-01/EVID-01 acceptance and RESULT-01\nreceipts. The local kernel checks current authority and starting-state\ncompatibility before adopting a state change or mediating an external effect.\nRevocation, timeout, cancellation, delivery failures, and unsettled payment state\nuse the existing job and execution lifecycle. Receipt access and export retain\nthe existing owner-facing purpose and privacy limits.",
+      "domains": [
+        "network",
+        "privacy",
+        "compute"
+      ],
+      "id": "NET-COMP-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/specifications/net-comp-01-cooperative-compute-export.md",
+      "proposition": "A cooperative compute request exports a recipient-scoped computation and execution contract through existing governed egress, subject to an explicit disclosure policy and local result-acceptance authority.",
+      "relations": [
+        {
+          "target": "D-025",
+          "type": "depends_on"
+        },
+        {
+          "target": "NET-01",
+          "type": "depends_on"
+        },
+        {
+          "target": "EXEC-01",
+          "type": "depends_on"
+        },
+        {
+          "target": "EVID-01",
+          "type": "depends_on"
+        },
+        {
+          "target": "RESULT-01",
+          "type": "depends_on"
+        },
+        {
+          "target": "GONI-SPEC-C237E3663D04",
+          "type": "depends_on"
+        },
+        {
+          "target": "GONI-SPEC-8AF8699481AF",
+          "type": "refines"
+        }
+      ],
+      "sources": [
+        "SRC-GONI20261004-COOPERATIVE-COMPUTE"
+      ],
+      "status": "draft",
+      "title": "Cooperative compute export",
+      "type": "specification",
+      "uncertainty": "Leakage metrics, confidentiality mechanisms, recipient authentication, and cumulative disclosure accounting require profile-specific implementation and evidence."
     },
     {
       "aliases": [],
@@ -64956,6 +65131,18 @@
       "type": "synthesized_by"
     },
     {
+      "projection": "authored",
+      "source": "COOP-PRIVACY-01",
+      "target": "NET-COMP-01",
+      "type": "objects_to"
+    },
+    {
+      "projection": "generated",
+      "source": "COOP-PRIVACY-01",
+      "target": "EXPORT-EVAL-01",
+      "type": "tested_by"
+    },
+    {
       "projection": "generated",
       "source": "CTX-COMP-01",
       "target": "CTX-MISS-01",
@@ -65068,6 +65255,36 @@
       "source": "CTX-MISS-EVAL-01",
       "target": "CTX-MISS-01",
       "type": "tests"
+    },
+    {
+      "projection": "generated",
+      "source": "D-025",
+      "target": "NET-COMP-01",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "authored",
+      "source": "D-025",
+      "target": "NET-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "D-025",
+      "target": "SS-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "D-025",
+      "target": "GONI-DECISION-E5B906550794",
+      "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "D-025",
+      "target": "EXPORT-EVAL-01",
+      "type": "tested_by"
     },
     {
       "projection": "generated",
@@ -65366,6 +65583,12 @@
     {
       "projection": "generated",
       "source": "EVID-01",
+      "target": "NET-COMP-01",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
+      "source": "EVID-01",
       "target": "RESULT-01",
       "type": "depended_on_by"
     },
@@ -65540,6 +65763,12 @@
     {
       "projection": "generated",
       "source": "EXEC-01",
+      "target": "NET-COMP-01",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
+      "source": "EXEC-01",
       "target": "RESULT-01",
       "type": "depended_on_by"
     },
@@ -65573,6 +65802,24 @@
       "source": "EXEC-01",
       "target": "COMPUTE-EVAL-01",
       "type": "tested_by"
+    },
+    {
+      "projection": "authored",
+      "source": "EXPORT-EVAL-01",
+      "target": "COOP-PRIVACY-01",
+      "type": "tests"
+    },
+    {
+      "projection": "authored",
+      "source": "EXPORT-EVAL-01",
+      "target": "D-025",
+      "type": "tests"
+    },
+    {
+      "projection": "authored",
+      "source": "EXPORT-EVAL-01",
+      "target": "NET-COMP-01",
+      "type": "tests"
     },
     {
       "projection": "authored",
@@ -65784,6 +66031,12 @@
       "source": "GONI-DECISION-9AF49466170D",
       "target": "GONI-SYNTHESIS-PROBABILISTIC-DECISION-CONTROL-01",
       "type": "synthesized_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-DECISION-E5B906550794",
+      "target": "D-025",
+      "type": "refined_by"
     },
     {
       "projection": "generated",
@@ -67228,6 +67481,12 @@
     },
     {
       "projection": "generated",
+      "source": "GONI-SPEC-8AF8699481AF",
+      "target": "NET-COMP-01",
+      "type": "refined_by"
+    },
+    {
+      "projection": "generated",
       "source": "GONI-SPEC-914D01705CED",
       "target": "EPI-CTRL-01",
       "type": "depended_on_by"
@@ -67315,6 +67574,12 @@
       "source": "GONI-SPEC-B49DB23CF412",
       "target": "INF-FRAME-01",
       "type": "refined_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-SPEC-C237E3663D04",
+      "target": "NET-COMP-01",
+      "type": "depended_on_by"
     },
     {
       "projection": "generated",
@@ -72135,6 +72400,72 @@
       "type": "supported_by"
     },
     {
+      "projection": "generated",
+      "source": "NET-01",
+      "target": "D-025",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
+      "source": "NET-01",
+      "target": "NET-COMP-01",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "authored",
+      "source": "NET-COMP-01",
+      "target": "D-025",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "NET-COMP-01",
+      "target": "EVID-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "NET-COMP-01",
+      "target": "EXEC-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "NET-COMP-01",
+      "target": "GONI-SPEC-C237E3663D04",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "NET-COMP-01",
+      "target": "NET-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "NET-COMP-01",
+      "target": "RESULT-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "generated",
+      "source": "NET-COMP-01",
+      "target": "COOP-PRIVACY-01",
+      "type": "objected_to_by"
+    },
+    {
+      "projection": "authored",
+      "source": "NET-COMP-01",
+      "target": "GONI-SPEC-8AF8699481AF",
+      "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "NET-COMP-01",
+      "target": "EXPORT-EVAL-01",
+      "type": "tested_by"
+    },
+    {
       "projection": "authored",
       "source": "NONBYPASS-INTEGRATION-METRICS",
       "target": "GONI-SYNTHESIS-05D94504CE5B",
@@ -72699,6 +73030,12 @@
       "type": "synthesizes"
     },
     {
+      "projection": "generated",
+      "source": "RESULT-01",
+      "target": "NET-COMP-01",
+      "type": "depended_on_by"
+    },
+    {
       "projection": "authored",
       "source": "RESULT-01",
       "target": "EVID-01",
@@ -72961,6 +73298,12 @@
       "source": "SPEC-00",
       "target": "GONI-SYNTHESIS-C63FA3CEB89E",
       "type": "synthesizes"
+    },
+    {
+      "projection": "generated",
+      "source": "SS-01",
+      "target": "D-025",
+      "type": "depended_on_by"
     },
     {
       "projection": "authored",
