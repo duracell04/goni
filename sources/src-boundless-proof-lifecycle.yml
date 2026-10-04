@@ -1,0 +1,7 @@
+id: SRC-BOUNDLESS-PROOF-LIFECYCLE
+title: Boundless proof lifecycle
+kind: web
+citation: https://docs.boundless.network/developers/proof-lifecycle
+url: https://docs.boundless.network/developers/proof-lifecycle
+accessed: 2026-10-04
+notes: Official Boundless documentation describing proof requests, provider participation, fulfillment, verification, and payment across a proving market lifecycle.

@@ -1,0 +1,7 @@
+id: SRC-RISC0-ZKVM
+title: RISC Zero zkVM documentation
+kind: web
+citation: https://dev.risczero.com/api/zkvm/
+url: https://dev.risczero.com/api/zkvm/
+accessed: 2026-10-04
+notes: Official RISC Zero documentation for general verifiable computation over a RISC-V virtual machine and receipt-based verification.
