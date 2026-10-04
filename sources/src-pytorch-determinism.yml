@@ -1,0 +1,7 @@
+id: SRC-PYTORCH-DETERMINISM
+title: PyTorch deterministic algorithms documentation
+kind: web
+citation: https://docs.pytorch.org/docs/main/generated/torch.use_deterministic_algorithms.html
+url: https://docs.pytorch.org/docs/main/generated/torch.use_deterministic_algorithms.html
+accessed: 2026-10-04
+notes: Documents deterministic-algorithm controls and explicitly notes that deterministic-algorithm mode alone is insufficient to guarantee full application reproducibility.

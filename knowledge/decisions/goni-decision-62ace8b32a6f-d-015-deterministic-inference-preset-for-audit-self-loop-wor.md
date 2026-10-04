@@ -4,14 +4,19 @@ title: D-015 - Deterministic inference preset for audit/self-loop workloads
 type: decision
 status: draft
 implementation_state: specified_only
-proposition: '**Formal statement** The Execution plane exposes a deterministic preset.'
+proposition: The Execution plane exposes a deterministic preset as one explicitly scoped execution-semantics profile rather than treating a seed alone as a reproducibility guarantee.
 domains:
 - software
+- compute
 aliases: []
-relations: []
-sources: []
+relations:
+- type: refines
+  target: COMP-01
+  note: D-015 is a concrete deterministic profile within the broader COMP-01 execution-semantics contract.
+sources:
+- SRC-PYTORCH-DETERMINISM
 artifacts: []
-uncertainty: Preserved from the legacy draft without status promotion or newly inferred evidence strength.
+uncertainty: Backend-specific reproducibility guarantees vary by hardware, driver, runtime, and operation; exact supported profiles require implementation evidence.
 legacy:
 - path: blueprint/software/90-decisions.md
   heading: D-015 - Deterministic inference preset for audit/self-loop workloads
@@ -20,29 +25,29 @@ legacy:
 
 # D-015 - Deterministic inference preset for audit/self-loop workloads
 
-> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.
+> Status boundary: this remains a specified-only design. Backend reproducibility must be measured and documented before stronger claims are made.
 
-## D-015 - Deterministic inference preset for audit/self-loop workloads
+## Formal statement
 
-**Formal statement**
+The Execution plane exposes a deterministic preset as a declared `execution_semantics` profile. A request marked deterministic binds the reproducibility scope and, where supported:
 
-The Execution plane exposes a deterministic preset. For any request marked deterministic:
+- temperature = 0 for decoding paths where sampling is unnecessary;
+- fixed or externally committed RNG state when randomness is part of the computation;
+- batch size = 1 with continuous or dynamic batching disabled where batching can alter results;
+- constrained worker/thread behavior where concurrency changes operation order;
+- deterministic backend algorithms where available;
+- numerical modes relevant to reproducibility, including TF32 policy where applicable;
+- model, runtime, compiler, driver, and material hardware-profile hashes or versions.
 
-- temperature = 0 and fixed seed (if supported by backend),  
-- batch size = 1 with no continuous/dynamic batching,  
-- single worker/thread (or CPU-only fallback) and TF32 disabled on NVIDIA,  
-- deterministic backend flag enabled (e.g. vLLM `--enable-deterministic-inference`),  
-- blueprint/hardware/driver hashes recorded with the run.
+A seed alone is not treated as a sufficient reproducibility guarantee. The contract states the environment and semantic scope within which repeatability is expected.
 
-**Rationale**
+## Rationale
 
-- Self-loop/agent chains have positive Lyapunov exponents; tiny numeric noise can flip tokens and diverge trajectories.  
-- Regulated or audited runs must be reproducible even at the cost of throughput.
+Self-loop and agent chains can amplify small numerical or token-level differences. Audited runs may therefore value reproducibility more highly than maximum throughput. PyTorch's deterministic-algorithm controls also illustrate the narrower guarantee: deterministic operation selection is useful, while full application reproducibility depends on additional environment and execution conditions.
 
-**Consequence**
+## Consequences
 
-- Engines must provide a slower deterministic profile rather than silently ignoring the request.  
-- CI includes a self-loop drift check (bitwise-stable tokens across two runs) under the deterministic preset.  
-- Fast defaults may use batched/GPU paths, but the audit preset remains available and documented.
-
----
+- Engines should expose a slower deterministic profile rather than silently weakening a deterministic request.
+- CI should test the declared reproducibility property for supported profiles.
+- Fast defaults may use batched or accelerator-specific paths while the audit profile remains separately addressable.
+- Approximate or cross-platform profiles should declare their comparison relation and tolerance rather than being described as bitwise deterministic.
