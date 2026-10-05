@@ -1,0 +1,6 @@
+id: SRC-ASAI2024-SELF-RAG
+title: Asai et al. 2024 - Self-RAG
+kind: academic
+citation: "Asai, A., Wu, Z., Wang, Y., Sil, A., & Hajishirzi, H. (2024). Self-RAG: Learning to Retrieve, Generate, and Critique through Self-Reflection. International Conference on Learning Representations (ICLR 2024)."
+url: https://proceedings.iclr.cc/paper_files/paper/2024/hash/25f7be9694d7b32d5cc670927b8091e1-Abstract-Conference.html
+notes: Shows an adaptive retrieve-generate-critique architecture using learned reflection signals; relevant to retrieval gating and critique precedents, not proof of GONI's proposed epistemic controller.

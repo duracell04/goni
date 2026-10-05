@@ -4,14 +4,17 @@ title: 4.2 Mesh / Multi-Node Operation
 type: specification
 status: draft
 implementation_state: specified_only
-proposition: 'Goni must be designed as a **first-class cluster node**: It should be straightforward to run multiple devices on the same network and treat them as a **single logical AI cluster**.'
+proposition: 'Goni must be designed as a **first-class cluster node**: It should be
+  straightforward to run multiple devices on the same network and treat them as a
+  **single logical AI cluster**.'
 domains:
 - hardware
 aliases: []
 relations: []
 sources: []
 artifacts: []
-uncertainty: Preserved from the legacy draft without status promotion or newly inferred evidence strength.
+uncertainty: Preserved from the legacy draft without status promotion or newly inferred
+  evidence strength.
 legacy:
 - path: blueprint/hardware/10-requirements.md
   heading: 4.2 Mesh / Multi-Node Operation
@@ -30,3 +33,7 @@ legacy:
 - Latency-sensitive workloads should work well when the user interacts with **any one** of the nodes in the mesh.
 
 ---
+
+## Authority-domain scope
+
+This owner-mesh requirement is refined by [NET-COMP-01](net-comp-01-cooperative-compute-export.md), which distinguishes owner enrollment from independent compute-provider participation. The domains may share physical networking while retaining separate authority and disclosure scopes.

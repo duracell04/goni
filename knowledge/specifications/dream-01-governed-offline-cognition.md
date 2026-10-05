@@ -4,7 +4,9 @@ title: DREAM-01 - Governed Offline Cognition
 type: specification
 status: draft
 implementation_state: specified_only
-proposition: Kernel-scheduled offline cognition may generate synthetic cognitive candidates from authorized context, but those candidates must preserve explicit epistemic status and may not by themselves become facts, executable instructions, or authority.
+proposition: Kernel-scheduled offline cognition may generate synthetic cognitive candidates
+  from authorized context, but those candidates must preserve explicit epistemic status
+  and may not by themselves become facts, executable instructions, or authority.
 domains:
 - agent
 - kernel
@@ -26,6 +28,8 @@ relations:
   target: SCHED-01
 - type: depends_on
   target: GONI-SPEC-A742123055E0
+- type: depends_on
+  target: EPI-SEP-01
 - type: refines
   target: GONI-SPEC-33294E0D3306
 sources:
@@ -35,7 +39,9 @@ sources:
 - SRC-VANDEVEN2020-BRAIN-REPLAY
 - SRC-OPENAI2026-DREAMING
 artifacts: []
-uncertainty: DREAM-01 specifies a proposed boundary, not an implemented or empirically validated subsystem. Scheduling value, hypothesis quality, contamination resistance, compute efficiency, and promotion thresholds require matched evaluation.
+uncertainty: DREAM-01 specifies a proposed boundary, not an implemented or empirically
+  validated subsystem. Scheduling value, hypothesis quality, contamination resistance,
+  compute efficiency, and promotion thresholds require matched evaluation.
 legacy: []
 ---
 
@@ -140,17 +146,11 @@ where available:
 Until a future schema revision demonstrates the need for first-class columns,
 these fields may remain governed values inside the existing memory record.
 
-The following rules are mandatory:
+DREAM-01 applies the general evidence-hypothesis separation invariant in
+EPI-SEP-01. Dream-specific rules additionally require:
 
-1. Source material used to derive a hypothesis establishes derivation
-   provenance; it does not by itself confirm the derived proposition.
-2. Model confidence is a cognitive signal, not independent evidence.
-3. Regenerating the same proposition in another dream cycle is not independent
-   confirmation.
-4. Agreement among descendants of the same evidence or generation lineage is
-   not independent confirmation.
-5. A simulated or counterfactual event is not an observed event.
-6. Promotion to a confirmed fact requires evidence that supports the derived
+1. A simulated or counterfactual event is not an observed event.
+2. Promotion to a confirmed fact requires evidence that supports the derived
    proposition itself under the confirmed-vs-speculation contract.
 
 These rules prevent recursive synthetic-memory contamination.
@@ -236,3 +236,7 @@ A conforming implementation must preserve at least these invariants:
 
 Utility, recall, calibration, compute cost, and scheduling quality are measured
 properties rather than assumed guarantees.
+
+## Predictive cognition refinements
+
+[WORLD-01](world-01-bounded-predictive-world-model.md) makes task-scoped predictive state and observation/action history explicit. [SIM-BUDGET-01](sim-budget-01-decision-aware-simulation-allocation.md) adds marginal decision-value allocation within this contract and existing epistemic/scheduler bounds.

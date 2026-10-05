@@ -1,0 +1,7 @@
+id: SRC-SP1-SECURITY
+title: SP1 security model
+kind: web
+citation: https://docs.succinct.xyz/docs/sp1/security/security-model
+url: https://docs.succinct.xyz/docs/sp1/security/security-model
+accessed: "2026-10-04"
+notes: Official SP1 security-model documentation distinguishing proof-system guarantees from correctness of the guest program and surrounding assumptions.

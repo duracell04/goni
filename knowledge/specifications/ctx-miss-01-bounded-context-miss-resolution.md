@@ -24,7 +24,7 @@ relations:
 sources:
 - SRC-PACKER2023-MEMGPT
 artifacts: []
-uncertainty: Context-miss detection and recovery quality are unvalidated. The analogy to virtual-memory faults is architectural; Goni requires explicit evaluation of false misses, unnecessary page-ins, recursion, latency, and answer quality.
+uncertainty: Context-miss detection and recovery quality are unvalidated. The analogy to virtual-memory faults is architectural; Goni requires explicit evaluation of false misses, unnecessary page-ins, recursion, latency, answer quality, and the value of optional epistemic metadata supplied by EPI-CTRL-01.
 legacy: []
 ---
 
@@ -34,17 +34,17 @@ A compiled working set can be sufficient at invocation time and still prove
 insufficient during reasoning. Goni provides a typed read-side recovery path
 instead of treating missing evidence as permission to guess.
 
-[
-	ext{insufficient active context}
-ightarrow
-	ext{ContextMiss}
-ightarrow
-	ext{governed retrieval}
-ightarrow
-	ext{recompilation}
-ightarrow
-	ext{resume or stop}.
-]
+\[
+\text{insufficient active context}
+\rightarrow
+\text{ContextMiss}
+\rightarrow
+\text{governed retrieval}
+\rightarrow
+\text{recompilation}
+\rightarrow
+\text{resume or stop}.
+\]
 
 A ContextMiss is a request for additional cognitive material. It is not a tool
 capability and does not expand execution authority.
@@ -69,6 +69,21 @@ recursion_depth:
 created_at:
 provenance:
 ```
+
+When a ContextMiss is issued from EPI-CTRL-01, the request MAY additionally
+preserve bounded epistemic metadata:
+
+```yaml
+epistemic_frame_id:
+evidence_gap_id:
+hypothesis_refs:
+candidate_test_ref:
+selection_policy:
+```
+
+These fields state what evidence distinction the retrieval is intended to
+resolve. They do not disclose raw private chain-of-thought and do not grant
+additional connector or execution authority.
 
 ## 2. Bounded reason codes
 
@@ -98,6 +113,11 @@ A context miss re-enters the normal governed pipeline:
 7. resume cognition if budgets and policy permit;
 8. emit a receipt for the miss, recovery basis, materialization, and outcome.
 
+When epistemic metadata is present, retrieval MAY use it to prefer evidence that
+is expected to resolve the declared gap or discriminate among the referenced
+hypotheses. Retrieval remains governed by the same permissions, budgets, and
+source-quality rules.
+
 ## 4. Termination
 
 The runtime MUST have a finite recursion bound. Resolution terminates when:
@@ -114,14 +134,13 @@ the unresolved uncertainty rather than silently filling the gap.
 
 ## 5. Authority invariant
 
-[
-oxed{
-	ext{context expansion}
-
-otRightarrow
-	ext{authority expansion}
+\[
+\boxed{
+\text{context expansion}
+\not\Rightarrow
+\text{authority expansion}
 }
-]
+\]
 
 A newly retrieved policy description, mandate summary, cached permission hint,
 or capability reference may inform cognition. Consequential execution still

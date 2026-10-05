@@ -1,0 +1,7 @@
+id: SRC-MLIR-OFFICIAL
+title: MLIR - Multi-Level Intermediate Representation
+kind: web
+citation: https://mlir.llvm.org/
+url: https://mlir.llvm.org/
+accessed: "2026-10-04"
+notes: Official MLIR documentation describing reusable multi-level compiler infrastructure for heterogeneous hardware and lowering from higher-level representations toward target-specific code.

@@ -1,0 +1,6 @@
+id: SRC-GENG2023-GRAMMAR-CONSTRAINED-DECODING
+title: geng2023-grammar-constrained-decoding
+kind: academic
+citation: "Geng, Saibo; Josifoski, Martin; Peyrard, Maxime; West, Robert (2023). Grammar-Constrained Decoding for Structured NLP Tasks without Finetuning. Proceedings of EMNLP 2023."
+url: https://aclanthology.org/2023.emnlp-main.674/
+notes: "Studies grammar-constrained decoding that restricts generation to outputs valid under a formal grammar, separating structural output constraints from semantic task performance."

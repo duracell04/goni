@@ -4,14 +4,18 @@ title: 6. Provenance format (minimal)
 type: specification
 status: draft
 implementation_state: specified_only
-proposition: 'provenance is a structured object that includes: source: origin (observer, encoder, tool, agent).'
+proposition: Provenance records origin and derivation, while authenticity and freshness claims require explicit evidence and validity intervals rather than being inferred from a source label or timestamp.
 domains:
 - specs
+- provenance
 aliases: []
-relations: []
-sources: []
+relations:
+- type: refines
+  target: RESULT-01
+sources:
+- SRC-W3C2013-PROV
 artifacts: []
-uncertainty: Preserved from the legacy draft without status promotion or newly inferred evidence strength.
+uncertainty: Source-specific authenticity mechanisms and freshness windows depend on connector, data class, and task semantics.
 legacy:
 - path: blueprint/30-specs/latent-state-contract.md
   heading: 6. Provenance format (minimal)
@@ -20,13 +24,27 @@ legacy:
 
 # 6. Provenance format (minimal)
 
-> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.
+`provenance` is a structured object that can include:
 
-## 6. Provenance format (minimal)
+- `source`: origin such as observer, encoder, tool, agent, connector, or external provider;
+- `content_hash`: identity of the observed or derived content where appropriate;
+- `observed_at`: when GONI observed the item;
+- `valid_at`: the external time or state for which the item claims relevance;
+- `expires_at` or `freshness_policy`: when the item requires refresh;
+- `inputs`: references to upstream records;
+- `permissions`: policy tags in effect;
+- `authenticity_evidence_refs`: signatures, authenticated connector receipts, attestations, or other evidence where available;
+- `trust_domain`: the authority or boundary within which the provenance claim is accepted.
 
-`provenance` is a structured object that includes:
+## Semantic boundary
 
-- `source`: origin (observer, encoder, tool, agent).
-- `timestamp`: event time (UTC).
-- `inputs`: references to upstream record IDs.
-- `permissions`: policy tags in effect.
+Provenance answers where a datum came from and how it was derived.
+
+It does not automatically establish that:
+
+- the originating source was truthful;
+- the source was authorized;
+- the data was fresh enough for the current decision;
+- the external event described by the data actually occurred.
+
+Those properties require separate evidence, connector guarantees, or policy assumptions. A timestamp alone is not a freshness guarantee, and a content hash alone is not an authenticity guarantee.

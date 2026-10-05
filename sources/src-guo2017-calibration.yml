@@ -1,0 +1,6 @@
+id: SRC-GUO2017-CALIBRATION
+title: guo2017-calibration
+kind: academic
+citation: "Guo, Chuan; Pleiss, Geoff; Sun, Yu; Weinberger, Kilian Q. (2017). On Calibration of Modern Neural Networks. Proceedings of the 34th International Conference on Machine Learning, PMLR 70:1321-1330."
+url: https://proceedings.mlr.press/v70/guo17a.html
+notes: "Shows empirically that predictive accuracy and probability calibration are distinct properties for modern neural networks and evaluates post-hoc calibration methods including temperature scaling."

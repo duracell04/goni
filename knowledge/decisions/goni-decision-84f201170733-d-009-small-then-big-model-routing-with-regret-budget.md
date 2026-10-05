@@ -4,14 +4,25 @@ title: D-009 – Small-then-big model routing with regret budget
 type: decision
 status: draft
 implementation_state: specified_only
-proposition: '**Formal statement** We treat the routing problem as a decision between: \(a_s\): answer with small model only.'
+proposition: "Model routing should be evaluated as a contextual decision problem in which regret, calibration, selective risk, consequence-sensitive loss, latency, cost, privacy, energy, and authority constraints are measured explicitly; any numeric regret target is benchmark-specific rather than a universal architectural constant."
 domains:
 - software
 aliases: []
-relations: []
-sources: []
+relations:
+- type: depends_on
+  target: CAL-01
+- type: depends_on
+  target: SELECTIVE-01
+- type: depends_on
+  target: LOSS-01
+- type: refines
+  target: GONI-IMAP-EB2133E6965D
+sources:
+- SRC-FRUGALGPT2023
+- SRC-ROUTELLM2024
+- SRC-ROUTERBENCH2024
 artifacts: []
-uncertainty: Preserved from the legacy draft without status promotion or newly inferred evidence strength.
+uncertainty: "The original migrated draft used 0.07 as a default average-regret target without repository evidence deriving that value. This revision preserves regret as a metric while demoting numeric targets to benchmark-specific configuration."
 legacy:
 - path: blueprint/software/90-decisions.md
   heading: D-009 – Small-then-big model routing with regret budget
@@ -20,33 +31,43 @@ legacy:
 
 # D-009 – Small-then-big model routing with regret budget
 
-> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.
+The minimal pedagogical routing problem distinguishes:
 
-## D-009 – Small-then-big model routing with regret budget
+- a_s: accept the result from a cheaper/smaller route;
+- a_l: escalate to a stronger/more expensive route.
 
-**Formal statement**
+Real deployments MAY use a larger action set including deterministic checks,
+bounded decision models, local models, remote models, multi-model verification,
+or principal review.
 
-We treat the routing problem as a decision between:
+For a policy pi and an oracle comparator pi*, cumulative regret may be written:
 
-- \(a_s\): answer with small model only.  
-- \(a_\ell\): escalate to large model.
+R_T = sum from t=1..T of [L(pi(x_t), y_t) - L(pi*(x_t), y_t)],
 
-We define a **regret budget** \(\bar{R}\), and require that:
-$$
-\limsup_{T \to \infty} \frac{R_T}{T} \le \bar{R}
-$$
-with \(\bar{R} = 0.07\) by default.
+with the exact loss definition and comparator recorded by the benchmark.
 
-Here \(R_T\) is regret vs an oracle policy that knows the “true” best action per request.
+Regret remains useful because it quantifies the cost of approximate routing
+against a declared oracle. It is not sufficient on its own.
 
-**Rationale**
+Router evaluation SHOULD additionally report, where applicable:
 
-- Makes the “small-first” heuristic quantifiable: we know how much quality we trade for speed/cost.  
-- Provides a clear metric for validating router training and calibration.
+- predictive calibration;
+- risk-coverage behavior;
+- consequence-sensitive expected loss;
+- false local accepts and late escalations;
+- latency and monetary cost;
+- local energy/thermal cost where measurable;
+- privacy and egress exposure;
+- trajectory-level economics.
 
-**Consequence**
+The historical draft target of average regret <= 0.07 is retained only as a
+possible benchmark configuration when explicitly declared. It is not a
+universal invariant and MUST NOT be interpreted as theoretically justified
+across tasks.
 
-- Router changes must be evaluated on standard corpora with regret estimates.  
-- “Always large model” is allowed as a configuration but is explicitly outside the regret accounting (it corresponds to the oracle upper bound on quality, not the baseline).
+A routing threshold or regret target is promotable only relative to a specified
+dataset, task distribution, oracle construction, loss function, consequence
+class, and model/harness version.
 
----
+Hard policy and authority constraints remain outside the regret trade-off:
+economic or predictive advantage cannot authorize a prohibited action.
