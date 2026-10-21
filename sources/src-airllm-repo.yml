@@ -1,0 +1,7 @@
+id: SRC-AIRLLM-REPO
+title: AirLLM - official open-source inference repository
+kind: repository
+citation: "AirLLM contributors. AirLLM: layer-wise and expert-wise LLM inference. Official project repository, accessed 2026-10-21."
+url: https://github.com/lyogavin/airllm
+accessed: "2026-10-21"
+notes: "Primary project documentation; minimum-VRAM demonstrations are project-reported and do not independently establish useful latency, energy efficiency, or broad backend support."
