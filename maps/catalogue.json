@@ -551,6 +551,9 @@
         "BOM-V1-APU-NODE",
         "BOM-V2-FRAMEWORK-395-128GB",
         "ENCLOSURE-NOTES",
+        "EVID-AIRLLM-STREAMING",
+        "EVID-SHENG2023-FLEXGEN",
+        "EXP-INF-PLACE-01",
         "FRONT-PANEL-MCU",
         "GONI-DECISION-048BDF1585D6",
         "GONI-DECISION-0A47E1D3838A",
@@ -706,6 +709,7 @@
         "GONI-SYNTHESIS-3DD064A0217F",
         "GONI-SYNTHESIS-A5E56B434FF9",
         "HREQ-01",
+        "INF-PLACE-01",
         "OS-AND-BASE-IMAGE",
         "POWER-AND-PSU"
       ],
@@ -807,6 +811,7 @@
         "GONI-SYNTHESIS-BD7FD2CC38AF",
         "GONI-SYNTHESIS-CC4921DED1BB",
         "GONI-SYNTHESIS-DF627E719B9D",
+        "INF-PLACE-01",
         "SPEC-ENF-01",
         "SPEC-KERN-01",
         "SPEC-POL-01",
@@ -1654,6 +1659,7 @@
         "CTX-MISS-EVAL-01",
         "DREAM-01",
         "DREAM-EVAL-01",
+        "EVID-AIRLLM-STREAMING",
         "EVID-DENNING1968-WORKING-SET",
         "EVID-GIM2024-PROMPT-CACHE",
         "EVID-HA2018-WORLD-MODELS",
@@ -1665,8 +1671,10 @@
         "EVID-LI2023-SELECTIVE-CONTEXT",
         "EVID-OPENAI2026-DREAMING",
         "EVID-PARK2023-GENERATIVE-AGENTS",
+        "EVID-SHENG2023-FLEXGEN",
         "EVID-VANDEVEN2020-BRAIN-REPLAY",
         "EVID-ZHENG2024-SGLANG",
+        "EXP-INF-PLACE-01",
         "GONI-DECISION-6D3A2B71C9E4",
         "GONI-EVIDENCE-0577AE42BDFA",
         "GONI-EVIDENCE-074976FCCFF9",
@@ -1798,13 +1806,16 @@
         "CTX-MISS-01",
         "CTX-MISS-EVAL-01",
         "DASHBOARD-CONCEPTS",
+        "EVID-AIRLLM-STREAMING",
         "EVID-GIM2024-PROMPT-CACHE",
         "EVID-HU2022-LORA",
         "EVID-JIANG2023-LLMLINGUA",
         "EVID-JIANG2024-LONGLLMLINGUA",
         "EVID-LI2021-PREFIX-TUNING",
         "EVID-LI2023-SELECTIVE-CONTEXT",
+        "EVID-SHENG2023-FLEXGEN",
         "EVID-ZHENG2024-SGLANG",
+        "EXP-INF-PLACE-01",
         "GONI-DECISION-0532C27DA3CC",
         "GONI-DECISION-1A482B12FFB8",
         "GONI-DECISION-1D38615A3B48",
@@ -2124,6 +2135,7 @@
         "GONI-SYNTHESIS-25E97650859E",
         "GONI-SYNTHESIS-C774DEAACDEE",
         "INF-FRAME-01",
+        "INF-PLACE-01",
         "LATENT-PREDICTOR",
         "LLM-RUNTIME",
         "MESH-AND-WIREGUARD",
@@ -2755,6 +2767,7 @@
         "DREAM-EVAL-01",
         "ENCLOSURE-NOTES",
         "EVAL-README-00",
+        "EVID-AIRLLM-STREAMING",
         "EVID-AUTON-01",
         "EVID-AUTON-02",
         "EVID-AUTON-03",
@@ -2790,8 +2803,10 @@
         "EVID-SEC-01",
         "EVID-SEC-02",
         "EVID-SEC-03",
+        "EVID-SHENG2023-FLEXGEN",
         "EVID-VANDEVEN2020-BRAIN-REPLAY",
         "EVID-ZHENG2024-SGLANG",
+        "EXP-INF-PLACE-01",
         "FIRST-PARTY-LLM-CHATS",
         "FRONT-PANEL-MCU",
         "GONI-AGILITY-RULES",
@@ -4608,6 +4623,7 @@
         "GOV-00",
         "HREQ-01",
         "INF-FRAME-01",
+        "INF-PLACE-01",
         "ITCR-01",
         "JOB-01",
         "LATENT-PREDICTOR",
@@ -4779,6 +4795,7 @@
         "GONI-DECISION-FEDF62BF576F"
       ],
       "evidence": [
+        "EVID-AIRLLM-STREAMING",
         "EVID-DENNING1968-WORKING-SET",
         "EVID-GIM2024-PROMPT-CACHE",
         "EVID-HA2018-WORLD-MODELS",
@@ -4790,6 +4807,7 @@
         "EVID-LI2023-SELECTIVE-CONTEXT",
         "EVID-OPENAI2026-DREAMING",
         "EVID-PARK2023-GENERATIVE-AGENTS",
+        "EVID-SHENG2023-FLEXGEN",
         "EVID-VANDEVEN2020-BRAIN-REPLAY",
         "EVID-ZHENG2024-SGLANG",
         "GONI-EVIDENCE-0577AE42BDFA",
@@ -4915,6 +4933,7 @@
         "EVID-SEC-01",
         "EVID-SEC-02",
         "EVID-SEC-03",
+        "EXP-INF-PLACE-01",
         "GONI-EXPERIMENT-0002BABA3DAF",
         "GONI-EXPERIMENT-00E7C79F4A95",
         "GONI-EXPERIMENT-04D89CD2474E",
@@ -6104,6 +6123,7 @@
         "GONI-SPEC-FF2D2F8D0491",
         "HREQ-01",
         "INF-FRAME-01",
+        "INF-PLACE-01",
         "ITCR-01",
         "JOB-01",
         "LSC-01",
@@ -11493,6 +11513,34 @@
       "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
     },
     {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# AirLLM: layer and expert streaming on constrained accelerators\n\n## Reported observation\n\nAirLLM describes loading model layers sequentially, executing each on an\naccelerator, and releasing their working weights. Its sparse-MoE path reports\nloading routed experts rather than keeping all experts resident. The project\nalso describes prefetching and optional 4-bit or 8-bit compression.\n\nThese mechanisms distinguish the bytes needed for one execution step from\nthe total model-parameter footprint. Successful initialization or generation\nwithin a small peak VRAM budget is evidence of execution feasibility, not\nnecessarily useful interactive speed.\n\n## Goni interpretation and limits\n\nThis supports testing memory-residency strategies independently from model\nselection and numerical precision. Dense models can repeatedly stream large\nweight volumes during decoding; sparse expert routing has a different transfer\nprofile. Model preparation, available disk capacity, CPU memory, storage\nbandwidth, context/KV cache, and energy remain material constraints.\n\nPromotion to a Goni runtime profile requires measured results on an identified\nmodel, software version, workload, and hardware configuration.",
+      "domains": [
+        "hardware",
+        "research",
+        "software"
+      ],
+      "id": "EVID-AIRLLM-STREAMING",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/evidence/evid-airllm-layer-expert-streaming.md",
+      "proposition": "AirLLM project documentation reports layer-wise dense-model and per-expert sparse-MoE streaming that reduce peak accelerator residency while increasing dependence on storage and data transfer.",
+      "relations": [
+        {
+          "target": "GONI-PRINCIPLE-9062425CD490",
+          "type": "supports"
+        }
+      ],
+      "sources": [
+        "SRC-AIRLLM-REPO"
+      ],
+      "status": "draft",
+      "title": "AirLLM: layer and expert streaming on constrained accelerators",
+      "type": "evidence",
+      "uncertainty": "The source documents functionality and project-reported minimum-VRAM demonstrations; comparative latency, energy, storage traffic, model accuracy, and Goni hardware compatibility are not independently established."
+    },
+    {
       "aliases": [
         "EVID-AUTON-01-AUTONOMY-CORRIDORS"
       ],
@@ -12446,6 +12494,34 @@
     {
       "aliases": [],
       "artifacts": [],
+      "body": "# FlexGen: I/O-aware inference offloading\n\n## Reported observation\n\nSheng et al. (ICML 2023) study high-throughput LLM inference with limited GPU\nmemory. FlexGen searches tensor placement and transfer schedules across GPU,\nCPU, and disk, combined with compression and large effective batches. The\npublished evaluation reports results for selected hardware, models, and\nthroughput-oriented workloads.\n\n## Goni interpretation and limits\n\nMemory capacity, tensor placement, transfer bandwidth, batch size, and latency\nobjectives interact. A model that can execute under a small accelerator-memory\nceiling may be suitable for background batching but unsuitable for interactive\ndelegation. The scheduler should compare feasible execution profiles using\nobserved end-to-end costs on the actual target platform.",
+      "domains": [
+        "hardware",
+        "research",
+        "software"
+      ],
+      "id": "EVID-SHENG2023-FLEXGEN",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/evidence/evid-sheng2023-flexgen-offloading.md",
+      "proposition": "Sheng et al. (2023) demonstrate GPU-CPU-disk tensor placement, compression, and batch-oriented I/O scheduling for selected large-model inference workloads under constrained accelerator memory.",
+      "relations": [
+        {
+          "target": "GONI-PRINCIPLE-9062425CD490",
+          "type": "supports"
+        }
+      ],
+      "sources": [
+        "SRC-SHENG2023-FLEXGEN"
+      ],
+      "status": "draft",
+      "title": "FlexGen: I/O-aware inference offloading",
+      "type": "evidence",
+      "uncertainty": "The reported gains target latency-insensitive, throughput-oriented workloads on evaluated hardware and models; they are not a general interactive-latency guarantee or a Goni implementation result."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
       "body": "# Source claim: Brain-inspired replay\n\nThe paper studies replay of generated internal representations as a mechanism\nfor retaining previously learned capabilities under continual learning.\n\n## Goni relevance\n\nIt provides technical precedent for selective replay and internal\nreconstruction as useful offline computation.\n\n## Boundary\n\nDREAM-01 does not infer a biological sleep architecture from this result and\ndoes not require online weight training. The source does not validate synthetic\nmemory as factual evidence.",
       "domains": [
         "research",
@@ -12495,6 +12571,35 @@
       "title": "Source claim: SGLang and RadixAttention",
       "type": "evidence",
       "uncertainty": "Reported throughput gains depend on workload, model, hardware, and runtime configuration and do not establish the cache-key or invalidation contract Goni should adopt."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Inference placement feasibility and efficiency benchmark\n\n## Research question\n\nOn identified Goni hardware and representative workloads, when does\nmemory-hierarchy-aware inference provide useful local capabilities beyond\nresident execution, and when do transfer costs defeat its benefit?\n\nThe hypothesis is conditional: streaming can reduce peak accelerator memory\nfor suitable supported model/runtime combinations, while latency, storage\ntraffic, total memory demand, and energy can make other execution modes\npreferable.\n\n## Controlled comparisons\n\nFor each supported model and precision profile, compare:\n\n1. Resident weights when the model and context fit.\n2. Conventional accelerator/CPU offloading.\n3. Layer-wise disk or RAM streaming.\n4. Routed-expert streaming for compatible sparse-MoE architectures.\n\nRetain a separate **product baseline** using the best available smaller or\nquantized resident model for the same task. Precision- and model-dependent\nquality differences are measured explicitly; placement-only comparisons use\nthe same checkpoint, tokenizer, numerical precision, prompts, and output\nbudgets where backend capabilities permit.\n\nReport results separately for unified-memory APU and discrete-GPU\nconfigurations. Each result identifies hardware, OS, driver, runtime version,\ncheckpoint hash, precision, context length, batch size, and storage medium.\n\n## Measurement protocol\n\nStart with a small synthetic smoke test covering supported modes, adapter\nloading, cancellation, and budget reporting. Advance to representative larger\nmodels only after stability and resource estimates are confirmed. Bound test\nruns by declared wall-time, storage traffic, energy, and thermal budgets.\n\nMeasure cold-start and warmed execution; short and long prompts; short and\nlong decode; interactive single-job and queued background work. Use repeated\nruns and report sample count, variation, failures, and measurement uncertainty.\n\nCollect:\n\n- execution feasibility, required disk capacity, preparation time, and errors;\n- time to first token, prefill duration, decode tokens/s, total completion time,\n  and p50/p95 latency where repeated samples support quantiles;\n- peak accelerator RAM, system RAM, KV/activation footprint, and concurrency\n  headroom;\n- storage bytes read and written, observed throughput, and write amplification\n  where observable;\n- energy in joules and thermal behavior where instrumented; measured proxies\n  receive a distinct label;\n- admission estimate error, cancellation responsiveness, and scheduler\n  backpressure/interference with an interactive workload;\n- task accuracy, evidence fidelity, and accepted-output rate on a fixed,\n  predeclared evaluation set.\n\nRecord source-measured metrics separately from computed estimates. Treat\nproject-reported minimum-VRAM figures as external feasibility claims.\n\n## Evaluation and promotion\n\nBefore measurements, define the task-specific minimum quality, response-time\nor completion deadline, memory ceiling, storage traffic allowance, and\nmeasurement coverage required for acceptance. Compare each candidate against\nthe resident/offloaded alternatives and the practical small-model baseline.\n\nA placement mode is eligible for a production runtime profile only when\nrepeatable tests establish supported bundle/hardware combinations, resource\naccounting, acceptable user-visible quality, and the workload's declared SLO.\nPublish negative results, unsupported paths, and transfer bottlenecks alongside\nsuccessful configurations. Retain measurements as evidence with pinned\nhardware, software, and model identifiers.\n\nThe executable harness and measurement artifacts belong in\n`duracell04/goni-prototype-lab`; this Blueprint node specifies the experiment\nand its promotion boundary.",
+      "domains": [
+        "hardware",
+        "research",
+        "software"
+      ],
+      "id": "EXP-INF-PLACE-01",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/experiments/exp-inf-place-01-runtime-placement-benchmark.md",
+      "proposition": "Measure whether approved resident, offloaded, layer-streamed, and expert-streamed inference profiles can satisfy named Goni jobs within hardware, latency, quality, and resource budgets.",
+      "relations": [
+        {
+          "target": "INF-PLACE-01",
+          "type": "tests"
+        }
+      ],
+      "sources": [
+        "SRC-AIRLLM-REPO",
+        "SRC-SHENG2023-FLEXGEN"
+      ],
+      "status": "draft",
+      "title": "Inference placement feasibility and efficiency benchmark",
+      "type": "experiment",
+      "uncertainty": "Runtime compatibility and performance are unmeasured on Goni target hardware; this is an experiment specification rather than benchmark evidence."
     },
     {
       "aliases": [],
@@ -22301,7 +22406,7 @@
     {
       "aliases": [],
       "artifacts": [],
-      "body": "# 2.1 Responsibilities\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n### 2.1 Responsibilities\n\n- **Inference execution**\n  - Convert a PromptPlan + ModelId into a token stream.\n\n- **Bundle loading and attestation**\n  - Load only declared bundle IDs produced by the promotion pipeline.\n  - Surface the active trunk version, expert mesh version, and patch set hashes\n    for audit and receipts.\n\n- **Model capability description**\n  - Report per-model:\n    - max_context,\n    - nominal tokens/s,\n    - memory footprint / device requirements,\n    - supported shape buckets and graph-compile constraints (for NPUs),\n    - KV-cache limits and paging mode (contiguous vs segmented),\n    - optional speculative/draft-model support: compatible draft bundles,\n      maximum draft length, confidence-head availability, and verifier batch\n      constraints.\n\n- **Utilisation reporting**\n  - Track and expose current load (per model and per device) to scheduler / resman in ??.\n  - Expose effective bandwidth and memory pressure signals for routing decisions.\n\n- **Cancellation / preemption hooks**\n  - Support cooperative cancellation so ?? can abort or delay jobs.\n\n- **Wake and warm-state control**\n  - Report cold-start latency and warm state per model/device.\n  - Support pre-warm and keep-alive budgets so decoder wake is bounded.\n  - Support shape-bucket pre-warm for NPU graph stability.",
+      "body": "# 2.1 Responsibilities\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n### 2.1 Responsibilities\n\n- **Inference execution**\n  - Convert a PromptPlan + ModelId into a token stream.\n\n- **Bundle loading and attestation**\n  - Load only declared bundle IDs produced by the promotion pipeline.\n  - Surface the active trunk version, expert mesh version, and patch set hashes\n    for audit and receipts.\n\n- **Model capability description**\n  - Report per-model:\n    - max_context,\n    - nominal tokens/s,\n    - memory footprint / device requirements,\n    - supported shape buckets and graph-compile constraints (for NPUs),\n    - KV-cache limits and paging mode (contiguous vs segmented),\n    - optional speculative/draft-model support: compatible draft bundles,\n      maximum draft length, confidence-head availability, and verifier batch\n      constraints.\n\n- **Utilisation reporting**\n  - Track and expose current load (per model and per device) to scheduler / resman in ??.\n  - Expose effective bandwidth and memory pressure signals for routing decisions.\n\n- **Cancellation / preemption hooks**\n  - Support cooperative cancellation so ?? can abort or delay jobs.\n\n- **Wake and warm-state control**\n  - Report cold-start latency and warm state per model/device.\n  - Support pre-warm and keep-alive budgets so decoder wake is bounded.\n  - Support shape-bucket pre-warm for NPU graph stability.\n\n### Memory-hierarchy placement profiles (INF-PLACE-01)\n\nEach runtime adapter SHOULD expose its supported resident, offloaded,\nlayer-streamed, and expert-streamed modes, including supported architecture,\nbundle/precision combinations and hardware dependencies. Per-profile estimates\nSHOULD distinguish weight residency, KV/activation memory, free storage needed,\nmodel preparation, cold/warm startup, transfer traffic, latency, and energy,\nusing a named hardware/workload measurement where available.\n\nThe adapter reports measured memory pressure, wall time, storage reads/writes,\nand execution provenance to the kernel's existing metering and receipt path.\nThe kernel retains admission, budget enforcement, scheduling, and cancellation\nauthority. Internal prefetching and tensor-level transfers remain backend-owned\noperations, subject to kernel-visible resource use and backpressure.",
       "domains": [
         "software"
       ],
@@ -40095,7 +40200,7 @@
     {
       "aliases": [],
       "artifacts": [],
-      "body": "# JobSpec fields\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n## JobSpec fields\n- job_id\n- class: interactive | background | maintenance\n- priority\n- deadline (optional)\n- cancel_policy\n- budgets\n- required_capabilities",
+      "body": "# JobSpec fields\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n## JobSpec fields\n- job_id\n- class: interactive | background | maintenance\n- priority\n- deadline (optional)\n- cancel_policy\n- budgets\n- required_capabilities\n\n## Inference resource budgets (INF-PLACE-01)\n\nFor model inference jobs, the existing `budgets` field MAY include resource\nceilings for peak accelerator memory, peak system RAM, storage bytes read,\nstorage bytes written, wall time, and measured energy. The job's QoS class,\ndeadline, authorized capabilities, and existing hard-budget rules remain in\nforce. The scheduler selects a feasible runtime placement profile within this\nenvelope; placement hints convey optimization preferences, not authority.",
       "domains": [
         "specs"
       ],
@@ -60013,6 +60118,55 @@
     {
       "aliases": [],
       "artifacts": [],
+      "body": "# Memory-Hierarchy-Aware Inference Placement (INF-PLACE-01)\n\n## Scope and authority\n\nA Goni model job carries an authorized model bundle, required capabilities,\nquality requirements, QoS class, deadline, and resource budget. The kernel\nselects a feasible execution profile and retains D-008 scheduling, admission,\nbudget, cancellation, egress, and receipt authority. Runtime adapters implement\nthe selected profile and manage their internal tensor transfers.\n\nPlacement and numerical precision are orthogonal. The selected precision or\nquantization variant is declared in the governed model/runtime configuration.\nThe model bundle registry remains the authority for approved artifacts and\ntheir integrity. Network-based execution follows existing egress policy.\n\n## Placement modes\n\n- `resident`: selected model weights and working state remain in the\n  selected high-bandwidth memory tier for the execution.\n- `offloaded`: selected weights or state execute from a managed mixture of\n  accelerator and host memory.\n- `layer_streamed`: dense-model layers are staged sequentially through\n  limited accelerator memory during execution.\n- `expert_streamed`: a compatible sparse-MoE backend stages the experts\n  selected by model routing while respecting shared-layer and cache needs.\n\nA backend MAY combine techniques. Each declared mode is available only for\nmodel architecture, hardware, precision, and runtime versions the backend\nreports as supported.\n\n## Logical execution plan\n\n```yaml\njob_id: ...\nmodel_bundle_id: ...\nruntime_backend_id: ...\nruntime_version: ...\nplacement_mode: resident | offloaded | layer_streamed | expert_streamed\nprecision_profile: ...\nestimate_profile_ref: ...\nestimated:\n  peak_accelerator_memory_bytes: ...\n  peak_system_memory_bytes: ...\n  working_kv_activation_bytes: ...\n  model_storage_bytes: ...\n  storage_read_bytes: ...\n  storage_write_bytes: ...\n  wall_time_ms: ...\n  energy_joules: ...\n```\n\nResource estimates include context/KV-cache and activation demands as well as\nweights, plus model preparation and cold-start costs when applicable. Unknown\nvalues carry an explicit unmeasured status. Runtime profiles describe the\nhardware/software version, batch and context conditions, measurement provenance,\nand uncertainty range.\n\n## Admission and selection\n\n1. Compile authorized model bundles, permitted precision profiles, local or\n   explicitly approved remote backends, and supported placement modes.\n2. Check hardware capability, required storage provisioning, memory headroom,\n   concurrency, job deadline, quality requirements, and enforceable budgets.\n3. Compare eligible profiles using measured or conservatively estimated\n   end-to-end latency, transfer cost, energy, storage wear, and expected quality.\n4. Admit the best eligible profile under the job's priorities and D-008 queue\n   discipline; defer, fail safely, or use an existing approval/egress route\n   when the eligible set is empty.\n\nThe control plane reserves scarce resources, observes runtime pressure, and\nsupports cancellation and backpressure. The runtime performs fine-grained\nlayer/expert loading and prefetching within the selected envelope. Warm-state\nreuse may improve performance; the initial admission estimate accounts for\nthe possibility of a cold start.\n\n## Metering and receipts\n\nUse existing METER-01 and execution-receipt contracts to link the job,\nauthorized bundle and runtime version, selected placement mode, estimate\nprofile, observed peak accelerator/system memory, wall time, storage reads and\nwrites, energy when measured, and any budget or fallback decision. Report\nestimated values separately from measurements and from output-quality\nevaluation.\n\n## Conformance and promotion\n\nA qualifying adapter demonstrates supported mode/model combinations,\nresource-accounted admission, cooperative cancellation and backpressure,\nreconstructable receipts, and its declared storage/network boundary. Measured\nworkload-specific performance establishes production eligibility. A successful\nsmall-VRAM inference demonstration alone establishes feasibility, not\ninteractive suitability or overall resource efficiency.",
+      "domains": [
+        "hardware",
+        "kernel",
+        "software"
+      ],
+      "id": "INF-PLACE-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/specifications/inf-place-01-memory-hierarchy-aware-inference-placement.md",
+      "proposition": "Goni selects an inference execution profile from policy-authorized and resource-feasible model/runtime/placement combinations using calibrated workload estimates and job budgets, while tensor movement remains a backend concern.",
+      "relations": [
+        {
+          "target": "GONI-PRINCIPLE-9062425CD490",
+          "type": "refines"
+        },
+        {
+          "target": "GONI-SPEC-78027C2E0EED",
+          "type": "depends_on"
+        },
+        {
+          "target": "GONI-DECISION-0532C27DA3CC",
+          "type": "depends_on"
+        },
+        {
+          "target": "MODEL-REG-01",
+          "type": "depends_on"
+        },
+        {
+          "target": "EVID-AIRLLM-STREAMING",
+          "type": "derived_from"
+        },
+        {
+          "target": "EVID-SHENG2023-FLEXGEN",
+          "type": "derived_from"
+        }
+      ],
+      "sources": [
+        "SRC-AIRLLM-REPO",
+        "SRC-SHENG2023-FLEXGEN"
+      ],
+      "status": "draft",
+      "title": "Memory-Hierarchy-Aware Inference Placement",
+      "type": "specification",
+      "uncertainty": "Backend support, memory estimates, throughput, energy, and SSD effects are hardware- and workload-dependent. This contract is specified only; eligibility for production requires independent benchmarks."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
       "body": "# ITCR-01 - Inference-Time Compute Reasoning\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n# ITCR-01 - Inference-Time Compute Reasoning\n﻿---\nid: ITCR-01\ntype: SPEC\nstatus: specified_only\n---\nDOC-ID: ITCR-01\nStatus: Specified only / roadmap\n\nThis spec defines inference-time compute reasoning (ITCR) as a bounded,\ninterrupt-driven reasoning service. ITCR is a compute allocation policy over a\nreasoning procedure, not a model architecture. It trades extra latency/energy\nfor reduced error on multi-step planning, verification, and constraint-heavy\ntasks.",
       "domains": [
         "specs"
@@ -63254,6 +63408,18 @@
       "type": "tests"
     },
     {
+      "projection": "generated",
+      "source": "EVID-AIRLLM-STREAMING",
+      "target": "INF-PLACE-01",
+      "type": "derives"
+    },
+    {
+      "projection": "authored",
+      "source": "EVID-AIRLLM-STREAMING",
+      "target": "GONI-PRINCIPLE-9062425CD490",
+      "type": "supports"
+    },
+    {
       "projection": "authored",
       "source": "EVID-DENNING1968-WORKING-SET",
       "target": "GONI-DECISION-FEB39440C565",
@@ -63350,6 +63516,18 @@
       "type": "supported_by"
     },
     {
+      "projection": "generated",
+      "source": "EVID-SHENG2023-FLEXGEN",
+      "target": "INF-PLACE-01",
+      "type": "derives"
+    },
+    {
+      "projection": "authored",
+      "source": "EVID-SHENG2023-FLEXGEN",
+      "target": "GONI-PRINCIPLE-9062425CD490",
+      "type": "supports"
+    },
+    {
       "projection": "authored",
       "source": "EVID-VANDEVEN2020-BRAIN-REPLAY",
       "target": "GONI-DECISION-6D3A2B71C9E4",
@@ -63360,6 +63538,12 @@
       "source": "EVID-ZHENG2024-SGLANG",
       "target": "GONI-SYNTHESIS-227700D474C6",
       "type": "supports"
+    },
+    {
+      "projection": "authored",
+      "source": "EXP-INF-PLACE-01",
+      "target": "INF-PLACE-01",
+      "type": "tests"
     },
     {
       "projection": "authored",
@@ -63378,6 +63562,12 @@
       "source": "GONI-AGILITY-RULES",
       "target": "GONI-SYNTHESIS-7E52EAD361C9",
       "type": "synthesizes"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-DECISION-0532C27DA3CC",
+      "target": "INF-PLACE-01",
+      "type": "depended_on_by"
     },
     {
       "projection": "generated",
@@ -64406,6 +64596,12 @@
       "type": "refined_by"
     },
     {
+      "projection": "generated",
+      "source": "GONI-PRINCIPLE-9062425CD490",
+      "target": "INF-PLACE-01",
+      "type": "refined_by"
+    },
+    {
       "projection": "authored",
       "source": "GONI-PRINCIPLE-9062425CD490",
       "target": "GONI-PRINCIPLE-B40DDEFD1872",
@@ -64414,7 +64610,19 @@
     {
       "projection": "generated",
       "source": "GONI-PRINCIPLE-9062425CD490",
+      "target": "EVID-AIRLLM-STREAMING",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-PRINCIPLE-9062425CD490",
       "target": "EVID-DENNING1968-WORKING-SET",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-PRINCIPLE-9062425CD490",
+      "target": "EVID-SHENG2023-FLEXGEN",
       "type": "supported_by"
     },
     {
@@ -64494,6 +64702,12 @@
       "source": "GONI-SPEC-75D0D2E5F296",
       "target": "GONI-SYNTHESIS-E3B321C24C67",
       "type": "synthesized_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-SPEC-78027C2E0EED",
+      "target": "INF-PLACE-01",
+      "type": "depended_on_by"
     },
     {
       "projection": "generated",
@@ -68721,6 +68935,48 @@
     },
     {
       "projection": "authored",
+      "source": "INF-PLACE-01",
+      "target": "GONI-DECISION-0532C27DA3CC",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "INF-PLACE-01",
+      "target": "GONI-SPEC-78027C2E0EED",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "INF-PLACE-01",
+      "target": "MODEL-REG-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "INF-PLACE-01",
+      "target": "EVID-AIRLLM-STREAMING",
+      "type": "derived_from"
+    },
+    {
+      "projection": "authored",
+      "source": "INF-PLACE-01",
+      "target": "EVID-SHENG2023-FLEXGEN",
+      "type": "derived_from"
+    },
+    {
+      "projection": "authored",
+      "source": "INF-PLACE-01",
+      "target": "GONI-PRINCIPLE-9062425CD490",
+      "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "INF-PLACE-01",
+      "target": "EXP-INF-PLACE-01",
+      "type": "tested_by"
+    },
+    {
+      "projection": "authored",
       "source": "LLM-COUNCIL",
       "target": "GONI-OBJECTION-998CA377412F",
       "type": "synthesizes"
@@ -69053,6 +69309,12 @@
       "projection": "generated",
       "source": "MODEL-REG-01",
       "target": "INF-FRAME-01",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
+      "source": "MODEL-REG-01",
+      "target": "INF-PLACE-01",
       "type": "depended_on_by"
     },
     {
@@ -70235,6 +70497,16 @@
       "url": "https://arxiv.org/abs/2509.23864"
     },
     {
+      "accessed": "2026-10-21",
+      "citation": "AirLLM contributors. AirLLM: layer-wise and expert-wise LLM inference. Official project repository, accessed 2026-10-21.",
+      "id": "SRC-AIRLLM-REPO",
+      "kind": "repository",
+      "notes": "Primary project documentation; minimum-VRAM demonstrations are project-reported and do not independently establish useful latency, energy efficiency, or broad backend support.",
+      "path": "sources/src-airllm-repo.yml",
+      "title": "AirLLM - official open-source inference repository",
+      "url": "https://github.com/lyogavin/airllm"
+    },
+    {
       "citation": "https://csrc.nist.rip/publications/history/ande72.pdf",
       "id": "SRC-ANDERSON1972-REFERENCE-MONITOR",
       "kind": "web",
@@ -70906,6 +71178,16 @@
       "path": "sources/src-sculley2015-hidden-tech-debt.yml",
       "title": "sculley2015-hidden-tech-debt",
       "url": "https://papers.nips.cc/paper/5656-hidden-technical-debt-in-machine-learning-syst"
+    },
+    {
+      "accessed": "2026-10-21",
+      "citation": "Sheng, Y., et al. (2023). FlexGen: High-Throughput Generative Inference of Large Language Models with a Single GPU. Proceedings of ICML, PMLR 202, 31094-31116.",
+      "id": "SRC-SHENG2023-FLEXGEN",
+      "kind": "academic",
+      "notes": "Peer-reviewed study of GPU, CPU and disk tensor placement, weight and cache compression, and high-throughput latency-insensitive inference. Findings are workload- and hardware-specific.",
+      "path": "sources/src-sheng2023-flexgen.yml",
+      "title": "FlexGen: High-Throughput Generative Inference of Large Language Models with a Single GPU",
+      "url": "https://proceedings.mlr.press/v202/sheng23a.html"
     },
     {
       "citation": "https://arxiv.org/abs/2002.04087",

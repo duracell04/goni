@@ -1,0 +1,7 @@
+id: SRC-SHENG2023-FLEXGEN
+title: "FlexGen: High-Throughput Generative Inference of Large Language Models with a Single GPU"
+kind: academic
+citation: "Sheng, Y., et al. (2023). FlexGen: High-Throughput Generative Inference of Large Language Models with a Single GPU. Proceedings of ICML, PMLR 202, 31094-31116."
+url: https://proceedings.mlr.press/v202/sheng23a.html
+accessed: "2026-10-21"
+notes: "Peer-reviewed study of GPU, CPU and disk tensor placement, weight and cache compression, and high-throughput latency-insensitive inference. Findings are workload- and hardware-specific."
