@@ -30,3 +30,12 @@ legacy:
 - cancel_policy
 - budgets
 - required_capabilities
+
+## Inference resource budgets (INF-PLACE-01)
+
+For model inference jobs, the existing `budgets` field MAY include resource
+ceilings for peak accelerator memory, peak system RAM, storage bytes read,
+storage bytes written, wall time, and measured energy. The job's QoS class,
+deadline, authorized capabilities, and existing hard-budget rules remain in
+force. The scheduler selects a feasible runtime placement profile within this
+envelope; placement hints convey optimization preferences, not authority.
