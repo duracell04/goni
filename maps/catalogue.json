@@ -19107,7 +19107,7 @@
     {
       "aliases": [],
       "artifacts": [],
-      "body": "# Trace replay harness\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n## Trace replay harness\n\nDelegation evaluation uses trace replay rather than ad-hoc screenshots or\nanecdotal demos.\n\nReplay suites should include:\n\n- vague intent prompts with gold deliverables,\n- policy bundles that vary corridor, clarification, and visibility rules,\n- traces that distinguish delegation from co-creation,\n- receipts and audit traces for each mediated action,\n- outcome labels covering success, overrides, unsafe autonomy, and question\n  usefulness.\n\nMinimum reported dimensions:\n\n- quality/success,\n- turns and latency,\n- user corrections and overrides,\n- interaction-mode classification accuracy,\n- surfaced-assumption coverage,\n- question count and question value,\n- branch_count / variant_count_requested under fixed budgets.\n\nLong-context reading evaluation should additionally report:\n\n- reading strategy used,\n- span/citation fidelity,\n- scan/slice/subread counts,\n- recursion depth,\n- whether the strategy underperformed the native in-window baseline.",
+      "body": "# Trace replay harness\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n## Trace replay harness\n\nDelegation evaluation uses trace replay rather than ad-hoc screenshots or\nanecdotal demos.\n\nReplay suites should include:\n\n- vague intent prompts with gold deliverables,\n- policy bundles that vary corridor, clarification, and visibility rules,\n- traces that distinguish delegation from co-creation,\n- receipts and audit traces for each mediated action,\n- outcome labels covering success, overrides, unsafe autonomy, and question\n  usefulness.\n\nMinimum reported dimensions:\n\n- quality/success,\n- turns and latency,\n- user corrections and overrides,\n- interaction-mode classification accuracy,\n- surfaced-assumption coverage,\n- question count and question value,\n- branch_count / variant_count_requested under fixed budgets.\n\nLong-context reading evaluation should additionally report:\n\n- reading strategy used,\n- span/citation fidelity,\n- scan/slice/subread counts,\n- recursion depth,\n- whether the strategy underperformed the native in-window baseline.\n\n### End-to-end completion-verification fixtures (planned)\n\nUse deterministic synthetic email-draft fixtures with a fixed Work Order,\nDone Contract, policy/capability snapshot, tool responses, independently\nobservable mock mailbox state, and expected audit/receipt references. Replay\neach trace with the same fixtures and compare observed results to the expected\ntask-level assessment:\n\n| Fixture | Action and observed state | Expected assessment / policy evidence |\n| --- | --- | --- |\n| Authorized draft | Authorized draft creation returns `ok`; the draft exists and meets the Done Contract's content checks; no email is sent. | `passed`, with draft-state and verification evidence refs. |\n| False-positive tool success | Draft tool returns `ok` or `committed`, but the independent mailbox check finds no draft. | `failed`, notwithstanding tool success; missing deliverable documented. |\n| Unauthorized send attempt | The agent requests `send` under a draft-only capability; the mailbox has no sent message and no completed draft. | Send denied and receipted; task not marked complete, and no capability expansion. |\n| Unverifiable outcome | A draft tool reports success, but the independent mailbox state cannot be read. | `indeterminate`; missing-evidence reference and no completion claim. |\n\nFor every fixture, inspect the stable `work_order_id` and\n`done_contract_hash`, the capability/policy decision, per-call tool and\ntransaction outcomes, the independent completion assessment, and its evidence\nor missing-evidence references. A correction or retry must retain the same\nauthority corridor unless a new authorized mandate changes it.\n\nThese are specification-level acceptance cases only. Promotion to measured\nresults requires recorded test execution and pinned implementation evidence.",
       "domains": [
         "repository"
       ],
@@ -19122,12 +19122,25 @@
       ],
       "path": "knowledge/experiments/goni-experiment-7eafb11022d0-trace-replay-harness.md",
       "proposition": "Delegation evaluation uses trace replay rather than ad-hoc screenshots or anecdotal demos.",
-      "relations": [],
+      "relations": [
+        {
+          "target": "GONI-SPEC-59E3DFC23CC8",
+          "type": "tests"
+        },
+        {
+          "target": "TOOL-01",
+          "type": "tests"
+        },
+        {
+          "target": "REC-01",
+          "type": "tests"
+        }
+      ],
       "sources": [],
       "status": "draft",
       "title": "Trace replay harness",
       "type": "experiment",
-      "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
+      "uncertainty": "The scenarios are planned acceptance fixtures, not executed tests or evidence of runtime compliance."
     },
     {
       "aliases": [],
@@ -38852,7 +38865,7 @@
     {
       "aliases": [],
       "artifacts": [],
-      "body": "# 2.5 DoneContract\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n### 2.5 DoneContract\n\nEvery executable turn MUST have a `DoneContract` with:\n\n- `deliverable`\n- `must_include`\n- `must_verify`\n- `stop_condition`\n\nThe Done Contract is the kernel-visible statement of what counts as finished.\nIt must be hashable, stable across retries, and compact enough to reference in\nreceipts and audit records.\n\nFor `audit_grade` work, the Done Contract MUST also identify:\n\n- the minimum evidence scope required for the conclusion,\n- the allowed strength of negative claims,\n- and whether missing evidence must be surfaced before completion.",
+      "body": "# 2.5 DoneContract\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n### 2.5 DoneContract\n\nEvery executable turn MUST have a `DoneContract` with:\n\n- `deliverable`\n- `must_include`\n- `must_verify`\n- `stop_condition`\n\nThe Done Contract is the kernel-visible statement of what counts as finished.\nIt must be hashable, stable across retries, and compact enough to reference in\nreceipts and audit records.\n\nFor `audit_grade` work, the Done Contract MUST also identify:\n\n- the minimum evidence scope required for the conclusion,\n- the allowed strength of negative claims,\n- and whether missing evidence must be surfaced before completion.\n\n### Completion assessment (normative)\n\nA Work Order MUST NOT be reported as complete solely because a tool returned\n`ok` or a transaction reported `committed`. The runtime MUST evaluate the\nbound Done Contract's `must_verify` and `stop_condition` against task-appropriate\nobservable outcomes and supporting evidence before declaring completion.\n\nThe task-level completion assessment MUST distinguish:\n\n- `passed`: the required checks support the deliverable and stop condition.\n- `failed`: at least one required check demonstrably fails.\n- `indeterminate`: required evidence is missing, inaccessible, or inconclusive.\n\nThe assessment MUST preserve the `work_order_id`, unchanged\n`done_contract_hash`, evaluated checks, and evidence or missing-evidence\nreferences through the existing audit/receipt mechanisms. It is distinct from\nper-call tool status and transaction outcome. Evidence references follow\n`REC-01` data minimization and access policy.\n\nOnly `passed` permits a claim of completed work. A `failed` assessment MAY\ntrigger bounded correction within the active autonomy corridor, retry policy,\nand resource budgets. An `indeterminate` assessment MUST remain unresolved and\nbe surfaced or escalated under active policy. Corrections MUST NOT silently\nchange the Done Contract or enlarge permissions; material objective or\nacceptance-criterion changes require a new authorized contract version.",
       "domains": [
         "specs"
       ],
@@ -38866,13 +38879,13 @@
         }
       ],
       "path": "knowledge/specifications/goni-spec-59e3dfc23cc8-2-5-donecontract.md",
-      "proposition": "Every executable turn MUST have a DoneContract with: deliverable must_include must_verify stop_condition The Done Contract is the kernel-visible statement of what counts as finished.",
+      "proposition": "A stable DoneContract defines the conditions for task completion; successful tool calls or committed transactions alone do not establish that those conditions have been met.",
       "relations": [],
       "sources": [],
       "status": "draft",
       "title": "2.5 DoneContract",
       "type": "specification",
-      "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
+      "uncertainty": "Legacy DoneContract fields are retained. The completion-assessment rule is specified only; runtime enforcement and empirical outcomes remain untested."
     },
     {
       "aliases": [],
@@ -53894,7 +53907,7 @@
     {
       "aliases": [],
       "artifacts": [],
-      "body": "# 6. Governed cognitive cycle\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n## 6. Governed cognitive cycle\n\nGoni expresses the cognitive cycle through existing contracts:\n\n1. **Observe** inputs without granting them authority.\n2. **Create or bind a Work Order** that states goal, constraints, risk, expected\n   result, policy, and budget.\n3. **Retrieve** policy-permitted evidence and memory through bounded dense,\n   sparse, graph, and metadata paths.\n4. **Verify** selected context against source boundaries, parser confidence,\n   validity, contradictions, permissions, and the Done Contract.\n5. **Reason and integrate** inside a temporary Context Plane projection. Model\n   output remains untrusted until checked by the harness.\n6. **Propose or commit** through capability and approval gates. Every mediated\n   effect produces the required receipt and rollback or compensation reference.\n7. **Consolidate** only approved memory candidates through a separate memory\n   grant; discard ordinary working context.\n8. **Audit** outcomes, stale claims, contradictions, retrieval quality, policy\n   decisions, and receipt completeness.\n\nThis cycle is bounded by scheduler, token, time, tool, privacy, and risk budgets.\nStopping, escalation, correction, and human veto are normal outcomes rather\nthan failures of autonomy.",
+      "body": "# 6. Governed cognitive cycle\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n## 6. Governed cognitive cycle\n\nGoni expresses the cognitive cycle through existing contracts:\n\n1. **Observe** inputs without granting them authority.\n2. **Create or bind a Work Order** that states goal, constraints, risk, expected\n   result, policy, and budget.\n3. **Retrieve** policy-permitted evidence and memory through bounded dense,\n   sparse, graph, and metadata paths.\n4. **Verify** selected context against source boundaries, parser confidence,\n   validity, contradictions, permissions, and the Done Contract.\n5. **Reason and integrate** inside a temporary Context Plane projection. Model\n   output remains untrusted until checked by the harness.\n6. **Propose or commit** through capability and approval gates. Every mediated\n   effect produces the required receipt and rollback or compensation reference.\n7. **Consolidate** only approved memory candidates through a separate memory\n   grant; discard ordinary working context.\n8. **Audit** outcomes, stale claims, contradictions, retrieval quality, policy\n   decisions, and receipt completeness.\n\nThis cycle is bounded by scheduler, token, time, tool, privacy, and risk budgets.\nStopping, escalation, correction, and human veto are normal outcomes rather\nthan failures of autonomy.\n\n### Three-stage delegation view (explanatory)\n\nThe three-step `Interview -> Playbook / Toolbox -> Proof List` model is a\npedagogical compression of this eight-step cognitive cycle, not a replacement\narchitecture or a new runtime layer.\n\n| Stage | Goni mapping | Existing contractual home |\n| --- | --- | --- |\n| Specify | Reconstruct intent from context, ask a decisive question only when needed, and bind a Work Order and stable Done Contract. Reuse versioned SOPs or selected skill fragments as procedural guidance. | `DELEG-INT-01`, `DELEG-01`, `SKILL-REG-01` |\n| Execute | Propose tool operations, then apply kernel-owned policy, capability, and transaction gates before external effects. Skill or tool availability does not grant authority. | `TOOL-01`, `SPEC-POL-01`, `SPEC-TXN-01` |\n| Verify | Distinguish execution receipts from a task-level assessment of observed results against the Done Contract; preserve evidence and uncertainty. | `REC-01`, `GONI-SPEC-59E3DFC23CC8` |\n\nFeedback may produce a bounded retry, an escalation, or a proposal to update\nprocedural memory or a reusable SOP. Any durable change or expanded authority\nstill requires its existing memory-write or kernel-authorization boundary.",
       "domains": [
         "system"
       ],
@@ -53909,12 +53922,37 @@
       ],
       "path": "knowledge/syntheses/goni-synthesis-8d31f3b3f45e-6-governed-cognitive-cycle.md",
       "proposition": "Goni expresses the cognitive cycle through existing contracts: **Observe** inputs without granting them authority.",
-      "relations": [],
+      "relations": [
+        {
+          "target": "DELEG-INT-01",
+          "type": "synthesizes"
+        },
+        {
+          "target": "GONI-SPEC-59E3DFC23CC8",
+          "type": "synthesizes"
+        },
+        {
+          "target": "DELEG-01",
+          "type": "synthesizes"
+        },
+        {
+          "target": "TOOL-01",
+          "type": "synthesizes"
+        },
+        {
+          "target": "REC-01",
+          "type": "synthesizes"
+        },
+        {
+          "target": "SKILL-REG-01",
+          "type": "synthesizes"
+        }
+      ],
       "sources": [],
       "status": "draft",
       "title": "6. Governed cognitive cycle",
       "type": "synthesis",
-      "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
+      "uncertainty": "The three-stage mapping is explanatory. The cited delegation, tool, skill, and receipt mechanisms remain specified-only rather than validated runtime behavior."
     },
     {
       "aliases": [],
@@ -63337,6 +63375,18 @@
     },
     {
       "projection": "generated",
+      "source": "DELEG-01",
+      "target": "GONI-SYNTHESIS-8D31F3B3F45E",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "generated",
+      "source": "DELEG-INT-01",
+      "target": "GONI-SYNTHESIS-8D31F3B3F45E",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "generated",
       "source": "DOCTRINE-DELEG-01",
       "target": "GONI-EVIDENCE-25F334DB139D",
       "type": "supported_by"
@@ -64350,6 +64400,24 @@
       "type": "synthesized_by"
     },
     {
+      "projection": "authored",
+      "source": "GONI-EXPERIMENT-7EAFB11022D0",
+      "target": "GONI-SPEC-59E3DFC23CC8",
+      "type": "tests"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-EXPERIMENT-7EAFB11022D0",
+      "target": "REC-01",
+      "type": "tests"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-EXPERIMENT-7EAFB11022D0",
+      "target": "TOOL-01",
+      "type": "tests"
+    },
+    {
       "projection": "generated",
       "source": "GONI-EXPERIMENT-B7F7C906E1A9",
       "target": "GONI-SYNTHESIS-8A0BE005D5C2",
@@ -64696,6 +64764,18 @@
       "source": "GONI-SPEC-33294E0D3306",
       "target": "SKILL-REG-01",
       "type": "refined_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-SPEC-59E3DFC23CC8",
+      "target": "GONI-SYNTHESIS-8D31F3B3F45E",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-SPEC-59E3DFC23CC8",
+      "target": "GONI-EXPERIMENT-7EAFB11022D0",
+      "type": "tested_by"
     },
     {
       "projection": "generated",
@@ -67470,6 +67550,42 @@
       "type": "synthesized_by"
     },
     {
+      "projection": "authored",
+      "source": "GONI-SYNTHESIS-8D31F3B3F45E",
+      "target": "DELEG-01",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SYNTHESIS-8D31F3B3F45E",
+      "target": "DELEG-INT-01",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SYNTHESIS-8D31F3B3F45E",
+      "target": "GONI-SPEC-59E3DFC23CC8",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SYNTHESIS-8D31F3B3F45E",
+      "target": "REC-01",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SYNTHESIS-8D31F3B3F45E",
+      "target": "SKILL-REG-01",
+      "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SYNTHESIS-8D31F3B3F45E",
+      "target": "TOOL-01",
+      "type": "synthesizes"
+    },
+    {
       "projection": "generated",
       "source": "GONI-SYNTHESIS-8D3B01E32375",
       "target": "SYS-02",
@@ -69673,6 +69789,18 @@
     },
     {
       "projection": "generated",
+      "source": "REC-01",
+      "target": "GONI-SYNTHESIS-8D31F3B3F45E",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "generated",
+      "source": "REC-01",
+      "target": "GONI-EXPERIMENT-7EAFB11022D0",
+      "type": "tested_by"
+    },
+    {
+      "projection": "generated",
       "source": "REF-GONIOS-NEIGHBOR-01",
       "target": "GONI-EVIDENCE-180EEFB60BD6",
       "type": "supported_by"
@@ -69994,6 +70122,12 @@
       "source": "SKILL-REG-01",
       "target": "GONI-SYNTHESIS-D58A8ED218FD",
       "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "SKILL-REG-01",
+      "target": "GONI-SYNTHESIS-8D31F3B3F45E",
+      "type": "synthesized_by"
     },
     {
       "projection": "generated",
@@ -70438,6 +70572,18 @@
       "source": "SYS-04",
       "target": "GONI-SYNTHESIS-F3DC36FB8C4B",
       "type": "synthesizes"
+    },
+    {
+      "projection": "generated",
+      "source": "TOOL-01",
+      "target": "GONI-SYNTHESIS-8D31F3B3F45E",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "generated",
+      "source": "TOOL-01",
+      "target": "GONI-EXPERIMENT-7EAFB11022D0",
+      "type": "tested_by"
     },
     {
       "projection": "generated",

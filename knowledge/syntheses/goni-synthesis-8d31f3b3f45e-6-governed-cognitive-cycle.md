@@ -8,10 +8,22 @@ proposition: 'Goni expresses the cognitive cycle through existing contracts: **O
 domains:
 - system
 aliases: []
-relations: []
+relations:
+- type: synthesizes
+  target: DELEG-INT-01
+- type: synthesizes
+  target: GONI-SPEC-59E3DFC23CC8
+- type: synthesizes
+  target: DELEG-01
+- type: synthesizes
+  target: TOOL-01
+- type: synthesizes
+  target: REC-01
+- type: synthesizes
+  target: SKILL-REG-01
 sources: []
 artifacts: []
-uncertainty: Preserved from the legacy draft without status promotion or newly inferred evidence strength.
+uncertainty: The three-stage mapping is explanatory. The cited delegation, tool, skill, and receipt mechanisms remain specified-only rather than validated runtime behavior.
 legacy:
 - path: blueprint/20-system/60-cognitive-exocortex-model.md
   heading: 6. Governed cognitive cycle
@@ -45,3 +57,19 @@ Goni expresses the cognitive cycle through existing contracts:
 This cycle is bounded by scheduler, token, time, tool, privacy, and risk budgets.
 Stopping, escalation, correction, and human veto are normal outcomes rather
 than failures of autonomy.
+
+### Three-stage delegation view (explanatory)
+
+The three-step `Interview -> Playbook / Toolbox -> Proof List` model is a
+pedagogical compression of this eight-step cognitive cycle, not a replacement
+architecture or a new runtime layer.
+
+| Stage | Goni mapping | Existing contractual home |
+| --- | --- | --- |
+| Specify | Reconstruct intent from context, ask a decisive question only when needed, and bind a Work Order and stable Done Contract. Reuse versioned SOPs or selected skill fragments as procedural guidance. | `DELEG-INT-01`, `DELEG-01`, `SKILL-REG-01` |
+| Execute | Propose tool operations, then apply kernel-owned policy, capability, and transaction gates before external effects. Skill or tool availability does not grant authority. | `TOOL-01`, `SPEC-POL-01`, `SPEC-TXN-01` |
+| Verify | Distinguish execution receipts from a task-level assessment of observed results against the Done Contract; preserve evidence and uncertainty. | `REC-01`, `GONI-SPEC-59E3DFC23CC8` |
+
+Feedback may produce a bounded retry, an escalation, or a proposal to update
+procedural memory or a reusable SOP. Any durable change or expanded authority
+still requires its existing memory-write or kernel-authorization boundary.
