@@ -5,6 +5,7 @@ GONI is a blueprint and architectural plan for a local-first Delegation OS. It i
 ## Start here
 
 - `knowledge/` contains the canonical atomic nodes and explanatory syntheses.
+- [`research/2026-10-agent-os-human-machine-delegation.md`](research/2026-10-agent-os-human-machine-delegation.md) records the October 2026 Agent OS and human–machine delegation research synthesis (informative; canonical authority remains in `knowledge/`).
 - `maps/catalogue.json` is the deterministic machine projection.
 - `EDITORIAL_POLICY.md` defines status, evidence, uncertainty, and provenance boundaries.
 - `ontology/relations.yml` defines the controlled relation vocabulary.
