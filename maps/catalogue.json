@@ -38852,7 +38852,7 @@
     {
       "aliases": [],
       "artifacts": [],
-      "body": "# 2.5 DoneContract\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n### 2.5 DoneContract\n\nEvery executable turn MUST have a `DoneContract` with:\n\n- `deliverable`\n- `must_include`\n- `must_verify`\n- `stop_condition`\n\nThe Done Contract is the kernel-visible statement of what counts as finished.\nIt must be hashable, stable across retries, and compact enough to reference in\nreceipts and audit records.\n\nFor `audit_grade` work, the Done Contract MUST also identify:\n\n- the minimum evidence scope required for the conclusion,\n- the allowed strength of negative claims,\n- and whether missing evidence must be surfaced before completion.",
+      "body": "# 2.5 DoneContract\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n### 2.5 DoneContract\n\nEvery executable turn MUST have a `DoneContract` with:\n\n- `deliverable`\n- `must_include`\n- `must_verify`\n- `stop_condition`\n\nThe Done Contract is the kernel-visible statement of what counts as finished.\nIt must be hashable, stable across retries, and compact enough to reference in\nreceipts and audit records.\n\nFor `audit_grade` work, the Done Contract MUST also identify:\n\n- the minimum evidence scope required for the conclusion,\n- the allowed strength of negative claims,\n- and whether missing evidence must be surfaced before completion.\n\n### Completion assessment (normative)\n\nA Work Order MUST NOT be reported as complete solely because a tool returned\n`ok` or a transaction reported `committed`. The runtime MUST evaluate the\nbound Done Contract's `must_verify` and `stop_condition` against task-appropriate\nobservable outcomes and supporting evidence before declaring completion.\n\nThe task-level completion assessment MUST distinguish:\n\n- `passed`: the required checks support the deliverable and stop condition.\n- `failed`: at least one required check demonstrably fails.\n- `indeterminate`: required evidence is missing, inaccessible, or inconclusive.\n\nThe assessment MUST preserve the `work_order_id`, unchanged\n`done_contract_hash`, evaluated checks, and evidence or missing-evidence\nreferences through the existing audit/receipt mechanisms. It is distinct from\nper-call tool status and transaction outcome. Evidence references follow\n`REC-01` data minimization and access policy.\n\nOnly `passed` permits a claim of completed work. A `failed` assessment MAY\ntrigger bounded correction within the active autonomy corridor, retry policy,\nand resource budgets. An `indeterminate` assessment MUST remain unresolved and\nbe surfaced or escalated under active policy. Corrections MUST NOT silently\nchange the Done Contract or enlarge permissions; material objective or\nacceptance-criterion changes require a new authorized contract version.",
       "domains": [
         "specs"
       ],
@@ -38866,13 +38866,13 @@
         }
       ],
       "path": "knowledge/specifications/goni-spec-59e3dfc23cc8-2-5-donecontract.md",
-      "proposition": "Every executable turn MUST have a DoneContract with: deliverable must_include must_verify stop_condition The Done Contract is the kernel-visible statement of what counts as finished.",
+      "proposition": "A stable DoneContract defines the conditions for task completion; successful tool calls or committed transactions alone do not establish that those conditions have been met.",
       "relations": [],
       "sources": [],
       "status": "draft",
       "title": "2.5 DoneContract",
       "type": "specification",
-      "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
+      "uncertainty": "Legacy DoneContract fields are retained. The completion-assessment rule is specified only; runtime enforcement and empirical outcomes remain untested."
     },
     {
       "aliases": [],
