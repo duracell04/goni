@@ -1,0 +1,58 @@
+name: Temporary deterministic catalogue regeneration
+
+on:
+  push:
+    branches:
+      - agent/ai-native-minimal-sufficient-software-20261030
+
+permissions:
+  contents: write
+
+jobs:
+  regenerate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install existing catalogue tooling
+        run: python -m pip install -r tooling/requirements.txt
+      - name: Generate catalogue and remove temporary workflow
+        shell: bash
+        run: |
+          set -euo pipefail
+          python tooling/build_catalogue.py --edition-sha "$GITHUB_SHA"
+          git rm .github/workflows/temporary-catalogue-regeneration-20261030.yml
+          git add maps/catalogue.json
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -F - <<'COMMIT_MESSAGE'
+          kg(projection): regenerate canonical catalogue
+
+          Intent:
+          Publish the deterministic knowledge graph projection for the new engineering decisions and remove temporary generation plumbing.
+
+          Rationale:
+          Use the repository's own canonical projection builder for an oversized generated catalogue.
+
+          Status:
+          specified-only
+
+          Contracts:
+          - GONI-DECISION-20261030-MINIMAL-SUFFICIENT-SOFTWARE
+          - GONI-EXPERIMENT-20261030-MINIMAL-SOFTWARE-GOVERNANCE-CONFORMANCE
+
+          Files:
+          - .github/workflows/temporary-catalogue-regeneration-20261030.yml
+          - maps/catalogue.json
+
+          Evidence:
+          - Deterministic projection generated with tooling/build_catalogue.py on the published branch.
+
+          Unresolved:
+          - Runtime conformance remains specified for later pinned tests.
+          COMMIT_MESSAGE
+          git push origin HEAD:"$GITHUB_REF_NAME"

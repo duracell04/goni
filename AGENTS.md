@@ -16,6 +16,15 @@ GONI is a blueprint and architectural plan. Do not describe a specified mechanis
 - Author forward relations only. Reverse indexes are generated.
 - Planned evaluations are experiments, not evidence.
 
+## Engineering doctrine
+
+- Apply [Minimal Sufficient Software](knowledge/decisions/goni-decision-20261030-minimal-sufficient-software.md): choose the smallest sufficient permanent implementation by total system cost while preserving required guarantees.
+- Apply [explicit naming](knowledge/principles/goni-principle-20261030-explicit-naming.md): use complete, descriptive, consistent terms, preserving required external identifiers and established proper names.
+- Treat [artificial intelligence as Goni's adaptive foundation](knowledge/decisions/goni-decision-20261030-artificial-intelligence-native-foundation.md). Preserve kernel-owned authority and safe recovery during model outages.
+- Keep [capability growth within human-granted authority](knowledge/principles/goni-principle-20261030-capability-growth-with-bounded-authority.md). Expanded permission requires an explicit authorized policy transition.
+- Reflect [effective authorization in visual tracks](knowledge/specifications/goni-spec-20261030-visual-governance-tracks.md) and [typed mandate translation](knowledge/specifications/goni-spec-20261030-natural-language-policy-translation.md). Distinguish approval before action from review after action.
+- Use the [conformance evaluation](knowledge/experiments/goni-experiment-20261030-minimal-software-governance-conformance.md) to test claims while retaining the existing evidence and implementation-state boundaries.
+
 ## Required validation
 
 Run:

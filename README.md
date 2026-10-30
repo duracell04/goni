@@ -16,6 +16,10 @@ Every migrated node is `status: draft`. Design-bearing material defaults to `imp
 
 Runnable experiments remain separate in [goni-prototype-lab](https://github.com/duracell04/goni-prototype-lab). Experimental cognitive architecture remains separate in [goni-cognitive-os](https://github.com/duracell04/goni-cognitive-os). Public documentation is a pinned-commit projection in [goni-docs-hub](https://github.com/duracell04/goni-docs-hub).
 
+## Architectural direction
+
+Goni uses [Minimal Sufficient Software](knowledge/decisions/goni-decision-20261030-minimal-sufficient-software.md): adaptive intelligence provides flexible capability while a small trusted software foundation enforces authorization, integrity, and accountability. [Descriptive naming](knowledge/principles/goni-principle-20261030-explicit-naming.md), [human-governed capability growth](knowledge/principles/goni-principle-20261030-capability-growth-with-bounded-authority.md), [visual governance tracks](knowledge/specifications/goni-spec-20261030-visual-governance-tracks.md), and [typed natural-language mandate translation](knowledge/specifications/goni-spec-20261030-natural-language-policy-translation.md) are canonical design proposals, with implementation evidence tracked separately.
+
 ## Validate
 
 ```bash
