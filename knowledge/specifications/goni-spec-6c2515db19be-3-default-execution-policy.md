@@ -4,7 +4,7 @@ title: 3. Default execution policy
 type: specification
 status: draft
 implementation_state: specified_only
-proposition: 'Goni uses an "auto unless risky" policy: if corridor is autopilot and risk_score <= theta_auto, execute; if corridor is soft_gate and risk_score <= theta_soft, execute with queued review; otherwise escalate to user decision.'
+proposition: 'Goni executes only an explicitly authorized effect whose capability, scope, corridor, preconditions, budgets, risk constraints, and effect-specific approval requirements are all satisfied.'
 domains:
 - specs
 aliases: []
@@ -20,15 +20,21 @@ legacy:
 
 # 3. Default execution policy
 
-> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.
+> Status boundary: specified design only.
 
-## 3. Default execution policy
+Goni uses policy-level, risk-bounded autonomy **after** authorization has been established.
 
-Goni uses an "auto unless risky" policy:
+1. Verify an active mandate, matching capability scope, current policy version, budget, expiry, revocation state, and all applicable resource and recipient constraints.
+2. Apply the corridor and risk threshold as additional restrictions.
+3. Apply the effect's review mode:
+   - **Approval before execution:** Pause the effect until an authorized human approves the exact operation and its materially relevant inputs.
+   - **Review after execution:** Execute only where the policy explicitly delegates that effect in advance; queue its receipt for later review.
+4. Perform the effect through mediated execution and record its receipt.
 
-- if corridor is `autopilot` and `risk_score <= theta_auto`, execute;
-- if corridor is `soft_gate` and `risk_score <= theta_soft`, execute with
-  queued review;
-- otherwise escalate to user decision.
+Corridor defaults:
 
-`theta_auto` and `theta_soft` are explicit policy parameters and must be auditable.
+- `no_go`: Deny the specified effect.
+- `soft_gate`: Low-risk, pre-authorized review-after effects may execute with queued review; actions requiring advance approval remain pending.
+- `autopilot`: Eligible, pre-authorized effects execute within the declared risk threshold and budget; protected effects and exceptions escalate.
+
+A missing, ambiguous, expired, or revoked permission leads to denial or an explicit authorization request. Risk classification alone cannot create authority. Thresholds, review modes, and authorization decisions are versioned and auditable.
