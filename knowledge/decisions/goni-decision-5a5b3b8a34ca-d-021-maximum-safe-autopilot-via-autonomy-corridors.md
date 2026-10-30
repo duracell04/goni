@@ -4,7 +4,7 @@ title: D-021 - Maximum safe autopilot via autonomy corridors
 type: decision
 status: draft
 implementation_state: specified_only
-proposition: '**Status:** Accepted **Date:** 2026-02-23 **Formal statement** Delegable actions are governed by an autonomy policy \((\text{task\_class}, \text{corridor}, \theta)\) where corridor is in \(\{\text{no\_go}, \text{soft\_gate}, \text{autopilot}\}\) and \(\theta\) is a risk threshold.'
+proposition: 'Autonomous execution requires a valid human-granted capability, current policy, satisfied preconditions, a permitted corridor, sufficient budget, and required approval; risk thresholds can only restrict a pre-authorized action.'
 domains:
 - software
 aliases: []
@@ -20,33 +20,33 @@ legacy:
 
 # D-021 - Maximum safe autopilot via autonomy corridors
 
-> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.
+> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense enforcement language specifies intended behavior and is not evidence of implementation.
 
-## D-021 - Maximum safe autopilot via autonomy corridors
+## Refined formal decision (2026-10-30 draft)
 
-**Status:** Accepted
-**Date:** 2026-02-23
+Autonomy policy remains keyed by task class, corridor, and explicit risk threshold. The corridors are `no_go`, `soft_gate`, and `autopilot`.
 
-**Formal statement**
+The kernel permits an effect only if **all applicable conditions** hold:
 
-Delegable actions are governed by an autonomy policy
-\((\text{task\_class}, \text{corridor}, \theta)\) where corridor is in
-\(\{\text{no\_go}, \text{soft\_gate}, \text{autopilot}\}\) and \(\theta\) is a
-risk threshold. Autonomous execution is permitted iff:
-$$
-\text{corridor} \neq \text{no\_go} \land \text{risk\_score} \le \theta.
-$$
+1. The action belongs to a current human-granted mandate and an authorized task class.
+2. Its capability is authentic, current, scoped to the actual tool and resource, unexpired, and unrevoked.
+3. Resource scope, recipient scope, time limits, budgets, and policy preconditions are satisfied.
+4. The corridor permits the proposed effect and its risk score falls within its authorized threshold.
+5. Any approval required for that particular effect has been granted **before execution**.
+6. The action passes the execution mediator and receives the required receipt.
 
-**Rationale**
+A low risk score **never grants authority**. Model reasoning, newly generated code, agent routing, or an autonomy threshold cannot widen an existing mandate.
 
-- Aligns product direction with "do as much as possible in the background."
-- Keeps autonomy explicit and auditable instead of ad-hoc per-feature toggles.
-- Preserves safety by requiring risk-bounded execution and fail-closed fallback.
+## Corridor semantics
 
-**Consequence**
+- `no_go`: Deny the specified effect. To enable it, an authorized human must first change the underlying policy.
+- `soft_gate`: Automatically execute only explicitly authorized low-risk effects designated for **review after execution**. Route approval-required effects for **approval before execution**. Review and approval are separate decisions.
+- `autopilot`: Execute effects within the valid mandate, capability, risk, and budget bounds without routine confirmation; escalate exceptions and protected effects.
 
-- Task classes must declare corridor defaults and thresholds.
-- Receipts and audit logs must record autonomy mode and risk basis.
-- Conformance includes autonomy throughput and escalation quality metrics.
+A separate effect-specific approval requirement applies regardless of the corridor label. Human-facing terms `Restricted`, `Review`, and `Autopilot` may summarize corridors, but the interface must display the effective permissions and whether oversight happens before or after execution.
 
----
+## Rationale and consequences
+
+The original threshold-only formula expressed the risk filter but omitted the surrounding authority preconditions. This refinement makes the complete permission boundary explicit and aligns it with Goni's existing default-deny policy, capability mediation, and canonical authority model.
+
+Conformance must test expiry, revocation, scope escape, threshold errors, mismatched approval timing, model-generated workflows, and policy changes during execution. Receipts must identify the policy version, effective corridor, risk basis, and approval basis.

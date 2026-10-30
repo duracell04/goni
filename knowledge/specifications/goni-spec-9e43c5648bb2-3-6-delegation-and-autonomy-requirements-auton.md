@@ -4,7 +4,7 @@ title: 3.6 Delegation and autonomy requirements (AUTON)
 type: specification
 status: draft
 implementation_state: specified_only
-proposition: '**AUTON-01 (autonomy corridors):** each task class (for example: email_reply, invoice_payment, calendar_change, doc_edit) must have an explicit corridor policy: no_go (never auto-execute), soft_gate (bounded execution + review), autopilot (auto-execute by default).'
+proposition: 'Each task class has a declared corridor and explicit authority scope; autopilot and review behavior are bounded by current capabilities, enforceable policy preconditions, budgets, and effect-specific human approvals.'
 domains:
 - software
 aliases: []
@@ -18,38 +18,19 @@ legacy:
   revision: 3dd57d3f2f82b64e66389712fc66d3308856bac4
 ---
 
-# 3.6 Delegation and autonomy requirements (AUTON)
+# 3.6 Delegation and autonomy requirements
 
-> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.
+> Status boundary: the following is a specified contract, not a claim of deployed enforcement.
 
-### 3.6 Delegation and autonomy requirements (AUTON)
+- **Autonomy corridors:** Each task class, including message drafting, invoice payment, calendar changes, and document editing, declares a `no_go`, `soft_gate`, or `autopilot` corridor together with allowed effect types and resource scopes.
+  - `no_go` denies the specified effect.
+  - `soft_gate` permits explicitly authorized low-risk effects marked for review after execution. Effects marked approval-required wait for approval before execution.
+  - `autopilot` permits authorized effects inside the defined scope without routine approval, while escalating exceptions.
+- **Risk-bounded operation:** Risk scores determine whether *already authorized* effects may proceed autonomously. A score never creates a capability or a mandate.
+- **Approval versus review:** Human approval is a precondition for protected effects. An after-execution review is an audit mechanism and cannot retroactively authorize an effect.
+- **Policy-level control:** Humans set corridors, capability scopes, thresholds, budgets, approval requirements, and revocation policies. The system minimizes routine interruptions within those bounds.
+- **Offloading safeguards:** Provide anomaly-first review, periodic sampling, rapid corridor downgrades, and revocation controls.
+- **Kernel-owned authority:** Capability tokens, policy decisions, budgets, receipts, and durable authority state remain kernel-owned.
+- **Mediated extensions:** External assistant frameworks and newly generated workflows may contribute interfaces and execution capabilities through mediated tools; they do not own policy, canonical memory provenance, or session authority.
 
-- **AUTON-01 (autonomy corridors):** each task class (for example:
-  `email_reply`, `invoice_payment`, `calendar_change`, `doc_edit`) must have an
-  explicit corridor policy:
-  - `no_go` (never auto-execute),
-  - `soft_gate` (bounded execution + review),
-  - `autopilot` (auto-execute by default).
-  For operator-facing UX and policy summaries, Goni may refer to these as three
-  authority classes: `autopilot`, `soft_gate`, and `hard_gate`, where
-  `hard_gate` means explicit human decision and includes the deny-only
-  `no_go` floor.
-- **AUTON-02 (risk-bounded default):** execution defaults to "auto unless risky."
-  The system must compute a risk score per action and:
-  - auto-execute when below corridor thresholds,
-  - queue for review or escalate when thresholds are exceeded.
-- **AUTON-03 (policy-level control):** meaningful human control is exercised at
-  policy level (corridors, thresholds, allow/deny lists), not by requiring
-  per-action confirmation for routine work.
-- **AUTON-04 (offloading safeguards):** system must include:
-  - anomaly-first review feed,
-  - periodic post-hoc sampling of autonomous actions,
-  - rapid downgrade/kill-switch controls for autonomy policies.
-- **AUTON-05 (kernel-owned authority):** receipts, capability tokens, corridor
-  policy, and durable memory semantics are kernel primitives. These may not be
-  delegated to a third-party assistant framework, gateway, or extension host as
-  the source of truth for authority, audit, or memory.
-- **AUTON-06 (mediated external frameworks):** external assistant frameworks may
-  provide UX surfaces, channel adapters, or optional mediated tool seats, but
-  they must not own session authority, policy decisions, or durable memory
-  provenance.
+The operator interface can use `Restricted`, `Review`, and `Autopilot` as explanatory labels, while showing whether each individual action is denied, needs approval beforehand, or is eligible for post-execution review.
