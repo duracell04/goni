@@ -286,6 +286,7 @@
         "EVID-HA2018-WORLD-MODELS",
         "EVID-HAFNER2023-DREAMERV3",
         "EVID-PARK2023-GENERATIVE-AGENTS",
+        "GONI-DECISION-20261030-ARTIFICIAL-INTELLIGENCE-NATIVE-FOUNDATION",
         "GONI-DECISION-410431892DF4",
         "GONI-DECISION-6D3A2B71C9E4",
         "GONI-DECISION-9AF49466170D",
@@ -303,6 +304,8 @@
         "GONI-IMAP-B793DF64410E",
         "GONI-IMAP-BAFEE4868F83",
         "GONI-IMAP-FAF1377484A3",
+        "GONI-PRINCIPLE-20261030-CAPABILITY-GROWTH-WITH-BOUNDED-AUTHORITY",
+        "GONI-PRINCIPLE-20261030-EXPLICIT-NAMING",
         "GONI-PRINCIPLE-470D2E8E950A",
         "GONI-PRINCIPLE-772A7FA7ECEF",
         "GONI-PRINCIPLE-9062425CD490",
@@ -331,6 +334,7 @@
         "GONI-SPEC-0010B69A98F0",
         "GONI-SPEC-0EDF39F0E13F",
         "GONI-SPEC-1F1A4EB966DF",
+        "GONI-SPEC-20261030-NATURAL-LANGUAGE-POLICY-TRANSLATION",
         "GONI-SPEC-2372FF38226C",
         "GONI-SPEC-2CC4621638C6",
         "GONI-SPEC-2DDE89518AB0",
@@ -737,6 +741,7 @@
         "GONI-IMAP-D9D9D7627297",
         "GONI-IMAP-DEB85253C87D",
         "GONI-IMAP-ED288DB4EAF5",
+        "GONI-PRINCIPLE-20261030-CAPABILITY-GROWTH-WITH-BOUNDED-AUTHORITY",
         "GONI-PRINCIPLE-470D2E8E950A",
         "GONI-PRINCIPLE-7D813B2026E1",
         "GONI-PRINCIPLE-8C0DB401EE76",
@@ -1054,6 +1059,8 @@
         "GONI-IMAP-9AFB6C02A28F",
         "GONI-IMAP-E9C7FEEEF13D",
         "GONI-PRINCIPLE-7D813B2026E1",
+        "GONI-SPEC-20261030-NATURAL-LANGUAGE-POLICY-TRANSLATION",
+        "GONI-SPEC-20261030-VISUAL-GOVERNANCE-TRACKS",
         "GONI-SPEC-4B9D2670E434",
         "GONI-SPEC-6AEBF63D3872",
         "GONI-SPEC-72AF31BE9C0E",
@@ -1071,11 +1078,14 @@
         "EVID-OPENAI2026-DREAMING",
         "GONI-OBJECTION-0CC876FB8D27",
         "GONI-PRINCIPLE-197860126029",
+        "GONI-PRINCIPLE-20261030-CAPABILITY-GROWTH-WITH-BOUNDED-AUTHORITY",
+        "GONI-PRINCIPLE-20261030-EXPLICIT-NAMING",
         "GONI-PRINCIPLE-9D4DA46879FB",
         "GONI-PRINCIPLE-D03F6E9577A1",
         "GONI-PRINCIPLE-DF202BE9A6E0",
         "GONI-PROPOSAL-7798502DB7F9",
         "GONI-PROPOSAL-FEE6349ACB61",
+        "GONI-SPEC-20261030-VISUAL-GOVERNANCE-TRACKS",
         "GONI-SPEC-75D0D2E5F296",
         "GONI-SYNTHESIS-0D0CAF605A46",
         "GONI-SYNTHESIS-0DE23F800F2A",
@@ -1194,6 +1204,7 @@
         "GONI-EXPERIMENT-17AD373C1ACF",
         "GONI-EXPERIMENT-1F8811AD87C7",
         "GONI-EXPERIMENT-201725CFEA57",
+        "GONI-EXPERIMENT-20261030-MINIMAL-SOFTWARE-GOVERNANCE-CONFORMANCE",
         "GONI-EXPERIMENT-23092C379EE5",
         "GONI-EXPERIMENT-2740B405E712",
         "GONI-EXPERIMENT-2874DE80AA97",
@@ -1820,6 +1831,8 @@
         "GONI-DECISION-1A482B12FFB8",
         "GONI-DECISION-1D38615A3B48",
         "GONI-DECISION-1DF4EF699554",
+        "GONI-DECISION-20261030-ARTIFICIAL-INTELLIGENCE-NATIVE-FOUNDATION",
+        "GONI-DECISION-20261030-MINIMAL-SUFFICIENT-SOFTWARE",
         "GONI-DECISION-4042B98600BD",
         "GONI-DECISION-42DF477FE7FB",
         "GONI-DECISION-436474B1BE9E",
@@ -2088,6 +2101,7 @@
         "GONI-IMAP-FFD904A8EBAE",
         "GONI-OBJECTION-635745AF2C52",
         "GONI-PRINCIPLE-0147896F31C8",
+        "GONI-PRINCIPLE-20261030-EXPLICIT-NAMING",
         "GONI-PRINCIPLE-329BE7E070FA",
         "GONI-PRINCIPLE-3CE61BB5417A",
         "GONI-PRINCIPLE-59205D866FC1",
@@ -2603,9 +2617,12 @@
         "DREAM-01",
         "DREAM-EVAL-01",
         "EVID-DENNING1968-WORKING-SET",
+        "GONI-DECISION-20261030-ARTIFICIAL-INTELLIGENCE-NATIVE-FOUNDATION",
+        "GONI-DECISION-20261030-MINIMAL-SUFFICIENT-SOFTWARE",
         "GONI-DECISION-6D3A2B71C9E4",
         "GONI-DECISION-9AF49466170D",
         "GONI-EXPERIMENT-0A1F9BC4014A",
+        "GONI-EXPERIMENT-20261030-MINIMAL-SOFTWARE-GOVERNANCE-CONFORMANCE",
         "GONI-EXPERIMENT-5ADAC18F09F9",
         "GONI-EXPERIMENT-74A237B262BC",
         "GONI-EXPERIMENT-9C433FEA9457",
@@ -2824,6 +2841,8 @@
         "GONI-DECISION-1CA5271454AA",
         "GONI-DECISION-1D38615A3B48",
         "GONI-DECISION-1DF4EF699554",
+        "GONI-DECISION-20261030-ARTIFICIAL-INTELLIGENCE-NATIVE-FOUNDATION",
+        "GONI-DECISION-20261030-MINIMAL-SUFFICIENT-SOFTWARE",
         "GONI-DECISION-24B9A955D8E2",
         "GONI-DECISION-262580E4013F",
         "GONI-DECISION-299037AA3279",
@@ -2998,6 +3017,7 @@
         "GONI-EXPERIMENT-1AE48EF895D6",
         "GONI-EXPERIMENT-1F8811AD87C7",
         "GONI-EXPERIMENT-201725CFEA57",
+        "GONI-EXPERIMENT-20261030-MINIMAL-SOFTWARE-GOVERNANCE-CONFORMANCE",
         "GONI-EXPERIMENT-223625F5043D",
         "GONI-EXPERIMENT-23092C379EE5",
         "GONI-EXPERIMENT-2740B405E712",
@@ -3485,6 +3505,8 @@
         "GONI-PRINCIPLE-147FB93142B7",
         "GONI-PRINCIPLE-1630A157EA03",
         "GONI-PRINCIPLE-197860126029",
+        "GONI-PRINCIPLE-20261030-CAPABILITY-GROWTH-WITH-BOUNDED-AUTHORITY",
+        "GONI-PRINCIPLE-20261030-EXPLICIT-NAMING",
         "GONI-PRINCIPLE-2A48B2D4DA86",
         "GONI-PRINCIPLE-329BE7E070FA",
         "GONI-PRINCIPLE-3CE61BB5417A",
@@ -3723,6 +3745,8 @@
         "GONI-SPEC-1D4A3D0323EB",
         "GONI-SPEC-1F1A4EB966DF",
         "GONI-SPEC-1F99F78D930A",
+        "GONI-SPEC-20261030-NATURAL-LANGUAGE-POLICY-TRANSLATION",
+        "GONI-SPEC-20261030-VISUAL-GOVERNANCE-TRACKS",
         "GONI-SPEC-208C09984852",
         "GONI-SPEC-2327EB4F14D7",
         "GONI-SPEC-2372FF38226C",
@@ -4726,6 +4750,8 @@
         "GONI-DECISION-1CA5271454AA",
         "GONI-DECISION-1D38615A3B48",
         "GONI-DECISION-1DF4EF699554",
+        "GONI-DECISION-20261030-ARTIFICIAL-INTELLIGENCE-NATIVE-FOUNDATION",
+        "GONI-DECISION-20261030-MINIMAL-SUFFICIENT-SOFTWARE",
         "GONI-DECISION-24B9A955D8E2",
         "GONI-DECISION-262580E4013F",
         "GONI-DECISION-299037AA3279",
@@ -4951,6 +4977,7 @@
         "GONI-EXPERIMENT-1AE48EF895D6",
         "GONI-EXPERIMENT-1F8811AD87C7",
         "GONI-EXPERIMENT-201725CFEA57",
+        "GONI-EXPERIMENT-20261030-MINIMAL-SOFTWARE-GOVERNANCE-CONFORMANCE",
         "GONI-EXPERIMENT-223625F5043D",
         "GONI-EXPERIMENT-23092C379EE5",
         "GONI-EXPERIMENT-2740B405E712",
@@ -5468,6 +5495,8 @@
         "GONI-PRINCIPLE-147FB93142B7",
         "GONI-PRINCIPLE-1630A157EA03",
         "GONI-PRINCIPLE-197860126029",
+        "GONI-PRINCIPLE-20261030-CAPABILITY-GROWTH-WITH-BOUNDED-AUTHORITY",
+        "GONI-PRINCIPLE-20261030-EXPLICIT-NAMING",
         "GONI-PRINCIPLE-2A48B2D4DA86",
         "GONI-PRINCIPLE-329BE7E070FA",
         "GONI-PRINCIPLE-3CE61BB5417A",
@@ -5747,6 +5776,8 @@
         "GONI-SPEC-1D4A3D0323EB",
         "GONI-SPEC-1F1A4EB966DF",
         "GONI-SPEC-1F99F78D930A",
+        "GONI-SPEC-20261030-NATURAL-LANGUAGE-POLICY-TRANSLATION",
+        "GONI-SPEC-20261030-VISUAL-GOVERNANCE-TRACKS",
         "GONI-SPEC-208C09984852",
         "GONI-SPEC-2327EB4F14D7",
         "GONI-SPEC-2372FF38226C",
@@ -13043,6 +13074,69 @@
     {
       "aliases": [],
       "artifacts": [],
+      "body": "# Artificial intelligence as the adaptive foundation\n\nGoni is designed as an artificial-intelligence-native delegation system. Model-mediated understanding and adaptation are core operating capabilities, not optional cosmetic features added to a conventional application platform.\n\n## Execution model\n\n- The adaptive layer interprets intent, assembles context, plans, creates and improves procedures, coordinates agents, and verifies task outcomes.\n- Different models may serve different workloads. Small specialist models, large general models, and local or governed remote inference are replaceable computational resources.\n- JEV is the proposed local routing and orchestration agent; it coordinates workloads within kernel-owned policy and capability boundaries, without becoming a source of authority.\n- Graphics processors and other compute resources supply execution capacity. They are not independent holders of permissions.\n- Expensive model inference is invoked when useful; signals, state updates, simple local models, and deterministic routines may serve ongoing background work.\n\n## Availability and integrity\n\nIntelligent work depends on access to an appropriate model. When inference is unavailable or produces invalid outputs, the system preserves canonical state, authority controls, revocation, receipts, and safe recovery independently of model output. Model outages can suspend adaptive work without enlarging permissions.\n\nThe architecture keeps the trusted substrate small and makes the adaptive layer replaceable. Model competence must be evaluated on representative tasks before it is assigned additional work.",
+      "domains": [
+        "agent",
+        "software",
+        "system"
+      ],
+      "id": "GONI-DECISION-20261030-ARTIFICIAL-INTELLIGENCE-NATIVE-FOUNDATION",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/decisions/goni-decision-20261030-artificial-intelligence-native-foundation.md",
+      "proposition": "Artificial intelligence is the primary source of Goni's adaptive task behavior, while a small independent control substrate preserves authority, state integrity, and recovery during model unavailability.",
+      "relations": [
+        {
+          "target": "GONI-DECISION-635669877246",
+          "type": "refines"
+        },
+        {
+          "target": "GONI-DECISION-4042B98600BD",
+          "type": "refines"
+        },
+        {
+          "target": "GONI-DECISION-20261030-MINIMAL-SUFFICIENT-SOFTWARE",
+          "type": "depends_on"
+        }
+      ],
+      "sources": [],
+      "status": "draft",
+      "title": "Artificial intelligence as the adaptive foundation",
+      "type": "decision",
+      "uncertainty": "Model availability, local performance, and the most economical model mixture depend on supported hardware and empirical deployment measurements."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Minimal Sufficient Software\n\n## Decision\n\nGoni uses the smallest permanent software substrate that can meet the required functional, performance, security, authority, state-integrity, recovery, and accountability guarantees.\n\nArtificial intelligence handles interpretation, planning, adaptation, and task-specific procedures where it is effective. Deterministic code handles authorization, resource boundaries, durable state, execution mediation, receipts, and computations that are simpler or more reliable as conventional software.\n\nThe selection objective is **minimum total system complexity among implementations meeting the same required guarantees**, rather than minimum source-line count.\n\nTotal complexity includes permanent code, packages, dependencies, services, configuration, model inference, prompting, verification, human review, monitoring, latency, incident recovery, maintenance, and operating cost. A longer deterministic implementation is preferable when it is demonstrably simpler or safer at the system level.\n\n## Implementation discipline\n\n1. Reuse an existing kernel contract or interface when it satisfies the need.\n2. Prefer a direct module, declarative contract, or single process until measured constraints justify an additional abstraction, process, dependency, or service.\n3. Use adaptable model behavior for variable work and stable code for repeated operations when the latter reduces total cost and uncertainty.\n4. Keep the trusted authorization and effect boundary small enough to inspect and test independently of model behavior.\n5. Justify every architectural addition by the specific requirement it satisfies, its measurable benefit, its complete operational cost, and its rollback path.\n6. Simplify the underlying workflow before automating it. Preserve hidden functions such as exception handling, human trust, and recovery when they remain necessary.\n\n## Consequences\n\n- Architectural proposals compare the simplest viable alternative with the proposed design.\n- Each added permanent component carries a named requirement and evidence plan.\n- Existing correct, inexpensive deterministic code remains eligible even when a model could regenerate it.\n- Goni's capabilities may expand without requiring one dedicated permanent application implementation for every new workflow.\n\nThis decision refines the single-node simplicity objective and operates within sovereign modularity. It neither weakens existing kernel invariants nor claims that a smaller codebase is automatically secure.",
+      "domains": [
+        "software",
+        "system"
+      ],
+      "id": "GONI-DECISION-20261030-MINIMAL-SUFFICIENT-SOFTWARE",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/decisions/goni-decision-20261030-minimal-sufficient-software.md",
+      "proposition": "Goni chooses the smallest permanent software substrate sufficient for required functionality, safety, reliability, human authority, and accountability, evaluated by total system complexity.",
+      "relations": [
+        {
+          "target": "GONI-DECISION-42DF477FE7FB",
+          "type": "refines"
+        },
+        {
+          "target": "GONI-PRINCIPLE-3CE61BB5417A",
+          "type": "depends_on"
+        }
+      ],
+      "sources": [],
+      "status": "draft",
+      "title": "Minimal Sufficient Software",
+      "type": "decision",
+      "uncertainty": "The relative cost of model-mediated and conventional implementations is workload-dependent and requires measurement; this is a design rule, not an empirically proven optimal implementation."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
       "body": "# 7. 2026 watchlist (things that might change the decision)\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n## 7. 2026 watchlist (things that might change the decision)\n\nThis section exists so we can refresh quickly when 2026 silicon lands.",
       "domains": [
         "hardware"
@@ -13546,7 +13640,7 @@
     {
       "aliases": [],
       "artifacts": [],
-      "body": "# D-021 - Maximum safe autopilot via autonomy corridors\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n## D-021 - Maximum safe autopilot via autonomy corridors\n\n**Status:** Accepted\n**Date:** 2026-02-23\n\n**Formal statement**\n\nDelegable actions are governed by an autonomy policy\n\\((\\text{task\\_class}, \\text{corridor}, \\theta)\\) where corridor is in\n\\(\\{\\text{no\\_go}, \\text{soft\\_gate}, \\text{autopilot}\\}\\) and \\(\\theta\\) is a\nrisk threshold. Autonomous execution is permitted iff:\n$$\n\\text{corridor} \\neq \\text{no\\_go} \\land \\text{risk\\_score} \\le \\theta.\n$$\n\n**Rationale**\n\n- Aligns product direction with \"do as much as possible in the background.\"\n- Keeps autonomy explicit and auditable instead of ad-hoc per-feature toggles.\n- Preserves safety by requiring risk-bounded execution and fail-closed fallback.\n\n**Consequence**\n\n- Task classes must declare corridor defaults and thresholds.\n- Receipts and audit logs must record autonomy mode and risk basis.\n- Conformance includes autonomy throughput and escalation quality metrics.\n\n---",
+      "body": "# D-021 - Maximum safe autopilot via autonomy corridors\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense enforcement language specifies intended behavior and is not evidence of implementation.\n\n## Refined formal decision (2026-10-30 draft)\n\nAutonomy policy remains keyed by task class, corridor, and explicit risk threshold. The corridors are `no_go`, `soft_gate`, and `autopilot`.\n\nThe kernel permits an effect only if **all applicable conditions** hold:\n\n1. The action belongs to a current human-granted mandate and an authorized task class.\n2. Its capability is authentic, current, scoped to the actual tool and resource, unexpired, and unrevoked.\n3. Resource scope, recipient scope, time limits, budgets, and policy preconditions are satisfied.\n4. The corridor permits the proposed effect and its risk score falls within its authorized threshold.\n5. Any approval required for that particular effect has been granted **before execution**.\n6. The action passes the execution mediator and receives the required receipt.\n\nA low risk score **never grants authority**. Model reasoning, newly generated code, agent routing, or an autonomy threshold cannot widen an existing mandate.\n\n## Corridor semantics\n\n- `no_go`: Deny the specified effect. To enable it, an authorized human must first change the underlying policy.\n- `soft_gate`: Automatically execute only explicitly authorized low-risk effects designated for **review after execution**. Route approval-required effects for **approval before execution**. Review and approval are separate decisions.\n- `autopilot`: Execute effects within the valid mandate, capability, risk, and budget bounds without routine confirmation; escalate exceptions and protected effects.\n\nA separate effect-specific approval requirement applies regardless of the corridor label. Human-facing terms `Restricted`, `Review`, and `Autopilot` may summarize corridors, but the interface must display the effective permissions and whether oversight happens before or after execution.\n\n## Rationale and consequences\n\nThe original threshold-only formula expressed the risk filter but omitted the surrounding authority preconditions. This refinement makes the complete permission boundary explicit and aligns it with Goni's existing default-deny policy, capability mediation, and canonical authority model.\n\nConformance must test expiry, revocation, scope escape, threshold errors, mismatched approval timing, model-generated workflows, and policy changes during execution. Receipts must identify the policy version, effective corridor, risk basis, and approval basis.",
       "domains": [
         "software"
       ],
@@ -13560,7 +13654,7 @@
         }
       ],
       "path": "knowledge/decisions/goni-decision-5a5b3b8a34ca-d-021-maximum-safe-autopilot-via-autonomy-corridors.md",
-      "proposition": "**Status:** Accepted **Date:** 2026-02-23 **Formal statement** Delegable actions are governed by an autonomy policy \\((\\text{task\\_class}, \\text{corridor}, \\theta)\\) where corridor is in \\(\\{\\text{no\\_go}, \\text{soft\\_gate}, \\text{autopilot}\\}\\) and \\(\\theta\\) is a risk threshold.",
+      "proposition": "Autonomous execution requires a valid human-granted capability, current policy, satisfied preconditions, a permitted corridor, sufficient budget, and required approval; risk thresholds can only restrict a pre-authorized action.",
       "relations": [],
       "sources": [],
       "status": "draft",
@@ -18102,6 +18196,47 @@
       "title": "Evidence artifact links",
       "type": "experiment",
       "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Minimal software and governance conformance evaluation\n\n## Hypothesis\n\nA minimal deterministic authority substrate with model-mediated planning may achieve the same required security and reliability as a more elaborate permanent application implementation at lower total cost for some workloads. This must be demonstrated rather than assumed.\n\n## Representative scenarios\n\n- A permitted research task completes autonomously with a reconstructable receipt.\n- An external message outside the granted recipient scope is denied despite a low model-assigned risk score.\n- A capability expires or is revoked before an effect, and the action is denied.\n- Ambiguous natural-language instructions produce an inactive, reviewable policy proposal.\n- A newly generated tool or workflow inherits existing scopes without expanding authority.\n- Model unavailability suspends adaptive work while preserving canonical policy, state, and revocation.\n- A human interprets the visual tracks and identifies denied, approval-required, and review-after actions correctly.\n- Different contributors and models interpret descriptive terminology consistently.\n\n## Evaluation method\n\nCompare a minimal candidate with a conventional implementation using matched workloads, tools, permissions, inputs, models, and resource budgets where applicable.\n\nMeasure correctness, unauthorized effects, receipt completeness, reconstruction, revocation latency, human comprehension, interruptions, inference and compute cost, code and dependency footprint, maintenance, and recovery work.\n\nReport the tested boundary, implementation commit, workload, sample size, model, hardware, failures, limitations, and reproducibility steps. The safety-critical target is zero unauthorized effects within the tested threat model. Improvements in line count alone are insufficient.\n\nThis is an experiment specification. Implementation evidence and comparative conclusions remain outstanding.",
+      "domains": [
+        "repository",
+        "system"
+      ],
+      "id": "GONI-EXPERIMENT-20261030-MINIMAL-SOFTWARE-GOVERNANCE-CONFORMANCE",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/experiments/goni-experiment-20261030-minimal-software-governance-conformance.md",
+      "proposition": "Evaluate whether smaller permanent software implementations preserve authorization, recoverability, policy legibility, and useful task completion at lower measured total system cost.",
+      "relations": [
+        {
+          "target": "GONI-DECISION-20261030-MINIMAL-SUFFICIENT-SOFTWARE",
+          "type": "tests"
+        },
+        {
+          "target": "GONI-PRINCIPLE-20261030-EXPLICIT-NAMING",
+          "type": "tests"
+        },
+        {
+          "target": "GONI-PRINCIPLE-20261030-CAPABILITY-GROWTH-WITH-BOUNDED-AUTHORITY",
+          "type": "tests"
+        },
+        {
+          "target": "GONI-SPEC-20261030-VISUAL-GOVERNANCE-TRACKS",
+          "type": "tests"
+        },
+        {
+          "target": "GONI-SPEC-20261030-NATURAL-LANGUAGE-POLICY-TRANSLATION",
+          "type": "tests"
+        }
+      ],
+      "sources": [],
+      "status": "draft",
+      "title": "Minimal software and governance conformance evaluation",
+      "type": "experiment",
+      "uncertainty": "Planned evaluation only; no implementation result, reliability guarantee, or comparative performance finding is asserted."
     },
     {
       "aliases": [],
@@ -30412,6 +30547,66 @@
     {
       "aliases": [],
       "artifacts": [],
+      "body": "# Capability growth within human-defined authority\n\nGoni's adaptive intelligence may learn procedures, generate code, choose tools, combine agents, and propose new ways of accomplishing a task. These changes expand **capability**. Permission to perform consequential effects is a separate, human-governed **authority** decision.\n\n## Core boundary\n\n- New skills and generated workflows inherit only the effective authority of their current mandate and capability scopes.\n- A model's confidence, a successful test, a new model, or a newly discovered tool cannot independently grant access to additional data, recipients, accounts, networks, budgets, or mutation rights.\n- An authority expansion requires an explicit policy change approved by an authorized human principal, with a reviewable difference, new policy version, and receipt.\n- Authority checks resolve against canonical kernel-owned state at the time of effect, including expiry and revocation.\n- The human may authorize a bounded policy corridor once, allowing routine work inside that corridor without repeated confirmations.\n- Generated code and newly assembled agent workflows use the same execution mediation as built-in tools; their novelty provides no special exemption.\n\n## Human-legible growth\n\nThe governance interface should show both the capabilities Goni has gained and the exact scope of authority those capabilities may exercise. The AI may propose new tracks or wider boundaries, but the proposed expansion remains inactive until the governing transition is authorized and recorded.\n\nThis principle separates open-ended problem-solving potential from tightly scoped operational power.",
+      "domains": [
+        "agent",
+        "kernel",
+        "product"
+      ],
+      "id": "GONI-PRINCIPLE-20261030-CAPABILITY-GROWTH-WITH-BOUNDED-AUTHORITY",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/principles/goni-principle-20261030-capability-growth-with-bounded-authority.md",
+      "proposition": "Goni may discover and improve capabilities autonomously within approved mandates, while changes to effective authority require a separate explicit human-governed authorization transition.",
+      "relations": [
+        {
+          "target": "GONI-DECISION-9AF49466170D",
+          "type": "refines"
+        },
+        {
+          "target": "GONI-DECISION-20261030-ARTIFICIAL-INTELLIGENCE-NATIVE-FOUNDATION",
+          "type": "depends_on"
+        },
+        {
+          "target": "GONI-DECISION-5A5B3B8A34CA",
+          "type": "depends_on"
+        }
+      ],
+      "sources": [],
+      "status": "draft",
+      "title": "Capability growth within human-defined authority",
+      "type": "principle",
+      "uncertainty": "Specific capability-promotion thresholds and approval workflows remain to be verified against representative tasks and adversarial scenarios."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Explicit naming and semantic clarity\n\nGoni communicates concepts with complete, descriptive terms. Names should make their purpose understandable to humans and artificial intelligence agents without requiring a separate acronym glossary.\n\n## Naming contract\n\n1. Write complete terms in prose, interface labels, architecture diagrams, agent instructions, and new documentation. Use **Minimal Sufficient Software** in full.\n2. Give functions, variables, types, file names, configuration keys, policies, and tools descriptive names that reflect their observable purpose and authority.\n3. Assign one canonical name to each concept. When two concepts differ, name the difference explicitly.\n4. Reuse a concept's canonical name across the blueprint, source code, agent messages, and interface descriptions.\n5. Explain inherited identifiers and established technical terms on first human-facing use. Preserve externally required protocol fields, stable node identifiers, historical links, and established proper names such as Goni and JEV for compatibility.\n6. Review new terminology for ambiguous abbreviations, overloaded labels, misleading synonyms, and terminology that requires unstated prior context.\n\n## Scope and rationale\n\nAcronyms and compressed shorthand increase the interpretation burden across multiple models, contributors, and operating contexts. Shorter names are worthwhile only when they remain unambiguous under the intended use; otherwise explicitness is the simpler design.\n\nThis principle applies to newly authored material and meaningful revisions. Existing identifiers may be migrated deliberately through versioned compatibility changes, preserving provenance and existing consumers.",
+      "domains": [
+        "agent",
+        "software",
+        "product"
+      ],
+      "id": "GONI-PRINCIPLE-20261030-EXPLICIT-NAMING",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/principles/goni-principle-20261030-explicit-naming.md",
+      "proposition": "Goni uses complete, descriptive, consistent names for concepts, instructions, code, and human interfaces so their meanings are recoverable without decoding shorthand.",
+      "relations": [
+        {
+          "target": "GONI-DECISION-20261030-MINIMAL-SUFFICIENT-SOFTWARE",
+          "type": "depends_on"
+        }
+      ],
+      "sources": [],
+      "status": "draft",
+      "title": "Explicit naming and semantic clarity",
+      "type": "principle",
+      "uncertainty": "Established external identifiers and historical repository contracts require compatibility handling; terminology checks may need a human review of context."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
       "body": "# Core principle\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n## Core principle\n\nGoni must remain modular, sovereign, and independently governable.\n\nEvery external dependency must be replaceable; every governance decision must\nremain local, inspectable, and receipted. Third-party tools may provide\norchestration, inference, retrieval, UIs, voice, workflow automation, model\ngateways, and hardware acceleration, but they must not own Goni's kernel\ncontracts, memory governance, policy, approvals, receipts, identity, or\nrollback semantics.\n\nCanonical formulation:\n\n- Interfaces before implementations.\n- No substrate owns canonical state.\n- Local authority beats remote convenience.\n- Portability is a design requirement.\n- Promotion into the core is slow and evidence-gated.\n\nSee [Software Architecture](/blueprint/software/20-architecture.md) for the\nformal architecture placement.",
       "domains": [
         "repository"
@@ -36406,6 +36601,72 @@
     {
       "aliases": [],
       "artifacts": [],
+      "body": "# Natural-language mandates to enforceable policy\n\nA person can describe a delegation in ordinary language. Goni interprets it as a **proposal**, then converts the proposed mandate into a typed, versioned policy that the kernel can evaluate independently of the language model.\n\n## Translation contract\n\n1. **Capture intent:** Record the requested goal, principal, evidence, and stated constraints.\n2. **Construct a typed proposal:** Identify agent or role, task class, operations, target resources and recipients, scope, budgets, duration, approval requirements, review timing, and revocation conditions.\n3. **Resolve consequential ambiguity:** Where interpretation could enlarge authority, request a narrow clarification or keep the permission absent.\n4. **Validate:** Check schema, scope boundaries, conflicting mandates, policy precedence, least privilege, and compatibility with canonical kernel contracts.\n5. **Explain:** Render the effective-permission preview and a plain-language, before-and-after summary. Let the human inspect material changes.\n6. **Authorize:** Activate a new or expanded delegation only through an authenticated, explicit decision by the authorized human principal. Preserve the previous effective policy until activation succeeds.\n7. **Enforce and audit:** Compile or load the approved structured contract into kernel-owned policy state; link its version to mediated effects and receipts.\n\nA natural-language description, prompt, generated code fragment, visual gesture, or model confidence cannot serve by itself as an executable permission. The structured policy and canonical authorization state determine the permitted effects.\n\n## Representation boundaries\n\n- Natural language is the preferred authoring and explanation interface.\n- Typed declarative contracts are the authoritative policy representation.\n- Conventional deterministic code implements enforcement and stable computations where needed.\n- Generated workflows and code execute inside the same scoped capabilities as built-in tools.\n- The interpretation and implementation of a policy must be compared for semantic agreement before authorization. The system reports material uncertainty instead of silently inferring a broader grant.\n\nThis contract enables natural-language programming of delegation while preserving independent, inspectable security semantics.",
+      "domains": [
+        "policy",
+        "agent"
+      ],
+      "id": "GONI-SPEC-20261030-NATURAL-LANGUAGE-POLICY-TRANSLATION",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/specifications/goni-spec-20261030-natural-language-policy-translation.md",
+      "proposition": "Goni translates natural-language delegation requests into typed, reviewable policy proposals and commits authority changes only through explicit kernel-mediated, human-authorized transitions.",
+      "relations": [
+        {
+          "target": "DELEG-INT-01",
+          "type": "refines"
+        },
+        {
+          "target": "GONI-SPEC-20261030-VISUAL-GOVERNANCE-TRACKS",
+          "type": "depends_on"
+        },
+        {
+          "target": "GONI-PRINCIPLE-20261030-CAPABILITY-GROWTH-WITH-BOUNDED-AUTHORITY",
+          "type": "depends_on"
+        }
+      ],
+      "sources": [],
+      "status": "draft",
+      "title": "Natural-language mandates to enforceable policy",
+      "type": "specification",
+      "uncertainty": "Exact policy schema, parsing accuracy, conflict handling, and semantic-equivalence checks remain to be implemented and empirically evaluated."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Human-readable visual governance tracks\n\nThe human defines a framework within which adaptive intelligence may act. The interface shows that framework as readable tracks and guardrails, with the actual effective permissions computed from canonical kernel policy.\n\n## Minimum operator view\n\nFor each mandate display:\n\n- Purpose and task class, expressed in complete, familiar words.\n- Track: **Restricted**, **Review**, or **Autopilot**, with its underlying policy corridor.\n- Applicable accounts, data, devices, tools, recipients, and network destinations.\n- Limits on duration, spending, frequency, and other bounded resources.\n- Which actions require **approval before execution**, which are eligible for **review after execution**, and which are denied.\n- Current version, active or revoked state, recent actions, and linked receipts.\n\nThe visual track is an explanation of policy state, never an independent grant of authority. The kernel supplies the effective-permission view. An agent can draft a proposed wider track, but expansion remains inactive until the authorized human approves the exact change.\n\n## Governance interactions\n\n1. The human sets a goal and selects or edits a track.\n2. Goni shows the resulting concrete permissions and examples of permitted and denied effects.\n3. Policy changes show a before-and-after difference in affected resources, actions, recipients, budgets, and approval timing.\n4. Changes are verified against the same structured policy contract used by execution.\n5. Authorized changes become versioned policy transitions with a receipt.\n6. The human can reduce authority or revoke an active mandate and see the effective state.\n\nThe visualization must remain understandable when a model is unavailable. Critical permission information should be renderable from stored policy without asking a model to infer what is allowed.\n\n## Conceptual relationship\n\n```mermaid\nflowchart TD\n    Human[Human goals and authority] --> Track[Visible mandate and governance tracks]\n    Models[Adaptive models and compute] --> Harness[JEV and replaceable agent harnesses]\n    Track --> Kernel[Kernel authorization]\n    Harness --> Kernel\n    Kernel --> Effects[Permitted mediated effects]\n    Kernel --> Review[Approval or denial]\n    Effects --> Receipts[Receipts and inspectable state]\n```\n\nThe diagram is conceptual. It makes the capability-to-authority boundary visible without changing Goni's canonical data, context, control, and execution planes.",
+      "domains": [
+        "product",
+        "policy"
+      ],
+      "id": "GONI-SPEC-20261030-VISUAL-GOVERNANCE-TRACKS",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/specifications/goni-spec-20261030-visual-governance-tracks.md",
+      "proposition": "Goni presents every delegated mandate as an understandable visual track whose effective authority, approval timing, limits, and revocation state are derived from enforceable kernel policy.",
+      "relations": [
+        {
+          "target": "GONI-DECISION-A1955B13B011",
+          "type": "refines"
+        },
+        {
+          "target": "GONI-DECISION-5A5B3B8A34CA",
+          "type": "depends_on"
+        },
+        {
+          "target": "GONI-PRINCIPLE-20261030-CAPABILITY-GROWTH-WITH-BOUNDED-AUTHORITY",
+          "type": "depends_on"
+        }
+      ],
+      "sources": [],
+      "status": "draft",
+      "title": "Human-readable visual governance tracks",
+      "type": "specification",
+      "uncertainty": "Visual comprehension and correspondence with actual execution permissions require user testing and executable policy-diff verification."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
       "body": "# Conformance tests\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n## Conformance tests\n- Metered executions emit receipts containing required execution fields.\n- `execution_type` values outside `action|tool|model` are rejected.\n- Budget counters are non-negative and policy-checkable.",
       "domains": [
         "specs"
@@ -39614,7 +39875,7 @@
     {
       "aliases": [],
       "artifacts": [],
-      "body": "# 3. Default execution policy\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n## 3. Default execution policy\n\nGoni uses an \"auto unless risky\" policy:\n\n- if corridor is `autopilot` and `risk_score <= theta_auto`, execute;\n- if corridor is `soft_gate` and `risk_score <= theta_soft`, execute with\n  queued review;\n- otherwise escalate to user decision.\n\n`theta_auto` and `theta_soft` are explicit policy parameters and must be auditable.",
+      "body": "# 3. Default execution policy\n\n> Status boundary: specified design only.\n\nGoni uses policy-level, risk-bounded autonomy **after** authorization has been established.\n\n1. Verify an active mandate, matching capability scope, current policy version, budget, expiry, revocation state, and all applicable resource and recipient constraints.\n2. Apply the corridor and risk threshold as additional restrictions.\n3. Apply the effect's review mode:\n   - **Approval before execution:** Pause the effect until an authorized human approves the exact operation and its materially relevant inputs.\n   - **Review after execution:** Execute only where the policy explicitly delegates that effect in advance; queue its receipt for later review.\n4. Perform the effect through mediated execution and record its receipt.\n\nCorridor defaults:\n\n- `no_go`: Deny the specified effect.\n- `soft_gate`: Low-risk, pre-authorized review-after effects may execute with queued review; actions requiring advance approval remain pending.\n- `autopilot`: Eligible, pre-authorized effects execute within the declared risk threshold and budget; protected effects and exceptions escalate.\n\nA missing, ambiguous, expired, or revoked permission leads to denial or an explicit authorization request. Risk classification alone cannot create authority. Thresholds, review modes, and authorization decisions are versioned and auditable.",
       "domains": [
         "specs"
       ],
@@ -39628,7 +39889,7 @@
         }
       ],
       "path": "knowledge/specifications/goni-spec-6c2515db19be-3-default-execution-policy.md",
-      "proposition": "Goni uses an \"auto unless risky\" policy: if corridor is autopilot and risk_score <= theta_auto, execute; if corridor is soft_gate and risk_score <= theta_soft, execute with queued review; otherwise escalate to user decision.",
+      "proposition": "Goni executes only an explicitly authorized effect whose capability, scope, corridor, preconditions, budgets, risk constraints, and effect-specific approval requirements are all satisfied.",
       "relations": [],
       "sources": [],
       "status": "draft",
@@ -41924,7 +42185,7 @@
     {
       "aliases": [],
       "artifacts": [],
-      "body": "# 3.6 Delegation and autonomy requirements (AUTON)\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n### 3.6 Delegation and autonomy requirements (AUTON)\n\n- **AUTON-01 (autonomy corridors):** each task class (for example:\n  `email_reply`, `invoice_payment`, `calendar_change`, `doc_edit`) must have an\n  explicit corridor policy:\n  - `no_go` (never auto-execute),\n  - `soft_gate` (bounded execution + review),\n  - `autopilot` (auto-execute by default).\n  For operator-facing UX and policy summaries, Goni may refer to these as three\n  authority classes: `autopilot`, `soft_gate`, and `hard_gate`, where\n  `hard_gate` means explicit human decision and includes the deny-only\n  `no_go` floor.\n- **AUTON-02 (risk-bounded default):** execution defaults to \"auto unless risky.\"\n  The system must compute a risk score per action and:\n  - auto-execute when below corridor thresholds,\n  - queue for review or escalate when thresholds are exceeded.\n- **AUTON-03 (policy-level control):** meaningful human control is exercised at\n  policy level (corridors, thresholds, allow/deny lists), not by requiring\n  per-action confirmation for routine work.\n- **AUTON-04 (offloading safeguards):** system must include:\n  - anomaly-first review feed,\n  - periodic post-hoc sampling of autonomous actions,\n  - rapid downgrade/kill-switch controls for autonomy policies.\n- **AUTON-05 (kernel-owned authority):** receipts, capability tokens, corridor\n  policy, and durable memory semantics are kernel primitives. These may not be\n  delegated to a third-party assistant framework, gateway, or extension host as\n  the source of truth for authority, audit, or memory.\n- **AUTON-06 (mediated external frameworks):** external assistant frameworks may\n  provide UX surfaces, channel adapters, or optional mediated tool seats, but\n  they must not own session authority, policy decisions, or durable memory\n  provenance.",
+      "body": "# 3.6 Delegation and autonomy requirements\n\n> Status boundary: the following is a specified contract, not a claim of deployed enforcement.\n\n- **Autonomy corridors:** Each task class, including message drafting, invoice payment, calendar changes, and document editing, declares a `no_go`, `soft_gate`, or `autopilot` corridor together with allowed effect types and resource scopes.\n  - `no_go` denies the specified effect.\n  - `soft_gate` permits explicitly authorized low-risk effects marked for review after execution. Effects marked approval-required wait for approval before execution.\n  - `autopilot` permits authorized effects inside the defined scope without routine approval, while escalating exceptions.\n- **Risk-bounded operation:** Risk scores determine whether *already authorized* effects may proceed autonomously. A score never creates a capability or a mandate.\n- **Approval versus review:** Human approval is a precondition for protected effects. An after-execution review is an audit mechanism and cannot retroactively authorize an effect.\n- **Policy-level control:** Humans set corridors, capability scopes, thresholds, budgets, approval requirements, and revocation policies. The system minimizes routine interruptions within those bounds.\n- **Offloading safeguards:** Provide anomaly-first review, periodic sampling, rapid corridor downgrades, and revocation controls.\n- **Kernel-owned authority:** Capability tokens, policy decisions, budgets, receipts, and durable authority state remain kernel-owned.\n- **Mediated extensions:** External assistant frameworks and newly generated workflows may contribute interfaces and execution capabilities through mediated tools; they do not own policy, canonical memory provenance, or session authority.\n\nThe operator interface can use `Restricted`, `Review`, and `Autopilot` as explanatory labels, while showing whether each individual action is denied, needs approval beforehand, or is eligible for post-execution review.",
       "domains": [
         "software"
       ],
@@ -41938,7 +42199,7 @@
         }
       ],
       "path": "knowledge/specifications/goni-spec-9e43c5648bb2-3-6-delegation-and-autonomy-requirements-auton.md",
-      "proposition": "**AUTON-01 (autonomy corridors):** each task class (for example: email_reply, invoice_payment, calendar_change, doc_edit) must have an explicit corridor policy: no_go (never auto-execute), soft_gate (bounded execution + review), autopilot (auto-execute by default).",
+      "proposition": "Each task class has a declared corridor and explicit authority scope; autopilot and review behavior are bounded by current capabilities, enforceable policy preconditions, budgets, and effect-specific human approvals.",
       "relations": [],
       "sources": [],
       "status": "draft",
@@ -63337,6 +63598,12 @@
     },
     {
       "projection": "generated",
+      "source": "DELEG-INT-01",
+      "target": "GONI-SPEC-20261030-NATURAL-LANGUAGE-POLICY-TRANSLATION",
+      "type": "refined_by"
+    },
+    {
+      "projection": "generated",
       "source": "DOCTRINE-DELEG-01",
       "target": "GONI-EVIDENCE-25F334DB139D",
       "type": "supported_by"
@@ -63577,6 +63844,90 @@
     },
     {
       "projection": "generated",
+      "source": "GONI-DECISION-20261030-ARTIFICIAL-INTELLIGENCE-NATIVE-FOUNDATION",
+      "target": "GONI-PRINCIPLE-20261030-CAPABILITY-GROWTH-WITH-BOUNDED-AUTHORITY",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-DECISION-20261030-ARTIFICIAL-INTELLIGENCE-NATIVE-FOUNDATION",
+      "target": "GONI-DECISION-20261030-MINIMAL-SUFFICIENT-SOFTWARE",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-DECISION-20261030-ARTIFICIAL-INTELLIGENCE-NATIVE-FOUNDATION",
+      "target": "GONI-DECISION-4042B98600BD",
+      "type": "refines"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-DECISION-20261030-ARTIFICIAL-INTELLIGENCE-NATIVE-FOUNDATION",
+      "target": "GONI-DECISION-635669877246",
+      "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-DECISION-20261030-MINIMAL-SUFFICIENT-SOFTWARE",
+      "target": "GONI-DECISION-20261030-ARTIFICIAL-INTELLIGENCE-NATIVE-FOUNDATION",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-DECISION-20261030-MINIMAL-SUFFICIENT-SOFTWARE",
+      "target": "GONI-PRINCIPLE-20261030-EXPLICIT-NAMING",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-DECISION-20261030-MINIMAL-SUFFICIENT-SOFTWARE",
+      "target": "GONI-PRINCIPLE-3CE61BB5417A",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-DECISION-20261030-MINIMAL-SUFFICIENT-SOFTWARE",
+      "target": "GONI-DECISION-42DF477FE7FB",
+      "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-DECISION-20261030-MINIMAL-SUFFICIENT-SOFTWARE",
+      "target": "GONI-EXPERIMENT-20261030-MINIMAL-SOFTWARE-GOVERNANCE-CONFORMANCE",
+      "type": "tested_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-DECISION-4042B98600BD",
+      "target": "GONI-DECISION-20261030-ARTIFICIAL-INTELLIGENCE-NATIVE-FOUNDATION",
+      "type": "refined_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-DECISION-42DF477FE7FB",
+      "target": "GONI-DECISION-20261030-MINIMAL-SUFFICIENT-SOFTWARE",
+      "type": "refined_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-DECISION-5A5B3B8A34CA",
+      "target": "GONI-PRINCIPLE-20261030-CAPABILITY-GROWTH-WITH-BOUNDED-AUTHORITY",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-DECISION-5A5B3B8A34CA",
+      "target": "GONI-SPEC-20261030-VISUAL-GOVERNANCE-TRACKS",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-DECISION-635669877246",
+      "target": "GONI-DECISION-20261030-ARTIFICIAL-INTELLIGENCE-NATIVE-FOUNDATION",
+      "type": "refined_by"
+    },
+    {
+      "projection": "generated",
       "source": "GONI-DECISION-6D3A2B71C9E4",
       "target": "DREAM-01",
       "type": "depended_on_by"
@@ -63672,10 +64023,22 @@
       "type": "refined_by"
     },
     {
+      "projection": "generated",
+      "source": "GONI-DECISION-9AF49466170D",
+      "target": "GONI-PRINCIPLE-20261030-CAPABILITY-GROWTH-WITH-BOUNDED-AUTHORITY",
+      "type": "refined_by"
+    },
+    {
       "projection": "authored",
       "source": "GONI-DECISION-9AF49466170D",
       "target": "GONI-THESIS-7BFB74017D50",
       "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-DECISION-A1955B13B011",
+      "target": "GONI-SPEC-20261030-VISUAL-GOVERNANCE-TRACKS",
+      "type": "refined_by"
     },
     {
       "projection": "generated",
@@ -64332,6 +64695,36 @@
       "type": "tests"
     },
     {
+      "projection": "authored",
+      "source": "GONI-EXPERIMENT-20261030-MINIMAL-SOFTWARE-GOVERNANCE-CONFORMANCE",
+      "target": "GONI-DECISION-20261030-MINIMAL-SUFFICIENT-SOFTWARE",
+      "type": "tests"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-EXPERIMENT-20261030-MINIMAL-SOFTWARE-GOVERNANCE-CONFORMANCE",
+      "target": "GONI-PRINCIPLE-20261030-CAPABILITY-GROWTH-WITH-BOUNDED-AUTHORITY",
+      "type": "tests"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-EXPERIMENT-20261030-MINIMAL-SOFTWARE-GOVERNANCE-CONFORMANCE",
+      "target": "GONI-PRINCIPLE-20261030-EXPLICIT-NAMING",
+      "type": "tests"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-EXPERIMENT-20261030-MINIMAL-SOFTWARE-GOVERNANCE-CONFORMANCE",
+      "target": "GONI-SPEC-20261030-NATURAL-LANGUAGE-POLICY-TRANSLATION",
+      "type": "tests"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-EXPERIMENT-20261030-MINIMAL-SOFTWARE-GOVERNANCE-CONFORMANCE",
+      "target": "GONI-SPEC-20261030-VISUAL-GOVERNANCE-TRACKS",
+      "type": "tests"
+    },
+    {
       "projection": "generated",
       "source": "GONI-EXPERIMENT-5ADAC18F09F9",
       "target": "SYS-02",
@@ -64561,9 +64954,63 @@
     },
     {
       "projection": "generated",
+      "source": "GONI-PRINCIPLE-20261030-CAPABILITY-GROWTH-WITH-BOUNDED-AUTHORITY",
+      "target": "GONI-SPEC-20261030-NATURAL-LANGUAGE-POLICY-TRANSLATION",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-PRINCIPLE-20261030-CAPABILITY-GROWTH-WITH-BOUNDED-AUTHORITY",
+      "target": "GONI-SPEC-20261030-VISUAL-GOVERNANCE-TRACKS",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-PRINCIPLE-20261030-CAPABILITY-GROWTH-WITH-BOUNDED-AUTHORITY",
+      "target": "GONI-DECISION-20261030-ARTIFICIAL-INTELLIGENCE-NATIVE-FOUNDATION",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-PRINCIPLE-20261030-CAPABILITY-GROWTH-WITH-BOUNDED-AUTHORITY",
+      "target": "GONI-DECISION-5A5B3B8A34CA",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-PRINCIPLE-20261030-CAPABILITY-GROWTH-WITH-BOUNDED-AUTHORITY",
+      "target": "GONI-DECISION-9AF49466170D",
+      "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-PRINCIPLE-20261030-CAPABILITY-GROWTH-WITH-BOUNDED-AUTHORITY",
+      "target": "GONI-EXPERIMENT-20261030-MINIMAL-SOFTWARE-GOVERNANCE-CONFORMANCE",
+      "type": "tested_by"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-PRINCIPLE-20261030-EXPLICIT-NAMING",
+      "target": "GONI-DECISION-20261030-MINIMAL-SUFFICIENT-SOFTWARE",
+      "type": "depends_on"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-PRINCIPLE-20261030-EXPLICIT-NAMING",
+      "target": "GONI-EXPERIMENT-20261030-MINIMAL-SOFTWARE-GOVERNANCE-CONFORMANCE",
+      "type": "tested_by"
+    },
+    {
+      "projection": "generated",
       "source": "GONI-PRINCIPLE-2A48B2D4DA86",
       "target": "GONI-SYNTHESIS-E25D38477C7D",
       "type": "synthesized_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-PRINCIPLE-3CE61BB5417A",
+      "target": "GONI-DECISION-20261030-MINIMAL-SUFFICIENT-SOFTWARE",
+      "type": "depended_on_by"
     },
     {
       "projection": "generated",
@@ -64666,6 +65113,60 @@
       "source": "GONI-PRINCIPLE-B40DDEFD1872",
       "target": "EVID-JIANG2024-LONGLLMLINGUA",
       "type": "supported_by"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SPEC-20261030-NATURAL-LANGUAGE-POLICY-TRANSLATION",
+      "target": "GONI-PRINCIPLE-20261030-CAPABILITY-GROWTH-WITH-BOUNDED-AUTHORITY",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SPEC-20261030-NATURAL-LANGUAGE-POLICY-TRANSLATION",
+      "target": "GONI-SPEC-20261030-VISUAL-GOVERNANCE-TRACKS",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SPEC-20261030-NATURAL-LANGUAGE-POLICY-TRANSLATION",
+      "target": "DELEG-INT-01",
+      "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-SPEC-20261030-NATURAL-LANGUAGE-POLICY-TRANSLATION",
+      "target": "GONI-EXPERIMENT-20261030-MINIMAL-SOFTWARE-GOVERNANCE-CONFORMANCE",
+      "type": "tested_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-SPEC-20261030-VISUAL-GOVERNANCE-TRACKS",
+      "target": "GONI-SPEC-20261030-NATURAL-LANGUAGE-POLICY-TRANSLATION",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SPEC-20261030-VISUAL-GOVERNANCE-TRACKS",
+      "target": "GONI-DECISION-5A5B3B8A34CA",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SPEC-20261030-VISUAL-GOVERNANCE-TRACKS",
+      "target": "GONI-PRINCIPLE-20261030-CAPABILITY-GROWTH-WITH-BOUNDED-AUTHORITY",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "GONI-SPEC-20261030-VISUAL-GOVERNANCE-TRACKS",
+      "target": "GONI-DECISION-A1955B13B011",
+      "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-SPEC-20261030-VISUAL-GOVERNANCE-TRACKS",
+      "target": "GONI-EXPERIMENT-20261030-MINIMAL-SOFTWARE-GOVERNANCE-CONFORMANCE",
+      "type": "tested_by"
     },
     {
       "projection": "generated",
