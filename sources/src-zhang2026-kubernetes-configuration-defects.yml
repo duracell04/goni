@@ -1,0 +1,7 @@
+id: SRC-ZHANG2026-K8S-CONFIG
+title: "Configuration Defects in Kubernetes"
+kind: academic
+citation: "Zhang, Y., Paul, U., d'Amorim, M., & Rahman, A. (2026). Configuration Defects in Kubernetes. IEEE Transactions on Software Engineering. doi:10.1109/TSE.2026.3659785."
+url: "https://doi.org/10.1109/TSE.2026.3659785"
+accessed: "2026-11-04"
+notes: "Peer-reviewed classification of 719 Kubernetes configuration defects into 15 categories. Findings do not compare the total cost of different deployment topologies."
