@@ -3,5 +3,5 @@ title: "Continuous Workflow Checker: Detecting Anti-Patterns in Real-World GitHu
 kind: academic
 citation: "Kim, K., & Lee, S. (2026). Continuous Workflow Checker: Detecting Anti-Patterns in Real-World GitHub CI/CD Pipelines. SSRN preprint 6932039; reported accepted by Information and Software Technology in October 2026."
 url: "https://ssrn.com/abstract=6932039"
-accessed: 2026-11-04
+accessed: "2026-11-04"
 notes: "Cross-artifact analysis covering four anti-pattern classes and 1,984 repositories. The measured rates do not describe all CI/CD defects."

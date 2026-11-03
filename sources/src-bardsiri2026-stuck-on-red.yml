@@ -3,5 +3,5 @@ title: "Stuck on Red? Understanding GitHub Actions Failing Streaks"
 kind: academic
 citation: "Talebzadeh Bardsiri, A., Mens, T., Decan, A., Degueule, T., & Falleri, J.-R. (2026, October 30). Stuck on Red? Understanding GitHub Actions Failing Streaks. arXiv:2610.41863 [preprint]."
 url: "https://arxiv.org/abs/2610.41863"
-accessed: 2026-11-04
+accessed: "2026-11-04"
 notes: "Public preprint; observational evidence from over 30.9 million GitHub Actions runs. Association of multipurpose workflows with failing streaks is not causal."
