@@ -545,6 +545,17 @@
         "SPINE-01",
         "ZCO-01"
       ],
+      "delivery": [
+        "CI-ASSURANCE-01",
+        "DELIVERY-MIN-01",
+        "EVAL-DELIVERY-01",
+        "EVID-AGENT-OPS-2026",
+        "EVID-CWC-2026",
+        "EVID-GHA-LANGUAGE-2026",
+        "EVID-GHA-STREAKS-2026",
+        "EVID-K8S-CONFIG-2026",
+        "OPS-CONTRACT-01"
+      ],
       "hardware": [
         "ADR-INDEX-HW",
         "BOM-NOTES",
@@ -718,6 +729,7 @@
         "CTX-COMP-01",
         "CTX-MISS-01",
         "DREAM-01",
+        "EVID-AGENT-OPS-2026",
         "GONI-DECISION-5346D37FC858",
         "GONI-DECISION-6D3A2B71C9E4",
         "GONI-DECISION-9AF49466170D",
@@ -812,6 +824,7 @@
         "GONI-SYNTHESIS-CC4921DED1BB",
         "GONI-SYNTHESIS-DF627E719B9D",
         "INF-PLACE-01",
+        "OPS-CONTRACT-01",
         "SPEC-ENF-01",
         "SPEC-KERN-01",
         "SPEC-POL-01",
@@ -1659,14 +1672,20 @@
         "CTX-MISS-EVAL-01",
         "DREAM-01",
         "DREAM-EVAL-01",
+        "EVAL-DELIVERY-01",
+        "EVID-AGENT-OPS-2026",
         "EVID-AIRLLM-STREAMING",
+        "EVID-CWC-2026",
         "EVID-DENNING1968-WORKING-SET",
+        "EVID-GHA-LANGUAGE-2026",
+        "EVID-GHA-STREAKS-2026",
         "EVID-GIM2024-PROMPT-CACHE",
         "EVID-HA2018-WORLD-MODELS",
         "EVID-HAFNER2023-DREAMERV3",
         "EVID-HU2022-LORA",
         "EVID-JIANG2023-LLMLINGUA",
         "EVID-JIANG2024-LONGLLMLINGUA",
+        "EVID-K8S-CONFIG-2026",
         "EVID-LI2021-PREFIX-TUNING",
         "EVID-LI2023-SELECTIVE-CONTEXT",
         "EVID-OPENAI2026-DREAMING",
@@ -1800,12 +1819,15 @@
         "AXIOMS-01",
         "CACHE-01",
         "CACHE-EVAL-01",
+        "CI-ASSURANCE-01",
         "CI-VALIDATION-01",
         "CTX-COMP-01",
         "CTX-COMP-EVAL-01",
         "CTX-MISS-01",
         "CTX-MISS-EVAL-01",
         "DASHBOARD-CONCEPTS",
+        "DELIVERY-MIN-01",
+        "EVAL-DELIVERY-01",
         "EVID-AIRLLM-STREAMING",
         "EVID-GIM2024-PROMPT-CACHE",
         "EVID-HU2022-LORA",
@@ -2139,6 +2161,7 @@
         "LATENT-PREDICTOR",
         "LLM-RUNTIME",
         "MESH-AND-WIREGUARD",
+        "OPS-CONTRACT-01",
         "PLANE-01",
         "PRIV-01",
         "SCHEMA-DSL-01",
@@ -2710,8 +2733,13 @@
         "SYS-04"
       ],
       "validation": [
+        "CI-ASSURANCE-01",
         "CI-VALIDATION-01",
+        "DELIVERY-MIN-01",
+        "EVAL-DELIVERY-01",
+        "EVID-CWC-2026",
         "EVID-ENF-01",
+        "EVID-K8S-CONFIG-2026",
         "GONI-EXPERIMENT-07A1AA51D44F",
         "GONI-EXPERIMENT-467567B52D32",
         "GONI-EXPERIMENT-629BA8CAF5F5",
@@ -2748,6 +2776,7 @@
         "CACHE-EVAL-01",
         "CDC-01",
         "CGG-01",
+        "CI-ASSURANCE-01",
         "CI-VALIDATION-01",
         "CRDT-AUDIT-01",
         "CRDT-DECISIONS-01",
@@ -2762,11 +2791,14 @@
         "DAT-01",
         "DELEG-01",
         "DELEG-INT-01",
+        "DELIVERY-MIN-01",
         "DOCTRINE-DELEG-01",
         "DREAM-01",
         "DREAM-EVAL-01",
         "ENCLOSURE-NOTES",
+        "EVAL-DELIVERY-01",
         "EVAL-README-00",
+        "EVID-AGENT-OPS-2026",
         "EVID-AIRLLM-STREAMING",
         "EVID-AUTON-01",
         "EVID-AUTON-02",
@@ -2780,9 +2812,12 @@
         "EVID-BUDGET-02",
         "EVID-COST-01",
         "EVID-COST-02",
+        "EVID-CWC-2026",
         "EVID-DENNING1968-WORKING-SET",
         "EVID-DESK-01",
         "EVID-ENF-01",
+        "EVID-GHA-LANGUAGE-2026",
+        "EVID-GHA-STREAKS-2026",
         "EVID-GIM2024-PROMPT-CACHE",
         "EVID-HA2018-WORLD-MODELS",
         "EVID-HAFNER2023-DREAMERV3",
@@ -2792,6 +2827,7 @@
         "EVID-INDEX-00",
         "EVID-JIANG2023-LLMLINGUA",
         "EVID-JIANG2024-LONGLLMLINGUA",
+        "EVID-K8S-CONFIG-2026",
         "EVID-LI2021-PREFIX-TUNING",
         "EVID-LI2023-SELECTIVE-CONTEXT",
         "EVID-LONGCTX-01",
@@ -4647,6 +4683,7 @@
         "NET-01",
         "NONBYPASS-INTEGRATION-METRICS",
         "OLLAMA-CLOUD",
+        "OPS-CONTRACT-01",
         "OS-AND-BASE-IMAGE",
         "OS-COMPLETENESS-CHECKLIST",
         "PAY-PER-EXECUTION",
@@ -4795,14 +4832,19 @@
         "GONI-DECISION-FEDF62BF576F"
       ],
       "evidence": [
+        "EVID-AGENT-OPS-2026",
         "EVID-AIRLLM-STREAMING",
+        "EVID-CWC-2026",
         "EVID-DENNING1968-WORKING-SET",
+        "EVID-GHA-LANGUAGE-2026",
+        "EVID-GHA-STREAKS-2026",
         "EVID-GIM2024-PROMPT-CACHE",
         "EVID-HA2018-WORLD-MODELS",
         "EVID-HAFNER2023-DREAMERV3",
         "EVID-HU2022-LORA",
         "EVID-JIANG2023-LLMLINGUA",
         "EVID-JIANG2024-LONGLLMLINGUA",
+        "EVID-K8S-CONFIG-2026",
         "EVID-LI2021-PREFIX-TUNING",
         "EVID-LI2023-SELECTIVE-CONTEXT",
         "EVID-OPENAI2026-DREAMING",
@@ -4909,6 +4951,7 @@
         "CTX-COMP-EVAL-01",
         "CTX-MISS-EVAL-01",
         "DREAM-EVAL-01",
+        "EVAL-DELIVERY-01",
         "EVAL-README-00",
         "EVID-AUTON-01",
         "EVID-AUTON-03",
@@ -5462,6 +5505,7 @@
       ],
       "principle": [
         "AXIOMS-01",
+        "DELIVERY-MIN-01",
         "DOCTRINE-DELEG-01",
         "GONI-PRINCIPLE-0147896F31C8",
         "GONI-PRINCIPLE-0F5A00F69914",
@@ -5691,6 +5735,7 @@
         "CACHE-01",
         "CDC-01",
         "CGG-01",
+        "CI-ASSURANCE-01",
         "CRDT-AUDIT-01",
         "CRDT-NOTES-01",
         "CRDT-PREFS-01",
@@ -6132,6 +6177,7 @@
         "METER-02",
         "MODEL-REG-01",
         "NET-01",
+        "OPS-CONTRACT-01",
         "REC-01",
         "ROBOT-01",
         "SANDBOX-01",
@@ -10925,6 +10971,44 @@
     {
       "aliases": [],
       "artifacts": [],
+      "body": "# Semantic CI and configuration-change assurance\n\n## Verification layers\n\n- **Fast checks:** Schema, provenance, deterministic catalogue, syntax, and directly affected application tests should run on proposed changes.\n- **Cross-artifact checks:** Compare deployment declarations with application requirements: immutable image and dependency versions, persistent state paths, network/egress rules, secrets, service prerequisites, readiness, and schema migrations. Syntactically valid YAML is insufficient evidence of runtime compatibility.\n- **Targeted integration checks:** Changes to policy, capabilities, persistence, receipts, tool execution, egress, and deployment topology require relevant denial, fault-injection, restart, and recovery tests before promotion.\n- **Release checks:** Qualify the actual versioned artifact in each supported deployment topology, preserving a known-good recovery target.\n\n## Diagnose failures before retry\n\nCapture workflow version, commit SHA, trigger, stage, duration, source-change status, relevant dependency state, and cause classification: application, configuration, CI harness, external service/network, or undetermined. Track repeated failing runs and time-to-recovery. Investigate failing streaks, including those without repository changes, before changing source code or retrying blindly.\n\nChanges spanning application code and deployment infrastructure, including AI-generated changes, require a single cross-boundary review of the application/deployment contract.\n\n## Keep the delivery system bounded\n\nRemove equivalent PR/push work where validation and branch-protection guarantees are preserved. Evaluate each check by material defects uniquely detected versus execution, false-failure, maintenance, and investigation costs. Configuration assurance is a risk-control mechanism, not a goal to maximize pipeline stages.",
+      "domains": [
+        "software",
+        "validation",
+        "delivery"
+      ],
+      "id": "CI-ASSURANCE-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/specifications/ci-assurance-01-semantic-delivery-verification.md",
+      "proposition": "CI must check delivery configuration against application contracts, attribute failures, and apply proportionate assurance to consequential changes.",
+      "relations": [
+        {
+          "target": "CI-VALIDATION-01",
+          "type": "refines"
+        },
+        {
+          "target": "OPS-CONTRACT-01",
+          "type": "depends_on"
+        },
+        {
+          "target": "DELIVERY-MIN-01",
+          "type": "depends_on"
+        }
+      ],
+      "sources": [
+        "SRC-BARDSIRI2026-STUCK-ON-RED",
+        "SRC-KIM2026-WORKFLOW-CHECKER",
+        "SRC-ZHANG2026-K8S-CONFIG"
+      ],
+      "status": "draft",
+      "title": "Semantic CI and configuration-change assurance",
+      "type": "specification",
+      "uncertainty": "Specified future CI requirements. Existing knowledge-graph validation does not prove implementation of the deployment and recovery checks listed here."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
       "body": "# 80 – Validation & CI\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n# 80 – Validation & CI\nDOC-ID: CI-VALIDATION-01\n\nHow SMA/ZCO/TXT and schema drift are enforced in practice.\n\nStatus: mix of implemented and planned; see goni-prototype-lab:.github/workflows/ci.yml for current CI.",
       "domains": [
         "data",
@@ -11350,6 +11434,39 @@
     {
       "aliases": [],
       "artifacts": [],
+      "body": "# Smallest sufficient software-delivery architecture\n\n## Principle\n\nGONI SHOULD maintain the least burdensome delivery system that satisfies its functional, security, authority, recoverability, and assurance requirements. Required guarantees are hard constraints; complexity is minimized only among conformant alternatives.\n\n## Decision rule\n\nBefore introducing another pipeline stage, runner, orchestration service, configuration layer, or deployment target, document: (1) the requirement or failure it addresses; (2) why the simpler baseline is insufficient; (3) the test or evidence for its expected benefit; (4) additional maintenance, security, investigation, infrastructure, compute, network, and cognitive costs; and (5) the owner and removal or rollback condition.\n\nPrefer one verified reference deployment and narrow, risk-linked checks. Maintain additional environments only where an independent need warrants their full testing and operational overhead. Review mature mechanisms for consolidation when their incremental value is not demonstrated.\n\n## Boundary and evidence\n\nThis principle imposes no universal upper bound on workflow steps and does not select a CI vendor or deployment technology. Workflow-complexity studies report correlations, not proof that fewer steps cause greater reliability. Test alternatives against the same mandatory guarantees in EVAL-DELIVERY-01.",
+      "domains": [
+        "software",
+        "validation",
+        "delivery"
+      ],
+      "id": "DELIVERY-MIN-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/principles/delivery-min-01-smallest-sufficient-delivery.md",
+      "proposition": "Choose the least burdensome delivery architecture that satisfies declared product, security, recoverability, and assurance requirements.",
+      "relations": [
+        {
+          "target": "GONI-DECISION-635669877246",
+          "type": "refines"
+        },
+        {
+          "target": "GONI-DECISION-EF1D6F7F085E",
+          "type": "depends_on"
+        }
+      ],
+      "sources": [
+        "SRC-BARDSIRI2026-GHA-LANGUAGE",
+        "SRC-SCULLEY2015-HIDDEN-TECH-DEBT"
+      ],
+      "status": "draft",
+      "title": "Smallest sufficient software-delivery architecture",
+      "type": "principle",
+      "uncertainty": "Normative engineering principle motivated by observational literature; an optimal CI/CD architecture for GONI has not been established empirically."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
       "body": "# Delegation Doctrine\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n# Delegation Doctrine\nDOC-ID: DOCTRINE-DELEG-01\nStatus: Specified only / roadmap\n\nThis document states product-level doctrine. Normative behavior lives in\n`blueprint/30-specs/`.",
       "domains": [
         "product"
@@ -11490,6 +11607,45 @@
     {
       "aliases": [],
       "artifacts": [],
+      "body": "# Comparative evaluation of delivery reliability and complexity\n\n## Research question\n\nAmong deployment and CI designs meeting the same functional and authority contracts, which design has the lowest total maintenance, execution, and incident-response burden?\n\n## Comparison\n\nUse the same synthetic application changes, controlled inputs, and mandatory conformance requirements across (A) current reference delivery, (B) a consolidated, risk-targeted pipeline with semantic checks, and (C) a more elaborate alternative only where a distinct capability is justified. Document incomparable requirements.\n\n## Faults and observations\n\nInject invalid canonical relations, stale catalogue projections, missing persistent mounts, incompatible image/dependency versions, failed receipt writes, process crashes, container replacement, interrupted approvals, uncertain third-party actions, network outages, and denied capabilities. Measure consequential defects detected and missed, false failure rates, time to diagnosis and recovery, repeat failure streaks, duplicate effects, workflow minutes, resource cost, operational interventions, and review burden.\n\n## Acceptance\n\nPre-register mandatory security, durability, and recovery thresholds. Reject any candidate that violates a hard guarantee, regardless of speed or cost. Among conformant designs, prefer the least burdensome candidate within statistical and operational uncertainty. Pinned experimental results, not this plan, may later support promoted blueprint claims.",
+      "domains": [
+        "software",
+        "validation",
+        "research",
+        "delivery"
+      ],
+      "id": "EVAL-DELIVERY-01",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/experiments/eval-delivery-01-comparative-delivery-architecture.md",
+      "proposition": "Measure whether a smaller CI and deployment system meets GONI assurance requirements at lower total operating cost than more elaborate alternatives.",
+      "relations": [
+        {
+          "target": "DELIVERY-MIN-01",
+          "type": "tests"
+        },
+        {
+          "target": "OPS-CONTRACT-01",
+          "type": "tests"
+        },
+        {
+          "target": "CI-ASSURANCE-01",
+          "type": "tests"
+        }
+      ],
+      "sources": [
+        "SRC-BARDSIRI2026-GHA-LANGUAGE",
+        "SRC-BARDSIRI2026-STUCK-ON-RED",
+        "SRC-MASTOURI2026-AGENT-OPS"
+      ],
+      "status": "draft",
+      "title": "Comparative evaluation of delivery reliability and complexity",
+      "type": "experiment",
+      "uncertainty": "Proposed evaluation only. No measured GONI results or causal conclusions are claimed."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
       "body": "# Eval Lane\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n# Eval Lane\n\nEvaluation artifacts for reliability, security, and reproducibility.",
       "domains": [
         "repository"
@@ -11511,6 +11667,34 @@
       "title": "Eval Lane",
       "type": "experiment",
       "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Agent deployment operational contracts — source claim\n\n**Observation.** Mastouri, Ksontini, and Barrak derive 14 operational contracts and examine 433 deployed agent systems, lifecycle faults in 12 systems, and developer repairs. They identify gaps between disposable containers and applications expecting persistent, resumable state.\n\n**GONI relevance.** Make durable action intent, receipt state, approvals, and recovery part of the application-deployment contract.\n\n**Limit.** The study does not establish that a particular orchestration platform or database is optimal.",
+      "domains": [
+        "research",
+        "delivery",
+        "kernel"
+      ],
+      "id": "EVID-AGENT-OPS-2026",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/evidence/evid-agent-ops-2026-deployment-contracts.md",
+      "proposition": "Container lifecycle events can violate an agent application's state-persistence and resumability assumptions.",
+      "relations": [
+        {
+          "target": "OPS-CONTRACT-01",
+          "type": "supports"
+        }
+      ],
+      "sources": [
+        "SRC-MASTOURI2026-AGENT-OPS"
+      ],
+      "status": "draft",
+      "title": "Source claim: agent deployment operational contracts",
+      "type": "evidence",
+      "uncertainty": "October 2026 preprint derived from particular frameworks and sampled applications; applicability to GONI requires testing."
     },
     {
       "aliases": [],
@@ -11867,6 +12051,34 @@
     {
       "aliases": [],
       "artifacts": [],
+      "body": "# Cross-artifact workflow checking — source claim\n\n**Observation.** Kim and Lee's Continuous Workflow Checker evaluates GitHub Actions against application artifacts. It reports at least one targeted anti-pattern in 12.4% of sampled Node.js repositories and 7.0% of sampled Python repositories.\n\n**GONI relevance.** Compare versions and deployment prerequisites with real application needs.\n\n**Limit.** The preprint evaluates four anti-pattern families, not complete deployment correctness.",
+      "domains": [
+        "research",
+        "delivery",
+        "validation"
+      ],
+      "id": "EVID-CWC-2026",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/evidence/evid-cwc-2026-cross-artifact-checking.md",
+      "proposition": "Cross-analysis of workflow and application configuration can detect targeted CI/CD anti-patterns missed by syntax-only inspection.",
+      "relations": [
+        {
+          "target": "CI-ASSURANCE-01",
+          "type": "supports"
+        }
+      ],
+      "sources": [
+        "SRC-KIM2026-WORKFLOW-CHECKER"
+      ],
+      "status": "draft",
+      "title": "Source claim: cross-artifact workflow checking",
+      "type": "evidence",
+      "uncertainty": "Four defined rule families in 1,984 Node.js/Python repositories; figures do not represent the prevalence of all CI/CD defects."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
       "body": "# Source claim: Denning 1968 working-set model\n\nDenning develops the working-set model to distinguish information currently in\nuse by a running process from the larger addressable memory space and to guide\ndynamic management of paged memory.\n\n## Goni relevance\n\nThis supports treating Goni's durable memory and addressable knowledge as larger\nthan the active inference working set. It motivates dynamic admission, eviction,\nand paging policies while leaving the exact LLM-specific policy to empirical\nevaluation.\n\n## Boundary\n\nThe paper does not study transformers, retrieval-augmented generation, prompt\ncompression, or KV caches. Goni's use of the working-set concept is a systems\nanalogy, not a claim that LLM context obeys the same locality distribution.",
       "domains": [
         "research",
@@ -11948,6 +12160,60 @@
       "title": "EVID-ENF-01 Egress Non-bypass Validation",
       "type": "experiment",
       "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# GitHub Actions language complexity — source claim\n\n**Observation.** Talebzadeh Bardsiri, Decan, and Mens (ICSME 2026) analyze roughly 260,000 workflows across 49,000 repositories and identify 197 language constructs in 14 features. Larger and more complex workflows were associated with more failures and maintenance work.\n\n**GONI relevance.** Include the lifecycle burden of delivery mechanisms in architecture decisions.\n\n**Limit.** No causal conclusion that removing a specific workflow step improves reliability.",
+      "domains": [
+        "research",
+        "delivery"
+      ],
+      "id": "EVID-GHA-LANGUAGE-2026",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/evidence/evid-gha-language-2026-workflow-complexity.md",
+      "proposition": "More complex GitHub Actions workflows are associated with elevated failure and maintenance burden in an observational sample.",
+      "relations": [
+        {
+          "target": "DELIVERY-MIN-01",
+          "type": "supports"
+        }
+      ],
+      "sources": [
+        "SRC-BARDSIRI2026-GHA-LANGUAGE"
+      ],
+      "status": "draft",
+      "title": "Source claim: GitHub Actions language complexity",
+      "type": "evidence",
+      "uncertainty": "Observational association; neither a causal complexity threshold nor GONI-specific effects were established."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# GitHub Actions failing streaks — source claim\n\n**Observation.** The October 2026 preprint studies over 30.9 million workflow runs from over 43,000 repositories. About 75% of failing runs followed another failure; approximately one third of failing streaks began without a repository change. Multipurpose workflows showed more failing streaks at comparable size.\n\n**GONI relevance.** Record external failure causes and repeated runs independently of source changes.\n\n**Limit.** These results are not evidence that splitting or automatically rerunning a given workflow improves reliability.",
+      "domains": [
+        "research",
+        "delivery"
+      ],
+      "id": "EVID-GHA-STREAKS-2026",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/evidence/evid-gha-streaks-2026-failure-attribution.md",
+      "proposition": "GitHub Actions failures frequently persist across runs and can start without a repository change.",
+      "relations": [
+        {
+          "target": "CI-ASSURANCE-01",
+          "type": "supports"
+        }
+      ],
+      "sources": [
+        "SRC-BARDSIRI2026-STUCK-ON-RED"
+      ],
+      "status": "draft",
+      "title": "Source claim: GitHub Actions failing streaks",
+      "type": "evidence",
+      "uncertainty": "October 2026 public preprint; associations from sampled workflows do not establish the benefit of a particular GONI CI topology."
     },
     {
       "artifacts": [],
@@ -12189,6 +12455,34 @@
       "title": "Source claim: LongLLMLingua",
       "type": "evidence",
       "uncertainty": "Improvements are benchmark-, model-, and compression-policy-specific and do not imply that compression is always preferable to native long-context reading."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Kubernetes configuration defect coverage — source claim\n\n**Observation.** Zhang, Paul, d'Amorim, and Rahman classify 719 Kubernetes configuration defects into 15 categories. Eight studied static-analysis tools together cover eight of these categories.\n\n**GONI relevance.** Syntax checks and general linters need targeted contract or runtime verification for consequential configuration behavior.\n\n**Limit.** This study does not prove Kubernetes is always inferior to lighter deployment technologies.",
+      "domains": [
+        "research",
+        "delivery",
+        "validation"
+      ],
+      "id": "EVID-K8S-CONFIG-2026",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/evidence/evid-k8s-config-2026-defect-coverage.md",
+      "proposition": "Kubernetes configuration defects encompass categories not covered by all existing static analyzers.",
+      "relations": [
+        {
+          "target": "CI-ASSURANCE-01",
+          "type": "supports"
+        }
+      ],
+      "sources": [
+        "SRC-ZHANG2026-K8S-CONFIG"
+      ],
+      "status": "draft",
+      "title": "Source claim: Kubernetes configuration defect coverage",
+      "type": "evidence",
+      "uncertainty": "Kubernetes-specific study with 719 sampled defects and eight tested analyzers; no total-cost comparison of deployment architectures."
     },
     {
       "artifacts": [],
@@ -61003,6 +61297,42 @@
     {
       "aliases": [],
       "artifacts": [],
+      "body": "# Deployment-to-runtime operational contracts\n\nThis specification extends existing transactional-tool and idempotency rules to the deployment boundary, without prescribing a database or orchestrator.\n\n## Contract\n\n1. **State ownership.** Identify authoritative stores for mandates, policy/capability decisions, approvals, work orders, execution intents, receipts, revocations, and pending actions. Label caches and search indexes as rebuildable only where reconstruction is demonstrated.\n2. **Durable intent.** Before an external consequential effect is attempted, commit an authorized intent with a stable idempotency reference. If the durable intent cannot be written, do not execute the effect.\n3. **Outcome evidence.** Persist the observed outcome as success, denial, failure, or uncertainty. A failed receipt write MUST NOT be silently counted as success. If an effect may have occurred, preserve an uncertain status for reconciliation.\n4. **Recovery.** Preserve authoritative state during restart, container replacement, interrupted approvals, graceful shutdown, and dependency failure, or fail safely. Do not blindly repeat external effects with uncertain outcomes. Use provider state and idempotency guarantees where available, with human escalation when verification is impossible.\n5. **Atomicity.** Local state/receipt atomicity extends only to the declared kernel-controlled commit boundary. Email delivery, payment, and third-party changes may require verification or compensation rather than rollback.\n6. **Deployment agreement.** Release configuration MUST state persistent mounts, service and network dependencies, secrets, schema compatibility, migration, backup/restore, and an achievable recovery or rollback target.\n\n## Required verification\n\nMap each authoritative data surface to its actual deployment resource. Use fault injection for crashed processes, replaced containers, unavailable stores, failed receipt writes, interrupted effects, and uncertain external responses. Syntax checks and service-health responses alone cannot establish these contracts.",
+      "domains": [
+        "software",
+        "kernel",
+        "delivery"
+      ],
+      "id": "OPS-CONTRACT-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/specifications/ops-contract-01-deployment-runtime-contract.md",
+      "proposition": "Deployment lifecycle events must preserve kernel-owned authoritative state, auditable effects, and safe recovery semantics.",
+      "relations": [
+        {
+          "target": "GONI-SPEC-14AA0EDAFDD4",
+          "type": "refines"
+        },
+        {
+          "target": "GONI-SPEC-4D10349C481A",
+          "type": "depends_on"
+        },
+        {
+          "target": "GONI-PRINCIPLE-3CE61BB5417A",
+          "type": "depends_on"
+        }
+      ],
+      "sources": [
+        "SRC-MASTOURI2026-AGENT-OPS"
+      ],
+      "status": "draft",
+      "title": "Deployment-to-runtime operational contracts",
+      "type": "specification",
+      "uncertainty": "Proposed cross-boundary operational requirements, not an implementation or verified durability guarantee."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
       "body": "# OS and Base Image (Hardware Contract)\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n# OS and Base Image (Hardware Contract)\n\nLast refreshed: **2026-01-03**\n\nThis document defines the base-image telemetry and capability discovery\nrequirements for Goni hardware. It is a pure refactor from the supplier map.",
       "domains": [
         "hardware"
@@ -63216,6 +63546,54 @@
       "type": "depended_on_by"
     },
     {
+      "projection": "authored",
+      "source": "CI-ASSURANCE-01",
+      "target": "DELIVERY-MIN-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "CI-ASSURANCE-01",
+      "target": "OPS-CONTRACT-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "CI-ASSURANCE-01",
+      "target": "CI-VALIDATION-01",
+      "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "CI-ASSURANCE-01",
+      "target": "EVID-CWC-2026",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "CI-ASSURANCE-01",
+      "target": "EVID-GHA-STREAKS-2026",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "CI-ASSURANCE-01",
+      "target": "EVID-K8S-CONFIG-2026",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "CI-ASSURANCE-01",
+      "target": "EVAL-DELIVERY-01",
+      "type": "tested_by"
+    },
+    {
+      "projection": "generated",
+      "source": "CI-VALIDATION-01",
+      "target": "CI-ASSURANCE-01",
+      "type": "refined_by"
+    },
+    {
       "projection": "generated",
       "source": "CTX-COMP-01",
       "target": "CTX-MISS-01",
@@ -63337,6 +63715,36 @@
     },
     {
       "projection": "generated",
+      "source": "DELIVERY-MIN-01",
+      "target": "CI-ASSURANCE-01",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "authored",
+      "source": "DELIVERY-MIN-01",
+      "target": "GONI-DECISION-EF1D6F7F085E",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "DELIVERY-MIN-01",
+      "target": "GONI-DECISION-635669877246",
+      "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "DELIVERY-MIN-01",
+      "target": "EVID-GHA-LANGUAGE-2026",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "DELIVERY-MIN-01",
+      "target": "EVAL-DELIVERY-01",
+      "type": "tested_by"
+    },
+    {
+      "projection": "generated",
       "source": "DOCTRINE-DELEG-01",
       "target": "GONI-EVIDENCE-25F334DB139D",
       "type": "supported_by"
@@ -63408,6 +63816,30 @@
       "type": "tests"
     },
     {
+      "projection": "authored",
+      "source": "EVAL-DELIVERY-01",
+      "target": "CI-ASSURANCE-01",
+      "type": "tests"
+    },
+    {
+      "projection": "authored",
+      "source": "EVAL-DELIVERY-01",
+      "target": "DELIVERY-MIN-01",
+      "type": "tests"
+    },
+    {
+      "projection": "authored",
+      "source": "EVAL-DELIVERY-01",
+      "target": "OPS-CONTRACT-01",
+      "type": "tests"
+    },
+    {
+      "projection": "authored",
+      "source": "EVID-AGENT-OPS-2026",
+      "target": "OPS-CONTRACT-01",
+      "type": "supports"
+    },
+    {
       "projection": "generated",
       "source": "EVID-AIRLLM-STREAMING",
       "target": "INF-PLACE-01",
@@ -63421,6 +63853,12 @@
     },
     {
       "projection": "authored",
+      "source": "EVID-CWC-2026",
+      "target": "CI-ASSURANCE-01",
+      "type": "supports"
+    },
+    {
+      "projection": "authored",
       "source": "EVID-DENNING1968-WORKING-SET",
       "target": "GONI-DECISION-FEB39440C565",
       "type": "supports"
@@ -63429,6 +63867,18 @@
       "projection": "authored",
       "source": "EVID-DENNING1968-WORKING-SET",
       "target": "GONI-PRINCIPLE-9062425CD490",
+      "type": "supports"
+    },
+    {
+      "projection": "authored",
+      "source": "EVID-GHA-LANGUAGE-2026",
+      "target": "DELIVERY-MIN-01",
+      "type": "supports"
+    },
+    {
+      "projection": "authored",
+      "source": "EVID-GHA-STREAKS-2026",
+      "target": "CI-ASSURANCE-01",
       "type": "supports"
     },
     {
@@ -63471,6 +63921,12 @@
       "projection": "authored",
       "source": "EVID-JIANG2024-LONGLLMLINGUA",
       "target": "GONI-SPEC-A29366F3E2EA",
+      "type": "supports"
+    },
+    {
+      "projection": "authored",
+      "source": "EVID-K8S-CONFIG-2026",
+      "target": "CI-ASSURANCE-01",
       "type": "supports"
     },
     {
@@ -63577,6 +64033,12 @@
     },
     {
       "projection": "generated",
+      "source": "GONI-DECISION-635669877246",
+      "target": "DELIVERY-MIN-01",
+      "type": "refined_by"
+    },
+    {
+      "projection": "generated",
       "source": "GONI-DECISION-6D3A2B71C9E4",
       "target": "DREAM-01",
       "type": "depended_on_by"
@@ -63676,6 +64138,12 @@
       "source": "GONI-DECISION-9AF49466170D",
       "target": "GONI-THESIS-7BFB74017D50",
       "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-DECISION-EF1D6F7F085E",
+      "target": "DELIVERY-MIN-01",
+      "type": "depended_on_by"
     },
     {
       "projection": "generated",
@@ -64567,6 +65035,12 @@
     },
     {
       "projection": "generated",
+      "source": "GONI-PRINCIPLE-3CE61BB5417A",
+      "target": "OPS-CONTRACT-01",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
       "source": "GONI-PRINCIPLE-80DD85BB01A0",
       "target": "SYS-04",
       "type": "synthesized_by"
@@ -64669,6 +65143,12 @@
     },
     {
       "projection": "generated",
+      "source": "GONI-SPEC-14AA0EDAFDD4",
+      "target": "OPS-CONTRACT-01",
+      "type": "refined_by"
+    },
+    {
+      "projection": "generated",
       "source": "GONI-SPEC-2F762878317A",
       "target": "CTX-COMP-01",
       "type": "refined_by"
@@ -64696,6 +65176,12 @@
       "source": "GONI-SPEC-33294E0D3306",
       "target": "SKILL-REG-01",
       "type": "refined_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-SPEC-4D10349C481A",
+      "target": "OPS-CONTRACT-01",
+      "type": "depended_on_by"
     },
     {
       "projection": "generated",
@@ -69474,6 +69960,42 @@
       "type": "synthesizes"
     },
     {
+      "projection": "generated",
+      "source": "OPS-CONTRACT-01",
+      "target": "CI-ASSURANCE-01",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "authored",
+      "source": "OPS-CONTRACT-01",
+      "target": "GONI-PRINCIPLE-3CE61BB5417A",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "OPS-CONTRACT-01",
+      "target": "GONI-SPEC-4D10349C481A",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "OPS-CONTRACT-01",
+      "target": "GONI-SPEC-14AA0EDAFDD4",
+      "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "OPS-CONTRACT-01",
+      "target": "EVID-AGENT-OPS-2026",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "OPS-CONTRACT-01",
+      "target": "EVAL-DELIVERY-01",
+      "type": "tested_by"
+    },
+    {
       "projection": "authored",
       "source": "OS-COMPLETENESS-CHECKLIST",
       "target": "GONI-SYNTHESIS-117D733A5254",
@@ -70533,6 +71055,26 @@
       "url": "https://arxiv.org/abs/2501.09674"
     },
     {
+      "accessed": "2026-11-04",
+      "citation": "Talebzadeh Bardsiri, A., Decan, A., & Mens, T. (2026). On the GitHub Actions Language: Usage, Evolution, and Workflow Reliability. IEEE ICSME 2026, Research Papers Track.",
+      "id": "SRC-BARDSIRI2026-GHA-LANGUAGE",
+      "kind": "academic",
+      "notes": "Peer-reviewed observational study of approximately 260,000 workflows and 49,000 repositories. Associations between complexity, failure, and maintenance do not establish the optimum CI design.",
+      "path": "sources/src-bardsiri2026-gha-language.yml",
+      "title": "On the GitHub Actions Language: Usage, Evolution, and Workflow Reliability",
+      "url": "https://orbi.umons.ac.be/handle/20.500.12907/56218"
+    },
+    {
+      "accessed": "2026-11-04",
+      "citation": "Talebzadeh Bardsiri, A., Mens, T., Decan, A., Degueule, T., & Falleri, J.-R. (2026, October 30). Stuck on Red? Understanding GitHub Actions Failing Streaks. arXiv:2610.41863 [preprint].",
+      "id": "SRC-BARDSIRI2026-STUCK-ON-RED",
+      "kind": "academic",
+      "notes": "Public preprint; observational evidence from over 30.9 million GitHub Actions runs. Association of multipurpose workflows with failing streaks is not causal.",
+      "path": "sources/src-bardsiri2026-stuck-on-red.yml",
+      "title": "Stuck on Red? Understanding GitHub Actions Failing Streaks",
+      "url": "https://arxiv.org/abs/2610.41863"
+    },
+    {
       "citation": "https://www.math.columbia.edu/~bayer/papers/Timestamp_BHS93.pdf",
       "id": "SRC-BAYER1993-TIMESTAMP",
       "kind": "academic",
@@ -70874,6 +71416,16 @@
       "url": "https://arxiv.org/abs/2004.04906"
     },
     {
+      "accessed": "2026-11-04",
+      "citation": "Kim, K., & Lee, S. (2026). Continuous Workflow Checker: Detecting Anti-Patterns in Real-World GitHub CI/CD Pipelines. SSRN preprint 6932039; reported accepted by Information and Software Technology in October 2026.",
+      "id": "SRC-KIM2026-WORKFLOW-CHECKER",
+      "kind": "academic",
+      "notes": "Cross-artifact analysis covering four anti-pattern classes and 1,984 repositories. The measured rates do not describe all CI/CD defects.",
+      "path": "sources/src-kim2026-continuous-workflow-checker.yml",
+      "title": "Continuous Workflow Checker: Detecting Anti-Patterns in Real-World GitHub CI/CD Pipelines",
+      "url": "https://ssrn.com/abstract=6932039"
+    },
+    {
       "citation": "https://www.sigops.org/s/conferences/sosp/2009/papers/klein-sosp09.pdf",
       "id": "SRC-KLEIN2009-SEL4",
       "kind": "academic",
@@ -70970,6 +71522,16 @@
       "notes": "Long-context LMs show positional sensitivity; evidence in the middle is used less reliably than evidence near prompt boundaries.",
       "path": "sources/src-liu2023-lost-middle.yml",
       "title": "liu2023-lost-middle"
+    },
+    {
+      "accessed": "2026-11-04",
+      "citation": "Mastouri, M., Ksontini, E., & Barrak, A. (2026, October 25). Built to Remember, Shipped to Forget: Operational Contracts, Failures, and Repairs in Containerized LLM Agent Deployments. arXiv:2610.34620 [preprint].",
+      "id": "SRC-MASTOURI2026-AGENT-OPS",
+      "kind": "academic",
+      "notes": "Public preprint analyzing deployment contracts for 433 agent systems; framework and sampling boundaries limit generalization to GONI.",
+      "path": "sources/src-mastouri2026-agent-operational-contracts.yml",
+      "title": "Built to Remember, Shipped to Forget: Operational Contracts, Failures, and Repairs in Containerized LLM Agent Deployments",
+      "url": "https://arxiv.org/abs/2610.34620"
     },
     {
       "citation": "https://arxiv.org/abs/2403.16971",
@@ -71404,6 +71966,16 @@
       "path": "sources/src-zhang2025-ace.yml",
       "title": "zhang2025-ace",
       "url": "https://arxiv.org/abs/2510.04618"
+    },
+    {
+      "accessed": "2026-11-04",
+      "citation": "Zhang, Y., Paul, U., d'Amorim, M., & Rahman, A. (2026). Configuration Defects in Kubernetes. IEEE Transactions on Software Engineering. doi:10.1109/TSE.2026.3659785.",
+      "id": "SRC-ZHANG2026-K8S-CONFIG",
+      "kind": "academic",
+      "notes": "Peer-reviewed classification of 719 Kubernetes configuration defects into 15 categories. Findings do not compare the total cost of different deployment topologies.",
+      "path": "sources/src-zhang2026-kubernetes-configuration-defects.yml",
+      "title": "Configuration Defects in Kubernetes",
+      "url": "https://doi.org/10.1109/TSE.2026.3659785"
     },
     {
       "citation": "Zheng, L., Yin, L., Xie, Z., Sun, C., Huang, J., Yu, C. H., Cao, S., Kozyrakis, C., Stoica, I., Gonzalez, J. E., Barrett, C., & Sheng, Y. (2024). SGLang: Efficient Execution of Structured Language Model Programs. Advances in Neural Information Processing Systems 37. https://doi.org/10.52202/079017-2000",
