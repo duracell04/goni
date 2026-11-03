@@ -1,0 +1,7 @@
+id: SRC-BARDSIRI2026-GHA-LANGUAGE
+title: "On the GitHub Actions Language: Usage, Evolution, and Workflow Reliability"
+kind: academic
+citation: "Talebzadeh Bardsiri, A., Decan, A., & Mens, T. (2026). On the GitHub Actions Language: Usage, Evolution, and Workflow Reliability. IEEE ICSME 2026, Research Papers Track."
+url: "https://orbi.umons.ac.be/handle/20.500.12907/56218"
+accessed: 2026-11-04
+notes: "Peer-reviewed observational study of approximately 260,000 workflows and 49,000 repositories. Associations between complexity, failure, and maintenance do not establish the optimum CI design."

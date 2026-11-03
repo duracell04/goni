@@ -1,0 +1,7 @@
+id: SRC-MASTOURI2026-AGENT-OPS
+title: "Built to Remember, Shipped to Forget: Operational Contracts, Failures, and Repairs in Containerized LLM Agent Deployments"
+kind: academic
+citation: "Mastouri, M., Ksontini, E., & Barrak, A. (2026, October 25). Built to Remember, Shipped to Forget: Operational Contracts, Failures, and Repairs in Containerized LLM Agent Deployments. arXiv:2610.34620 [preprint]."
+url: "https://arxiv.org/abs/2610.34620"
+accessed: 2026-11-04
+notes: "Public preprint analyzing deployment contracts for 433 agent systems; framework and sampling boundaries limit generalization to GONI."
