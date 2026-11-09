@@ -1,0 +1,6 @@
+id: SRC-NIST-SP800-193
+title: "NIST SP 800-193"
+kind: web
+citation: "Regenscheid, A. (2018). Platform Firmware Resiliency Guidelines. NIST SP 800-193."
+url: "https://csrc.nist.gov/pubs/sp/800/193/final"
+notes: "Protection, compromise detection and recovery of platform firmware."
