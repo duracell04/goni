@@ -1,0 +1,8 @@
+id: "SRC-SOUP-REPO"
+title: "Soup: fine-tune and post-train LLMs with optional layer streaming"
+kind: "repository"
+citation: "Soup contributors. Soup project repository and documentation, commit 4cff43bf967e96a484381205e5125e2fc39227f1 (accessed 2026-11-09)."
+url: "https://github.com/MakazhanAlpamys/Soup/tree/4cff43bf967e96a484381205e5125e2fc39227f1"
+revision: "4cff43bf967e96a484381205e5125e2fc39227f1"
+accessed: "2026-11-09"
+notes: "Primary upstream source for features, backend support, limitations, and beta status; project descriptions and benchmark claims are not independent GONI measurements."
