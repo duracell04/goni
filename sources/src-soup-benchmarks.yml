@@ -1,0 +1,8 @@
+id: "SRC-SOUP-BENCHMARKS"
+title: "Soup: low-VRAM NF4 training gate and controlled performance probe"
+kind: "measurement"
+citation: "Soup contributors. benchmarks/gate-v0.72.2-nf4.md and benchmarks/probe-v0.73.0-what-bounds-streaming.md, upstream project records, repository commit 4cff43bf967e96a484381205e5125e2fc39227f1 (accessed 2026-11-09)."
+url: "https://github.com/MakazhanAlpamys/Soup/blob/4cff43bf967e96a484381205e5125e2fc39227f1/benchmarks/gate-v0.72.2-nf4.md"
+revision: "4cff43bf967e96a484381205e5125e2fc39227f1"
+accessed: "2026-11-09"
+notes: "Upstream-reported benchmark and diagnostic ablations, including correctness repairs and clock-state qualifications. Companion profile: https://github.com/MakazhanAlpamys/Soup/blob/4cff43bf967e96a484381205e5125e2fc39227f1/benchmarks/probe-v0.73.0-what-bounds-streaming.md . Neither record is an independently reproduced GONI experiment."
