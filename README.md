@@ -5,6 +5,7 @@ GONI is a blueprint and architectural plan for a local-first Delegation OS. It i
 ## Start here
 
 - `knowledge/` contains the canonical atomic nodes and explanatory syntheses.
+- `research/` contains exploratory, non-canonical research notes for architectural review.
 - `maps/catalogue.json` is the deterministic machine projection.
 - `EDITORIAL_POLICY.md` defines status, evidence, uncertainty, and provenance boundaries.
 - `ontology/relations.yml` defines the controlled relation vocabulary.
