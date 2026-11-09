@@ -1,0 +1,6 @@
+id: SRC-TORRES-ARIAS-IN-TOTO-2019
+title: "Torres-Arias et al. (2019) in-toto"
+kind: academic
+citation: "Torres-Arias, S., et al. (2019). in-toto: Providing farm-to-table guarantees for bits and bytes. USENIX Security 2019."
+url: "https://www.usenix.org/conference/usenixsecurity19/presentation/torres-arias"
+notes: "Verifiable software supply-chain steps conditional on trusted verification roots."

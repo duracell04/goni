@@ -1,0 +1,6 @@
+id: SRC-NIST-SP800-160V2R1
+title: "NIST SP 800-160 Vol. 2 Rev. 1"
+kind: web
+citation: "Ross, R., et al. (2021). Developing Cyber-Resilient Systems: A Systems Security Engineering Approach. NIST SP 800-160 Vol. 2 Rev. 1."
+url: "https://csrc.nist.gov/pubs/sp/800/160/v2/r1/final"
+notes: "Anticipate, withstand, recover from and adapt to adverse system conditions."
