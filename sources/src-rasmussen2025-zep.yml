@@ -1,0 +1,7 @@
+id: "SRC-RASMUSSEN2025-ZEP"
+title: "Zep: A Temporal Knowledge Graph Architecture for Agent Memory"
+kind: "academic"
+citation: "Rasmussen, P., Paliychuk, P., Beauvais, T., Ryan, J., & Chalef, D. (2025). Zep: A Temporal Knowledge Graph Architecture for Agent Memory. arXiv:2501.13956."
+url: "https://arxiv.org/abs/2501.13956"
+accessed: "2026-11-11"
+notes: "arXiv preprint presenting temporally aware knowledge graph and benchmark claims; bitemporal/transactional guarantees are GONI engineering proposals, not demonstrated by citing this paper."

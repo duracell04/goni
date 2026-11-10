@@ -1,0 +1,7 @@
+id: "SRC-SHEN2026-MEM2ACTBENCH"
+title: "Mem2ActBench: A Benchmark for Evaluating Long-Term Memory Utilization in Task-Oriented Autonomous Agents"
+kind: "academic"
+citation: "Shen, Y., Li, K., Zhou, W., & Hu, S. (2026). Mem2ActBench: A Benchmark for Evaluating Long-Term Memory Utilization in Task-Oriented Autonomous Agents. ACL 2026, 8173–8190. DOI: 10.18653/v1/2026.acl-long.370."
+url: "https://aclanthology.org/2026.acl-long.370/"
+accessed: "2026-11-11"
+notes: "Peer-reviewed tool-grounding and memory-utilization benchmark; memory-dependent tool parameters must be evaluated separately from permission to execute."

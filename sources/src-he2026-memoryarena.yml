@@ -1,0 +1,7 @@
+id: "SRC-HE2026-MEMORYARENA"
+title: "Benchmarking Agent Memory in Interdependent Multi-Session Agentic Tasks (MemoryArena)"
+kind: "academic"
+citation: "He, Z., Wang, Y., Zhi, C., et al. (2026). Benchmarking Agent Memory in Interdependent Multi-Session Agentic Tasks. ICML 2026, PMLR 306:41975–42005."
+url: "https://proceedings.mlr.press/v306/he26am.html"
+accessed: "2026-11-11"
+notes: "Peer-reviewed benchmark measuring how retained experience supports subsequent interdependent agent actions; no general GONI implementation claim."

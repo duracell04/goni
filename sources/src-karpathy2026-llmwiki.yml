@@ -1,0 +1,7 @@
+id: "SRC-KARPATHY2026-LLMWIKI"
+title: "Andrej Karpathy: LLM Wiki architectural idea"
+kind: "web"
+citation: "Karpathy, A. (2026). LLM Wiki: persistent, interlinked, agent-maintained knowledge projection. GitHub Gist."
+url: "https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f"
+accessed: "2026-11-11"
+notes: "Architectural idea/reference, not a peer-reviewed research paper or a validated complete memory implementation."
