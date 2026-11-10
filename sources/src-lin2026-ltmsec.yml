@@ -1,0 +1,7 @@
+id: "SRC-LIN2026-LTMSEC"
+title: "A Survey on Long-Term Memory Security in LLM Agents"
+kind: "academic"
+citation: "Lin, Z., Hao, X., Fu, R., et al. (2026). A Survey on Long-Term Memory Security in LLM Agents: Attacks, Defenses, and Governance Across the Memory Lifecycle. EMNLP 2026, 52221–52235. DOI: 10.18653/2026.emnlp-main.2296."
+url: "https://aclanthology.org/2026.emnlp-main.2296/"
+accessed: "2026-11-11"
+notes: "Peer-reviewed survey proposing memory lifecycle and verifiable memory governance framework; not proof that any particular GONI enforcement design works."

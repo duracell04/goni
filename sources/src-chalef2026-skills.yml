@@ -1,0 +1,7 @@
+id: "SRC-CHALEF2026-SKILLS"
+title: "Learning by Doing: Autonomously Compiling and Curating Agent Skills from Verified Traces"
+kind: "academic"
+citation: "Chalef, D., Evans, P., Paliychuk, P., Patel, M., Rasmussen, P., & Ryan, J. (2026). Learning by Doing: Autonomously Compiling and Curating Agent Skills from Verified Traces. arXiv:2611.01386."
+url: "https://arxiv.org/abs/2611.01386"
+accessed: "2026-11-11"
+notes: "November 2026 preprint describing trace-to-skill compilation and curation using verified attempts; no independent GONI replication or peer-reviewed publication established."

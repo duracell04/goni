@@ -1,0 +1,7 @@
+id: "SRC-LATIMER2026-HINDSIGHT"
+title: "Hindsight: Structured Agent Memory that Retains, Recalls, and Reflects"
+kind: "academic"
+citation: "Latimer, C., Boschi, N., Neeser, A., et al. (2026). Hindsight: Structured Agent Memory that Retains, Recalls, and Reflects. ACL 2026 System Demonstrations, 275–285. DOI: 10.18653/v1/2026.acl-demo.27."
+url: "https://aclanthology.org/2026.acl-demo.27/"
+accessed: "2026-11-11"
+notes: "Peer-reviewed system demonstration; paper's performance numbers describe reported experimental results and are not independently reproduced for GONI."

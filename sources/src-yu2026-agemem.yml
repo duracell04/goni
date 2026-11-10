@@ -1,0 +1,7 @@
+id: "SRC-YU2026-AGEMEM"
+title: "Agentic Memory: Learning Unified Long-Term and Short-Term Memory Management for Large Language Model Agents"
+kind: "academic"
+citation: "Yu, Y., Yao, L., Xie, Y., et al. (2026). Agentic Memory: Learning Unified Long-Term and Short-Term Memory Management for Large Language Model Agents. ACL 2026 (Long Papers), 21457–21483. DOI: 10.18653/v1/2026.acl-long.981."
+url: "https://aclanthology.org/2026.acl-long.981/"
+accessed: "2026-11-11"
+notes: "Published learning-oriented memory-management method. GONI's memory writes and authority remain kernel-mediated rather than implicitly model-owned."

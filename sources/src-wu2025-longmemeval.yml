@@ -1,0 +1,7 @@
+id: "SRC-WU2025-LONGMEMEVAL"
+title: "LongMemEval: Benchmarking Chat Assistants on Long-Term Interactive Memory"
+kind: "academic"
+citation: "Wu, D., Wang, H., Yu, W., Zhang, Y., Chang, K.-W., & Yu, D. (2025). LongMemEval: Benchmarking Chat Assistants on Long-Term Interactive Memory. ICLR 2025."
+url: "https://proceedings.iclr.cc/paper_files/paper/2025/hash/d813d324dbf0598bbdc9c8e79740ed01-Abstract-Conference.html"
+accessed: "2026-11-11"
+notes: "Peer-reviewed memory benchmark for extraction, cross-session/temporal reasoning, updates, and abstention; does not alone test tool-action success."
