@@ -40,3 +40,9 @@ For `audit_grade` work, the Done Contract MUST also identify:
 - the minimum evidence scope required for the conclusion,
 - the allowed strength of negative claims,
 - and whether missing evidence must be surfaced before completion.
+
+### Scope and stopping discipline
+
+Under AGENT-NET-VALUE-01, optional agent-generated subtasks require an explicit contribution to an unmet completion criterion, a material uncertainty, or a binding safety or quality duty. When the deliverable, required verification, and stop condition are satisfied, execution stops. Further optional improvements are proposed under a new or expressly extended mandate.
+
+This rule preserves all existing capability, policy, and egress constraints.
