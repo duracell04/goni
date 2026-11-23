@@ -117,3 +117,74 @@ This case supports GONI's *failure-as-first-class-artifact*, *harness observabil
 Proposed mitigation: an evidence-gated diagnostic response that lists each claimed fact beside the exact observation, the tool stage reached, its boundary, the unresolved hypotheses, and the next high-value check. `EXP-TOOL-DIAG-01` defines a regression test before any harness behavior is promoted.
 
 **Status boundary:** this is a sanitized, evidence-calibrated incident analysis. It is not a validated repair of ChatGPT, an extension audit, or evidence that the GONI kernel implements the proposed safeguard.
+
+## Technical follow-up — managed execution and macOS boundary (reported 23 November 2026)
+
+### Scope of this supplement
+
+A further user-supplied technical correction described inspections of the local Codex configuration, a direct CLI version invocation, an environment-variable check in a different shell process, and a reset-and-retry of the JavaScript tool. These were **reported command outputs**, not independently captured original process logs. This section records what those reports could establish while preserving unknowns. It is separate from the direct Browser.list_tabs check already recorded above.
+
+### Supplemental atomic observations
+
+| Reported operation | Reported result | Supported interpretation and limit |
+| --- | --- | --- |
+| Parse `~/.codex/config.toml` with Python `tomllib` | `config_exists: true`; `mcp_servers.node_repl.command` names a bundled `cua_node/bin/node_repl` executable; `mcp_servers.node_repl.env.CODEX_CLI_PATH` names a bundled `codex-cli/.../codex` executable; `browser@openai-bundled` and `chrome@openai-bundled` have `enabled: true`. | The *file* contains these entries. No evidence that the active server loaded this file or inherited its `env` settings. Plugin flags are configuration declarations, not browser handshakes. |
+| Query `enabled` using `cfg.get("enabled")` | `"enabled": null` for `node_repl` | The field was absent from that parsed object, rather than demonstrated false or explicitly disabled. Effective enablement is unknown. |
+| Execute the configured CLI with `--version` in `exec_command` | Exit code 0, `codex-cli 0.171.0-alpha.13`; a warning says PATH aliases could not be created (`Operation not permitted`). | The executable answered a version request in that process. It does not establish managed child spawning, compatibility with the node service, or the source of the warning. |
+| Inspect shell environment | `CODEX_CLI_PATH: null`; a separate `codex` executable was found on `PATH`. | The tested *shell process* did not inherit the variable. This says nothing decisive about the separately launched MCP service. The found `PATH` executable is not evidence of which binary the managed service attempted. |
+| Invoke `mcp__node_repl__js` | `Managed execution requires a usable CODEX_CLI_PATH`; `isError: true`. | Managed tool invocation failed before reporting results for `typeof setupBrowserRuntime` or `typeof nodeRepl`. What “usable” means in the launcher is unobserved. |
+| Invoke `mcp__node_repl__js_reset({})` and retry | `js kernel reset`, followed by the same `CODEX_CLI_PATH` error. | Reset acknowledgement did not repair this invocation. A JavaScript-kernel reset cannot be assumed equivalent to restarting the MCP server or reloading process environment. |
+| Search a tool registry with name/description regexes | Reportedly `browser_tools: []` in the earlier session. | The query returned no *matching* entries in the exposed registry at that time. It is not an extension-installation or browser-connection test and may differ between sessions. |
+| Attempt `ps -axo comm=` | `PermissionError: [Errno 1] Operation not permitted: 'ps'`. | The process check failed. Actual ChatGPT/Brave/bridge process state remains unmeasured. |
+
+The exact earlier shell excerpt for the missing variable was presented as adjacent `value=...` and `print(...)` expressions without a separating line break; as pasted, that excerpt is not executable Python. Its **reported output** is preserved above, but the snippet is insufficient as a byte-identical command transcript.
+
+### System boundary model: two potentially independent tool paths
+
+The earlier explanation drew a single chain in which browser access necessarily followed the managed JavaScript runner. That topology is **unverified**. A more defensible conceptual model allows separate tool adapters:
+
+```text
+ChatGPT host / session tool registry
+    |
+    +-- MCP node_repl interface
+    |      -> effective server configuration/environment
+    |      -> CLI path validation and managed subprocess/sandbox
+    |      -> JavaScript code execution
+    |
+    +-- Browser interface (when offered)
+           -> conversation/origin binding and authorization
+           -> extension/bridge/browser session
+           -> tab read or control action, if granted
+```
+
+The paths may interact in a particular implementation, but their dependency must be demonstrated by an actual trace. In this case, the `node_repl` launcher failed before user code ran; the independently observed `Browser.list_tabs` origin-context error concerned a separate conversation and interface. Neither proves the other caused the failure.
+
+### Failure-domain discrimination
+
+| Hypothesis | Plausibility given observations | Discriminating evidence still required |
+| --- | --- | --- |
+| Configuration file differs from effective MCP environment | Possible | Service-scoped effective `CODEX_CLI_PATH` presence/value, configuration origin and process start time |
+| File exists but managed launch rejects the CLI for another reason | Possible | Exact `usable` predicate, invoked binary identity, exit code, spawn stderr, entitlement/sandbox refusal |
+| Version or code-signing/architecture mismatch in managed runtime | Possible, untested | Effective CLI version/build, executable architecture, signing identity, service runtime requirements and failing operation |
+| Sandbox or process-creation permission restriction | Possible, untested | OS error from the **specific managed spawn/validation operation**, not the unrelated `ps` denial or PATH alias warning |
+| Browser origin or extension handshake failure | Separate plausible downstream issue | Browser-tool invocation from originating context, handshake status, authorized tab enumeration |
+| Physical processor, RAM, storage or GPU defect | No affirmative evidence | Hardware diagnostics only if lower-level symptoms subsequently warrant them |
+
+A successful `--version` narrows simple executable absence or gross launch incompatibility **in that shell environment**, but does not prove every CLI subcommand or sandbox operation can run. Likewise, permission-denied warnings do not identify the security mechanism responsible for the managed JavaScript error.
+
+### Proposed discriminating diagnostic sequence
+
+1. **Identify process scope:** record the app build, macOS version, target executable hash/architecture, MCP server identity and request/trace ID; preserve which session performed each check.
+2. **Instrument effective server configuration:** report whether the target environment variable is present at the moment of invocation, which configuration source was loaded, and whether the path resolves; redact secrets and unnecessary private paths.
+3. **Instrument the `usable` preflight:** report each separately checked predicate (path present, regular file, permissions, selected version, expected interface, subprocess/sandbox bootstrap) and the first failing predicate, plus captured exit code/errno and bounded stderr.
+4. **Compare like-for-like execution:** attempt a benign CLI smoke test under the *same service identity and environment* as the failing invocation; the successful version query from a different shell is an insufficient control.
+5. **Investigate macOS boundaries conditionally:** inspect executable metadata and codesigning, then spawn/sandbox denial evidence only when the failing step points there; GUI Accessibility and Screen Recording permissions are distinct later-stage concerns.
+6. **Test browser independently:** after confirming the appropriate browser tool and originating context, request read-only tab discovery and inspect the exact handshake/authorization result.
+7. **Evaluate remedies as experiments:** a JavaScript-kernel reset, MCP service restart, app restart and extension rebind are different interventions. Record before/after symptoms and avoid interpreting an untested restart as a confirmed fix.
+
+### Research and governance conclusion
+
+The observed **error boundary** is the managed JavaScript tool invocation. The exact **internal cause** remains unknown because neither the service's effective environment nor its executable-validation and spawn trace was observed. The reported hardware evidence is too weak to assign a physical failure; the software hypotheses remain competing explanations.
+
+For GONI, the durable engineering lesson is to attach each diagnostic assertion to an attributable observation **in the same execution context**. Cross-process evidence may narrow hypotheses but must not be silently elevated to verified service state. `EXP-TOOL-DIAG-01` should include matched environment/launcher/origin tests before any diagnostic harness change is declared successful.
+

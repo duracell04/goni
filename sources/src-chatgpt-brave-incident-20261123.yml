@@ -1,6 +1,6 @@
 id: "SRC-CHATGPT-BRAVE-INCIDENT-20261123"
 title: "User-supplied case report of ChatGPT Mac Work-mode Brave browser diagnostics"
 kind: "internal"
-citation: "User-supplied conversation excerpts and retrospective correction, presented to GONI on 23 November 2026. Prior tool outputs were supplied as a report rather than authenticated traces."
+citation: "User-supplied conversation excerpts, technical configuration and CLI diagnostic report, and retrospective corrections, presented to GONI on 23 November 2026. Historical command outputs were supplied as a report rather than authenticated tool traces."
 accessed: "2026-11-23"
 notes: "Sanitized failure-case source. Does not establish the extension's actual installation/configuration, the browser-control capability set of the earlier conversation, or the cause of the earlier connection failure. A separate Browser.list_tabs probe on 23 November 2026 is recorded in the evidence node."
