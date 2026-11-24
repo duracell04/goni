@@ -1,6 +1,6 @@
 id: SRC-CASE20261124-TOOL-FAILURE
-title: "Redacted account of execution-path misattribution in an AI assistant"
+title: "Redacted screenshot and follow-up self-assessment of execution-path misattribution"
 kind: internal
-citation: "User-supplied screenshot of an assistant conversation, 2026-11-24; non-public primary material, summarized without personal identifiers."
-notes: "The screenshot shows an assistant reporting a failed managed execution with CODEX_CLI_PATH, then acknowledging that a user-side browser-repair suggestion conflated distinct access mechanisms. The screenshot does not contain independently authenticated runtime traces or browser configuration. Original image is not republished."
+citation: "User-supplied screenshot and subsequent verbatim assistant post-mortem shared in conversation, 2026-11-24; non-public primary material, summarized without identifying recipients."
+notes: "The screenshot records an executor error and a mistaken browser-repair suggestion. A later assistant self-assessment reports that CODEX_CLI_PATH was unset in its available shell, a local Codex CLI worked, browser control was not currently exposed, unchanged retries occurred, and a send was promised without an executable route. It also describes source-insufficient drafting and an unfinished message. These remain self-reported, not authenticated tool logs or independently verified user environment and destination states. Original private material is not republished."
 accessed: '2026-11-24'
