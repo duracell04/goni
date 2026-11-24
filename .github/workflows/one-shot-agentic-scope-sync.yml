@@ -1,0 +1,65 @@
+name: One-shot agentic-scope catalogue sync
+
+on:
+  push:
+    branches:
+      - docs/agentic-scope-proportionality-2026-11-23
+    paths:
+      - .github/workflows/one-shot-agentic-scope-sync.yml
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: python -m pip install -r tooling/requirements.txt
+      - name: Regenerate deterministic catalogue
+        run: python tooling/build_catalogue.py --edition-sha "$GITHUB_SHA"
+      - name: Validate graph and generated catalogue
+        run: python tooling/validate.py --strict --baseline pre-knowledge-graph-2026-08-03 --skip-commits
+      - name: Commit catalogue on topic branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          git add -- maps/catalogue.json
+          git diff --cached --exit-code && exit 0
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -F - <<'MSG'
+          kg(catalogue): Synchronize deterministic knowledge projection
+
+          Intent:
+          Update the generated machine catalogue for the agentic scope principle and its proposed evaluation.
+
+          Rationale:
+          The canonical nodes and source metadata require the exact deterministic output of the repository generator.
+
+          Status:
+          specified-only
+
+          Contracts:
+          - PRINCIPLE-AGENTIC-SCOPE-01
+          - EXP-AGENTIC-SCOPE-01
+
+          Files:
+          - maps/catalogue.json
+
+          Evidence:
+          - tooling/build_catalogue.py produced the machine projection.
+          - tooling/validate.py --strict --skip-commits passed prior to committing.
+
+          Unresolved:
+          - The one-shot helper must be removed after this commit.
+          MSG
+          python tooling/validate.py --strict --baseline pre-knowledge-graph-2026-08-03
+          git push origin HEAD:docs/agentic-scope-proportionality-2026-11-23
