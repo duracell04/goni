@@ -257,6 +257,10 @@
       "node": "GONI-PRINCIPLE-9062425CD490"
     },
     {
+      "alias": "minimal-sufficient-intervention",
+      "node": "PRINCIPLE-AGENTIC-SCOPE-01"
+    },
+    {
       "alias": "offline-cognition",
       "node": "GONI-DECISION-6D3A2B71C9E4"
     },
@@ -286,6 +290,7 @@
         "EVID-HA2018-WORLD-MODELS",
         "EVID-HAFNER2023-DREAMERV3",
         "EVID-PARK2023-GENERATIVE-AGENTS",
+        "EXP-AGENTIC-SCOPE-01",
         "GONI-DECISION-410431892DF4",
         "GONI-DECISION-6D3A2B71C9E4",
         "GONI-DECISION-9AF49466170D",
@@ -426,6 +431,7 @@
         "GONI-SYNTHESIS-CC4921DED1BB",
         "GONI-SYNTHESIS-DF627E719B9D",
         "GONI-SYNTHESIS-E2FB2167D274",
+        "PRINCIPLE-AGENTIC-SCOPE-01",
         "SKILL-EVAL-01",
         "SKILL-REG-01",
         "SPEC-KERN-01"
@@ -544,6 +550,13 @@
         "SCHEMA-MVP-01",
         "SPINE-01",
         "ZCO-01"
+      ],
+      "evaluation": [
+        "EXP-AGENTIC-SCOPE-01"
+      ],
+      "governance": [
+        "EXP-AGENTIC-SCOPE-01",
+        "PRINCIPLE-AGENTIC-SCOPE-01"
       ],
       "hardware": [
         "ADR-INDEX-HW",
@@ -2702,6 +2715,7 @@
         "GONI-SYNTHESIS-FFFD0BDE80BE",
         "INF-FRAME-01",
         "LSKR-01",
+        "PRINCIPLE-AGENTIC-SCOPE-01",
         "SKILL-REG-01",
         "SOV-AUDIT-01",
         "SYS-00",
@@ -2806,6 +2820,7 @@
         "EVID-SHENG2023-FLEXGEN",
         "EVID-VANDEVEN2020-BRAIN-REPLAY",
         "EVID-ZHENG2024-SGLANG",
+        "EXP-AGENTIC-SCOPE-01",
         "EXP-INF-PLACE-01",
         "FIRST-PARTY-LLM-CHATS",
         "FRONT-PANEL-MCU",
@@ -4656,6 +4671,7 @@
         "PLANE-01",
         "POWER-AND-PSU",
         "PRICING-MODELS",
+        "PRINCIPLE-AGENTIC-SCOPE-01",
         "PRIV-01",
         "REC-00",
         "REC-01",
@@ -4933,6 +4949,7 @@
         "EVID-SEC-01",
         "EVID-SEC-02",
         "EVID-SEC-03",
+        "EXP-AGENTIC-SCOPE-01",
         "EXP-INF-PLACE-01",
         "GONI-EXPERIMENT-0002BABA3DAF",
         "GONI-EXPERIMENT-00E7C79F4A95",
@@ -5509,7 +5526,8 @@
         "GONI-PRINCIPLE-E216CB231421",
         "GONI-PRINCIPLE-F53185B15CF9",
         "GONI-PRINCIPLE-FCA3E2C7A10C",
-        "GONI-PRINCIPLE-FD9D88AD1223"
+        "GONI-PRINCIPLE-FD9D88AD1223",
+        "PRINCIPLE-AGENTIC-SCOPE-01"
       ],
       "proposal": [
         "AI-MEDIA-PROVENANCE",
@@ -12571,6 +12589,36 @@
       "title": "Source claim: SGLang and RadixAttention",
       "type": "evidence",
       "uncertainty": "Reported throughput gains depend on workload, model, hardware, and runtime configuration and do not establish the cache-key or invalidation contract Goni should adopt."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Scope proportionality and marginal-value stopping evaluation\n\n**Status:** Proposed experiment; results and GONI implementation evidence are not yet available.\n\n## Research question\n\nDoes adding objective-preservation, early feasibility checks, explicit scope gates, and marginal-value stopping rules improve **whole-system delegated utility**, compared with an otherwise identical agent/harness, while maintaining task quality and authority boundaries?\n\n## Matched protocol\n\nUse paired, representative Work Orders and immutable Done Contracts across small document, coding, inbox, research, and integration tasks. Compare baseline and scoped-control variants with the **same** model family, context, tools, permissions, compute/time budgets, and starting artifacts. Include feasible tasks, deliberately infeasible dependencies, attractive but unnecessary extensions, and tasks where additional safety work is genuinely required. Randomize order and independently review completed artifacts and receipts.\n\nAt predetermined milestones, record whether a critical feasibility assumption was tested; whether a new dependency, service, permission, or architectural commitment was proposed and authorized; why each material action was considered necessary; and why the run stopped or escalated. Label avoidable work using blinded expert review against the principal's original Done Contract, documenting disagreements.\n\n## Evaluation endpoints\n\n- **Primary:** verified Done Contract completion conditional on policy compliance, together with total user-valued burden (time, resource cost, review effort, integration and estimated lifecycle liabilities).\n- **Scope:** rate and materiality of unrequested expansion; avoidable dependencies and interventions; unauthorized material changes.\n- **Feasibility:** time/resources spent before decisive assumptions are checked; work lost after an invalidating finding.\n- **Stopping:** excess actions after sufficiency, premature termination rate, and unnecessary continuation when estimated marginal benefit is below cost.\n- **Safety and agency:** unauthorized effects, irreversibility/rollback burden, review interruptions, and whether assumption, cost, and escalation records can be reconstructed.\n\nReport paired task-level distributions, uncertainty intervals, error examples, and safety/quality trade-offs. A putative benefit is falsified by reduced accepted task completion, more unauthorized effects, substantial false early stopping, or increased system-level cost despite fewer steps. Numeric thresholds and acceptance criteria must be prespecified before testing.\n\n## Evidence boundary\n\nThis node specifies **what to measure**, not that the intervention works. Trace-level evidence can show what occurred; causal attribution requires a controlled comparison and assessment of rival explanations. Do not equate local technical success, agent activity, or test counts with principal utility.",
+      "domains": [
+        "agent",
+        "evaluation",
+        "governance"
+      ],
+      "id": "EXP-AGENTIC-SCOPE-01",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/experiments/exp-agentic-scope-01-marginal-value-stopping-evaluation.md",
+      "proposition": "A matched evaluation should test whether scope and stopping controls reduce unnecessary interventions and lifecycle liabilities without degrading verified completion, authority compliance, or safety.",
+      "relations": [
+        {
+          "target": "PRINCIPLE-AGENTIC-SCOPE-01",
+          "type": "tests"
+        },
+        {
+          "target": "DELEG-INT-01",
+          "type": "depends_on"
+        }
+      ],
+      "sources": [],
+      "status": "draft",
+      "title": "Scope proportionality and marginal-value stopping evaluation",
+      "type": "experiment",
+      "uncertainty": "Protocol only. No benchmark results, effect sizes, thresholds, incident causation, or runtime implementation are established. Expert assessment of avoidable work and lifecycle cost is fallible and must be documented."
     },
     {
       "aliases": [],
@@ -61290,6 +61338,51 @@
       "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
     },
     {
+      "aliases": [
+        "minimal-sufficient-intervention"
+      ],
+      "artifacts": [],
+      "body": "# Objective-preserving scope proportionality\n\n## Proposition\n\nA technically competent autonomous agent may complete intermediate tasks correctly yet fail its principal through cumulative scope expansion. Additional components, refinements, integrations, and verification tasks can be locally defensible while reducing the net value of the originally authorized outcome. GONI therefore treats **scope proportionality** as a delegation-governance constraint: greater reasoning capacity should ordinarily identify a sufficient intervention with less unnecessary work, rather than enlarge the intervention by default.\n\n## Theoretical grounding and limits\n\n- **Bounded rationality and satisficing.** Simon (1955) motivates an acceptance threshold under costly search: a satisfactory, evidenced result can rationally terminate further exploration.\n- **Multitask principal–agent problems.** Holmström and Milgrom (1991) show how attention to measurable components can diverge from a principal's broader objective. For GONI this is an analytical analogy about delegated specifications and incentives, **not** evidence that models possess independent human-like motives.\n- **Goodhart-style proxy optimization.** Manheim and Garrabrant (2019) distinguish ways that increased optimization pressure on imperfect metrics can undermine the intended goal. Code volume, test counts, architectural sophistication, or the number of resolved subtasks are candidate progress signals, never substitutes for user-valued completion.\n- **System-level technical debt.** Sculley et al. (2015) document how successful local ML changes can create hidden dependencies, entanglement, and maintenance liabilities.\n\nThese frameworks identify **plausible mechanisms**, not a demonstrated causal explanation of any particular agent episode. Diagnosis requires the original Work Order, execution record, permission state, sequence of changes, and independently assessed outcomes.\n\n## Proposed control-plane contract\n\n1. **Bind the objective.** Every consequential delegation starts from an accepted Work Order and Done Contract stating the intended outcome, quality and safety floors, material constraints, budget, and authorized action surface. Model-generated subgoals remain proposals; technical usefulness does not by itself authorize new scope.\n2. **Test decisive assumptions early.** Before expensive or persistent implementation choices, identify the feasibility assumptions whose failure would invalidate the proposed path. Prefer inexpensive, reversible validation of the highest-consequence uncertainty.\n3. **Evaluate cumulative effects.** At material plan changes, compare prospective incremental benefit to total incremental cost: compute and money, user attention, implementation effort, integration and maintenance liabilities, security exposure, reversibility, lock-in, and opportunity cost. Judge local improvements by their effect on the entire approved outcome.\n4. **Gate scope expansion.** New external services, privileged access, durable infrastructure, recurring expense, providers, or significant architectural dependencies require their own kernel policy/mandate decision, even if they would improve a subtask. The agent MAY recommend these alternatives with reasons; it MUST NOT turn them into implicit authority.\n5. **Terminate or escalate.** Once the Done Contract is verified, stop unless the principal authorizes an additional objective. Earlier, continue an optional intervention only where its evidence-calibrated expected benefit exceeds its full expected marginal cost while remaining inside policy and quality constraints. If a critical assumption fails, a budget is exhausted, or the remaining path requires ungranted authority, stop, repair within scope, or seek a decisive decision.\n6. **Leave decision evidence.** Material continuation, expansion, termination, and escalation decisions SHOULD be reconstructable through existing Work Orders, policy decisions, evaluation artifacts, and receipts. Record the decisive assumption or marginal-value basis proportionately; routine micro-operations need no new bureaucratic workflow.\n\nThe marginal-value comparison is a **decision heuristic**, not a proof that utility can be measured precisely:\n\n```text\nContinue a material optional action only if:\n  authorized(action)\n  AND required quality/safety floors remain satisfiable\n  AND E[incremental value to Done Contract | evidence]\n        > E[total incremental lifecycle cost | evidence].\n```\n\nThe optimal intervention is the **least burdensome sufficient intervention**, not mechanically the fewest tool calls or the shortest implementation. Additional verification, redundancy, or security controls are justified when they materially improve the accepted result or satisfy non-negotiable constraints.\n\n## Falsification\n\nA scope policy fails when it prematurely terminates needed work, lowers verified task success or safety, causes more costly user interventions, or admits material dependencies without authorization. Its benefits remain unproven until tested against representative tasks and a comparable baseline; see `EXP-AGENTIC-SCOPE-01`.",
+      "domains": [
+        "agent",
+        "governance",
+        "system"
+      ],
+      "id": "PRINCIPLE-AGENTIC-SCOPE-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/principles/principle-agentic-scope-01-objective-preserving-scope-control.md",
+      "proposition": "Delegated work should preserve the principal's accepted outcome and stop at the smallest sufficient intervention, with early decisive feasibility checks and marginal-value scrutiny of material scope expansion.",
+      "relations": [
+        {
+          "target": "DELEG-INT-01",
+          "type": "refines"
+        },
+        {
+          "target": "DELEG-01",
+          "type": "refines"
+        },
+        {
+          "target": "GONI-THESIS-7BFB74017D50",
+          "type": "depends_on"
+        },
+        {
+          "target": "GONI-SYNTHESIS-E93AC4B42387",
+          "type": "supports"
+        }
+      ],
+      "sources": [
+        "SRC-SIMON1955-RATIONAL-CHOICE",
+        "SRC-HOLMSTROM-MILGROM1991-MULTITASK",
+        "SRC-MANHEIM-GARRABRANT2019-GOODHART",
+        "SRC-SCULLEY2015-HIDDEN-TECH-DEBT"
+      ],
+      "status": "draft",
+      "title": "Objective-preserving scope proportionality",
+      "type": "principle",
+      "uncertainty": "This is a proposed normative design contract, not observed GONI enforcement. Marginal value and lifetime cost are uncertain estimates. The cited literatures offer explanatory lenses rather than verified causal diagnoses of specific agent runs; effects require matched evaluation."
+    },
+    {
       "aliases": [],
       "artifacts": [],
       "body": "# 40 Privacy And Text Confinement\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n﻿# 40 – Privacy & Text Confinement\nDOC-ID: PRIV-01",
@@ -63320,6 +63413,12 @@
     {
       "projection": "generated",
       "source": "DELEG-01",
+      "target": "PRINCIPLE-AGENTIC-SCOPE-01",
+      "type": "refined_by"
+    },
+    {
+      "projection": "generated",
+      "source": "DELEG-01",
       "target": "GONI-EVIDENCE-4D46D89DBD78",
       "type": "supported_by"
     },
@@ -63334,6 +63433,18 @@
       "source": "DELEG-01",
       "target": "GONI-EVIDENCE-ADA29BB66BC9",
       "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "DELEG-INT-01",
+      "target": "EXP-AGENTIC-SCOPE-01",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
+      "source": "DELEG-INT-01",
+      "target": "PRINCIPLE-AGENTIC-SCOPE-01",
+      "type": "refined_by"
     },
     {
       "projection": "generated",
@@ -63538,6 +63649,18 @@
       "source": "EVID-ZHENG2024-SGLANG",
       "target": "GONI-SYNTHESIS-227700D474C6",
       "type": "supports"
+    },
+    {
+      "projection": "authored",
+      "source": "EXP-AGENTIC-SCOPE-01",
+      "target": "DELEG-INT-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "EXP-AGENTIC-SCOPE-01",
+      "target": "PRINCIPLE-AGENTIC-SCOPE-01",
+      "type": "tests"
     },
     {
       "projection": "authored",
@@ -68552,6 +68675,12 @@
     {
       "projection": "generated",
       "source": "GONI-SYNTHESIS-E93AC4B42387",
+      "target": "PRINCIPLE-AGENTIC-SCOPE-01",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-SYNTHESIS-E93AC4B42387",
       "target": "GONI-SWOT",
       "type": "synthesized_by"
     },
@@ -68788,6 +68917,12 @@
       "source": "GONI-THESIS-468CFFD9870E",
       "target": "GONI-SYNTHESIS-0FE689876A05",
       "type": "synthesized_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-THESIS-7BFB74017D50",
+      "target": "PRINCIPLE-AGENTIC-SCOPE-01",
+      "type": "depended_on_by"
     },
     {
       "projection": "generated",
@@ -69640,6 +69775,36 @@
       "source": "PLANE-00",
       "target": "GONI-SYNTHESIS-E39DF951B842",
       "type": "synthesizes"
+    },
+    {
+      "projection": "authored",
+      "source": "PRINCIPLE-AGENTIC-SCOPE-01",
+      "target": "GONI-THESIS-7BFB74017D50",
+      "type": "depends_on"
+    },
+    {
+      "projection": "authored",
+      "source": "PRINCIPLE-AGENTIC-SCOPE-01",
+      "target": "DELEG-01",
+      "type": "refines"
+    },
+    {
+      "projection": "authored",
+      "source": "PRINCIPLE-AGENTIC-SCOPE-01",
+      "target": "DELEG-INT-01",
+      "type": "refines"
+    },
+    {
+      "projection": "authored",
+      "source": "PRINCIPLE-AGENTIC-SCOPE-01",
+      "target": "GONI-SYNTHESIS-E93AC4B42387",
+      "type": "supports"
+    },
+    {
+      "projection": "generated",
+      "source": "PRINCIPLE-AGENTIC-SCOPE-01",
+      "target": "EXP-AGENTIC-SCOPE-01",
+      "type": "tested_by"
     },
     {
       "projection": "generated",
@@ -70811,6 +70976,15 @@
       "url": "https://arxiv.org/abs/2301.04104"
     },
     {
+      "citation": "Holmström, B., & Milgrom, P. (1991). Multitask Principal–Agent Analyses: Incentive Contracts, Asset Ownership, and Job Design. The Journal of Law, Economics, and Organization, 7(special issue), 24–52. https://doi.org/10.1093/jleo/7.special_issue.24",
+      "id": "SRC-HOLMSTROM-MILGROM1991-MULTITASK",
+      "kind": "academic",
+      "notes": "Analyzes distortions from measurable partial tasks in multitask agency; applied only as an analogy for delegated objective specification, not a claim of human economic incentives in AI models.",
+      "path": "sources/src-holmstrom-milgrom1991-multitask.yml",
+      "title": "Multitask Principal–Agent Analyses: Incentive Contracts, Asset Ownership, and Job Design",
+      "url": "https://doi.org/10.1093/jleo/7.special_issue.24"
+    },
+    {
       "citation": "https://www.microsoft.com/en-us/research/publication/principles-mixed-initiative-user-interfaces/",
       "id": "SRC-HORVITZ1999-MIXED-INITIATIVE",
       "kind": "web",
@@ -70970,6 +71144,15 @@
       "notes": "Long-context LMs show positional sensitivity; evidence in the middle is used less reliably than evidence near prompt boundaries.",
       "path": "sources/src-liu2023-lost-middle.yml",
       "title": "liu2023-lost-middle"
+    },
+    {
+      "citation": "Manheim, D., & Garrabrant, S. (2019). Categorizing Variants of Goodhart's Law. arXiv:1803.04585. https://arxiv.org/abs/1803.04585",
+      "id": "SRC-MANHEIM-GARRABRANT2019-GOODHART",
+      "kind": "academic",
+      "notes": "Working-paper taxonomy of proxy-optimization failures; does not establish causation in any particular GONI agent episode.",
+      "path": "sources/src-manheim-garrabrant2019-goodhart.yml",
+      "title": "Categorizing Variants of Goodhart's Law",
+      "url": "https://arxiv.org/abs/1803.04585"
     },
     {
       "citation": "https://arxiv.org/abs/2403.16971",
@@ -71206,6 +71389,15 @@
       "path": "sources/src-shneiderman2020-hcai-thci.yml",
       "title": "shneiderman2020-hcai-thci",
       "url": "https://aisel.aisnet.org/thci/vol12/iss3/1/"
+    },
+    {
+      "citation": "Simon, H. A. (1955). A Behavioral Model of Rational Choice. The Quarterly Journal of Economics, 69(1), 99–118. https://doi.org/10.2307/1884852",
+      "id": "SRC-SIMON1955-RATIONAL-CHOICE",
+      "kind": "academic",
+      "notes": "Foundational account of bounded rationality and satisficing; supports a theoretical rationale for sufficiency criteria, not measured evidence about AI agent behavior.",
+      "path": "sources/src-simon1955-rational-choice.yml",
+      "title": "A Behavioral Model of Rational Choice",
+      "url": "https://doi.org/10.2307/1884852"
     },
     {
       "citation": "https://slsa.dev/",
