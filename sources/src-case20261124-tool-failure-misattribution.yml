@@ -3,4 +3,4 @@ title: "Redacted account of execution-path misattribution in an AI assistant"
 kind: internal
 citation: "User-supplied screenshot of an assistant conversation, 2026-11-24; non-public primary material, summarized without personal identifiers."
 notes: "The screenshot shows an assistant reporting a failed managed execution with CODEX_CLI_PATH, then acknowledging that a user-side browser-repair suggestion conflated distinct access mechanisms. The screenshot does not contain independently authenticated runtime traces or browser configuration. Original image is not republished."
-accessed: 2026-11-24
+accessed: '2026-11-24'
