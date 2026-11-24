@@ -1,4 +1,5 @@
 name: One-shot tool-failure catalogue sync
+# Rerun after normalizing the incident source date scalar.
 
 on:
   push:
