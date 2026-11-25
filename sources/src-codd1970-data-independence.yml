@@ -1,0 +1,7 @@
+id: "SRC-CODD1970-DATA-INDEPENDENCE"
+title: "Codd (1970): A Relational Model of Data for Large Shared Data Banks"
+kind: "academic"
+citation: "Codd, E. F. (1970). A Relational Model of Data for Large Shared Data Banks. Communications of the ACM, 13(6), 377–387. https://doi.org/10.1145/362384.362685"
+url: "https://doi.org/10.1145/362384.362685"
+notes: "Primary foundational argument for logical/physical data independence; not evidence that a particular GONI implementation supports it."
+accessed: "2026-11-25"

@@ -1,0 +1,7 @@
+id: "SRC-WASM-WIT-INTERFACES"
+title: "WebAssembly Component Model: WIT Reference"
+kind: "web"
+citation: "Bytecode Alliance. WebAssembly Component Model: An Overview of WIT (online specification guide; accessed 2026-11-25)."
+url: "https://component-model.bytecodealliance.org/design/wit.html"
+notes: "WIT describes interoperable interface types and functions, not implementation behavior, side-effect permissions or equivalent semantics by itself."
+accessed: "2026-11-25"

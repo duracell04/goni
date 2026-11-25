@@ -1,0 +1,7 @@
+id: "SRC-LLVM-MLIR-IR"
+title: "LLVM MLIR: Language Reference"
+kind: "web"
+citation: "LLVM Project. MLIR Language Reference (online specification; accessed 2026-11-25)."
+url: "https://mlir.llvm.org/docs/LangRef/"
+notes: "Working example of typed operations, values, regions and multiple representations for a multi-level IR; not an assurance of semantics-preserving execution across arbitrary backends."
+accessed: "2026-11-25"

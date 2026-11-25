@@ -1,0 +1,7 @@
+id: "SRC-WICKHAM2014-TIDY"
+title: "Wickham (2014): Tidy Data"
+kind: "academic"
+citation: "Wickham, H. (2014). Tidy Data. Journal of Statistical Software, 59(10), 1–23. https://doi.org/10.18637/jss.v059.i10"
+url: "https://www.jstatsoft.org/article/view/v059i10/"
+notes: "Peer-reviewed practical discipline for structured tabular observations; this represents one useful data organization rather than a universal semantic ontology."
+accessed: "2026-11-25"

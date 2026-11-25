@@ -1,0 +1,7 @@
+id: "SRC-APACHE-ARROW-COLUMNAR"
+title: "Apache Arrow: Columnar format specification"
+kind: "web"
+citation: "Apache Arrow Project. Arrow Columnar Format — language-agnostic in-memory columnar specification (online reference; accessed 2026-11-25)."
+url: "https://arrow.apache.org/docs/format/Columnar.html"
+notes: "Primary technical specification for Arrow's physical layout, metadata and zero-copy opportunities. Arrow is itself language-independent; benefits and mutation costs depend on workload and layout."
+accessed: "2026-11-25"
