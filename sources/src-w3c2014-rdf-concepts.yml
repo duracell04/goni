@@ -1,0 +1,7 @@
+id: "SRC-W3C2014-RDF-CONCEPTS"
+title: "W3C (2014): RDF 1.1 Concepts and Abstract Syntax"
+kind: "web"
+citation: "W3C Recommendation (25 February 2014). RDF 1.1 Concepts and Abstract Syntax."
+url: "https://www.w3.org/TR/rdf11-concepts/"
+notes: "Normative abstract graph/triple data model with multiple serialization syntaxes. RDF alone does not express all application integrity, epistemic, or authorization requirements."
+accessed: "2026-11-25"

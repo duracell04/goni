@@ -1,0 +1,7 @@
+id: "SRC-PARNAS1972-INFORMATION-HIDING"
+title: "Parnas (1972): On the Criteria To Be Used in Decomposing Systems into Modules"
+kind: "academic"
+citation: "Parnas, D. L. (1972). On the Criteria To Be Used in Decomposing Systems into Modules. Communications of the ACM, 15(12), 1053–1058. https://doi.org/10.1145/361598.361623"
+url: "https://doi.org/10.1145/361598.361623"
+notes: "Academic basis for modular decomposition and hiding change-prone decisions behind stable interfaces; not proof that maximum abstraction is desirable."
+accessed: "2026-11-25"

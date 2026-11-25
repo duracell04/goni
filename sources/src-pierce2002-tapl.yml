@@ -1,0 +1,7 @@
+id: "SRC-PIERCE2002-TAPL"
+title: "Pierce (2002): Types and Programming Languages"
+kind: "academic"
+citation: "Pierce, B. C. (2002). Types and Programming Languages. MIT Press. ISBN 9780262162098."
+url: "https://mitpress.mit.edu/9780262162098/types-and-programming-languages/"
+notes: "Textbook reference for typed expressions, type systems, operational semantics and compositional programming-language theory. The proposed GONI algebra is an engineering synthesis, not a theorem attributed to this book."
+accessed: "2026-11-25"
