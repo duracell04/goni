@@ -291,15 +291,19 @@
         "AGENT-DEF-01",
         "AGENT-MANIFEST-01",
         "AGENT-STORE-01",
+        "COG-JOINT-01",
+        "COG-SPEC-01",
         "DAT-01",
         "DREAM-01",
         "DREAM-EVAL-01",
         "EVID-DESK-01",
         "EVID-HA2018-WORLD-MODELS",
         "EVID-HAFNER2023-DREAMERV3",
+        "EVID-JEV-202611",
         "EVID-PARK2023-GENERATIVE-AGENTS",
         "EVID-TOOL-FAILURE-20261124",
         "EXP-AGENTIC-SCOPE-01",
+        "EXP-COG-JOINT-01",
         "EXP-TOOLFAIL-01",
         "GONI-DECISION-410431892DF4",
         "GONI-DECISION-6D3A2B71C9E4",
@@ -441,11 +445,13 @@
         "GONI-SYNTHESIS-CC4921DED1BB",
         "GONI-SYNTHESIS-DF627E719B9D",
         "GONI-SYNTHESIS-E2FB2167D274",
+        "OBJ-COG-JOINT-01",
         "PRINCIPLE-AGENTIC-SCOPE-01",
         "SKILL-EVAL-01",
         "SKILL-REG-01",
         "SPEC-KERN-01",
-        "SPEC-TOOLFAIL-01"
+        "SPEC-TOOLFAIL-01",
+        "SYN-COG-JOINT-01"
       ],
       "billing": [
         "BILL-01",
@@ -565,7 +571,9 @@
       "evaluation": [
         "EVID-TOOL-FAILURE-20261124",
         "EXP-AGENTIC-SCOPE-01",
-        "EXP-TOOLFAIL-01"
+        "EXP-COG-JOINT-01",
+        "EXP-TOOLFAIL-01",
+        "OBJ-COG-JOINT-01"
       ],
       "governance": [
         "EXP-AGENTIC-SCOPE-01",
@@ -576,9 +584,13 @@
         "BOM-NOTES",
         "BOM-V1-APU-NODE",
         "BOM-V2-FRAMEWORK-395-128GB",
+        "COG-JOINT-01",
+        "COG-SPEC-01",
         "ENCLOSURE-NOTES",
         "EVID-AIRLLM-STREAMING",
         "EVID-SHENG2023-FLEXGEN",
+        "EVID-TAALAS-202611",
+        "EXP-COG-JOINT-01",
         "EXP-INF-PLACE-01",
         "FRONT-PANEL-MCU",
         "GONI-DECISION-048BDF1585D6",
@@ -737,10 +749,12 @@
         "HREQ-01",
         "INF-PLACE-01",
         "OS-AND-BASE-IMAGE",
-        "POWER-AND-PSU"
+        "POWER-AND-PSU",
+        "SYN-COG-JOINT-01"
       ],
       "kernel": [
         "CACHE-01",
+        "COG-JOINT-01",
         "CTX-COMP-01",
         "CTX-MISS-01",
         "DREAM-01",
@@ -838,6 +852,7 @@
         "GONI-SYNTHESIS-CC4921DED1BB",
         "GONI-SYNTHESIS-DF627E719B9D",
         "INF-PLACE-01",
+        "OBJ-COG-JOINT-01",
         "SPEC-ENF-01",
         "SPEC-KERN-01",
         "SPEC-POL-01",
@@ -846,6 +861,8 @@
       ],
       "market": [
         "AI-MEDIA-PROVENANCE",
+        "COG-SPEC-01",
+        "EVID-JEV-202611",
         "FIRST-PARTY-LLM-CHATS",
         "GONI-DECISION-1A750217A0DF",
         "GONI-EXPERIMENT-5EC52FDC4B47",
@@ -993,6 +1010,7 @@
         "PAY-PER-EXECUTION",
         "PERSONAL-AI-SECRETARY-LANDSCAPE",
         "PRICING-MODELS",
+        "SYN-COG-JOINT-01",
         "TECH-INTEL-RULES"
       ],
       "memory": [
@@ -1682,6 +1700,8 @@
       ],
       "research": [
         "CACHE-EVAL-01",
+        "COG-JOINT-01",
+        "COG-SPEC-01",
         "CTX-COMP-EVAL-01",
         "CTX-MISS-EVAL-01",
         "DREAM-01",
@@ -1692,6 +1712,7 @@
         "EVID-HA2018-WORLD-MODELS",
         "EVID-HAFNER2023-DREAMERV3",
         "EVID-HU2022-LORA",
+        "EVID-JEV-202611",
         "EVID-JIANG2023-LLMLINGUA",
         "EVID-JIANG2024-LONGLLMLINGUA",
         "EVID-LI2021-PREFIX-TUNING",
@@ -1699,8 +1720,10 @@
         "EVID-OPENAI2026-DREAMING",
         "EVID-PARK2023-GENERATIVE-AGENTS",
         "EVID-SHENG2023-FLEXGEN",
+        "EVID-TAALAS-202611",
         "EVID-VANDEVEN2020-BRAIN-REPLAY",
         "EVID-ZHENG2024-SGLANG",
+        "EXP-COG-JOINT-01",
         "EXP-INF-PLACE-01",
         "GONI-DECISION-6D3A2B71C9E4",
         "GONI-EVIDENCE-0577AE42BDFA",
@@ -1804,8 +1827,10 @@
         "GONI-SYNTHESIS-D3554320FEBD",
         "GONI-SYNTHESIS-D5A359AF7D66",
         "GONI-SYNTHESIS-F0626F7EFE2C",
+        "OBJ-COG-JOINT-01",
         "REF-GONIOS-NEIGHBOR-01",
-        "SKILL-EVAL-01"
+        "SKILL-EVAL-01",
+        "SYN-COG-JOINT-01"
       ],
       "security": [
         "GONI-DECISION-9AF49466170D",
@@ -1828,6 +1853,8 @@
         "CACHE-01",
         "CACHE-EVAL-01",
         "CI-VALIDATION-01",
+        "COG-JOINT-01",
+        "COG-SPEC-01",
         "CTX-COMP-01",
         "CTX-COMP-EVAL-01",
         "CTX-MISS-01",
@@ -1836,12 +1863,14 @@
         "EVID-AIRLLM-STREAMING",
         "EVID-GIM2024-PROMPT-CACHE",
         "EVID-HU2022-LORA",
+        "EVID-JEV-202611",
         "EVID-JIANG2023-LLMLINGUA",
         "EVID-JIANG2024-LONGLLMLINGUA",
         "EVID-LI2021-PREFIX-TUNING",
         "EVID-LI2023-SELECTIVE-CONTEXT",
         "EVID-SHENG2023-FLEXGEN",
         "EVID-ZHENG2024-SGLANG",
+        "EXP-COG-JOINT-01",
         "EXP-INF-PLACE-01",
         "GONI-DECISION-0532C27DA3CC",
         "GONI-DECISION-1A482B12FFB8",
@@ -2176,6 +2205,7 @@
         "SPINE-01",
         "SREQ-01",
         "SUB-INDEX-00",
+        "SYN-COG-JOINT-01",
         "VIS-RUNTIME-01",
         "ZCO-01"
       ],
@@ -2781,6 +2811,8 @@
         "CDC-01",
         "CGG-01",
         "CI-VALIDATION-01",
+        "COG-JOINT-01",
+        "COG-SPEC-01",
         "CRDT-AUDIT-01",
         "CRDT-DECISIONS-01",
         "CRDT-NOTES-01",
@@ -2822,6 +2854,7 @@
         "EVID-HARNESS-02",
         "EVID-HU2022-LORA",
         "EVID-INDEX-00",
+        "EVID-JEV-202611",
         "EVID-JIANG2023-LLMLINGUA",
         "EVID-JIANG2024-LONGLLMLINGUA",
         "EVID-LI2021-PREFIX-TUNING",
@@ -2836,10 +2869,12 @@
         "EVID-SEC-02",
         "EVID-SEC-03",
         "EVID-SHENG2023-FLEXGEN",
+        "EVID-TAALAS-202611",
         "EVID-TOOL-FAILURE-20261124",
         "EVID-VANDEVEN2020-BRAIN-REPLAY",
         "EVID-ZHENG2024-SGLANG",
         "EXP-AGENTIC-SCOPE-01",
+        "EXP-COG-JOINT-01",
         "EXP-INF-PLACE-01",
         "EXP-TOOLFAIL-01",
         "FIRST-PARTY-LLM-CHATS",
@@ -4681,6 +4716,7 @@
         "MODELS-OPENAI",
         "NET-01",
         "NONBYPASS-INTEGRATION-METRICS",
+        "OBJ-COG-JOINT-01",
         "OLLAMA-CLOUD",
         "OS-AND-BASE-IMAGE",
         "OS-COMPLETENESS-CHECKLIST",
@@ -4727,6 +4763,7 @@
         "SS-01",
         "SUB-INDEX-00",
         "SURF-00",
+        "SYN-COG-JOINT-01",
         "SYNC-01",
         "SYS-00",
         "SYS-01",
@@ -4838,6 +4875,7 @@
         "EVID-HA2018-WORLD-MODELS",
         "EVID-HAFNER2023-DREAMERV3",
         "EVID-HU2022-LORA",
+        "EVID-JEV-202611",
         "EVID-JIANG2023-LLMLINGUA",
         "EVID-JIANG2024-LONGLLMLINGUA",
         "EVID-LI2021-PREFIX-TUNING",
@@ -4845,6 +4883,7 @@
         "EVID-OPENAI2026-DREAMING",
         "EVID-PARK2023-GENERATIVE-AGENTS",
         "EVID-SHENG2023-FLEXGEN",
+        "EVID-TAALAS-202611",
         "EVID-TOOL-FAILURE-20261124",
         "EVID-VANDEVEN2020-BRAIN-REPLAY",
         "EVID-ZHENG2024-SGLANG",
@@ -4972,6 +5011,7 @@
         "EVID-SEC-02",
         "EVID-SEC-03",
         "EXP-AGENTIC-SCOPE-01",
+        "EXP-COG-JOINT-01",
         "EXP-INF-PLACE-01",
         "EXP-TOOLFAIL-01",
         "GONI-EXPERIMENT-0002BABA3DAF",
@@ -5498,7 +5538,8 @@
         "GONI-OBJECTION-BD867F03E1CC",
         "GONI-OBJECTION-D6A214F75206",
         "GONI-OBJECTION-D765A0BC3636",
-        "GONI-OBJECTION-EEC5A603DDFE"
+        "GONI-OBJECTION-EEC5A603DDFE",
+        "OBJ-COG-JOINT-01"
       ],
       "principle": [
         "AXIOMS-01",
@@ -5554,6 +5595,8 @@
       ],
       "proposal": [
         "AI-MEDIA-PROVENANCE",
+        "COG-JOINT-01",
+        "COG-SPEC-01",
         "FIRST-PARTY-LLM-CHATS",
         "GONI-PROPOSAL-05B21F15B3C6",
         "GONI-PROPOSAL-095C86A56DD4",
@@ -6717,6 +6760,7 @@
         "SOV-AUDIT-01",
         "SPEC-00",
         "SURF-00",
+        "SYN-COG-JOINT-01",
         "SYS-00",
         "SYS-01",
         "SYS-02",
@@ -6747,7 +6791,11 @@
         "THESIS-SOVEREIGN-DELEG-OS-01"
       ]
     },
-    "contested": []
+    "contested": [
+      "COG-JOINT-01",
+      "COG-SPEC-01",
+      "OBJ-COG-JOINT-01"
+    ]
   },
   "legacy_routes": [
     {
@@ -10994,6 +11042,125 @@
     {
       "aliases": [],
       "artifacts": [],
+      "body": "# Process-first heterogeneous cognitive joints\n\n**Research date:** 2026-11-27.\n\n## Design proposition\n\nThe operational body of a delegated computation is its typed state, events,\nwork-order objective, permissible state transitions, and execution interfaces.\nIts cognitive joints are independently measurable points where the next\nvalid transition depends on interpretation, estimation, prediction, or a\nchoice under uncertainty. Intelligence is distributed throughout those points.\nA general LLM is available for ambiguous, novel, compositional, or generative\nwork where it earns its computational cost.\n\nThe architectural inversion concerns the **primary unit of composition**:\na workflow and its decision contracts precede model allocation. It extends\nthe existing Harness Plane and agents-as-local-processes stance. It leaves\nthe formal node tuple, authority model, and existing decisions unchanged.\nA single capable model remains a legitimate implementation where decomposition\noffers insufficient benefit.\n\n| Body function | Candidate implementation | Output |\n| --- | --- | --- |\n| Skeleton and connective tissue | Typed workflow/state machine, event transport | State/version references and admissible transitions |\n| Senses | OCR, speech, vision encoder, embedding model | Bounded observations with provenance |\n| Reflex | Exact rule, lookup, calibrated classifier or decision-native model | Predicate, label, score, abstention |\n| Joint | Task-specific policy, trained ranker, solver, small model | Ranked candidate among permitted next steps |\n| Anticipation | Forecast, action-conditioned world model where validated | Predicted outcome and uncertainty |\n| Deliberation | General LLM or other planner | Proposed plan, explanation, candidate composition |\n| Muscle | Deterministic, capability-mediated application operation | Receipt or explicit failure |\n\nA classic classifier, gradient-boosted tree, constraint solver, discriminative\nneural model, typed System One model, SLM and frontier LLM represent distinct\ncomputational mechanisms. Assign a mechanism to the question, rather than\nrequire every joint to generate language. A JEPA-like world model is a\nprediction candidate, not a synonym for a decision-native model such as Jev.\n\n## Illustrative contract\n\nA joint consumes a versioned task contract, minimally sufficient authorized\nstate/evidence, declared candidate outcomes, a resource budget, and provenance.\nIt returns a typed judgment over those candidates, an uncertainty or abstention\nindicator where supported, model/profile identification, and timing/resource\nmeasurements. Its prediction is advisory; the kernel checks freshness,\napplicability, permissions and the current authoritative state and either\naccepts a valid transition, escalates, or declines.\n\nA typed response proves shape conformance only. It establishes neither truth\nnor permission. Calibration is measured for each workload and version; confidence\nis not itself evidence that supplied state is current. Constitutive constraints,\narithmetic, authoritative identity, exact membership, validation, effect\npermissions, budgets, revocation, and commits remain deterministic controls.\n\nEssential local/offline behavior must retain an available local path or explicit\nabstention. A hosted Jev-like API is an optional comparator or policy-approved\nnonessential cognitive service; it is not a required Goni dependency. Data\nminimization, principal authorization and existing egress controls apply.\n\n## Cross-layer allocation\n\nThe same logical contract can be evaluated on a CPU, GPU, NPU, or a supported\nspecialized accelerator appropriate to its compute, memory, latency, power and\nlifecycle profile. A model identity and substrate are selected together with\nthe task requirements, subject to the existing placement and budget contracts;\nchanges to either are versioned and evaluated. A fixed model in silicon is a\nfuture placement alternative for mature stable workloads, not a new MVP\nhardware requirement.",
+      "domains": [
+        "agent",
+        "software",
+        "hardware",
+        "kernel",
+        "research"
+      ],
+      "id": "COG-JOINT-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/proposals/cog-joint-01-heterogeneous-cognitive-joints.md",
+      "proposition": "A governed Goni workflow may allocate bounded semantic judgments to independently replaceable heterogeneous cognitive components at typed decision points, while the deterministic kernel retains state, policy and effect authority.",
+      "relations": [
+        {
+          "note": "Interpret the existing Harness Plane as a governed operational topology rather than assume an LLM-centric loop.",
+          "target": "GONI-IMAP-216164F1995B",
+          "type": "refines"
+        },
+        {
+          "note": "Distinguish routine local judgment from budgeted deliberative interrupts.",
+          "target": "GONI-DECISION-1A482B12FFB8",
+          "type": "refines"
+        },
+        {
+          "note": "Generalize small/large allocation across heterogeneous judgment mechanisms.",
+          "target": "GONI-DECISION-84F201170733",
+          "type": "refines"
+        },
+        {
+          "note": "Kernel-owned authority stays separate from learned cognition.",
+          "target": "GONI-DECISION-9AF49466170D",
+          "type": "depends_on"
+        },
+        {
+          "note": "Essential operation remains local and offline-capable.",
+          "target": "GONI-DECISION-7CD481DA15B7",
+          "type": "depends_on"
+        },
+        {
+          "note": "Resource-feasible hardware and model placement remains a governed concern.",
+          "target": "INF-PLACE-01",
+          "type": "depends_on"
+        }
+      ],
+      "sources": [
+        "SRC-BROOKS1991-SUBSUMPTION",
+        "SRC-SUTTON1999-OPTIONS",
+        "SRC-BAIR2024-COMPOUND",
+        "SRC-CHEN2025-LLMSELECTOR",
+        "SRC-TYPESAFE2026-JUDGMENT",
+        "SRC-BELCAK2025-SLM-AGENTS"
+      ],
+      "status": "draft",
+      "title": "Process-first heterogeneous cognitive joints",
+      "type": "proposal",
+      "uncertainty": "This is an architectural research proposal, not a new kernel contract or evidence of Goni's implementation. Benefit, decomposition granularity, interfaces, local-model availability, calibration, and maintenance remain unmeasured."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Economic specialization of cognitive workflows\n\n## Cognitive compilation as a research strategy\n\n1. Observe a real workflow and identify its actual decision points from\n   evidenced process traces. A baseline encompasses the best conventional\n   software and model-centric alternative.\n2. Specify the task/label space, correctness criteria, allowable transitions,\n   provenance, uncertainty handling and measurement at each recurring joint.\n3. Prototype semantically ambiguous work with the simplest sufficient\n   computational mechanism, including a general model where necessary.\n4. Collect and review approved traces and outcomes. Teacher-model predictions\n   can propose training labels; independently verified facts and human\n   judgments define target quality. Respect data rights and egress policy.\n5. Evaluate alternative implementations: exact rules, classical models,\n   discriminative decision models, SLMs, distilled policies, solvers,\n   world models and larger generative models, with suitable hardware.\n6. Select a jointly feasible graph/profile on held-out traces rather than\n   optimizing module scores in isolation. Promote versioned substitutions\n   only after end-to-end evaluation; retain rollback and bounded escalation.\n\nThis is analogous to Taalas specialization because a recurring computational\nfunction can move from flexible execution to a narrower substrate when\nthe trade-off is worthwhile. At the software layer, the specialization\nremains replaceable and independently versioned; a fixed silicon base model\nis a much later, capital-intensive physical option. DSPy, model selection,\ncascades and distillation provide precedents for parts of the compiler\nhypothesis, not evidence that a universal compiler is already feasible.\n\n## Quality-constrained economics\n\nFor a comparable evaluation horizon and N decision events, an implementation\nprofile P has illustrative lifecycle cost:\n\n$$\nC_P(N)=F_P+N c_P\n$$\n\nHere F includes incremental annualized design, data preparation, training,\nvalidation, hardware capital and fixed upkeep; c includes inference,\ndata movement, orchestration, escalation, review, retries, and expected\nerror/remediation loss per eligible event. Variable costs are estimates over\nthe actual workload mix, including rare costly cases; profile sizing,\nconcurrency, cloud availability, thermal ceilings, bounded time and memory\nare constraints. Evaluate cost per accepted end-to-end task as well as per\ndecision, with identical quality and authority criteria.\n\nFor incremental fixed cost ΔF and positive net marginal saving Δc, the\nsimple break-even volume is N* = ΔF / Δc. If Δc is nonpositive, this\nspecialization has no cost-only break-even under the assumptions.\n\n| Hypothetical annual case | General model | Specialized joint graph |\n| --- | ---: | ---: |\n| Comparable decision events | 2,000,000 | 2,000,000 |\n| Variable cost per decision | CHF 0.12 | CHF 0.03 |\n| Incremental annualized fixed cost | CHF 0 | CHF 75,000 |\n| Total annual cost | CHF 240,000 | CHF 135,000 |\n\nAt equal verified task quality and risk, annual cost savings would be CHF\n105,000 and break-even about 833,333 decisions/year. These are assumed\nnumbers for an explanatory calculation. An added 0.1 percentage-point\nerror rate at CHF 100 expected cost per additional error adds CHF 0.10\nper decision and eliminates the claimed benefit. Model obsolescence,\nuncertain utilization, failure correlation, retraining and procurement\nchanges require sensitivity analysis before investment.\n\n## Commercial hypothesis\n\nStart with paid workflow engineering for a stable, measurable high-value\nprocess. The buyer purchases verified operational value: accepted work,\nfewer manual review minutes, fewer costly errors, predictable latency,\nand controlled data exposure. Retain the minimal machinery that serves\nthat specific process and its authorized constraints.\n\nA subsequent product could package validated reusable cognitive joints,\nversioned evaluation suites and local deployment/managed support. A later\nplatform could automate joint allocation, distillation and placement across\nworkflow families when evidence demonstrates transfer and sustainable margins.\nPossible revenue models are implementation fees, local runtime/component\nlicensing and support, or clearly defined optional verified-outcome metering.\nKeep the local-first trust and portability promises independent of cloud usage.\nAssess contract conversion, retention, portability, deployment/support cost,\ncoverage, margin and verified customer value under actual pilot conditions.\n\nSierra reports commercial modular orchestration of over 15 models; this\ndemonstrates an analogous product architecture, not Goni demand, willingness\nto pay, or evidence that heterogeneous non-LLM joints outperform alternatives.",
+      "domains": [
+        "agent",
+        "hardware",
+        "market",
+        "software",
+        "research"
+      ],
+      "id": "COG-SPEC-01",
+      "implementation_state": "specified_only",
+      "legacy": [],
+      "path": "knowledge/proposals/cog-spec-01-cognitive-specialization-economics.md",
+      "proposition": "Specialize and place individual cognitive joints only when their incremental lifecycle economics and whole-workflow quality improve relative to the best simpler baseline under the same authority and resource constraints.",
+      "relations": [
+        {
+          "note": "Typed stable decision contracts permit measured substitution.",
+          "target": "COG-JOINT-01",
+          "type": "depends_on"
+        },
+        {
+          "note": "Placement must remain resource-feasible and policy-authorized.",
+          "target": "INF-PLACE-01",
+          "type": "depends_on"
+        },
+        {
+          "note": "Apply marginal-benefit discipline to specialization itself.",
+          "target": "PRINCIPLE-AGENTIC-SCOPE-01",
+          "type": "refines"
+        },
+        {
+          "note": "Relate proposed product economics to the cost of verified outcomes.",
+          "target": "PRICING-MODELS",
+          "type": "refines"
+        },
+        {
+          "note": "Outcome-metering is a secondary optional packaging hypothesis.",
+          "target": "PAY-PER-EXECUTION",
+          "type": "refines"
+        }
+      ],
+      "sources": [
+        "SRC-ROZINAT2006-DECISION-MINING",
+        "SRC-KHATTAB2024-DSPY",
+        "SRC-HSIEH2023-DISTILLATION",
+        "SRC-CHEN2025-LLMSELECTOR",
+        "SRC-BELCAK2025-SLM-AGENTS",
+        "SRC-FRUGALGPT2023",
+        "SRC-ROUTELLM2024",
+        "SRC-SIERRA2025-CONSTELLATION"
+      ],
+      "status": "draft",
+      "title": "Economic specialization of cognitive workflows",
+      "type": "proposal",
+      "uncertainty": "Financial illustration is hypothetical, not observed customer demand, vendor pricing, savings, or Goni unit economics. Compilation, training, operational and commercial feasibility require experiments."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
       "body": "# CRDT: audit\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n# CRDT: audit\n﻿---\nid: CRDT-AUDIT-01\ntype: SPEC\nstatus: specified_only\n---\n\nStatus: Specified only / roadmap\n\nThis file defines merge semantics for audit artifacts.",
       "domains": [
         "crdt",
@@ -12177,6 +12344,47 @@
       "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
     },
     {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# External evidence: Jev typed System One judgments\n\n## Interface and source boundary\n\nTypeSafe AI introduced Jev on 15 September 2026 as a System One model:\nprovide state and typed queries, receive bounded judgments rather than\nautoregressively generated text. Its reported question families include\nchoice among predefined options, ordinal/rubric scoring, and Boolean\nprobability (Noul). Multiple questions concerning shared state can be\nevaluated together. TypeSafe describes a parallel sampler and reinforcement\nlearning for calibrated decisions (RLCD); these are vendor descriptions,\nnot an independently established full technical specification. The 14 October\n1.14 announcement adds experimental image, output and context features.\n\nTypeSafe's 3 November clarification places judgment with the model and\ndecision/execution with application logic. This distinction is consonant\nwith Goni's existing probabilistic-cognition/deterministic-authority decision.\n\nThe discovery links were [jevai.net](https://jevai.net/) and\n[Wikipedia: Jev (AI model)](https://en.wikipedia.org/wiki/Jev_(AI_model)).\nAffiliation of the former with TypeSafe is unestablished; the latter could\nnot be retrieved during review. The vendor's own announcements and named\nexternal preprints provide the evidence here. Jev is distinct from LeCun's JEPA.\n\n## Empirical observations\n\nDeußer et al. (arXiv:2609.37647, preprint) report a zero-shot study of\nJev 1.13.0 across 37 datasets: 346,009 requests for under USD 10,\nstrong classification scores on several datasets, and useful choice\ncalibration. The binary-probability threshold required adjustment on\nsome datasets; performance degraded on finer-grained, noisy and\nlow-resource tasks.\n\nLi et al. (arXiv:2610.11978, preprint) report comparable knowledge and\ncommonsense multiple-choice performance versus general-purpose models\nin evaluated settings, with weaker multi-step mathematics performance.\nThese results support testing specific joints rather than blanket replacement\nof deliberative reasoning.\n\n## Price and economics\n\nAs accessed 27 November 2026, the official TypeSafe help entry last updated\n3 November lists USD 0.042 per million input tokens and free output tokens.\nThe supplied discovery website instead lists USD 0.084 per million input\ntokens. Use current provider-specific official terms before procurement.\nFor illustration only, a million calls of exactly 1,000 billable input tokens\neach at the direct listed rate have a USD 42 input-inference charge, before\nother billing dimensions, infrastructure, retries, escalation, human review,\nprivacy/governance or error costs. This is an arithmetic estimate, not a Goni\nbenchmark or a pricing commitment.\n\nJev is a useful externally hosted comparator. Neither local runnable weights,\noffline availability, vendor retention posture for a particular account,\nnor measured Goni performance has been established. No product dependency\nor data transfer is authorized by this evidence record.",
+      "domains": [
+        "agent",
+        "software",
+        "research",
+        "market"
+      ],
+      "id": "EVID-JEV-202611",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/evidence/evid-jev-202611-typed-system-one-judgments.md",
+      "proposition": "Jev exposes a hosted typed judgment interface whose evaluated single-pass classifications and rankings motivate testing decision-native models as replaceable Goni cognitive joints.",
+      "relations": [
+        {
+          "note": "Concrete interface precedent for bounded model judgments.",
+          "target": "COG-JOINT-01",
+          "type": "supports"
+        },
+        {
+          "note": "Provides a comparator for lower variable-cost judgment execution.",
+          "target": "COG-SPEC-01",
+          "type": "supports"
+        }
+      ],
+      "sources": [
+        "SRC-TYPESAFE2026-JEV",
+        "SRC-TYPESAFE2026-JUDGMENT",
+        "SRC-TYPESAFE2026-JEV114",
+        "SRC-TYPESAFE2026-JEV-PRICE",
+        "SRC-JEVAI2026-DISCOVERY",
+        "SRC-DEUSSER2026-JEV",
+        "SRC-LI2026-JEV-COMPARISON"
+      ],
+      "status": "draft",
+      "title": "External evidence: Jev typed System One judgments",
+      "type": "evidence",
+      "uncertainty": "The vendor architecture and training details are not independently established. External results concern particular Jev versions and datasets; hosted model price, terms, and availability may change."
+    },
+    {
       "artifacts": [],
       "body": "# Source claim: LLMLingua\n\nLLMLingua uses coarse-to-fine prompt compression with an explicit budget\ncontroller intended to retain task-relevant information under aggressive token\nreduction.\n\n## Goni relevance\n\nThe paper supports treating token budget and compression policy as first-class\ncontext-assembly variables rather than assuming that all retrieved text should\nenter the prompt verbatim.\n\n## Boundary\n\nGoni must separately measure decisive-evidence recall, citation fidelity,\nauthority-layer safety, latency, and compression loss on representative tasks.",
       "domains": [
@@ -12564,6 +12772,43 @@
     {
       "aliases": [],
       "artifacts": [],
+      "body": "# External evidence: model-specific inference silicon\n\n## Reported observations (as of 2026-11-27)\n\nTaalas reported approximately 17,000 output tokens/s per user for the HC1\ntechnology demonstrator containing a hardware-specialized Llama 3.1 8B\nbase model. The manufacturer's comparison uses 1k input/1k output tokens\nand an H200 baseline sourced from NVIDIA; other points are from different\nmeasurement sources. The roughly 230 tokens/s H200 point yields a headline\nratio of about 74x, not a normalized total throughput or cost ratio. The\ncompany reports mixed 3-/6-bit parameters and acknowledges quality loss.\nHC1's published server configuration is 2.5 kW; its die is 815 mm² on 6 nm.\nThe fixed base model limits upgrades while configurable context and LoRA\nadapters preserve some adaptability.\n\nOn 17 November 2026, AMD announced completion of its acquisition of Taalas.\nAMD's 4 November 2026 Form 10-Q described approximately USD 2.9 billion\ntransaction consideration, including up to approximately USD 1.4 billion\ncontingent consideration. This establishes industrial investment in\nspecialized inference silicon, not the realized unit economics of HC1.\n\nLamb Labs reports a compressed one-bit Qwen-derived 27B model at 3.8 GB\n(current software demo on a GPU); separate FPGA prototypes include an\non-chip tiny-model demonstration. Its proposed ASIC for a 27B model and\n20,000+ tokens/s remains a target as of the cited roadmap.\n\n## Goni interpretation\n\nMoving repeated weight traffic closer to computation addresses a physical\nmemory-bandwidth and energy bottleneck. The architectural analogy is to\nreduce repeated interpretation of the same workflow/context by assigning\nstable cognitive functions to purpose-built computational mechanisms.\nThe two optimizations occur at different layers. Model-specific silicon\ndoes not imply that software workflows, permissions, or application state\nshould be hardwired.\n\nModel turnover, quantization quality, fabrication cost and lead time,\ncontext processing, KV/activation storage, batching, utilization,\nenergy, thermal limits, and cost per verified task determine feasibility.\nDistinguish latency of a stream from aggregate throughput and measure\nthe end-to-end workflow. No cited device is a Goni wearable or MVP component.",
+      "domains": [
+        "hardware",
+        "research"
+      ],
+      "id": "EVID-TAALAS-202611",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/evidence/evid-taalas-202611-model-specific-silicon.md",
+      "proposition": "Taalas HC1 is a reported model-specific Llama inference demonstrator illustrating the performance potential and upgrade constraints of specializing silicon around a fixed base model.",
+      "relations": [
+        {
+          "note": "Illustrates a specialization trade-off at the physical substrate layer.",
+          "target": "COG-SPEC-01",
+          "type": "supports"
+        },
+        {
+          "note": "Motivates selecting computational mechanisms for a stable workload rather than universally optimizing general computation.",
+          "target": "COG-JOINT-01",
+          "type": "supports"
+        }
+      ],
+      "sources": [
+        "SRC-TAALAS2026-UBIQUITOUS",
+        "SRC-TAALAS2026-HC1",
+        "SRC-AMD2026-TAALAS-CLOSE",
+        "SRC-AMD2026-10Q",
+        "SRC-LAMBLABS2026-MPU"
+      ],
+      "status": "draft",
+      "title": "External evidence: model-specific inference silicon",
+      "type": "evidence",
+      "uncertainty": "Reported performance is vendor evidence, not a matched independent benchmark. Neither deal value, roadmap targets nor demonstration results establish Goni feasibility, economics, or deployment."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
       "body": "# Case report: execution-path failure misattributed to user browser\n\n## Reported observation\n\nA user-supplied screenshot of an assistant conversation shows a delegated browser-mediated messaging task interrupted by a reported execution error:\n\n```text\nManaged execution requires a usable CODEX_CLI_PATH\n```\n\nThe assistant first implied the user needed to restore browser access. In the same displayed exchange, it subsequently acknowledged that an earlier browser/computer-control path and the failing managed-execution path were distinct, and that the proposed browser-repair instruction was not supported by the observed error. The displayed assistant also reported that the message **had not been sent**.\n\n## Subsequent assistant self-assessment (reported, not independently checked)\n\nThe user subsequently supplied the assistant's more specific post-mortem. The assistant reported the following checks:\n\n| Reported check | Reported outcome | Evidentiary boundary |\n| --- | --- | --- |\n| `CODEX_CLI_PATH` in the shell available to the assistant | Unset | Establishes only that shell's variable state; the failing managed executor may use another environment |\n| Codex binary on the user's Mac | Present; command returned `codex-cli 0.169.0` | Does not establish that the managed execution tool is configured to use that binary |\n| Browser-control tool exposed to that conversation | None found | A current-session tool-availability observation, not evidence the browser is uninstalled |\n| Earlier browser access | Reportedly succeeded, with user-provided screenshot | Earlier access does not prove current-session tool availability |\n\nThe assistant also acknowledged repeatedly invoking an unchanged failed route, promising to send and verify before establishing an executable route, and suggesting browser remediation without sufficient evidence. At the task-quality layer, it acknowledged drafting an outbound reply without first obtaining the counterparty's exact latest message, then proposing multiple high-friction diagnostic questions and a vague discussion. Its final status was that a particular outbound message had **not been sent by that session**. These are self-reported findings; the underlying tool traces, destination account, and local shell were not independently inspected for this case report.\n\nCrucially, `CODEX_CLI_PATH` being unset in the inspected shell is **consistent with** an execution-configuration hypothesis, but does not prove the failed tool uses that shell or establish its root cause.\n\n## Interpretation\n\nThe demonstrated failure is **diagnostic boundary confusion**: an error surfaced at one tool/execution boundary was treated as evidence about a different boundary (the user's browser environment). That unsupported causal leap risked transferring a platform or assistant capability problem to the user and distracted from the original delegated outcome. The further report identifies distinct process failures: **retrying without a changed hypothesis**, **claiming execution capability before preflight**, and **drafting a consequential communication from insufficient source context**.\n\nThis record does **not** establish the infrastructure root cause, the current state of the browser or earlier sessions, or the external messaging service's independently confirmed state. In particular, an assistant's statement that no message was sent is a reported status, not proof from the destination system.\n\n## Generalizable failure mode\n\n```text\nObserved tool error → repeated unchanged route\n→ unverified cross-boundary diagnosis and premature delivery promise\n→ unsupported user remediation / insufficiently grounded draft\n→ delegated outcome remains unresolved\n```\n\nA later apology or corrected explanation can improve transparency but does not itself restore task completion. The architectural lesson is to preserve the distinction among **what failed**, **where it failed**, **what actually happened**, and **what the user must do, if anything**.\n\n## Privacy and evidence boundary\n\nThis is a minimal, redacted case report grounded in a user-shared screenshot and later assistant self-assessment. Neither original transcript nor screenshot is embedded in the public blueprint. No recipient identity, message contents, browser profile, session token, or private account details are retained here.\n\nThe proposed prevention contract is `SPEC-TOOLFAIL-01`. Its effectiveness remains to be evaluated.",
       "domains": [
         "agent",
@@ -12672,6 +12917,60 @@
       "title": "Scope proportionality and marginal-value stopping evaluation",
       "type": "experiment",
       "uncertainty": "Protocol only. No benchmark results, effect sizes, thresholds, incident causation, or runtime implementation are established. Expert assessment of avoidable work and lifecycle cost is fallible and must be documented."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Evaluation of heterogeneous cognitive joints\n\n## Comparison\n\nUse bounded ordinary document triage, inbox categorization, routing,\nfield extraction and reconciliation advisory tasks with independently\nlabeled expected results. Choose tasks from authorized, sanitized or synthetic\ndata; replay without external effects. Keep the same work order, reference\nstate, allowed actions, explicit authority checks, validation, maximum\nbudget and completion criteria.\n\n- A: straightforward LLM plus conventional harness and deterministic tools.\n- B: explicit workflow with distinct generative-model modules.\n- C: identical workflow contracts with heterogeneous candidates such as\n  deterministic rules, a local classifier or small model, learned ranker,\n  optional world model for a demonstrably predictive task, and budgeted\n  deliberative escalation. Treat Jev as a separately reported, opt-in hosted\n  comparator with permissible data. It cannot establish an offline result.\n- D: best applicable all-deterministic or conventional ML baseline to test\n  whether any generative or agentic machinery is justified.\n\nSeparate the graph-topology effect (A vs B) from model-mechanism substitution\n(B vs C). Pair cases across arms, freeze task splits and versions, use\nblind correctness review, and record ablations of relevant joints. Compare\nlocal-only and approved optional remote profiles separately.\n\n## Measurements\n\nPrespecify task success and error severity, acceptable false-positive/negative\nrates, critical failure classes, maximum latency, budget and review burden,\nstatistical reporting and sample-size logic before observing the evaluation\nsplit. Report end-to-end accepted completion conditional on authority\ncompliance and cost per accepted task; also report coverage/abstention,\ncalibration (Brier score, reliability by cohort), escalation, rework,\np50/p95 latency, throughput, resource utilization, joules per accepted task\nwhere instrumented, input/output token counts, error cascades, dependencies,\nmaintenance time and robustness under version changes.\n\nProbe multiple updates to one entity, stale context, missing evidence,\nout-of-domain inputs, option order, conflicting inputs, timeouts and\nbackend failure. Test that proposals cannot become authorized effects\nwhen stale, invalid, or unpermitted. Count error and review cost as\nordinary economic outcomes rather than omit failed calls. Retain\nnegative results and measured-versus-estimated distinctions.\n\nRecord exact model/runtime identities, version and configuration, hardware,\ndata/evaluation manifests, pricing timestamp and relevant terms. Measure\nthe development/maintenance cost and repeated-use volume that would justify\neach replacement; verify cross-layer deployment feasibility independently.\n\n## Acceptance boundary\n\nThe hypothesis is weakened if the simpler baseline matches or exceeds\ntask-level economics at the agreed risk/quality/latency level, if\nerror propagation undermines acceptance, or if maintenance and deployment\ncosts exceed the observed savings. No relaxation of the authority boundary\nis admissible as a performance gain.\n\nA future runnable experiment belongs in the prototype lab or separately\napproved experiment repository. Only repository-and-full-commit-pinned\nresults with stated scope, including failed results, constitute Goni\nimplementation/measurement evidence. This blueprint adds no runtime code.",
+      "domains": [
+        "research",
+        "evaluation",
+        "agent",
+        "hardware",
+        "software"
+      ],
+      "id": "EXP-COG-JOINT-01",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/experiments/exp-cog-joint-01-cross-layer-cognitive-architecture-evaluation.md",
+      "proposition": "A matched experiment should test whether process-first heterogeneous cognitive graphs attain better end-to-end accepted-task economics and latency than a conventional LLM harness and an LLM-only modular graph.",
+      "relations": [
+        {
+          "note": "Compare modularity and decision mechanisms at equivalent operational boundaries.",
+          "target": "COG-JOINT-01",
+          "type": "tests"
+        },
+        {
+          "note": "Measure cost/quality frontier and specialization break-even.",
+          "target": "COG-SPEC-01",
+          "type": "tests"
+        },
+        {
+          "note": "Probe stale-state, correlated-error and coordination failures.",
+          "target": "OBJ-COG-JOINT-01",
+          "type": "tests"
+        },
+        {
+          "note": "Associate measurements with named hardware/runtime profiles.",
+          "target": "EXP-INF-PLACE-01",
+          "type": "depends_on"
+        },
+        {
+          "note": "Use governed evaluation traces and versioned harness changes.",
+          "target": "EVID-HARNESS-01",
+          "type": "depends_on"
+        }
+      ],
+      "sources": [
+        "SRC-DEUSSER2026-JEV",
+        "SRC-YANG2026-JEV-LIMITS",
+        "SRC-IMPERATRICE2026-JEV-BIAS",
+        "SRC-GEIFMAN2017-SELECTIVE"
+      ],
+      "status": "draft",
+      "title": "Evaluation of heterogeneous cognitive joints",
+      "type": "experiment",
+      "uncertainty": "Protocol only. No experiment has been executed; quality thresholds, workload prevalence, resource limits, sample sizes, and hardware/provider choices require prespecification."
     },
     {
       "aliases": [],
@@ -61109,6 +61408,44 @@
     {
       "aliases": [],
       "artifacts": [],
+      "body": "# Objection: confident joints can inherit incorrect state\n\nYang et al. (2026 preprint) report that evaluated Jev-style single-pass\nmodels handled large record lookup tasks but deteriorated when resolving\nmultiple updates to the same entity required state reconstruction.\nGiven stale summaries, their choices followed the supplied premise;\nevaluated confidence and handoff approaches did not consistently detect\ninherited state errors. Imperatrice et al. report sensitivity to option order,\nirrelevant numeric inputs, and reformulations, including logical consistency\nfailures across equivalent conjunction tasks. Li et al. report a comparative\nweakness on multi-step mathematical tasks.\n\nThe implication is sharper than ordinary confidence calibration: a high\nscore conditioned on a wrong state can be misleading. Separately accurate\njoints can also generate correlated mistakes or fail because a globally\nnecessary dependency was lost during decomposition. Mechanical JSON/enum\nvalidity does not express task correctness. A larger deliberative model can\nalso be wrong.\n\nEvaluation must therefore compare whole-task success and error loss against\nthe monolithic and modular baselines. Include stale/conflicting evidence,\nunknown options, option permutations, semantically equivalent formulations,\nlong dependent sequences, missing context, changed work orders, and\ndistribution shift. Reconstruct state from authoritative current records\nwhere required; treat summaries as cognitive aids. Use independently\nvalidated risk/coverage thresholds, abstention, bounded deliberation and\nhuman review for unresolved judgments. Never derive effect authorization\nfrom a confidence number.\n\nThis objection remains open until the relevant experiment produces pinned\nevidence. Prefer a simpler implementation when coordination overhead or\nfailure propagation defeats specialization.",
+      "domains": [
+        "agent",
+        "research",
+        "evaluation",
+        "kernel"
+      ],
+      "id": "OBJ-COG-JOINT-01",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/objections/obj-cog-joint-01-cascading-and-inherited-judgment-error.md",
+      "proposition": "Decomposing cognition into fast typed decisions can increase system-level error through stale state, lost dependencies, distribution shift or correlated mistakes even when individual outputs are confidently typed.",
+      "relations": [
+        {
+          "note": "Module accuracy and schema validity alone do not justify deploying a distributed graph.",
+          "target": "COG-JOINT-01",
+          "type": "objects_to"
+        },
+        {
+          "note": "Lower inference cost can be offset by compounded errors and rework.",
+          "target": "COG-SPEC-01",
+          "type": "objects_to"
+        }
+      ],
+      "sources": [
+        "SRC-YANG2026-JEV-LIMITS",
+        "SRC-IMPERATRICE2026-JEV-BIAS",
+        "SRC-LI2026-JEV-COMPARISON",
+        "SRC-GEIFMAN2017-SELECTIVE"
+      ],
+      "status": "draft",
+      "title": "Objection: confident joints can inherit incorrect state",
+      "type": "objection",
+      "uncertainty": "These are external reported findings and plausible system risks. Failure magnitude and mitigation effectiveness in Goni remain unknown."
+    },
+    {
+      "aliases": [],
+      "artifacts": [],
       "body": "# Ollama Cloud - Supplier Snapshot (GLM-5 Cloud Option)\n\n> Status boundary: this is a migrated draft. For `specified_only` nodes, present-tense or enforcement language below states intended contract behavior, not observed implementation, verification, or non-bypassability.\n\n# Ollama Cloud - Supplier Snapshot (GLM-5 Cloud Option)\n\nLast updated: 2026-02-16 (notes-based, verify source data)\n\nCategory: cloud model gateway option.",
       "domains": [
         "market"
@@ -62641,6 +62978,71 @@
       "uncertainty": "Preserved from the legacy draft without status promotion or newly inferred evidence strength."
     },
     {
+      "aliases": [],
+      "artifacts": [],
+      "body": "# Hardware, model and harness co-design: intelligence at the joints\n\n## Research origin (27 November 2026)\n\nTaalas's specialized model-in-silicon approach suggests a broader question:\ncould a software delegation system be designed around the body's individual\ndecision points, using a different computational mechanism where appropriate,\nrather than assume that a universal language model must control the whole body?\nThe analogy is architectural and economic, not a claim of identical\nphysical mechanisms or the need to manufacture chips for Goni.\n\n| Layer | General-purpose relationship | Specialization hypothesis |\n| --- | --- | --- |\n| Hardware ↔ model | Load compatible parameters into general compute and memory | Co-design parameters and compute/data movement for a stable model |\n| Model ↔ harness | A general LLM interprets context and orchestrates operations | A typed operational graph allocates cognition to its individual joints |\n| Software ↔ hardware | Choose compute platform for an aggregate model workload | Choose a feasible model, runtime and placement for each required joint |\n\nOn each layer, specialization exchanges breadth and upgrade flexibility for\npotentially improved marginal cost, latency, memory and energy. The optimum\nis workload dependent. Typed software boundaries, selective escalation and\nversioned components preserve more substitution flexibility than fixed\nsilicon. They also create coordination and validation costs.\n\n## Research lineage\n\n| Tradition | Relevance |\n| --- | --- |\n| Brooks (1991), behavior-based robotics | Independent reactive activity producers illustrate decentralized computation. |\n| Sutton, Precup and Singh (1999), hierarchical RL | Temporally extended policies separate actions at different abstraction levels. |\n| LeCun (2022), JEPA; Assran et al. (2025), V-JEPA 2 | Predictive latent world models illustrate a non-language-based component; physical robotics evaluations remain domain-specific. |\n| Rozinat and van der Aalst (2006), decision mining | Derive candidate decision points from process event records instead of an imagined workflow. |\n| Zaharia et al. (2024), compound AI | Multiple model, tool and retrieval components can form a single engineered system. |\n| Khattab et al. (2024), DSPy | Declarative language-model programs can be optimized against defined metrics. |\n| Chen et al. (2025), LLMSelector | Different participating modules can benefit from different model allocations. |\n| Hsieh et al. (2023), distillation; Belcak et al. (2025), agentic SLMs | Repeated tasks motivate task-specific student models when measured economics and quality justify conversion. |\n\nJev and JEPA are distinct. Jev is a commercially exposed typed judgment\ninterface for narrowly specified choices, score and Boolean probability\nquestions. JEPA is a predictive representation-learning family. An\narchitecture may also contain classical models, exact rules and optimization\nalgorithms; the heterogeneity is the research question.\n\n## Reading map\n\n- [COG-JOINT-01](../proposals/cog-joint-01-heterogeneous-cognitive-joints.md)\n  specifies the proposed body/joints decomposition without modifying existing Goni authority contracts.\n- [EVID-TAALAS-202611](../evidence/evid-taalas-202611-model-specific-silicon.md)\n  and [EVID-JEV-202611](../evidence/evid-jev-202611-typed-system-one-judgments.md)\n  distinguish source reports, estimates, technical limitations and their possible architectural implications.\n- [OBJ-COG-JOINT-01](../objections/obj-cog-joint-01-cascading-and-inherited-judgment-error.md)\n  identifies inherited-state error and the cost of unsafe decomposition.\n- [COG-SPEC-01](../proposals/cog-spec-01-cognitive-specialization-economics.md)\n  describes the specialization strategy, break-even logic and commercialization hypotheses.\n- [EXP-COG-JOINT-01](../experiments/exp-cog-joint-01-cross-layer-cognitive-architecture-evaluation.md)\n  states a falsifiable comparison and the evidence required for promotion.\n\nThis extends the existing blueprint rather than replacing the kernel,\nformal planes, model placement contract, local-first requirement, or\nprobabilistic-cognition/deterministic-authority decision. All proposed\nmechanisms remain specified only until bounded experiments produce\nreviewable evidence.",
+      "domains": [
+        "hardware",
+        "software",
+        "agent",
+        "research",
+        "market"
+      ],
+      "id": "SYN-COG-JOINT-01",
+      "implementation_state": "not_applicable",
+      "legacy": [],
+      "path": "knowledge/syntheses/syn-cog-joint-01-hardware-model-harness-co-design.md",
+      "proposition": "The hardware–model specialization analogy connects Goni's existing harness, routing, local-first and authority principles to a research program in process-first heterogeneous cognition and conditional lifecycle economics.",
+      "relations": [
+        {
+          "note": "Process-first cognitive topology and joint contract.",
+          "target": "COG-JOINT-01",
+          "type": "synthesizes"
+        },
+        {
+          "note": "Specialization, allocation and business economics.",
+          "target": "COG-SPEC-01",
+          "type": "synthesizes"
+        },
+        {
+          "note": "External model-specific silicon precedent.",
+          "target": "EVID-TAALAS-202611",
+          "type": "synthesizes"
+        },
+        {
+          "note": "External decision-native judgment precedent.",
+          "target": "EVID-JEV-202611",
+          "type": "synthesizes"
+        },
+        {
+          "note": "Dependency and uncertainty objections.",
+          "target": "OBJ-COG-JOINT-01",
+          "type": "synthesizes"
+        },
+        {
+          "note": "Proposed comparative evaluation.",
+          "target": "EXP-COG-JOINT-01",
+          "type": "synthesizes"
+        }
+      ],
+      "sources": [
+        "SRC-BROOKS1991-SUBSUMPTION",
+        "SRC-SUTTON1999-OPTIONS",
+        "SRC-LECUN2022-JEPA",
+        "SRC-ASSRAN2025-VJEPA2",
+        "SRC-BAIR2024-COMPOUND",
+        "SRC-KHATTAB2024-DSPY",
+        "SRC-CHEN2025-LLMSELECTOR",
+        "SRC-BELCAK2025-SLM-AGENTS",
+        "SRC-HSIEH2023-DISTILLATION",
+        "SRC-ROZINAT2006-DECISION-MINING"
+      ],
+      "status": "draft",
+      "title": "Hardware, model and harness co-design: intelligence at the joints",
+      "type": "synthesis",
+      "uncertainty": "Research synthesis and architectural analogy only. No claim of novel invention, operational improvement, local Jev availability, market demand, or Goni implementation is established."
+    },
+    {
       "aliases": [
         "SYNC-POLICIES"
       ],
@@ -63435,6 +63837,149 @@
     },
     {
       "projection": "generated",
+      "source": "COG-JOINT-01",
+      "target": "COG-SPEC-01",
+      "type": "depended_on_by"
+    },
+    {
+      "note": "Essential operation remains local and offline-capable.",
+      "projection": "authored",
+      "source": "COG-JOINT-01",
+      "target": "GONI-DECISION-7CD481DA15B7",
+      "type": "depends_on"
+    },
+    {
+      "note": "Kernel-owned authority stays separate from learned cognition.",
+      "projection": "authored",
+      "source": "COG-JOINT-01",
+      "target": "GONI-DECISION-9AF49466170D",
+      "type": "depends_on"
+    },
+    {
+      "note": "Resource-feasible hardware and model placement remains a governed concern.",
+      "projection": "authored",
+      "source": "COG-JOINT-01",
+      "target": "INF-PLACE-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "generated",
+      "source": "COG-JOINT-01",
+      "target": "OBJ-COG-JOINT-01",
+      "type": "objected_to_by"
+    },
+    {
+      "note": "Distinguish routine local judgment from budgeted deliberative interrupts.",
+      "projection": "authored",
+      "source": "COG-JOINT-01",
+      "target": "GONI-DECISION-1A482B12FFB8",
+      "type": "refines"
+    },
+    {
+      "note": "Generalize small/large allocation across heterogeneous judgment mechanisms.",
+      "projection": "authored",
+      "source": "COG-JOINT-01",
+      "target": "GONI-DECISION-84F201170733",
+      "type": "refines"
+    },
+    {
+      "note": "Interpret the existing Harness Plane as a governed operational topology rather than assume an LLM-centric loop.",
+      "projection": "authored",
+      "source": "COG-JOINT-01",
+      "target": "GONI-IMAP-216164F1995B",
+      "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "COG-JOINT-01",
+      "target": "EVID-JEV-202611",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "COG-JOINT-01",
+      "target": "EVID-TAALAS-202611",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "COG-JOINT-01",
+      "target": "SYN-COG-JOINT-01",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "generated",
+      "source": "COG-JOINT-01",
+      "target": "EXP-COG-JOINT-01",
+      "type": "tested_by"
+    },
+    {
+      "note": "Typed stable decision contracts permit measured substitution.",
+      "projection": "authored",
+      "source": "COG-SPEC-01",
+      "target": "COG-JOINT-01",
+      "type": "depends_on"
+    },
+    {
+      "note": "Placement must remain resource-feasible and policy-authorized.",
+      "projection": "authored",
+      "source": "COG-SPEC-01",
+      "target": "INF-PLACE-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "generated",
+      "source": "COG-SPEC-01",
+      "target": "OBJ-COG-JOINT-01",
+      "type": "objected_to_by"
+    },
+    {
+      "note": "Outcome-metering is a secondary optional packaging hypothesis.",
+      "projection": "authored",
+      "source": "COG-SPEC-01",
+      "target": "PAY-PER-EXECUTION",
+      "type": "refines"
+    },
+    {
+      "note": "Relate proposed product economics to the cost of verified outcomes.",
+      "projection": "authored",
+      "source": "COG-SPEC-01",
+      "target": "PRICING-MODELS",
+      "type": "refines"
+    },
+    {
+      "note": "Apply marginal-benefit discipline to specialization itself.",
+      "projection": "authored",
+      "source": "COG-SPEC-01",
+      "target": "PRINCIPLE-AGENTIC-SCOPE-01",
+      "type": "refines"
+    },
+    {
+      "projection": "generated",
+      "source": "COG-SPEC-01",
+      "target": "EVID-JEV-202611",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "COG-SPEC-01",
+      "target": "EVID-TAALAS-202611",
+      "type": "supported_by"
+    },
+    {
+      "projection": "generated",
+      "source": "COG-SPEC-01",
+      "target": "SYN-COG-JOINT-01",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "generated",
+      "source": "COG-SPEC-01",
+      "target": "EXP-COG-JOINT-01",
+      "type": "tested_by"
+    },
+    {
+      "projection": "generated",
       "source": "CTX-COMP-01",
       "target": "CTX-MISS-01",
       "type": "depended_on_by"
@@ -63698,10 +64243,36 @@
       "type": "supports"
     },
     {
+      "projection": "generated",
+      "source": "EVID-HARNESS-01",
+      "target": "EXP-COG-JOINT-01",
+      "type": "depended_on_by"
+    },
+    {
       "projection": "authored",
       "source": "EVID-HU2022-LORA",
       "target": "GONI-SPEC-9D8A0A7F0F70",
       "type": "supports"
+    },
+    {
+      "note": "Concrete interface precedent for bounded model judgments.",
+      "projection": "authored",
+      "source": "EVID-JEV-202611",
+      "target": "COG-JOINT-01",
+      "type": "supports"
+    },
+    {
+      "note": "Provides a comparator for lower variable-cost judgment execution.",
+      "projection": "authored",
+      "source": "EVID-JEV-202611",
+      "target": "COG-SPEC-01",
+      "type": "supports"
+    },
+    {
+      "projection": "generated",
+      "source": "EVID-JEV-202611",
+      "target": "SYN-COG-JOINT-01",
+      "type": "synthesized_by"
     },
     {
       "projection": "authored",
@@ -63776,6 +64347,26 @@
       "type": "supports"
     },
     {
+      "note": "Motivates selecting computational mechanisms for a stable workload rather than universally optimizing general computation.",
+      "projection": "authored",
+      "source": "EVID-TAALAS-202611",
+      "target": "COG-JOINT-01",
+      "type": "supports"
+    },
+    {
+      "note": "Illustrates a specialization trade-off at the physical substrate layer.",
+      "projection": "authored",
+      "source": "EVID-TAALAS-202611",
+      "target": "COG-SPEC-01",
+      "type": "supports"
+    },
+    {
+      "projection": "generated",
+      "source": "EVID-TAALAS-202611",
+      "target": "SYN-COG-JOINT-01",
+      "type": "synthesized_by"
+    },
+    {
       "note": "Motivates the control but does not demonstrate its effectiveness.",
       "projection": "authored",
       "source": "EVID-TOOL-FAILURE-20261124",
@@ -63805,6 +64396,53 @@
       "source": "EXP-AGENTIC-SCOPE-01",
       "target": "PRINCIPLE-AGENTIC-SCOPE-01",
       "type": "tests"
+    },
+    {
+      "note": "Use governed evaluation traces and versioned harness changes.",
+      "projection": "authored",
+      "source": "EXP-COG-JOINT-01",
+      "target": "EVID-HARNESS-01",
+      "type": "depends_on"
+    },
+    {
+      "note": "Associate measurements with named hardware/runtime profiles.",
+      "projection": "authored",
+      "source": "EXP-COG-JOINT-01",
+      "target": "EXP-INF-PLACE-01",
+      "type": "depends_on"
+    },
+    {
+      "projection": "generated",
+      "source": "EXP-COG-JOINT-01",
+      "target": "SYN-COG-JOINT-01",
+      "type": "synthesized_by"
+    },
+    {
+      "note": "Compare modularity and decision mechanisms at equivalent operational boundaries.",
+      "projection": "authored",
+      "source": "EXP-COG-JOINT-01",
+      "target": "COG-JOINT-01",
+      "type": "tests"
+    },
+    {
+      "note": "Measure cost/quality frontier and specialization break-even.",
+      "projection": "authored",
+      "source": "EXP-COG-JOINT-01",
+      "target": "COG-SPEC-01",
+      "type": "tests"
+    },
+    {
+      "note": "Probe stale-state, correlated-error and coordination failures.",
+      "projection": "authored",
+      "source": "EXP-COG-JOINT-01",
+      "target": "OBJ-COG-JOINT-01",
+      "type": "tests"
+    },
+    {
+      "projection": "generated",
+      "source": "EXP-INF-PLACE-01",
+      "target": "EXP-COG-JOINT-01",
+      "type": "depended_on_by"
     },
     {
       "projection": "authored",
@@ -63853,6 +64491,12 @@
       "source": "GONI-DECISION-05A8056FB235",
       "target": "GONI-SYNTHESIS-15FDDF75571E",
       "type": "synthesized_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-DECISION-1A482B12FFB8",
+      "target": "COG-JOINT-01",
+      "type": "refined_by"
     },
     {
       "projection": "generated",
@@ -63922,8 +64566,26 @@
     },
     {
       "projection": "generated",
+      "source": "GONI-DECISION-7CD481DA15B7",
+      "target": "COG-JOINT-01",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-DECISION-84F201170733",
+      "target": "COG-JOINT-01",
+      "type": "refined_by"
+    },
+    {
+      "projection": "generated",
       "source": "GONI-DECISION-9AF49466170D",
       "target": "CACHE-01",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-DECISION-9AF49466170D",
+      "target": "COG-JOINT-01",
       "type": "depended_on_by"
     },
     {
@@ -64650,6 +65312,12 @@
       "projection": "generated",
       "source": "GONI-IMAP-086FADF076BA",
       "target": "GONI-IMAP-66D2DBD94204",
+      "type": "refined_by"
+    },
+    {
+      "projection": "generated",
+      "source": "GONI-IMAP-216164F1995B",
+      "target": "COG-JOINT-01",
       "type": "refined_by"
     },
     {
@@ -69237,6 +69905,18 @@
       "type": "refines"
     },
     {
+      "projection": "generated",
+      "source": "INF-PLACE-01",
+      "target": "COG-JOINT-01",
+      "type": "depended_on_by"
+    },
+    {
+      "projection": "generated",
+      "source": "INF-PLACE-01",
+      "target": "COG-SPEC-01",
+      "type": "depended_on_by"
+    },
+    {
       "projection": "authored",
       "source": "INF-PLACE-01",
       "target": "GONI-DECISION-0532C27DA3CC",
@@ -69777,6 +70457,32 @@
       "type": "synthesizes"
     },
     {
+      "note": "Module accuracy and schema validity alone do not justify deploying a distributed graph.",
+      "projection": "authored",
+      "source": "OBJ-COG-JOINT-01",
+      "target": "COG-JOINT-01",
+      "type": "objects_to"
+    },
+    {
+      "note": "Lower inference cost can be offset by compounded errors and rework.",
+      "projection": "authored",
+      "source": "OBJ-COG-JOINT-01",
+      "target": "COG-SPEC-01",
+      "type": "objects_to"
+    },
+    {
+      "projection": "generated",
+      "source": "OBJ-COG-JOINT-01",
+      "target": "SYN-COG-JOINT-01",
+      "type": "synthesized_by"
+    },
+    {
+      "projection": "generated",
+      "source": "OBJ-COG-JOINT-01",
+      "target": "EXP-COG-JOINT-01",
+      "type": "tested_by"
+    },
+    {
       "projection": "authored",
       "source": "OS-COMPLETENESS-CHECKLIST",
       "target": "GONI-SYNTHESIS-117D733A5254",
@@ -69787,6 +70493,12 @@
       "source": "OS-COMPLETENESS-CHECKLIST",
       "target": "GONI-SYNTHESIS-72F746DA6A1B",
       "type": "synthesizes"
+    },
+    {
+      "projection": "generated",
+      "source": "PAY-PER-EXECUTION",
+      "target": "COG-SPEC-01",
+      "type": "refined_by"
     },
     {
       "projection": "generated",
@@ -69946,6 +70658,12 @@
     },
     {
       "projection": "generated",
+      "source": "PRICING-MODELS",
+      "target": "COG-SPEC-01",
+      "type": "refined_by"
+    },
+    {
+      "projection": "generated",
       "source": "PRINCIPLE-AGENTIC-SCOPE-01",
       "target": "SPEC-TOOLFAIL-01",
       "type": "depended_on_by"
@@ -69955,6 +70673,12 @@
       "source": "PRINCIPLE-AGENTIC-SCOPE-01",
       "target": "GONI-THESIS-7BFB74017D50",
       "type": "depends_on"
+    },
+    {
+      "projection": "generated",
+      "source": "PRINCIPLE-AGENTIC-SCOPE-01",
+      "target": "COG-SPEC-01",
+      "type": "refined_by"
     },
     {
       "projection": "authored",
@@ -70491,6 +71215,48 @@
       "type": "synthesizes"
     },
     {
+      "note": "Process-first cognitive topology and joint contract.",
+      "projection": "authored",
+      "source": "SYN-COG-JOINT-01",
+      "target": "COG-JOINT-01",
+      "type": "synthesizes"
+    },
+    {
+      "note": "Specialization, allocation and business economics.",
+      "projection": "authored",
+      "source": "SYN-COG-JOINT-01",
+      "target": "COG-SPEC-01",
+      "type": "synthesizes"
+    },
+    {
+      "note": "External decision-native judgment precedent.",
+      "projection": "authored",
+      "source": "SYN-COG-JOINT-01",
+      "target": "EVID-JEV-202611",
+      "type": "synthesizes"
+    },
+    {
+      "note": "External model-specific silicon precedent.",
+      "projection": "authored",
+      "source": "SYN-COG-JOINT-01",
+      "target": "EVID-TAALAS-202611",
+      "type": "synthesizes"
+    },
+    {
+      "note": "Proposed comparative evaluation.",
+      "projection": "authored",
+      "source": "SYN-COG-JOINT-01",
+      "target": "EXP-COG-JOINT-01",
+      "type": "synthesizes"
+    },
+    {
+      "note": "Dependency and uncertainty objections.",
+      "projection": "authored",
+      "source": "SYN-COG-JOINT-01",
+      "target": "OBJ-COG-JOINT-01",
+      "type": "synthesizes"
+    },
+    {
       "projection": "authored",
       "source": "SYS-00",
       "target": "GONI-SYNTHESIS-02674F890E73",
@@ -70882,6 +71648,26 @@
       "url": "https://github.com/lyogavin/airllm"
     },
     {
+      "accessed": "2026-11-27",
+      "citation": "Advanced Micro Devices, Inc. (2026-11-04). Form 10-Q, Note 5, Acquisitions and Divestitures.",
+      "id": "SRC-AMD2026-10Q",
+      "kind": "web",
+      "notes": "Reports approximately USD 2.9 billion transaction value including up to approximately USD 1.4 billion contingent consideration; not the amount of cash paid at closing.",
+      "path": "sources/src-amd2026-10q.yml",
+      "title": "AMD Q3 2026 Form 10-Q, acquisition consideration",
+      "url": "https://ir.amd.com/financial-information/sec-filings/content/0000002488-26-000191/amd-20260926.htm"
+    },
+    {
+      "accessed": "2026-11-27",
+      "citation": "AMD (2026-11-17). AMD Completes Acquisition of Taalas to Advance AI Inference Innovation.",
+      "id": "SRC-AMD2026-TAALAS-CLOSE",
+      "kind": "web",
+      "notes": "Confirms deal closure and AMD's stated intention to integrate inference silicon alongside its existing accelerators.",
+      "path": "sources/src-amd2026-taalas-close.yml",
+      "title": "AMD completion of Taalas acquisition",
+      "url": "https://newsroom.amd.com/news/amd-completes-acquisition-taalas-advance-ai-inference-innovation/"
+    },
+    {
       "citation": "https://csrc.nist.rip/publications/history/ande72.pdf",
       "id": "SRC-ANDERSON1972-REFERENCE-MONITOR",
       "kind": "web",
@@ -70899,6 +71685,16 @@
       "title": "apple2025-illusion-thinking"
     },
     {
+      "accessed": "2026-11-27",
+      "citation": "Assran, M., et al. (2025). V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning. arXiv:2506.09985.",
+      "id": "SRC-ASSRAN2025-VJEPA2",
+      "kind": "academic",
+      "notes": "Reports video representation learning and bounded physical robot planning experiments; does not establish applicability to arbitrary business state.",
+      "path": "sources/src-assran2025-vjepa2.yml",
+      "title": "V-JEPA 2 world-model research",
+      "url": "https://arxiv.org/abs/2506.09985"
+    },
+    {
       "citation": "https://arxiv.org/abs/2501.09674",
       "id": "SRC-AUTHENTICATED-DELEGATION-2025",
       "kind": "academic",
@@ -70908,6 +71704,16 @@
       "url": "https://arxiv.org/abs/2501.09674"
     },
     {
+      "accessed": "2026-11-27",
+      "citation": "Zaharia, M., et al. (2024-02-18). The Shift from Models to Compound AI Systems. Berkeley Artificial Intelligence Research.",
+      "id": "SRC-BAIR2024-COMPOUND",
+      "kind": "web",
+      "notes": "Argues for engineering multiple models, tools and retrievers into systems with varied performance goals.",
+      "path": "sources/src-bair2024-compound.yml",
+      "title": "Compound AI systems",
+      "url": "https://bair.berkeley.edu/blog/2024/02/18/compound-ai-systems/"
+    },
+    {
       "citation": "https://www.math.columbia.edu/~bayer/papers/Timestamp_BHS93.pdf",
       "id": "SRC-BAYER1993-TIMESTAMP",
       "kind": "academic",
@@ -70915,6 +71721,16 @@
       "path": "sources/src-bayer1993-timestamp.yml",
       "title": "bayer1993-timestamp",
       "url": "https://www.math.columbia.edu/~bayer/papers/Timestamp_BHS93.pdf"
+    },
+    {
+      "accessed": "2026-11-27",
+      "citation": "Belcak, P., et al. (2025). Small Language Models are the Future of Agentic AI. arXiv:2506.02153 (position paper).",
+      "id": "SRC-BELCAK2025-SLM-AGENTS",
+      "kind": "academic",
+      "notes": "Makes the economic and architectural case for replacing repeated general-purpose model calls with specialized small models and heterogeneous agents.",
+      "path": "sources/src-belcak2025-slm-agents.yml",
+      "title": "Small language models for agentic AI",
+      "url": "https://arxiv.org/abs/2506.02153"
     },
     {
       "citation": "https://github.com/black-forest-labs/flux",
@@ -70935,6 +71751,16 @@
       "url": "https://www.researchgate.net/publication/2914496_Human-Agent_Teamwork_and_Adjustable_Autonomy_in_Practice"
     },
     {
+      "accessed": "2026-11-27",
+      "citation": "Brooks, R. A. (1991). Intelligence without representation. Artificial Intelligence, 47(1–3), 139–159. doi:10.1016/0004-3702(91)90053-M.",
+      "id": "SRC-BROOKS1991-SUBSUMPTION",
+      "kind": "academic",
+      "notes": "Historical behavior-based robotics foundation for distributed activity-producing components; not proof that Goni should abandon authoritative state.",
+      "path": "sources/src-brooks1991-subsumption.yml",
+      "title": "Behavior-based decentralized intelligence",
+      "url": "https://doi.org/10.1016/0004-3702(91)90053-M"
+    },
+    {
       "accessed": "2026-11-24",
       "citation": "User-supplied screenshot and subsequent verbatim assistant post-mortem shared in conversation, 2026-11-24; non-public primary material, summarized without identifying recipients.",
       "id": "SRC-CASE20261124-TOOL-FAILURE",
@@ -70942,6 +71768,16 @@
       "notes": "The screenshot records an executor error and a mistaken browser-repair suggestion. A later assistant self-assessment reports that CODEX_CLI_PATH was unset in its available shell, a local Codex CLI worked, browser control was not currently exposed, unchanged retries occurred, and a send was promised without an executable route. It also describes source-insufficient drafting and an unfinished message. These remain self-reported, not authenticated tool logs or independently verified user environment and destination states. Original private material is not republished.",
       "path": "sources/src-case20261124-tool-failure-misattribution.yml",
       "title": "Redacted screenshot and follow-up self-assessment of execution-path misattribution"
+    },
+    {
+      "accessed": "2026-11-27",
+      "citation": "Chen, L., et al. (2025). Optimizing Model Selection for Compound AI Systems. arXiv:2502.14815.",
+      "id": "SRC-CHEN2025-LLMSELECTOR",
+      "kind": "academic",
+      "notes": "Studies allocation of different LLMs to bounded modules; reported gains are task- and comparison-specific, not proof of global optimum for arbitrary heterogeneous graphs.",
+      "path": "sources/src-chen2025-llmselector.yml",
+      "title": "Model allocation in compound AI systems",
+      "url": "https://arxiv.org/abs/2502.14815"
     },
     {
       "citation": "https://www.alphaxiv.org/abs/2026.dspark",
@@ -71052,6 +71888,16 @@
       "url": "https://doi.org/10.1145/363095.363141"
     },
     {
+      "accessed": "2026-11-27",
+      "citation": "Deußer, T., Sparrenberg, L., & Sifa, R. (2026). Evaluating and Benchmarking the System One Model Jev. arXiv:2609.37647 (preprint).",
+      "id": "SRC-DEUSSER2026-JEV",
+      "kind": "academic",
+      "notes": "Zero-shot studies of Jev 1.13.0 across 37 datasets, including 346,009 requests, calibration and binary-threshold limitations; benchmark scope and version constrain inference.",
+      "path": "sources/src-deusser2026-jev.yml",
+      "title": "Independent Jev evaluation across 37 datasets",
+      "url": "https://arxiv.org/abs/2609.37647"
+    },
+    {
       "citation": "https://arxiv.org/abs/2403.07718",
       "id": "SRC-DROUIN2024-WORKARENA",
       "kind": "academic",
@@ -71104,6 +71950,16 @@
       "path": "sources/src-gebru2021-datasheets.yml",
       "title": "gebru2021-datasheets",
       "url": "https://arxiv.org/abs/1803.09010"
+    },
+    {
+      "accessed": "2026-11-27",
+      "citation": "Geifman, Y., & El-Yaniv, R. (2017). Selective Classification for Deep Neural Networks. NeurIPS 30.",
+      "id": "SRC-GEIFMAN2017-SELECTIVE",
+      "kind": "academic",
+      "notes": "Studies rejection/coverage at desired risk levels under evaluation conditions; confidence guarantees do not transfer automatically to shifted inputs.",
+      "path": "sources/src-geifman2017-selective.yml",
+      "title": "Selective classification and risk/coverage",
+      "url": "https://proceedings.neurips.cc/paper/2017/hash/4a8423d5e91fda00bb7e46540e2b0cf1-Abstract.html"
     },
     {
       "citation": "Gim, I., Chen, G., Lee, S.-s., Sarda, N., Khandelwal, A., & Zhong, L. (2024). Prompt Cache: Modular Attention Reuse for Low-Latency Inference. Proceedings of Machine Learning and Systems, 6.",
@@ -71213,6 +72069,16 @@
       "url": "https://www.microsoft.com/en-us/research/publication/principles-mixed-initiative-user-interfaces/"
     },
     {
+      "accessed": "2026-11-27",
+      "citation": "Hsieh, C.-Y., et al. (2023). Distilling Step-by-Step! Outperforming Larger Language Models with Less Training Data and Smaller Model Sizes. Findings of ACL 2023, 8003–8017. doi:10.18653/v1/2023.findings-acl.507.",
+      "id": "SRC-HSIEH2023-DISTILLATION",
+      "kind": "academic",
+      "notes": "Demonstrates task-specific distillation with teacher rationales on evaluated NLP benchmarks; teacher outputs are not automatically ground truth.",
+      "path": "sources/src-hsieh2023-distillation.yml",
+      "title": "Distilling task expertise into smaller models",
+      "url": "https://aclanthology.org/2023.findings-acl.507/"
+    },
+    {
       "citation": "Hu, E. J., Shen, Y., Wallis, P., Allen-Zhu, Z., Li, Y., Wang, S., Wang, L., & Chen, W. (2022). LoRA: Low-Rank Adaptation of Large Language Models. International Conference on Learning Representations.",
       "id": "SRC-HU2022-LORA",
       "kind": "academic",
@@ -71231,6 +72097,16 @@
       "url": "https://arxiv.org/abs/2507.05257"
     },
     {
+      "accessed": "2026-11-27",
+      "citation": "Imperatrice, I., Kameneva, T., Greenberg, A. E., & Romano, A. (2026). Are AI Decision Models Biased? A Case Study of Jev. arXiv:2610.19619 (preprint).",
+      "id": "SRC-IMPERATRICE2026-JEV-BIAS",
+      "kind": "academic",
+      "notes": "Reports sensitivity to irrelevant numerical inputs, option ordering and reformulation; benchmark success cannot establish robust calibration in deployment.",
+      "path": "sources/src-imperatrice2026-jev-bias.yml",
+      "title": "Robustness and bias in Jev judgments",
+      "url": "https://arxiv.org/abs/2610.19619"
+    },
+    {
       "citation": "https://in-toto.io/",
       "id": "SRC-IN-TOTO-FRAMEWORK",
       "kind": "web",
@@ -71238,6 +72114,16 @@
       "path": "sources/src-in-toto-framework.yml",
       "title": "in-toto-framework",
       "url": "https://in-toto.io/"
+    },
+    {
+      "accessed": "2026-11-27",
+      "citation": "Jev AI (accessed 2026-11-27). Decisions at machine speed.",
+      "id": "SRC-JEVAI2026-DISCOVERY",
+      "kind": "web",
+      "notes": "User-supplied discovery pointer; official affiliation not established. Site displays USD 0.084/MTok and a third-party API link; prefer TypeSafe's own announcements, terms and current pricing.",
+      "path": "sources/src-jevai2026-discovery.yml",
+      "title": "Jev AI web discovery page",
+      "url": "https://jevai.net/"
     },
     {
       "citation": "Jiang, H., Wu, Q., Lin, C.-Y., Yang, Y., & Qiu, L. (2023). LLMLingua: Compressing Prompts for Accelerated Inference of Large Language Models. Proceedings of EMNLP 2023. https://doi.org/10.18653/v1/2023.emnlp-main.825",
@@ -71265,6 +72151,16 @@
       "path": "sources/src-karpukhin2020-dpr.yml",
       "title": "karpukhin2020-dpr",
       "url": "https://arxiv.org/abs/2004.04906"
+    },
+    {
+      "accessed": "2026-11-27",
+      "citation": "Khattab, O., et al. (2024). DSPy: Compiling Declarative Language Model Calls into State-of-the-Art Pipelines. ICLR 2024.",
+      "id": "SRC-KHATTAB2024-DSPY",
+      "kind": "academic",
+      "notes": "Optimizes parameterized language-model modules against explicit metrics; does not provide a general heterogeneous hardware compiler.",
+      "path": "sources/src-khattab2024-dspy.yml",
+      "title": "DSPy declarative model pipeline compilation",
+      "url": "https://arxiv.org/abs/2310.03714"
     },
     {
       "citation": "https://www.sigops.org/s/conferences/sosp/2009/papers/klein-sosp09.pdf",
@@ -71303,6 +72199,16 @@
       "url": "https://arxiv.org/pdf/2309.06180"
     },
     {
+      "accessed": "2026-11-27",
+      "citation": "Lamb Labs (2026). The World's First MPU; technology roadmap.",
+      "id": "SRC-LAMBLABS2026-MPU",
+      "kind": "web",
+      "notes": "Vendor's one-bit 27B model, GPU software demo, separate FPGA demonstrations and proposed ASIC; production ASIC performance remains a target.",
+      "path": "sources/src-lamblabs2026-mpu.yml",
+      "title": "Lamb Labs model processing units",
+      "url": "https://lamb-labs.com/"
+    },
+    {
       "citation": "https://dl.acm.org/doi/pdf/10.1145/775265.775268",
       "id": "SRC-LAMPSON1974-PROTECTION",
       "kind": "web",
@@ -71310,6 +72216,16 @@
       "path": "sources/src-lampson1974-protection.yml",
       "title": "lampson1974-protection",
       "url": "https://dl.acm.org/doi/pdf/10.1145/775265.775268"
+    },
+    {
+      "accessed": "2026-11-27",
+      "citation": "LeCun, Y. (2022). A Path Towards Autonomous Machine Intelligence; accompanying Meta AI research exposition.",
+      "id": "SRC-LECUN2022-JEPA",
+      "kind": "web",
+      "notes": "Explains predictive latent representations and hierarchical world models with planning; distinct from the commercial Jev judgment API.",
+      "path": "sources/src-lecun2022-jepa.yml",
+      "title": "Modular world-model architecture and JEPA",
+      "url": "https://ai.meta.com/blog/yann-lecun-advances-in-ai-research"
     },
     {
       "citation": "https://arxiv.org/abs/2005.11401",
@@ -71337,6 +72253,16 @@
       "path": "sources/src-li2023-selective-context.yml",
       "title": "Li et al. 2023 - Selective Context",
       "url": "https://aclanthology.org/2023.emnlp-main.391/"
+    },
+    {
+      "accessed": "2026-11-27",
+      "citation": "Li, X., et al. (2026). Specialized Decision Models vs. General-Purpose LLMs: Benchmarking Jev Across Knowledge, Reasoning, and Multilingual Tasks. arXiv:2610.11978 (preprint).",
+      "id": "SRC-LI2026-JEV-COMPARISON",
+      "kind": "academic",
+      "notes": "Compares Jev with 19 LLMs across 13 multiple-choice benchmarks; competitive knowledge/commonsense results and weakness in multi-step mathematical word problems.",
+      "path": "sources/src-li2026-jev-comparison.yml",
+      "title": "Decision models versus general-purpose LLMs",
+      "url": "https://arxiv.org/abs/2610.11978"
     },
     {
       "citation": "https://arxiv.org/abs/2604.25850",
@@ -71555,6 +72481,16 @@
       "url": "https://huggingface.co/papers/2403.12031"
     },
     {
+      "accessed": "2026-11-27",
+      "citation": "Rozinat, A., & van der Aalst, W. M. P. (2006). Decision Mining in Business Processes. Business Process Management, LNCS 4102, 420–425.",
+      "id": "SRC-ROZINAT2006-DECISION-MINING",
+      "kind": "academic",
+      "notes": "Uses event logs to analyze process branching and data-dependent decisions; complements workflow-first opportunity discovery.",
+      "path": "sources/src-rozinat2006-decision-mining.yml",
+      "title": "Decision mining from real process executions",
+      "url": "https://www.vdaalst.com/publications/p312.pdf"
+    },
+    {
       "citation": "https://www.cl.cam.ac.uk/teaching/1011/R01/75-protection.pdf",
       "id": "SRC-SALTZER1975-PROTECTION",
       "kind": "web",
@@ -71610,6 +72546,16 @@
       "url": "https://aisel.aisnet.org/thci/vol12/iss3/1/"
     },
     {
+      "accessed": "2026-11-27",
+      "citation": "Rajan, T. (2025-12-03). Constellation of models: the architecture powering Sierra's agents. Sierra.",
+      "id": "SRC-SIERRA2025-CONSTELLATION",
+      "kind": "web",
+      "notes": "Vendor reports modular tasks backed by 15+ frontier, open-weight and proprietary models, with routing and operational monitoring; no proof of Goni demand or margins.",
+      "path": "sources/src-sierra2025-constellation.yml",
+      "title": "Commercial heterogeneous model orchestration",
+      "url": "https://sierra.ai/blog/constellation-of-models"
+    },
+    {
       "citation": "Simon, H. A. (1955). A Behavioral Model of Rational Choice. The Quarterly Journal of Economics, 69(1), 99–118. https://doi.org/10.2307/1884852",
       "id": "SRC-SIMON1955-RATIONAL-CHOICE",
       "kind": "academic",
@@ -71655,6 +72601,36 @@
       "url": "https://arxiv.org/abs/2307.08621"
     },
     {
+      "accessed": "2026-11-27",
+      "citation": "Sutton, R. S., Precup, D., & Singh, S. (1999). Between MDPs and semi-MDPs: A framework for temporal abstraction in reinforcement learning. Artificial Intelligence, 112(1–2), 181–211. doi:10.1016/S0004-3702(99)00052-1.",
+      "id": "SRC-SUTTON1999-OPTIONS",
+      "kind": "academic",
+      "notes": "Defines temporally extended options as closed-loop policies, formalizing different levels of action abstraction.",
+      "path": "sources/src-sutton1999-options.yml",
+      "title": "Temporal abstraction and hierarchical control",
+      "url": "https://doi.org/10.1016/S0004-3702(99)00052-1"
+    },
+    {
+      "accessed": "2026-11-27",
+      "citation": "Taalas (2026). Products: HC1 Technology Demonstrator.",
+      "id": "SRC-TAALAS2026-HC1",
+      "kind": "web",
+      "notes": "Reports a Llama 3.1 8B demonstrator, 17k output tokens/s/user, 1k/1k comparison, and 2.5 kW server; not a wearable product or independently normalized benchmark.",
+      "path": "sources/src-taalas2026-hc1.yml",
+      "title": "Taalas HC1 technology demonstrator",
+      "url": "https://taalas.com/products/"
+    },
+    {
+      "accessed": "2026-11-27",
+      "citation": "Bajic, L. (2026). The path to ubiquitous AI. Taalas.",
+      "id": "SRC-TAALAS2026-UBIQUITOUS",
+      "kind": "web",
+      "notes": "Manufacturer's HC1 architecture, mixed precision, performance comparison, configurable context, and LoRA claims; measurements are vendor-reported.",
+      "path": "sources/src-taalas2026-ubiquitous.yml",
+      "title": "Taalas: model-specific inference silicon",
+      "url": "https://taalas.com/the-path-to-ubiquitous-ai/"
+    },
+    {
       "citation": "https://arxiv.org/abs/2602.11865",
       "id": "SRC-TOMASEV2026-INTELLIGENT-DELEGATION",
       "kind": "academic",
@@ -71670,6 +72646,46 @@
       "notes": "Reported view that deployed models do not robustly learn from mistakes in normal use, and that this limits autonomous improvement without system support.",
       "path": "sources/src-tworek2026-decoder.yml",
       "title": "tworek2026-decoder"
+    },
+    {
+      "accessed": "2026-11-27",
+      "citation": "Almeida, D. (2026-09-15). Introducing System One Models & Jev. TypeSafe AI.",
+      "id": "SRC-TYPESAFE2026-JEV",
+      "kind": "web",
+      "notes": "Primary vendor account of typed probabilistic outputs, parallel sampling and RLCD; architecture/training details and performance claims require independent evaluation.",
+      "path": "sources/src-typesafe2026-jev.yml",
+      "title": "TypeSafe AI introduction of System One and Jev",
+      "url": "https://typesafe.ai/blog/introducing-system-one-models-and-jev"
+    },
+    {
+      "accessed": "2026-11-27",
+      "citation": "TypeSafe AI Help Center (updated 2026-11-03). How much does Jev cost?",
+      "id": "SRC-TYPESAFE2026-JEV-PRICE",
+      "kind": "web",
+      "notes": "Vendor price as accessed: USD 0.042 per million input tokens; output free. Pricing, rate limits and availability are mutable; excludes system costs.",
+      "path": "sources/src-typesafe2026-jev-price.yml",
+      "title": "Jev direct API pricing",
+      "url": "https://help.typesafe.ai/articles/5187202169-how-much-does-jev-cost"
+    },
+    {
+      "accessed": "2026-11-27",
+      "citation": "TypeSafe AI (2026-10-14). Jev: For the builders AND dreamers.",
+      "id": "SRC-TYPESAFE2026-JEV114",
+      "kind": "web",
+      "notes": "Reports Jev 1.14 release with experimental image input, new output type and longer context; warns users to evaluate their own workloads.",
+      "path": "sources/src-typesafe2026-jev114.yml",
+      "title": "Jev 1.14 release and experimental capabilities",
+      "url": "https://typesafe.ai/blog/jev-1-14"
+    },
+    {
+      "accessed": "2026-11-27",
+      "citation": "Laabs, A. (2026-11-03). Don't Call It a Decision Model. TypeSafe AI.",
+      "id": "SRC-TYPESAFE2026-JUDGMENT",
+      "kind": "web",
+      "notes": "Vendor distinguishes focused model judgments from decisions executed by application code.",
+      "path": "sources/src-typesafe2026-judgment.yml",
+      "title": "TypeSafe AI judgment/decision separation",
+      "url": "https://typesafe.ai/blog/dont-call-it-a-decision-model"
     },
     {
       "citation": "van de Ven, G. M., Siegelmann, H. T., & Tolias, A. S. (2020). Brain-inspired replay for continual learning with artificial neural networks. Nature Communications, 11, 4069. https://doi.org/10.1038/s41467-020-17866-2",
@@ -71778,6 +72794,16 @@
       "path": "sources/src-yang2025-contextagent.yml",
       "title": "yang2025-contextagent",
       "url": "https://arxiv.org/abs/2505.14668"
+    },
+    {
+      "accessed": "2026-11-27",
+      "citation": "Yang, W., et al. (2026). What Can't Jev Decide? Probing the Limits of One-Pass Decision Models. arXiv:2610.24929 (preprint).",
+      "id": "SRC-YANG2026-JEV-LIMITS",
+      "kind": "academic",
+      "notes": "Reports degradation on multi-update reasoning and vulnerability to stale supplied state; confidence and handoff do not reliably detect inherited errors in evaluated conditions.",
+      "path": "sources/src-yang2026-jev-limits.yml",
+      "title": "Limits of one-pass decision models",
+      "url": "https://arxiv.org/abs/2610.24929"
     },
     {
       "citation": "https://lutpub.lut.fi/bitstream/handle/10024/166844/MastersThesis_Zafar_MuhammadHarisShahid.pdf",

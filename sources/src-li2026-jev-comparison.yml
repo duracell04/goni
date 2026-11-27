@@ -1,0 +1,9 @@
+id: SRC-LI2026-JEV-COMPARISON
+title: Decision models versus general-purpose LLMs
+kind: academic
+citation: 'Li, X., et al. (2026). Specialized Decision Models vs. General-Purpose LLMs: Benchmarking Jev Across
+  Knowledge, Reasoning, and Multilingual Tasks. arXiv:2610.11978 (preprint).'
+url: https://arxiv.org/abs/2610.11978
+accessed: '2026-11-27'
+notes: Compares Jev with 19 LLMs across 13 multiple-choice benchmarks; competitive knowledge/commonsense results
+  and weakness in multi-step mathematical word problems.

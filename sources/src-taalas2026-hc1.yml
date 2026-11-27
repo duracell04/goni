@@ -1,0 +1,8 @@
+id: SRC-TAALAS2026-HC1
+title: Taalas HC1 technology demonstrator
+kind: web
+citation: 'Taalas (2026). Products: HC1 Technology Demonstrator.'
+url: https://taalas.com/products/
+accessed: '2026-11-27'
+notes: Reports a Llama 3.1 8B demonstrator, 17k output tokens/s/user, 1k/1k comparison, and 2.5 kW server;
+  not a wearable product or independently normalized benchmark.

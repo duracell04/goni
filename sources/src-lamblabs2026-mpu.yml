@@ -1,0 +1,8 @@
+id: SRC-LAMBLABS2026-MPU
+title: Lamb Labs model processing units
+kind: web
+citation: Lamb Labs (2026). The World's First MPU; technology roadmap.
+url: https://lamb-labs.com/
+accessed: '2026-11-27'
+notes: Vendor's one-bit 27B model, GPU software demo, separate FPGA demonstrations and proposed ASIC; production
+  ASIC performance remains a target.

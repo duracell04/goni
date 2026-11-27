@@ -1,0 +1,9 @@
+id: SRC-KHATTAB2024-DSPY
+title: DSPy declarative model pipeline compilation
+kind: academic
+citation: 'Khattab, O., et al. (2024). DSPy: Compiling Declarative Language Model Calls into State-of-the-Art
+  Pipelines. ICLR 2024.'
+url: https://arxiv.org/abs/2310.03714
+accessed: '2026-11-27'
+notes: Optimizes parameterized language-model modules against explicit metrics; does not provide a general
+  heterogeneous hardware compiler.

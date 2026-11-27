@@ -1,0 +1,9 @@
+id: SRC-SUTTON1999-OPTIONS
+title: Temporal abstraction and hierarchical control
+kind: academic
+citation: 'Sutton, R. S., Precup, D., & Singh, S. (1999). Between MDPs and semi-MDPs: A framework for temporal
+  abstraction in reinforcement learning. Artificial Intelligence, 112(1–2), 181–211. doi:10.1016/S0004-3702(99)00052-1.'
+url: https://doi.org/10.1016/S0004-3702(99)00052-1
+accessed: '2026-11-27'
+notes: Defines temporally extended options as closed-loop policies, formalizing different levels of action
+  abstraction.

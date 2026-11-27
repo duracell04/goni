@@ -1,0 +1,7 @@
+id: SRC-TYPESAFE2026-JUDGMENT
+title: TypeSafe AI judgment/decision separation
+kind: web
+citation: Laabs, A. (2026-11-03). Don't Call It a Decision Model. TypeSafe AI.
+url: https://typesafe.ai/blog/dont-call-it-a-decision-model
+accessed: '2026-11-27'
+notes: Vendor distinguishes focused model judgments from decisions executed by application code.

@@ -1,0 +1,8 @@
+id: SRC-TYPESAFE2026-JEV114
+title: Jev 1.14 release and experimental capabilities
+kind: web
+citation: 'TypeSafe AI (2026-10-14). Jev: For the builders AND dreamers.'
+url: https://typesafe.ai/blog/jev-1-14
+accessed: '2026-11-27'
+notes: Reports Jev 1.14 release with experimental image input, new output type and longer context; warns users
+  to evaluate their own workloads.

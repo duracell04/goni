@@ -1,0 +1,8 @@
+id: SRC-TAALAS2026-UBIQUITOUS
+title: 'Taalas: model-specific inference silicon'
+kind: web
+citation: Bajic, L. (2026). The path to ubiquitous AI. Taalas.
+url: https://taalas.com/the-path-to-ubiquitous-ai/
+accessed: '2026-11-27'
+notes: Manufacturer's HC1 architecture, mixed precision, performance comparison, configurable context, and
+  LoRA claims; measurements are vendor-reported.

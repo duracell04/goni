@@ -1,0 +1,8 @@
+id: SRC-GEIFMAN2017-SELECTIVE
+title: Selective classification and risk/coverage
+kind: academic
+citation: Geifman, Y., & El-Yaniv, R. (2017). Selective Classification for Deep Neural Networks. NeurIPS 30.
+url: https://proceedings.neurips.cc/paper/2017/hash/4a8423d5e91fda00bb7e46540e2b0cf1-Abstract.html
+accessed: '2026-11-27'
+notes: Studies rejection/coverage at desired risk levels under evaluation conditions; confidence guarantees
+  do not transfer automatically to shifted inputs.
