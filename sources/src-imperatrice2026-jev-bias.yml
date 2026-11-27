@@ -1,0 +1,9 @@
+id: SRC-IMPERATRICE2026-JEV-BIAS
+title: Robustness and bias in Jev judgments
+kind: academic
+citation: Imperatrice, I., Kameneva, T., Greenberg, A. E., & Romano, A. (2026). Are AI Decision Models Biased?
+  A Case Study of Jev. arXiv:2610.19619 (preprint).
+url: https://arxiv.org/abs/2610.19619
+accessed: '2026-11-27'
+notes: Reports sensitivity to irrelevant numerical inputs, option ordering and reformulation; benchmark success
+  cannot establish robust calibration in deployment.

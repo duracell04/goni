@@ -1,0 +1,9 @@
+id: SRC-YANG2026-JEV-LIMITS
+title: Limits of one-pass decision models
+kind: academic
+citation: Yang, W., et al. (2026). What Can't Jev Decide? Probing the Limits of One-Pass Decision Models. arXiv:2610.24929
+  (preprint).
+url: https://arxiv.org/abs/2610.24929
+accessed: '2026-11-27'
+notes: Reports degradation on multi-update reasoning and vulnerability to stale supplied state; confidence
+  and handoff do not reliably detect inherited errors in evaluated conditions.

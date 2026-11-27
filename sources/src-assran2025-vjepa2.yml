@@ -1,0 +1,9 @@
+id: SRC-ASSRAN2025-VJEPA2
+title: V-JEPA 2 world-model research
+kind: academic
+citation: 'Assran, M., et al. (2025). V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction
+  and Planning. arXiv:2506.09985.'
+url: https://arxiv.org/abs/2506.09985
+accessed: '2026-11-27'
+notes: Reports video representation learning and bounded physical robot planning experiments; does not establish
+  applicability to arbitrary business state.

@@ -1,0 +1,9 @@
+id: SRC-BELCAK2025-SLM-AGENTS
+title: Small language models for agentic AI
+kind: academic
+citation: Belcak, P., et al. (2025). Small Language Models are the Future of Agentic AI. arXiv:2506.02153 (position
+  paper).
+url: https://arxiv.org/abs/2506.02153
+accessed: '2026-11-27'
+notes: Makes the economic and architectural case for replacing repeated general-purpose model calls with specialized
+  small models and heterogeneous agents.

@@ -1,0 +1,9 @@
+id: SRC-DEUSSER2026-JEV
+title: Independent Jev evaluation across 37 datasets
+kind: academic
+citation: Deußer, T., Sparrenberg, L., & Sifa, R. (2026). Evaluating and Benchmarking the System One Model
+  Jev. arXiv:2609.37647 (preprint).
+url: https://arxiv.org/abs/2609.37647
+accessed: '2026-11-27'
+notes: Zero-shot studies of Jev 1.13.0 across 37 datasets, including 346,009 requests, calibration and binary-threshold
+  limitations; benchmark scope and version constrain inference.

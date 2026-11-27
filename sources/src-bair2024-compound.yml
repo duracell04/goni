@@ -1,0 +1,8 @@
+id: SRC-BAIR2024-COMPOUND
+title: Compound AI systems
+kind: web
+citation: Zaharia, M., et al. (2024-02-18). The Shift from Models to Compound AI Systems. Berkeley Artificial
+  Intelligence Research.
+url: https://bair.berkeley.edu/blog/2024/02/18/compound-ai-systems/
+accessed: '2026-11-27'
+notes: Argues for engineering multiple models, tools and retrievers into systems with varied performance goals.

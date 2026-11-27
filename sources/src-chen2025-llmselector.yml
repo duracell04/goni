@@ -1,0 +1,8 @@
+id: SRC-CHEN2025-LLMSELECTOR
+title: Model allocation in compound AI systems
+kind: academic
+citation: Chen, L., et al. (2025). Optimizing Model Selection for Compound AI Systems. arXiv:2502.14815.
+url: https://arxiv.org/abs/2502.14815
+accessed: '2026-11-27'
+notes: Studies allocation of different LLMs to bounded modules; reported gains are task- and comparison-specific,
+  not proof of global optimum for arbitrary heterogeneous graphs.

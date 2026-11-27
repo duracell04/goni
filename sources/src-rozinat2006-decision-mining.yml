@@ -1,0 +1,9 @@
+id: SRC-ROZINAT2006-DECISION-MINING
+title: Decision mining from real process executions
+kind: academic
+citation: Rozinat, A., & van der Aalst, W. M. P. (2006). Decision Mining in Business Processes. Business Process
+  Management, LNCS 4102, 420–425.
+url: https://www.vdaalst.com/publications/p312.pdf
+accessed: '2026-11-27'
+notes: Uses event logs to analyze process branching and data-dependent decisions; complements workflow-first
+  opportunity discovery.

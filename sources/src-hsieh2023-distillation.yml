@@ -1,0 +1,9 @@
+id: SRC-HSIEH2023-DISTILLATION
+title: Distilling task expertise into smaller models
+kind: academic
+citation: Hsieh, C.-Y., et al. (2023). Distilling Step-by-Step! Outperforming Larger Language Models with Less
+  Training Data and Smaller Model Sizes. Findings of ACL 2023, 8003–8017. doi:10.18653/v1/2023.findings-acl.507.
+url: https://aclanthology.org/2023.findings-acl.507/
+accessed: '2026-11-27'
+notes: Demonstrates task-specific distillation with teacher rationales on evaluated NLP benchmarks; teacher
+  outputs are not automatically ground truth.

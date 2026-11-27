@@ -1,0 +1,8 @@
+id: SRC-LECUN2022-JEPA
+title: Modular world-model architecture and JEPA
+kind: web
+citation: LeCun, Y. (2022). A Path Towards Autonomous Machine Intelligence; accompanying Meta AI research exposition.
+url: https://ai.meta.com/blog/yann-lecun-advances-in-ai-research
+accessed: '2026-11-27'
+notes: Explains predictive latent representations and hierarchical world models with planning; distinct from
+  the commercial Jev judgment API.

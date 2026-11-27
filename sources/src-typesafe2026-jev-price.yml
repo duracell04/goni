@@ -1,0 +1,8 @@
+id: SRC-TYPESAFE2026-JEV-PRICE
+title: Jev direct API pricing
+kind: web
+citation: TypeSafe AI Help Center (updated 2026-11-03). How much does Jev cost?
+url: https://help.typesafe.ai/articles/5187202169-how-much-does-jev-cost
+accessed: '2026-11-27'
+notes: 'Vendor price as accessed: USD 0.042 per million input tokens; output free. Pricing, rate limits and
+  availability are mutable; excludes system costs.'
